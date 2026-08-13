@@ -12,7 +12,7 @@ url = f"https://api.telegram.org/bot{token}/sendMessage"
 
 data = {
     "chat_id": "@RobloxHubRU",
-    "text": "☁️ Тест будущего Render AutoPoster!\n\nСкрипт запустился, отправил этот пост и завершил работу."
+    "text": "ГИТ ЭКШН!!!"
 }
 
 try:
