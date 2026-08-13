@@ -21,6 +21,13 @@ try:
     print("HTTP status:", response.status_code)
     print(response.json())
 
+    response.raise_for_status()
+
+except requests.RequestException as error:
+    print("Ошибка при публикации в Telegram:")
+    print(error)
+    raise
+
 except requests.RequestException as error:
     print("Ошибка соединения с Telegram:")
     print(error)
