@@ -3,7 +3,8 @@ name: Roblox Hub AutoPost
 on:
   workflow_dispatch:
   schedule:
-    - cron: "15 14 * * *"
+    - cron: "05 18 * * *"
+      timezone: "Europe/Bucharest"
 
 jobs:
   autopost:
