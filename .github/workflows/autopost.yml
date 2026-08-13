@@ -3,13 +3,8 @@ name: Roblox Hub AutoPost
 on:
   workflow_dispatch:
 
-  # push:
-  #   branches:
-  #     - main
-
-  # schedule:
-  #   - cron: "*/5 * * * *"
-
+permissions:
+  contents: write
 
 jobs:
   autopost:
@@ -31,3 +26,16 @@ jobs:
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
         run: python app.py
+
+      - name: Save queue state
+        run: |
+          git config user.name "RobloxHub AutoPoster"
+          git config user.email "actions@github.com"
+
+          if git diff --quiet posts.json; then
+            echo "posts.json не изменился"
+          else
+            git add posts.json
+            git commit -m "Update published post status"
+            git push
+          fi
