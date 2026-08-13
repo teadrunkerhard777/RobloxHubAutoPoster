@@ -3,7 +3,7 @@ name: Roblox Hub AutoPost
 on:
   workflow_dispatch:
   schedule:
-    - cron: "45 15 * * *"
+    - cron: "*/5 * * * *"
 
 
 jobs:
