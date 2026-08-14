@@ -1,4 +1,66 @@
 import json
+import re
+
+
+MIN_SCORE = 5
+MAX_NEWS_ITEMS = 4
+
+
+RULES = [
+    {
+        "keywords": ["NEW VEHICLE"],
+        "template": "🚗 В {game} появился новый транспорт."
+    },
+    {
+        "keywords": ["NEW ITEMS", "NEW ITEM"],
+        "template": "🎁 В {game} появились новые предметы."
+    },
+    {
+        "keywords": ["NEW PETS", "NEW PET"],
+        "template": "🐾 В {game} появились новые питомцы."
+    },
+    {
+        "keywords": ["NEW MAP"],
+        "template": "🗺 В {game} появилась новая карта."
+    },
+    {
+        "keywords": ["NEW BOSS"],
+        "template": "👾 В {game} появился новый босс."
+    },
+    {
+        "keywords": ["NEW EVENT", "EVENT"],
+        "template": "🎉 В {game} началось новое событие."
+    },
+    {
+        "keywords": ["QUEST"],
+        "template": "📜 В {game} появились новые задания."
+    },
+    {
+        "keywords": ["REWARD"],
+        "template": "🎁 В {game} появились новые награды."
+    },
+    {
+        "keywords": ["LIMITED"],
+        "template": "⏳ В {game} появился ограниченный по времени контент."
+    },
+    {
+        "keywords": ["UPDATE"],
+        "template": "🔥 В {game} вышло обновление."
+    }
+]
+
+
+NOISE_PHRASES = [
+    "TECH DIRECTOR",
+    "NOTIFY",
+    "EXPERIENCE NEW UPDATES",
+    "ROLEPLAY WITH FRIENDS",
+    "BUILD YOUR DREAM HOME",
+    "TRADE AND COLLECT",
+    "CURRENTLY",
+    "CREATE AN ARMY",
+    "HELP YOU GET RICH"
+]
 
 
 def load_json(filename, default):
@@ -14,106 +76,214 @@ def save_text(filename, text):
         file.write(text)
 
 
-def translate_line(game, line):
-    line_upper = line.upper()
+def contains_noise(text):
+    text_upper = text.upper()
 
-    if game.startswith("Brookhaven"):
-        if "ROCKET CAR" in line_upper:
-            return (
-                "🚀 В Brookhaven добавили Rocket Car — "
-                "новую машину с особыми эффектами, звуками "
-                "и текстурой. Она доступна владельцам VIP."
-            )
+    return any(
+        phrase in text_upper
+        for phrase in NOISE_PHRASES
+    )
 
-        if "LATEST UPDATE" in line_upper:
-            return None
 
-    if "Dress To Impress" in game:
-        if "NEW ITEMS" in line_upper:
-            return (
-                "👗 В Dress To Impress появились новые предметы. "
-                "Подробности разработчики пока не расписали."
-            )
+def find_rule(text):
+    text_upper = text.upper()
+
+    for rule in RULES:
+        for keyword in rule["keywords"]:
+            if keyword in text_upper:
+                return rule
 
     return None
 
 
-def build_russian_news():
-    verified_news = load_json(
-        "verified_news.json",
+def extract_named_content(line):
+    patterns = [
+        r"NEW VEHICLE[:\s-]+(.+)",
+        r"NEW ITEM[S]?[:\s-]+(.+)",
+        r"NEW PET[S]?[:\s-]+(.+)",
+        r"NEW BOSS[:\s-]+(.+)",
+        r"NEW MAP[:\s-]+(.+)"
+    ]
+
+    for pattern in patterns:
+        match = re.search(
+            pattern,
+            line,
+            flags=re.IGNORECASE
+        )
+
+        if match:
+            return match.group(1).strip()
+
+    return None
+
+
+def clean_game_name(game):
+    game = re.sub(
+        r"^\[[^\]]+\]\s*",
+        "",
+        game
+    )
+
+    return game.strip()
+
+
+def build_item_text(item):
+    analysis = item.get(
+        "official_description_analysis",
+        {}
+    )
+
+    lines = analysis.get(
+        "news_lines",
         []
     )
+
+    game = clean_game_name(
+        item["game"]
+    )
+
+    result = []
+
+    used_templates = set()
+
+    for line in lines:
+        line = line.strip()
+
+        if not line:
+            continue
+
+        if contains_noise(line):
+            continue
+
+        rule = find_rule(line)
+
+        if not rule:
+            continue
+
+        template = rule["template"]
+
+        if template in used_templates:
+            continue
+
+        text = template.format(
+            game=game
+        )
+
+        named_content = extract_named_content(
+            line
+        )
+
+        if named_content:
+            text += (
+                f" Разработчики упоминают: "
+                f"{named_content}"
+            )
+
+        result.append(text)
+
+        used_templates.add(
+            template
+        )
+
+    return result[:2]
+
+
+def get_best_news(items):
+    news = []
+
+    for item in items:
+        if item.get("score", 0) < MIN_SCORE:
+            continue
+
+        texts = build_item_text(
+            item
+        )
+
+        if not texts:
+            continue
+
+        news.append(
+            {
+                "game": clean_game_name(
+                    item["game"]
+                ),
+                "score": item["score"],
+                "texts": texts
+            }
+        )
+
+    news.sort(
+        key=lambda item: item["score"],
+        reverse=True
+    )
+
+    return news[:MAX_NEWS_ITEMS]
+
+
+def build_post(news_items):
+    if not news_items:
+        return (
+            "🎮 Roblox Hub — утренняя сводка\n\n"
+            "Сегодня пока нет достаточно подтверждённых "
+            "свежих новостей.\n\n"
+            "🎮 Roblox Hub"
+        )
 
     parts = [
         "🎮 Roblox Hub — утренняя сводка",
         ""
     ]
 
-    news_count = 0
-
-    for item in verified_news:
-        analysis = item.get(
-            "official_description_analysis",
-            {}
-        )
-
-        lines = analysis.get(
-            "news_lines",
-            []
-        )
-
-        translated_lines = []
-
-        for line in lines:
-            translated = translate_line(
-                item["game"],
-                line
-            )
-
-            if translated:
-                translated_lines.append(
-                    translated
-                )
-
-        if not translated_lines:
-            continue
-
-        news_count += 1
-
+    for index, item in enumerate(
+        news_items,
+        start=1
+    ):
         parts.append(
-            f"{news_count}. 🔥 {item['game']}"
+            f"{index}. 🔥 {item['game']}"
         )
 
-        for translated_line in translated_lines:
+        for text in item["texts"]:
             parts.append(
-                f"• {translated_line}"
+                f"• {text}"
             )
 
         parts.append("")
-
-    if news_count == 0:
-        return (
-            "🎮 Roblox Hub — утренняя сводка\n\n"
-            "Сегодня пока нет достаточно подтверждённых "
-            "свежих новостей.\n\n"
-            "Лучше без новости, чем с выдуманной 🙂\n\n"
-            "🎮 Roblox Hub"
-        )
 
     parts.append(
         "🎮 Roblox Hub"
     )
 
-    return "\n".join(parts)
+    return "\n".join(
+        parts
+    )
 
 
-post_text = build_russian_news()
+verified_news = load_json(
+    "verified_news.json",
+    []
+)
+
+best_news = get_best_news(
+    verified_news
+)
+
+post_text = build_post(
+    best_news
+)
 
 save_text(
     "generated_news_post_ru.txt",
     post_text
 )
 
+
+print(
+    f"Подходящих новостей: "
+    f"{len(best_news)}"
+)
+
+print()
 print("Готовый русский пост:")
 print()
 print(post_text)
