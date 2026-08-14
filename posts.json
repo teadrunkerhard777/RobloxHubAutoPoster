@@ -1,20 +1,11 @@
 [
   {
     "id": 1,
-    "publish_at": "2026-08-14T12:20:00+05:00",
-    "text": "⏰ Пост №1 по расписанию",
-    "published": true
-  },
-  {
-    "id": 2,
-    "publish_at": "2026-08-14T12:30:00+05:00",
-    "text": "🎮 Пост №2 по расписанию",
-    "published": true
-  },
-  {
-    "id": 3,
-    "publish_at": "2026-08-14T12:40:00+05:00",
-    "text": "🔥 Пост №3 по расписанию",
-    "published": true
+    "publish_at": "2026-08-14T13:06:00+05:00",
+    "text": "🎮 Тест нового статуса публикации",
+    "status": "pending",
+    "published_at": null,
+    "attempts": 0,
+    "last_error": null
   }
 ]

@@ -10,7 +10,6 @@ from dotenv import load_dotenv
 load_dotenv()
 
 token = os.getenv("TELEGRAM_BOT_TOKEN")
-
 url = f"https://api.telegram.org/bot{token}/sendMessage"
 
 
@@ -22,9 +21,10 @@ now = datetime.now().astimezone()
 
 posts_to_publish = []
 
+
 for post in posts:
 
-    if post["published"]:
+    if post["status"] == "published":
         continue
 
     publish_at = datetime.fromisoformat(post["publish_at"])
@@ -39,39 +39,54 @@ posts_to_publish.sort(
 
 
 if not posts_to_publish:
-    print("Сейчас нет просроченных постов.")
+    print("Сейчас нет постов для публикации.")
     raise SystemExit
 
 
-print(f"Найдено постов для публикации: {len(posts_to_publish)}")
+print(f"Найдено постов: {len(posts_to_publish)}")
 
 
 for post in posts_to_publish:
+
+    post["attempts"] += 1
+    post["last_error"] = None
 
     data = {
         "chat_id": "@RobloxHubRU",
         "text": post["text"]
     }
 
-    response = requests.post(
-        url,
-        data=data,
-        timeout=10
-    )
+    try:
 
-    print(
-        f"Пост #{post['id']}:",
-        response.status_code
-    )
+        response = requests.post(
+            url,
+            data=data,
+            timeout=10
+        )
 
-    response.raise_for_status()
+        print(
+            f"Пост #{post['id']}:",
+            response.status_code
+        )
 
-    post["published"] = True
+        response.raise_for_status()
 
-    print(
-        f"Пост #{post['id']} опубликован "
-        f"(план: {post['publish_at']})"
-    )
+        post["status"] = "published"
+        post["published_at"] = datetime.now().astimezone().isoformat()
+
+        print(
+            f"Пост #{post['id']} успешно опубликован."
+        )
+
+    except requests.RequestException as error:
+
+        post["status"] = "failed"
+        post["last_error"] = str(error)
+
+        print(
+            f"Ошибка публикации поста #{post['id']}:",
+            error
+        )
 
     time.sleep(3)
 
