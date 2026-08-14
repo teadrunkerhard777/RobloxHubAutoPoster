@@ -1,5 +1,6 @@
 import json
 import os
+import time
 import requests
 
 from datetime import datetime
@@ -19,7 +20,7 @@ with open("posts.json", "r", encoding="utf-8") as file:
 
 now = datetime.now().astimezone()
 
-post_to_publish = None
+posts_to_publish = []
 
 for post in posts:
 
@@ -29,37 +30,59 @@ for post in posts:
     publish_at = datetime.fromisoformat(post["publish_at"])
 
     if publish_at <= now:
-        post_to_publish = post
-        break
+        posts_to_publish.append(post)
 
 
-if post_to_publish is None:
-    print("Сейчас нет постов, время публикации которых уже наступило.")
+posts_to_publish.sort(
+    key=lambda post: datetime.fromisoformat(post["publish_at"])
+)
+
+
+if not posts_to_publish:
+    print("Сейчас нет просроченных постов.")
     raise SystemExit
 
 
-data = {
-    "chat_id": "@RobloxHubRU",
-    "text": post_to_publish["text"]
-}
+print(f"Найдено постов для публикации: {len(posts_to_publish)}")
 
 
-response = requests.post(url, data=data, timeout=10)
+for post in posts_to_publish:
 
-print("HTTP status:", response.status_code)
-print(response.json())
+    data = {
+        "chat_id": "@RobloxHubRU",
+        "text": post["text"]
+    }
 
-response.raise_for_status()
+    response = requests.post(
+        url,
+        data=data,
+        timeout=10
+    )
 
+    print(
+        f"Пост #{post['id']}:",
+        response.status_code
+    )
 
-post_to_publish["published"] = True
+    response.raise_for_status()
+
+    post["published"] = True
+
+    print(
+        f"Пост #{post['id']} опубликован "
+        f"(план: {post['publish_at']})"
+    )
+
+    time.sleep(3)
 
 
 with open("posts.json", "w", encoding="utf-8") as file:
-    json.dump(posts, file, ensure_ascii=False, indent=2)
+    json.dump(
+        posts,
+        file,
+        ensure_ascii=False,
+        indent=2
+    )
 
 
-print(
-    f"Пост #{post_to_publish['id']} опубликован "
-    f"по расписанию {post_to_publish['publish_at']}."
-)
+print("Очередь обновлена.")
