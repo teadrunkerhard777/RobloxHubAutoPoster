@@ -40,6 +40,11 @@ def save_json(filename, data):
         )
 
 
+def load_text(filename):
+    with open(filename, "r", encoding="utf-8") as file:
+        return file.read().strip()
+
+
 def remember_game(game):
     history = load_json("game_history.json")
 
@@ -104,6 +109,7 @@ def generate_myth_post():
 now = datetime.now(LOCAL_TIMEZONE)
 tomorrow = (now + timedelta(days=1)).date()
 
+news_text = load_text("generated_news_post.txt")
 myth_game, myth_text = generate_myth_post()
 
 
@@ -120,7 +126,7 @@ posts = [
         ),
         game="разные игры",
         rubric="Сводка новостей",
-        text="🎮 Roblox Hub — утренняя сводка новостей"
+        text=news_text
     ),
 
     build_post(
@@ -164,4 +170,5 @@ save_json(
 print("Очередь на завтра создана.")
 print(f"Дата: {tomorrow}")
 print(f"Количество постов: {len(posts)}")
+print("Новостная сводка загружена.")
 print(f"Миф или правда: {myth_game}")
