@@ -3,7 +3,7 @@ import os
 import time
 import requests
 
-from datetime import datetime
+from datetime import datetime, timezone, timedelta
 from dotenv import load_dotenv
 
 
@@ -12,12 +12,14 @@ load_dotenv()
 token = os.getenv("TELEGRAM_BOT_TOKEN")
 url = f"https://api.telegram.org/bot{token}/sendMessage"
 
+LOCAL_TIMEZONE = timezone(timedelta(hours=5))
+
 
 with open("posts.json", "r", encoding="utf-8") as file:
     posts = json.load(file)
 
 
-now = datetime.now().astimezone()
+now = datetime.now(LOCAL_TIMEZONE)
 
 posts_to_publish = []
 
@@ -43,7 +45,7 @@ if not posts_to_publish:
     raise SystemExit
 
 
-print(f"Найдено постов: {len(posts_to_publish)}")
+print(f"Найдено постов для публикации: {len(posts_to_publish)}")
 
 
 for post in posts_to_publish:
@@ -57,7 +59,6 @@ for post in posts_to_publish:
     }
 
     try:
-
         response = requests.post(
             url,
             data=data,
@@ -65,14 +66,17 @@ for post in posts_to_publish:
         )
 
         print(
-            f"Пост #{post['id']}:",
-            response.status_code
+            f"Пост #{post['id']}: "
+            f"HTTP {response.status_code}"
         )
 
         response.raise_for_status()
 
         post["status"] = "published"
-        post["published_at"] = datetime.now().astimezone().isoformat()
+
+        post["published_at"] = (
+            datetime.now(LOCAL_TIMEZONE).isoformat()
+        )
 
         print(
             f"Пост #{post['id']} успешно опубликован."
@@ -84,8 +88,8 @@ for post in posts_to_publish:
         post["last_error"] = str(error)
 
         print(
-            f"Ошибка публикации поста #{post['id']}:",
-            error
+            f"Ошибка публикации поста #{post['id']}: "
+            f"{error}"
         )
 
     time.sleep(3)
