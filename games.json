@@ -1,0 +1,52 @@
+[
+  {
+    "name": "Steal a Brainrot",
+    "universe_id": 7709344486,
+    "priority": true
+  },
+  {
+    "name": "99 Nights in the Forest",
+    "universe_id": 7326934954,
+    "priority": true
+  },
+  {
+    "name": "Blox Fruits",
+    "universe_id": 994732206,
+    "priority": false
+  },
+  {
+    "name": "Brookhaven",
+    "universe_id": 1686885941,
+    "priority": false
+  },
+  {
+    "name": "Adopt Me!",
+    "universe_id": 383310974,
+    "priority": false
+  },
+  {
+    "name": "RIVALS",
+    "universe_id": 6035872082,
+    "priority": false
+  },
+  {
+    "name": "Grow a Garden",
+    "universe_id": 7436755782,
+    "priority": false
+  },
+  {
+    "name": "Dress to Impress",
+    "universe_id": 5203828273,
+    "priority": false
+  },
+  {
+    "name": "Pet Simulator 99",
+    "universe_id": 3317771874,
+    "priority": false
+  },
+  {
+    "name": "Blade Ball",
+    "universe_id": 4777817887,
+    "priority": false
+  }
+]

@@ -5,7 +5,9 @@ from datetime import datetime, timedelta, timezone
 
 
 LOCAL_TIMEZONE = timezone(timedelta(hours=5))
-HISTORY_LIMIT = 3
+
+MYTH_HISTORY_LIMIT = 3
+GAME_HISTORY_LIMIT = 5
 
 
 def build_post(post_id, publish_at, game, rubric, text):
@@ -38,29 +40,51 @@ def save_json(filename, data):
         )
 
 
+def remember_game(game):
+    history = load_json("game_history.json")
+
+    history.append(game)
+
+    save_json(
+        "game_history.json",
+        history[-GAME_HISTORY_LIMIT:]
+    )
+
+
 def generate_myth_post():
     myths = load_json("myths.json")
-    history = load_json("myth_history.json")
+    myth_history = load_json("myth_history.json")
+    game_history = load_json("game_history.json")
 
-    recent_ids = history[-HISTORY_LIMIT:]
+    recent_myth_ids = myth_history[-MYTH_HISTORY_LIMIT:]
 
     available_myths = [
         myth
         for myth in myths
-        if myth["id"] not in recent_ids
+        if myth["id"] not in recent_myth_ids
+        and myth["game"] not in game_history
     ]
+
+    if not available_myths:
+        available_myths = [
+            myth
+            for myth in myths
+            if myth["id"] not in recent_myth_ids
+        ]
 
     if not available_myths:
         available_myths = myths
 
     myth = random.choice(available_myths)
 
-    history.append(myth["id"])
+    myth_history.append(myth["id"])
 
     save_json(
         "myth_history.json",
-        history[-HISTORY_LIMIT:]
+        myth_history[-MYTH_HISTORY_LIMIT:]
     )
+
+    remember_game(myth["game"])
 
     text = (
         "━━━━━━━━━━━━━━━━━━━━━\n"

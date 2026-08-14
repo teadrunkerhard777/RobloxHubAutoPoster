@@ -1,0 +1,41 @@
+[
+  {
+    "id": 7709344486,
+    "rootPlaceId": 109983668079237,
+    "name": "[🐝] Steal a Brainrot",
+    "description": "🗣️ Welcome to Steal a Brainrot!\n\n👍 Like the game and join the group\n\nHow to Play:\n👽 Buy a Brainrot\n🥷 Steal Brainrots from other players\n💸 Generate money\n🐦‍🔥 Rebirth\n✋ Buy slaps and troll gear to troll other players!\n\n💻 Supports Desktop, Mobile and Tablet players\n\n🙏 Credit to Chris for letting us use the Nyan Cat!\n🙏 Credit to @WinnersTakesAll for the backpack system!",
+    "sourceName": null,
+    "sourceDescription": null,
+    "creator": {
+      "id": 35815907,
+      "name": "BRAZILIAN SPYDER",
+      "type": "Group",
+      "isRNVAccount": false,
+      "hasVerifiedBadge": true
+    },
+    "price": null,
+    "allowedGearGenres": [
+      "All"
+    ],
+    "allowedGearCategories": [],
+    "isGenreEnforced": false,
+    "copyingAllowed": false,
+    "playing": 215212,
+    "visits": 72540230625,
+    "maxPlayers": 8,
+    "created": "2025-05-16T00:49:12.563Z",
+    "updated": "2026-08-13T18:47:56.8609872Z",
+    "studioAccessToApisAllowed": false,
+    "createVipServersAllowed": false,
+    "universeAvatarType": "MorphToR15",
+    "genre": "All",
+    "genre_l1": "Simulation",
+    "genre_l2": "Tycoon",
+    "untranslated_genre_l1": "simulation",
+    "isAllGenre": true,
+    "isFavoritedByUser": false,
+    "favoritedCount": 28990486,
+    "canonicalUrlPath": "/games/109983668079237/Steal-a-Brainrot",
+    "isContentRestricted": false
+  }
+]
