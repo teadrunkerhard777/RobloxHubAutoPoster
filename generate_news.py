@@ -263,49 +263,46 @@ def build_candidates(
         )
 
         candidate = {
-            "game": game["name"],
-            "universe_id": universe_id,
-            "updated_at": game["updated"],
+    "game": game["name"],
+    "universe_id": universe_id,
+    "updated_at": game["updated"],
 
-            "playing": game.get(
-                "playing"
-            ),
+    "creator": game.get("creator"),
 
-            "visits": game.get(
-                "visits"
-            ),
+    "playing": game.get("playing"),
+    "visits": game.get("visits"),
 
-            "description_changed":
-                description_changed,
+    "description_changed":
+        description_changed,
 
-            "previous_description":
-                previous_description,
+    "previous_description":
+        previous_description,
 
-            "current_description":
-                current_description,
+    "current_description":
+        current_description,
 
-            "added_lines":
-                added_lines,
+    "added_lines":
+        added_lines,
 
-            "keywords_in_added":
-                keywords_in_added,
+    "keywords_in_added":
+        keywords_in_added,
 
-            "keywords_in_description":
-                keywords_in_description,
+    "keywords_in_description":
+        keywords_in_description,
 
-            "score":
-                score,
+    "score":
+        score,
 
-            "confidence":
-                confidence,
+    "confidence":
+        confidence,
 
-            "sources": [
-                {
-                    "type": "roblox_api",
-                    "verified": True
-                }
-            ]
+    "sources": [
+        {
+            "type": "roblox_api",
+            "verified": True
         }
+    ]
+}
 
         candidates.append(
             candidate

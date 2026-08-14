@@ -21,14 +21,38 @@
       "UPDATE",
       "NEW"
     ],
-    "score": 3,
-    "confidence": "low",
+    "score": 5,
+    "confidence": "medium",
     "sources": [
       {
         "type": "roblox_api",
         "verified": true
+      },
+      {
+        "type": "official_game_description",
+        "verified": true
+      },
+      {
+        "type": "official_roblox_group",
+        "verified": true
       }
-    ]
+    ],
+    "official_description_analysis": {
+      "keywords": [
+        "UPDATE",
+        "NEW"
+      ],
+      "news_lines": [
+        "Latest Update:",
+        "🚀 Rocket Car - New vehicle with unique effects, sounds, and texture! Included with VIP."
+      ]
+    },
+    "official_group": {
+      "id": 3104358,
+      "name": "Brookhaven by Voldex",
+      "shout": "",
+      "keywords": []
+    }
   },
   {
     "game": "[6H⌛] Adopt Me!",
@@ -53,14 +77,40 @@
       "NEW",
       "PETS"
     ],
-    "score": 3,
-    "confidence": "low",
+    "score": 5,
+    "confidence": "medium",
     "sources": [
       {
         "type": "roblox_api",
         "verified": true
+      },
+      {
+        "type": "official_game_description",
+        "verified": true
+      },
+      {
+        "type": "official_roblox_group",
+        "verified": true
       }
-    ]
+    ],
+    "official_description_analysis": {
+      "keywords": [
+        "UPDATE",
+        "NEW",
+        "PETS"
+      ],
+      "news_lines": [
+        "Adopt and raise 🐶🦄👶, trade and collect legendary pets, build your dream home, and roleplay with friends!",
+        "Be FIRST 🏆 To experience new updates by pressing 🔔NOTIFY.",
+        "NewFissy - Tech Director"
+      ]
+    },
+    "official_group": {
+      "id": 295182,
+      "name": "Uplift Games",
+      "shout": "",
+      "keywords": []
+    }
   },
   {
     "game": "[🌴] Dress To Impress",
@@ -84,14 +134,37 @@
       "NEW",
       "ITEM"
     ],
-    "score": 3,
-    "confidence": "low",
+    "score": 5,
+    "confidence": "medium",
     "sources": [
       {
         "type": "roblox_api",
         "verified": true
+      },
+      {
+        "type": "official_game_description",
+        "verified": true
+      },
+      {
+        "type": "official_roblox_group",
+        "verified": true
       }
-    ]
+    ],
+    "official_description_analysis": {
+      "keywords": [
+        "NEW",
+        "ITEM"
+      ],
+      "news_lines": [
+        "👗 NEW ITEMS! Check them out."
+      ]
+    },
+    "official_group": {
+      "id": 17264167,
+      "name": "Dress To Impress Group",
+      "shout": "",
+      "keywords": []
+    }
   },
   {
     "game": "🎉 [PIÑATA MAZE] Pet Simulator 99! 🔥",
@@ -114,14 +187,37 @@
     "keywords_in_description": [
       "PETS"
     ],
-    "score": 3,
-    "confidence": "low",
+    "score": 5,
+    "confidence": "medium",
     "sources": [
       {
         "type": "roblox_api",
         "verified": true
+      },
+      {
+        "type": "official_game_description",
+        "verified": true
+      },
+      {
+        "type": "official_roblox_group",
+        "verified": true
       }
-    ]
+    ],
+    "official_description_analysis": {
+      "keywords": [
+        "PETS"
+      ],
+      "news_lines": [
+        "Create an army of the coolest pets! They will help you get RICH!",
+        "✨ Currently 2,000+ pets to collect! 🐾"
+      ]
+    },
+    "official_group": {
+      "id": 3959677,
+      "name": "BIG Games Pets",
+      "shout": "",
+      "keywords": []
+    }
   },
   {
     "game": "[🐝] Steal a Brainrot",
@@ -148,8 +244,22 @@
       {
         "type": "roblox_api",
         "verified": true
+      },
+      {
+        "type": "official_roblox_group",
+        "verified": true
       }
-    ]
+    ],
+    "official_description_analysis": {
+      "keywords": [],
+      "news_lines": []
+    },
+    "official_group": {
+      "id": 35815907,
+      "name": "BRAZILIAN SPYDER",
+      "shout": "",
+      "keywords": []
+    }
   },
   {
     "game": "[🦉] Grow a Garden 🌶️",
@@ -176,7 +286,21 @@
       {
         "type": "roblox_api",
         "verified": true
+      },
+      {
+        "type": "official_roblox_group",
+        "verified": true
       }
-    ]
+    ],
+    "official_description_analysis": {
+      "keywords": [],
+      "news_lines": []
+    },
+    "official_group": {
+      "id": 35789249,
+      "name": "The Garden Game",
+      "shout": "",
+      "keywords": []
+    }
   }
 ]

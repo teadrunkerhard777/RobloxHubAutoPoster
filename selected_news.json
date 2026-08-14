@@ -1,0 +1,122 @@
+[
+  {
+    "game": "Brookhaven 🏡RP",
+    "universe_id": 1686885941,
+    "updated_at": "2026-08-13T14:51:24.5540932Z",
+    "score": 3,
+    "confidence": "low",
+    "selection_status": "weak",
+    "description_changed": false,
+    "added_lines": [],
+    "keywords_in_added": [],
+    "keywords_in_description": [
+      "UPDATE",
+      "NEW"
+    ],
+    "sources": [
+      {
+        "type": "roblox_api",
+        "verified": true
+      }
+    ]
+  },
+  {
+    "game": "[6H⌛] Adopt Me!",
+    "universe_id": 383310974,
+    "updated_at": "2026-08-14T09:00:02.0968505Z",
+    "score": 3,
+    "confidence": "low",
+    "selection_status": "weak",
+    "description_changed": false,
+    "added_lines": [],
+    "keywords_in_added": [],
+    "keywords_in_description": [
+      "UPDATE",
+      "NEW",
+      "PETS"
+    ],
+    "sources": [
+      {
+        "type": "roblox_api",
+        "verified": true
+      }
+    ]
+  },
+  {
+    "game": "[🌴] Dress To Impress",
+    "universe_id": 5203828273,
+    "updated_at": "2026-08-14T02:54:32.8612621Z",
+    "score": 3,
+    "confidence": "low",
+    "selection_status": "weak",
+    "description_changed": false,
+    "added_lines": [],
+    "keywords_in_added": [],
+    "keywords_in_description": [
+      "NEW",
+      "ITEM"
+    ],
+    "sources": [
+      {
+        "type": "roblox_api",
+        "verified": true
+      }
+    ]
+  },
+  {
+    "game": "🎉 [PIÑATA MAZE] Pet Simulator 99! 🔥",
+    "universe_id": 3317771874,
+    "updated_at": "2026-08-14T06:33:24.981267Z",
+    "score": 3,
+    "confidence": "low",
+    "selection_status": "weak",
+    "description_changed": false,
+    "added_lines": [],
+    "keywords_in_added": [],
+    "keywords_in_description": [
+      "PETS"
+    ],
+    "sources": [
+      {
+        "type": "roblox_api",
+        "verified": true
+      }
+    ]
+  },
+  {
+    "game": "[🐝] Steal a Brainrot",
+    "universe_id": 7709344486,
+    "updated_at": "2026-08-13T18:47:56.8609872Z",
+    "score": 2,
+    "confidence": "low",
+    "selection_status": "weak",
+    "description_changed": false,
+    "added_lines": [],
+    "keywords_in_added": [],
+    "keywords_in_description": [],
+    "sources": [
+      {
+        "type": "roblox_api",
+        "verified": true
+      }
+    ]
+  },
+  {
+    "game": "[🦉] Grow a Garden 🌶️",
+    "universe_id": 7436755782,
+    "updated_at": "2026-08-13T23:23:17.7104991Z",
+    "score": 2,
+    "confidence": "low",
+    "selection_status": "weak",
+    "description_changed": false,
+    "added_lines": [],
+    "keywords_in_added": [],
+    "keywords_in_description": [],
+    "sources": [
+      {
+        "type": "roblox_api",
+        "verified": true
+      }
+    ]
+  }
+]
