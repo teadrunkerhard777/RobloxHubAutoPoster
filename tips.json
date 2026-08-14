@@ -1,0 +1,1082 @@
+[
+  {
+    "id": 1,
+    "game": "99 Nights in the Forest",
+    "type": "Совет",
+    "text": "В начале забега сначала подкинь топливо в костёр, а уже потом уходи далеко за ресурсами.",
+    "source": "verified_core_mechanic",
+    "reviewed_at": "2026-08-14",
+    "used": false
+  },
+  {
+    "id": 2,
+    "game": "99 Nights in the Forest",
+    "type": "Совет",
+    "text": "Не трать всё дерево на костёр: часть древесины пригодится для крафта и развития лагеря.",
+    "source": "verified_core_mechanic",
+    "reviewed_at": "2026-08-14",
+    "used": false
+  },
+  {
+    "id": 3,
+    "game": "99 Nights in the Forest",
+    "type": "Совет",
+    "text": "Следи за уровнем костра: его улучшение расширяет безопасную зону и помогает продвигаться дальше.",
+    "source": "verified_core_mechanic",
+    "reviewed_at": "2026-08-14",
+    "used": false
+  },
+  {
+    "id": 4,
+    "game": "99 Nights in the Forest",
+    "type": "Совет",
+    "text": "Перед наступлением ночи лучше заранее вернуться ближе к лагерю, если у тебя мало света и лечения.",
+    "source": "verified_core_mechanic",
+    "reviewed_at": "2026-08-14",
+    "used": false
+  },
+  {
+    "id": 5,
+    "game": "99 Nights in the Forest",
+    "type": "Совет",
+    "text": "Обыскивай здания днём: там можно найти полезные предметы и топливо, не тратя время ночью.",
+    "source": "verified_core_mechanic",
+    "reviewed_at": "2026-08-14",
+    "used": false
+  },
+  {
+    "id": 6,
+    "game": "99 Nights in the Forest",
+    "type": "Совет",
+    "text": "Карта полезна не только новичкам: с ней проще планировать длинные вылазки и возвращаться к лагерю.",
+    "source": "verified_core_mechanic",
+    "reviewed_at": "2026-08-14",
+    "used": false
+  },
+  {
+    "id": 7,
+    "game": "99 Nights in the Forest",
+    "type": "Совет",
+    "text": "Храни несколько лечащих предметов на случай, если придётся поднимать товарища после тяжёлой атаки.",
+    "source": "verified_core_mechanic",
+    "reviewed_at": "2026-08-14",
+    "used": false
+  },
+  {
+    "id": 8,
+    "game": "99 Nights in the Forest",
+    "type": "Совет",
+    "text": "В команде разделяйте роли: один собирает топливо, другой исследует, третий занимается лагерем — так прогресс идёт быстрее.",
+    "source": "verified_core_mechanic",
+    "reviewed_at": "2026-08-14",
+    "used": false
+  },
+  {
+    "id": 9,
+    "game": "99 Nights in the Forest",
+    "type": "Совет",
+    "text": "Не вырубай все деревья рядом с лагерем бездумно: древесина нужна на протяжении всего забега.",
+    "source": "verified_core_mechanic",
+    "reviewed_at": "2026-08-14",
+    "used": false
+  },
+  {
+    "id": 10,
+    "game": "99 Nights in the Forest",
+    "type": "Совет",
+    "text": "Если используешь приручаемых животных, развивай Taming Flute — более сильные союзники полезнее в поздних ночах.",
+    "source": "verified_core_mechanic",
+    "reviewed_at": "2026-08-14",
+    "used": false
+  },
+  {
+    "id": 11,
+    "game": "99 Nights in the Forest",
+    "type": "Совет",
+    "text": "Не считай костёр абсолютной защитой: некоторые угрозы всё равно могут добраться до лагеря.",
+    "source": "verified_core_mechanic",
+    "reviewed_at": "2026-08-14",
+    "used": false
+  },
+  {
+    "id": 12,
+    "game": "99 Nights in the Forest",
+    "type": "Совет",
+    "text": "Перед длинной вылазкой проверь три вещи: еда, источник света и свободное место для добычи.",
+    "source": "verified_core_mechanic",
+    "reviewed_at": "2026-08-14",
+    "used": false
+  },
+  {
+    "id": 13,
+    "game": "Steal a Brainrot",
+    "type": "Совет",
+    "text": "Закрывай базу вовремя: открытая база — самый простой шанс для соперника унести Brainrot.",
+    "source": "verified_core_mechanic",
+    "reviewed_at": "2026-08-14",
+    "used": false
+  },
+  {
+    "id": 14,
+    "game": "Steal a Brainrot",
+    "type": "Совет",
+    "text": "Не уходи далеко от базы сразу после снятия защиты — сначала проверь, кто находится рядом.",
+    "source": "verified_core_mechanic",
+    "reviewed_at": "2026-08-14",
+    "used": false
+  },
+  {
+    "id": 15,
+    "game": "Steal a Brainrot",
+    "type": "Совет",
+    "text": "Чем больше доход приносит Brainrot, тем внимательнее стоит следить за его безопасностью.",
+    "source": "verified_core_mechanic",
+    "reviewed_at": "2026-08-14",
+    "used": false
+  },
+  {
+    "id": 16,
+    "game": "Steal a Brainrot",
+    "type": "Совет",
+    "text": "При краже соперник становится уязвимее, поэтому защищать базу лучше активно, а не просто наблюдать.",
+    "source": "verified_core_mechanic",
+    "reviewed_at": "2026-08-14",
+    "used": false
+  },
+  {
+    "id": 17,
+    "game": "Steal a Brainrot",
+    "type": "Совет",
+    "text": "Не делай Rebirth, пока не готов потерять текущие деньги и Brainrot: это обмен прогресса на постоянные улучшения.",
+    "source": "verified_core_mechanic",
+    "reviewed_at": "2026-08-14",
+    "used": false
+  },
+  {
+    "id": 18,
+    "game": "Steal a Brainrot",
+    "type": "Совет",
+    "text": "Rebirth полезен в долгой игре: он открывает дополнительные улучшения, слоты и усиливает дальнейший заработок.",
+    "source": "verified_core_mechanic",
+    "reviewed_at": "2026-08-14",
+    "used": false
+  },
+  {
+    "id": 19,
+    "game": "Steal a Brainrot",
+    "type": "Совет",
+    "text": "Перед Rebirth проверь требования заранее, чтобы не продавать и не терять нужных Brainrot по ошибке.",
+    "source": "verified_core_mechanic",
+    "reviewed_at": "2026-08-14",
+    "used": false
+  },
+  {
+    "id": 20,
+    "game": "Steal a Brainrot",
+    "type": "Совет",
+    "text": "Хорошая защита базы важна не меньше высокого дохода: редкий Brainrot бесполезен, если его сразу украдут.",
+    "source": "verified_core_mechanic",
+    "reviewed_at": "2026-08-14",
+    "used": false
+  },
+  {
+    "id": 21,
+    "game": "Steal a Brainrot",
+    "type": "Совет",
+    "text": "Если видишь открытую чужую базу, сначала оцени путь назад — украсть Brainrot мало, его ещё нужно донести.",
+    "source": "verified_core_mechanic",
+    "reviewed_at": "2026-08-14",
+    "used": false
+  },
+  {
+    "id": 22,
+    "game": "Steal a Brainrot",
+    "type": "Совет",
+    "text": "Используй защитное снаряжение и slaps тогда, когда соперник действительно несёт ценный Brainrot, а не впустую.",
+    "source": "verified_core_mechanic",
+    "reviewed_at": "2026-08-14",
+    "used": false
+  },
+  {
+    "id": 23,
+    "game": "Steal a Brainrot",
+    "type": "Совет",
+    "text": "После расширения базы размещай самые ценные Brainrot так, чтобы до них было сложнее добраться.",
+    "source": "verified_core_mechanic",
+    "reviewed_at": "2026-08-14",
+    "used": false
+  },
+  {
+    "id": 24,
+    "game": "Steal a Brainrot",
+    "type": "Совет",
+    "text": "Не гоняйся только за редкостью: сравнивай, насколько конкретный Brainrot улучшает твой доход.",
+    "source": "verified_core_mechanic",
+    "reviewed_at": "2026-08-14",
+    "used": false
+  },
+  {
+    "id": 25,
+    "game": "Blox Fruits",
+    "type": "Совет",
+    "text": "Не трать всё время на случайный поиск фруктов: Blox Fruits Dealer регулярно обновляет ассортимент.",
+    "source": "verified_core_mechanic",
+    "reviewed_at": "2026-08-14",
+    "used": false
+  },
+  {
+    "id": 26,
+    "game": "Blox Fruits",
+    "type": "Совет",
+    "text": "Если ждёшь фрукт на карте, помни, что найденный фрукт не лежит бесконечно — проверяй места появления вовремя.",
+    "source": "verified_core_mechanic",
+    "reviewed_at": "2026-08-14",
+    "used": false
+  },
+  {
+    "id": 27,
+    "game": "Blox Fruits",
+    "type": "Совет",
+    "text": "На старте выгоднее сосредоточиться на прокачке одного основного стиля боя, а не распыляться на всё сразу.",
+    "source": "verified_core_mechanic",
+    "reviewed_at": "2026-08-14",
+    "used": false
+  },
+  {
+    "id": 28,
+    "game": "Blox Fruits",
+    "type": "Совет",
+    "text": "Перед переходом в более опасные зоны убедись, что текущие враги уже не требуют слишком много времени на победу.",
+    "source": "verified_core_mechanic",
+    "reviewed_at": "2026-08-14",
+    "used": false
+  },
+  {
+    "id": 29,
+    "game": "Blox Fruits",
+    "type": "Совет",
+    "text": "Квесты помогают направлять прокачку: бери задания на противников, которых ты и так собираешься побеждать.",
+    "source": "verified_core_mechanic",
+    "reviewed_at": "2026-08-14",
+    "used": false
+  },
+  {
+    "id": 30,
+    "game": "Blox Fruits",
+    "type": "Совет",
+    "text": "Не выбирай фрукт только по редкости — удобство для прокачки и твой стиль игры тоже важны.",
+    "source": "verified_core_mechanic",
+    "reviewed_at": "2026-08-14",
+    "used": false
+  },
+  {
+    "id": 31,
+    "game": "Blox Fruits",
+    "type": "Совет",
+    "text": "Если используешь фрукт для фарма, обращай внимание на атаки по площади: ими проще справляться с группами врагов.",
+    "source": "verified_core_mechanic",
+    "reviewed_at": "2026-08-14",
+    "used": false
+  },
+  {
+    "id": 32,
+    "game": "Blox Fruits",
+    "type": "Совет",
+    "text": "Боссов удобнее атаковать подготовленным: сначала восстанови здоровье и проверь откаты способностей.",
+    "source": "verified_core_mechanic",
+    "reviewed_at": "2026-08-14",
+    "used": false
+  },
+  {
+    "id": 33,
+    "game": "Blox Fruits",
+    "type": "Совет",
+    "text": "Во время путешествий между островами запоминай удобные маршруты — это экономит много времени на повторных квестах.",
+    "source": "verified_core_mechanic",
+    "reviewed_at": "2026-08-14",
+    "used": false
+  },
+  {
+    "id": 34,
+    "game": "Blox Fruits",
+    "type": "Совет",
+    "text": "Перед заменой текущего фрукта подумай дважды: новый фрукт может быть редким, но хуже подходить твоей прокачке.",
+    "source": "verified_core_mechanic",
+    "reviewed_at": "2026-08-14",
+    "used": false
+  },
+  {
+    "id": 35,
+    "game": "Blox Fruits",
+    "type": "Совет",
+    "text": "Следи за ассортиментом Dealer, если ищешь конкретный фрукт: ждать случайного появления на карте не всегда выгодно.",
+    "source": "verified_core_mechanic",
+    "reviewed_at": "2026-08-14",
+    "used": false
+  },
+  {
+    "id": 36,
+    "game": "Blox Fruits",
+    "type": "Совет",
+    "text": "Не пытайся прокачивать всё одновременно — цель вроде уровня, нового моря или конкретного предмета ускоряет прогресс.",
+    "source": "verified_core_mechanic",
+    "reviewed_at": "2026-08-14",
+    "used": false
+  },
+  {
+    "id": 37,
+    "game": "Brookhaven",
+    "type": "Совет",
+    "text": "Перед ролевой сценой договоритесь, кто кем играет — так история не развалится через пару минут.",
+    "source": "verified_core_mechanic",
+    "reviewed_at": "2026-08-14",
+    "used": false
+  },
+  {
+    "id": 38,
+    "game": "Brookhaven",
+    "type": "Совет",
+    "text": "Используй дома не только как декорацию: разные комнаты помогают делать ролевые сцены понятнее.",
+    "source": "verified_core_mechanic",
+    "reviewed_at": "2026-08-14",
+    "used": false
+  },
+  {
+    "id": 39,
+    "game": "Brookhaven",
+    "type": "Совет",
+    "text": "Если играете компанией, заранее выберите место встречи, чтобы не искать друг друга по всему городу.",
+    "source": "verified_core_mechanic",
+    "reviewed_at": "2026-08-14",
+    "used": false
+  },
+  {
+    "id": 40,
+    "game": "Brookhaven",
+    "type": "Совет",
+    "text": "Машины удобны для ролевых историй, но для коротких сцен иногда быстрее выбрать локацию рядом.",
+    "source": "verified_core_mechanic",
+    "reviewed_at": "2026-08-14",
+    "used": false
+  },
+  {
+    "id": 41,
+    "game": "Brookhaven",
+    "type": "Совет",
+    "text": "Попробуй менять профессии в разных историях: полиция, врач или пожарный дают совсем разные сценарии.",
+    "source": "verified_core_mechanic",
+    "reviewed_at": "2026-08-14",
+    "used": false
+  },
+  {
+    "id": 42,
+    "game": "Brookhaven",
+    "type": "Совет",
+    "text": "Не обязательно постоянно искать секреты — Brookhaven хорошо работает как конструктор собственных историй.",
+    "source": "verified_core_mechanic",
+    "reviewed_at": "2026-08-14",
+    "used": false
+  },
+  {
+    "id": 43,
+    "game": "Brookhaven",
+    "type": "Совет",
+    "text": "Если создаёшь длинную ролевую игру, придумай простую цель: расследование, поездка, переезд или спасательная операция.",
+    "source": "verified_core_mechanic",
+    "reviewed_at": "2026-08-14",
+    "used": false
+  },
+  {
+    "id": 44,
+    "game": "Brookhaven",
+    "type": "Совет",
+    "text": "Используй внешний вид персонажа под роль — даже небольшая смена одежды делает сцену понятнее другим игрокам.",
+    "source": "verified_core_mechanic",
+    "reviewed_at": "2026-08-14",
+    "used": false
+  },
+  {
+    "id": 45,
+    "game": "Brookhaven",
+    "type": "Совет",
+    "text": "В приватном сервере удобнее проводить сложные сценки, потому что хозяин может лучше контролировать окружение.",
+    "source": "verified_core_mechanic",
+    "reviewed_at": "2026-08-14",
+    "used": false
+  },
+  {
+    "id": 46,
+    "game": "Brookhaven",
+    "type": "Совет",
+    "text": "Для групповой игры распределяйте транспорт: так меньше игроков остаются без места и сцена начинается быстрее.",
+    "source": "verified_core_mechanic",
+    "reviewed_at": "2026-08-14",
+    "used": false
+  },
+  {
+    "id": 47,
+    "game": "Brookhaven",
+    "type": "Совет",
+    "text": "Сначала выбери локацию, а уже потом придумывай детали истории — окружение часто само подсказывает сюжет.",
+    "source": "verified_core_mechanic",
+    "reviewed_at": "2026-08-14",
+    "used": false
+  },
+  {
+    "id": 48,
+    "game": "Brookhaven",
+    "type": "Совет",
+    "text": "Если в ролевой игре слишком много участников, разделите её на небольшие команды с отдельными задачами.",
+    "source": "verified_core_mechanic",
+    "reviewed_at": "2026-08-14",
+    "used": false
+  },
+  {
+    "id": 49,
+    "game": "Adopt Me!",
+    "type": "Совет",
+    "text": "Перед обменом внимательно проверяй финальное окно трейда и все предметы — не торопись подтверждать сделку.",
+    "source": "verified_core_mechanic",
+    "reviewed_at": "2026-08-14",
+    "used": false
+  },
+  {
+    "id": 50,
+    "game": "Adopt Me!",
+    "type": "Совет",
+    "text": "Не оценивай питомца только по внешнему виду: редкость и спрос игроков тоже влияют на обмены.",
+    "source": "verified_core_mechanic",
+    "reviewed_at": "2026-08-14",
+    "used": false
+  },
+  {
+    "id": 51,
+    "game": "Adopt Me!",
+    "type": "Совет",
+    "text": "Если собираешь коллекцию, заранее выбери цель — так проще не тратить ресурсы на случайные обмены.",
+    "source": "verified_core_mechanic",
+    "reviewed_at": "2026-08-14",
+    "used": false
+  },
+  {
+    "id": 52,
+    "game": "Adopt Me!",
+    "type": "Совет",
+    "text": "Дом можно использовать не только для красоты: продуманная планировка делает ролевые сцены удобнее.",
+    "source": "verified_core_mechanic",
+    "reviewed_at": "2026-08-14",
+    "used": false
+  },
+  {
+    "id": 53,
+    "game": "Adopt Me!",
+    "type": "Совет",
+    "text": "При обменах лучше отказаться от сделки, которую ты не понимаешь, чем соглашаться из-за спешки.",
+    "source": "verified_core_mechanic",
+    "reviewed_at": "2026-08-14",
+    "used": false
+  },
+  {
+    "id": 54,
+    "game": "Adopt Me!",
+    "type": "Совет",
+    "text": "Сравнивай предложения нескольких игроков, если обмениваешь ценного питомца.",
+    "source": "verified_core_mechanic",
+    "reviewed_at": "2026-08-14",
+    "used": false
+  },
+  {
+    "id": 55,
+    "game": "Adopt Me!",
+    "type": "Совет",
+    "text": "Не передавай питомцев незнакомцам по обещанию вернуть их позже — используй обычную систему обмена.",
+    "source": "verified_core_mechanic",
+    "reviewed_at": "2026-08-14",
+    "used": true
+  },
+  {
+    "id": 56,
+    "game": "Adopt Me!",
+    "type": "Совет",
+    "text": "Для ролевой игры с друзьями заранее решите, кто заботится о питомцах, а кто отвечает за дом или поездки.",
+    "source": "verified_core_mechanic",
+    "reviewed_at": "2026-08-14",
+    "used": false
+  },
+  {
+    "id": 57,
+    "game": "Adopt Me!",
+    "type": "Совет",
+    "text": "Если хочется быстрее собрать коллекцию, веди для себя список питомцев, которых уже имеешь и которых ищешь.",
+    "source": "verified_core_mechanic",
+    "reviewed_at": "2026-08-14",
+    "used": false
+  },
+  {
+    "id": 58,
+    "game": "Adopt Me!",
+    "type": "Совет",
+    "text": "Не соглашайся на обмен только потому, что другой игрок пишет «быстро» или «последний шанс».",
+    "source": "verified_core_mechanic",
+    "reviewed_at": "2026-08-14",
+    "used": false
+  },
+  {
+    "id": 59,
+    "game": "Adopt Me!",
+    "type": "Совет",
+    "text": "Новые события могут временно менять доступные награды, поэтому перед тратой валюты проверь, что именно сейчас можно получить.",
+    "source": "verified_core_mechanic",
+    "reviewed_at": "2026-08-14",
+    "used": false
+  },
+  {
+    "id": 60,
+    "game": "Adopt Me!",
+    "type": "Совет",
+    "text": "Хорошая коллекция строится постепенно: безопасные обмены важнее одной рискованной попытки получить редкого питомца.",
+    "source": "verified_core_mechanic",
+    "reviewed_at": "2026-08-14",
+    "used": false
+  },
+  {
+    "id": 61,
+    "game": "RIVALS",
+    "type": "Совет",
+    "text": "В RIVALS побеждает не только меткость: движение и выбор момента для атаки часто решают дуэль.",
+    "source": "verified_core_mechanic",
+    "reviewed_at": "2026-08-14",
+    "used": false
+  },
+  {
+    "id": 62,
+    "game": "RIVALS",
+    "type": "Совет",
+    "text": "В дуэлях до пяти побед не сдавайся после проигранного раунда — у тебя есть время изменить тактику.",
+    "source": "verified_core_mechanic",
+    "reviewed_at": "2026-08-14",
+    "used": false
+  },
+  {
+    "id": 63,
+    "game": "RIVALS",
+    "type": "Совет",
+    "text": "Используй тренировочные раунды, чтобы понять отдачу и удобство оружия до серьёзных матчей.",
+    "source": "verified_core_mechanic",
+    "reviewed_at": "2026-08-14",
+    "used": false
+  },
+  {
+    "id": 64,
+    "game": "RIVALS",
+    "type": "Совет",
+    "text": "Не выбегай на один и тот же угол одинаково несколько раундов подряд — соперник быстро это запомнит.",
+    "source": "verified_core_mechanic",
+    "reviewed_at": "2026-08-14",
+    "used": false
+  },
+  {
+    "id": 65,
+    "game": "RIVALS",
+    "type": "Совет",
+    "text": "Слушай звуки и следи за направлением противника: информация иногда полезнее лишнего выстрела.",
+    "source": "verified_core_mechanic",
+    "reviewed_at": "2026-08-14",
+    "used": false
+  },
+  {
+    "id": 66,
+    "game": "RIVALS",
+    "type": "Совет",
+    "text": "Если оружие не подходит твоему стилю, не держись за него только из-за редкости или внешнего вида.",
+    "source": "verified_core_mechanic",
+    "reviewed_at": "2026-08-14",
+    "used": false
+  },
+  {
+    "id": 67,
+    "game": "RIVALS",
+    "type": "Совет",
+    "text": "В командных матчах 2v2–5v5 держись достаточно близко к союзникам, чтобы вы могли помогать друг другу.",
+    "source": "verified_core_mechanic",
+    "reviewed_at": "2026-08-14",
+    "used": false
+  },
+  {
+    "id": 68,
+    "game": "RIVALS",
+    "type": "Совет",
+    "text": "Контракты дают дополнительную цель на матч — проверяй их, чтобы прогрессировать параллельно с обычной игрой.",
+    "source": "verified_core_mechanic",
+    "reviewed_at": "2026-08-14",
+    "used": false
+  },
+  {
+    "id": 69,
+    "game": "RIVALS",
+    "type": "Совет",
+    "text": "Ключи используются для открытия оружия и скинов, поэтому не трать их без понимания, что хочешь получить.",
+    "source": "verified_core_mechanic",
+    "reviewed_at": "2026-08-14",
+    "used": false
+  },
+  {
+    "id": 70,
+    "game": "RIVALS",
+    "type": "Совет",
+    "text": "После поражения попробуй определить одну причину: позиция, прицеливание или слишком рискованный выход.",
+    "source": "verified_core_mechanic",
+    "reviewed_at": "2026-08-14",
+    "used": false
+  },
+  {
+    "id": 71,
+    "game": "RIVALS",
+    "type": "Совет",
+    "text": "Не стреляй без необходимости, если противник ещё не заметил тебя — неожиданная атака может дать преимущество.",
+    "source": "verified_core_mechanic",
+    "reviewed_at": "2026-08-14",
+    "used": false
+  },
+  {
+    "id": 72,
+    "game": "RIVALS",
+    "type": "Совет",
+    "text": "Серия побед приятна, но не меняй рабочую тактику только ради более эффектной игры.",
+    "source": "verified_core_mechanic",
+    "reviewed_at": "2026-08-14",
+    "used": false
+  },
+  {
+    "id": 73,
+    "game": "Grow a Garden",
+    "type": "Совет",
+    "text": "Проверяй магазин семян после пополнения: нужные семена могут быть доступны не постоянно.",
+    "source": "verified_core_mechanic",
+    "reviewed_at": "2026-08-14",
+    "used": false
+  },
+  {
+    "id": 74,
+    "game": "Grow a Garden",
+    "type": "Совет",
+    "text": "Сажай семена только на коричневых участках своей фермы — именно они предназначены для посадки.",
+    "source": "verified_core_mechanic",
+    "reviewed_at": "2026-08-14",
+    "used": false
+  },
+  {
+    "id": 75,
+    "game": "Grow a Garden",
+    "type": "Совет",
+    "text": "Не переживай, если выходишь из игры: сад продолжает расти, пока тебя нет онлайн.",
+    "source": "verified_core_mechanic",
+    "reviewed_at": "2026-08-14",
+    "used": false
+  },
+  {
+    "id": 76,
+    "game": "Grow a Garden",
+    "type": "Совет",
+    "text": "Перед выходом посади то, что хочешь собрать позже — офлайн-рост можно использовать в свою пользу.",
+    "source": "verified_core_mechanic",
+    "reviewed_at": "2026-08-14",
+    "used": false
+  },
+  {
+    "id": 77,
+    "game": "Grow a Garden",
+    "type": "Совет",
+    "text": "Не трать все деньги сразу после сбора урожая: оставляй запас на хорошие семена после следующего restock.",
+    "source": "verified_core_mechanic",
+    "reviewed_at": "2026-08-14",
+    "used": false
+  },
+  {
+    "id": 78,
+    "game": "Grow a Garden",
+    "type": "Совет",
+    "text": "Если у тебя несколько видов растений, оставляй достаточно свободного места для новых посадок.",
+    "source": "verified_core_mechanic",
+    "reviewed_at": "2026-08-14",
+    "used": false
+  },
+  {
+    "id": 79,
+    "game": "Grow a Garden",
+    "type": "Совет",
+    "text": "Сначала собирай полностью выросшие растения, а уже потом решай, куда вложить прибыль.",
+    "source": "verified_core_mechanic",
+    "reviewed_at": "2026-08-14",
+    "used": false
+  },
+  {
+    "id": 80,
+    "game": "Grow a Garden",
+    "type": "Совет",
+    "text": "Планируй покупки семян по бюджету: дорогая покупка не всегда выгодна, если после неё нечего будет сажать.",
+    "source": "verified_core_mechanic",
+    "reviewed_at": "2026-08-14",
+    "used": false
+  },
+  {
+    "id": 81,
+    "game": "Grow a Garden",
+    "type": "Совет",
+    "text": "Регулярно возвращайся к саду после перерыва — офлайн-рост может подготовить большой урожай.",
+    "source": "verified_core_mechanic",
+    "reviewed_at": "2026-08-14",
+    "used": false
+  },
+  {
+    "id": 82,
+    "game": "Grow a Garden",
+    "type": "Совет",
+    "text": "Не заполняй участок случайными семенами только потому, что они есть в магазине — оставляй место под более желанные.",
+    "source": "verified_core_mechanic",
+    "reviewed_at": "2026-08-14",
+    "used": false
+  },
+  {
+    "id": 83,
+    "game": "Grow a Garden",
+    "type": "Совет",
+    "text": "Цикл игры простой: купить семена → посадить → дождаться роста → собрать → вложить прибыль. Не пропускай последний шаг.",
+    "source": "verified_core_mechanic",
+    "reviewed_at": "2026-08-14",
+    "used": false
+  },
+  {
+    "id": 84,
+    "game": "Grow a Garden",
+    "type": "Совет",
+    "text": "Если играешь недолго, сделай посадки перед выходом: следующая сессия начнётся уже с выросшего сада.",
+    "source": "verified_core_mechanic",
+    "reviewed_at": "2026-08-14",
+    "used": false
+  },
+  {
+    "id": 85,
+    "game": "Dress To Impress",
+    "type": "Совет",
+    "text": "Сначала прочитай тему раунда, а уже потом выбирай одежду — красивый образ не всегда подходит заданию.",
+    "source": "verified_core_mechanic",
+    "reviewed_at": "2026-08-14",
+    "used": false
+  },
+  {
+    "id": 86,
+    "game": "Dress To Impress",
+    "type": "Совет",
+    "text": "Лучше один понятный образ по теме, чем много случайных дорогих или ярких вещей.",
+    "source": "verified_core_mechanic",
+    "reviewed_at": "2026-08-14",
+    "used": false
+  },
+  {
+    "id": 87,
+    "game": "Dress To Impress",
+    "type": "Совет",
+    "text": "Используй позы на подиуме, чтобы показать детали образа, которые плохо заметны в обычной стойке.",
+    "source": "verified_core_mechanic",
+    "reviewed_at": "2026-08-14",
+    "used": false
+  },
+  {
+    "id": 88,
+    "game": "Dress To Impress",
+    "type": "Совет",
+    "text": "Не трать всё время на одну деталь: оставь несколько секунд перед показом, чтобы проверить весь образ целиком.",
+    "source": "verified_core_mechanic",
+    "reviewed_at": "2026-08-14",
+    "used": false
+  },
+  {
+    "id": 89,
+    "game": "Dress To Impress",
+    "type": "Совет",
+    "text": "Цвета помогают связать вещи в единый комплект — выбери 2–3 основных оттенка и строй образ вокруг них.",
+    "source": "verified_core_mechanic",
+    "reviewed_at": "2026-08-14",
+    "used": false
+  },
+  {
+    "id": 90,
+    "game": "Dress To Impress",
+    "type": "Совет",
+    "text": "Перед голосованием внимательно посмотри, насколько чужой образ соответствует теме, а не только насколько он яркий.",
+    "source": "verified_core_mechanic",
+    "reviewed_at": "2026-08-14",
+    "used": false
+  },
+  {
+    "id": 91,
+    "game": "Dress To Impress",
+    "type": "Совет",
+    "text": "Если тема непонятна, выбери самую очевидную интерпретацию — зрителям будет легче считать идею.",
+    "source": "verified_core_mechanic",
+    "reviewed_at": "2026-08-14",
+    "used": false
+  },
+  {
+    "id": 92,
+    "game": "Dress To Impress",
+    "type": "Совет",
+    "text": "Пробуй сочетать разные категории одежды, а не повторять один и тот же готовый комплект.",
+    "source": "verified_core_mechanic",
+    "reviewed_at": "2026-08-14",
+    "used": false
+  },
+  {
+    "id": 93,
+    "game": "Dress To Impress",
+    "type": "Совет",
+    "text": "Не забывай про причёску и аксессуары: они могут сделать простую одежду более цельным образом.",
+    "source": "verified_core_mechanic",
+    "reviewed_at": "2026-08-14",
+    "used": true
+  },
+  {
+    "id": 94,
+    "game": "Dress To Impress",
+    "type": "Совет",
+    "text": "Слишком много аксессуаров иногда мешает идее — убирай детали, которые не помогают теме.",
+    "source": "verified_core_mechanic",
+    "reviewed_at": "2026-08-14",
+    "used": false
+  },
+  {
+    "id": 95,
+    "game": "Dress To Impress",
+    "type": "Совет",
+    "text": "Запоминай удачные комбинации цветов и силуэтов: это ускорит сбор образа в следующих раундах.",
+    "source": "verified_core_mechanic",
+    "reviewed_at": "2026-08-14",
+    "used": false
+  },
+  {
+    "id": 96,
+    "game": "Dress To Impress",
+    "type": "Совет",
+    "text": "Во время подиума используй несколько подходящих поз, но не переключай их так быстро, чтобы зрители не успевали увидеть образ.",
+    "source": "verified_core_mechanic",
+    "reviewed_at": "2026-08-14",
+    "used": false
+  },
+  {
+    "id": 97,
+    "game": "Pet Simulator 99",
+    "type": "Совет",
+    "text": "Собирай питомцев с целью усиливать свою команду, а не только ради количества в коллекции.",
+    "source": "verified_core_mechanic",
+    "reviewed_at": "2026-08-14",
+    "used": false
+  },
+  {
+    "id": 98,
+    "game": "Pet Simulator 99",
+    "type": "Совет",
+    "text": "Когда получаешь новых питомцев, сравнивай их с текущей командой и заменяй более слабых.",
+    "source": "verified_core_mechanic",
+    "reviewed_at": "2026-08-14",
+    "used": false
+  },
+  {
+    "id": 99,
+    "game": "Pet Simulator 99",
+    "type": "Совет",
+    "text": "Не трать ресурсы только на внешний вид питомца, если твоя цель сейчас — быстрее продвигаться.",
+    "source": "verified_core_mechanic",
+    "reviewed_at": "2026-08-14",
+    "used": false
+  },
+  {
+    "id": 100,
+    "game": "Pet Simulator 99",
+    "type": "Совет",
+    "text": "Большая коллекция полезна, но сильная активная команда важнее для обычного прохождения.",
+    "source": "verified_core_mechanic",
+    "reviewed_at": "2026-08-14",
+    "used": true
+  },
+  {
+    "id": 101,
+    "game": "Pet Simulator 99",
+    "type": "Совет",
+    "text": "Перед долгой игровой сессией реши, что именно собираешь: монеты, новых питомцев или прогресс в текущем событии.",
+    "source": "verified_core_mechanic",
+    "reviewed_at": "2026-08-14",
+    "used": false
+  },
+  {
+    "id": 102,
+    "game": "Pet Simulator 99",
+    "type": "Совет",
+    "text": "Если открываешь много яиц, периодически проверяй команду — среди новых питомцев могут быть более сильные.",
+    "source": "verified_core_mechanic",
+    "reviewed_at": "2026-08-14",
+    "used": false
+  },
+  {
+    "id": 103,
+    "game": "Pet Simulator 99",
+    "type": "Совет",
+    "text": "Не оставляй сильных питомцев вне команды случайно: после массового получения новых проверь состав.",
+    "source": "verified_core_mechanic",
+    "reviewed_at": "2026-08-14",
+    "used": false
+  },
+  {
+    "id": 104,
+    "game": "Pet Simulator 99",
+    "type": "Совет",
+    "text": "Событийные режимы могут менять выгодные цели, поэтому перед фармом посмотри, какая активность сейчас даёт нужную тебе награду.",
+    "source": "verified_core_mechanic",
+    "reviewed_at": "2026-08-14",
+    "used": false
+  },
+  {
+    "id": 105,
+    "game": "Pet Simulator 99",
+    "type": "Совет",
+    "text": "Не оценивай прогресс только по числу питомцев: важнее, насколько быстро команда помогает добывать ресурсы.",
+    "source": "verified_core_mechanic",
+    "reviewed_at": "2026-08-14",
+    "used": false
+  },
+  {
+    "id": 106,
+    "game": "Pet Simulator 99",
+    "type": "Совет",
+    "text": "Сохраняй часть ресурсов, если не уверен, что текущая покупка действительно улучшит команду.",
+    "source": "verified_core_mechanic",
+    "reviewed_at": "2026-08-14",
+    "used": false
+  },
+  {
+    "id": 107,
+    "game": "Pet Simulator 99",
+    "type": "Совет",
+    "text": "Если застрял на прогрессе, сначала проверь состав питомцев, а не пытайся просто дольше фармить тем же набором.",
+    "source": "verified_core_mechanic",
+    "reviewed_at": "2026-08-14",
+    "used": false
+  },
+  {
+    "id": 108,
+    "game": "Pet Simulator 99",
+    "type": "Совет",
+    "text": "Коллекционирование и прогресс — разные цели: заранее реши, что для тебя важнее в текущей сессии.",
+    "source": "verified_core_mechanic",
+    "reviewed_at": "2026-08-14",
+    "used": false
+  },
+  {
+    "id": 109,
+    "game": "Blade Ball",
+    "type": "Совет",
+    "text": "Не нажимай блок слишком рано: в Blade Ball точный тайминг важнее частого нажатия.",
+    "source": "verified_core_mechanic",
+    "reviewed_at": "2026-08-14",
+    "used": false
+  },
+  {
+    "id": 110,
+    "game": "Blade Ball",
+    "type": "Совет",
+    "text": "Следи за ускорением мяча — по мере роста скорости окно для блока становится меньше.",
+    "source": "verified_core_mechanic",
+    "reviewed_at": "2026-08-14",
+    "used": false
+  },
+  {
+    "id": 111,
+    "game": "Blade Ball",
+    "type": "Совет",
+    "text": "Смотри не только на мяч, но и на следующую возможную цель: это помогает заранее выбрать позицию.",
+    "source": "verified_core_mechanic",
+    "reviewed_at": "2026-08-14",
+    "used": false
+  },
+  {
+    "id": 112,
+    "game": "Blade Ball",
+    "type": "Совет",
+    "text": "Тренируй блок без способностей — чистый тайминг пригодится с любым набором умений.",
+    "source": "verified_core_mechanic",
+    "reviewed_at": "2026-08-14",
+    "used": false
+  },
+  {
+    "id": 113,
+    "game": "Blade Ball",
+    "type": "Совет",
+    "text": "Способности лучше подбирать под свой стиль: кому-то полезнее мобильность, кому-то контроль или защита.",
+    "source": "verified_core_mechanic",
+    "reviewed_at": "2026-08-14",
+    "used": true
+  },
+  {
+    "id": 114,
+    "game": "Blade Ball",
+    "type": "Совет",
+    "text": "Не стой вплотную к другим игрокам без необходимости — так сложнее понять, в кого полетит мяч дальше.",
+    "source": "verified_core_mechanic",
+    "reviewed_at": "2026-08-14",
+    "used": false
+  },
+  {
+    "id": 115,
+    "game": "Blade Ball",
+    "type": "Совет",
+    "text": "После успешного блока сразу возвращай внимание к мячу: он может быстро вернуться обратно.",
+    "source": "verified_core_mechanic",
+    "reviewed_at": "2026-08-14",
+    "used": false
+  },
+  {
+    "id": 116,
+    "game": "Blade Ball",
+    "type": "Совет",
+    "text": "Чем быстрее становится мяч, тем меньше лишних движений нужно делать перед блоком.",
+    "source": "verified_core_mechanic",
+    "reviewed_at": "2026-08-14",
+    "used": false
+  },
+  {
+    "id": 117,
+    "game": "Blade Ball",
+    "type": "Совет",
+    "text": "Если часто проигрываешь одному типу атаки, потренируй именно этот момент вместо постоянной смены способности.",
+    "source": "verified_core_mechanic",
+    "reviewed_at": "2026-08-14",
+    "used": false
+  },
+  {
+    "id": 118,
+    "game": "Blade Ball",
+    "type": "Совет",
+    "text": "Используй Shift Lock, если такой способ камеры помогает тебе лучше контролировать направление персонажа.",
+    "source": "verified_core_mechanic",
+    "reviewed_at": "2026-08-14",
+    "used": false
+  },
+  {
+    "id": 119,
+    "game": "Blade Ball",
+    "type": "Совет",
+    "text": "Не расходуй способность автоматически в начале раунда — иногда она полезнее в решающий момент.",
+    "source": "verified_core_mechanic",
+    "reviewed_at": "2026-08-14",
+    "used": false
+  },
+  {
+    "id": 120,
+    "game": "Blade Ball",
+    "type": "Совет",
+    "text": "В поздней стадии раунда сохраняй спокойствие: серия быстрых блоков чаще проигрывается из-за спешки, чем из-за скорости мяча.",
+    "source": "verified_core_mechanic",
+    "reviewed_at": "2026-08-14",
+    "used": false
+  }
+]

@@ -10,13 +10,20 @@ MYTH_HISTORY_LIMIT = 3
 GAME_HISTORY_LIMIT = 5
 
 
-def build_post(post_id, publish_at, game, rubric, text):
+def build_post(
+    post_id,
+    publish_at,
+    game,
+    rubric,
+    text,
+    source
+):
     return {
         "id": post_id,
         "publish_at": publish_at.isoformat(),
         "game": game,
         "rubric": rubric,
-        "source": "manual",
+        "source": source,
         "text": text,
         "status": "pending",
         "published_at": None,
@@ -26,12 +33,20 @@ def build_post(post_id, publish_at, game, rubric, text):
 
 
 def load_json(filename):
-    with open(filename, "r", encoding="utf-8") as file:
+    with open(
+        filename,
+        "r",
+        encoding="utf-8"
+    ) as file:
         return json.load(file)
 
 
 def save_json(filename, data):
-    with open(filename, "w", encoding="utf-8") as file:
+    with open(
+        filename,
+        "w",
+        encoding="utf-8"
+    ) as file:
         json.dump(
             data,
             file,
@@ -41,12 +56,18 @@ def save_json(filename, data):
 
 
 def load_text(filename):
-    with open(filename, "r", encoding="utf-8") as file:
+    with open(
+        filename,
+        "r",
+        encoding="utf-8"
+    ) as file:
         return file.read().strip()
 
 
 def remember_game(game):
-    history = load_json("game_history.json")
+    history = load_json(
+        "game_history.json"
+    )
 
     history.append(game)
 
@@ -56,12 +77,131 @@ def remember_game(game):
     )
 
 
-def generate_myth_post():
-    myths = load_json("myths.json")
-    myth_history = load_json("myth_history.json")
-    game_history = load_json("game_history.json")
+def generate_tips_post():
+    tips = load_json(
+        "tips.json"
+    )
 
-    recent_myth_ids = myth_history[-MYTH_HISTORY_LIMIT:]
+    game_history = load_json(
+        "game_history.json"
+    )
+
+    unused_tips = [
+        tip
+        for tip in tips
+        if not tip["used"]
+    ]
+
+    # Если база закончилась —
+    # начинаем новый цикл.
+    if len(unused_tips) < 2:
+        for tip in tips:
+            tip["used"] = False
+
+        unused_tips = tips.copy()
+
+    # Сначала стараемся не использовать
+    # недавно встречавшиеся игры.
+    preferred_tips = [
+        tip
+        for tip in unused_tips
+        if tip["game"] not in game_history
+    ]
+
+    if len(preferred_tips) >= 2:
+        candidates = preferred_tips
+    else:
+        candidates = unused_tips
+
+    random.shuffle(candidates)
+
+    first_tip = None
+    second_tip = None
+
+    for tip in candidates:
+        if first_tip is None:
+            first_tip = tip
+            continue
+
+        if tip["game"] != first_tip["game"]:
+            second_tip = tip
+            break
+
+    # Дополнительная страховка,
+    # если подходящей пары не нашлось.
+    if second_tip is None:
+        for tip in unused_tips:
+            if tip["game"] != first_tip["game"]:
+                second_tip = tip
+                break
+
+    if first_tip is None or second_tip is None:
+        raise RuntimeError(
+            "Не удалось выбрать два совета "
+            "по разным играм."
+        )
+
+    # Отмечаем использованными.
+    for tip in tips:
+        if tip["id"] in [
+            first_tip["id"],
+            second_tip["id"]
+        ]:
+            tip["used"] = True
+
+    save_json(
+        "tips.json",
+        tips
+    )
+
+    remember_game(
+        first_tip["game"]
+    )
+
+    remember_game(
+        second_tip["game"]
+    )
+
+    text = (
+        "━━━━━━━━━━━━━━━━━━━━━\n"
+        "       🎮 ПОЛЕЗНО ЗНАТЬ 🎮\n"
+        "━━━━━━━━━━━━━━━━━━━━━\n\n"
+
+        f"🎯 {first_tip['game']}\n"
+        f"💡 {first_tip['text']}\n\n"
+
+        f"🎯 {second_tip['game']}\n"
+        f"💡 {second_tip['text']}\n\n"
+
+        "🎮 Roblox Hub"
+    )
+
+    games = (
+        f"{first_tip['game']} + "
+        f"{second_tip['game']}"
+    )
+
+    return games, text
+
+
+def generate_myth_post():
+    myths = load_json(
+        "myths.json"
+    )
+
+    myth_history = load_json(
+        "myth_history.json"
+    )
+
+    game_history = load_json(
+        "game_history.json"
+    )
+
+    recent_myth_ids = (
+        myth_history[
+            -MYTH_HISTORY_LIMIT:
+        ]
+    )
 
     available_myths = [
         myth
@@ -80,16 +220,24 @@ def generate_myth_post():
     if not available_myths:
         available_myths = myths
 
-    myth = random.choice(available_myths)
+    myth = random.choice(
+        available_myths
+    )
 
-    myth_history.append(myth["id"])
+    myth_history.append(
+        myth["id"]
+    )
 
     save_json(
         "myth_history.json",
-        myth_history[-MYTH_HISTORY_LIMIT:]
+        myth_history[
+            -MYTH_HISTORY_LIMIT:
+        ]
     )
 
-    remember_game(myth["game"])
+    remember_game(
+        myth["game"]
+    )
 
     text = (
         "━━━━━━━━━━━━━━━━━━━━━\n"
@@ -106,16 +254,36 @@ def generate_myth_post():
     return myth["game"], text
 
 
-now = datetime.now(LOCAL_TIMEZONE)
-tomorrow = (now + timedelta(days=1)).date()
+now = datetime.now(
+    LOCAL_TIMEZONE
+)
 
-news_text = load_text("generated_news_post_ru.txt")
-myth_game, myth_text = generate_myth_post()
+tomorrow = (
+    now + timedelta(days=1)
+).date()
 
 
-posts = [
+# 10:00 — новости
+news_text = load_text(
+    "generated_news_post_ru.txt"
+)
+
+
+# 15:00 — два полезных совета
+tips_games, tips_text = (
+    generate_tips_post()
+)
+
+
+# 18:00 — миф или правда
+myth_game, myth_text = (
+    generate_myth_post()
+)
+
+
+new_posts = [
     build_post(
-        post_id=1,
+        post_id=f"{tomorrow}-10",
         publish_at=datetime(
             tomorrow.year,
             tomorrow.month,
@@ -126,11 +294,12 @@ posts = [
         ),
         game="разные игры",
         rubric="Сводка новостей",
+        source="auto_verified",
         text=news_text
     ),
 
     build_post(
-        post_id=2,
+        post_id=f"{tomorrow}-15",
         publish_at=datetime(
             tomorrow.year,
             tomorrow.month,
@@ -139,13 +308,14 @@ posts = [
             0,
             tzinfo=LOCAL_TIMEZONE
         ),
-        game="две разные игры",
-        rubric="Полезная карточка",
-        text="🖼 Полезная карточка Roblox Hub"
+        game=tips_games,
+        rubric="Полезно знать",
+        source="verified_db",
+        text=tips_text
     ),
 
     build_post(
-        post_id=3,
+        post_id=f"{tomorrow}-18",
         publish_at=datetime(
             tomorrow.year,
             tomorrow.month,
@@ -156,19 +326,70 @@ posts = [
         ),
         game=myth_game,
         rubric="Миф или правда",
+        source="verified_db",
         text=myth_text
     )
 ]
 
 
-save_json(
-    "posts.json",
-    posts
+try:
+    existing_posts = load_json(
+        "posts.json"
+    )
+except FileNotFoundError:
+    existing_posts = []
+
+
+existing_ids = {
+    str(post["id"])
+    for post in existing_posts
+}
+
+
+posts_added = 0
+
+
+for post in new_posts:
+
+    if str(post["id"]) in existing_ids:
+        print(
+            f"Пост {post['id']} уже существует — пропускаем."
+        )
+        continue
+
+    existing_posts.append(
+        post
+    )
+
+    posts_added += 1
+
+
+existing_posts.sort(
+    key=lambda post: post["publish_at"]
 )
 
 
-print("Очередь на завтра создана.")
-print(f"Дата: {tomorrow}")
-print(f"Количество постов: {len(posts)}")
-print("Новостная сводка загружена.")
-print(f"Миф или правда: {myth_game}")
+save_json(
+    "posts.json",
+    existing_posts
+)
+
+
+print()
+print("Очередь подготовлена.")
+print(f"Дата новых постов: {tomorrow}")
+print(f"Добавлено новых постов: {posts_added}")
+
+print(
+    "10:00 — Сводка новостей"
+)
+
+print(
+    f"15:00 — Полезно знать: "
+    f"{tips_games}"
+)
+
+print(
+    f"18:00 — Миф или правда: "
+    f"{myth_game}"
+)
