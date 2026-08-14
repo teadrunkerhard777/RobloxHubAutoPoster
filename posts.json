@@ -1,11 +1,38 @@
 [
   {
     "id": 1,
-    "publish_at": "2026-08-14T13:06:00+05:00",
-    "text": "🎮 Тест нового статуса публикации",
-    "status": "published",
-    "published_at": "2026-08-14T08:15:33.358293+00:00",
-    "attempts": 1,
+    "publish_at": "2026-08-15T10:00:00+05:00",
+    "game": "разные игры",
+    "rubric": "Сводка новостей",
+    "source": "manual",
+    "text": "🎮 Roblox Hub — утренняя сводка новостей",
+    "status": "pending",
+    "published_at": null,
+    "attempts": 0,
+    "last_error": null
+  },
+  {
+    "id": 2,
+    "publish_at": "2026-08-15T15:00:00+05:00",
+    "game": "две разные игры",
+    "rubric": "Полезная карточка",
+    "source": "manual",
+    "text": "🖼 Полезная карточка Roblox Hub",
+    "status": "pending",
+    "published_at": null,
+    "attempts": 0,
+    "last_error": null
+  },
+  {
+    "id": 3,
+    "publish_at": "2026-08-15T18:00:00+05:00",
+    "game": "Brookhaven",
+    "rubric": "Миф или правда",
+    "source": "manual",
+    "text": "━━━━━━━━━━━━━━━━━━━━━\n      🧠 МИФ ИЛИ ПРАВДА? 🧠\n━━━━━━━━━━━━━━━━━━━━━\n\n🎮 Brookhaven\n\n🔥 В Brookhaven можно менять транспорт прямо во время игры. 🔥\n\nКак думаешь — правда или миф?\n\n✅ ПРАВДА!\n\nИгрок может выбирать и менять доступный транспорт прямо во время сессии.\n\n🎮 Roblox Hub",
+    "status": "pending",
+    "published_at": null,
+    "attempts": 0,
     "last_error": null
   }
 ]
