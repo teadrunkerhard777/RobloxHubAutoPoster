@@ -5,6 +5,38 @@ MIN_SCORE = 5
 MAX_NEWS_ITEMS = 4
 
 
+STRONG_NEWS_PHRASES = [
+    "LATEST UPDATE",
+    "NEW ITEM",
+    "NEW ITEMS",
+    "NEW VEHICLE",
+    "NEW PET",
+    "NEW PETS",
+    "NEW MAP",
+    "NEW BOSS",
+    "NEW EVENT",
+    "LIMITED",
+    "EVENT",
+    "QUEST",
+    "REWARD",
+    "SEASON",
+    "UPDATE"
+]
+
+
+NOISE_PHRASES = [
+    "TECH DIRECTOR",
+    "NOTIFY",
+    "EXPERIENCE NEW UPDATES",
+    "ROLEPLAY WITH FRIENDS",
+    "BUILD YOUR DREAM HOME",
+    "TRADE AND COLLECT",
+    "CURRENTLY",
+    "CREATE AN ARMY",
+    "HELP YOU GET RICH"
+]
+
+
 def load_json(filename, default):
     try:
         with open(filename, "r", encoding="utf-8") as file:
@@ -13,22 +45,33 @@ def load_json(filename, default):
         return default
 
 
-def get_best_news(candidates):
-    suitable = [
-        item
-        for item in candidates
-        if item.get("score", 0) >= MIN_SCORE
-    ]
+def contains_any(text, phrases):
+    text_upper = text.upper()
 
-    suitable.sort(
-        key=lambda item: item.get("score", 0),
-        reverse=True
+    return any(
+        phrase in text_upper
+        for phrase in phrases
     )
 
-    return suitable[:MAX_NEWS_ITEMS]
+
+def is_noise_line(line):
+    return contains_any(
+        line,
+        NOISE_PHRASES
+    )
 
 
-def get_news_lines(item):
+def is_news_line(line):
+    if is_noise_line(line):
+        return False
+
+    return contains_any(
+        line,
+        STRONG_NEWS_PHRASES
+    )
+
+
+def get_clean_news_lines(item):
     analysis = item.get(
         "official_description_analysis",
         {}
@@ -39,7 +82,60 @@ def get_news_lines(item):
         []
     )
 
-    return lines[:3]
+    clean_lines = []
+
+    for line in lines:
+        line = line.strip()
+
+        if not line:
+            continue
+
+        if is_news_line(line):
+            clean_lines.append(
+                line
+            )
+
+    return clean_lines[:3]
+
+
+def get_best_news(candidates):
+    suitable = []
+
+    for item in candidates:
+        score = item.get(
+            "score",
+            0
+        )
+
+        if score < MIN_SCORE:
+            continue
+
+        clean_lines = get_clean_news_lines(
+            item
+        )
+
+        if not clean_lines:
+            continue
+
+        item_copy = item.copy()
+
+        item_copy[
+            "clean_news_lines"
+        ] = clean_lines
+
+        suitable.append(
+            item_copy
+        )
+
+    suitable.sort(
+        key=lambda item: item.get(
+            "score",
+            0
+        ),
+        reverse=True
+    )
+
+    return suitable[:MAX_NEWS_ITEMS]
 
 
 def build_news_post(news_items):
@@ -65,27 +161,22 @@ def build_news_post(news_items):
             f"{index}. 🔥 {item['game']}"
         )
 
-        news_lines = get_news_lines(
-            item
-        )
-
-        if news_lines:
-            for line in news_lines:
-                parts.append(
-                    f"• {line}"
-                )
-
-        else:
+        for line in item[
+            "clean_news_lines"
+        ]:
             parts.append(
-                "• Игра недавно обновлялась, "
-                "но подробности пока не подтверждены."
+                f"• {line}"
             )
 
         parts.append("")
 
-    parts.append("🎮 Roblox Hub")
+    parts.append(
+        "🎮 Roblox Hub"
+    )
 
-    return "\n".join(parts)
+    return "\n".join(
+        parts
+    )
 
 
 verified_news = load_json(
@@ -93,9 +184,11 @@ verified_news = load_json(
     []
 )
 
+
 best_news = get_best_news(
     verified_news
 )
+
 
 post_text = build_news_post(
     best_news
@@ -113,7 +206,7 @@ with open(
 
 
 print(
-    f"Подходящих новостей: "
+    f"Подходящих новостей после фильтрации: "
     f"{len(best_news)}"
 )
 

@@ -109,7 +109,7 @@ def generate_myth_post():
 now = datetime.now(LOCAL_TIMEZONE)
 tomorrow = (now + timedelta(days=1)).date()
 
-news_text = load_text("generated_news_post.txt")
+news_text = load_text("generated_news_post_ru.txt")
 myth_game, myth_text = generate_myth_post()
 
 
