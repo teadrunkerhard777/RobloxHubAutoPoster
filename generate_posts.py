@@ -100,8 +100,8 @@ def generate_tips_post():
 
         unused_tips = tips.copy()
 
-    # Сначала стараемся не использовать
-    # недавно встречавшиеся игры.
+    # Сначала стараемся не брать
+    # недавно использованные игры.
     preferred_tips = [
         tip
         for tip in unused_tips
@@ -111,7 +111,7 @@ def generate_tips_post():
     if len(preferred_tips) >= 2:
         candidates = preferred_tips
     else:
-        candidates = unused_tips
+        candidates = unused_tips.copy()
 
     random.shuffle(candidates)
 
@@ -127,9 +127,9 @@ def generate_tips_post():
             second_tip = tip
             break
 
-    # Дополнительная страховка,
+    # Страховка на случай,
     # если подходящей пары не нашлось.
-    if second_tip is None:
+    if second_tip is None and first_tip is not None:
         for tip in unused_tips:
             if tip["game"] != first_tip["game"]:
                 second_tip = tip
@@ -141,12 +141,15 @@ def generate_tips_post():
             "по разным играм."
         )
 
-    # Отмечаем использованными.
+    # Только теперь отмечаем советы
+    # использованными.
+    selected_ids = {
+        first_tip["id"],
+        second_tip["id"]
+    }
+
     for tip in tips:
-        if tip["id"] in [
-            first_tip["id"],
-            second_tip["id"]
-        ]:
+        if tip["id"] in selected_ids:
             tip["used"] = True
 
     save_json(
@@ -166,13 +169,10 @@ def generate_tips_post():
         "━━━━━━━━━━━━━━━━━━━━━\n"
         "       🎮 ПОЛЕЗНО ЗНАТЬ 🎮\n"
         "━━━━━━━━━━━━━━━━━━━━━\n\n"
-
         f"🎯 {first_tip['game']}\n"
         f"💡 {first_tip['text']}\n\n"
-
         f"🎯 {second_tip['game']}\n"
         f"💡 {second_tip['text']}\n\n"
-
         "🎮 Roblox Hub"
     )
 
@@ -254,6 +254,10 @@ def generate_myth_post():
     return myth["game"], text
 
 
+# --------------------------------------------------
+# Определяем дату завтрашней очереди
+# --------------------------------------------------
+
 now = datetime.now(
     LOCAL_TIMEZONE
 )
@@ -263,19 +267,75 @@ tomorrow = (
 ).date()
 
 
-# 10:00 — новости
+tomorrow_ids = {
+    f"{tomorrow}-10",
+    f"{tomorrow}-15",
+    f"{tomorrow}-18"
+}
+
+
+# --------------------------------------------------
+# СНАЧАЛА проверяем существующую очередь
+# --------------------------------------------------
+
+try:
+    existing_posts = load_json(
+        "posts.json"
+    )
+except FileNotFoundError:
+    existing_posts = []
+
+
+existing_ids = {
+    str(post["id"])
+    for post in existing_posts
+}
+
+
+existing_tomorrow_ids = (
+    tomorrow_ids & existing_ids
+)
+
+
+if existing_tomorrow_ids == tomorrow_ids:
+    print()
+    print(
+        f"Очередь на {tomorrow} "
+        "уже полностью существует."
+    )
+
+    print(
+        "Новые советы и миф "
+        "не выбирались."
+    )
+
+    print(
+        "История использования "
+        "не изменена."
+    )
+
+    print(
+        "Добавлено новых постов: 0"
+    )
+
+    raise SystemExit
+
+
+# --------------------------------------------------
+# Только если очереди ещё нет —
+# создаём контент
+# --------------------------------------------------
+
 news_text = load_text(
     "generated_news_post_ru.txt"
 )
 
 
-# 15:00 — два полезных совета
 tips_games, tips_text = (
     generate_tips_post()
 )
 
 
-# 18:00 — миф или правда
 myth_game, myth_text = (
     generate_myth_post()
 )
@@ -332,20 +392,6 @@ new_posts = [
 ]
 
 
-try:
-    existing_posts = load_json(
-        "posts.json"
-    )
-except FileNotFoundError:
-    existing_posts = []
-
-
-existing_ids = {
-    str(post["id"])
-    for post in existing_posts
-}
-
-
 posts_added = 0
 
 
@@ -353,8 +399,10 @@ for post in new_posts:
 
     if str(post["id"]) in existing_ids:
         print(
-            f"Пост {post['id']} уже существует — пропускаем."
+            f"Пост {post['id']} "
+            "уже существует — пропускаем."
         )
+
         continue
 
     existing_posts.append(
@@ -377,8 +425,12 @@ save_json(
 
 print()
 print("Очередь подготовлена.")
-print(f"Дата новых постов: {tomorrow}")
-print(f"Добавлено новых постов: {posts_added}")
+print(
+    f"Дата новых постов: {tomorrow}"
+)
+print(
+    f"Добавлено новых постов: {posts_added}"
+)
 
 print(
     "10:00 — Сводка новостей"
