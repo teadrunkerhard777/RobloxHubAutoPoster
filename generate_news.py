@@ -1,10 +1,24 @@
 import json
 import requests
+import difflib
 
 from datetime import datetime, timezone, timedelta
 
 
 FRESHNESS_HOURS = 48
+
+NEWS_KEYWORDS = [
+    "UPDATE",
+    "NEW",
+    "EVENT",
+    "CODE",
+    "BOSS",
+    "ITEM",
+    "MAP",
+    "PETS",
+    "LIMITED",
+    "REWARD"
+]
 
 
 def load_json(filename, default):
@@ -79,9 +93,8 @@ def is_fresh(game):
     return updated_at >= freshness_limit
 
 
-def description_changed(
+def get_previous_description(
     universe_id,
-    current_description,
     snapshots
 ):
     previous = snapshots.get(
@@ -89,17 +102,97 @@ def description_changed(
     )
 
     if previous is None:
-        return False
+        return None
 
-    previous_description = previous.get(
+    return previous.get(
         "description",
         ""
     )
 
-    return (
-        previous_description.strip()
-        != current_description.strip()
+
+def extract_added_lines(
+    previous_description,
+    current_description
+):
+    if previous_description is None:
+        return []
+
+    previous_lines = (
+        previous_description
+        .splitlines()
     )
+
+    current_lines = (
+        current_description
+        .splitlines()
+    )
+
+    diff = difflib.ndiff(
+        previous_lines,
+        current_lines
+    )
+
+    added_lines = []
+
+    for line in diff:
+        if line.startswith("+ "):
+            added_text = line[2:].strip()
+
+            if added_text:
+                added_lines.append(
+                    added_text
+                )
+
+    return added_lines
+
+
+def find_news_keywords(text):
+    text_upper = text.upper()
+
+    found = []
+
+    for keyword in NEWS_KEYWORDS:
+        if keyword in text_upper:
+            found.append(keyword)
+
+    return found
+
+
+def calculate_score(
+    fresh,
+    description_changed,
+    added_lines,
+    keywords_in_added,
+    keywords_in_description
+):
+    score = 0
+
+    if fresh:
+        score += 2
+
+    if description_changed:
+        score += 2
+
+    if added_lines:
+        score += 3
+
+    if keywords_in_added:
+        score += 3
+
+    if keywords_in_description:
+        score += 1
+
+    return score
+
+
+def score_to_confidence(score):
+    if score >= 8:
+        return "high"
+
+    if score >= 5:
+        return "medium"
+
+    return "low"
 
 
 def build_candidates(
@@ -111,47 +204,117 @@ def build_candidates(
     for game in games:
         universe_id = game["id"]
 
-        description = game.get(
+        current_description = game.get(
             "description",
             ""
         )
 
-        changed = description_changed(
-            universe_id,
-            description,
-            snapshots
+        previous_description = (
+            get_previous_description(
+                universe_id,
+                snapshots
+            )
+        )
+
+        description_changed = False
+
+        if previous_description is not None:
+            description_changed = (
+                previous_description.strip()
+                != current_description.strip()
+            )
+
+        added_lines = extract_added_lines(
+            previous_description,
+            current_description
+        )
+
+        added_text = "\n".join(
+            added_lines
+        )
+
+        keywords_in_added = (
+            find_news_keywords(
+                added_text
+            )
+        )
+
+        keywords_in_description = (
+            find_news_keywords(
+                current_description
+            )
         )
 
         fresh = is_fresh(game)
 
-        if not fresh and not changed:
+        if not fresh and not description_changed:
             continue
 
-        sources = [
-            {
-                "type": "roblox_api",
-                "verified": True
-            }
-        ]
+        score = calculate_score(
+            fresh,
+            description_changed,
+            added_lines,
+            keywords_in_added,
+            keywords_in_description
+        )
 
-        confidence = "signal_only"
-
-        if changed:
-            confidence = "description_changed"
+        confidence = score_to_confidence(
+            score
+        )
 
         candidate = {
             "game": game["name"],
             "universe_id": universe_id,
             "updated_at": game["updated"],
-            "description": description,
-            "description_changed": changed,
-            "playing": game.get("playing"),
-            "visits": game.get("visits"),
-            "sources": sources,
-            "confidence": confidence
+
+            "playing": game.get(
+                "playing"
+            ),
+
+            "visits": game.get(
+                "visits"
+            ),
+
+            "description_changed":
+                description_changed,
+
+            "previous_description":
+                previous_description,
+
+            "current_description":
+                current_description,
+
+            "added_lines":
+                added_lines,
+
+            "keywords_in_added":
+                keywords_in_added,
+
+            "keywords_in_description":
+                keywords_in_description,
+
+            "score":
+                score,
+
+            "confidence":
+                confidence,
+
+            "sources": [
+                {
+                    "type": "roblox_api",
+                    "verified": True
+                }
+            ]
         }
 
-        candidates.append(candidate)
+        candidates.append(
+            candidate
+        )
+
+    candidates.sort(
+        key=lambda candidate: candidate["score"],
+        reverse=True
+    )
 
     return candidates
 
@@ -172,12 +335,17 @@ def update_snapshots(
 
         snapshots[universe_id] = {
             "name": game["name"],
+
             "description": game.get(
                 "description",
                 ""
             ),
-            "updated": game["updated"],
-            "checked_at": checked_at
+
+            "updated":
+                game["updated"],
+
+            "checked_at":
+                checked_at
         }
 
     return snapshots
@@ -246,9 +414,27 @@ for candidate in candidates:
 
     print(
         "Описание изменилось:",
-        candidate[
-            "description_changed"
-        ]
+        candidate["description_changed"]
+    )
+
+    print(
+        "Новых строк:",
+        len(candidate["added_lines"])
+    )
+
+    print(
+        "Ключевые слова в новых строках:",
+        candidate["keywords_in_added"]
+    )
+
+    print(
+        "Ключевые слова в описании:",
+        candidate["keywords_in_description"]
+    )
+
+    print(
+        "Score:",
+        candidate["score"]
     )
 
     print(
