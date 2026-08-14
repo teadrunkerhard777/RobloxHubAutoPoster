@@ -7,9 +7,29 @@ from datetime import datetime, timezone, timedelta
 FRESHNESS_HOURS = 48
 
 
+def load_json(filename, default):
+    try:
+        with open(filename, "r", encoding="utf-8") as file:
+            return json.load(file)
+    except FileNotFoundError:
+        return default
+
+
+def save_json(filename, data):
+    with open(filename, "w", encoding="utf-8") as file:
+        json.dump(
+            data,
+            file,
+            ensure_ascii=False,
+            indent=2
+        )
+
+
 def load_games():
-    with open("games.json", "r", encoding="utf-8") as file:
-        games = json.load(file)
+    games = load_json(
+        "games.json",
+        []
+    )
 
     return [
         game
@@ -45,85 +65,193 @@ def parse_roblox_datetime(value):
     )
 
 
-def get_fresh_games(games):
+def is_fresh(game):
     now = datetime.now(timezone.utc)
 
     freshness_limit = now - timedelta(
         hours=FRESHNESS_HOURS
     )
 
-    fresh_games = []
+    updated_at = parse_roblox_datetime(
+        game["updated"]
+    )
+
+    return updated_at >= freshness_limit
+
+
+def description_changed(
+    universe_id,
+    current_description,
+    snapshots
+):
+    previous = snapshots.get(
+        str(universe_id)
+    )
+
+    if previous is None:
+        return False
+
+    previous_description = previous.get(
+        "description",
+        ""
+    )
+
+    return (
+        previous_description.strip()
+        != current_description.strip()
+    )
+
+
+def build_candidates(
+    games,
+    snapshots
+):
+    candidates = []
 
     for game in games:
-        updated_at = parse_roblox_datetime(
-            game["updated"]
+        universe_id = game["id"]
+
+        description = game.get(
+            "description",
+            ""
         )
 
-        if updated_at >= freshness_limit:
-            fresh_games.append(game)
-
-    return fresh_games
-
-
-def save_news_data(data):
-    with open(
-        "news_data.json",
-        "w",
-        encoding="utf-8"
-    ) as file:
-        json.dump(
-            data,
-            file,
-            ensure_ascii=False,
-            indent=2
+        changed = description_changed(
+            universe_id,
+            description,
+            snapshots
         )
 
+        fresh = is_fresh(game)
 
-try:
-    tracked_games = load_games()
+        if not fresh and not changed:
+            continue
+
+        sources = [
+            {
+                "type": "roblox_api",
+                "verified": True
+            }
+        ]
+
+        confidence = "signal_only"
+
+        if changed:
+            confidence = "description_changed"
+
+        candidate = {
+            "game": game["name"],
+            "universe_id": universe_id,
+            "updated_at": game["updated"],
+            "description": description,
+            "description_changed": changed,
+            "playing": game.get("playing"),
+            "visits": game.get("visits"),
+            "sources": sources,
+            "confidence": confidence
+        }
+
+        candidates.append(candidate)
+
+    return candidates
+
+
+def update_snapshots(
+    games,
+    snapshots
+):
+    checked_at = (
+        datetime.now(timezone.utc)
+        .isoformat()
+    )
+
+    for game in games:
+        universe_id = str(
+            game["id"]
+        )
+
+        snapshots[universe_id] = {
+            "name": game["name"],
+            "description": game.get(
+                "description",
+                ""
+            ),
+            "updated": game["updated"],
+            "checked_at": checked_at
+        }
+
+    return snapshots
+
+
+tracked_games = load_games()
+
+snapshots = load_json(
+    "game_snapshots.json",
+    {}
+)
+
+print(
+    f"Игр в мониторинге: "
+    f"{len(tracked_games)}"
+)
+
+
+games = fetch_game_data(
+    tracked_games
+)
+
+
+candidates = build_candidates(
+    games,
+    snapshots
+)
+
+
+save_json(
+    "news_candidates.json",
+    candidates
+)
+
+
+snapshots = update_snapshots(
+    games,
+    snapshots
+)
+
+
+save_json(
+    "game_snapshots.json",
+    snapshots
+)
+
+
+print(
+    f"Кандидатов найдено: "
+    f"{len(candidates)}"
+)
+
+
+for candidate in candidates:
+    print()
 
     print(
-        f"Игр с известным universe_id: "
-        f"{len(tracked_games)}"
+        "Игра:",
+        candidate["game"]
     )
-
-    games = fetch_game_data(
-        tracked_games
-    )
-
-    fresh_games = get_fresh_games(
-        games
-    )
-
-    save_news_data(
-        fresh_games
-    )
-
-    print("Данные Roblox получены.")
 
     print(
-        f"Свежих обновлений за последние "
-        f"{FRESHNESS_HOURS} часов: "
-        f"{len(fresh_games)}"
+        "Обновлена:",
+        candidate["updated_at"]
     )
 
-    if not fresh_games:
-        print("Свежих обновлений нет.")
+    print(
+        "Описание изменилось:",
+        candidate[
+            "description_changed"
+        ]
+    )
 
-    for game in fresh_games:
-        print()
-        print("Игра:", game["name"])
-        print("Обновлена:", game["updated"])
-        print(
-            "Игроков сейчас:",
-            game["playing"]
-        )
-        print(
-            "Посещений:",
-            game["visits"]
-        )
-
-except requests.RequestException as error:
-    print("Ошибка получения данных Roblox:")
-    print(error)
-    raise
+    print(
+        "Confidence:",
+        candidate["confidence"]
+    )
