@@ -1,0 +1,39 @@
+name: Prepare Daily Roblox Hub Posts
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  prepare:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v6
+
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.14"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Prepare daily posts
+        run: python prepare_daily_posts.py
+
+      - name: Save generated queue
+        run: |
+          git config user.name "RobloxHub AutoPoster"
+          git config user.email "actions@github.com"
+
+          if git diff --quiet; then
+            echo "Изменений нет"
+          else
+            git add posts.json tips.json myth_history.json game_history.json game_snapshots.json news_candidates.json verified_news.json generated_news_post.txt generated_news_post_ru.txt
+            git commit -m "Prepare Roblox Hub daily posts"
+            git push
+          fi
