@@ -3,9 +3,9 @@
     "id": 1,
     "publish_at": "2026-08-14T13:06:00+05:00",
     "text": "🎮 Тест нового статуса публикации",
-    "status": "pending",
-    "published_at": null,
-    "attempts": 0,
+    "status": "published",
+    "published_at": "2026-08-14T08:15:33.358293+00:00",
+    "attempts": 1,
     "last_error": null
   }
 ]
