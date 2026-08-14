@@ -36,6 +36,6 @@ jobs:
             echo "posts.json не изменился"
           else
             git add posts.json
-            git commit -m "Update published post status"
+            git commit -m "===Update published post status"
             git push
           fi
