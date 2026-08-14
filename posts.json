@@ -1,17 +1,20 @@
 [
   {
     "id": 1,
-    "text": "🎮 Первый пост из очереди Roblox Hub",
-    "published": true
+    "publish_at": "2026-08-14T12:20:00+05:00",
+    "text": "⏰ Пост №1 по расписанию",
+    "published": false
   },
   {
     "id": 2,
-    "text": "🧠 Второй пост из очереди Roblox Hub",
-    "published": true
+    "publish_at": "2026-08-14T12:30:00+05:00",
+    "text": "🎮 Пост №2 по расписанию",
+    "published": false
   },
   {
     "id": 3,
-    "text": "🔥 Третий пост из очереди Roblox Hub",
+    "publish_at": "2026-08-14T12:40:00+05:00",
+    "text": "🔥 Пост №3 по расписанию",
     "published": false
   }
 ]

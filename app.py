@@ -2,6 +2,7 @@ import json
 import os
 import requests
 
+from datetime import datetime
 from dotenv import load_dotenv
 
 
@@ -16,16 +17,24 @@ with open("posts.json", "r", encoding="utf-8") as file:
     posts = json.load(file)
 
 
+now = datetime.now().astimezone()
+
 post_to_publish = None
 
 for post in posts:
-    if not post["published"]:
+
+    if post["published"]:
+        continue
+
+    publish_at = datetime.fromisoformat(post["publish_at"])
+
+    if publish_at <= now:
         post_to_publish = post
         break
 
 
 if post_to_publish is None:
-    print("Нет постов для публикации.")
+    print("Сейчас нет постов, время публикации которых уже наступило.")
     raise SystemExit
 
 
@@ -35,18 +44,12 @@ data = {
 }
 
 
-try:
-    response = requests.post(url, data=data, timeout=10)
+response = requests.post(url, data=data, timeout=10)
 
-    print("HTTP status:", response.status_code)
-    print(response.json())
+print("HTTP status:", response.status_code)
+print(response.json())
 
-    response.raise_for_status()
-
-except requests.RequestException as error:
-    print("Ошибка при публикации в Telegram:")
-    print(error)
-    raise
+response.raise_for_status()
 
 
 post_to_publish["published"] = True
@@ -58,5 +61,5 @@ with open("posts.json", "w", encoding="utf-8") as file:
 
 print(
     f"Пост #{post_to_publish['id']} опубликован "
-    "и отмечен как published."
+    f"по расписанию {post_to_publish['publish_at']}."
 )
