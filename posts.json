@@ -1,41 +1,17 @@
 [
-  {
-    "id": 1,
-    "publish_at": "2026-08-15T10:00:00+05:00",
-    "game": "разные игры",
-    "rubric": "Сводка новостей",
-    "source": "auto_verified",
-    "text": "🎮 Roblox Hub — утренняя сводка\n\n1. 🔥 Brookhaven 🏡RP\n• 🔥 В Brookhaven 🏡RP вышло обновление.\n• 🚗 В Brookhaven 🏡RP появился новый транспорт. Разработчики упоминают: with unique effects, sounds, and texture! Included with VIP.\n\n2. 🔥 Dress To Impress\n• 🎁 В Dress To Impress появились новые предметы.\n\n🎮 Roblox Hub",
-    "status": "pending",
-    "published_at": null,
-    "attempts": 0,
-    "last_error": null
-  },
-  {
+    {
     "id": "2026-08-15-10",
     "publish_at": "2026-08-15T10:00:00+05:00",
     "game": "разные игры",
     "rubric": "Сводка новостей",
     "source": "auto_verified",
-    "text": "🎮 Roblox Hub — утренняя сводка\n\n1. 🔥 Brookhaven 🏡RP\n• 🔥 В Brookhaven 🏡RP вышло обновление.\n• 🚗 В Brookhaven 🏡RP появился новый транспорт. Разработчики упоминают: with unique effects, sounds, and texture! Included with VIP.\n\n2. 🔥 Dress To Impress\n• 🎁 В Dress To Impress появились новые предметы.\n\n🎮 Roblox Hub",
+    "text": "🎮 Roblox Hub — утренняя сводка\n\n1. 🔥 Brookhaven 🏡RP\n• 🔥 В Brookhaven 🏡RP вышло обновление.\n• 🚗 В Brookhaven появился Rocket Car — новый транспорт с особыми эффектами, звуками и текстурой. Машина доступна владельцам VIP.\n\n2. 🔥 Dress To Impress\n• 🎁 В Dress To Impress появились новые предметы.\n\n🎮 Roblox Hub",
     "status": "pending",
     "published_at": null,
     "attempts": 0,
     "last_error": null
   },
-  {
-    "id": 2,
-    "publish_at": "2026-08-15T15:00:00+05:00",
-    "game": "Blade Ball + Adopt Me!",
-    "rubric": "Полезно знать",
-    "source": "verified_db",
-    "text": "━━━━━━━━━━━━━━━━━━━━━\n       🎮 ПОЛЕЗНО ЗНАТЬ 🎮\n━━━━━━━━━━━━━━━━━━━━━\n\n🎯 Blade Ball\n💡 Способности лучше подбирать под свой стиль: кому-то полезнее мобильность, кому-то контроль или защита.\n\n🎯 Adopt Me!\n💡 Не передавай питомцев незнакомцам по обещанию вернуть их позже — используй обычную систему обмена.\n\n🎮 Roblox Hub",
-    "status": "pending",
-    "published_at": null,
-    "attempts": 0,
-    "last_error": null
-  },
-  {
+    {
     "id": "2026-08-15-15",
     "publish_at": "2026-08-15T15:00:00+05:00",
     "game": "Dress To Impress + Pet Simulator 99",
@@ -47,19 +23,7 @@
     "attempts": 0,
     "last_error": null
   },
-  {
-    "id": 3,
-    "publish_at": "2026-08-15T18:00:00+05:00",
-    "game": "99 Nights in the Forest",
-    "rubric": "Миф или правда",
-    "source": "verified_db",
-    "text": "━━━━━━━━━━━━━━━━━━━━━\n      🧠 МИФ ИЛИ ПРАВДА? 🧠\n━━━━━━━━━━━━━━━━━━━━━\n\n🎮 99 Nights in the Forest\n\n🔥 Если всю ночь сидеть у костра, монстры тебя не достанут. 🔥\n\nКак думаешь — правда или миф?\n\n❌ МИФ!\n\nКостёр помогает выживать, но не делает тебя полностью неуязвимым.\n\n🎮 Roblox Hub",
-    "status": "pending",
-    "published_at": null,
-    "attempts": 0,
-    "last_error": null
-  },
-  {
+    {
     "id": "2026-08-15-18",
     "publish_at": "2026-08-15T18:00:00+05:00",
     "game": "Steal a Brainrot",
