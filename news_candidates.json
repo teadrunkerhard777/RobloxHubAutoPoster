@@ -10,27 +10,19 @@
       "isRNVAccount": false,
       "hasVerifiedBadge": false
     },
-    "playing": 716707,
-    "visits": 86396406317,
-    "description_changed": true,
-    "previous_description": "A place to play with like minded people and roleplay. Own and live in amazing houses, drive cool vehicles and explore the city. Be whoever you want to be in Brookhaven RP.\n\nLatest Update:\n🌐 Futuristic Homes - House, Estate, and 5 props!\n🚀 Rocket Car - New vehicle with unique effects, sounds, and texture! Included with VIP.\n🧱 Empty Plot Home - Lots of space to make your own prop builds!\n\nThanks for playing! \n\nPrivate Server Benefits:\n· Prop Saving\n· Server-Wide Music\n· Server-Wide Announcements\n· Remove or Lock Props\n· Check Prop Owners\n· Set Players as Admins\n· Kick / Temp Ban Players\n· Set Day of the Week\n· Set Time by the Hour\n· Change Weather and Lighting\n· Speed up Time\n· Server Theme Controls\n· No Wait Time for Changing House \n· Spawn Up to Three Vehicles\n· Prop Limit Increased\n· Freecam for PC users (Shift+P)",
+    "playing": 653516,
+    "visits": 86403271990,
+    "description_changed": false,
+    "previous_description": "A place to play with like minded people and roleplay. Own and live in amazing houses, drive cool vehicles and explore the city. Be whoever you want to be in Brookhaven RP.\n\nLatest Update:\n🏦 Bank Update - A new, refreshed Bank is now open!\n💳 Updated Tools  - New credit cards, cash bags and more!\n💰 New Bank Clothes - New Bank manager roleplay outfit!\n🚚 Updated Truck - The Armored Bank Truck has a brand new look!\n\nThanks for playing! \n\nPrivate Server Benefits:\n· Prop Saving\n· Server-Wide Music\n· Server-Wide Announcements\n· Remove or Lock Props\n· Check Prop Owners\n· Set Players as Admins\n· Kick / Temp Ban Players\n· Set Day of the Week\n· Set Time by the Hour\n· Change Weather and Lighting\n· Speed up Time\n· Server Theme Controls\n· No Wait Time for Changing House \n· Spawn Up to Three Vehicles\n· Prop Limit Increased\n· Freecam for PC users (Shift+P)",
     "current_description": "A place to play with like minded people and roleplay. Own and live in amazing houses, drive cool vehicles and explore the city. Be whoever you want to be in Brookhaven RP.\n\nLatest Update:\n🏦 Bank Update - A new, refreshed Bank is now open!\n💳 Updated Tools  - New credit cards, cash bags and more!\n💰 New Bank Clothes - New Bank manager roleplay outfit!\n🚚 Updated Truck - The Armored Bank Truck has a brand new look!\n\nThanks for playing! \n\nPrivate Server Benefits:\n· Prop Saving\n· Server-Wide Music\n· Server-Wide Announcements\n· Remove or Lock Props\n· Check Prop Owners\n· Set Players as Admins\n· Kick / Temp Ban Players\n· Set Day of the Week\n· Set Time by the Hour\n· Change Weather and Lighting\n· Speed up Time\n· Server Theme Controls\n· No Wait Time for Changing House \n· Spawn Up to Three Vehicles\n· Prop Limit Increased\n· Freecam for PC users (Shift+P)",
-    "added_lines": [
-      "🏦 Bank Update - A new, refreshed Bank is now open!",
-      "💳 Updated Tools  - New credit cards, cash bags and more!",
-      "💰 New Bank Clothes - New Bank manager roleplay outfit!",
-      "🚚 Updated Truck - The Armored Bank Truck has a brand new look!"
-    ],
-    "keywords_in_added": [
-      "UPDATE",
-      "NEW"
-    ],
+    "added_lines": [],
+    "keywords_in_added": [],
     "keywords_in_description": [
       "UPDATE",
       "NEW"
     ],
-    "score": 11,
-    "confidence": "high",
+    "score": 3,
+    "confidence": "low",
     "sources": [
       {
         "type": "roblox_api",
@@ -39,9 +31,9 @@
     ]
   },
   {
-    "game": "[SOON!🎉] Adopt Me!",
+    "game": "[😼] Adopt Me!",
     "universe_id": 383310974,
-    "updated_at": "2026-08-15T15:30:01.9330929Z",
+    "updated_at": "2026-08-15T17:00:01.9238795Z",
     "creator": {
       "id": 295182,
       "name": "Uplift Games",
@@ -49,8 +41,8 @@
       "isRNVAccount": false,
       "hasVerifiedBadge": true
     },
-    "playing": 519133,
-    "visits": 44407538379,
+    "playing": 296224,
+    "visits": 44409832071,
     "description_changed": false,
     "previous_description": "Adopt and raise 🐶🦄👶, trade and collect legendary pets, build your dream home, and roleplay with friends!\n\n🕵️Tux & Shepherd on the Stray Case 🕵️\n🍴 Find forks for the Mysterious Stranger!\n👀 Chihuahua found in Basic and Crystal Eggs!\n📰 Dress your pet as the Spy or the Witness!\n\nBe FIRST 🏆 To experience new updates by pressing 🔔NOTIFY.\n\nMeet the founders!\nNewFissy - Tech Director\nBethink - Creative Director\n\nFind out more about Uplift Games, our policies and creative attributions:\nhttps://devforum.roblox.com/t/credits/71812",
     "current_description": "Adopt and raise 🐶🦄👶, trade and collect legendary pets, build your dream home, and roleplay with friends!\n\n🕵️Tux & Shepherd on the Stray Case 🕵️\n🍴 Find forks for the Mysterious Stranger!\n👀 Chihuahua found in Basic and Crystal Eggs!\n📰 Dress your pet as the Spy or the Witness!\n\nBe FIRST 🏆 To experience new updates by pressing 🔔NOTIFY.\n\nMeet the founders!\nNewFissy - Tech Director\nBethink - Creative Director\n\nFind out more about Uplift Games, our policies and creative attributions:\nhttps://devforum.roblox.com/t/credits/71812",
@@ -73,7 +65,7 @@
   {
     "game": "[🌴] Dress To Impress",
     "universe_id": 5203828273,
-    "updated_at": "2026-08-15T08:35:27.1687992Z",
+    "updated_at": "2026-08-15T18:32:55.1643738Z",
     "creator": {
       "id": 17264167,
       "name": "Dress To Impress Group",
@@ -81,8 +73,8 @@
       "isRNVAccount": false,
       "hasVerifiedBadge": true
     },
-    "playing": 106552,
-    "visits": 10765384781,
+    "playing": 103334,
+    "visits": 10766600130,
     "description_changed": false,
     "previous_description": "Create stunning outfits 👗💖⭐, and strut the runway to show off your unique style. Collaborate, compete, and explore a world of glamour with friends!\n\n⭐ Are you ready to be the TOP MODEL?\n👗 NEW ITEMS! Check them out.\n🍿 Vote for your favorite outfits!\n💃 Use poses on the runway to show off your outfit!\n\nFind more about Dress To Impress by joining our community.\nhttps://www.roblox.com/communities/17264167/Dress-To-Impress-Group#!/about",
     "current_description": "Create stunning outfits 👗💖⭐, and strut the runway to show off your unique style. Collaborate, compete, and explore a world of glamour with friends!\n\n⭐ Are you ready to be the TOP MODEL?\n👗 NEW ITEMS! Check them out.\n🍿 Vote for your favorite outfits!\n💃 Use poses on the runway to show off your outfit!\n\nFind more about Dress To Impress by joining our community.\nhttps://www.roblox.com/communities/17264167/Dress-To-Impress-Group#!/about",
@@ -102,9 +94,9 @@
     ]
   },
   {
-    "game": "🎉 [PIÑATA MAZE] Pet Simulator 99! 🔥",
+    "game": "♾️ [PIÑATA MAZE] Pet Simulator 99! 💀",
     "universe_id": 3317771874,
-    "updated_at": "2026-08-14T06:33:24.981267Z",
+    "updated_at": "2026-08-15T17:46:49.5324262Z",
     "creator": {
       "id": 3959677,
       "name": "BIG Games Pets",
@@ -112,8 +104,8 @@
       "isRNVAccount": false,
       "hasVerifiedBadge": true
     },
-    "playing": 123016,
-    "visits": 2597162927,
+    "playing": 120347,
+    "visits": 2597601701,
     "description_changed": false,
     "previous_description": "Create an army of the coolest pets! They will help you get RICH!\n\n✨ Currently 2,000+ pets to collect! 🐾\n\n🧡 Thanks for playing!",
     "current_description": "Create an army of the coolest pets! They will help you get RICH!\n\n✨ Currently 2,000+ pets to collect! 🐾\n\n🧡 Thanks for playing!",
@@ -134,7 +126,7 @@
   {
     "game": "[🐝] Steal a Brainrot",
     "universe_id": 7709344486,
-    "updated_at": "2026-08-15T09:25:13.9939118Z",
+    "updated_at": "2026-08-15T18:23:25.1954455Z",
     "creator": {
       "id": 35815907,
       "name": "BRAZILIAN SPYDER",
@@ -142,8 +134,8 @@
       "isRNVAccount": false,
       "hasVerifiedBadge": true
     },
-    "playing": 230258,
-    "visits": 72588258895,
+    "playing": 560103,
+    "visits": 72595795224,
     "description_changed": false,
     "previous_description": "🗣️ Welcome to Steal a Brainrot!\n\n👍 Like the game and join the group\n\nHow to Play:\n👽 Buy a Brainrot\n🥷 Steal Brainrots from other players\n💸 Generate money\n🐦‍🔥 Rebirth\n✋ Buy slaps and troll gear to troll other players!\n\n💻 Supports Desktop, Mobile and Tablet players\n\n🙏 Credit to Chris for letting us use the Nyan Cat!\n🙏 Credit to @WinnersTakesAll for the backpack system!",
     "current_description": "🗣️ Welcome to Steal a Brainrot!\n\n👍 Like the game and join the group\n\nHow to Play:\n👽 Buy a Brainrot\n🥷 Steal Brainrots from other players\n💸 Generate money\n🐦‍🔥 Rebirth\n✋ Buy slaps and troll gear to troll other players!\n\n💻 Supports Desktop, Mobile and Tablet players\n\n🙏 Credit to Chris for letting us use the Nyan Cat!\n🙏 Credit to @WinnersTakesAll for the backpack system!",
@@ -170,8 +162,8 @@
       "isRNVAccount": false,
       "hasVerifiedBadge": false
     },
-    "playing": 38637,
-    "visits": 35837324887,
+    "playing": 35590,
+    "visits": 35837707254,
     "description_changed": false,
     "previous_description": "🍅Welcome to Grow a Garden🍅\n\nAre you ready to grow your very own garden? Buy seeds from the shop when they restock, plant them, wait for them to grow, and collect the profits! Flex fruits and finds on friends, and have fun!\n\n[How To Plant]\n• Equip your seed you want to plant!\n• Click in your farm on the brown plots to plant!\n• Wait to see it start growing!\n• After its fully grown, it is time to harvest the goods!\n\nRemember, your garden literally grows while you are offline⭐",
     "current_description": "🍅Welcome to Grow a Garden🍅\n\nAre you ready to grow your very own garden? Buy seeds from the shop when they restock, plant them, wait for them to grow, and collect the profits! Flex fruits and finds on friends, and have fun!\n\n[How To Plant]\n• Equip your seed you want to plant!\n• Click in your farm on the brown plots to plant!\n• Wait to see it start growing!\n• After its fully grown, it is time to harvest the goods!\n\nRemember, your garden literally grows while you are offline⭐",
