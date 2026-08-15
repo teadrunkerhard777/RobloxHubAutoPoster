@@ -3,54 +3,10 @@ import re
 
 
 MIN_SCORE = 5
-MAX_NEWS_ITEMS = 4
+MAX_NEWS_ITEMS = 2
 
 
-RULES = [
-    {
-        "keywords": ["NEW VEHICLE"],
-        "template": "🚗 В {game} появился новый транспорт."
-    },
-    {
-        "keywords": ["NEW ITEMS", "NEW ITEM"],
-        "template": "🎁 В {game} появились новые предметы."
-    },
-    {
-        "keywords": ["NEW PETS", "NEW PET"],
-        "template": "🐾 В {game} появились новые питомцы."
-    },
-    {
-        "keywords": ["NEW MAP"],
-        "template": "🗺 В {game} появилась новая карта."
-    },
-    {
-        "keywords": ["NEW BOSS"],
-        "template": "👾 В {game} появился новый босс."
-    },
-    {
-        "keywords": ["NEW EVENT", "EVENT"],
-        "template": "🎉 В {game} началось новое событие."
-    },
-    {
-        "keywords": ["QUEST"],
-        "template": "📜 В {game} появились новые задания."
-    },
-    {
-        "keywords": ["REWARD"],
-        "template": "🎁 В {game} появились новые награды."
-    },
-    {
-        "keywords": ["LIMITED"],
-        "template": "⏳ В {game} появился ограниченный по времени контент."
-    },
-    {
-        "keywords": ["UPDATE"],
-        "template": "🔥 В {game} вышло обновление."
-    }
-]
-
-
-NOISE_PHRASES = [
+NOISE_PHRASES = (
     "TECH DIRECTOR",
     "NOTIFY",
     "EXPERIENCE NEW UPDATES",
@@ -60,230 +16,434 @@ NOISE_PHRASES = [
     "CURRENTLY",
     "CREATE AN ARMY",
     "HELP YOU GET RICH"
-]
+)
 
 
-def load_json(filename, default):
-    try:
-        with open(filename, "r", encoding="utf-8") as file:
-            return json.load(file)
-    except FileNotFoundError:
-        return default
+GAME_EMOJIS = {
+    "Blox Fruits": "🍈",
+    "RIVALS": "🔫",
+    "99 Nights in the Forest": "🌲",
+    "Steal a Brainrot": "🧠",
+    "Brookhaven": "🏡",
+    "Adopt Me!": "🐾",
+    "Grow a Garden": "🌱",
+    "Dress To Impress": "👗",
+    "Pet Simulator 99": "🐶",
+    "Blade Ball": "⚔️"
+}
+
+
+def load_json(filename):
+    with open(
+        filename,
+        "r",
+        encoding="utf-8"
+    ) as file:
+        return json.load(file)
+
+
+def save_json(filename, data):
+    with open(
+        filename,
+        "w",
+        encoding="utf-8"
+    ) as file:
+        json.dump(
+            data,
+            file,
+            ensure_ascii=False,
+            indent=2
+        )
 
 
 def save_text(filename, text):
-    with open(filename, "w", encoding="utf-8") as file:
+    with open(
+        filename,
+        "w",
+        encoding="utf-8"
+    ) as file:
         file.write(text)
 
 
-def contains_noise(text):
-    text_upper = text.upper()
+def clean_game_name(name):
+    name = re.sub(
+        r"^\[[^\]]+\]\s*",
+        "",
+        name
+    )
+
+    return name.strip()
+
+
+def contains_noise(line):
+    upper_line = line.upper()
 
     return any(
-        phrase in text_upper
+        phrase in upper_line
         for phrase in NOISE_PHRASES
     )
 
 
-def find_rule(text):
-    text_upper = text.upper()
-
-    for rule in RULES:
-        for keyword in rule["keywords"]:
-            if keyword in text_upper:
-                return rule
-
-    return None
-
-
-def extract_named_content(line):
-    patterns = [
-        r"NEW VEHICLE[:\s-]+(.+)",
-        r"NEW ITEM[S]?[:\s-]+(.+)",
-        r"NEW PET[S]?[:\s-]+(.+)",
-        r"NEW BOSS[:\s-]+(.+)",
-        r"NEW MAP[:\s-]+(.+)"
-    ]
-
-    for pattern in patterns:
-        match = re.search(
-            pattern,
-            line,
-            flags=re.IGNORECASE
-        )
-
-        if match:
-            return match.group(1).strip()
-
-    return None
-
-
-def clean_game_name(game):
-    game = re.sub(
-        r"^\[[^\]]+\]\s*",
-        "",
-        game
+def extract_name_before_dash(line):
+    match = re.match(
+        r"^\s*(.+?)\s*[-–—]\s*NEW\s+",
+        line,
+        flags=re.IGNORECASE
     )
 
-    return game.strip()
+    if not match:
+        return None
+
+    name = match.group(1).strip()
+
+    if not name:
+        return None
+
+    return name
 
 
-def build_item_text(item):
-    analysis = item.get(
+def translate_news_line(line):
+    line = line.strip()
+
+    if not line:
+        return None
+
+    if contains_noise(line):
+        return None
+
+    upper = line.upper()
+
+    # Заголовки сами по себе не являются новостью.
+    if upper in {
+        "LATEST UPDATE:",
+        "LATEST UPDATE",
+        "UPDATE:",
+        "UPDATE"
+    }:
+        return None
+
+    item_name = extract_name_before_dash(
+        line
+    )
+
+    # ----------------------------------------------
+    # Новый транспорт
+    # ----------------------------------------------
+
+    if "NEW VEHICLE" in upper:
+        if item_name:
+            text = (
+                f"Появился {item_name} — "
+                "новый транспорт."
+            )
+        else:
+            text = (
+                "В игру добавили новый транспорт."
+            )
+
+        if (
+            "UNIQUE EFFECTS" in upper
+            or "SOUNDS" in upper
+            or "TEXTURE" in upper
+        ):
+            text = text.rstrip(".")
+            text += (
+                " с особыми эффектами, "
+                "звуками и оформлением."
+            )
+
+        if "VIP" in upper:
+            text += " Доступен владельцам VIP."
+
+        return text
+
+    # ----------------------------------------------
+    # Новые предметы
+    # ----------------------------------------------
+
+    if (
+        "NEW ITEMS" in upper
+        or "NEW ITEM" in upper
+    ):
+        if item_name:
+            return (
+                f"Появился новый предмет — "
+                f"{item_name}."
+            )
+
+        return "Появились новые предметы."
+
+    # ----------------------------------------------
+    # Новые питомцы
+    # ----------------------------------------------
+
+    if (
+        "NEW PETS" in upper
+        or "NEW PET" in upper
+    ):
+        if item_name:
+            return (
+                f"Появился новый питомец — "
+                f"{item_name}."
+            )
+
+        return "В игру добавили новых питомцев."
+
+    # ----------------------------------------------
+    # Новая карта
+    # ----------------------------------------------
+
+    if "NEW MAP" in upper:
+        if item_name:
+            return (
+                f"Появилась новая карта — "
+                f"{item_name}."
+            )
+
+        return "В игре появилась новая карта."
+
+    # ----------------------------------------------
+    # Новый босс
+    # ----------------------------------------------
+
+    if "NEW BOSS" in upper:
+        if item_name:
+            return (
+                f"Появился новый босс — "
+                f"{item_name}."
+            )
+
+        return "В игре появился новый босс."
+
+    # ----------------------------------------------
+    # Событие
+    # ----------------------------------------------
+
+    if (
+        "NEW EVENT" in upper
+        or re.search(
+            r"\bEVENT\b",
+            upper
+        )
+    ):
+        return "В игре проходит новое событие."
+
+    # ----------------------------------------------
+    # Задания
+    # ----------------------------------------------
+
+    if (
+        "NEW QUEST" in upper
+        or re.search(
+            r"\bQUESTS?\b",
+            upper
+        )
+    ):
+        return "В игре появились новые задания."
+
+    # ----------------------------------------------
+    # Награды
+    # ----------------------------------------------
+
+    if re.search(
+        r"\bREWARDS?\b",
+        upper
+    ):
+        return "В игру добавили новые награды."
+
+    # ----------------------------------------------
+    # Ограниченный контент
+    # ----------------------------------------------
+
+    if "LIMITED" in upper:
+        return (
+            "Появился ограниченный по времени "
+            "контент."
+        )
+
+    # ----------------------------------------------
+    # Новый сезон
+    # ----------------------------------------------
+
+    if "SEASON" in upper:
+        return "В игре стартовал новый сезон."
+
+    # ----------------------------------------------
+    # Просто UPDATE используем только как fallback
+    # ----------------------------------------------
+
+    if "UPDATE" in upper:
+        return "В игре вышло новое обновление."
+
+    return None
+
+
+def get_news_lines(candidate):
+    analysis = candidate.get(
         "official_description_analysis",
         {}
     )
 
-    lines = analysis.get(
+    return analysis.get(
         "news_lines",
         []
     )
 
+
+def build_item(candidate):
     game = clean_game_name(
-        item["game"]
+        candidate.get(
+            "game",
+            "Roblox"
+        )
     )
 
-    result = []
+    score = candidate.get(
+        "score",
+        0
+    )
 
-    used_templates = set()
+    lines = get_news_lines(
+        candidate
+    )
+
+    translated = []
 
     for line in lines:
-        line = line.strip()
-
-        if not line:
-            continue
-
-        if contains_noise(line):
-            continue
-
-        rule = find_rule(line)
-
-        if not rule:
-            continue
-
-        template = rule["template"]
-
-        if template in used_templates:
-            continue
-
-        text = template.format(
-            game=game
-        )
-
-        named_content = extract_named_content(
+        result = translate_news_line(
             line
         )
 
-        if named_content:
-            text += (
-                f" Разработчики упоминают: "
-                f"{named_content}"
-            )
+        if (
+            result
+            and result not in translated
+        ):
+            translated.append(result)
 
-        result.append(text)
+    if not translated:
+        return None
 
-        used_templates.add(
-            template
-        )
-
-    return result[:2]
-
-
-def get_best_news(items):
-    news = []
-
-    for item in items:
-        if item.get("score", 0) < MIN_SCORE:
-            continue
-
-        texts = build_item_text(
-            item
-        )
-
-        if not texts:
-            continue
-
-        news.append(
-            {
-                "game": clean_game_name(
-                    item["game"]
-                ),
-                "score": item["score"],
-                "texts": texts
-            }
-        )
-
-    news.sort(
-        key=lambda item: item["score"],
-        reverse=True
-    )
-
-    return news[:MAX_NEWS_ITEMS]
-
-
-def build_post(news_items):
-    if not news_items:
-        return (
-            "🎮 Roblox Hub — утренняя сводка\n\n"
-            "Сегодня пока нет достаточно подтверждённых "
-            "свежих новостей.\n\n"
-            "🎮 Roblox Hub"
-        )
-
-    parts = [
-        "🎮 Roblox Hub — утренняя сводка",
-        ""
+    # Если нашли конкретную новость,
+    # убираем бесполезное "вышло обновление".
+    specific = [
+        text
+        for text in translated
+        if text != "В игре вышло новое обновление."
     ]
 
-    for index, item in enumerate(
-        news_items,
-        start=1
-    ):
-        parts.append(
-            f"{index}. 🔥 {item['game']}"
-        )
+    if specific:
+        translated = specific
 
-        for text in item["texts"]:
-            parts.append(
-                f"• {text}"
-            )
-
-        parts.append("")
-
-    parts.append(
-        "🎮 Roblox Hub"
+    text = " ".join(
+        translated[:2]
     )
 
-    return "\n".join(
-        parts
-    )
+    return {
+        "game": game,
+        "emoji": GAME_EMOJIS.get(
+            game,
+            "🎮"
+        ),
+        "score": score,
+        "text": text
+    }
 
 
 verified_news = load_json(
-    "verified_news.json",
-    []
+    "verified_news.json"
 )
 
-best_news = get_best_news(
-    verified_news
+
+candidates = [
+    candidate
+    for candidate in verified_news
+    if candidate.get("score", 0) >= MIN_SCORE
+]
+
+
+candidates.sort(
+    key=lambda item: item.get(
+        "score",
+        0
+    ),
+    reverse=True
 )
 
-post_text = build_post(
-    best_news
+
+news_items = []
+used_games = set()
+
+
+for candidate in candidates:
+    item = build_item(
+        candidate
+    )
+
+    if item is None:
+        continue
+
+    if item["game"] in used_games:
+        continue
+
+    news_items.append(
+        item
+    )
+
+    used_games.add(
+        item["game"]
+    )
+
+    if len(news_items) == MAX_NEWS_ITEMS:
+        break
+
+
+output = {
+    "items": news_items
+}
+
+
+save_json(
+    "generated_news_data_ru.json",
+    output
 )
+
+
+# Оставляем txt как удобный файл-превью.
+preview_blocks = []
+
+
+for item in news_items:
+    preview_blocks.append(
+        f"{item['emoji']} {item['game']}\n"
+        f"{item['text']}"
+    )
+
+
+if preview_blocks:
+    preview = "\n\n".join(
+        preview_blocks
+    )
+else:
+    preview = (
+        "Сегодня не нашлось достаточно "
+        "подтверждённых игровых новостей."
+    )
+
 
 save_text(
     "generated_news_post_ru.txt",
-    post_text
+    preview
 )
 
 
+print()
 print(
-    f"Подходящих новостей: "
-    f"{len(best_news)}"
+    f"Подготовлено новостей: "
+    f"{len(news_items)}"
 )
 
-print()
-print("Готовый русский пост:")
-print()
-print(post_text)
+for item in news_items:
+    print(
+        f"- {item['game']}: "
+        f"{item['text']}"
+    )
