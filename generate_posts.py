@@ -9,6 +9,7 @@ LOCAL_TIMEZONE = timezone(timedelta(hours=5))
 MYTH_HISTORY_LIMIT = 3
 GAME_HISTORY_LIMIT = 5
 
+
 GAME_EMOJIS = {
     "Blox Fruits": "🍈",
     "RIVALS": "🔫",
@@ -191,16 +192,31 @@ def generate_tips_post():
             tip["game"]
         )
 
+    emoji_1 = GAME_EMOJIS.get(
+        selected_tips[0]["game"],
+        "🎮"
+    )
+
+    emoji_2 = GAME_EMOJIS.get(
+        selected_tips[1]["game"],
+        "🎮"
+    )
+
+    emoji_3 = GAME_EMOJIS.get(
+        selected_tips[2]["game"],
+        "🎮"
+    )
+
     text = (
         "💡 ПОЛЕЗНО ЗНАТЬ\n\n"
 
-        f"🎯 {selected_tips[0]['game']}\n"
+        f"{emoji_1} {selected_tips[0]['game']}\n"
         f"{selected_tips[0]['text']}\n\n"
 
-        f"🎯 {selected_tips[1]['game']}\n"
+        f"{emoji_2} {selected_tips[1]['game']}\n"
         f"{selected_tips[1]['text']}\n\n"
 
-        f"🎯 {selected_tips[2]['game']}\n"
+        f"{emoji_3} {selected_tips[2]['game']}\n"
         f"{selected_tips[2]['text']}\n\n"
 
         "🎮 Roblox Hub"
@@ -269,7 +285,6 @@ def generate_myth_post():
         myth["game"]
     )
 
-    # Полосы убраны.
     text = (
         "🧠 МИФ ИЛИ ПРАВДА?\n\n"
 
@@ -334,6 +349,7 @@ existing_tomorrow_ids = (
 
 if existing_tomorrow_ids == tomorrow_ids:
     print()
+
     print(
         f"Очередь на {tomorrow} "
         "уже полностью существует."
