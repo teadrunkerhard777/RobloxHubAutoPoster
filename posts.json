@@ -34,5 +34,41 @@
     "published_at": "2026-08-15T18:00:37.129290+05:00",
     "attempts": 1,
     "last_error": null
+  },
+  {
+    "id": "2026-08-16-10",
+    "publish_at": "2026-08-16T10:00:00+05:00",
+    "game": "разные игры",
+    "rubric": "Выпуск дня",
+    "source": "auto_verified",
+    "text": "🎮 ROBLOX HUB — ВЫПУСК ДНЯ\n\n🎮 Brookhaven 🏡RP\nВ игре вышло новое обновление.\n\n👗 Dress To Impress\nПоявились новые предметы.\n\n💡 ЛАЙФХАК\n⚔️ Blade Ball\nЧем быстрее становится мяч, тем меньше лишних движений нужно делать перед блоком.\n\n⭐ ГЛАВНОЕ ЗА ДЕНЬ\nBrookhaven 🏡RP: В игре вышло новое обновление.\n\n🎮 Roblox Hub",
+    "status": "pending",
+    "published_at": null,
+    "attempts": 0,
+    "last_error": null
+  },
+  {
+    "id": "2026-08-16-15",
+    "publish_at": "2026-08-16T15:00:00+05:00",
+    "game": "Grow a Garden + Steal a Brainrot + 99 Nights in the Forest",
+    "rubric": "Полезно знать",
+    "source": "verified_db",
+    "text": "💡 ПОЛЕЗНО ЗНАТЬ\n\n🌱 Grow a Garden\nЦикл игры простой: купить семена → посадить → дождаться роста → собрать → вложить прибыль. Не пропускай последний шаг.\n\n🧠 Steal a Brainrot\nЧем больше доход приносит Brainrot, тем внимательнее стоит следить за его безопасностью.\n\n🌲 99 Nights in the Forest\nНе считай костёр абсолютной защитой: некоторые угрозы всё равно могут добраться до лагеря.\n\n🎮 Roblox Hub",
+    "status": "pending",
+    "published_at": null,
+    "attempts": 0,
+    "last_error": null
+  },
+  {
+    "id": "2026-08-16-18",
+    "publish_at": "2026-08-16T18:00:00+05:00",
+    "game": "99 Nights in the Forest",
+    "rubric": "Миф или правда",
+    "source": "verified_db",
+    "text": "🧠 МИФ ИЛИ ПРАВДА?\n\n🌲 99 Nights in the Forest\n\n🔥 Если всю ночь сидеть у костра, монстры тебя не достанут.\n\nКак думаешь — правда или миф?\n\n❌ МИФ!\n\nКостёр помогает выживать, но не делает тебя полностью неуязвимым.\n\n🎮 Roblox Hub",
+    "status": "pending",
+    "published_at": null,
+    "attempts": 0,
+    "last_error": null
   }
 ]
