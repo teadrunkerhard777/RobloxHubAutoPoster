@@ -107,7 +107,7 @@ def remember_game(game):
 
 
 # --------------------------------------------------
-# Работа с советами
+# Советы
 # --------------------------------------------------
 
 def reset_tips_if_needed(
@@ -132,7 +132,8 @@ def reset_tips_if_needed(
     return tips
 
 
-def select_one_tip(
+def select_tips(
+    count,
     excluded_games=None
 ):
     if excluded_games is None:
@@ -144,7 +145,7 @@ def select_one_tip(
 
     tips = reset_tips_if_needed(
         tips,
-        1
+        count
     )
 
     game_history = load_json(
@@ -161,58 +162,93 @@ def select_one_tip(
         )
     ]
 
+    # Сначала стараемся взять игры,
+    # которых нет ни в выпуске,
+    # ни в недавней истории.
     preferred = [
         tip
         for tip in unused
-        if tip["game"] not in excluded_games
-        and tip["game"] not in game_history
+        if tip["game"]
+        not in excluded_games
+        and tip["game"]
+        not in game_history
     ]
 
-    if not preferred:
-        preferred = [
-            tip
-            for tip in unused
-            if tip["game"]
-            not in excluded_games
-        ]
+    fallback = [
+        tip
+        for tip in unused
+        if tip["game"]
+        not in excluded_games
+    ]
 
-    if not preferred:
-        preferred = unused
-
-    if not preferred:
-        raise RuntimeError(
-            "В базе не осталось советов."
-        )
-
-    selected = random.choice(
-        preferred
+    candidates = (
+        preferred + fallback
     )
 
-    for tip in tips:
-        if tip["id"] == selected["id"]:
-            tip["used"] = True
+    random.shuffle(
+        candidates
+    )
+
+    selected = []
+    selected_ids = set()
+    selected_games = set()
+
+    for tip in candidates:
+        if tip["id"] in selected_ids:
+            continue
+
+        if tip["game"] in selected_games:
+            continue
+
+        selected.append(
+            tip
+        )
+
+        selected_ids.add(
+            tip["id"]
+        )
+
+        selected_games.add(
+            tip["game"]
+        )
+
+        if len(selected) == count:
             break
+
+    if len(selected) < count:
+        raise RuntimeError(
+            f"Не удалось выбрать "
+            f"{count} советов "
+            "по разным играм."
+        )
+
+    for tip in tips:
+        if tip["id"] in selected_ids:
+            tip["used"] = True
 
     save_json(
         "tips.json",
         tips
     )
 
-    remember_game(
-        selected["game"]
-    )
+    for tip in selected:
+        remember_game(
+            tip["game"]
+        )
 
     return selected
 
 
 # --------------------------------------------------
-# Утренний выпуск
+# 10:00 — выпуск дня
 # --------------------------------------------------
 
 def generate_morning_post():
     news_data = load_json(
         "generated_news_data_ru.json",
-        {"items": []}
+        {
+            "items": []
+        }
     )
 
     news_items = news_data.get(
@@ -225,67 +261,116 @@ def generate_morning_post():
         for item in news_items
     }
 
-    tip = select_one_tip(
+    morning_tips = select_tips(
+        count=2,
         excluded_games=news_games
     )
+
+    lifehack = morning_tips[0]
+    useful_fact = morning_tips[1]
 
     blocks = [
         "🎮 ROBLOX HUB — ВЫПУСК ДНЯ"
     ]
 
-    # ----------------------------------------------
+    # ------------------------------------------------
     # Новости
-    # ----------------------------------------------
+    # ------------------------------------------------
 
     if news_items:
+        blocks.append(
+            "🔥 СЕГОДНЯ В ROBLOX"
+        )
+
         for item in news_items:
             blocks.append(
                 f"{item.get('emoji', '🎮')} "
                 f"{item['game']}\n"
                 f"{item['text']}"
             )
+
     else:
         blocks.append(
-            "📰 НОВОСТИ\n"
-            "Сегодня без сомнительных слухов: "
-            "достаточно подтверждённых игровых "
-            "новостей пока не нашлось."
+            "🔥 СЕГОДНЯ В ROBLOX\n"
+            "Крупных подтверждённых "
+            "новостей сегодня немного, "
+            "поэтому никаких слухов "
+            "добавлять не будем."
         )
 
-    # ----------------------------------------------
+    # ------------------------------------------------
     # Лайфхак
-    # ----------------------------------------------
+    # ------------------------------------------------
 
-    tip_emoji = GAME_EMOJIS.get(
-        tip["game"],
-        "🎮"
+    lifehack_emoji = (
+        GAME_EMOJIS.get(
+            lifehack["game"],
+            "🎮"
+        )
     )
 
     blocks.append(
         "💡 ЛАЙФХАК\n"
-        f"{tip_emoji} {tip['game']}\n"
-        f"{tip['text']}"
+        f"{lifehack_emoji} "
+        f"{lifehack['game']}\n"
+        f"{lifehack['text']}"
     )
 
-    # ----------------------------------------------
-    # Главное за день
-    # ----------------------------------------------
+    # ------------------------------------------------
+    # Стоит знать
+    # ------------------------------------------------
 
-    if news_items:
-        main = news_items[0]
+    useful_emoji = (
+        GAME_EMOJIS.get(
+            useful_fact["game"],
+            "🎮"
+        )
+    )
 
-        blocks.append(
-            "⭐ ГЛАВНОЕ ЗА ДЕНЬ\n"
-            f"{main['game']}: "
-            f"{main['text']}"
+    blocks.append(
+        "👀 СТОИТ ЗНАТЬ\n"
+        f"{useful_emoji} "
+        f"{useful_fact['game']}\n"
+        f"{useful_fact['text']}"
+    )
+
+    # ------------------------------------------------
+    # Главное
+    # ------------------------------------------------
+
+    if len(news_items) >= 2:
+        games = (
+            f"{news_items[0]['game']} "
+            f"и {news_items[1]['game']}"
+        )
+
+        main_text = (
+            f"Сегодня свежие изменения "
+            f"нашлись сразу в {games}. "
+            "Остальные слухи и неподтверждённые "
+            "вещи в выпуск не добавляем."
+        )
+
+    elif len(news_items) == 1:
+        main_text = (
+            f"Сегодня из подтверждённых "
+            f"обновлений выделяется "
+            f"{news_items[0]['game']}. "
+            "А вместо сомнительных слухов "
+            "добавили полезные игровые советы."
         )
 
     else:
-        blocks.append(
-            "⭐ ГЛАВНОЕ ЗА ДЕНЬ\n"
-            "Лучше пропустить сомнительную новость, "
-            "чем выдать слух за факт."
+        main_text = (
+            "Сегодня день полезностей: "
+            "лучше хороший игровой совет, "
+            "чем выдуманная новость."
         )
+
+    blocks.append(
+        "⭐ ГЛАВНОЕ\n"
+        f"{main_text}"
+    )
 
     blocks.append(
         "🎮 Roblox Hub"
@@ -297,7 +382,7 @@ def generate_morning_post():
 
 
 # --------------------------------------------------
-# Бесплатно
+# 12:00 — бесплатно
 # --------------------------------------------------
 
 def generate_freebie_post():
@@ -322,10 +407,8 @@ def generate_freebie_post():
 
     freebie = available[0]
 
-    freebie_id = freebie["id"]
-
     for item in freebies:
-        if item["id"] == freebie_id:
+        if item["id"] == freebie["id"]:
             item["used"] = True
             break
 
@@ -339,9 +422,7 @@ def generate_freebie_post():
             "game",
             "Roblox"
         ),
-        "text": freebie[
-            "text"
-        ],
+        "text": freebie["text"],
         "source": freebie.get(
             "source",
             "verified_freebie"
@@ -350,104 +431,13 @@ def generate_freebie_post():
 
 
 # --------------------------------------------------
-# Полезно знать — 3 игры
+# 15:00 — Полезно знать
 # --------------------------------------------------
 
 def generate_tips_post():
-    tips = load_json(
-        "tips.json"
+    selected_tips = select_tips(
+        count=3
     )
-
-    tips = reset_tips_if_needed(
-        tips,
-        3
-    )
-
-    game_history = load_json(
-        "game_history.json",
-        []
-    )
-
-    unused_tips = [
-        tip
-        for tip in tips
-        if not tip.get(
-            "used",
-            False
-        )
-    ]
-
-    preferred_tips = [
-        tip
-        for tip in unused_tips
-        if tip["game"]
-        not in game_history
-    ]
-
-    if len(
-        {
-            tip["game"]
-            for tip in preferred_tips
-        }
-    ) >= 3:
-        candidates = (
-            preferred_tips.copy()
-        )
-    else:
-        candidates = (
-            unused_tips.copy()
-        )
-
-    random.shuffle(
-        candidates
-    )
-
-    selected_tips = []
-    selected_games = set()
-
-    for tip in candidates:
-        if tip["game"] in selected_games:
-            continue
-
-        selected_tips.append(
-            tip
-        )
-
-        selected_games.add(
-            tip["game"]
-        )
-
-        if len(
-            selected_tips
-        ) == 3:
-            break
-
-    if len(
-        selected_tips
-    ) < 3:
-        raise RuntimeError(
-            "Не удалось выбрать три совета "
-            "по трём разным играм."
-        )
-
-    selected_ids = {
-        tip["id"]
-        for tip in selected_tips
-    }
-
-    for tip in tips:
-        if tip["id"] in selected_ids:
-            tip["used"] = True
-
-    save_json(
-        "tips.json",
-        tips
-    )
-
-    for tip in selected_tips:
-        remember_game(
-            tip["game"]
-        )
 
     blocks = []
 
@@ -479,7 +469,7 @@ def generate_tips_post():
 
 
 # --------------------------------------------------
-# Миф или правда
+# 18:00 — Миф или правда
 # --------------------------------------------------
 
 def generate_myth_post():
@@ -570,7 +560,7 @@ def generate_myth_post():
 
 
 # --------------------------------------------------
-# Завтрашняя дата
+# Дата
 # --------------------------------------------------
 
 now = datetime.now(
@@ -589,7 +579,7 @@ id_18 = f"{tomorrow}-18"
 
 
 # --------------------------------------------------
-# Текущая очередь
+# Очередь
 # --------------------------------------------------
 
 existing_posts = load_json(
@@ -615,24 +605,22 @@ if id_10 not in existing_ids:
         generate_morning_post()
     )
 
-    post_10 = build_post(
-        post_id=id_10,
-        publish_at=datetime(
-            tomorrow.year,
-            tomorrow.month,
-            tomorrow.day,
-            10,
-            0,
-            tzinfo=LOCAL_TIMEZONE
-        ),
-        game="разные игры",
-        rubric="Выпуск дня",
-        source="auto_verified",
-        text=morning_text
-    )
-
     existing_posts.append(
-        post_10
+        build_post(
+            post_id=id_10,
+            publish_at=datetime(
+                tomorrow.year,
+                tomorrow.month,
+                tomorrow.day,
+                10,
+                0,
+                tzinfo=LOCAL_TIMEZONE
+            ),
+            game="разные игры",
+            rubric="Выпуск дня",
+            source="auto_verified",
+            text=morning_text
+        )
     )
 
     existing_ids.add(
@@ -656,37 +644,25 @@ else:
 # --------------------------------------------------
 
 if id_12 not in existing_ids:
-    freebie = (
-        generate_freebie_post()
-    )
+    freebie = generate_freebie_post()
 
     if freebie is not None:
-        post_12 = build_post(
-            post_id=id_12,
-            publish_at=datetime(
-                tomorrow.year,
-                tomorrow.month,
-                tomorrow.day,
-                12,
-                0,
-                tzinfo=LOCAL_TIMEZONE
-            ),
-            game=freebie[
-                "game"
-            ],
-            rubric=(
-                "Бесплатно в Roblox"
-            ),
-            source=freebie[
-                "source"
-            ],
-            text=freebie[
-                "text"
-            ]
-        )
-
         existing_posts.append(
-            post_12
+            build_post(
+                post_id=id_12,
+                publish_at=datetime(
+                    tomorrow.year,
+                    tomorrow.month,
+                    tomorrow.day,
+                    12,
+                    0,
+                    tzinfo=LOCAL_TIMEZONE
+                ),
+                game=freebie["game"],
+                rubric="Бесплатно в Roblox",
+                source=freebie["source"],
+                text=freebie["text"]
+            )
         )
 
         existing_ids.add(
@@ -696,8 +672,7 @@ if id_12 not in existing_ids:
         posts_added += 1
 
         print(
-            "12:00 — бесплатный пост "
-            "добавлен."
+            "12:00 — бесплатный пост добавлен."
         )
 
     else:
@@ -721,24 +696,22 @@ if id_15 not in existing_ids:
         generate_tips_post()
     )
 
-    post_15 = build_post(
-        post_id=id_15,
-        publish_at=datetime(
-            tomorrow.year,
-            tomorrow.month,
-            tomorrow.day,
-            15,
-            0,
-            tzinfo=LOCAL_TIMEZONE
-        ),
-        game=tips_games,
-        rubric="Полезно знать",
-        source="verified_db",
-        text=tips_text
-    )
-
     existing_posts.append(
-        post_15
+        build_post(
+            post_id=id_15,
+            publish_at=datetime(
+                tomorrow.year,
+                tomorrow.month,
+                tomorrow.day,
+                15,
+                0,
+                tzinfo=LOCAL_TIMEZONE
+            ),
+            game=tips_games,
+            rubric="Полезно знать",
+            source="verified_db",
+            text=tips_text
+        )
     )
 
     existing_ids.add(
@@ -767,24 +740,22 @@ if id_18 not in existing_ids:
         generate_myth_post()
     )
 
-    post_18 = build_post(
-        post_id=id_18,
-        publish_at=datetime(
-            tomorrow.year,
-            tomorrow.month,
-            tomorrow.day,
-            18,
-            0,
-            tzinfo=LOCAL_TIMEZONE
-        ),
-        game=myth_game,
-        rubric="Миф или правда",
-        source="verified_db",
-        text=myth_text
-    )
-
     existing_posts.append(
-        post_18
+        build_post(
+            post_id=id_18,
+            publish_at=datetime(
+                tomorrow.year,
+                tomorrow.month,
+                tomorrow.day,
+                18,
+                0,
+                tzinfo=LOCAL_TIMEZONE
+            ),
+            game=myth_game,
+            rubric="Миф или правда",
+            source="verified_db",
+            text=myth_text
+        )
     )
 
     existing_ids.add(
@@ -805,7 +776,7 @@ else:
 
 
 # --------------------------------------------------
-# Сохраняем очередь
+# Сохраняем
 # --------------------------------------------------
 
 existing_posts.sort(
@@ -813,6 +784,7 @@ existing_posts.sort(
         "publish_at"
     ]
 )
+
 
 save_json(
     "posts.json",
@@ -823,8 +795,7 @@ save_json(
 print()
 
 print(
-    f"Очередь на {tomorrow} "
-    "обработана."
+    f"Очередь на {tomorrow} обработана."
 )
 
 print(

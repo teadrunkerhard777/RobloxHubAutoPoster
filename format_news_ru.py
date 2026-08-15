@@ -3,20 +3,21 @@ import re
 
 
 MIN_SCORE = 5
-MAX_NEWS_ITEMS = 2
+MAX_NEWS_ITEMS = 3
 
 
-NOISE_PHRASES = (
-    "TECH DIRECTOR",
-    "NOTIFY",
-    "EXPERIENCE NEW UPDATES",
-    "ROLEPLAY WITH FRIENDS",
-    "BUILD YOUR DREAM HOME",
-    "TRADE AND COLLECT",
-    "CURRENTLY",
-    "CREATE AN ARMY",
-    "HELP YOU GET RICH"
-)
+GAME_NAMES = {
+    "STEAL A BRAINROT": "Steal a Brainrot",
+    "99 NIGHTS IN THE FOREST": "99 Nights in the Forest",
+    "BLOX FRUITS": "Blox Fruits",
+    "BROOKHAVEN": "Brookhaven",
+    "ADOPT ME": "Adopt Me!",
+    "RIVALS": "RIVALS",
+    "GROW A GARDEN": "Grow a Garden",
+    "DRESS TO IMPRESS": "Dress To Impress",
+    "PET SIMULATOR 99": "Pet Simulator 99",
+    "BLADE BALL": "Blade Ball"
+}
 
 
 GAME_EMOJIS = {
@@ -31,6 +32,18 @@ GAME_EMOJIS = {
     "Pet Simulator 99": "🐶",
     "Blade Ball": "⚔️"
 }
+
+
+NOISE_PHRASES = (
+    "TECH DIRECTOR",
+    "NOTIFY",
+    "EXPERIENCE NEW UPDATES",
+    "ROLEPLAY WITH FRIENDS",
+    "BUILD YOUR DREAM HOME",
+    "TRADE AND COLLECT",
+    "CREATE AN ARMY",
+    "HELP YOU GET RICH"
+)
 
 
 def load_json(filename):
@@ -65,11 +78,18 @@ def save_text(filename, text):
         file.write(text)
 
 
-def clean_game_name(name):
+def normalize_game_name(raw_name):
+    upper_name = raw_name.upper()
+
+    for marker, clean_name in GAME_NAMES.items():
+        if marker in upper_name:
+            return clean_name
+
+    # На случай новой игры.
     name = re.sub(
         r"^\[[^\]]+\]\s*",
         "",
-        name
+        raw_name
     )
 
     return name.strip()
@@ -84,7 +104,12 @@ def contains_noise(line):
     )
 
 
-def extract_name_before_dash(line):
+def extract_name_before_new(line):
+    """
+    Rocket Car - New vehicle with ...
+    -> Rocket Car
+    """
+
     match = re.match(
         r"^\s*(.+?)\s*[-–—]\s*NEW\s+",
         line,
@@ -94,12 +119,12 @@ def extract_name_before_dash(line):
     if not match:
         return None
 
-    name = match.group(1).strip()
+    value = match.group(1).strip()
 
-    if not name:
+    if not value:
         return None
 
-    return name
+    return value
 
 
 def translate_news_line(line):
@@ -113,111 +138,162 @@ def translate_news_line(line):
 
     upper = line.upper()
 
-    # Заголовки сами по себе не являются новостью.
+    # Просто заголовки.
     if upper in {
-        "LATEST UPDATE:",
         "LATEST UPDATE",
-        "UPDATE:",
-        "UPDATE"
+        "LATEST UPDATE:",
+        "UPDATE",
+        "UPDATE:"
     }:
         return None
 
-    item_name = extract_name_before_dash(
+    object_name = extract_name_before_new(
         line
     )
 
-    # ----------------------------------------------
+    # ------------------------------------------------
     # Новый транспорт
-    # ----------------------------------------------
+    # ------------------------------------------------
 
     if "NEW VEHICLE" in upper:
-        if item_name:
+        if object_name:
             text = (
-                f"Появился {item_name} — "
-                "новый транспорт."
+                f"Появился {object_name} — "
+                "новый транспорт"
             )
         else:
             text = (
-                "В игру добавили новый транспорт."
+                "В игру добавили новый транспорт"
             )
 
-        if (
-            "UNIQUE EFFECTS" in upper
-            or "SOUNDS" in upper
-            or "TEXTURE" in upper
-        ):
-            text = text.rstrip(".")
-            text += (
-                " с особыми эффектами, "
-                "звуками и оформлением."
+        details = []
+
+        if "UNIQUE EFFECTS" in upper:
+            details.append(
+                "особыми эффектами"
             )
+
+        if "SOUNDS" in upper:
+            details.append(
+                "звуками"
+            )
+
+        if "TEXTURE" in upper:
+            details.append(
+                "оформлением"
+            )
+
+        if details:
+            text += " с " + ", ".join(
+                details
+            )
+
+        text += "."
 
         if "VIP" in upper:
-            text += " Доступен владельцам VIP."
+            text += (
+                " Он доступен владельцам VIP."
+            )
 
-        return text
+        return {
+            "text": text,
+            "kind": "vehicle",
+            "specific": True
+        }
 
-    # ----------------------------------------------
-    # Новые предметы
-    # ----------------------------------------------
+    # ------------------------------------------------
+    # Предметы
+    # ------------------------------------------------
 
     if (
         "NEW ITEMS" in upper
         or "NEW ITEM" in upper
     ):
-        if item_name:
-            return (
+        if object_name:
+            text = (
                 f"Появился новый предмет — "
-                f"{item_name}."
+                f"{object_name}."
+            )
+        else:
+            text = (
+                "В игре появились новые предметы."
             )
 
-        return "Появились новые предметы."
+        return {
+            "text": text,
+            "kind": "items",
+            "specific": True
+        }
 
-    # ----------------------------------------------
-    # Новые питомцы
-    # ----------------------------------------------
+    # ------------------------------------------------
+    # Питомцы
+    # ------------------------------------------------
 
     if (
         "NEW PETS" in upper
         or "NEW PET" in upper
     ):
-        if item_name:
-            return (
+        if object_name:
+            text = (
                 f"Появился новый питомец — "
-                f"{item_name}."
+                f"{object_name}."
+            )
+        else:
+            text = (
+                "В игру добавили новых питомцев."
             )
 
-        return "В игру добавили новых питомцев."
+        return {
+            "text": text,
+            "kind": "pets",
+            "specific": True
+        }
 
-    # ----------------------------------------------
-    # Новая карта
-    # ----------------------------------------------
+    # ------------------------------------------------
+    # Карта
+    # ------------------------------------------------
 
     if "NEW MAP" in upper:
-        if item_name:
-            return (
+        if object_name:
+            text = (
                 f"Появилась новая карта — "
-                f"{item_name}."
+                f"{object_name}."
+            )
+        else:
+            text = (
+                "В игре появилась новая карта."
             )
 
-        return "В игре появилась новая карта."
+        return {
+            "text": text,
+            "kind": "map",
+            "specific": True
+        }
 
-    # ----------------------------------------------
-    # Новый босс
-    # ----------------------------------------------
+    # ------------------------------------------------
+    # Босс
+    # ------------------------------------------------
 
     if "NEW BOSS" in upper:
-        if item_name:
-            return (
+        if object_name:
+            text = (
                 f"Появился новый босс — "
-                f"{item_name}."
+                f"{object_name}."
+            )
+        else:
+            text = (
+                "В игре появился новый босс."
             )
 
-        return "В игре появился новый босс."
+        return {
+            "text": text,
+            "kind": "boss",
+            "specific": True
+        }
 
-    # ----------------------------------------------
+    # ------------------------------------------------
     # Событие
-    # ----------------------------------------------
+    # ------------------------------------------------
 
     if (
         "NEW EVENT" in upper
@@ -226,54 +302,85 @@ def translate_news_line(line):
             upper
         )
     ):
-        return "В игре проходит новое событие."
+        return {
+            "text": (
+                "В игре началось новое событие."
+            ),
+            "kind": "event",
+            "specific": True
+        }
 
-    # ----------------------------------------------
+    # ------------------------------------------------
     # Задания
-    # ----------------------------------------------
+    # ------------------------------------------------
 
-    if (
-        "NEW QUEST" in upper
-        or re.search(
-            r"\bQUESTS?\b",
-            upper
-        )
+    if re.search(
+        r"\bQUESTS?\b",
+        upper
     ):
-        return "В игре появились новые задания."
+        return {
+            "text": (
+                "В игре появились новые задания."
+            ),
+            "kind": "quests",
+            "specific": True
+        }
 
-    # ----------------------------------------------
+    # ------------------------------------------------
     # Награды
-    # ----------------------------------------------
+    # ------------------------------------------------
 
     if re.search(
         r"\bREWARDS?\b",
         upper
     ):
-        return "В игру добавили новые награды."
+        return {
+            "text": (
+                "В игре появились новые награды."
+            ),
+            "kind": "rewards",
+            "specific": True
+        }
 
-    # ----------------------------------------------
-    # Ограниченный контент
-    # ----------------------------------------------
-
-    if "LIMITED" in upper:
-        return (
-            "Появился ограниченный по времени "
-            "контент."
-        )
-
-    # ----------------------------------------------
-    # Новый сезон
-    # ----------------------------------------------
+    # ------------------------------------------------
+    # Сезон
+    # ------------------------------------------------
 
     if "SEASON" in upper:
-        return "В игре стартовал новый сезон."
+        return {
+            "text": (
+                "В игре стартовал новый сезон."
+            ),
+            "kind": "season",
+            "specific": True
+        }
 
-    # ----------------------------------------------
-    # Просто UPDATE используем только как fallback
-    # ----------------------------------------------
+    # ------------------------------------------------
+    # Limited
+    # ------------------------------------------------
+
+    if "LIMITED" in upper:
+        return {
+            "text": (
+                "Появился ограниченный "
+                "по времени контент."
+            ),
+            "kind": "limited",
+            "specific": True
+        }
+
+    # ------------------------------------------------
+    # Generic update — только запасной вариант
+    # ------------------------------------------------
 
     if "UPDATE" in upper:
-        return "В игре вышло новое обновление."
+        return {
+            "text": (
+                "В игре вышло новое обновление."
+            ),
+            "kind": "update",
+            "specific": False
+        }
 
     return None
 
@@ -291,52 +398,59 @@ def get_news_lines(candidate):
 
 
 def build_item(candidate):
-    game = clean_game_name(
+    game = normalize_game_name(
         candidate.get(
             "game",
             "Roblox"
         )
     )
 
-    score = candidate.get(
-        "score",
-        0
-    )
+    results = []
 
-    lines = get_news_lines(
+    for line in get_news_lines(
         candidate
-    )
-
-    translated = []
-
-    for line in lines:
-        result = translate_news_line(
+    ):
+        translated = translate_news_line(
             line
         )
 
-        if (
-            result
-            and result not in translated
-        ):
-            translated.append(result)
+        if translated is not None:
+            results.append(
+                translated
+            )
 
-    if not translated:
+    if not results:
         return None
 
-    # Если нашли конкретную новость,
-    # убираем бесполезное "вышло обновление".
-    specific = [
-        text
-        for text in translated
-        if text != "В игре вышло новое обновление."
+    # Если есть конкретная новость,
+    # generic "вышло обновление" удаляем.
+    specific_results = [
+        result
+        for result in results
+        if result["specific"]
     ]
 
-    if specific:
-        translated = specific
+    if specific_results:
+        results = specific_results
 
-    text = " ".join(
-        translated[:2]
-    )
+    unique_results = []
+
+    for result in results:
+        if result["text"] not in [
+            item["text"]
+            for item in unique_results
+        ]:
+            unique_results.append(
+                result
+            )
+
+    if not unique_results:
+        return None
+
+    texts = [
+        result["text"]
+        for result in unique_results[:2]
+    ]
 
     return {
         "game": game,
@@ -344,8 +458,17 @@ def build_item(candidate):
             game,
             "🎮"
         ),
-        "score": score,
-        "text": text
+        "score": candidate.get(
+            "score",
+            0
+        ),
+        "kind": unique_results[0][
+            "kind"
+        ],
+        "specific": unique_results[0][
+            "specific"
+        ],
+        "text": " ".join(texts)
     }
 
 
@@ -357,7 +480,10 @@ verified_news = load_json(
 candidates = [
     candidate
     for candidate in verified_news
-    if candidate.get("score", 0) >= MIN_SCORE
+    if candidate.get(
+        "score",
+        0
+    ) >= MIN_SCORE
 ]
 
 
@@ -397,34 +523,27 @@ for candidate in candidates:
         break
 
 
-output = {
-    "items": news_items
-}
-
-
 save_json(
     "generated_news_data_ru.json",
-    output
+    {
+        "items": news_items
+    }
 )
 
 
-# Оставляем txt как удобный файл-превью.
-preview_blocks = []
+preview = []
 
 
 for item in news_items:
-    preview_blocks.append(
-        f"{item['emoji']} {item['game']}\n"
+    preview.append(
+        f"{item['emoji']} "
+        f"{item['game']}\n"
         f"{item['text']}"
     )
 
 
-if preview_blocks:
-    preview = "\n\n".join(
-        preview_blocks
-    )
-else:
-    preview = (
+if not preview:
+    preview.append(
         "Сегодня не нашлось достаточно "
         "подтверждённых игровых новостей."
     )
@@ -432,7 +551,7 @@ else:
 
 save_text(
     "generated_news_post_ru.txt",
-    preview
+    "\n\n".join(preview)
 )
 
 
