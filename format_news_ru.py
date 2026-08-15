@@ -522,6 +522,17 @@ for candidate in candidates:
     if len(news_items) == MAX_NEWS_ITEMS:
         break
 
+# Если есть хотя бы одна конкретная новость,
+# generic-update из выпуска убираем.
+specific_news = [
+    item
+    for item in news_items
+    if item.get("specific") is True
+]
+
+if specific_news:
+    news_items = specific_news[:MAX_NEWS_ITEMS]
+
 
 save_json(
     "generated_news_data_ru.json",

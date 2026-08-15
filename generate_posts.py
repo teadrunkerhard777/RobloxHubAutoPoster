@@ -100,10 +100,16 @@ def remember_game(game):
 
     save_json(
         "game_history.json",
-        history[
-            -GAME_HISTORY_LIMIT:
-        ]
+        history[-GAME_HISTORY_LIMIT:]
     )
+
+
+def find_post(posts, post_id):
+    for post in posts:
+        if str(post["id"]) == post_id:
+            return post
+
+    return None
 
 
 # --------------------------------------------------
@@ -162,28 +168,20 @@ def select_tips(
         )
     ]
 
-    # Сначала стараемся взять игры,
-    # которых нет ни в выпуске,
-    # ни в недавней истории.
     preferred = [
         tip
         for tip in unused
-        if tip["game"]
-        not in excluded_games
-        and tip["game"]
-        not in game_history
+        if tip["game"] not in excluded_games
+        and tip["game"] not in game_history
     ]
 
     fallback = [
         tip
         for tip in unused
-        if tip["game"]
-        not in excluded_games
+        if tip["game"] not in excluded_games
     ]
 
-    candidates = (
-        preferred + fallback
-    )
+    candidates = preferred + fallback
 
     random.shuffle(
         candidates
@@ -302,11 +300,9 @@ def generate_morning_post():
     # Лайфхак
     # ------------------------------------------------
 
-    lifehack_emoji = (
-        GAME_EMOJIS.get(
-            lifehack["game"],
-            "🎮"
-        )
+    lifehack_emoji = GAME_EMOJIS.get(
+        lifehack["game"],
+        "🎮"
     )
 
     blocks.append(
@@ -320,11 +316,9 @@ def generate_morning_post():
     # Стоит знать
     # ------------------------------------------------
 
-    useful_emoji = (
-        GAME_EMOJIS.get(
-            useful_fact["game"],
-            "🎮"
-        )
+    useful_emoji = GAME_EMOJIS.get(
+        useful_fact["game"],
+        "🎮"
     )
 
     blocks.append(
@@ -394,12 +388,8 @@ def generate_freebie_post():
     available = [
         item
         for item in freebies
-        if item.get(
-            "verified"
-        ) is True
-        and item.get(
-            "used"
-        ) is not True
+        if item.get("verified") is True
+        and item.get("used") is not True
     ]
 
     if not available:
@@ -454,9 +444,7 @@ def generate_tips_post():
 
     text = (
         "💡 ПОЛЕЗНО ЗНАТЬ\n\n"
-        + "\n\n".join(
-            blocks
-        )
+        + "\n\n".join(blocks)
         + "\n\n🎮 Roblox Hub"
     )
 
@@ -488,26 +476,21 @@ def generate_myth_post():
     )
 
     recent_myth_ids = (
-        myth_history[
-            -MYTH_HISTORY_LIMIT:
-        ]
+        myth_history[-MYTH_HISTORY_LIMIT:]
     )
 
     available_myths = [
         myth
         for myth in myths
-        if myth["id"]
-        not in recent_myth_ids
-        and myth["game"]
-        not in game_history
+        if myth["id"] not in recent_myth_ids
+        and myth["game"] not in game_history
     ]
 
     if not available_myths:
         available_myths = [
             myth
             for myth in myths
-            if myth["id"]
-            not in recent_myth_ids
+            if myth["id"] not in recent_myth_ids
         ]
 
     if not available_myths:
@@ -523,9 +506,7 @@ def generate_myth_post():
 
     save_json(
         "myth_history.json",
-        myth_history[
-            -MYTH_HISTORY_LIMIT:
-        ]
+        myth_history[-MYTH_HISTORY_LIMIT:]
     )
 
     remember_game(
@@ -560,22 +541,23 @@ def generate_myth_post():
 
 
 # --------------------------------------------------
-# Дата
+# ЦЕЛЕВАЯ ДАТА
+#
+# Теперь сборка запускается утром
+# и готовит посты НА СЕГОДНЯ.
 # --------------------------------------------------
 
 now = datetime.now(
     LOCAL_TIMEZONE
 )
 
-tomorrow = (
-    now + timedelta(days=1)
-).date()
+target_date = now.date()
 
 
-id_10 = f"{tomorrow}-10"
-id_12 = f"{tomorrow}-12"
-id_15 = f"{tomorrow}-15"
-id_18 = f"{tomorrow}-18"
+id_10 = f"{target_date}-10"
+id_12 = f"{target_date}-12"
+id_15 = f"{target_date}-15"
+id_18 = f"{target_date}-18"
 
 
 # --------------------------------------------------
@@ -587,31 +569,35 @@ existing_posts = load_json(
     []
 )
 
-existing_ids = {
-    str(post["id"])
-    for post in existing_posts
-}
-
 
 posts_added = 0
+posts_updated = 0
 
 
 # --------------------------------------------------
 # 10:00
+#
+# Особое правило:
+# если пост уже существует, но ещё pending,
+# обновляем его свежей утренней сводкой.
 # --------------------------------------------------
 
-if id_10 not in existing_ids:
-    morning_text = (
-        generate_morning_post()
-    )
+post_10 = find_post(
+    existing_posts,
+    id_10
+)
+
+
+if post_10 is None:
+    morning_text = generate_morning_post()
 
     existing_posts.append(
         build_post(
             post_id=id_10,
             publish_at=datetime(
-                tomorrow.year,
-                tomorrow.month,
-                tomorrow.day,
+                target_date.year,
+                target_date.month,
+                target_date.day,
                 10,
                 0,
                 tzinfo=LOCAL_TIMEZONE
@@ -623,19 +609,30 @@ if id_10 not in existing_ids:
         )
     )
 
-    existing_ids.add(
-        id_10
-    )
-
     posts_added += 1
 
     print(
         "10:00 — выпуск дня добавлен."
     )
 
+elif post_10.get("status") == "pending":
+    morning_text = generate_morning_post()
+
+    post_10["text"] = morning_text
+    post_10["rubric"] = "Выпуск дня"
+    post_10["source"] = "auto_verified"
+
+    posts_updated += 1
+
+    print(
+        "10:00 — pending-выпуск обновлён "
+        "свежими утренними данными."
+    )
+
 else:
     print(
-        "10:00 — пост уже существует."
+        "10:00 — пост уже опубликован, "
+        "не изменяем."
     )
 
 
@@ -643,7 +640,13 @@ else:
 # 12:00
 # --------------------------------------------------
 
-if id_12 not in existing_ids:
+post_12 = find_post(
+    existing_posts,
+    id_12
+)
+
+
+if post_12 is None:
     freebie = generate_freebie_post()
 
     if freebie is not None:
@@ -651,9 +654,9 @@ if id_12 not in existing_ids:
             build_post(
                 post_id=id_12,
                 publish_at=datetime(
-                    tomorrow.year,
-                    tomorrow.month,
-                    tomorrow.day,
+                    target_date.year,
+                    target_date.month,
+                    target_date.day,
                     12,
                     0,
                     tzinfo=LOCAL_TIMEZONE
@@ -663,10 +666,6 @@ if id_12 not in existing_ids:
                 source=freebie["source"],
                 text=freebie["text"]
             )
-        )
-
-        existing_ids.add(
-            id_12
         )
 
         posts_added += 1
@@ -691,7 +690,13 @@ else:
 # 15:00
 # --------------------------------------------------
 
-if id_15 not in existing_ids:
+post_15 = find_post(
+    existing_posts,
+    id_15
+)
+
+
+if post_15 is None:
     tips_games, tips_text = (
         generate_tips_post()
     )
@@ -700,9 +705,9 @@ if id_15 not in existing_ids:
         build_post(
             post_id=id_15,
             publish_at=datetime(
-                tomorrow.year,
-                tomorrow.month,
-                tomorrow.day,
+                target_date.year,
+                target_date.month,
+                target_date.day,
                 15,
                 0,
                 tzinfo=LOCAL_TIMEZONE
@@ -712,10 +717,6 @@ if id_15 not in existing_ids:
             source="verified_db",
             text=tips_text
         )
-    )
-
-    existing_ids.add(
-        id_15
     )
 
     posts_added += 1
@@ -735,7 +736,13 @@ else:
 # 18:00
 # --------------------------------------------------
 
-if id_18 not in existing_ids:
+post_18 = find_post(
+    existing_posts,
+    id_18
+)
+
+
+if post_18 is None:
     myth_game, myth_text = (
         generate_myth_post()
     )
@@ -744,9 +751,9 @@ if id_18 not in existing_ids:
         build_post(
             post_id=id_18,
             publish_at=datetime(
-                tomorrow.year,
-                tomorrow.month,
-                tomorrow.day,
+                target_date.year,
+                target_date.month,
+                target_date.day,
                 18,
                 0,
                 tzinfo=LOCAL_TIMEZONE
@@ -756,10 +763,6 @@ if id_18 not in existing_ids:
             source="verified_db",
             text=myth_text
         )
-    )
-
-    existing_ids.add(
-        id_18
     )
 
     posts_added += 1
@@ -780,9 +783,7 @@ else:
 # --------------------------------------------------
 
 existing_posts.sort(
-    key=lambda post: post[
-        "publish_at"
-    ]
+    key=lambda post: post["publish_at"]
 )
 
 
@@ -795,10 +796,15 @@ save_json(
 print()
 
 print(
-    f"Очередь на {tomorrow} обработана."
+    f"Очередь на {target_date} обработана."
 )
 
 print(
     f"Добавлено новых постов: "
     f"{posts_added}"
+)
+
+print(
+    f"Обновлено существующих постов: "
+    f"{posts_updated}"
 )
