@@ -9,6 +9,19 @@ LOCAL_TIMEZONE = timezone(timedelta(hours=5))
 MYTH_HISTORY_LIMIT = 3
 GAME_HISTORY_LIMIT = 5
 
+GAME_EMOJIS = {
+    "Blox Fruits": "🍈",
+    "RIVALS": "🔫",
+    "99 Nights in the Forest": "🌲",
+    "Steal a Brainrot": "🧠",
+    "Brookhaven": "🏡",
+    "Adopt Me!": "🐾",
+    "Grow a Garden": "🌱",
+    "Dress To Impress": "👗",
+    "Pet Simulator 99": "🐶",
+    "Blade Ball": "⚔️"
+}
+
 
 def build_post(
     post_id,
@@ -92,62 +105,78 @@ def generate_tips_post():
         if not tip["used"]
     ]
 
-    # Если база закончилась —
+    # Если уникальных советов осталось меньше трёх —
     # начинаем новый цикл.
-    if len(unused_tips) < 2:
+    if len(unused_tips) < 3:
         for tip in tips:
             tip["used"] = False
 
         unused_tips = tips.copy()
 
-    # Сначала стараемся не брать
-    # недавно использованные игры.
+    # Сначала стараемся не брать игры,
+    # которые недавно использовались.
     preferred_tips = [
         tip
         for tip in unused_tips
         if tip["game"] not in game_history
     ]
 
-    if len(preferred_tips) >= 2:
-        candidates = preferred_tips
+    if len(preferred_tips) >= 3:
+        candidates = preferred_tips.copy()
     else:
         candidates = unused_tips.copy()
 
     random.shuffle(candidates)
 
-    first_tip = None
-    second_tip = None
+    selected_tips = []
+    selected_games = set()
 
+    # Выбираем три совета обязательно
+    # по трём разным играм.
     for tip in candidates:
-        if first_tip is None:
-            first_tip = tip
+        if tip["game"] in selected_games:
             continue
 
-        if tip["game"] != first_tip["game"]:
-            second_tip = tip
-            break
-
-    # Страховка на случай,
-    # если подходящей пары не нашлось.
-    if second_tip is None and first_tip is not None:
-        for tip in unused_tips:
-            if tip["game"] != first_tip["game"]:
-                second_tip = tip
-                break
-
-    if first_tip is None or second_tip is None:
-        raise RuntimeError(
-            "Не удалось выбрать два совета "
-            "по разным играм."
+        selected_tips.append(
+            tip
         )
 
-    # Только теперь отмечаем советы
-    # использованными.
+        selected_games.add(
+            tip["game"]
+        )
+
+        if len(selected_tips) == 3:
+            break
+
+    # Дополнительная страховка.
+    if len(selected_tips) < 3:
+        for tip in unused_tips:
+            if tip["game"] in selected_games:
+                continue
+
+            selected_tips.append(
+                tip
+            )
+
+            selected_games.add(
+                tip["game"]
+            )
+
+            if len(selected_tips) == 3:
+                break
+
+    if len(selected_tips) < 3:
+        raise RuntimeError(
+            "Не удалось выбрать три совета "
+            "по трём разным играм."
+        )
+
     selected_ids = {
-        first_tip["id"],
-        second_tip["id"]
+        tip["id"]
+        for tip in selected_tips
     }
 
+    # Помечаем выбранные советы использованными.
     for tip in tips:
         if tip["id"] in selected_ids:
             tip["used"] = True
@@ -157,28 +186,29 @@ def generate_tips_post():
         tips
     )
 
-    remember_game(
-        first_tip["game"]
-    )
-
-    remember_game(
-        second_tip["game"]
-    )
+    for tip in selected_tips:
+        remember_game(
+            tip["game"]
+        )
 
     text = (
-        "━━━━━━━━━━━━━━━━━━━━━\n"
-        "       🎮 ПОЛЕЗНО ЗНАТЬ 🎮\n"
-        "━━━━━━━━━━━━━━━━━━━━━\n\n"
-        f"🎯 {first_tip['game']}\n"
-        f"💡 {first_tip['text']}\n\n"
-        f"🎯 {second_tip['game']}\n"
-        f"💡 {second_tip['text']}\n\n"
+        "💡 ПОЛЕЗНО ЗНАТЬ\n\n"
+
+        f"🎯 {selected_tips[0]['game']}\n"
+        f"{selected_tips[0]['text']}\n\n"
+
+        f"🎯 {selected_tips[1]['game']}\n"
+        f"{selected_tips[1]['text']}\n\n"
+
+        f"🎯 {selected_tips[2]['game']}\n"
+        f"{selected_tips[2]['text']}\n\n"
+
         "🎮 Roblox Hub"
     )
 
-    games = (
-        f"{first_tip['game']} + "
-        f"{second_tip['game']}"
+    games = " + ".join(
+        tip["game"]
+        for tip in selected_tips
     )
 
     return games, text
@@ -239,15 +269,20 @@ def generate_myth_post():
         myth["game"]
     )
 
+    # Полосы убраны.
     text = (
-        "━━━━━━━━━━━━━━━━━━━━━\n"
-        "      🧠 МИФ ИЛИ ПРАВДА? 🧠\n"
-        "━━━━━━━━━━━━━━━━━━━━━\n\n"
+        "🧠 МИФ ИЛИ ПРАВДА?\n\n"
+
         f"🎮 {myth['game']}\n\n"
-        f"🔥 {myth['claim']} 🔥\n\n"
+
+        f"🔥 {myth['claim']}\n\n"
+
         "Как думаешь — правда или миф?\n\n"
+
         f"{myth['answer']}\n\n"
+
         f"{myth['explanation']}\n\n"
+
         "🎮 Roblox Hub"
     )
 
@@ -255,7 +290,7 @@ def generate_myth_post():
 
 
 # --------------------------------------------------
-# Определяем дату завтрашней очереди
+# Дата завтрашней очереди
 # --------------------------------------------------
 
 now = datetime.now(
@@ -275,7 +310,7 @@ tomorrow_ids = {
 
 
 # --------------------------------------------------
-# СНАЧАЛА проверяем существующую очередь
+# Сначала проверяем существующую очередь
 # --------------------------------------------------
 
 try:
@@ -396,7 +431,6 @@ posts_added = 0
 
 
 for post in new_posts:
-
     if str(post["id"]) in existing_ids:
         print(
             f"Пост {post['id']} "
@@ -425,11 +459,14 @@ save_json(
 
 print()
 print("Очередь подготовлена.")
+
 print(
     f"Дата новых постов: {tomorrow}"
 )
+
 print(
-    f"Добавлено новых постов: {posts_added}"
+    f"Добавлено новых постов: "
+    f"{posts_added}"
 )
 
 print(
