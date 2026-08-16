@@ -1,36 +1,82 @@
 import json
+import re
+from datetime import datetime, timezone
+
 import requests
-import difflib
-
-from datetime import datetime, timezone, timedelta
 
 
-FRESHNESS_HOURS = 48
+GAMES_FILE = "games.json"
+SNAPSHOTS_FILE = "game_snapshots.json"
+OUTPUT_FILE = "news_candidates.json"
 
-NEWS_KEYWORDS = [
+ROBLOX_GAMES_API = (
+    "https://games.roblox.com/v1/games"
+)
+
+REQUEST_TIMEOUT = 20
+
+
+# --------------------------------------------------
+# Какие слова вообще могут указывать на контент
+# --------------------------------------------------
+
+NEWS_KEYWORDS = {
     "UPDATE",
-    "NEW",
     "EVENT",
+    "NEW",
     "CODE",
+    "CODES",
+    "REWARD",
+    "REWARDS",
+    "QUEST",
+    "QUESTS",
     "BOSS",
-    "ITEM",
     "MAP",
+    "VEHICLE",
+    "VEHICLES",
+    "PET",
     "PETS",
+    "ITEM",
+    "ITEMS",
+    "SEASON",
     "LIMITED",
-    "REWARD"
-]
+    "CONTRACT",
+    "CONTRACTS"
+}
 
 
-def load_json(filename, default):
+# --------------------------------------------------
+# JSON
+# --------------------------------------------------
+
+def load_json(
+    filename,
+    default=None
+):
     try:
-        with open(filename, "r", encoding="utf-8") as file:
+        with open(
+            filename,
+            "r",
+            encoding="utf-8"
+        ) as file:
             return json.load(file)
+
     except FileNotFoundError:
-        return default
+        if default is not None:
+            return default
+
+        raise
 
 
-def save_json(filename, data):
-    with open(filename, "w", encoding="utf-8") as file:
+def save_json(
+    filename,
+    data
+):
+    with open(
+        filename,
+        "w",
+        encoding="utf-8"
+    ) as file:
         json.dump(
             data,
             file,
@@ -39,151 +85,438 @@ def save_json(filename, data):
         )
 
 
-def load_games():
-    games = load_json(
-        "games.json",
-        []
+# --------------------------------------------------
+# Текст
+# --------------------------------------------------
+
+def clean_line(line):
+    line = line.strip()
+
+    line = re.sub(
+        r"\s+",
+        " ",
+        line
+    )
+
+    return line
+
+
+def split_description(
+    description
+):
+    if not description:
+        return []
+
+    lines = []
+
+    for raw_line in description.splitlines():
+        line = clean_line(
+            raw_line
+        )
+
+        if line:
+            lines.append(
+                line
+            )
+
+    return lines
+
+
+def get_added_lines(
+    old_description,
+    new_description
+):
+    old_lines = set(
+        split_description(
+            old_description
+        )
+    )
+
+    new_lines = split_description(
+        new_description
     )
 
     return [
-        game
-        for game in games
-        if game["universe_id"] is not None
+        line
+        for line in new_lines
+        if line not in old_lines
     ]
 
 
-def fetch_game_data(games):
-    universe_ids = ",".join(
-        str(game["universe_id"])
-        for game in games
-    )
-
-    url = (
-        "https://games.roblox.com/v1/games"
-        f"?universeIds={universe_ids}"
-    )
-
-    response = requests.get(
-        url,
-        timeout=15
-    )
-
-    response.raise_for_status()
-
-    return response.json()["data"]
-
-
-def parse_roblox_datetime(value):
-    return datetime.fromisoformat(
-        value.replace("Z", "+00:00")
-    )
-
-
-def is_fresh(game):
-    now = datetime.now(timezone.utc)
-
-    freshness_limit = now - timedelta(
-        hours=FRESHNESS_HOURS
-    )
-
-    updated_at = parse_roblox_datetime(
-        game["updated"]
-    )
-
-    return updated_at >= freshness_limit
-
-
-def get_previous_description(
-    universe_id,
-    snapshots
-):
-    previous = snapshots.get(
-        str(universe_id)
-    )
-
-    if previous is None:
-        return None
-
-    return previous.get(
-        "description",
-        ""
-    )
-
-
-def extract_added_lines(
-    previous_description,
-    current_description
-):
-    if previous_description is None:
+def find_keywords(text):
+    if not text:
         return []
 
-    previous_lines = (
-        previous_description
-        .splitlines()
-    )
-
-    current_lines = (
-        current_description
-        .splitlines()
-    )
-
-    diff = difflib.ndiff(
-        previous_lines,
-        current_lines
-    )
-
-    added_lines = []
-
-    for line in diff:
-        if line.startswith("+ "):
-            added_text = line[2:].strip()
-
-            if added_text:
-                added_lines.append(
-                    added_text
-                )
-
-    return added_lines
-
-
-def find_news_keywords(text):
-    text_upper = text.upper()
+    upper_text = text.upper()
 
     found = []
 
     for keyword in NEWS_KEYWORDS:
-        if keyword in text_upper:
-            found.append(keyword)
+        if re.search(
+            rf"\b{re.escape(keyword)}\b",
+            upper_text
+        ):
+            found.append(
+                keyword
+            )
 
-    return found
+    return sorted(
+        found
+    )
 
 
-def calculate_score(
-    fresh,
-    description_changed,
-    added_lines,
-    keywords_in_added,
-    keywords_in_description
+# --------------------------------------------------
+# Определение фактов
+# --------------------------------------------------
+
+def has_any(
+    upper,
+    phrases
 ):
-    score = 0
+    return any(
+        phrase in upper
+        for phrase in phrases
+    )
 
-    if fresh:
-        score += 2
 
-    if description_changed:
-        score += 2
+def make_fact(
+    line,
+    kind,
+    value,
+    reason,
+    specific=True
+):
+    return {
+        "text": line,
+        "kind": kind,
+        "value": value,
+        "specific": specific,
+        "reason": reason
+    }
 
-    if added_lines:
-        score += 3
 
-    if keywords_in_added:
-        score += 3
+def analyze_line(line):
+    """
+    Возвращает факт и его редакционную ценность.
 
-    if keywords_in_description:
-        score += 1
+    0 = не новость
+    2 = почти пустой сигнал
+    3-4 = слабая новость
+    5-6 = нормальная новость
+    7-10 = сильная новость
+    """
 
-    return score
+    upper = line.upper()
 
+    # ------------------------------------------------
+    # Бесплатные награды / коды
+    # ------------------------------------------------
+
+    if (
+        re.search(
+            r"\bCODES?\b",
+            upper
+        )
+        and has_any(
+            upper,
+            (
+                "FREE",
+                "REWARD",
+                "REWARDS",
+                "REDEEM"
+            )
+        )
+    ):
+        return make_fact(
+            line=line,
+            kind="code",
+            value=10,
+            reason=(
+                "Код или бесплатная награда"
+            )
+        )
+
+    # ------------------------------------------------
+    # Событие + награды / контракты / задания
+    # ------------------------------------------------
+
+    if "EVENT" in upper:
+        if has_any(
+            upper,
+            (
+                "REWARD",
+                "REWARDS",
+                "CONTRACT",
+                "CONTRACTS",
+                "QUEST",
+                "QUESTS"
+            )
+        ):
+            return make_fact(
+                line=line,
+                kind="event",
+                value=9,
+                reason=(
+                    "Событие с конкретной "
+                    "активностью или наградами"
+                )
+            )
+
+        return make_fact(
+            line=line,
+            kind="event",
+            value=7,
+            reason="Игровое событие"
+        )
+
+    # ------------------------------------------------
+    # Контракты / задания с наградами
+    # ------------------------------------------------
+
+    if has_any(
+        upper,
+        (
+            "CONTRACT",
+            "CONTRACTS",
+            "QUEST",
+            "QUESTS"
+        )
+    ):
+        if has_any(
+            upper,
+            (
+                "REWARD",
+                "REWARDS",
+                "EXCLUSIVE"
+            )
+        ):
+            return make_fact(
+                line=line,
+                kind="quests",
+                value=8,
+                reason=(
+                    "Задания с наградами"
+                )
+            )
+
+        return make_fact(
+            line=line,
+            kind="quests",
+            value=6,
+            reason="Новые задания"
+        )
+
+    # ------------------------------------------------
+    # Новый босс
+    # ------------------------------------------------
+
+    if (
+        "NEW BOSS" in upper
+        or (
+            "BOSS" in upper
+            and "NEW" in upper
+        )
+    ):
+        return make_fact(
+            line=line,
+            kind="boss",
+            value=8,
+            reason="Новый босс"
+        )
+
+    # ------------------------------------------------
+    # Новая карта
+    # ------------------------------------------------
+
+    if (
+        "NEW MAP" in upper
+        or (
+            "MAP" in upper
+            and "NEW" in upper
+        )
+    ):
+        return make_fact(
+            line=line,
+            kind="map",
+            value=7,
+            reason="Новая карта"
+        )
+
+    # ------------------------------------------------
+    # Новый транспорт
+    # ------------------------------------------------
+
+    if has_any(
+        upper,
+        (
+            "NEW VEHICLE",
+            "NEW CAR",
+            "NEW BIKE",
+            "NEW BOAT"
+        )
+    ):
+        return make_fact(
+            line=line,
+            kind="vehicle",
+            value=7,
+            reason="Новый транспорт"
+        )
+
+    # ------------------------------------------------
+    # Новый сезон
+    # ------------------------------------------------
+
+    if "SEASON" in upper:
+        return make_fact(
+            line=line,
+            kind="season",
+            value=7,
+            reason="Новый сезон"
+        )
+
+    # ------------------------------------------------
+    # Limited
+    # ------------------------------------------------
+
+    if "LIMITED" in upper:
+        return make_fact(
+            line=line,
+            kind="limited",
+            value=7,
+            reason=(
+                "Ограниченный по времени контент"
+            )
+        )
+
+    # ------------------------------------------------
+    # Новые питомцы
+    # ------------------------------------------------
+
+    if (
+        "NEW PET" in upper
+        or "NEW PETS" in upper
+    ):
+        return make_fact(
+            line=line,
+            kind="pets",
+            value=6,
+            reason="Новые питомцы"
+        )
+
+    # ------------------------------------------------
+    # Новые предметы
+    #
+    # Это намеренно СЛАБЫЙ факт.
+    # "NEW ITEMS!" само по себе больше
+    # не должно становиться главной новостью дня.
+    # ------------------------------------------------
+
+    if (
+        "NEW ITEM" in upper
+        or "NEW ITEMS" in upper
+    ):
+        return make_fact(
+            line=line,
+            kind="items",
+            value=4,
+            reason=(
+                "Новые предметы без подробностей"
+            )
+        )
+
+    # ------------------------------------------------
+    # Update с номером
+    #
+    # UPDATE 21 — уже полезнее,
+    # чем просто UPDATE.
+    # ------------------------------------------------
+
+    update_number = re.search(
+        r"\bUPDATE\s*#?\s*(\d+)\b",
+        upper
+    )
+
+    if update_number:
+        return make_fact(
+            line=line,
+            kind="update",
+            value=6,
+            reason=(
+                "Обновление с конкретным номером"
+            )
+        )
+
+    # ------------------------------------------------
+    # Просто "UPDATE"
+    #
+    # Практически ничего не сообщает.
+    # ------------------------------------------------
+
+    if "UPDATE" in upper:
+        return make_fact(
+            line=line,
+            kind="update",
+            value=2,
+            reason=(
+                "Упоминание обновления "
+                "без конкретики"
+            ),
+            specific=False
+        )
+
+    return None
+
+
+def extract_facts(
+    description,
+    added_lines
+):
+    lines = split_description(
+        description
+    )
+
+    facts = []
+
+    added_set = set(
+        added_lines
+    )
+
+    for line in lines:
+        fact = analyze_line(
+            line
+        )
+
+        if fact is None:
+            continue
+
+        fact["is_new_line"] = (
+            line in added_set
+        )
+
+        # Новая строка в описании —
+        # сильный сигнал, но не сама новость.
+        if fact["is_new_line"]:
+            fact["value"] += 2
+
+        facts.append(
+            fact
+        )
+
+    # Самые содержательные факты наверх.
+    facts.sort(
+        key=lambda item: (
+            item["value"],
+            item["specific"]
+        ),
+        reverse=True
+    )
+
+    return facts
+
+
+# --------------------------------------------------
+# Confidence
+# --------------------------------------------------
 
 def score_to_confidence(score):
     if score >= 8:
@@ -195,246 +528,352 @@ def score_to_confidence(score):
     return "low"
 
 
-def build_candidates(
-    games,
-    snapshots
+# --------------------------------------------------
+# Roblox API
+# --------------------------------------------------
+
+def fetch_games(
+    universe_ids
 ):
-    candidates = []
-
-    for game in games:
-        universe_id = game["id"]
-
-        current_description = game.get(
-            "description",
-            ""
-        )
-
-        previous_description = (
-            get_previous_description(
-                universe_id,
-                snapshots
+    response = requests.get(
+        ROBLOX_GAMES_API,
+        params={
+            "universeIds": ",".join(
+                str(value)
+                for value in universe_ids
             )
-        )
-
-        description_changed = False
-
-        if previous_description is not None:
-            description_changed = (
-                previous_description.strip()
-                != current_description.strip()
-            )
-
-        added_lines = extract_added_lines(
-            previous_description,
-            current_description
-        )
-
-        added_text = "\n".join(
-            added_lines
-        )
-
-        keywords_in_added = (
-            find_news_keywords(
-                added_text
-            )
-        )
-
-        keywords_in_description = (
-            find_news_keywords(
-                current_description
-            )
-        )
-
-        fresh = is_fresh(game)
-
-        if not fresh and not description_changed:
-            continue
-
-        score = calculate_score(
-            fresh,
-            description_changed,
-            added_lines,
-            keywords_in_added,
-            keywords_in_description
-        )
-
-        confidence = score_to_confidence(
-            score
-        )
-
-        candidate = {
-    "game": game["name"],
-    "universe_id": universe_id,
-    "updated_at": game["updated"],
-
-    "creator": game.get("creator"),
-
-    "playing": game.get("playing"),
-    "visits": game.get("visits"),
-
-    "description_changed":
-        description_changed,
-
-    "previous_description":
-        previous_description,
-
-    "current_description":
-        current_description,
-
-    "added_lines":
-        added_lines,
-
-    "keywords_in_added":
-        keywords_in_added,
-
-    "keywords_in_description":
-        keywords_in_description,
-
-    "score":
-        score,
-
-    "confidence":
-        confidence,
-
-    "sources": [
-        {
-            "type": "roblox_api",
-            "verified": True
-        }
-    ]
-}
-
-        candidates.append(
-            candidate
-        )
-
-    candidates.sort(
-        key=lambda candidate: candidate["score"],
-        reverse=True
+        },
+        timeout=REQUEST_TIMEOUT
     )
 
-    return candidates
+    response.raise_for_status()
 
+    data = response.json()
 
-def update_snapshots(
-    games,
-    snapshots
-):
-    checked_at = (
-        datetime.now(timezone.utc)
-        .isoformat()
+    return data.get(
+        "data",
+        []
     )
 
-    for game in games:
-        universe_id = str(
-            game["id"]
-        )
 
-        snapshots[universe_id] = {
-            "name": game["name"],
+# --------------------------------------------------
+# Основной код
+# --------------------------------------------------
 
-            "description": game.get(
-                "description",
-                ""
-            ),
+games_config = load_json(
+    GAMES_FILE
+)
 
-            "updated":
-                game["updated"],
-
-            "checked_at":
-                checked_at
-        }
-
-    return snapshots
-
-
-tracked_games = load_games()
-
-snapshots = load_json(
-    "game_snapshots.json",
+old_snapshots = load_json(
+    SNAPSHOTS_FILE,
     {}
 )
 
+
+universe_ids = [
+    game["universe_id"]
+    for game in games_config
+]
+
+
+print()
 print(
-    f"Игр в мониторинге: "
-    f"{len(tracked_games)}"
+    f"Проверяем игр: "
+    f"{len(universe_ids)}"
 )
 
 
-games = fetch_game_data(
-    tracked_games
-)
+try:
+    api_games = fetch_games(
+        universe_ids
+    )
+
+except requests.RequestException as error:
+    print()
+    print(
+        "Ошибка Roblox Games API:"
+    )
+    print(
+        str(error)
+    )
+
+    raise SystemExit(1)
 
 
-candidates = build_candidates(
-    games,
-    snapshots
+api_by_id = {
+    int(game["id"]): game
+    for game in api_games
+}
+
+
+candidates = []
+new_snapshots = {}
+
+
+for config in games_config:
+    universe_id = int(
+        config["universe_id"]
+    )
+
+    configured_name = config[
+        "name"
+    ]
+
+    api_game = api_by_id.get(
+        universe_id
+    )
+
+    if api_game is None:
+        print(
+            f"⚠️ {configured_name}: "
+            "Roblox API не вернул игру."
+        )
+
+        continue
+
+    description = (
+        api_game.get(
+            "description"
+        )
+        or ""
+    )
+
+    updated = api_game.get(
+        "updated"
+    )
+
+    created = api_game.get(
+        "created"
+    )
+
+    creator = api_game.get(
+        "creator"
+    )
+
+    previous = old_snapshots.get(
+        str(universe_id),
+        {}
+    )
+
+    previous_description = (
+        previous.get(
+            "description"
+        )
+        or ""
+    )
+
+    description_changed = (
+        previous_description != description
+        and bool(previous_description)
+    )
+
+    added_lines = get_added_lines(
+        previous_description,
+        description
+    )
+
+    facts = extract_facts(
+        description,
+        added_lines
+    )
+
+    keywords = find_keywords(
+        description
+    )
+
+    # ------------------------------------------------
+    # Итоговый score игры
+    #
+    # Берём ценность лучшего ФАКТА,
+    # а не количество слов UPDATE/NEW.
+    # ------------------------------------------------
+
+    if facts:
+        score = facts[0][
+            "value"
+        ]
+    else:
+        score = 0
+
+    # Реальное изменение описания —
+    # дополнительное подтверждение свежести.
+    if description_changed:
+        score += 1
+
+    score = min(
+        score,
+        10
+    )
+
+    confidence = (
+        score_to_confidence(
+            score
+        )
+    )
+
+    candidate = {
+        "game": configured_name,
+        "universe_id": universe_id,
+
+        # Сохраняем API-имя отдельно.
+        "roblox_name": api_game.get(
+            "name",
+            configured_name
+        ),
+
+        "description": description,
+        "updated": updated,
+        "created": created,
+        "creator": creator,
+
+        # Старые поля оставляем,
+        # чтобы verify_news.py не сломался.
+        "description_changed": (
+            description_changed
+        ),
+        "added_lines": added_lines,
+        "keywords": keywords,
+
+        "score": score,
+        "confidence": confidence,
+
+        # Новый главный слой.
+        "facts": facts,
+
+        "priority": config.get(
+            "priority",
+            False
+        ),
+
+        "checked_at": (
+            datetime.now(
+                timezone.utc
+            ).isoformat()
+        )
+    }
+
+    candidates.append(
+        candidate
+    )
+
+    new_snapshots[
+        str(universe_id)
+    ] = {
+        "game": configured_name,
+        "roblox_name": api_game.get(
+            "name",
+            configured_name
+        ),
+        "description": description,
+        "updated": updated,
+        "checked_at": (
+            datetime.now(
+                timezone.utc
+            ).isoformat()
+        )
+    }
+
+
+# --------------------------------------------------
+# Самые ценные кандидаты наверх
+# --------------------------------------------------
+
+candidates.sort(
+    key=lambda item: (
+        item["score"],
+        item.get(
+            "priority",
+            False
+        )
+    ),
+    reverse=True
 )
 
 
 save_json(
-    "news_candidates.json",
+    OUTPUT_FILE,
     candidates
 )
 
-
-snapshots = update_snapshots(
-    games,
-    snapshots
-)
-
-
 save_json(
-    "game_snapshots.json",
-    snapshots
+    SNAPSHOTS_FILE,
+    new_snapshots
 )
 
 
+# --------------------------------------------------
+# Отчёт в Actions
+# --------------------------------------------------
+
+print()
 print(
-    f"Кандидатов найдено: "
-    f"{len(candidates)}"
+    "Результаты:"
 )
+
+print()
 
 
 for candidate in candidates:
+    facts = candidate.get(
+        "facts",
+        []
+    )
+
+    print(
+        f"{candidate['game']}"
+    )
+
+    print(
+        f"  score: "
+        f"{candidate['score']}"
+    )
+
+    print(
+        f"  confidence: "
+        f"{candidate['confidence']}"
+    )
+
+    print(
+        f"  description_changed: "
+        f"{candidate['description_changed']}"
+    )
+
+    if not facts:
+        print(
+            "  фактов: нет"
+        )
+
+    else:
+        print(
+            f"  фактов: "
+            f"{len(facts)}"
+        )
+
+        for fact in facts[:3]:
+            marker = (
+                "🆕"
+                if fact[
+                    "is_new_line"
+                ]
+                else "•"
+            )
+
+            print(
+                f"  {marker} "
+                f"[{fact['value']}] "
+                f"{fact['kind']}: "
+                f"{fact['text']}"
+            )
+
     print()
 
-    print(
-        "Игра:",
-        candidate["game"]
-    )
 
-    print(
-        "Обновлена:",
-        candidate["updated_at"]
-    )
+print(
+    f"Сохранено: "
+    f"{OUTPUT_FILE}"
+)
 
-    print(
-        "Описание изменилось:",
-        candidate["description_changed"]
-    )
-
-    print(
-        "Новых строк:",
-        len(candidate["added_lines"])
-    )
-
-    print(
-        "Ключевые слова в новых строках:",
-        candidate["keywords_in_added"]
-    )
-
-    print(
-        "Ключевые слова в описании:",
-        candidate["keywords_in_description"]
-    )
-
-    print(
-        "Score:",
-        candidate["score"]
-    )
-
-    print(
-        "Confidence:",
-        candidate["confidence"]
-    )
+print(
+    f"Снимки обновлены: "
+    f"{SNAPSHOTS_FILE}"
+)
