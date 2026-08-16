@@ -1,14 +1,6 @@
 {
   "items": [
     {
-      "game": "Brookhaven",
-      "emoji": "🏡",
-      "score": 5,
-      "kind": "update",
-      "specific": false,
-      "text": "В игре вышло новое обновление."
-    },
-    {
       "game": "Dress To Impress",
       "emoji": "👗",
       "score": 5,

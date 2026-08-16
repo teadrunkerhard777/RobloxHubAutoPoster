@@ -186,7 +186,7 @@
     "text": "Если видишь открытую чужую базу, сначала оцени путь назад — украсть Brainrot мало, его ещё нужно донести.",
     "source": "verified_core_mechanic",
     "reviewed_at": "2026-08-14",
-    "used": false
+    "used": true
   },
   {
     "id": 22,
@@ -645,7 +645,7 @@
     "text": "Серия побед приятна, но не меняй рабочую тактику только ради более эффектной игры.",
     "source": "verified_core_mechanic",
     "reviewed_at": "2026-08-14",
-    "used": false
+    "used": true
   },
   {
     "id": 73,
