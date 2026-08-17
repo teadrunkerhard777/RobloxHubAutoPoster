@@ -1,12 +1,12 @@
 {
   "items": [
     {
-      "game": "Dress To Impress",
-      "emoji": "👗",
-      "score": 5,
-      "kind": "items",
+      "game": "RIVALS",
+      "emoji": "🔫",
+      "score": 8,
+      "kind": "rewards",
       "specific": true,
-      "text": "В игре появились новые предметы."
+      "text": "В игре появились новые награды. В игре началось новое событие."
     }
   ]
 }

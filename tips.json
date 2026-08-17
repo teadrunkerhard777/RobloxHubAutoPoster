@@ -87,7 +87,7 @@
     "text": "Если используешь приручаемых животных, развивай Taming Flute — более сильные союзники полезнее в поздних ночах.",
     "source": "verified_core_mechanic",
     "reviewed_at": "2026-08-14",
-    "used": false
+    "used": true
   },
   {
     "id": 11,
@@ -159,7 +159,7 @@
     "text": "Rebirth полезен в долгой игре: он открывает дополнительные улучшения, слоты и усиливает дальнейший заработок.",
     "source": "verified_core_mechanic",
     "reviewed_at": "2026-08-14",
-    "used": false
+    "used": true
   },
   {
     "id": 19,
@@ -213,7 +213,7 @@
     "text": "Не гоняйся только за редкостью: сравнивай, насколько конкретный Brainrot улучшает твой доход.",
     "source": "verified_core_mechanic",
     "reviewed_at": "2026-08-14",
-    "used": false
+    "used": true
   },
   {
     "id": 25,
@@ -294,7 +294,7 @@
     "text": "Во время путешествий между островами запоминай удобные маршруты — это экономит много времени на повторных квестах.",
     "source": "verified_core_mechanic",
     "reviewed_at": "2026-08-14",
-    "used": false
+    "used": true
   },
   {
     "id": 34,
@@ -672,7 +672,7 @@
     "text": "Не переживай, если выходишь из игры: сад продолжает расти, пока тебя нет онлайн.",
     "source": "verified_core_mechanic",
     "reviewed_at": "2026-08-14",
-    "used": false
+    "used": true
   },
   {
     "id": 76,

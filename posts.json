@@ -70,5 +70,41 @@
     "published_at": "2026-08-16T18:00:39.135766+05:00",
     "attempts": 1,
     "last_error": null
+  },
+  {
+    "id": "2026-08-17-10",
+    "publish_at": "2026-08-17T10:00:00+05:00",
+    "game": "разные игры",
+    "rubric": "Выпуск дня",
+    "source": "auto_verified",
+    "text": "🎮 ROBLOX HUB — ВЫПУСК ДНЯ\n\n🔥 СЕГОДНЯ В ROBLOX\n\n🔫 RIVALS\nВ игре появились новые награды. В игре началось новое событие.\n\n💡 ЛАЙФХАК\n🌱 Grow a Garden\nНе переживай, если выходишь из игры: сад продолжает расти, пока тебя нет онлайн.\n\n👀 СТОИТ ЗНАТЬ\n🧠 Steal a Brainrot\nRebirth полезен в долгой игре: он открывает дополнительные улучшения, слоты и усиливает дальнейший заработок.\n\n⭐ ГЛАВНОЕ\nСегодня из подтверждённых обновлений выделяется RIVALS. А вместо сомнительных слухов добавили полезные игровые советы.\n\n🎮 Roblox Hub",
+    "status": "pending",
+    "published_at": null,
+    "attempts": 0,
+    "last_error": null
+  },
+  {
+    "id": "2026-08-17-15",
+    "publish_at": "2026-08-17T15:00:00+05:00",
+    "game": "Steal a Brainrot + Blox Fruits + 99 Nights in the Forest",
+    "rubric": "Полезно знать",
+    "source": "verified_db",
+    "text": "💡 ПОЛЕЗНО ЗНАТЬ\n\n🧠 Steal a Brainrot\nНе гоняйся только за редкостью: сравнивай, насколько конкретный Brainrot улучшает твой доход.\n\n🍈 Blox Fruits\nВо время путешествий между островами запоминай удобные маршруты — это экономит много времени на повторных квестах.\n\n🌲 99 Nights in the Forest\nЕсли используешь приручаемых животных, развивай Taming Flute — более сильные союзники полезнее в поздних ночах.\n\n🎮 Roblox Hub",
+    "status": "pending",
+    "published_at": null,
+    "attempts": 0,
+    "last_error": null
+  },
+  {
+    "id": "2026-08-17-18",
+    "publish_at": "2026-08-17T18:00:00+05:00",
+    "game": "Steal a Brainrot",
+    "rubric": "Миф или правда",
+    "source": "verified_db",
+    "text": "🧠 МИФ ИЛИ ПРАВДА?\n\n🧠 Steal a Brainrot\n\n🔥 Если спрятать брейнрот подальше от входа, его вообще невозможно украсть.\n\nКак думаешь — правда или миф?\n\n❌ МИФ!\n\nРасположение может усложнить кражу, но полной защиты всё равно не даёт.\n\n🎮 Roblox Hub",
+    "status": "pending",
+    "published_at": null,
+    "attempts": 0,
+    "last_error": null
   }
 ]
