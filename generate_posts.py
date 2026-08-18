@@ -240,6 +240,63 @@ def select_tips(
 # --------------------------------------------------
 # 10:00 — выпуск дня
 # --------------------------------------------------
+def build_news_action(item):
+    text = item.get(
+        "text",
+        ""
+    )
+
+    upper = text.upper()
+
+    if "CONTRACT" in upper:
+        return (
+            "🎯 Что сделать: зайди в игру "
+            "и проверь доступные контракты."
+        )
+
+    if "SUMMER EVENT" in upper:
+        return (
+            "🎯 Что сделать: загляни в Summer Event "
+            "и проверь его активности."
+        )
+
+    if "EVENT" in upper:
+        return (
+            "🎯 Что сделать: зайди в событие "
+            "и посмотри доступные задания и награды."
+        )
+
+    if "REWARD" in upper or "НАГРАД" in upper:
+        return (
+            "🎯 Что сделать: проверь условия "
+            "получения новых наград."
+        )
+
+    if "NEW ITEMS" in upper or "НОВЫЕ ПРЕДМЕТЫ" in upper:
+        return (
+            "🎯 Что сделать: открой игру "
+            "и посмотри новые предметы."
+        )
+
+    if "ТРАНСПОРТ" in upper:
+        return (
+            "🎯 Что сделать: найди новый транспорт "
+            "и проверь его в игре."
+        )
+
+    if "BOSS" in upper or "БОСС" in upper:
+        return (
+            "🎯 Что сделать: подготовься "
+            "и попробуй нового босса."
+        )
+
+    if "MAP" in upper or "КАРТ" in upper:
+        return (
+            "🎯 Что сделать: исследуй новую карту."
+        )
+
+    return None
+
 
 def generate_morning_post():
     news_data = load_json(
@@ -254,116 +311,77 @@ def generate_morning_post():
         []
     )
 
-    news_games = {
-        item["game"]
-        for item in news_items
-    }
+    # --------------------------------------------------
+    # Нет достойных новостей
+    # --------------------------------------------------
 
-    morning_tips = select_tips(
-        count=2,
-        excluded_games=news_games
-    )
-
-    lifehack = morning_tips[0]
-    useful_fact = morning_tips[1]
+    if not news_items:
+        return None
 
     blocks = [
-        "🎮 ROBLOX HUB — ВЫПУСК ДНЯ"
+        "🎮 ROBLOX HUB — СЕГОДНЯ"
     ]
 
-    # ------------------------------------------------
+    # --------------------------------------------------
     # Новости
-    # ------------------------------------------------
+    # --------------------------------------------------
 
-    if news_items:
-        blocks.append(
-            "🔥 СЕГОДНЯ В ROBLOX"
+    for item in news_items:
+        emoji = item.get(
+            "emoji",
+            "🎮"
         )
 
-        for item in news_items:
-            blocks.append(
-                f"{item.get('emoji', '🎮')} "
-                f"{item['game']}\n"
-                f"{item['text']}"
+        game = item.get(
+            "game",
+            "Roblox"
+        )
+
+        text = item.get(
+            "text",
+            ""
+        )
+
+        block = (
+            f"{emoji} {game}\n\n"
+            f"{text}"
+        )
+
+        action = build_news_action(
+            item
+        )
+
+        if action:
+            block += (
+                f"\n\n{action}"
             )
 
-    else:
         blocks.append(
-            "🔥 СЕГОДНЯ В ROBLOX\n"
-            "Крупных подтверждённых "
-            "новостей сегодня немного, "
-            "поэтому никаких слухов "
-            "добавлять не будем."
+            block
         )
 
-    # ------------------------------------------------
-    # Лайфхак
-    # ------------------------------------------------
-
-    lifehack_emoji = GAME_EMOJIS.get(
-        lifehack["game"],
-        "🎮"
-    )
-
-    blocks.append(
-        "💡 ЛАЙФХАК\n"
-        f"{lifehack_emoji} "
-        f"{lifehack['game']}\n"
-        f"{lifehack['text']}"
-    )
-
-    # ------------------------------------------------
-    # Стоит знать
-    # ------------------------------------------------
-
-    useful_emoji = GAME_EMOJIS.get(
-        useful_fact["game"],
-        "🎮"
-    )
-
-    blocks.append(
-        "👀 СТОИТ ЗНАТЬ\n"
-        f"{useful_emoji} "
-        f"{useful_fact['game']}\n"
-        f"{useful_fact['text']}"
-    )
-
-    # ------------------------------------------------
+    # --------------------------------------------------
     # Главное
-    # ------------------------------------------------
+    #
+    # Берём самую сильную новость,
+    # а не пишем редакционную воду.
+    # --------------------------------------------------
 
-    if len(news_items) >= 2:
-        games = (
-            f"{news_items[0]['game']} "
-            f"и {news_items[1]['game']}"
-        )
+    main_item = news_items[0]
 
-        main_text = (
-            f"Сегодня свежие изменения "
-            f"нашлись сразу в {games}. "
-            "Остальные слухи и неподтверждённые "
-            "вещи в выпуск не добавляем."
-        )
+    main_game = main_item.get(
+        "game",
+        "Roblox"
+    )
 
-    elif len(news_items) == 1:
-        main_text = (
-            f"Сегодня из подтверждённых "
-            f"обновлений выделяется "
-            f"{news_items[0]['game']}. "
-            "А вместо сомнительных слухов "
-            "добавили полезные игровые советы."
-        )
-
-    else:
-        main_text = (
-            "Сегодня день полезностей: "
-            "лучше хороший игровой совет, "
-            "чем выдуманная новость."
-        )
+    main_text = main_item.get(
+        "text",
+        ""
+    )
 
     blocks.append(
-        "⭐ ГЛАВНОЕ\n"
-        f"{main_text}"
+        "⭐ ГЛАВНОЕ\n\n"
+        f"{main_game}: {main_text}"
     )
 
     blocks.append(
