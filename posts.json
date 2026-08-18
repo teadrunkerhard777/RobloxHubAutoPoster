@@ -138,9 +138,9 @@
     "rubric": "Миф или правда",
     "source": "verified_db",
     "text": "🧠 МИФ ИЛИ ПРАВДА?\n\n🌲 99 Nights in the Forest\n\n🔥 Если всю ночь сидеть у костра, монстры тебя не достанут.\n\nКак думаешь — правда или миф?\n\n❌ МИФ!\n\nКостёр помогает выживать, но не делает тебя полностью неуязвимым.\n\n🎮 Roblox Hub",
-    "status": "pending",
-    "published_at": null,
-    "attempts": 0,
+    "status": "published",
+    "published_at": "2026-08-18T18:00:39.769790+05:00",
+    "attempts": 1,
     "last_error": null
   }
 ]
