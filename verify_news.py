@@ -25,6 +25,10 @@ NEWS_KEYWORDS = [
 ]
 
 
+# --------------------------------------------------
+# JSON
+# --------------------------------------------------
+
 def load_json(filename, default):
     try:
         with open(
@@ -52,6 +56,10 @@ def save_json(filename, data):
         )
 
 
+# --------------------------------------------------
+# Текстовый анализ
+# --------------------------------------------------
+
 def find_keywords(text):
     if not text:
         return []
@@ -69,7 +77,7 @@ def extract_news_lines(text):
     if not text:
         return []
 
-    interesting_lines = []
+    result = []
 
     for line in text.splitlines():
         clean_line = line.strip()
@@ -78,12 +86,16 @@ def extract_news_lines(text):
             continue
 
         if find_keywords(clean_line):
-            interesting_lines.append(
+            result.append(
                 clean_line
             )
 
-    return interesting_lines
+    return result
 
+
+# --------------------------------------------------
+# Roblox Group API
+# --------------------------------------------------
 
 def fetch_group(group_id):
     url = (
@@ -102,44 +114,71 @@ def fetch_group(group_id):
 
 
 # --------------------------------------------------
-# Проверка официального описания игры
+# Источники
+# --------------------------------------------------
+
+def add_source(
+    candidate,
+    source_type,
+    verified=True,
+    **extra
+):
+    sources = candidate.setdefault(
+        "sources",
+        []
+    )
+
+    source = {
+        "type": source_type,
+        "verified": verified
+    }
+
+    source.update(
+        extra
+    )
+
+    # Не создаём дубликаты одного типа.
+    for existing in sources:
+        if (
+            existing.get("type")
+            == source_type
+        ):
+            existing.update(
+                source
+            )
+            return
+
+    sources.append(
+        source
+    )
+
+
+# --------------------------------------------------
+# Официальное описание игры
 # --------------------------------------------------
 
 def verify_official_description(candidate):
-    # Новый generate_news.py использует
-    # поле description.
-    #
-    # current_description оставляем
-    # как fallback для совместимости.
     description = candidate.get(
-        "description"
+        "description",
+        ""
     )
 
-    if description is None:
-        description = candidate.get(
-            "current_description",
-            ""
-        )
-
-    keywords = find_keywords(
-        description
-    )
-
-    # Если новый генератор уже выделил факты,
-    # используем именно их.
     facts = candidate.get(
         "facts",
         []
     )
 
     fact_lines = [
-        fact.get("text", "")
+        fact.get(
+            "text",
+            ""
+        )
         for fact in facts
-        if fact.get("text")
+        if fact.get(
+            "text"
+        )
     ]
 
-    # Если facts почему-то нет —
-    # используем старый способ.
     if fact_lines:
         news_lines = fact_lines
     else:
@@ -150,65 +189,119 @@ def verify_official_description(candidate):
     candidate[
         "official_description_analysis"
     ] = {
-        "keywords": keywords,
+        "keywords": find_keywords(
+            description
+        ),
         "news_lines": news_lines
     }
 
-    # Источник обязательно существует.
-    sources = candidate.setdefault(
-        "sources",
-        []
-    )
-
     if description:
-        sources.append(
-            {
-                "type": (
-                    "official_game_description"
-                ),
-                "verified": True
-            }
+        add_source(
+            candidate,
+            "official_game_description",
+            verified=True
         )
-
-    # ВАЖНО:
-    # score здесь больше не повышаем.
-    #
-    # Новый generate_news.py уже оценил
-    # содержательность фактов.
-    # Иначе один факт будет считаться дважды.
 
     return candidate
 
 
 # --------------------------------------------------
-# Проверка официальной Roblox-группы
+# Поиск записи игры в реестре
 # --------------------------------------------------
 
-def verify_group(candidate):
-    creator = candidate.get(
-        "creator"
+def find_source_config(
+    candidate,
+    source_registry
+):
+    game = candidate.get(
+        "game",
+        ""
     )
 
-    if not creator:
+    if game in source_registry:
+        return source_registry[
+            game
+        ]
+
+    # Небольшая страховка от регистра.
+    game_lower = game.lower()
+
+    for name, config in (
+        source_registry.items()
+    ):
+        if name.lower() == game_lower:
+            return config
+
+    return None
+
+
+# --------------------------------------------------
+# Официальная Roblox-группа
+# --------------------------------------------------
+
+def verify_registry_group(
+    candidate,
+    source_registry
+):
+    config = find_source_config(
+        candidate,
+        source_registry
+    )
+
+    if not config:
+        candidate[
+            "source_registry_note"
+        ] = (
+            "Игра отсутствует "
+            "в official_sources.json"
+        )
+
         return candidate
 
-    creator_type = creator.get(
-        "type"
+    group_id = config.get(
+        "roblox_group_id"
     )
 
-    creator_id = creator.get(
-        "id"
+    expected_name = config.get(
+        "roblox_group_name"
     )
 
-    if (
-        creator_type != "Group"
-        or not creator_id
-    ):
+    candidate[
+        "source_registry"
+    ] = {
+        "roblox_group_id": group_id,
+        "roblox_group_name": (
+            expected_name
+        ),
+        "website": config.get(
+            "website"
+        ),
+        "discord": config.get(
+            "discord"
+        ),
+        "youtube": config.get(
+            "youtube"
+        ),
+        "x": config.get(
+            "x"
+        )
+    }
+
+    # Например Blade Ball пока
+    # без подтверждённого group_id.
+    if not group_id:
+        candidate[
+            "group_verification_note"
+        ] = (
+            "В реестре пока нет "
+            "подтверждённого group_id."
+        )
+
         return candidate
 
     try:
         group = fetch_group(
-            creator_id
+            group_id
         )
 
     except requests.RequestException as error:
@@ -218,22 +311,45 @@ def verify_group(candidate):
 
         return candidate
 
+    actual_name = group.get(
+        "name",
+        ""
+    )
+
+    name_matches = True
+
+    if expected_name:
+        name_matches = (
+            actual_name.strip().lower()
+            == expected_name.strip().lower()
+        )
+
     shout = group.get(
         "shout"
     )
 
     shout_text = ""
 
-    if isinstance(shout, dict):
+    if isinstance(
+        shout,
+        dict
+    ):
         shout_text = shout.get(
             "body",
             ""
         )
 
-    elif isinstance(shout, str):
+    elif isinstance(
+        shout,
+        str
+    ):
         shout_text = shout
 
     shout_keywords = find_keywords(
+        shout_text
+    )
+
+    shout_lines = extract_news_lines(
         shout_text
     )
 
@@ -243,30 +359,130 @@ def verify_group(candidate):
         "id": group.get(
             "id"
         ),
-        "name": group.get(
-            "name"
+        "name": actual_name,
+        "expected_name": expected_name,
+        "name_matches_registry": (
+            name_matches
         ),
         "shout": shout_text,
-        "keywords": shout_keywords
+        "keywords": shout_keywords,
+        "news_lines": shout_lines
     }
 
-    sources = candidate.setdefault(
-        "sources",
+    add_source(
+        candidate,
+        "official_roblox_group",
+        verified=name_matches,
+        group_id=group_id,
+        group_name=actual_name
+    )
+
+    # --------------------------------------------------
+    # Важное правило:
+    #
+    # Сам факт существования группы
+    # score НЕ повышает.
+    #
+    # +1 даём только если в текущем
+    # group shout реально есть
+    # новостный сигнал.
+    # --------------------------------------------------
+
+    if (
+        name_matches
+        and shout_keywords
+    ):
+        candidate["score"] = min(
+            candidate.get(
+                "score",
+                0
+            ) + 1,
+            10
+        )
+
+    return candidate
+
+
+# --------------------------------------------------
+# Проверяем, подтверждает ли shout
+# уже найденные факты
+# --------------------------------------------------
+
+def compare_group_with_facts(
+    candidate
+):
+    group = candidate.get(
+        "official_group"
+    )
+
+    if not group:
+        return candidate
+
+    shout_text = group.get(
+        "shout",
+        ""
+    ).lower()
+
+    if not shout_text:
+        return candidate
+
+    facts = candidate.get(
+        "facts",
         []
     )
 
-    sources.append(
-        {
-            "type": (
-                "official_roblox_group"
-            ),
-            "verified": True
-        }
-    )
+    confirmations = []
 
-    # Shout повышает score только если
-    # действительно содержит новостный сигнал.
-    if shout_keywords:
+    for fact in facts:
+        fact_text = fact.get(
+            "text",
+            ""
+        )
+
+        kind = fact.get(
+            "kind",
+            ""
+        )
+
+        matched = False
+
+        # Сравниваем не всю строку,
+        # а ключевые сущности.
+        keywords = find_keywords(
+            fact_text
+        )
+
+        for keyword in keywords:
+            if (
+                keyword.lower()
+                in shout_text
+            ):
+                matched = True
+                break
+
+        if matched:
+            confirmations.append(
+                {
+                    "kind": kind,
+                    "fact": fact_text,
+                    "confirmed_by": (
+                        "official_roblox_group"
+                    )
+                }
+            )
+
+    candidate[
+        "cross_source_confirmations"
+    ] = confirmations
+
+    # --------------------------------------------------
+    # Если один и тот же сигнал
+    # есть и в description,
+    # и в официальной группе,
+    # это действительно усиливает уверенность.
+    # --------------------------------------------------
+
+    if confirmations:
         candidate["score"] = min(
             candidate.get(
                 "score",
@@ -288,7 +504,18 @@ def update_confidence(candidate):
         0
     )
 
-    if score >= 8:
+    confirmations = candidate.get(
+        "cross_source_confirmations",
+        []
+    )
+
+    if (
+        score >= 8
+        or (
+            score >= 6
+            and confirmations
+        )
+    ):
         candidate[
             "confidence"
         ] = "high"
@@ -307,15 +534,22 @@ def update_confidence(candidate):
 
 
 # --------------------------------------------------
-# Полная проверка одного кандидата
+# Проверка одного кандидата
 # --------------------------------------------------
 
-def verify_candidate(candidate):
-    # Страховка для старых и новых данных.
-    candidate.setdefault(
-        "sources",
-        []
-    )
+def verify_candidate(
+    candidate,
+    source_registry
+):
+    # Каждый запуск формирует sources
+    # заново, без мусора от старых запусков.
+    candidate[
+        "sources"
+    ] = []
+
+    candidate[
+        "cross_source_confirmations"
+    ] = []
 
     candidate = (
         verify_official_description(
@@ -323,8 +557,17 @@ def verify_candidate(candidate):
         )
     )
 
-    candidate = verify_group(
-        candidate
+    candidate = (
+        verify_registry_group(
+            candidate,
+            source_registry
+        )
+    )
+
+    candidate = (
+        compare_group_with_facts(
+            candidate
+        )
     )
 
     candidate = update_confidence(
@@ -343,6 +586,11 @@ candidates = load_json(
     []
 )
 
+source_registry = load_json(
+    "official_sources.json",
+    {}
+)
+
 
 verified = []
 
@@ -350,7 +598,8 @@ verified = []
 for candidate in candidates:
     verified_candidate = (
         verify_candidate(
-            candidate
+            candidate,
+            source_registry
         )
     )
 
@@ -374,15 +623,23 @@ save_json(
 )
 
 
+# --------------------------------------------------
+# Вывод в Actions
+# --------------------------------------------------
+
 print(
     f"Проверено кандидатов: "
     f"{len(verified)}"
 )
 
+print(
+    f"Игр в реестре источников: "
+    f"{len(source_registry)}"
+)
+
 
 for item in verified:
     print()
-
     print(
         "Игра:",
         item.get(
@@ -405,6 +662,21 @@ for item in verified:
             "confidence",
             "low"
         )
+    )
+
+    sources = item.get(
+        "sources",
+        []
+    )
+
+    print(
+        "Источники:",
+        [
+            source.get(
+                "type"
+            )
+            for source in sources
+        ]
     )
 
     facts = item.get(
@@ -440,10 +712,33 @@ for item in verified:
             )
         )
 
+        print(
+            "Совпадает с реестром:",
+            group.get(
+                "name_matches_registry"
+            )
+        )
+
         if group.get(
             "shout"
         ):
             print(
                 "Shout:",
-                group["shout"]
+                group.get(
+                    "shout"
+                )
             )
+
+    confirmations = item.get(
+        "cross_source_confirmations",
+        []
+    )
+
+    if confirmations:
+        print(
+            "Подтверждено вторым "
+            "источником:",
+            len(
+                confirmations
+            )
+        )
