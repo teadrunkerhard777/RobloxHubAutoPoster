@@ -1,4 +1,6 @@
 import json
+from urllib.parse import urljoin, urlparse
+
 import requests
 from bs4 import BeautifulSoup
 
@@ -47,12 +49,16 @@ def fetch_page(url):
     return response.text
 
 
-def extract_page_text(html):
+def extract_page_data(
+    html,
+    base_url
+):
     soup = BeautifulSoup(
         html,
         "html.parser"
     )
 
+    # Убираем технический мусор.
     for element in soup(
         [
             "script",
@@ -67,7 +73,65 @@ def extract_page_text(html):
         strip=True
     )
 
-    return text
+    base_domain = urlparse(
+        base_url
+    ).netloc
+
+    links = []
+    seen_urls = set()
+
+    for anchor in soup.find_all(
+        "a",
+        href=True
+    ):
+        href = anchor.get(
+            "href",
+            ""
+        ).strip()
+
+        if not href:
+            continue
+
+        absolute_url = urljoin(
+            base_url,
+            href
+        )
+
+        parsed = urlparse(
+            absolute_url
+        )
+
+        # Берём только ссылки внутри
+        # официального сайта.
+        if parsed.netloc != base_domain:
+            continue
+
+        label = anchor.get_text(
+            " ",
+            strip=True
+        )
+
+        if not label:
+            continue
+
+        if absolute_url in seen_urls:
+            continue
+
+        seen_urls.add(
+            absolute_url
+        )
+
+        links.append(
+            {
+                "text": label,
+                "url": absolute_url
+            }
+        )
+
+    return {
+        "text": text[:20000],
+        "links": links[:200]
+    }
 
 
 def collect_source(
@@ -79,8 +143,9 @@ def collect_source(
             url
         )
 
-        text = extract_page_text(
-            html
+        page_data = extract_page_data(
+            html,
+            url
         )
 
         return {
@@ -90,7 +155,12 @@ def collect_source(
             ),
             "url": url,
             "success": True,
-            "text": text[:20000],
+            "text": page_data[
+                "text"
+            ],
+            "links": page_data[
+                "links"
+            ],
             "error": None
         }
 
@@ -103,6 +173,7 @@ def collect_source(
             "url": url,
             "success": False,
             "text": "",
+            "links": [],
             "error": str(error)
         }
 
@@ -155,6 +226,27 @@ for game, config in source_registry.items():
                 result["text"]
             )
         )
+
+        print(
+            "Внутренних ссылок:",
+            len(
+                result["links"]
+            )
+        )
+
+        print(
+            "Первые ссылки:"
+        )
+
+        for link in result[
+            "links"
+        ][:10]:
+            print(
+                " •",
+                link["text"],
+                "→",
+                link["url"]
+            )
 
     else:
         print(
