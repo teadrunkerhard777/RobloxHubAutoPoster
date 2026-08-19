@@ -1,9 +1,15 @@
 import json
 import re
 
+from datetime import datetime, timedelta, timezone
+
 
 MIN_SCORE = 5
 MAX_NEWS_ITEMS = 3
+
+LOCAL_TIMEZONE = timezone(
+    timedelta(hours=5)
+)
 
 
 GAME_NAMES = {
@@ -34,13 +40,20 @@ GAME_EMOJIS = {
 }
 
 
-def load_json(filename):
-    with open(
-        filename,
-        "r",
-        encoding="utf-8"
-    ) as file:
-        return json.load(file)
+def load_json(filename, default=None):
+    try:
+        with open(
+            filename,
+            "r",
+            encoding="utf-8"
+        ) as file:
+            return json.load(file)
+
+    except FileNotFoundError:
+        if default is not None:
+            return default
+
+        raise
 
 
 def save_json(filename, data):
@@ -167,6 +180,13 @@ def extract_name_before_dash(text):
 # --------------------------------------------------
 
 def translate_fact(fact):
+    prepared_summary = fact.get(
+        "summary_ru"
+    )
+
+    if prepared_summary:
+        return prepared_summary.strip()
+
     raw_text = fact.get(
         "text",
         ""
@@ -462,7 +482,7 @@ def build_item(candidate):
     # максимум две сильные конкретные фразы.
     translated = translated[:2]
 
-    return {
+    item = {
         "game": game,
         "emoji": GAME_EMOJIS.get(
             game,
@@ -476,6 +496,17 @@ def build_item(candidate):
             translated
         )
     }
+
+    external_article = candidate.get(
+        "external_news_article"
+    )
+
+    if external_article:
+        item["external_article_url"] = (
+            external_article.get("url")
+        )
+
+    return item
 
 
 # --------------------------------------------------
@@ -538,6 +569,55 @@ save_json(
     {
         "items": news_items
     }
+)
+
+
+# --------------------------------------------------
+# История официальных статей
+# --------------------------------------------------
+
+external_history = load_json(
+    "external_news_history.json",
+    []
+)
+
+selected_date = datetime.now(
+    LOCAL_TIMEZONE
+).date().isoformat()
+
+
+for item in news_items:
+    article_url = item.get(
+        "external_article_url"
+    )
+
+    if not article_url:
+        continue
+
+    existing_record = None
+
+    for record in external_history:
+        if record.get("url") == article_url:
+            existing_record = record
+            break
+
+    if existing_record:
+        existing_record[
+            "selected_date"
+        ] = selected_date
+    else:
+        external_history.append(
+            {
+                "url": article_url,
+                "game": item["game"],
+                "selected_date": selected_date
+            }
+        )
+
+
+save_json(
+    "external_news_history.json",
+    external_history[-100:]
 )
 
 

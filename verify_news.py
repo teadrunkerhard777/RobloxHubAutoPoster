@@ -1,6 +1,18 @@
 import json
 import requests
 
+from datetime import datetime, timedelta, timezone
+
+from external_news_facts import (
+    extract_external_facts,
+    get_article_age_days
+)
+
+
+LOCAL_TIMEZONE = timezone(
+    timedelta(hours=5)
+)
+
 
 NEWS_KEYWORDS = [
     "UPDATE",
@@ -276,6 +288,9 @@ def verify_registry_group(
         "website": config.get(
             "website"
         ),
+        "news_url": config.get(
+            "news_url"
+        ),
         "discord": config.get(
             "discord"
         ),
@@ -399,6 +414,164 @@ def verify_registry_group(
             ) + 1,
             10
         )
+
+    return candidate
+
+
+# --------------------------------------------------
+# Официальные статьи с сайтов игр
+# --------------------------------------------------
+
+def find_external_result(
+    game,
+    external_results
+):
+    game_lower = game.strip().lower()
+
+    for result in external_results:
+        if (
+            result.get("game", "")
+            .strip()
+            .lower()
+            == game_lower
+        ):
+            return result
+
+    return None
+
+
+def article_used_on_another_day(
+    article_url,
+    external_history,
+    local_date
+):
+    for record in external_history:
+        if record.get("url") != article_url:
+            continue
+
+        return (
+            record.get("selected_date")
+            != local_date.isoformat()
+        )
+
+    return False
+
+
+def enrich_with_external_news(
+    candidate,
+    external_results,
+    external_history,
+    now
+):
+    candidate.pop(
+        "external_news_article",
+        None
+    )
+
+    result = find_external_result(
+        candidate.get("game", ""),
+        external_results
+    )
+
+    if not result:
+        return candidate
+
+    article = result.get(
+        "latest_article"
+    )
+
+    if not article:
+        return candidate
+
+    article_url = article.get(
+        "url",
+        ""
+    )
+
+    if article_used_on_another_day(
+        article_url,
+        external_history,
+        now.astimezone(
+            LOCAL_TIMEZONE
+        ).date()
+    ):
+        return candidate
+
+    external_facts = extract_external_facts(
+        candidate.get("game", ""),
+        article,
+        now=now
+    )
+
+    if not external_facts:
+        return candidate
+
+    current_facts = candidate.setdefault(
+        "facts",
+        []
+    )
+
+    known_fact_keys = {
+        (
+            fact.get("text", ""),
+            fact.get("source_url", "")
+        )
+        for fact in current_facts
+    }
+
+    for fact in external_facts:
+        fact_key = (
+            fact.get("text", ""),
+            fact.get("source_url", "")
+        )
+
+        if fact_key not in known_fact_keys:
+            current_facts.append(
+                fact
+            )
+            known_fact_keys.add(
+                fact_key
+            )
+
+    current_facts.sort(
+        key=lambda fact: fact.get(
+            "value",
+            0
+        ),
+        reverse=True
+    )
+
+    candidate["score"] = max(
+        candidate.get("score", 0),
+        max(
+            fact.get("value", 0)
+            for fact in external_facts
+        )
+    )
+
+    candidate[
+        "external_news_article"
+    ] = {
+        "url": article_url,
+        "title": article.get(
+            "title",
+            ""
+        ),
+        "published_at": article.get(
+            "published_at"
+        ),
+        "age_days": get_article_age_days(
+            article,
+            now=now
+        )
+    }
+
+    add_source(
+        candidate,
+        "official_news_website",
+        verified=True,
+        url=article_url
+    )
 
     return candidate
 
@@ -539,7 +712,10 @@ def update_confidence(candidate):
 
 def verify_candidate(
     candidate,
-    source_registry
+    source_registry,
+    external_results,
+    external_history,
+    now
 ):
     # Каждый запуск формирует sources
     # заново, без мусора от старых запусков.
@@ -561,6 +737,15 @@ def verify_candidate(
         verify_registry_group(
             candidate,
             source_registry
+        )
+    )
+
+    candidate = (
+        enrich_with_external_news(
+            candidate,
+            external_results,
+            external_history,
+            now
         )
     )
 
@@ -591,6 +776,20 @@ source_registry = load_json(
     {}
 )
 
+external_results = load_json(
+    "external_news_raw.json",
+    []
+)
+
+external_history = load_json(
+    "external_news_history.json",
+    []
+)
+
+now = datetime.now(
+    timezone.utc
+)
+
 
 verified = []
 
@@ -599,7 +798,10 @@ for candidate in candidates:
     verified_candidate = (
         verify_candidate(
             candidate,
-            source_registry
+            source_registry,
+            external_results,
+            external_history,
+            now
         )
     )
 
@@ -740,5 +942,26 @@ for item in verified:
             "источником:",
             len(
                 confirmations
+            )
+        )
+
+    external_article = item.get(
+        "external_news_article"
+    )
+
+    if external_article:
+        print(
+            "Официальная статья:",
+            external_article.get(
+                "title",
+                ""
+            )
+        )
+
+        print(
+            "URL статьи:",
+            external_article.get(
+                "url",
+                ""
             )
         )

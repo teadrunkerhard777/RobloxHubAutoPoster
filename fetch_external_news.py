@@ -68,6 +68,59 @@ def extract_page_data(
     ):
         element.decompose()
 
+    title = ""
+
+    title_meta = soup.find(
+        "meta",
+        attrs={
+            "property": "og:title"
+        }
+    )
+
+    if title_meta:
+        title = title_meta.get(
+            "content",
+            ""
+        ).strip()
+
+    if not title:
+        heading = soup.find("h1")
+
+        if heading:
+            title = heading.get_text(
+                " ",
+                strip=True
+            )
+
+    published_at = None
+
+    published_meta = soup.find(
+        "meta",
+        attrs={
+            "property": (
+                "article:published_time"
+            )
+        }
+    )
+
+    if published_meta:
+        published_at = published_meta.get(
+            "content"
+        )
+
+    if not published_at:
+        time_element = soup.find(
+            "time",
+            attrs={
+                "datetime": True
+            }
+        )
+
+        if time_element:
+            published_at = time_element.get(
+                "datetime"
+            )
+
     text = soup.get_text(
         "\n",
         strip=True
@@ -129,6 +182,8 @@ def extract_page_data(
         )
 
     return {
+        "title": title,
+        "published_at": published_at,
         "text": text[:20000],
         "links": links[:200]
     }
@@ -155,6 +210,12 @@ def collect_source(
             ),
             "url": url,
             "success": True,
+            "title": page_data[
+                "title"
+            ],
+            "published_at": page_data[
+                "published_at"
+            ],
             "text": page_data[
                 "text"
             ],
@@ -172,46 +233,149 @@ def collect_source(
             ),
             "url": url,
             "success": False,
+            "title": "",
+            "published_at": None,
             "text": "",
             "links": [],
             "error": str(error)
         }
 
 
-source_registry = load_json(
-    "official_sources.json",
-    {}
-)
-
-
-results = []
-
-
-for game, config in source_registry.items():
-    news_url = config.get(
-        "news_url"
-    )
-
-    if not news_url:
-        continue
-
-    result = collect_source(
-        game,
+def find_latest_article_url(
+    game,
+    news_url,
+    links
+):
+    news_path = urlparse(
         news_url
-    )
+    ).path.rstrip("/")
 
-    results.append(
-        result
-    )
+    for link in links:
+        article_url = link.get(
+            "url",
+            ""
+        )
 
+        parsed = urlparse(
+            article_url
+        )
+
+        article_path = parsed.path.rstrip(
+            "/"
+        )
+
+        if not article_path:
+            continue
+
+        if article_path == news_path:
+            continue
+
+        if game == "Blox Fruits":
+            if article_path.startswith(
+                "/blogs/news/"
+            ):
+                return article_url
+
+        elif game == "Adopt Me!":
+            if article_path.startswith(
+                "/news/"
+            ):
+                return article_url
+
+    return None
+
+
+def fetch_article(url):
+    try:
+        html = fetch_page(
+            url
+        )
+
+        page_data = extract_page_data(
+            html,
+            url
+        )
+
+        return {
+            "url": url,
+            "success": True,
+            "title": page_data[
+                "title"
+            ],
+            "published_at": page_data[
+                "published_at"
+            ],
+            "text": page_data[
+                "text"
+            ],
+            "error": None
+        }
+
+    except requests.RequestException as error:
+        return {
+            "url": url,
+            "success": False,
+            "title": "",
+            "published_at": None,
+            "text": "",
+            "error": str(error)
+        }
+
+
+def collect_external_news(
+    source_registry
+):
+    results = []
+
+    for game, config in source_registry.items():
+        news_url = config.get(
+            "news_url"
+        )
+
+        if not news_url:
+            continue
+
+        result = collect_source(
+            game,
+            news_url
+        )
+
+        article_url = None
+
+        if result["success"]:
+            article_url = (
+                find_latest_article_url(
+                    game,
+                    news_url,
+                    result["links"]
+                )
+            )
+
+        if article_url:
+            result["latest_article"] = (
+                fetch_article(
+                    article_url
+                )
+            )
+        else:
+            result["latest_article"] = None
+
+        results.append(
+            result
+        )
+
+    return results
+
+
+def print_result(result):
     print()
     print(
-        game
+        result["game"]
     )
 
     print(
         "Источник:",
-        news_url
+        result["url"]
     )
 
     print(
@@ -248,6 +412,48 @@ for game, config in source_registry.items():
                 link["url"]
             )
 
+        article = result.get(
+            "latest_article"
+        )
+
+        if article:
+            print(
+                "Последняя статья:",
+                article["url"]
+            )
+
+            print(
+                "Статья загружена:",
+                article["success"]
+            )
+
+            if article["success"]:
+                print(
+                    "Заголовок:",
+                    article["title"]
+                )
+
+                print(
+                    "Дата:",
+                    article["published_at"]
+                )
+
+                print(
+                    "Символов в статье:",
+                    len(article["text"])
+                )
+
+            else:
+                print(
+                    "Ошибка статьи:",
+                    article["error"]
+                )
+
+        else:
+            print(
+                "Последняя статья не найдена."
+            )
+
     else:
         print(
             "Ошибка:",
@@ -255,14 +461,32 @@ for game, config in source_registry.items():
         )
 
 
-save_json(
-    "external_news_raw.json",
-    results
-)
+def main():
+    source_registry = load_json(
+        "official_sources.json",
+        {}
+    )
+
+    results = collect_external_news(
+        source_registry
+    )
+
+    for result in results:
+        print_result(
+            result
+        )
+
+    save_json(
+        "external_news_raw.json",
+        results
+    )
+
+    print()
+    print(
+        "Сохранено:",
+        "external_news_raw.json"
+    )
 
 
-print()
-print(
-    "Сохранено:",
-    "external_news_raw.json"
-)
+if __name__ == "__main__":
+    main()

@@ -3,6 +3,7 @@ import sys
 
 
 STEPS = [
+    "fetch_external_news.py",
     "generate_news.py",
     "verify_news.py",
     "build_news_post.py",
