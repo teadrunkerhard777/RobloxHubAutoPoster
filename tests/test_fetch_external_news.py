@@ -108,6 +108,67 @@ class FetchExternalNewsTests(unittest.TestCase):
             )
         )
 
+    def test_finds_latest_brookhaven_article(self):
+        result = fetch_external_news.find_latest_article_url(
+            "Brookhaven",
+            "https://voldex.com/news/",
+            [
+                {
+                    "text": "Driving Empire update",
+                    "url": "https://voldex.com/news/driving-empire/",
+                },
+                {
+                    "text": "New event in Brookhaven",
+                    "url": "https://voldex.com/news/brookhaven-event/",
+                },
+            ],
+        )
+
+        self.assertEqual(
+            result,
+            "https://voldex.com/news/brookhaven-event/",
+        )
+
+    def test_finds_latest_pet_simulator_99_article(self):
+        result = fetch_external_news.find_latest_article_url(
+            "Pet Simulator 99",
+            "https://www.biggames.io/post",
+            [
+                {
+                    "text": "Other game",
+                    "url": "https://www.biggames.io/post/pets-go-update-1",
+                },
+                {
+                    "text": "Latest PS99 update",
+                    "url": (
+                        "https://www.biggames.io/"
+                        "post/pet-simulator-99-update-87"
+                    ),
+                },
+            ],
+        )
+
+        self.assertEqual(
+            result,
+            (
+                "https://www.biggames.io/"
+                "post/pet-simulator-99-update-87"
+            ),
+        )
+
+    def test_infers_date_from_feed_link(self):
+        result = fetch_external_news.infer_published_at_from_links(
+            "https://voldex.com/news/brookhaven-event",
+            [
+                {
+                    "text": "19 June 2026 Brookhaven event",
+                    "url": "https://voldex.com/news/brookhaven-event",
+                }
+            ],
+        )
+
+        self.assertEqual(result, "2026-06-19")
+
     @patch("fetch_external_news.fetch_page")
     def test_collects_feed_and_latest_article(
         self,

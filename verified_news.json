@@ -73,10 +73,16 @@
       ]
     },
     "source_registry": {
+      "universe_id": 6035872082,
+      "root_place_id": 17625359962,
+      "roblox_game_url": "https://www.roblox.com/games/17625359962/RIVALS",
       "roblox_group_id": 3461453,
       "roblox_group_name": "Nosniy Games",
+      "roblox_group_url": "https://www.roblox.com/communities/3461453/Nosniy-Games",
+      "news_strategy": "roblox_game_description_and_group",
       "website": null,
-      "discord": null,
+      "news_url": null,
+      "discord": "https://discord.com/servers/nosniy-games-170261767480410112",
       "youtube": null,
       "x": null
     },
@@ -85,13 +91,13 @@
       "name": "Nosniy Games",
       "expected_name": "Nosniy Games",
       "name_matches_registry": true,
-      "shout": "",
-      "keywords": [],
+      "description": "Welcome to Nosniy Games! We're a development studio dedicated to creating enjoyable content for everyone! Join our community to receive exclusive perks and stay informed on our latest game updates!\n\n🏆 2020 Mobile Game of the Year - Super Golf!\n🏆 RIA25 Best Shooter Experience - RIVALS",
+      "has_verified_badge": true,
       "news_lines": []
     }
   },
   {
-    "game": "Dress to Impress",
+    "game": "Dress To Impress",
     "universe_id": 5203828273,
     "roblox_name": "[🌴] Dress To Impress",
     "description": "Create stunning outfits 👗💖⭐, and strut the runway to show off your unique style. Collaborate, compete, and explore a world of glamour with friends!\n\n⭐ Are you ready to be the TOP MODEL?\n👗 NEW ITEMS! Check them out.\n🍿 Vote for your favorite outfits!\n💃 Use poses on the runway to show off your outfit!\n\nFind more about Dress To Impress by joining our community.\nhttps://www.roblox.com/communities/17264167/Dress-To-Impress-Group#!/about",
@@ -149,10 +155,16 @@
       ]
     },
     "source_registry": {
+      "universe_id": 5203828273,
+      "root_place_id": 15101393044,
+      "roblox_game_url": "https://www.roblox.com/games/15101393044/Dress-To-Impress",
       "roblox_group_id": 17264167,
       "roblox_group_name": "Dress To Impress Group",
+      "roblox_group_url": "https://www.roblox.com/communities/17264167/Dress-To-Impress-Group",
+      "news_strategy": "roblox_game_description_and_group",
       "website": null,
-      "discord": null,
+      "news_url": null,
+      "discord": "https://discord.com/servers/1151211652256112650",
       "youtube": null,
       "x": null
     },
@@ -161,8 +173,8 @@
       "name": "Dress To Impress Group",
       "expected_name": "Dress To Impress Group",
       "name_matches_registry": true,
-      "shout": "",
-      "keywords": [],
+      "description": "🌊 Welcome to the Dress To Impress Group!\n🌊 Please join the community server!",
+      "has_verified_badge": true,
       "news_lines": []
     }
   },
@@ -251,9 +263,15 @@
       ]
     },
     "source_registry": {
+      "universe_id": 1686885941,
+      "root_place_id": 4924922222,
+      "roblox_game_url": "https://www.roblox.com/games/4924922222/Brookhaven-RP",
       "roblox_group_id": 3104358,
       "roblox_group_name": "Brookhaven by Voldex",
-      "website": null,
+      "roblox_group_url": "https://www.roblox.com/communities/3104358/Brookhaven-by-Voldex",
+      "news_strategy": "official_news_website",
+      "website": "https://voldex.com/",
+      "news_url": "https://voldex.com/news/",
       "discord": null,
       "youtube": null,
       "x": null
@@ -263,8 +281,8 @@
       "name": "Brookhaven by Voldex",
       "expected_name": "Brookhaven by Voldex",
       "name_matches_registry": true,
-      "shout": "",
-      "keywords": [],
+      "description": "Brookhaven originally created by Wolfpaq, now developed by Voldex",
+      "has_verified_badge": false,
       "news_lines": []
     }
   },
@@ -328,20 +346,26 @@
       ]
     },
     "source_registry": {
+      "universe_id": 383310974,
+      "root_place_id": 920587237,
+      "roblox_game_url": "https://www.roblox.com/games/920587237/Adopt-Me",
       "roblox_group_id": 295182,
       "roblox_group_name": "Uplift Games",
-      "website": null,
-      "discord": null,
-      "youtube": null,
-      "x": null
+      "roblox_group_url": "https://www.roblox.com/communities/295182/Uplift-Games",
+      "news_strategy": "official_news_website",
+      "website": "https://www.playadopt.me/",
+      "news_url": "https://www.playadopt.me/news",
+      "discord": "https://discord.com/invite/adoptme",
+      "youtube": "https://www.youtube.com/PlayAdoptMe",
+      "x": "https://x.com/PlayAdoptMe"
     },
     "official_group": {
       "id": 295182,
       "name": "Uplift Games",
       "expected_name": "Uplift Games",
       "name_matches_registry": true,
-      "shout": "",
-      "keywords": [],
+      "description": "Welcome to Uplift Games, the studio behind Adopt Me!",
+      "has_verified_badge": true,
       "news_lines": []
     }
   },
@@ -385,10 +409,16 @@
       "news_lines": []
     },
     "source_registry": {
+      "universe_id": 7709344486,
+      "root_place_id": 109983668079237,
+      "roblox_game_url": "https://www.roblox.com/games/109983668079237/Steal-a-Brainrot",
       "roblox_group_id": 35815907,
       "roblox_group_name": "BRAZILIAN SPYDER",
+      "roblox_group_url": "https://www.roblox.com/communities/35815907/BRAZILIAN-SPYDER",
+      "news_strategy": "roblox_game_description_and_group",
       "website": null,
-      "discord": null,
+      "news_url": null,
+      "discord": "https://discord.com/servers/steal-a-brainrot-1376018788041887795",
       "youtube": null,
       "x": null
     },
@@ -397,8 +427,8 @@
       "name": "BRAZILIAN SPYDER",
       "expected_name": "BRAZILIAN SPYDER",
       "name_matches_registry": true,
-      "shout": "",
-      "keywords": [],
+      "description": "",
+      "has_verified_badge": true,
       "news_lines": []
     }
   },
@@ -442,10 +472,16 @@
       "news_lines": []
     },
     "source_registry": {
+      "universe_id": 7326934954,
+      "root_place_id": 79546208627805,
+      "roblox_game_url": "https://www.roblox.com/games/79546208627805/99-Nights-in-the-Forest",
       "roblox_group_id": 6042520,
       "roblox_group_name": "Grandma's Favourite Games",
-      "website": null,
-      "discord": null,
+      "roblox_group_url": "https://www.roblox.com/communities/6042520/Grandmas-Favourite-Games",
+      "news_strategy": "roblox_game_description_and_group",
+      "website": "https://www.99nitf.com/",
+      "news_url": null,
+      "discord": "https://discord.com/invite/nyyr2Qmsdp",
       "youtube": null,
       "x": null
     },
@@ -454,8 +490,8 @@
       "name": "Grandma's Favourite Games",
       "expected_name": "Grandma's Favourite Games",
       "name_matches_registry": true,
-      "shout": "",
-      "keywords": [],
+      "description": "A group of 3 friends from New Zealand who develop games: ForyxeV, Viridial, and Cracky4\n\nOur most popular games are 99 Nights in the forest and Mall tycoon\n\nWe are currently at war with Bee Swarm Simulator Club",
+      "has_verified_badge": true,
       "news_lines": []
     }
   },
@@ -508,20 +544,26 @@
       ]
     },
     "source_registry": {
+      "universe_id": 994732206,
+      "root_place_id": 2753915549,
+      "roblox_game_url": "https://www.roblox.com/games/2753915549/Blox-Fruits",
       "roblox_group_id": 4372130,
       "roblox_group_name": "Gamer Robot Inc",
-      "website": null,
-      "discord": null,
-      "youtube": null,
-      "x": null
+      "roblox_group_url": "https://www.roblox.com/communities/4372130/Gamer-Robot-Inc",
+      "news_strategy": "official_news_website",
+      "website": "https://gamerrobot.com/",
+      "news_url": "https://gamerrobot.com/blogs/news",
+      "discord": "https://discord.com/invite/bloxfruits",
+      "youtube": "https://www.youtube.com/c/GamerRobot",
+      "x": "https://x.com/BloxFruits"
     },
     "official_group": {
       "id": 4372130,
       "name": "Gamer Robot Inc",
       "expected_name": "Gamer Robot Inc",
       "name_matches_registry": true,
-      "shout": "",
-      "keywords": [],
+      "description": "BLOX FRUITS FAQ:\n\n- Fruits spawn once every hour and despawn after 20 minutes. \n- You can also buy fruits from the Blox Fruits Dealer. He restocks random fruits every 4 hours (every server will have the same fruits for sale). \n- The number of skills a fruit has and mastery necessary to use them depends on their rarity. This can vary from 2 to 4 skills. \n- Bosses can drop special items such as accessories or swords.\n- Accessories are rare items that can boost your stats. \n- Mastery boosts your stats by 1 point every 3 levels and also unlock new skills. You gain mastery by finishing off enemies with the weapon you want to level up. \n- Mastery doesn't reset when you switch out items. If you acquire a new item it will start at 1 mastery, but if you decide to switch back to your previous item, the mastery you had on that item will return. \n-2 Blox Fruits can spawn in each vip server until it is restarted.",
+      "has_verified_badge": true,
       "news_lines": []
     }
   },
@@ -551,6 +593,12 @@
       {
         "type": "official_game_description",
         "verified": true
+      },
+      {
+        "type": "official_roblox_group",
+        "verified": true,
+        "group_id": 35789249,
+        "group_name": "The Garden Game"
       }
     ],
     "cross_source_confirmations": [],
@@ -559,14 +607,28 @@
       "news_lines": []
     },
     "source_registry": {
+      "universe_id": 7436755782,
+      "root_place_id": 126884695634066,
+      "roblox_game_url": "https://www.roblox.com/games/126884695634066/Grow-a-Garden",
       "roblox_group_id": 35789249,
       "roblox_group_name": "The Garden Game",
+      "roblox_group_url": "https://www.roblox.com/communities/35789249/The-Garden-Game",
+      "news_strategy": "roblox_game_description_and_group",
       "website": null,
+      "news_url": null,
       "discord": null,
       "youtube": null,
       "x": null
     },
-    "group_verification_note": "429 Client Error: Too Many Requests for url: https://groups.roblox.com/v1/groups/35789249"
+    "official_group": {
+      "id": 35789249,
+      "name": "The Garden Game",
+      "expected_name": "The Garden Game",
+      "name_matches_registry": true,
+      "description": "@GrowGames",
+      "has_verified_badge": false,
+      "news_lines": []
+    }
   },
   {
     "game": "Pet Simulator 99",
@@ -596,6 +658,12 @@
       {
         "type": "official_game_description",
         "verified": true
+      },
+      {
+        "type": "official_roblox_group",
+        "verified": true,
+        "group_id": 3959677,
+        "group_name": "BIG Games Pets"
       }
     ],
     "cross_source_confirmations": [],
@@ -610,14 +678,28 @@
       ]
     },
     "source_registry": {
+      "universe_id": 3317771874,
+      "root_place_id": 8737899170,
+      "roblox_game_url": "https://www.roblox.com/games/8737899170/Pet-Simulator-99",
       "roblox_group_id": 3959677,
       "roblox_group_name": "BIG Games Pets",
-      "website": null,
-      "discord": null,
-      "youtube": null,
-      "x": null
+      "roblox_group_url": "https://www.roblox.com/communities/3959677/BIG-Games-Pets",
+      "news_strategy": "official_news_website",
+      "website": "https://www.biggames.io/",
+      "news_url": "https://www.biggames.io/post",
+      "discord": "https://discord.biggames.io/",
+      "youtube": "https://www.youtube.com/c/BuildIntoGames",
+      "x": "https://x.com/BuildIntoGames"
     },
-    "group_verification_note": "429 Client Error: Too Many Requests for url: https://groups.roblox.com/v1/groups/3959677"
+    "official_group": {
+      "id": 3959677,
+      "name": "BIG Games Pets",
+      "expected_name": "BIG Games Pets",
+      "name_matches_registry": true,
+      "description": "Meow 🐾\n\nExperience Studio!",
+      "has_verified_badge": true,
+      "news_lines": []
+    }
   },
   {
     "game": "Blade Ball",
@@ -647,6 +729,12 @@
       {
         "type": "official_game_description",
         "verified": true
+      },
+      {
+        "type": "official_roblox_group",
+        "verified": true,
+        "group_id": 12836673,
+        "group_name": "Wiggity."
       }
     ],
     "cross_source_confirmations": [],
@@ -659,13 +747,27 @@
       ]
     },
     "source_registry": {
-      "roblox_group_id": null,
+      "universe_id": 4777817887,
+      "root_place_id": 13772394625,
+      "roblox_game_url": "https://www.roblox.com/games/13772394625/Blade-Ball",
+      "roblox_group_id": 12836673,
       "roblox_group_name": "Wiggity.",
+      "roblox_group_url": "https://www.roblox.com/communities/12836673/Wiggity",
+      "news_strategy": "roblox_game_description_and_group",
       "website": null,
-      "discord": null,
+      "news_url": null,
+      "discord": "https://discord.com/servers/1141515589924429869",
       "youtube": null,
       "x": null
     },
-    "group_verification_note": "В реестре пока нет подтверждённого group_id."
+    "official_group": {
+      "id": 12836673,
+      "name": "Wiggity.",
+      "expected_name": "Wiggity.",
+      "name_matches_registry": true,
+      "description": "Creators of Blade Ball",
+      "has_verified_badge": true,
+      "news_lines": []
+    }
   }
 ]

@@ -106,23 +106,32 @@ def extract_news_lines(text):
 
 
 # --------------------------------------------------
-# Roblox Group API
+# Roblox Groups API
 # --------------------------------------------------
 
-def fetch_group(group_id):
-    url = (
-        "https://groups.roblox.com/"
-        f"v1/groups/{group_id}"
-    )
+def fetch_groups(group_ids):
+    url = "https://groups.roblox.com/v2/groups"
 
     response = requests.get(
         url,
+        params={
+            "groupIds": ",".join(
+                str(group_id)
+                for group_id in group_ids
+            )
+        },
         timeout=15
     )
 
     response.raise_for_status()
 
-    return response.json()
+    return {
+        group["id"]: group
+        for group in response.json().get(
+            "data",
+            []
+        )
+    }
 
 
 # --------------------------------------------------
@@ -253,7 +262,9 @@ def find_source_config(
 
 def verify_registry_group(
     candidate,
-    source_registry
+    source_registry,
+    group_lookup,
+    group_fetch_error=None
 ):
     config = find_source_config(
         candidate,
@@ -281,9 +292,24 @@ def verify_registry_group(
     candidate[
         "source_registry"
     ] = {
+        "universe_id": config.get(
+            "universe_id"
+        ),
+        "root_place_id": config.get(
+            "root_place_id"
+        ),
+        "roblox_game_url": config.get(
+            "roblox_game_url"
+        ),
         "roblox_group_id": group_id,
         "roblox_group_name": (
             expected_name
+        ),
+        "roblox_group_url": config.get(
+            "roblox_group_url"
+        ),
+        "news_strategy": config.get(
+            "news_strategy"
         ),
         "website": config.get(
             "website"
@@ -314,15 +340,24 @@ def verify_registry_group(
 
         return candidate
 
-    try:
-        group = fetch_group(
-            group_id
-        )
-
-    except requests.RequestException as error:
+    if group_fetch_error:
         candidate[
             "group_verification_note"
-        ] = str(error)
+        ] = group_fetch_error
+
+        return candidate
+
+    group = group_lookup.get(
+        group_id
+    )
+
+    if not group:
+        candidate[
+            "group_verification_note"
+        ] = (
+            "Группа отсутствует в ответе "
+            "пакетного Roblox Groups API."
+        )
 
         return candidate
 
@@ -339,35 +374,6 @@ def verify_registry_group(
             == expected_name.strip().lower()
         )
 
-    shout = group.get(
-        "shout"
-    )
-
-    shout_text = ""
-
-    if isinstance(
-        shout,
-        dict
-    ):
-        shout_text = shout.get(
-            "body",
-            ""
-        )
-
-    elif isinstance(
-        shout,
-        str
-    ):
-        shout_text = shout
-
-    shout_keywords = find_keywords(
-        shout_text
-    )
-
-    shout_lines = extract_news_lines(
-        shout_text
-    )
-
     candidate[
         "official_group"
     ] = {
@@ -379,9 +385,15 @@ def verify_registry_group(
         "name_matches_registry": (
             name_matches
         ),
-        "shout": shout_text,
-        "keywords": shout_keywords,
-        "news_lines": shout_lines
+        "description": group.get(
+            "description",
+            ""
+        ),
+        "has_verified_badge": group.get(
+            "hasVerifiedBadge",
+            False
+        ),
+        "news_lines": []
     }
 
     add_source(
@@ -391,29 +403,6 @@ def verify_registry_group(
         group_id=group_id,
         group_name=actual_name
     )
-
-    # --------------------------------------------------
-    # Важное правило:
-    #
-    # Сам факт существования группы
-    # score НЕ повышает.
-    #
-    # +1 даём только если в текущем
-    # group shout реально есть
-    # новостный сигнал.
-    # --------------------------------------------------
-
-    if (
-        name_matches
-        and shout_keywords
-    ):
-        candidate["score"] = min(
-            candidate.get(
-                "score",
-                0
-            ) + 1,
-            10
-        )
 
     return candidate
 
@@ -713,6 +702,8 @@ def update_confidence(candidate):
 def verify_candidate(
     candidate,
     source_registry,
+    group_lookup,
+    group_fetch_error,
     external_results,
     external_history,
     now
@@ -736,7 +727,9 @@ def verify_candidate(
     candidate = (
         verify_registry_group(
             candidate,
-            source_registry
+            source_registry,
+            group_lookup,
+            group_fetch_error
         )
     )
 
@@ -790,6 +783,22 @@ now = datetime.now(
     timezone.utc
 )
 
+group_ids = [
+    config["roblox_group_id"]
+    for config in source_registry.values()
+    if config.get("roblox_group_id")
+]
+
+group_lookup = {}
+group_fetch_error = None
+
+try:
+    group_lookup = fetch_groups(
+        group_ids
+    )
+except requests.RequestException as error:
+    group_fetch_error = str(error)
+
 
 verified = []
 
@@ -799,6 +808,8 @@ for candidate in candidates:
         verify_candidate(
             candidate,
             source_registry,
+            group_lookup,
+            group_fetch_error,
             external_results,
             external_history,
             now

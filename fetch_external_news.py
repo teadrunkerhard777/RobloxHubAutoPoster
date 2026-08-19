@@ -1,4 +1,6 @@
 import json
+import re
+from datetime import datetime
 from urllib.parse import urljoin, urlparse
 
 import requests
@@ -282,6 +284,22 @@ def find_latest_article_url(
             ):
                 return article_url
 
+        elif game == "Brookhaven":
+            if (
+                article_path.startswith("/news/")
+                and "brookhaven" in link.get(
+                    "text",
+                    ""
+                ).lower()
+            ):
+                return article_url
+
+        elif game == "Pet Simulator 99":
+            if article_path.startswith(
+                "/post/pet-simulator-99-"
+            ):
+                return article_url
+
     return None
 
 
@@ -322,6 +340,34 @@ def fetch_article(url):
         }
 
 
+def infer_published_at_from_links(
+    article_url,
+    links
+):
+    for link in links:
+        if link.get("url") != article_url:
+            continue
+
+        match = re.search(
+            r"\b(\d{1,2}\s+[A-Za-z]+\s+\d{4})\b",
+            link.get("text", "")
+        )
+
+        if not match:
+            continue
+
+        try:
+            published_at = datetime.strptime(
+                match.group(1),
+                "%d %B %Y"
+            )
+        except ValueError:
+            continue
+
+        return published_at.date().isoformat()
+
+    return None
+
 def collect_external_news(
     source_registry
 ):
@@ -352,11 +398,22 @@ def collect_external_news(
             )
 
         if article_url:
-            result["latest_article"] = (
-                fetch_article(
-                    article_url
-                )
+            article = fetch_article(
+                article_url
             )
+
+            if (
+                article["success"]
+                and not article["published_at"]
+            ):
+                article["published_at"] = (
+                    infer_published_at_from_links(
+                        article_url,
+                        result["links"]
+                    )
+                )
+
+            result["latest_article"] = article
         else:
             result["latest_article"] = None
 
