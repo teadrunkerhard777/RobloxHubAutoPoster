@@ -10,7 +10,7 @@ from dotenv import load_dotenv
 load_dotenv()
 
 token = os.getenv("TELEGRAM_BOT_TOKEN")
-url = f"https://api.telegram.org/bot{token}/sendMessage"
+api_url = f"https://api.telegram.org/bot{token}"
 
 LOCAL_TIMEZONE = timezone(timedelta(hours=5))
 
@@ -53,17 +53,37 @@ for post in posts_to_publish:
     post["attempts"] += 1
     post["last_error"] = None
 
-    data = {
-        "chat_id": "@RobloxHubRU",
-        "text": post["text"]
-    }
-
     try:
-        response = requests.post(
-            url,
-            data=data,
-            timeout=10
+        image_path = post.get(
+            "image_path"
         )
+
+        if image_path:
+            data = {
+                "chat_id": "@RobloxHubRU"
+            }
+
+            if post.get("text"):
+                data["caption"] = post["text"]
+
+            with open(image_path, "rb") as image_file:
+                response = requests.post(
+                    f"{api_url}/sendPhoto",
+                    data=data,
+                    files={
+                        "photo": image_file
+                    },
+                    timeout=30
+                )
+        else:
+            response = requests.post(
+                f"{api_url}/sendMessage",
+                data={
+                    "chat_id": "@RobloxHubRU",
+                    "text": post["text"]
+                },
+                timeout=10
+            )
 
         print(
             f"Пост #{post['id']}: "
@@ -82,7 +102,10 @@ for post in posts_to_publish:
             f"Пост #{post['id']} успешно опубликован."
         )
 
-    except requests.RequestException as error:
+    except (
+        OSError,
+        requests.RequestException
+    ) as error:
 
         post["status"] = "failed"
         post["last_error"] = str(error)

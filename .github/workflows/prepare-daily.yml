@@ -33,7 +33,7 @@ jobs:
           if git diff --quiet; then
             echo "Изменений нет"
           else
-            git add posts.json tips.json freebies.json myth_history.json game_history.json game_snapshots.json news_candidates.json verified_news.json generated_news_post.txt generated_news_post_ru.txt generated_news_data_ru.json
+            git add posts.json tips.json freebies.json myth_history.json image_history.json game_history.json game_snapshots.json news_candidates.json verified_news.json generated_news_post.txt generated_news_post_ru.txt generated_news_data_ru.json
             git commit -m "===Prepare Roblox Hub daily posts"
             git push
           fi

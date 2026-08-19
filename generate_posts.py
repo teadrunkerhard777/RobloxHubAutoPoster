@@ -3,6 +3,8 @@ import random
 
 from datetime import datetime, timedelta, timezone
 
+from image_library import select_daily_image
+
 
 LOCAL_TIMEZONE = timezone(
     timedelta(hours=5)
@@ -36,9 +38,10 @@ def build_post(
     game,
     rubric,
     text,
-    source
+    source,
+    image_path=None
 ):
-    return {
+    post = {
         "id": post_id,
         "publish_at": publish_at.isoformat(),
         "game": game,
@@ -50,6 +53,11 @@ def build_post(
         "attempts": 0,
         "last_error": None
     }
+
+    if image_path is not None:
+        post["image_path"] = image_path
+
+    return post
 
 
 def load_json(
@@ -558,6 +566,7 @@ target_date = now.date()
 id_10 = f"{target_date}-10"
 id_12 = f"{target_date}-12"
 id_15 = f"{target_date}-15"
+id_16 = f"{target_date}-16"
 id_18 = f"{target_date}-18"
 
 
@@ -730,6 +739,61 @@ if post_15 is None:
 else:
     print(
         "15:00 — пост уже существует."
+    )
+
+
+# --------------------------------------------------
+# 16:00 — пост с картинкой
+# --------------------------------------------------
+
+post_16 = find_post(
+    existing_posts,
+    id_16
+)
+
+
+if post_16 is None:
+    image_path = select_daily_image(
+        directory="images/16-00",
+        history_filename="image_history.json"
+    )
+
+    if image_path is not None:
+        existing_posts.append(
+            build_post(
+                post_id=id_16,
+                publish_at=datetime(
+                    target_date.year,
+                    target_date.month,
+                    target_date.day,
+                    16,
+                    0,
+                    tzinfo=LOCAL_TIMEZONE
+                ),
+                game="Roblox",
+                rubric="Картинка дня",
+                source="image_library",
+                text="",
+                image_path=image_path
+            )
+        )
+
+        posts_added += 1
+
+        print(
+            f"16:00 — картинка добавлена: "
+            f"{image_path}"
+        )
+
+    else:
+        print(
+            "16:00 — папка с картинками пуста, "
+            "пост не добавлен."
+        )
+
+else:
+    print(
+        "16:00 — пост уже существует."
     )
 
 
