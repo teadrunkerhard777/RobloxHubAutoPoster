@@ -150,7 +150,7 @@
     "text": "Не делай Rebirth, пока не готов потерять текущие деньги и Brainrot: это обмен прогресса на постоянные улучшения.",
     "source": "verified_core_mechanic",
     "reviewed_at": "2026-08-14",
-    "used": false
+    "used": true
   },
   {
     "id": 18,
@@ -573,7 +573,7 @@
     "text": "Не выбегай на один и тот же угол одинаково несколько раундов подряд — соперник быстро это запомнит.",
     "source": "verified_core_mechanic",
     "reviewed_at": "2026-08-14",
-    "used": false
+    "used": true
   },
   {
     "id": 65,
@@ -654,7 +654,7 @@
     "text": "Проверяй магазин семян после пополнения: нужные семена могут быть доступны не постоянно.",
     "source": "verified_core_mechanic",
     "reviewed_at": "2026-08-14",
-    "used": false
+    "used": true
   },
   {
     "id": 74,

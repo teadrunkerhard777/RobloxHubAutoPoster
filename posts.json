@@ -142,5 +142,41 @@
     "published_at": "2026-08-18T18:00:39.769790+05:00",
     "attempts": 1,
     "last_error": null
+  },
+  {
+    "id": "2026-08-19-10",
+    "publish_at": "2026-08-19T10:00:00+05:00",
+    "game": "разные игры",
+    "rubric": "Выпуск дня",
+    "source": "auto_verified",
+    "text": "🎮 ROBLOX HUB — СЕГОДНЯ\n\n🔫 RIVALS\n\nМожно выполнять контракты и получать эксклюзивные награды. В Update 21 проходит Summer Event.\n\n🎯 Что сделать: загляни в Summer Event и проверь его активности.\n\n⭐ ГЛАВНОЕ\n\nRIVALS: Можно выполнять контракты и получать эксклюзивные награды. В Update 21 проходит Summer Event.\n\n🎮 Roblox Hub",
+    "status": "pending",
+    "published_at": null,
+    "attempts": 0,
+    "last_error": null
+  },
+  {
+    "id": "2026-08-19-15",
+    "publish_at": "2026-08-19T15:00:00+05:00",
+    "game": "RIVALS + Steal a Brainrot + Grow a Garden",
+    "rubric": "Полезно знать",
+    "source": "verified_db",
+    "text": "💡 ПОЛЕЗНО ЗНАТЬ\n\n🔫 RIVALS\nНе выбегай на один и тот же угол одинаково несколько раундов подряд — соперник быстро это запомнит.\n\n🧠 Steal a Brainrot\nНе делай Rebirth, пока не готов потерять текущие деньги и Brainrot: это обмен прогресса на постоянные улучшения.\n\n🌱 Grow a Garden\nПроверяй магазин семян после пополнения: нужные семена могут быть доступны не постоянно.\n\n🎮 Roblox Hub",
+    "status": "pending",
+    "published_at": null,
+    "attempts": 0,
+    "last_error": null
+  },
+  {
+    "id": "2026-08-19-18",
+    "publish_at": "2026-08-19T18:00:00+05:00",
+    "game": "Brookhaven",
+    "rubric": "Миф или правда",
+    "source": "verified_db",
+    "text": "🧠 МИФ ИЛИ ПРАВДА?\n\n🏡 Brookhaven\n\n🔥 В Brookhaven можно менять транспорт прямо во время игры.\n\nКак думаешь — правда или миф?\n\n✅ ПРАВДА!\n\nИгрок может выбирать и менять доступный транспорт прямо во время сессии.\n\n🎮 Roblox Hub",
+    "status": "pending",
+    "published_at": null,
+    "attempts": 0,
+    "last_error": null
   }
 ]
