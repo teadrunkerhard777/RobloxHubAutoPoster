@@ -1,0 +1,32 @@
+name: Test External News Sources
+
+on:
+  workflow_dispatch:
+
+jobs:
+  test-external-news:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v6
+
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.14"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Fetch external news
+        run: python fetch_external_news.py
+
+      - name: Show collected data
+        run: cat external_news_raw.json
+
+      - name: Upload result
+        uses: actions/upload-artifact@v4
+        with:
+          name: external-news-raw
+          path: external_news_raw.json
