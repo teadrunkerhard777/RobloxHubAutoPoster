@@ -8,23 +8,25 @@
     "x": null
   },
 
-  "99 Nights in the Forest": {
-    "roblox_group_id": 6042520,
-    "roblox_group_name": "Grandma's Favourite Games",
-    "website": null,
-    "discord": null,
-    "youtube": null,
-    "x": null
-  },
+"99 Nights in the Forest": {
+  "roblox_group_id": 6042520,
+  "roblox_group_name": "Grandma's Favourite Games",
+  "website": "https://www.99nitf.com/",
+  "news_url": null,
+  "discord": "https://discord.com/invite/nyyr2Qmsdp",
+  "youtube": null,
+  "x": null
+},
 
   "Blox Fruits": {
-    "roblox_group_id": 4372130,
-    "roblox_group_name": "Gamer Robot Inc",
-    "website": null,
-    "discord": null,
-    "youtube": null,
-    "x": null
-  },
+  "roblox_group_id": 4372130,
+  "roblox_group_name": "Gamer Robot Inc",
+  "website": "https://gamerrobot.com/",
+  "news_url": "https://gamerrobot.com/blogs/news",
+  "discord": "https://discord.com/invite/bloxfruits",
+  "youtube": "https://www.youtube.com/c/GamerRobot",
+  "x": "https://x.com/BloxFruits"
+},
 
   "Brookhaven": {
     "roblox_group_id": 3104358,
@@ -35,23 +37,25 @@
     "x": null
   },
 
-  "Adopt Me!": {
-    "roblox_group_id": 295182,
-    "roblox_group_name": "Uplift Games",
-    "website": null,
-    "discord": null,
-    "youtube": null,
-    "x": null
-  },
+"Adopt Me!": {
+  "roblox_group_id": 295182,
+  "roblox_group_name": "Uplift Games",
+  "website": "https://www.playadopt.me/",
+  "news_url": "https://www.playadopt.me/news",
+  "discord": "https://discord.com/invite/adoptme",
+  "youtube": "https://www.youtube.com/PlayAdoptMe",
+  "x": "https://x.com/PlayAdoptMe"
+},
 
-  "RIVALS": {
-    "roblox_group_id": 3461453,
-    "roblox_group_name": "Nosniy Games",
-    "website": null,
-    "discord": null,
-    "youtube": null,
-    "x": null
-  },
+"RIVALS": {
+  "roblox_group_id": 3461453,
+  "roblox_group_name": "Nosniy Games",
+  "website": null,
+  "news_url": null,
+  "discord": "https://discord.gg/nosniy",
+  "youtube": null,
+  "x": null
+},
 
   "Grow a Garden": {
     "roblox_group_id": 35789249,

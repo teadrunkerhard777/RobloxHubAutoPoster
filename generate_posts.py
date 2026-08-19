@@ -367,23 +367,6 @@ def generate_morning_post():
     # а не пишем редакционную воду.
     # --------------------------------------------------
 
-    main_item = news_items[0]
-
-    main_game = main_item.get(
-        "game",
-        "Roblox"
-    )
-
-    main_text = main_item.get(
-        "text",
-        ""
-    )
-
-    blocks.append(
-        "⭐ ГЛАВНОЕ\n\n"
-        f"{main_game}: {main_text}"
-    )
-
     blocks.append(
         "🎮 Roblox Hub"
     )
