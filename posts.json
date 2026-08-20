@@ -178,5 +178,54 @@
     "published_at": "2026-08-19T18:00:41.453322+05:00",
     "attempts": 1,
     "last_error": null
+  },
+  {
+    "id": "2026-08-20-10",
+    "publish_at": "2026-08-20T10:00:00+05:00",
+    "game": "разные игры",
+    "rubric": "Выпуск дня",
+    "source": "auto_verified",
+    "text": "🎮 ROBLOX HUB — СЕГОДНЯ\n\n🔫 RIVALS\n\nМожно выполнять контракты и получать эксклюзивные награды. В Update 21 проходит Summer Event.\n\n🎯 Что сделать: загляни в Summer Event и проверь его активности.\n\n🎮 Roblox Hub",
+    "status": "pending",
+    "published_at": null,
+    "attempts": 0,
+    "last_error": null
+  },
+  {
+    "id": "2026-08-20-15",
+    "publish_at": "2026-08-20T15:00:00+05:00",
+    "game": "Pet Simulator 99 + Blade Ball + Steal a Brainrot",
+    "rubric": "Полезно знать",
+    "source": "verified_db",
+    "text": "💡 ПОЛЕЗНО ЗНАТЬ\n\n🐶 Pet Simulator 99\nНе оставляй сильных питомцев вне команды случайно: после массового получения новых проверь состав.\n\n⚔️ Blade Ball\nСмотри не только на мяч, но и на следующую возможную цель: это помогает заранее выбрать позицию.\n\n🧠 Steal a Brainrot\nИспользуй защитное снаряжение и slaps тогда, когда соперник действительно несёт ценный Brainrot, а не впустую.\n\n🎮 Roblox Hub",
+    "status": "pending",
+    "published_at": null,
+    "attempts": 0,
+    "last_error": null
+  },
+  {
+    "id": "2026-08-20-16",
+    "publish_at": "2026-08-20T16:00:00+05:00",
+    "game": "Roblox",
+    "rubric": "Картинка дня",
+    "source": "image_library",
+    "text": "",
+    "status": "pending",
+    "published_at": null,
+    "attempts": 0,
+    "last_error": null,
+    "image_path": "images/16-00/87527718-96d7-429a-bf5c-5725f3c70b36.jpeg"
+  },
+  {
+    "id": "2026-08-20-18",
+    "publish_at": "2026-08-20T18:00:00+05:00",
+    "game": "Steal a Brainrot",
+    "rubric": "Миф или правда",
+    "source": "verified_db",
+    "text": "🧠 МИФ ИЛИ ПРАВДА?\n\n🧠 Steal a Brainrot\n\n🔥 Если спрятать брейнрот подальше от входа, его вообще невозможно украсть.\n\nКак думаешь — правда или миф?\n\n❌ МИФ!\n\nРасположение может усложнить кражу, но полной защиты всё равно не даёт.\n\n🎮 Roblox Hub",
+    "status": "pending",
+    "published_at": null,
+    "attempts": 0,
+    "last_error": null
   }
 ]
