@@ -227,5 +227,54 @@
     "published_at": "2026-08-20T18:00:44.317079+05:00",
     "attempts": 1,
     "last_error": null
+  },
+  {
+    "id": "2026-08-21-10",
+    "publish_at": "2026-08-21T10:00:00+05:00",
+    "game": "разные игры",
+    "rubric": "Выпуск дня",
+    "source": "auto_verified",
+    "text": "🎮 ROBLOX HUB — СЕГОДНЯ\n\n🔫 RIVALS\n\nМожно выполнять контракты и получать эксклюзивные награды. В Update 21 проходит Summer Event.\n\n🎯 Что сделать: загляни в Summer Event и проверь его активности.\n\n🎮 Roblox Hub",
+    "status": "pending",
+    "published_at": null,
+    "attempts": 0,
+    "last_error": null
+  },
+  {
+    "id": "2026-08-21-15",
+    "publish_at": "2026-08-21T15:00:00+05:00",
+    "game": "Pet Simulator 99 + Blox Fruits + Adopt Me!",
+    "rubric": "Полезно знать",
+    "source": "verified_db",
+    "text": "💡 ПОЛЕЗНО ЗНАТЬ\n\n🐶 Pet Simulator 99\nКоллекционирование и прогресс — разные цели: заранее реши, что для тебя важнее в текущей сессии.\n\n🍈 Blox Fruits\nНе выбирай фрукт только по редкости — удобство для прокачки и твой стиль игры тоже важны.\n\n🐾 Adopt Me!\nДля ролевой игры с друзьями заранее решите, кто заботится о питомцах, а кто отвечает за дом или поездки.\n\n🎮 Roblox Hub",
+    "status": "pending",
+    "published_at": null,
+    "attempts": 0,
+    "last_error": null
+  },
+  {
+    "id": "2026-08-21-16",
+    "publish_at": "2026-08-21T16:00:00+05:00",
+    "game": "Roblox",
+    "rubric": "Картинка дня",
+    "source": "image_library",
+    "text": "",
+    "status": "pending",
+    "published_at": null,
+    "attempts": 0,
+    "last_error": null,
+    "image_path": "images/16-00/c550985e-151d-480a-824d-65a9a03d28fd.jpeg"
+  },
+  {
+    "id": "2026-08-21-18",
+    "publish_at": "2026-08-21T18:00:00+05:00",
+    "game": "99 Nights in the Forest",
+    "rubric": "Миф или правда",
+    "source": "verified_db",
+    "text": "🧠 МИФ ИЛИ ПРАВДА?\n\n🌲 99 Nights in the Forest\n\n🔥 Если всю ночь сидеть у костра, монстры тебя не достанут.\n\nКак думаешь — правда или миф?\n\n❌ МИФ!\n\nКостёр помогает выживать, но не делает тебя полностью неуязвимым.\n\n🎮 Roblox Hub",
+    "status": "pending",
+    "published_at": null,
+    "attempts": 0,
+    "last_error": null
   }
 ]
