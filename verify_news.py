@@ -4,6 +4,7 @@ import requests
 from datetime import datetime, timedelta, timezone
 
 from external_news_facts import (
+    MAX_ARTICLE_AGE_DAYS,
     extract_external_facts,
     get_article_age_days
 )
@@ -465,11 +466,66 @@ def enrich_with_external_news(
     if not result:
         return candidate
 
+    diagnostic = {
+        "source_type": result.get(
+            "source_type",
+            "official_news_website"
+        ),
+        "source_url": result.get("url"),
+        "latest_published_at": None,
+        "status": "rejected",
+        "reason": "Источник не вернул подходящую публикацию."
+    }
+    candidate["external_source_diagnostic"] = diagnostic
+
+    if result.get("success") is not True:
+        diagnostic["reason"] = (
+            "Источник недоступен: "
+            + (result.get("error") or "неизвестная ошибка")
+        )
+        return candidate
+
     article = result.get(
         "latest_article"
     )
 
     if not article:
+        diagnostic["reason"] = (
+            result.get("error")
+            or "Не найдена публикация со стабильной датой и содержанием."
+        )
+        return candidate
+
+    diagnostic["latest_published_at"] = article.get(
+        "published_at"
+    )
+    diagnostic["latest_url"] = article.get("url")
+
+    if article.get("success") is not True:
+        diagnostic["reason"] = (
+            "Публикация не загружена: "
+            + (article.get("error") or "неизвестная ошибка")
+        )
+        return candidate
+
+    age_days = get_article_age_days(
+        article,
+        now=now
+    )
+
+    if age_days is None:
+        diagnostic["reason"] = "У публикации нет стабильной даты."
+        return candidate
+
+    if age_days < -1:
+        diagnostic["reason"] = "Дата публикации находится в будущем."
+        return candidate
+
+    if age_days > MAX_ARTICLE_AGE_DAYS:
+        diagnostic["reason"] = (
+            f"Публикация устарела: {age_days:.1f} дн. "
+            f"(лимит {MAX_ARTICLE_AGE_DAYS})."
+        )
         return candidate
 
     article_url = article.get(
@@ -484,6 +540,9 @@ def enrich_with_external_news(
             LOCAL_TIMEZONE
         ).date()
     ):
+        diagnostic["reason"] = (
+            "Публикация уже использовалась в выпуске другого дня."
+        )
         return candidate
 
     external_facts = extract_external_facts(
@@ -493,6 +552,9 @@ def enrich_with_external_news(
     )
 
     if not external_facts:
+        diagnostic["reason"] = (
+            "В публикации не найдено достаточно конкретного содержания."
+        )
         return candidate
 
     current_facts = candidate.setdefault(
@@ -555,9 +617,18 @@ def enrich_with_external_news(
         )
     }
 
+    diagnostic["status"] = "accepted"
+    diagnostic["reason"] = (
+        f"Свежая официальная публикация ({age_days:.1f} дн.) "
+        "с датой и содержанием."
+    )
+
     add_source(
         candidate,
-        "official_news_website",
+        result.get(
+            "source_type",
+            "official_news_website"
+        ),
         verified=True,
         url=article_url
     )
@@ -718,6 +789,24 @@ def verify_candidate(
         "cross_source_confirmations"
     ] = []
 
+    candidate["source_diagnostics"] = [
+        {
+            "source_type": "official_game_description",
+            "source_url": candidate.get("roblox_game_url"),
+            "latest_published_at": candidate.get("updated"),
+            "status": (
+                "accepted"
+                if candidate.get("facts")
+                else "rejected"
+            ),
+            "reason": (
+                "Найдена новая конкретная строка описания."
+                if candidate.get("facts")
+                else "Нет новой конкретной строки со времени прошлого снимка."
+            )
+        }
+    ]
+
     candidate = (
         verify_official_description(
             candidate
@@ -731,6 +820,30 @@ def verify_candidate(
             group_lookup,
             group_fetch_error
         )
+    )
+
+    if candidate.get("source_diagnostics"):
+        candidate["source_diagnostics"][0]["source_url"] = (
+            candidate.get("source_registry", {}).get("roblox_game_url")
+        )
+
+    registry = candidate.get("source_registry", {})
+    group = candidate.get("official_group")
+    candidate["source_diagnostics"].append(
+        {
+            "source_type": "official_roblox_group",
+            "source_url": registry.get("roblox_group_url"),
+            "latest_published_at": None,
+            "status": "checked",
+            "reason": (
+                "Официальная группа подтверждена; датированной новости нет."
+                if group and group.get("name_matches_registry")
+                else candidate.get(
+                    "group_verification_note",
+                    "Группа не дала датированную публикацию."
+                )
+            )
+        }
     )
 
     candidate = (
@@ -751,6 +864,29 @@ def verify_candidate(
     candidate = update_confidence(
         candidate
     )
+
+    external_diagnostic = candidate.get(
+        "external_source_diagnostic"
+    )
+
+    if external_diagnostic:
+        candidate["source_diagnostics"].insert(
+            0,
+            external_diagnostic
+        )
+
+    candidate["candidate_decision"] = {
+        "status": (
+            "accepted"
+            if candidate.get("score", 0) >= 5
+            else "rejected"
+        ),
+        "reason": (
+            "Есть достойный свежий факт."
+            if candidate.get("score", 0) >= 5
+            else "Нет свежего факта с редакционным баллом 5 или выше."
+        )
+    }
 
     return candidate
 
@@ -875,6 +1011,36 @@ for item in verified:
             "confidence",
             "low"
         )
+    )
+
+    diagnostics = item.get(
+        "source_diagnostics",
+        []
+    )
+
+    for diagnostic in diagnostics:
+        print(
+            "Проверен источник:",
+            diagnostic.get("source_type"),
+            diagnostic.get("source_url") or "—"
+        )
+        print(
+            "Последняя дата:",
+            diagnostic.get("latest_published_at") or "не найдена"
+        )
+        print(
+            "Результат источника:",
+            diagnostic.get("status"),
+            "—",
+            diagnostic.get("reason")
+        )
+
+    decision = item.get("candidate_decision", {})
+    print(
+        "Решение по кандидату:",
+        decision.get("status"),
+        "—",
+        decision.get("reason")
     )
 
     sources = item.get(

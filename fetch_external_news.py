@@ -2,6 +2,7 @@ import json
 import re
 from datetime import datetime
 from urllib.parse import urljoin, urlparse
+from xml.etree import ElementTree
 
 import requests
 from bs4 import BeautifulSoup
@@ -285,18 +286,20 @@ def find_latest_article_url(
                 return article_url
 
         elif game == "Brookhaven":
-            if (
-                article_path.startswith("/news/")
-                and "brookhaven" in link.get(
-                    "text",
-                    ""
-                ).lower()
+            if article_path.startswith(
+                "/posts/brookhaven-update-"
             ):
                 return article_url
 
         elif game == "Pet Simulator 99":
             if article_path.startswith(
                 "/post/pet-simulator-99-"
+            ):
+                return article_url
+
+        elif game == "Blade Ball":
+            if article_path.startswith(
+                "/blogs/news/"
             ):
                 return article_url
 
@@ -348,25 +351,170 @@ def infer_published_at_from_links(
         if link.get("url") != article_url:
             continue
 
-        match = re.search(
-            r"\b(\d{1,2}\s+[A-Za-z]+\s+\d{4})\b",
-            link.get("text", "")
+        searchable = " ".join(
+            (
+                link.get("text", ""),
+                article_url.replace("-", " ")
+            )
         )
 
-        if not match:
-            continue
+        patterns = (
+            (r"\b(\d{1,2}\s+[A-Za-z]+\s+\d{4})\b", "%d %B %Y"),
+            (r"\b([A-Za-z]+\s+\d{1,2},?\s+\d{4})\b", "%B %d %Y"),
+        )
 
-        try:
-            published_at = datetime.strptime(
-                match.group(1),
-                "%d %B %Y"
-            )
-        except ValueError:
-            continue
+        for pattern, date_format in patterns:
+            match = re.search(pattern, searchable)
 
-        return published_at.date().isoformat()
+            if not match:
+                continue
+
+            normalized = match.group(1).replace(",", "")
+
+            try:
+                published_at = datetime.strptime(
+                    normalized,
+                    date_format
+                )
+            except ValueError:
+                continue
+
+            return published_at.date().isoformat()
 
     return None
+
+
+def collect_youtube_feed(game, config):
+    feed_url = config.get("youtube_feed_url")
+
+    try:
+        xml_text = fetch_page(feed_url)
+        root = ElementTree.fromstring(xml_text)
+    except (
+        requests.RequestException,
+        ElementTree.ParseError
+    ) as error:
+        return {
+            "game": game,
+            "source_type": "official_youtube_feed",
+            "url": feed_url,
+            "success": False,
+            "title": "",
+            "published_at": None,
+            "text": "",
+            "links": [],
+            "latest_article": None,
+            "error": str(error)
+        }
+
+    namespaces = {
+        "atom": "http://www.w3.org/2005/Atom",
+        "media": "http://search.yahoo.com/mrss/",
+        "yt": "http://www.youtube.com/xml/schemas/2015"
+    }
+    game_terms = [
+        term.lower()
+        for term in config.get("youtube_match_terms", [])
+    ]
+    feed_title = root.findtext("atom:title", "", namespaces).strip()
+    feed_author = root.findtext(
+        "atom:author/atom:name",
+        "",
+        namespaces
+    ).strip()
+    expected_channel = config.get("youtube_channel_name", "").strip()
+
+    if (
+        expected_channel
+        and expected_channel.casefold()
+        not in {feed_title.casefold(), feed_author.casefold()}
+    ):
+        return {
+            "game": game,
+            "source_type": "official_youtube_feed",
+            "url": feed_url,
+            "success": False,
+            "title": feed_title,
+            "published_at": None,
+            "text": "",
+            "links": [],
+            "latest_article": None,
+            "error": (
+                f"RSS принадлежит каналу «{feed_title or feed_author}», "
+                f"ожидался «{expected_channel}»."
+            )
+        }
+
+    news_terms = (
+        "update",
+        "event",
+        "trailer",
+        "collab",
+        "release",
+        "launch",
+        "new "
+    )
+    entries = []
+
+    for entry in root.findall("atom:entry", namespaces):
+        title = entry.findtext("atom:title", "", namespaces).strip()
+        published_at = entry.findtext(
+            "atom:published",
+            "",
+            namespaces
+        ).strip()
+        video_id = entry.findtext("yt:videoId", "", namespaces).strip()
+        description = entry.findtext(
+            "media:group/media:description",
+            "",
+            namespaces
+        ).strip()
+        combined = f"{title}\n{description}".lower()
+
+        if game_terms and not any(term in combined for term in game_terms):
+            continue
+
+        if not any(term in combined for term in news_terms):
+            continue
+
+        if not title or not published_at or not description or not video_id:
+            continue
+
+        entries.append(
+            {
+                "url": f"https://www.youtube.com/watch?v={video_id}",
+                "success": True,
+                "title": title,
+                "published_at": published_at,
+                "text": f"{title}\n{description}"[:20000],
+                "error": None
+            }
+        )
+
+    entries.sort(
+        key=lambda item: item["published_at"],
+        reverse=True
+    )
+    latest_article = entries[0] if entries else None
+
+    return {
+        "game": game,
+        "source_type": "official_youtube_feed",
+        "url": feed_url,
+        "success": True,
+        "title": latest_article.get("title", "") if latest_article else "",
+        "channel_name": feed_title or feed_author,
+        "published_at": (
+            latest_article.get("published_at") if latest_article else None
+        ),
+        "text": latest_article.get("text", "") if latest_article else "",
+        "links": [],
+        "latest_article": latest_article,
+        "error": None if latest_article else (
+            "В официальной ленте нет записи с датой, содержанием "
+            "и признаками новости этой игры."
+        )
+    }
 
 def collect_external_news(
     source_registry
@@ -374,6 +522,19 @@ def collect_external_news(
     results = []
 
     for game, config in source_registry.items():
+        youtube_feed_url = config.get(
+            "youtube_feed_url"
+        )
+
+        if youtube_feed_url:
+            results.append(
+                collect_youtube_feed(
+                    game,
+                    config
+                )
+            )
+            continue
+
         news_url = config.get(
             "news_url"
         )

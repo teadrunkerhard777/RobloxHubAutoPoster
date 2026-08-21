@@ -1,380 +1,10 @@
 [
   {
-    "game": "RIVALS",
-    "universe_id": 6035872082,
-    "roblox_name": "RIVALS",
-    "description": "Welcome to RIVALS, the most intense first person shooter game on Roblox! Challenge other players in 1v1 to 5v5 FPS duels where the first to 5 wins!\n\n🏖️ UPDATE 21 - The first ever RIVALS Summer Event is here! Check out the patch notes in-game to see all the details! 🎉 \n\n🔫 Challenge someone by stepping on a duel pad!\n🔑 Earn keys to unlock new weapons & skins!\n📜 Complete contracts to unlock exclusive rewards!\n🏆 Show off your win streak and climb the leaderboards! \n\n🎮 Available on Desktop, Phones, Tablets, XBOX, & PlayStation 5!\n💜 Like and join the group for exclusive rewards!\n\n⚠️ WARNING: Cheaters will be permanently banned with no second chances, our anticheat & moderators will catch you. Abusing glitches & using sketchy farming methods are also not allowed!\n\n🏆 RIA25 Best Shooter Experience!",
-    "updated": "2026-08-10T21:07:11.179Z",
-    "created": "2024-05-26T16:47:48.617Z",
-    "creator": {
-      "id": 3461453,
-      "name": "Nosniy Games",
-      "type": "Group",
-      "isRNVAccount": false,
-      "hasVerifiedBadge": true
-    },
-    "description_changed": false,
-    "added_lines": [],
-    "keywords": [
-      "CONTRACTS",
-      "EVENT",
-      "NEW",
-      "REWARDS",
-      "UPDATE"
-    ],
-    "score": 8,
-    "confidence": "high",
-    "facts": [
-      {
-        "text": "📜 Complete contracts to unlock exclusive rewards!",
-        "kind": "quests",
-        "value": 8,
-        "specific": true,
-        "reason": "Задания с наградами",
-        "is_new_line": false
-      },
-      {
-        "text": "🏖️ UPDATE 21 - The first ever RIVALS Summer Event is here! Check out the patch notes in-game to see all the details! 🎉",
-        "kind": "event",
-        "value": 7,
-        "specific": true,
-        "reason": "Игровое событие",
-        "is_new_line": false
-      }
-    ],
-    "priority": false,
-    "checked_at": "2026-08-21T03:00:51.551669+00:00",
-    "sources": [
-      {
-        "type": "official_game_description",
-        "verified": true
-      },
-      {
-        "type": "official_roblox_group",
-        "verified": true,
-        "group_id": 3461453,
-        "group_name": "Nosniy Games"
-      }
-    ],
-    "cross_source_confirmations": [],
-    "official_description_analysis": {
-      "keywords": [
-        "UPDATE",
-        "NEW",
-        "EVENT",
-        "REWARD",
-        "REWARDS",
-        "CONTRACT",
-        "CONTRACTS"
-      ],
-      "news_lines": [
-        "📜 Complete contracts to unlock exclusive rewards!",
-        "🏖️ UPDATE 21 - The first ever RIVALS Summer Event is here! Check out the patch notes in-game to see all the details! 🎉"
-      ]
-    },
-    "source_registry": {
-      "universe_id": 6035872082,
-      "root_place_id": 17625359962,
-      "roblox_game_url": "https://www.roblox.com/games/17625359962/RIVALS",
-      "roblox_group_id": 3461453,
-      "roblox_group_name": "Nosniy Games",
-      "roblox_group_url": "https://www.roblox.com/communities/3461453/Nosniy-Games",
-      "news_strategy": "roblox_game_description_and_group",
-      "website": null,
-      "news_url": null,
-      "discord": "https://discord.com/servers/nosniy-games-170261767480410112",
-      "youtube": null,
-      "x": null
-    },
-    "official_group": {
-      "id": 3461453,
-      "name": "Nosniy Games",
-      "expected_name": "Nosniy Games",
-      "name_matches_registry": true,
-      "description": "Welcome to Nosniy Games! We're a development studio dedicated to creating enjoyable content for everyone! Join our community to receive exclusive perks and stay informed on our latest game updates!\n\n🏆 2020 Mobile Game of the Year - Super Golf!\n🏆 RIA25 Best Shooter Experience - RIVALS",
-      "has_verified_badge": true,
-      "news_lines": []
-    }
-  },
-  {
-    "game": "Dress To Impress",
-    "universe_id": 5203828273,
-    "roblox_name": "[🌴] Dress To Impress",
-    "description": "Create stunning outfits 👗💖⭐, and strut the runway to show off your unique style. Collaborate, compete, and explore a world of glamour with friends!\n\n⭐ Are you ready to be the TOP MODEL?\n👗 NEW ITEMS! Check them out.\n🍿 Vote for your favorite outfits!\n💃 Use poses on the runway to show off your outfit!\n\nFind more about Dress To Impress by joining our community.\nhttps://www.roblox.com/communities/17264167/Dress-To-Impress-Group#!/about",
-    "updated": "2026-08-20T22:15:17.6552533Z",
-    "created": "2023-10-18T09:11:36.563Z",
-    "creator": {
-      "id": 17264167,
-      "name": "Dress To Impress Group",
-      "type": "Group",
-      "isRNVAccount": false,
-      "hasVerifiedBadge": true
-    },
-    "description_changed": false,
-    "added_lines": [],
-    "keywords": [
-      "ITEMS",
-      "NEW"
-    ],
-    "score": 4,
-    "confidence": "low",
-    "facts": [
-      {
-        "text": "👗 NEW ITEMS! Check them out.",
-        "kind": "items",
-        "value": 4,
-        "specific": true,
-        "reason": "Новые предметы без подробностей",
-        "is_new_line": false
-      }
-    ],
-    "priority": false,
-    "checked_at": "2026-08-21T03:00:51.552486+00:00",
-    "sources": [
-      {
-        "type": "official_game_description",
-        "verified": true
-      },
-      {
-        "type": "official_roblox_group",
-        "verified": true,
-        "group_id": 17264167,
-        "group_name": "Dress To Impress Group"
-      }
-    ],
-    "cross_source_confirmations": [],
-    "official_description_analysis": {
-      "keywords": [
-        "NEW",
-        "ITEM",
-        "ITEMS",
-        "PET"
-      ],
-      "news_lines": [
-        "👗 NEW ITEMS! Check them out."
-      ]
-    },
-    "source_registry": {
-      "universe_id": 5203828273,
-      "root_place_id": 15101393044,
-      "roblox_game_url": "https://www.roblox.com/games/15101393044/Dress-To-Impress",
-      "roblox_group_id": 17264167,
-      "roblox_group_name": "Dress To Impress Group",
-      "roblox_group_url": "https://www.roblox.com/communities/17264167/Dress-To-Impress-Group",
-      "news_strategy": "roblox_game_description_and_group",
-      "website": null,
-      "news_url": null,
-      "discord": "https://discord.com/servers/1151211652256112650",
-      "youtube": null,
-      "x": null
-    },
-    "official_group": {
-      "id": 17264167,
-      "name": "Dress To Impress Group",
-      "expected_name": "Dress To Impress Group",
-      "name_matches_registry": true,
-      "description": "🌊 Welcome to the Dress To Impress Group!\n🌊 Please join the community server!",
-      "has_verified_badge": true,
-      "news_lines": []
-    }
-  },
-  {
-    "game": "Brookhaven",
-    "universe_id": 1686885941,
-    "roblox_name": "Brookhaven 🏡RP",
-    "description": "A place to play with like minded people and roleplay. Own and live in amazing houses, drive cool vehicles and explore the city. Be whoever you want to be in Brookhaven RP.\n\nLatest Update:\n🏦 Bank Update - A new, refreshed Bank is now open!\n💳 Updated Tools  - New credit cards, cash bags and more!\n💰 New Bank Clothes - New Bank manager roleplay outfit!\n🚚 Updated Truck - The Armored Bank Truck has a brand new look!\n\nThanks for playing! \n\nPrivate Server Benefits:\n· Prop Saving\n· Server-Wide Music\n· Server-Wide Announcements\n· Remove or Lock Props\n· Check Prop Owners\n· Set Players as Admins\n· Kick / Temp Ban Players\n· Set Day of the Week\n· Set Time by the Hour\n· Change Weather and Lighting\n· Speed up Time\n· Server Theme Controls\n· No Wait Time for Changing House \n· Spawn Up to Three Vehicles\n· Prop Limit Increased\n· Freecam for PC users (Shift+P)",
-    "updated": "2026-08-19T20:30:44.3376544Z",
-    "created": "2020-04-21T02:15:38.373Z",
-    "creator": {
-      "id": 3104358,
-      "name": "Brookhaven by Voldex",
-      "type": "Group",
-      "isRNVAccount": false,
-      "hasVerifiedBadge": false
-    },
-    "description_changed": false,
-    "added_lines": [],
-    "keywords": [
-      "NEW",
-      "UPDATE",
-      "VEHICLES"
-    ],
-    "score": 2,
-    "confidence": "low",
-    "facts": [
-      {
-        "text": "Latest Update:",
-        "kind": "update",
-        "value": 2,
-        "specific": false,
-        "reason": "Упоминание обновления без конкретики",
-        "is_new_line": false
-      },
-      {
-        "text": "🏦 Bank Update - A new, refreshed Bank is now open!",
-        "kind": "update",
-        "value": 2,
-        "specific": false,
-        "reason": "Упоминание обновления без конкретики",
-        "is_new_line": false
-      },
-      {
-        "text": "💳 Updated Tools - New credit cards, cash bags and more!",
-        "kind": "update",
-        "value": 2,
-        "specific": false,
-        "reason": "Упоминание обновления без конкретики",
-        "is_new_line": false
-      },
-      {
-        "text": "🚚 Updated Truck - The Armored Bank Truck has a brand new look!",
-        "kind": "update",
-        "value": 2,
-        "specific": false,
-        "reason": "Упоминание обновления без конкретики",
-        "is_new_line": false
-      }
-    ],
-    "priority": false,
-    "checked_at": "2026-08-21T03:00:51.550594+00:00",
-    "sources": [
-      {
-        "type": "official_game_description",
-        "verified": true
-      },
-      {
-        "type": "official_roblox_group",
-        "verified": true,
-        "group_id": 3104358,
-        "group_name": "Brookhaven by Voldex"
-      }
-    ],
-    "cross_source_confirmations": [],
-    "official_description_analysis": {
-      "keywords": [
-        "UPDATE",
-        "NEW"
-      ],
-      "news_lines": [
-        "Latest Update:",
-        "🏦 Bank Update - A new, refreshed Bank is now open!",
-        "💳 Updated Tools - New credit cards, cash bags and more!",
-        "🚚 Updated Truck - The Armored Bank Truck has a brand new look!"
-      ]
-    },
-    "source_registry": {
-      "universe_id": 1686885941,
-      "root_place_id": 4924922222,
-      "roblox_game_url": "https://www.roblox.com/games/4924922222/Brookhaven-RP",
-      "roblox_group_id": 3104358,
-      "roblox_group_name": "Brookhaven by Voldex",
-      "roblox_group_url": "https://www.roblox.com/communities/3104358/Brookhaven-by-Voldex",
-      "news_strategy": "official_news_website",
-      "website": "https://voldex.com/",
-      "news_url": "https://voldex.com/news/",
-      "discord": null,
-      "youtube": null,
-      "x": null
-    },
-    "official_group": {
-      "id": 3104358,
-      "name": "Brookhaven by Voldex",
-      "expected_name": "Brookhaven by Voldex",
-      "name_matches_registry": true,
-      "description": "Brookhaven originally created by Wolfpaq, now developed by Voldex",
-      "has_verified_badge": false,
-      "news_lines": []
-    }
-  },
-  {
-    "game": "Adopt Me!",
-    "universe_id": 383310974,
-    "roblox_name": "[😼] Adopt Me!",
-    "description": "Adopt and raise 🐶🦄👶, trade and collect legendary pets, build your dream home, and roleplay with friends!\n\n🕵️Tux & Shepherd on the Stray Case 🕵️\n🍴 Find forks for the Mysterious Stranger!\n👀 Chihuahua found in Basic and Crystal Eggs!\n📰 Dress your pet as the Spy or the Witness!\n\nBe FIRST 🏆 To experience new updates by pressing 🔔NOTIFY.\n\nMeet the founders!\nNewFissy - Tech Director\nBethink - Creative Director\n\nFind out more about Uplift Games, our policies and creative attributions:\nhttps://devforum.roblox.com/t/credits/71812",
-    "updated": "2026-08-19T00:00:01.764Z",
-    "created": "2017-07-14T19:26:21.347Z",
-    "creator": {
-      "id": 295182,
-      "name": "Uplift Games",
-      "type": "Group",
-      "isRNVAccount": false,
-      "hasVerifiedBadge": true
-    },
-    "description_changed": false,
-    "added_lines": [],
-    "keywords": [
-      "NEW",
-      "PET",
-      "PETS"
-    ],
-    "score": 2,
-    "confidence": "low",
-    "facts": [
-      {
-        "text": "Be FIRST 🏆 To experience new updates by pressing 🔔NOTIFY.",
-        "kind": "update",
-        "value": 2,
-        "specific": false,
-        "reason": "Упоминание обновления без конкретики",
-        "is_new_line": false
-      }
-    ],
-    "priority": false,
-    "checked_at": "2026-08-21T03:00:51.551059+00:00",
-    "sources": [
-      {
-        "type": "official_game_description",
-        "verified": true
-      },
-      {
-        "type": "official_roblox_group",
-        "verified": true,
-        "group_id": 295182,
-        "group_name": "Uplift Games"
-      }
-    ],
-    "cross_source_confirmations": [],
-    "official_description_analysis": {
-      "keywords": [
-        "UPDATE",
-        "NEW",
-        "PET",
-        "PETS"
-      ],
-      "news_lines": [
-        "Be FIRST 🏆 To experience new updates by pressing 🔔NOTIFY."
-      ]
-    },
-    "source_registry": {
-      "universe_id": 383310974,
-      "root_place_id": 920587237,
-      "roblox_game_url": "https://www.roblox.com/games/920587237/Adopt-Me",
-      "roblox_group_id": 295182,
-      "roblox_group_name": "Uplift Games",
-      "roblox_group_url": "https://www.roblox.com/communities/295182/Uplift-Games",
-      "news_strategy": "official_news_website",
-      "website": "https://www.playadopt.me/",
-      "news_url": "https://www.playadopt.me/news",
-      "discord": "https://discord.com/invite/adoptme",
-      "youtube": "https://www.youtube.com/PlayAdoptMe",
-      "x": "https://x.com/PlayAdoptMe"
-    },
-    "official_group": {
-      "id": 295182,
-      "name": "Uplift Games",
-      "expected_name": "Uplift Games",
-      "name_matches_registry": true,
-      "description": "Welcome to Uplift Games, the studio behind Adopt Me!",
-      "has_verified_badge": true,
-      "news_lines": []
-    }
-  },
-  {
     "game": "Steal a Brainrot",
     "universe_id": 7709344486,
     "roblox_name": "Steal a Brainrot",
     "description": "🗣️ Welcome to Steal a Brainrot!\n\n👍 Like the game and join the group\n\nHow to Play:\n👽 Buy a Brainrot\n🥷 Steal Brainrots from other players\n💸 Generate money\n🐦‍🔥 Rebirth\n✋ Buy slaps and troll gear to troll other players!\n\n💻 Supports Desktop, Mobile and Tablet players\n\n🙏 Credit to Chris for letting us use the Nyan Cat!\n🙏 Credit to @WinnersTakesAll for the backpack system!",
-    "updated": "2026-08-20T23:49:19.5723286Z",
+    "updated": "2026-08-21T07:47:32.2625099Z",
     "created": "2025-05-16T00:49:12.563Z",
     "creator": {
       "id": 35815907,
@@ -389,8 +19,9 @@
     "score": 0,
     "confidence": "low",
     "facts": [],
+    "description_facts": [],
     "priority": true,
-    "checked_at": "2026-08-21T03:00:51.548922+00:00",
+    "checked_at": "2026-08-21T13:27:09.750278+00:00",
     "sources": [
       {
         "type": "official_game_description",
@@ -404,6 +35,22 @@
       }
     ],
     "cross_source_confirmations": [],
+    "source_diagnostics": [
+      {
+        "source_type": "official_game_description",
+        "source_url": "https://www.roblox.com/games/109983668079237/Steal-a-Brainrot",
+        "latest_published_at": "2026-08-21T07:47:32.2625099Z",
+        "status": "rejected",
+        "reason": "Нет новой конкретной строки со времени прошлого снимка."
+      },
+      {
+        "source_type": "official_roblox_group",
+        "source_url": "https://www.roblox.com/communities/35815907/BRAZILIAN-SPYDER",
+        "latest_published_at": null,
+        "status": "checked",
+        "reason": "Официальная группа подтверждена; датированной новости нет."
+      }
+    ],
     "official_description_analysis": {
       "keywords": [],
       "news_lines": []
@@ -430,6 +77,10 @@
       "description": "",
       "has_verified_badge": true,
       "news_lines": []
+    },
+    "candidate_decision": {
+      "status": "rejected",
+      "reason": "Нет свежего факта с редакционным баллом 5 или выше."
     }
   },
   {
@@ -452,8 +103,9 @@
     "score": 0,
     "confidence": "low",
     "facts": [],
+    "description_facts": [],
     "priority": true,
-    "checked_at": "2026-08-21T03:00:51.549080+00:00",
+    "checked_at": "2026-08-21T13:27:09.750473+00:00",
     "sources": [
       {
         "type": "official_game_description",
@@ -467,6 +119,22 @@
       }
     ],
     "cross_source_confirmations": [],
+    "source_diagnostics": [
+      {
+        "source_type": "official_game_description",
+        "source_url": "https://www.roblox.com/games/79546208627805/99-Nights-in-the-Forest",
+        "latest_published_at": "2026-08-16T15:53:13.25Z",
+        "status": "rejected",
+        "reason": "Нет новой конкретной строки со времени прошлого снимка."
+      },
+      {
+        "source_type": "official_roblox_group",
+        "source_url": "https://www.roblox.com/communities/6042520/Grandmas-Favourite-Games",
+        "latest_published_at": null,
+        "status": "checked",
+        "reason": "Официальная группа подтверждена; датированной новости нет."
+      }
+    ],
     "official_description_analysis": {
       "keywords": [],
       "news_lines": []
@@ -493,6 +161,10 @@
       "description": "A group of 3 friends from New Zealand who develop games: ForyxeV, Viridial, and Cracky4\n\nOur most popular games are 99 Nights in the forest and Mall tycoon\n\nWe are currently at war with Bee Swarm Simulator Club",
       "has_verified_badge": true,
       "news_lines": []
+    },
+    "candidate_decision": {
+      "status": "rejected",
+      "reason": "Нет свежего факта с редакционным баллом 5 или выше."
     }
   },
   {
@@ -518,8 +190,9 @@
     "score": 0,
     "confidence": "low",
     "facts": [],
+    "description_facts": [],
     "priority": false,
-    "checked_at": "2026-08-21T03:00:51.549819+00:00",
+    "checked_at": "2026-08-21T13:27:09.752142+00:00",
     "sources": [
       {
         "type": "official_game_description",
@@ -533,6 +206,30 @@
       }
     ],
     "cross_source_confirmations": [],
+    "source_diagnostics": [
+      {
+        "source_type": "official_news_website",
+        "source_url": "https://gamerrobot.com/blogs/news",
+        "latest_published_at": "2026-08-06T22:02:43Z",
+        "status": "rejected",
+        "reason": "Публикация устарела: 14.6 дн. (лимит 3).",
+        "latest_url": "https://gamerrobot.com/blogs/news/the-balance-log"
+      },
+      {
+        "source_type": "official_game_description",
+        "source_url": "https://www.roblox.com/games/2753915549/Blox-Fruits",
+        "latest_published_at": "2026-08-08T15:12:32.925Z",
+        "status": "rejected",
+        "reason": "Нет новой конкретной строки со времени прошлого снимка."
+      },
+      {
+        "source_type": "official_roblox_group",
+        "source_url": "https://www.roblox.com/communities/4372130/Gamer-Robot-Inc",
+        "latest_published_at": null,
+        "status": "checked",
+        "reason": "Официальная группа подтверждена; датированной новости нет."
+      }
+    ],
     "official_description_analysis": {
       "keywords": [
         "BOSS",
@@ -565,6 +262,439 @@
       "description": "BLOX FRUITS FAQ:\n\n- Fruits spawn once every hour and despawn after 20 minutes. \n- You can also buy fruits from the Blox Fruits Dealer. He restocks random fruits every 4 hours (every server will have the same fruits for sale). \n- The number of skills a fruit has and mastery necessary to use them depends on their rarity. This can vary from 2 to 4 skills. \n- Bosses can drop special items such as accessories or swords.\n- Accessories are rare items that can boost your stats. \n- Mastery boosts your stats by 1 point every 3 levels and also unlock new skills. You gain mastery by finishing off enemies with the weapon you want to level up. \n- Mastery doesn't reset when you switch out items. If you acquire a new item it will start at 1 mastery, but if you decide to switch back to your previous item, the mastery you had on that item will return. \n-2 Blox Fruits can spawn in each vip server until it is restarted.",
       "has_verified_badge": true,
       "news_lines": []
+    },
+    "external_source_diagnostic": {
+      "source_type": "official_news_website",
+      "source_url": "https://gamerrobot.com/blogs/news",
+      "latest_published_at": "2026-08-06T22:02:43Z",
+      "status": "rejected",
+      "reason": "Публикация устарела: 14.6 дн. (лимит 3).",
+      "latest_url": "https://gamerrobot.com/blogs/news/the-balance-log"
+    },
+    "candidate_decision": {
+      "status": "rejected",
+      "reason": "Нет свежего факта с редакционным баллом 5 или выше."
+    }
+  },
+  {
+    "game": "Brookhaven",
+    "universe_id": 1686885941,
+    "roblox_name": "Brookhaven 🏡RP",
+    "description": "A place to play with like minded people and roleplay. Own and live in amazing houses, drive cool vehicles and explore the city. Be whoever you want to be in Brookhaven RP.\n\nLatest Update:\n🏦 Bank Update - A new, refreshed Bank is now open!\n💳 Updated Tools  - New credit cards, cash bags and more!\n💰 New Bank Clothes - New Bank manager roleplay outfit!\n🚚 Updated Truck - The Armored Bank Truck has a brand new look!\n\nThanks for playing! \n\nPrivate Server Benefits:\n· Prop Saving\n· Server-Wide Music\n· Server-Wide Announcements\n· Remove or Lock Props\n· Check Prop Owners\n· Set Players as Admins\n· Kick / Temp Ban Players\n· Set Day of the Week\n· Set Time by the Hour\n· Change Weather and Lighting\n· Speed up Time\n· Server Theme Controls\n· No Wait Time for Changing House \n· Spawn Up to Three Vehicles\n· Prop Limit Increased\n· Freecam for PC users (Shift+P)",
+    "updated": "2026-08-19T20:30:44.337Z",
+    "created": "2020-04-21T02:15:38.373Z",
+    "creator": {
+      "id": 3104358,
+      "name": "Brookhaven by Voldex",
+      "type": "Group",
+      "isRNVAccount": false,
+      "hasVerifiedBadge": false
+    },
+    "description_changed": false,
+    "added_lines": [],
+    "keywords": [
+      "NEW",
+      "UPDATE",
+      "VEHICLES"
+    ],
+    "score": 0,
+    "confidence": "low",
+    "facts": [],
+    "description_facts": [
+      {
+        "text": "🏦 Bank Update - A new, refreshed Bank is now open!",
+        "kind": "update",
+        "value": 7,
+        "specific": true,
+        "reason": "Обновление с названной темой и подробностью",
+        "is_new_line": false
+      },
+      {
+        "text": "💳 Updated Tools - New credit cards, cash bags and more!",
+        "kind": "items",
+        "value": 7,
+        "specific": true,
+        "reason": "Названо конкретное новое или обновлённое содержимое",
+        "is_new_line": false
+      },
+      {
+        "text": "💰 New Bank Clothes - New Bank manager roleplay outfit!",
+        "kind": "items",
+        "value": 7,
+        "specific": true,
+        "reason": "Названо конкретное новое или обновлённое содержимое",
+        "is_new_line": false
+      },
+      {
+        "text": "🚚 Updated Truck - The Armored Bank Truck has a brand new look!",
+        "kind": "vehicle",
+        "value": 7,
+        "specific": true,
+        "reason": "Названо конкретное новое или обновлённое содержимое",
+        "is_new_line": false
+      },
+      {
+        "text": "Latest Update:",
+        "kind": "update",
+        "value": 2,
+        "specific": false,
+        "reason": "Упоминание обновления без конкретики",
+        "is_new_line": false
+      }
+    ],
+    "priority": false,
+    "checked_at": "2026-08-21T13:27:09.752752+00:00",
+    "sources": [
+      {
+        "type": "official_game_description",
+        "verified": true
+      },
+      {
+        "type": "official_roblox_group",
+        "verified": true,
+        "group_id": 3104358,
+        "group_name": "Brookhaven by Voldex"
+      }
+    ],
+    "cross_source_confirmations": [],
+    "source_diagnostics": [
+      {
+        "source_type": "official_news_website",
+        "source_url": "https://www.brookhavenrp.com/",
+        "latest_published_at": "2026-08-14",
+        "status": "rejected",
+        "reason": "Публикация устарела: 7.6 дн. (лимит 3).",
+        "latest_url": "https://www.brookhavenrp.com/posts/brookhaven-update-august-14-2026"
+      },
+      {
+        "source_type": "official_game_description",
+        "source_url": "https://www.roblox.com/games/4924922222/Brookhaven-RP",
+        "latest_published_at": "2026-08-19T20:30:44.337Z",
+        "status": "rejected",
+        "reason": "Нет новой конкретной строки со времени прошлого снимка."
+      },
+      {
+        "source_type": "official_roblox_group",
+        "source_url": "https://www.roblox.com/communities/3104358/Brookhaven-by-Voldex",
+        "latest_published_at": null,
+        "status": "checked",
+        "reason": "Официальная группа подтверждена; датированной новости нет."
+      }
+    ],
+    "official_description_analysis": {
+      "keywords": [
+        "UPDATE",
+        "NEW"
+      ],
+      "news_lines": [
+        "Latest Update:",
+        "🏦 Bank Update - A new, refreshed Bank is now open!",
+        "💳 Updated Tools  - New credit cards, cash bags and more!",
+        "💰 New Bank Clothes - New Bank manager roleplay outfit!",
+        "🚚 Updated Truck - The Armored Bank Truck has a brand new look!"
+      ]
+    },
+    "source_registry": {
+      "universe_id": 1686885941,
+      "root_place_id": 4924922222,
+      "roblox_game_url": "https://www.roblox.com/games/4924922222/Brookhaven-RP",
+      "roblox_group_id": 3104358,
+      "roblox_group_name": "Brookhaven by Voldex",
+      "roblox_group_url": "https://www.roblox.com/communities/3104358/Brookhaven-by-Voldex",
+      "news_strategy": "official_news_website",
+      "website": "https://www.brookhavenrp.com/",
+      "news_url": "https://www.brookhavenrp.com/",
+      "discord": null,
+      "youtube": null,
+      "x": null
+    },
+    "official_group": {
+      "id": 3104358,
+      "name": "Brookhaven by Voldex",
+      "expected_name": "Brookhaven by Voldex",
+      "name_matches_registry": true,
+      "description": "Brookhaven originally created by Wolfpaq, now developed by Voldex",
+      "has_verified_badge": false,
+      "news_lines": []
+    },
+    "external_source_diagnostic": {
+      "source_type": "official_news_website",
+      "source_url": "https://www.brookhavenrp.com/",
+      "latest_published_at": "2026-08-14",
+      "status": "rejected",
+      "reason": "Публикация устарела: 7.6 дн. (лимит 3).",
+      "latest_url": "https://www.brookhavenrp.com/posts/brookhaven-update-august-14-2026"
+    },
+    "candidate_decision": {
+      "status": "rejected",
+      "reason": "Нет свежего факта с редакционным баллом 5 или выше."
+    }
+  },
+  {
+    "game": "Adopt Me!",
+    "universe_id": 383310974,
+    "roblox_name": "[2H⌛] Adopt Me!",
+    "description": "Adopt and raise 🐶🦄👶, trade and collect legendary pets, build your dream home, and roleplay with friends!\n\n🕵️Tux & Shepherd on the Stray Case 🕵️\n🍴 Find forks for the Mysterious Stranger!\n👀 Chihuahua found in Basic and Crystal Eggs!\n📰 Dress your pet as the Spy or the Witness!\n\nBe FIRST 🏆 To experience new updates by pressing 🔔NOTIFY.\n\nMeet the founders!\nNewFissy - Tech Director\nBethink - Creative Director\n\nFind out more about Uplift Games, our policies and creative attributions:\nhttps://devforum.roblox.com/t/credits/71812",
+    "updated": "2026-08-21T13:00:17.0258196Z",
+    "created": "2017-07-14T19:26:21.347Z",
+    "creator": {
+      "id": 295182,
+      "name": "Uplift Games",
+      "type": "Group",
+      "isRNVAccount": false,
+      "hasVerifiedBadge": true
+    },
+    "description_changed": false,
+    "added_lines": [],
+    "keywords": [
+      "NEW",
+      "PET",
+      "PETS"
+    ],
+    "score": 0,
+    "confidence": "low",
+    "facts": [],
+    "description_facts": [
+      {
+        "text": "👀 Chihuahua found in Basic and Crystal Eggs!",
+        "kind": "pets",
+        "value": 8,
+        "specific": true,
+        "reason": "Назван питомец и способ его получения",
+        "is_new_line": false
+      },
+      {
+        "text": "🕵️Tux & Shepherd on the Stray Case 🕵️",
+        "kind": "event",
+        "value": 7,
+        "specific": true,
+        "reason": "Названо конкретное игровое событие",
+        "is_new_line": false
+      },
+      {
+        "text": "🍴 Find forks for the Mysterious Stranger!",
+        "kind": "quests",
+        "value": 7,
+        "specific": true,
+        "reason": "Описано конкретное задание",
+        "is_new_line": false
+      },
+      {
+        "text": "Be FIRST 🏆 To experience new updates by pressing 🔔NOTIFY.",
+        "kind": "update",
+        "value": 2,
+        "specific": false,
+        "reason": "Упоминание обновления без конкретики",
+        "is_new_line": false
+      }
+    ],
+    "priority": false,
+    "checked_at": "2026-08-21T13:27:09.753036+00:00",
+    "sources": [
+      {
+        "type": "official_game_description",
+        "verified": true
+      },
+      {
+        "type": "official_roblox_group",
+        "verified": true,
+        "group_id": 295182,
+        "group_name": "Uplift Games"
+      }
+    ],
+    "cross_source_confirmations": [],
+    "source_diagnostics": [
+      {
+        "source_type": "official_news_website",
+        "source_url": "https://www.playadopt.me/news",
+        "latest_published_at": "2026-08-14T15:00:00.000Z",
+        "status": "rejected",
+        "reason": "Публикация устарела: 6.9 дн. (лимит 3).",
+        "latest_url": "https://www.playadopt.me/news/tux-and-shepherd-on-the-stray-case-notes"
+      },
+      {
+        "source_type": "official_game_description",
+        "source_url": "https://www.roblox.com/games/920587237/Adopt-Me",
+        "latest_published_at": "2026-08-21T13:00:17.0258196Z",
+        "status": "rejected",
+        "reason": "Нет новой конкретной строки со времени прошлого снимка."
+      },
+      {
+        "source_type": "official_roblox_group",
+        "source_url": "https://www.roblox.com/communities/295182/Uplift-Games",
+        "latest_published_at": null,
+        "status": "checked",
+        "reason": "Официальная группа подтверждена; датированной новости нет."
+      }
+    ],
+    "official_description_analysis": {
+      "keywords": [
+        "UPDATE",
+        "NEW",
+        "PET",
+        "PETS"
+      ],
+      "news_lines": [
+        "Adopt and raise 🐶🦄👶, trade and collect legendary pets, build your dream home, and roleplay with friends!",
+        "📰 Dress your pet as the Spy or the Witness!",
+        "Be FIRST 🏆 To experience new updates by pressing 🔔NOTIFY.",
+        "NewFissy - Tech Director"
+      ]
+    },
+    "source_registry": {
+      "universe_id": 383310974,
+      "root_place_id": 920587237,
+      "roblox_game_url": "https://www.roblox.com/games/920587237/Adopt-Me",
+      "roblox_group_id": 295182,
+      "roblox_group_name": "Uplift Games",
+      "roblox_group_url": "https://www.roblox.com/communities/295182/Uplift-Games",
+      "news_strategy": "official_news_website",
+      "website": "https://www.playadopt.me/",
+      "news_url": "https://www.playadopt.me/news",
+      "discord": "https://discord.com/invite/adoptme",
+      "youtube": "https://www.youtube.com/PlayAdoptMe",
+      "x": "https://x.com/PlayAdoptMe"
+    },
+    "official_group": {
+      "id": 295182,
+      "name": "Uplift Games",
+      "expected_name": "Uplift Games",
+      "name_matches_registry": true,
+      "description": "Welcome to Uplift Games, the studio behind Adopt Me!",
+      "has_verified_badge": true,
+      "news_lines": []
+    },
+    "external_source_diagnostic": {
+      "source_type": "official_news_website",
+      "source_url": "https://www.playadopt.me/news",
+      "latest_published_at": "2026-08-14T15:00:00.000Z",
+      "status": "rejected",
+      "reason": "Публикация устарела: 6.9 дн. (лимит 3).",
+      "latest_url": "https://www.playadopt.me/news/tux-and-shepherd-on-the-stray-case-notes"
+    },
+    "candidate_decision": {
+      "status": "rejected",
+      "reason": "Нет свежего факта с редакционным баллом 5 или выше."
+    }
+  },
+  {
+    "game": "RIVALS",
+    "universe_id": 6035872082,
+    "roblox_name": "RIVALS",
+    "description": "Welcome to RIVALS, the most intense first person shooter game on Roblox! Challenge other players in 1v1 to 5v5 FPS duels where the first to 5 wins!\n\n🏖️ UPDATE 21 - The first ever RIVALS Summer Event is here! Check out the patch notes in-game to see all the details! 🎉 \n\n🔫 Challenge someone by stepping on a duel pad!\n🔑 Earn keys to unlock new weapons & skins!\n📜 Complete contracts to unlock exclusive rewards!\n🏆 Show off your win streak and climb the leaderboards! \n\n🎮 Available on Desktop, Phones, Tablets, XBOX, & PlayStation 5!\n💜 Like and join the group for exclusive rewards!\n\n⚠️ WARNING: Cheaters will be permanently banned with no second chances, our anticheat & moderators will catch you. Abusing glitches & using sketchy farming methods are also not allowed!\n\n🏆 RIA25 Best Shooter Experience!",
+    "updated": "2026-08-10T21:07:11.179Z",
+    "created": "2024-05-26T16:47:48.617Z",
+    "creator": {
+      "id": 3461453,
+      "name": "Nosniy Games",
+      "type": "Group",
+      "isRNVAccount": false,
+      "hasVerifiedBadge": true
+    },
+    "description_changed": false,
+    "added_lines": [],
+    "keywords": [
+      "CONTRACTS",
+      "EVENT",
+      "NEW",
+      "REWARDS",
+      "UPDATE"
+    ],
+    "score": 0,
+    "confidence": "low",
+    "facts": [],
+    "description_facts": [
+      {
+        "text": "📜 Complete contracts to unlock exclusive rewards!",
+        "kind": "quests",
+        "value": 8,
+        "specific": true,
+        "reason": "Задания с наградами",
+        "is_new_line": false
+      },
+      {
+        "text": "🏖️ UPDATE 21 - The first ever RIVALS Summer Event is here! Check out the patch notes in-game to see all the details! 🎉",
+        "kind": "event",
+        "value": 7,
+        "specific": true,
+        "reason": "Игровое событие",
+        "is_new_line": false
+      }
+    ],
+    "priority": false,
+    "checked_at": "2026-08-21T13:27:09.753492+00:00",
+    "sources": [
+      {
+        "type": "official_game_description",
+        "verified": true
+      },
+      {
+        "type": "official_roblox_group",
+        "verified": true,
+        "group_id": 3461453,
+        "group_name": "Nosniy Games"
+      }
+    ],
+    "cross_source_confirmations": [],
+    "source_diagnostics": [
+      {
+        "source_type": "official_game_description",
+        "source_url": "https://www.roblox.com/games/17625359962/RIVALS",
+        "latest_published_at": "2026-08-10T21:07:11.179Z",
+        "status": "rejected",
+        "reason": "Нет новой конкретной строки со времени прошлого снимка."
+      },
+      {
+        "source_type": "official_roblox_group",
+        "source_url": "https://www.roblox.com/communities/3461453/Nosniy-Games",
+        "latest_published_at": null,
+        "status": "checked",
+        "reason": "Официальная группа подтверждена; датированной новости нет."
+      }
+    ],
+    "official_description_analysis": {
+      "keywords": [
+        "UPDATE",
+        "NEW",
+        "EVENT",
+        "REWARD",
+        "REWARDS",
+        "CONTRACT",
+        "CONTRACTS"
+      ],
+      "news_lines": [
+        "🏖️ UPDATE 21 - The first ever RIVALS Summer Event is here! Check out the patch notes in-game to see all the details! 🎉",
+        "🔑 Earn keys to unlock new weapons & skins!",
+        "📜 Complete contracts to unlock exclusive rewards!",
+        "💜 Like and join the group for exclusive rewards!"
+      ]
+    },
+    "source_registry": {
+      "universe_id": 6035872082,
+      "root_place_id": 17625359962,
+      "roblox_game_url": "https://www.roblox.com/games/17625359962/RIVALS",
+      "roblox_group_id": 3461453,
+      "roblox_group_name": "Nosniy Games",
+      "roblox_group_url": "https://www.roblox.com/communities/3461453/Nosniy-Games",
+      "news_strategy": "roblox_game_description_and_group",
+      "website": null,
+      "news_url": null,
+      "discord": "https://discord.com/servers/nosniy-games-170261767480410112",
+      "youtube": null,
+      "x": null
+    },
+    "official_group": {
+      "id": 3461453,
+      "name": "Nosniy Games",
+      "expected_name": "Nosniy Games",
+      "name_matches_registry": true,
+      "description": "Welcome to Nosniy Games! We're a development studio dedicated to creating enjoyable content for everyone! Join our community to receive exclusive perks and stay informed on our latest game updates!\n\n🏆 2020 Mobile Game of the Year - Super Golf!\n🏆 RIA25 Best Shooter Experience - RIVALS",
+      "has_verified_badge": true,
+      "news_lines": []
+    },
+    "candidate_decision": {
+      "status": "rejected",
+      "reason": "Нет свежего факта с редакционным баллом 5 или выше."
     }
   },
   {
@@ -587,8 +717,9 @@
     "score": 0,
     "confidence": "low",
     "facts": [],
+    "description_facts": [],
     "priority": false,
-    "checked_at": "2026-08-21T03:00:51.552115+00:00",
+    "checked_at": "2026-08-21T13:27:09.753790+00:00",
     "sources": [
       {
         "type": "official_game_description",
@@ -602,6 +733,29 @@
       }
     ],
     "cross_source_confirmations": [],
+    "source_diagnostics": [
+      {
+        "source_type": "official_youtube_feed",
+        "source_url": "https://www.youtube.com/feeds/videos.xml?channel_id=UCP6KpgkAq2-MH67kS5WLqFQ",
+        "latest_published_at": null,
+        "status": "rejected",
+        "reason": "В официальной ленте нет записи с датой, содержанием и признаками новости этой игры."
+      },
+      {
+        "source_type": "official_game_description",
+        "source_url": "https://www.roblox.com/games/126884695634066/Grow-a-Garden",
+        "latest_published_at": "2026-08-18T20:17:48.154Z",
+        "status": "rejected",
+        "reason": "Нет новой конкретной строки со времени прошлого снимка."
+      },
+      {
+        "source_type": "official_roblox_group",
+        "source_url": "https://www.roblox.com/communities/35789249/The-Garden-Game",
+        "latest_published_at": null,
+        "status": "checked",
+        "reason": "Официальная группа подтверждена; датированной новости нет."
+      }
+    ],
     "official_description_analysis": {
       "keywords": [],
       "news_lines": []
@@ -613,11 +767,11 @@
       "roblox_group_id": 35789249,
       "roblox_group_name": "The Garden Game",
       "roblox_group_url": "https://www.roblox.com/communities/35789249/The-Garden-Game",
-      "news_strategy": "roblox_game_description_and_group",
+      "news_strategy": "official_youtube_feed",
       "website": null,
       "news_url": null,
       "discord": null,
-      "youtube": null,
+      "youtube": "https://www.youtube.com/@jandellive",
       "x": null
     },
     "official_group": {
@@ -628,6 +782,137 @@
       "description": "@GrowGames",
       "has_verified_badge": false,
       "news_lines": []
+    },
+    "external_source_diagnostic": {
+      "source_type": "official_youtube_feed",
+      "source_url": "https://www.youtube.com/feeds/videos.xml?channel_id=UCP6KpgkAq2-MH67kS5WLqFQ",
+      "latest_published_at": null,
+      "status": "rejected",
+      "reason": "В официальной ленте нет записи с датой, содержанием и признаками новости этой игры."
+    },
+    "candidate_decision": {
+      "status": "rejected",
+      "reason": "Нет свежего факта с редакционным баллом 5 или выше."
+    }
+  },
+  {
+    "game": "Dress To Impress",
+    "universe_id": 5203828273,
+    "roblox_name": "[🌴] Dress To Impress",
+    "description": "Create stunning outfits 👗💖⭐, and strut the runway to show off your unique style. Collaborate, compete, and explore a world of glamour with friends!\n\n⭐ Are you ready to be the TOP MODEL?\n👗 NEW ITEMS! Check them out.\n🍿 Vote for your favorite outfits!\n💃 Use poses on the runway to show off your outfit!\n\nFind more about Dress To Impress by joining our community.\nhttps://www.roblox.com/communities/17264167/Dress-To-Impress-Group#!/about",
+    "updated": "2026-08-20T22:15:17.6552533Z",
+    "created": "2023-10-18T09:11:36.563Z",
+    "creator": {
+      "id": 17264167,
+      "name": "Dress To Impress Group",
+      "type": "Group",
+      "isRNVAccount": false,
+      "hasVerifiedBadge": true
+    },
+    "description_changed": false,
+    "added_lines": [],
+    "keywords": [
+      "ITEMS",
+      "NEW"
+    ],
+    "score": 0,
+    "confidence": "low",
+    "facts": [],
+    "description_facts": [
+      {
+        "text": "👗 NEW ITEMS! Check them out.",
+        "kind": "items",
+        "value": 4,
+        "specific": true,
+        "reason": "Новые предметы без подробностей",
+        "is_new_line": false
+      }
+    ],
+    "priority": false,
+    "checked_at": "2026-08-21T13:27:09.754032+00:00",
+    "sources": [
+      {
+        "type": "official_game_description",
+        "verified": true
+      },
+      {
+        "type": "official_roblox_group",
+        "verified": true,
+        "group_id": 17264167,
+        "group_name": "Dress To Impress Group"
+      }
+    ],
+    "cross_source_confirmations": [],
+    "source_diagnostics": [
+      {
+        "source_type": "official_youtube_feed",
+        "source_url": "https://www.youtube.com/feeds/videos.xml?channel_id=UCCVWvf_e5oRb6RfXyluR7UA",
+        "latest_published_at": "2026-07-02T15:00:06+00:00",
+        "status": "rejected",
+        "reason": "Публикация устарела: 49.9 дн. (лимит 3).",
+        "latest_url": "https://www.youtube.com/watch?v=5Zfy9QW4s5A"
+      },
+      {
+        "source_type": "official_game_description",
+        "source_url": "https://www.roblox.com/games/15101393044/Dress-To-Impress",
+        "latest_published_at": "2026-08-20T22:15:17.6552533Z",
+        "status": "rejected",
+        "reason": "Нет новой конкретной строки со времени прошлого снимка."
+      },
+      {
+        "source_type": "official_roblox_group",
+        "source_url": "https://www.roblox.com/communities/17264167/Dress-To-Impress-Group",
+        "latest_published_at": null,
+        "status": "checked",
+        "reason": "Официальная группа подтверждена; датированной новости нет."
+      }
+    ],
+    "official_description_analysis": {
+      "keywords": [
+        "NEW",
+        "ITEM",
+        "ITEMS",
+        "PET"
+      ],
+      "news_lines": [
+        "Create stunning outfits 👗💖⭐, and strut the runway to show off your unique style. Collaborate, compete, and explore a world of glamour with friends!",
+        "👗 NEW ITEMS! Check them out."
+      ]
+    },
+    "source_registry": {
+      "universe_id": 5203828273,
+      "root_place_id": 15101393044,
+      "roblox_game_url": "https://www.roblox.com/games/15101393044/Dress-To-Impress",
+      "roblox_group_id": 17264167,
+      "roblox_group_name": "Dress To Impress Group",
+      "roblox_group_url": "https://www.roblox.com/communities/17264167/Dress-To-Impress-Group",
+      "news_strategy": "official_youtube_feed",
+      "website": null,
+      "news_url": null,
+      "discord": "https://discord.com/servers/1151211652256112650",
+      "youtube": "https://www.youtube.com/@Play_DressToImpress",
+      "x": null
+    },
+    "official_group": {
+      "id": 17264167,
+      "name": "Dress To Impress Group",
+      "expected_name": "Dress To Impress Group",
+      "name_matches_registry": true,
+      "description": "🌊 Welcome to the Dress To Impress Group!\n🌊 Please join the community server!",
+      "has_verified_badge": true,
+      "news_lines": []
+    },
+    "external_source_diagnostic": {
+      "source_type": "official_youtube_feed",
+      "source_url": "https://www.youtube.com/feeds/videos.xml?channel_id=UCCVWvf_e5oRb6RfXyluR7UA",
+      "latest_published_at": "2026-07-02T15:00:06+00:00",
+      "status": "rejected",
+      "reason": "Публикация устарела: 49.9 дн. (лимит 3).",
+      "latest_url": "https://www.youtube.com/watch?v=5Zfy9QW4s5A"
+    },
+    "candidate_decision": {
+      "status": "rejected",
+      "reason": "Нет свежего факта с редакционным баллом 5 или выше."
     }
   },
   {
@@ -635,7 +920,7 @@
     "universe_id": 3317771874,
     "roblox_name": "♾️ Pet Simulator 99! [PIÑATA MAZE] ",
     "description": "Create an army of the coolest pets! They will help you get RICH!\n\n✨ Currently 2,000+ pets to collect! 🐾\n\n🧡 Thanks for playing!",
-    "updated": "2026-08-19T18:44:07.3838723Z",
+    "updated": "2026-08-19T18:44:07.383Z",
     "created": "2022-02-05T13:30:02.357Z",
     "creator": {
       "id": 3959677,
@@ -652,8 +937,9 @@
     "score": 0,
     "confidence": "low",
     "facts": [],
+    "description_facts": [],
     "priority": false,
-    "checked_at": "2026-08-21T03:00:51.552633+00:00",
+    "checked_at": "2026-08-21T13:27:09.754119+00:00",
     "sources": [
       {
         "type": "official_game_description",
@@ -667,6 +953,30 @@
       }
     ],
     "cross_source_confirmations": [],
+    "source_diagnostics": [
+      {
+        "source_type": "official_news_website",
+        "source_url": "https://www.biggames.io/post",
+        "latest_published_at": "2026-08-15",
+        "status": "rejected",
+        "reason": "Публикация устарела: 6.6 дн. (лимит 3).",
+        "latest_url": "https://www.biggames.io/post/pet-simulator-99-update-89"
+      },
+      {
+        "source_type": "official_game_description",
+        "source_url": "https://www.roblox.com/games/8737899170/Pet-Simulator-99",
+        "latest_published_at": "2026-08-19T18:44:07.383Z",
+        "status": "rejected",
+        "reason": "Нет новой конкретной строки со времени прошлого снимка."
+      },
+      {
+        "source_type": "official_roblox_group",
+        "source_url": "https://www.roblox.com/communities/3959677/BIG-Games-Pets",
+        "latest_published_at": null,
+        "status": "checked",
+        "reason": "Официальная группа подтверждена; датированной новости нет."
+      }
+    ],
     "official_description_analysis": {
       "keywords": [
         "PET",
@@ -699,6 +1009,18 @@
       "description": "Meow 🐾\n\nExperience Studio!",
       "has_verified_badge": true,
       "news_lines": []
+    },
+    "external_source_diagnostic": {
+      "source_type": "official_news_website",
+      "source_url": "https://www.biggames.io/post",
+      "latest_published_at": "2026-08-15",
+      "status": "rejected",
+      "reason": "Публикация устарела: 6.6 дн. (лимит 3).",
+      "latest_url": "https://www.biggames.io/post/pet-simulator-99-update-89"
+    },
+    "candidate_decision": {
+      "status": "rejected",
+      "reason": "Нет свежего факта с редакционным баллом 5 или выше."
     }
   },
   {
@@ -723,8 +1045,9 @@
     "score": 0,
     "confidence": "low",
     "facts": [],
+    "description_facts": [],
     "priority": false,
-    "checked_at": "2026-08-21T03:00:51.553193+00:00",
+    "checked_at": "2026-08-21T13:27:09.754501+00:00",
     "sources": [
       {
         "type": "official_game_description",
@@ -738,6 +1061,30 @@
       }
     ],
     "cross_source_confirmations": [],
+    "source_diagnostics": [
+      {
+        "source_type": "official_news_website",
+        "source_url": "https://bladeball.com/blogs/news",
+        "latest_published_at": "2024-03-23T18:51:42Z",
+        "status": "rejected",
+        "reason": "Публикация устарела: 880.8 дн. (лимит 3).",
+        "latest_url": "https://bladeball.com/blogs/news/comptetetive-leaderboards"
+      },
+      {
+        "source_type": "official_game_description",
+        "source_url": "https://www.roblox.com/games/13772394625/Blade-Ball",
+        "latest_published_at": "2026-08-20T16:04:08.250246Z",
+        "status": "rejected",
+        "reason": "Нет новой конкретной строки со времени прошлого снимка."
+      },
+      {
+        "source_type": "official_roblox_group",
+        "source_url": "https://www.roblox.com/communities/12836673/Wiggity",
+        "latest_published_at": null,
+        "status": "checked",
+        "reason": "Официальная группа подтверждена; датированной новости нет."
+      }
+    ],
     "official_description_analysis": {
       "keywords": [
         "NEW"
@@ -753,9 +1100,9 @@
       "roblox_group_id": 12836673,
       "roblox_group_name": "Wiggity.",
       "roblox_group_url": "https://www.roblox.com/communities/12836673/Wiggity",
-      "news_strategy": "roblox_game_description_and_group",
-      "website": null,
-      "news_url": null,
+      "news_strategy": "official_news_website",
+      "website": "https://bladeball.com/",
+      "news_url": "https://bladeball.com/blogs/news",
       "discord": "https://discord.com/servers/1141515589924429869",
       "youtube": null,
       "x": null
@@ -768,6 +1115,18 @@
       "description": "Creators of Blade Ball",
       "has_verified_badge": true,
       "news_lines": []
+    },
+    "external_source_diagnostic": {
+      "source_type": "official_news_website",
+      "source_url": "https://bladeball.com/blogs/news",
+      "latest_published_at": "2024-03-23T18:51:42Z",
+      "status": "rejected",
+      "reason": "Публикация устарела: 880.8 дн. (лимит 3).",
+      "latest_url": "https://bladeball.com/blogs/news/comptetetive-leaderboards"
+    },
+    "candidate_decision": {
+      "status": "rejected",
+      "reason": "Нет свежего факта с редакционным баллом 5 или выше."
     }
   }
 ]

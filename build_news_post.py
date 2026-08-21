@@ -2,7 +2,7 @@ import json
 
 
 MIN_SCORE = 5
-MAX_NEWS_ITEMS = 4
+MAX_NEWS_ITEMS = 3
 
 
 STRONG_NEWS_PHRASES = [

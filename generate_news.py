@@ -208,6 +208,71 @@ def analyze_line(line):
 
     upper = line.upper()
 
+    # Конкретные строки из описаний часто не содержат слово EVENT.
+    # Важна не метка UPDATE сама по себе, а названное изменение после неё.
+    if re.search(
+        r"\bFOUND IN\b.+\bEGGS?\b",
+        upper
+    ):
+        return make_fact(
+            line=line,
+            kind="pets",
+            value=8,
+            reason="Назван питомец и способ его получения"
+        )
+
+    if re.match(
+        r"^[^A-Z0-9]*FIND\b.+\bFOR\b",
+        upper
+    ):
+        return make_fact(
+            line=line,
+            kind="quests",
+            value=7,
+            reason="Описано конкретное задание"
+        )
+
+    if " CASE" in upper or upper.endswith("CASE"):
+        return make_fact(
+            line=line,
+            kind="event",
+            value=7,
+            reason="Названо конкретное игровое событие"
+        )
+
+    concrete_update = re.search(
+        r"\b(?:LATEST\s+)?(?:NEW|UPDATED)?\s*"
+        r"([A-Z][A-Z0-9 '&]+?)\s+UPDATE\s*[-–—:]\s*(.+)",
+        upper
+    )
+
+    if concrete_update and len(concrete_update.group(2).strip()) >= 12:
+        return make_fact(
+            line=line,
+            kind="update",
+            value=7,
+            reason="Обновление с названной темой и подробностью"
+        )
+
+    concrete_change = re.match(
+        r"^[^A-Z0-9]*(?:NEW|UPDATED)\s+"
+        r"([A-Z0-9 '&]+?)\s*[-–—:]\s*(.+)",
+        upper
+    )
+
+    if concrete_change and len(concrete_change.group(2).strip()) >= 12:
+        kind = "vehicle" if has_any(
+            concrete_change.group(1),
+            ("CAR", "TRUCK", "VEHICLE", "BIKE", "BOAT")
+        ) else "items"
+
+        return make_fact(
+            line=line,
+            kind=kind,
+            value=7,
+            reason="Названо конкретное новое или обновлённое содержимое"
+        )
+
     # ------------------------------------------------
     # Бесплатные награды / коды
     # ------------------------------------------------
@@ -667,15 +732,29 @@ for config in games_config:
         and bool(previous_description)
     )
 
-    added_lines = get_added_lines(
-        previous_description,
-        description
-    )
+    # Первый увиденный description — снимок состояния, а не доказательство
+    # того, что весь перечисленный в нём контент появился сегодня.
+    if previous_description:
+        added_lines = get_added_lines(
+            previous_description,
+            description
+        )
+    else:
+        added_lines = []
 
-    facts = extract_facts(
+    analyzed_facts = extract_facts(
         description,
         added_lines
     )
+
+    # Для публикации годятся только новые строки текущего снимка.
+    # Иначе один и тот же UPDATE из неизменного description повторялся бы
+    # каждое утро без собственной даты публикации.
+    facts = [
+        fact
+        for fact in analyzed_facts
+        if fact.get("is_new_line")
+    ]
 
     keywords = find_keywords(
         description
@@ -739,6 +818,7 @@ for config in games_config:
 
         # Новый главный слой.
         "facts": facts,
+        "description_facts": analyzed_facts,
 
         "priority": config.get(
             "priority",

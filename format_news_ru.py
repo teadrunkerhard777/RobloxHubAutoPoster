@@ -257,6 +257,17 @@ def translate_fact(fact):
                 "стартовало новое событие."
             )
 
+        if " CASE" in upper or upper.endswith("CASE"):
+            clean_name = re.sub(
+                r"^[^A-Za-z0-9]+|[^A-Za-z0-9!?'& ]+$",
+                "",
+                raw_text
+            ).strip()
+
+            return (
+                f"В игре началось событие «{clean_name}»."
+            )
+
         return (
             "В игре проходит новое событие."
         )
@@ -273,6 +284,17 @@ def translate_fact(fact):
         if update_number:
             return (
                 f"Вышло Update {update_number}."
+            )
+
+        topic_match = re.search(
+            r"^\s*([^\-–—:]+?\bUPDATE)\s*[-–—:]",
+            raw_text,
+            flags=re.IGNORECASE
+        )
+
+        if topic_match:
+            return (
+                f"Вышло обновление «{topic_match.group(1).strip()}»."
             )
 
         return None
@@ -338,6 +360,18 @@ def translate_fact(fact):
     # ------------------------------------------------
 
     if kind == "pets":
+        egg_match = re.search(
+            r"([^!\n]+?)\s+found in\s+([^!\n]+?\bEggs?)",
+            raw_text,
+            flags=re.IGNORECASE
+        )
+
+        if egg_match:
+            return (
+                f"Питомца {egg_match.group(1).strip()} теперь можно "
+                f"найти в {egg_match.group(2).strip()}."
+            )
+
         object_name = extract_name_before_dash(
             raw_text
         )
@@ -562,6 +596,63 @@ for candidate in candidates:
 
     if len(news_items) == MAX_NEWS_ITEMS:
         break
+
+
+# --------------------------------------------------
+# Диагностика финального редакционного отбора
+# --------------------------------------------------
+
+selected_games = {
+    item["game"]
+    for item in news_items
+}
+
+print()
+print("Диагностика утреннего отбора:")
+
+for candidate in verified_news:
+    game = normalize_game_name(candidate.get("game", "Roblox"))
+    source_diagnostics = candidate.get("source_diagnostics", [])
+    latest_dates = [
+        diagnostic.get("latest_published_at")
+        for diagnostic in source_diagnostics
+        if diagnostic.get("latest_published_at")
+    ]
+    source_names = [
+        diagnostic.get("source_type")
+        for diagnostic in source_diagnostics
+        if diagnostic.get("source_type")
+    ]
+
+    if game in selected_games:
+        status = "ПРИНЯТ"
+        reason = "вошёл в утренний выпуск"
+    elif candidate.get("score", 0) < MIN_SCORE:
+        status = "ОТБРОШЕН"
+        rejected_reasons = [
+            diagnostic.get("reason", "").rstrip(".")
+            for diagnostic in source_diagnostics
+            if diagnostic.get("status") == "rejected"
+            and diagnostic.get("reason")
+        ]
+        reason = "; ".join(rejected_reasons) or (
+            candidate.get("candidate_decision", {}).get(
+                "reason",
+                "нет достойного свежего факта"
+            ).rstrip(".")
+        )
+    elif build_item(candidate) is None:
+        status = "ОТБРОШЕН"
+        reason = "нет конкретного факта, который можно корректно изложить"
+    else:
+        status = "ОТБРОШЕН"
+        reason = "ниже трёх более сильных разных новостей"
+
+    print(
+        f"- {game}: источники={', '.join(source_names) or 'нет'}; "
+        f"последняя дата={max(latest_dates) if latest_dates else 'не найдена'}; "
+        f"{status} — {reason.rstrip('.')}."
+    )
 
 
 save_json(

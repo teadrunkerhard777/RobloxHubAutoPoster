@@ -597,9 +597,28 @@ post_10 = find_post(
     id_10
 )
 
+morning_text = generate_morning_post()
 
-if post_10 is None:
-    morning_text = generate_morning_post()
+
+if morning_text is None:
+    if (
+        post_10 is not None
+        and post_10.get("status") != "published"
+        and post_10.get("source") == "auto_verified"
+    ):
+        existing_posts.remove(post_10)
+        posts_updated += 1
+        print(
+            "10:00 — достойных свежих новостей нет; "
+            "неопубликованный выпуск удалён из очереди."
+        )
+    else:
+        print(
+            "10:00 — достойных свежих новостей нет; "
+            "утренний выпуск не создаём."
+        )
+
+elif post_10 is None:
 
     existing_posts.append(
         build_post(
@@ -626,8 +645,6 @@ if post_10 is None:
     )
 
 elif post_10.get("status") == "pending":
-    morning_text = generate_morning_post()
-
     post_10["text"] = morning_text
     post_10["rubric"] = "Выпуск дня"
     post_10["source"] = "auto_verified"

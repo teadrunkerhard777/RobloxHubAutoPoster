@@ -111,22 +111,51 @@ class FetchExternalNewsTests(unittest.TestCase):
     def test_finds_latest_brookhaven_article(self):
         result = fetch_external_news.find_latest_article_url(
             "Brookhaven",
-            "https://voldex.com/news/",
+            "https://www.brookhavenrp.com/",
             [
                 {
-                    "text": "Driving Empire update",
-                    "url": "https://voldex.com/news/driving-empire/",
+                    "text": "Home",
+                    "url": "https://www.brookhavenrp.com/",
                 },
                 {
-                    "text": "New event in Brookhaven",
-                    "url": "https://voldex.com/news/brookhaven-event/",
+                    "text": "Brookhaven Update August 14, 2026",
+                    "url": (
+                        "https://www.brookhavenrp.com/"
+                        "posts/brookhaven-update-august-14-2026"
+                    ),
                 },
             ],
         )
 
         self.assertEqual(
             result,
-            "https://voldex.com/news/brookhaven-event/",
+            (
+                "https://www.brookhavenrp.com/"
+                "posts/brookhaven-update-august-14-2026"
+            ),
+        )
+
+    def test_finds_latest_blade_ball_article(self):
+        result = fetch_external_news.find_latest_article_url(
+            "Blade Ball",
+            "https://bladeball.com/blogs/news",
+            [
+                {
+                    "text": "Release notes",
+                    "url": (
+                        "https://bladeball.com/blogs/news/"
+                        "blade-ball-v2-0-release-notes"
+                    ),
+                }
+            ],
+        )
+
+        self.assertEqual(
+            result,
+            (
+                "https://bladeball.com/blogs/news/"
+                "blade-ball-v2-0-release-notes"
+            ),
         )
 
     def test_finds_latest_pet_simulator_99_article(self):
@@ -168,6 +197,62 @@ class FetchExternalNewsTests(unittest.TestCase):
         )
 
         self.assertEqual(result, "2026-06-19")
+
+    def test_infers_english_month_first_date_from_brookhaven_link(self):
+        article_url = (
+            "https://www.brookhavenrp.com/"
+            "posts/brookhaven-update-august-14-2026"
+        )
+        result = fetch_external_news.infer_published_at_from_links(
+            article_url,
+            [
+                {
+                    "text": "Brookhaven Update August 14, 2026",
+                    "url": article_url,
+                }
+            ],
+        )
+
+        self.assertEqual(result, "2026-08-14")
+
+    @patch("fetch_external_news.fetch_page")
+    def test_collects_dated_youtube_entry_with_content(self, fetch_page):
+        fetch_page.return_value = """<?xml version="1.0"?>
+        <feed xmlns="http://www.w3.org/2005/Atom"
+              xmlns:yt="http://www.youtube.com/xml/schemas/2015"
+              xmlns:media="http://search.yahoo.com/mrss/">
+          <title>Dress To Impress</title>
+          <author><name>Dress To Impress</name></author>
+          <entry>
+            <yt:videoId>fresh123</yt:videoId>
+            <title>Dress To Impress Summer Event Trailer</title>
+            <published>2026-08-20T12:00:00+00:00</published>
+            <media:group>
+              <media:description>
+                A new Dress To Impress event launches this week.
+              </media:description>
+            </media:group>
+          </entry>
+        </feed>"""
+
+        result = fetch_external_news.collect_youtube_feed(
+            "Dress To Impress",
+            {
+                "youtube_feed_url": "https://youtube.example/feed",
+                "youtube_channel_name": "Dress To Impress",
+                "youtube_match_terms": ["dress to impress", "dti"],
+            },
+        )
+
+        self.assertTrue(result["success"])
+        self.assertEqual(
+            result["latest_article"]["published_at"],
+            "2026-08-20T12:00:00+00:00",
+        )
+        self.assertIn(
+            "A new Dress To Impress event",
+            result["latest_article"]["text"],
+        )
 
     @patch("fetch_external_news.fetch_page")
     def test_collects_feed_and_latest_article(

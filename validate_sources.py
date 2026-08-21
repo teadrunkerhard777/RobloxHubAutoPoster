@@ -32,6 +32,7 @@ REQUIRED_SOURCE_FIELDS = (
 
 NEWS_STRATEGIES = {
     "official_news_website",
+    "official_youtube_feed",
     "roblox_game_description_and_group",
 }
 
@@ -127,6 +128,19 @@ def validate_registry(games, sources):
         ):
             errors.append(f"{name}: для официального сайта не указан news_url.")
 
+        if source["news_strategy"] == "official_youtube_feed":
+            if not source.get("youtube"):
+                errors.append(f"{name}: не указан официальный YouTube-канал.")
+
+            if not source.get("youtube_feed_url"):
+                errors.append(f"{name}: не указан публичный YouTube RSS.")
+
+            if not source.get("youtube_match_terms"):
+                errors.append(f"{name}: не заданы фильтры игры для YouTube RSS.")
+
+            if not source.get("youtube_channel_name"):
+                errors.append(f"{name}: не задано имя официального YouTube-канала.")
+
         if (
             source["news_strategy"]
             == "roblox_game_description_and_group"
@@ -148,8 +162,9 @@ def validate_registry(games, sources):
             "discord",
             "youtube",
             "x",
+            "youtube_feed_url",
         ):
-            validate_url(source[field], field, name, errors)
+            validate_url(source.get(field), field, name, errors)
 
     return errors
 
@@ -197,15 +212,16 @@ def main():
 
         raise SystemExit(1)
 
-    website_count = sum(
+    external_count = sum(
         source["news_strategy"] == "official_news_website"
+        or source["news_strategy"] == "official_youtube_feed"
         for source in sources.values()
     )
 
     print(
         "Источники проверены: "
-        f"{len(games)} игр, {website_count} официальных новостных ленты, "
-        f"{len(games) - website_count} Roblox-источников."
+        f"{len(games)} игр, {external_count} официальных внешних лент, "
+        f"{len(games) - external_count} Roblox-источников."
     )
 
 
