@@ -1,10 +1,93 @@
 [
   {
+    "game": "Brookhaven",
+    "universe_id": 1686885941,
+    "roblox_name": "Brookhaven 🏡RP",
+    "description": "A place to play with like minded people and roleplay. Own and live in amazing houses, drive cool vehicles and explore the city. Be whoever you want to be in Brookhaven RP.\n\nLatest Update:\n🔐 Prison Landmark - New roleplay! Warden tear gas launcher and pistol, and prisoner bus.\n👮‍♂️ Prison Tools - New handcuffs, shank, and scanner wand!\n🚨 Prison Props - New alarm, spotlight, security scanner, yard props, and more!\n\nThanks for playing! \n\nPrivate Server Benefits:\n· Prop Saving\n· Server-Wide Music\n· Server-Wide Announcements\n· Remove or Lock Props\n· Check Prop Owners\n· Set Players as Admins\n· Kick / Temp Ban Players\n· Set Day of the Week\n· Set Time by the Hour\n· Change Weather and Lighting\n· Speed up Time\n· Server Theme Controls\n· No Wait Time for Changing House \n· Spawn Up to Three Vehicles\n· Prop Limit Increased\n· Freecam for PC users (Shift+P)",
+    "updated": "2026-08-21T21:45:59.5181811Z",
+    "created": "2020-04-21T02:15:38.373Z",
+    "creator": {
+      "id": 3104358,
+      "name": "Brookhaven by Voldex",
+      "type": "Group",
+      "isRNVAccount": false,
+      "hasVerifiedBadge": false
+    },
+    "description_changed": true,
+    "added_lines": [
+      "🔐 Prison Landmark - New roleplay! Warden tear gas launcher and pistol, and prisoner bus.",
+      "👮‍♂️ Prison Tools - New handcuffs, shank, and scanner wand!",
+      "🚨 Prison Props - New alarm, spotlight, security scanner, yard props, and more!"
+    ],
+    "keywords": [
+      "NEW",
+      "UPDATE",
+      "VEHICLES"
+    ],
+    "score": 1,
+    "confidence": "low",
+    "facts": [],
+    "description_facts": [
+      {
+        "text": "Latest Update:",
+        "kind": "update",
+        "value": 2,
+        "specific": false,
+        "reason": "Упоминание обновления без конкретики",
+        "is_new_line": false
+      }
+    ],
+    "priority": false,
+    "checked_at": "2026-08-22T03:00:51.984279+00:00"
+  },
+  {
+    "game": "Adopt Me!",
+    "universe_id": 383310974,
+    "roblox_name": "[🍓] Adopt Me!",
+    "description": "Adopt and raise 🐶🦄👶, trade and collect legendary pets, build your dream home, and roleplay with friends!\n\n🎒 Backpack Storage & Releaser Refresh! 🎒\n🦴 Store unused items for smoother gameplay!\n🧸 Sort pets and items, trade directly from tabs!\n🍓 Kiwi Kiwi and Strawberry Tortle in Releaser Eggs!\n\nBe FIRST 🏆 To experience new updates by pressing 🔔NOTIFY.\n\nMeet the founders!\nNewFissy - Tech Director\nBethink - Creative Director\n\nFind out more about Uplift Games, our policies and creative attributions:\nhttps://devforum.roblox.com/t/credits/71812",
+    "updated": "2026-08-21T20:28:18.0252709Z",
+    "created": "2017-07-14T19:26:21.347Z",
+    "creator": {
+      "id": 295182,
+      "name": "Uplift Games",
+      "type": "Group",
+      "isRNVAccount": false,
+      "hasVerifiedBadge": true
+    },
+    "description_changed": true,
+    "added_lines": [
+      "🎒 Backpack Storage & Releaser Refresh! 🎒",
+      "🦴 Store unused items for smoother gameplay!",
+      "🧸 Sort pets and items, trade directly from tabs!",
+      "🍓 Kiwi Kiwi and Strawberry Tortle in Releaser Eggs!"
+    ],
+    "keywords": [
+      "ITEMS",
+      "NEW",
+      "PETS"
+    ],
+    "score": 1,
+    "confidence": "low",
+    "facts": [],
+    "description_facts": [
+      {
+        "text": "Be FIRST 🏆 To experience new updates by pressing 🔔NOTIFY.",
+        "kind": "update",
+        "value": 2,
+        "specific": false,
+        "reason": "Упоминание обновления без конкретики",
+        "is_new_line": false
+      }
+    ],
+    "priority": false,
+    "checked_at": "2026-08-22T03:00:51.984788+00:00"
+  },
+  {
     "game": "Steal a Brainrot",
     "universe_id": 7709344486,
     "roblox_name": "Steal a Brainrot",
     "description": "🗣️ Welcome to Steal a Brainrot!\n\n👍 Like the game and join the group\n\nHow to Play:\n👽 Buy a Brainrot\n🥷 Steal Brainrots from other players\n💸 Generate money\n🐦‍🔥 Rebirth\n✋ Buy slaps and troll gear to troll other players!\n\n💻 Supports Desktop, Mobile and Tablet players\n\n🙏 Credit to Chris for letting us use the Nyan Cat!\n🙏 Credit to @WinnersTakesAll for the backpack system!",
-    "updated": "2026-08-21T07:47:32.2625099Z",
+    "updated": "2026-08-21T20:04:39.2690892Z",
     "created": "2025-05-16T00:49:12.563Z",
     "creator": {
       "id": 35815907,
@@ -21,7 +104,7 @@
     "facts": [],
     "description_facts": [],
     "priority": true,
-    "checked_at": "2026-08-21T13:27:09.750278+00:00"
+    "checked_at": "2026-08-22T03:00:51.982513+00:00"
   },
   {
     "game": "99 Nights in the Forest",
@@ -45,7 +128,7 @@
     "facts": [],
     "description_facts": [],
     "priority": true,
-    "checked_at": "2026-08-21T13:27:09.750473+00:00"
+    "checked_at": "2026-08-22T03:00:51.982662+00:00"
   },
   {
     "game": "Blox Fruits",
@@ -72,137 +155,7 @@
     "facts": [],
     "description_facts": [],
     "priority": false,
-    "checked_at": "2026-08-21T13:27:09.752142+00:00"
-  },
-  {
-    "game": "Brookhaven",
-    "universe_id": 1686885941,
-    "roblox_name": "Brookhaven 🏡RP",
-    "description": "A place to play with like minded people and roleplay. Own and live in amazing houses, drive cool vehicles and explore the city. Be whoever you want to be in Brookhaven RP.\n\nLatest Update:\n🏦 Bank Update - A new, refreshed Bank is now open!\n💳 Updated Tools  - New credit cards, cash bags and more!\n💰 New Bank Clothes - New Bank manager roleplay outfit!\n🚚 Updated Truck - The Armored Bank Truck has a brand new look!\n\nThanks for playing! \n\nPrivate Server Benefits:\n· Prop Saving\n· Server-Wide Music\n· Server-Wide Announcements\n· Remove or Lock Props\n· Check Prop Owners\n· Set Players as Admins\n· Kick / Temp Ban Players\n· Set Day of the Week\n· Set Time by the Hour\n· Change Weather and Lighting\n· Speed up Time\n· Server Theme Controls\n· No Wait Time for Changing House \n· Spawn Up to Three Vehicles\n· Prop Limit Increased\n· Freecam for PC users (Shift+P)",
-    "updated": "2026-08-19T20:30:44.337Z",
-    "created": "2020-04-21T02:15:38.373Z",
-    "creator": {
-      "id": 3104358,
-      "name": "Brookhaven by Voldex",
-      "type": "Group",
-      "isRNVAccount": false,
-      "hasVerifiedBadge": false
-    },
-    "description_changed": false,
-    "added_lines": [],
-    "keywords": [
-      "NEW",
-      "UPDATE",
-      "VEHICLES"
-    ],
-    "score": 0,
-    "confidence": "low",
-    "facts": [],
-    "description_facts": [
-      {
-        "text": "🏦 Bank Update - A new, refreshed Bank is now open!",
-        "kind": "update",
-        "value": 7,
-        "specific": true,
-        "reason": "Обновление с названной темой и подробностью",
-        "is_new_line": false
-      },
-      {
-        "text": "💳 Updated Tools - New credit cards, cash bags and more!",
-        "kind": "items",
-        "value": 7,
-        "specific": true,
-        "reason": "Названо конкретное новое или обновлённое содержимое",
-        "is_new_line": false
-      },
-      {
-        "text": "💰 New Bank Clothes - New Bank manager roleplay outfit!",
-        "kind": "items",
-        "value": 7,
-        "specific": true,
-        "reason": "Названо конкретное новое или обновлённое содержимое",
-        "is_new_line": false
-      },
-      {
-        "text": "🚚 Updated Truck - The Armored Bank Truck has a brand new look!",
-        "kind": "vehicle",
-        "value": 7,
-        "specific": true,
-        "reason": "Названо конкретное новое или обновлённое содержимое",
-        "is_new_line": false
-      },
-      {
-        "text": "Latest Update:",
-        "kind": "update",
-        "value": 2,
-        "specific": false,
-        "reason": "Упоминание обновления без конкретики",
-        "is_new_line": false
-      }
-    ],
-    "priority": false,
-    "checked_at": "2026-08-21T13:27:09.752752+00:00"
-  },
-  {
-    "game": "Adopt Me!",
-    "universe_id": 383310974,
-    "roblox_name": "[2H⌛] Adopt Me!",
-    "description": "Adopt and raise 🐶🦄👶, trade and collect legendary pets, build your dream home, and roleplay with friends!\n\n🕵️Tux & Shepherd on the Stray Case 🕵️\n🍴 Find forks for the Mysterious Stranger!\n👀 Chihuahua found in Basic and Crystal Eggs!\n📰 Dress your pet as the Spy or the Witness!\n\nBe FIRST 🏆 To experience new updates by pressing 🔔NOTIFY.\n\nMeet the founders!\nNewFissy - Tech Director\nBethink - Creative Director\n\nFind out more about Uplift Games, our policies and creative attributions:\nhttps://devforum.roblox.com/t/credits/71812",
-    "updated": "2026-08-21T13:00:17.0258196Z",
-    "created": "2017-07-14T19:26:21.347Z",
-    "creator": {
-      "id": 295182,
-      "name": "Uplift Games",
-      "type": "Group",
-      "isRNVAccount": false,
-      "hasVerifiedBadge": true
-    },
-    "description_changed": false,
-    "added_lines": [],
-    "keywords": [
-      "NEW",
-      "PET",
-      "PETS"
-    ],
-    "score": 0,
-    "confidence": "low",
-    "facts": [],
-    "description_facts": [
-      {
-        "text": "👀 Chihuahua found in Basic and Crystal Eggs!",
-        "kind": "pets",
-        "value": 8,
-        "specific": true,
-        "reason": "Назван питомец и способ его получения",
-        "is_new_line": false
-      },
-      {
-        "text": "🕵️Tux & Shepherd on the Stray Case 🕵️",
-        "kind": "event",
-        "value": 7,
-        "specific": true,
-        "reason": "Названо конкретное игровое событие",
-        "is_new_line": false
-      },
-      {
-        "text": "🍴 Find forks for the Mysterious Stranger!",
-        "kind": "quests",
-        "value": 7,
-        "specific": true,
-        "reason": "Описано конкретное задание",
-        "is_new_line": false
-      },
-      {
-        "text": "Be FIRST 🏆 To experience new updates by pressing 🔔NOTIFY.",
-        "kind": "update",
-        "value": 2,
-        "specific": false,
-        "reason": "Упоминание обновления без конкретики",
-        "is_new_line": false
-      }
-    ],
-    "priority": false,
-    "checked_at": "2026-08-21T13:27:09.753036+00:00"
+    "checked_at": "2026-08-22T03:00:51.983479+00:00"
   },
   {
     "game": "RIVALS",
@@ -249,14 +202,14 @@
       }
     ],
     "priority": false,
-    "checked_at": "2026-08-21T13:27:09.753492+00:00"
+    "checked_at": "2026-08-22T03:00:51.985528+00:00"
   },
   {
     "game": "Grow a Garden",
     "universe_id": 7436755782,
     "roblox_name": "[🧬] Grow a Garden 🌶️",
     "description": "🍅Welcome to Grow a Garden🍅\n\nAre you ready to grow your very own garden? Buy seeds from the shop when they restock, plant them, wait for them to grow, and collect the profits! Flex fruits and finds on friends, and have fun!\n\n[How To Plant]\n• Equip your seed you want to plant!\n• Click in your farm on the brown plots to plant!\n• Wait to see it start growing!\n• After its fully grown, it is time to harvest the goods!\n\nRemember, your garden literally grows while you are offline⭐",
-    "updated": "2026-08-18T20:17:48.154Z",
+    "updated": "2026-08-21T21:19:05.0777201Z",
     "created": "2025-03-25T22:32:09.437Z",
     "creator": {
       "id": 35789249,
@@ -273,14 +226,14 @@
     "facts": [],
     "description_facts": [],
     "priority": false,
-    "checked_at": "2026-08-21T13:27:09.753790+00:00"
+    "checked_at": "2026-08-22T03:00:51.986025+00:00"
   },
   {
     "game": "Dress To Impress",
     "universe_id": 5203828273,
     "roblox_name": "[🌴] Dress To Impress",
     "description": "Create stunning outfits 👗💖⭐, and strut the runway to show off your unique style. Collaborate, compete, and explore a world of glamour with friends!\n\n⭐ Are you ready to be the TOP MODEL?\n👗 NEW ITEMS! Check them out.\n🍿 Vote for your favorite outfits!\n💃 Use poses on the runway to show off your outfit!\n\nFind more about Dress To Impress by joining our community.\nhttps://www.roblox.com/communities/17264167/Dress-To-Impress-Group#!/about",
-    "updated": "2026-08-20T22:15:17.6552533Z",
+    "updated": "2026-08-21T23:29:46.3739952Z",
     "created": "2023-10-18T09:11:36.563Z",
     "creator": {
       "id": 17264167,
@@ -309,14 +262,14 @@
       }
     ],
     "priority": false,
-    "checked_at": "2026-08-21T13:27:09.754032+00:00"
+    "checked_at": "2026-08-22T03:00:51.986462+00:00"
   },
   {
     "game": "Pet Simulator 99",
     "universe_id": 3317771874,
     "roblox_name": "♾️ Pet Simulator 99! [PIÑATA MAZE] ",
     "description": "Create an army of the coolest pets! They will help you get RICH!\n\n✨ Currently 2,000+ pets to collect! 🐾\n\n🧡 Thanks for playing!",
-    "updated": "2026-08-19T18:44:07.383Z",
+    "updated": "2026-08-21T22:23:32.2012326Z",
     "created": "2022-02-05T13:30:02.357Z",
     "creator": {
       "id": 3959677,
@@ -335,14 +288,14 @@
     "facts": [],
     "description_facts": [],
     "priority": false,
-    "checked_at": "2026-08-21T13:27:09.754119+00:00"
+    "checked_at": "2026-08-22T03:00:51.986614+00:00"
   },
   {
     "game": "Blade Ball",
     "universe_id": 4777817887,
     "roblox_name": "Blade Ball",
     "description": "⚡  In this game of focus, timing, and strategy, your skill is tested as a deflectable homing ball hunts players with increasing speed. But there's more than what meets the eye.\n\n🔥  Gain new abilities and upgrade them to compliment your playstyle. Rise through the ranks by mastering your skill, and stand out with a variety of iconic weapon skins and finisher effects.\n\n🏆 Shoot for the leaderboard or play casually! The choice is yours.\n \nCONTROLS:\nBLOCK - F/R1/Tap Screen/Tap UI Button/Left Click\nABILITY - Q/ButtonX/Tap UI Button/Right Click\nSHIFTLOCK - Shift/Button-Y/Tap UI Button\nEMOTE - R/L1/Tap UI Button\n\ntags: minigame, battle game, pvp, multiplayer, abilities, dodgeball, sports, mobile, console, xbox, pc",
-    "updated": "2026-08-20T16:04:08.250246Z",
+    "updated": "2026-08-22T00:18:14.4125522Z",
     "created": "2023-06-17T00:05:26.103Z",
     "creator": {
       "id": 12836673,
@@ -361,6 +314,6 @@
     "facts": [],
     "description_facts": [],
     "priority": false,
-    "checked_at": "2026-08-21T13:27:09.754501+00:00"
+    "checked_at": "2026-08-22T03:00:51.987270+00:00"
   }
 ]

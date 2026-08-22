@@ -1,3 +1,11 @@
 {
-  "items": []
+  "items": [
+    {
+      "game": "Adopt Me!",
+      "emoji": "🐾",
+      "score": 7,
+      "text": "В Adopt Me! вышло обновление «Backpack Storage & Releaser Refresh!».",
+      "external_article_url": "https://www.playadopt.me/news/backpack-storage-and-releaser-refresh"
+    }
+  ]
 }
