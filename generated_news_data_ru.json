@@ -1,10 +1,17 @@
 {
   "items": [
     {
+      "game": "Brookhaven",
+      "emoji": "🏡",
+      "score": 10,
+      "text": "В игре появилась новая локация — тюрьма. Для смотрителя добавили пусковую установку со слезоточивым газом, сканирующую палочку, сканер безопасности, наручники, пистолет, прожектор и сигнализацию. В игру добавили тюремный автобус.",
+      "external_article_url": "https://www.brookhavenrp.com/posts/brookhaven-update-august-21-2026"
+    },
+    {
       "game": "Adopt Me!",
       "emoji": "🐾",
-      "score": 7,
-      "text": "В Adopt Me! вышло обновление «Backpack Storage & Releaser Refresh!».",
+      "score": 10,
+      "text": "В Releaser Eggs добавили 2 легендарных питомцев: Kiwi Kiwi и Strawberry Tortle. Появилось Backpack Storage: предметы можно хранить отдельно от рюкзака, переносить сразу по несколько штук и раскладывать по вкладкам.",
       "external_article_url": "https://www.playadopt.me/news/backpack-storage-and-releaser-refresh"
     }
   ]

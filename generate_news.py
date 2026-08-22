@@ -4,6 +4,11 @@ from datetime import datetime, timezone
 
 import requests
 
+from news_fact_utils import (
+    classify_content_line,
+    summarize_content_line_ru
+)
+
 
 GAMES_FILE = "games.json"
 SNAPSHOTS_FILE = "game_snapshots.json"
@@ -186,13 +191,23 @@ def make_fact(
     reason,
     specific=True
 ):
-    return {
+    fact = {
         "text": line,
         "kind": kind,
         "value": value,
         "specific": specific,
         "reason": reason
     }
+
+    summary_ru = summarize_content_line_ru(
+        line,
+        kind
+    )
+
+    if summary_ru:
+        fact["summary_ru"] = summary_ru
+
+    return fact
 
 
 def analyze_line(line):
@@ -207,6 +222,13 @@ def analyze_line(line):
     """
 
     upper = line.upper()
+
+    # Новые строки Roblox description могут быть содержательными и без
+    # служебных слов NEW/UPDATE. Категория определяется по самой игровой
+    # сущности: локации, транспорту, инструментам, питомцам и механикам.
+    semantic_kind = classify_content_line(
+        line
+    )
 
     # Конкретные строки из описаний часто не содержат слово EVENT.
     # Важна не метка UPDATE сама по себе, а названное изменение после неё.
@@ -238,6 +260,26 @@ def analyze_line(line):
             kind="event",
             value=7,
             reason="Названо конкретное игровое событие"
+        )
+
+    if semantic_kind:
+        semantic_values = {
+            "pets": 8,
+            "quests": 7,
+            "event": 7,
+            "vehicle": 8,
+            "locations": 8,
+            "mechanics_storage": 8,
+            "items": 7
+        }
+
+        return make_fact(
+            line=line,
+            kind=semantic_kind,
+            value=semantic_values[semantic_kind],
+            reason=(
+                "Строка называет конкретное игровое содержимое"
+            )
         )
 
     concrete_update = re.search(

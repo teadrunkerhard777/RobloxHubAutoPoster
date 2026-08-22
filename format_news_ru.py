@@ -495,26 +495,61 @@ def build_item(candidate):
         return None
 
     translated = []
+    detail_translated = []
+    title_translated = []
 
-    for fact in facts:
+    ordered_facts = sorted(
+        facts,
+        key=lambda fact: (
+            bool(fact.get("source_url"))
+            and fact.get("kind") != "official_article",
+            fact.get("value", 0),
+            fact.get("kind") != "official_article"
+        ),
+        reverse=True
+    )
+
+    external_details = [
+        fact
+        for fact in ordered_facts
+        if fact.get("source_url")
+        and fact.get("kind") != "official_article"
+    ]
+
+    # Если официальная статья уже дала минимум две конкретные детали,
+    # не дополняем их более общими пересказами тех же строк description.
+    if len(external_details) >= 2:
+        ordered_facts = external_details
+
+    for fact in ordered_facts:
         text = translate_fact(
             fact
         )
 
-        if (
-            text
-            and text not in translated
-        ):
-            translated.append(
-                text
-            )
+        if not text:
+            continue
+
+        target = (
+            title_translated
+            if fact.get("kind") == "official_article"
+            else detail_translated
+        )
+
+        if text not in target:
+            target.append(text)
+
+    # Заголовок полезен как запасной факт, но при наличии двух деталей
+    # не занимает место более конкретного изменения из тела статьи.
+    translated.extend(detail_translated)
+
+    if len(detail_translated) < 2:
+        translated.extend(title_translated)
 
     if not translated:
         return None
 
-    # Не раздуваем один блок:
-    # максимум две сильные конкретные фразы.
-    translated = translated[:2]
+    # Не раздуваем один блок: максимум три сильных конкретных факта.
+    translated = translated[:3]
 
     item = {
         "game": game,

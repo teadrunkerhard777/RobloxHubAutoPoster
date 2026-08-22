@@ -129,6 +129,87 @@ class ExternalNewsFactsTests(unittest.TestCase):
             []
         )
 
+    def test_extracts_backpack_storage_and_releaser_details(self):
+        article = {
+            "success": True,
+            "url": "https://www.playadopt.me/news/backpack-storage",
+            "title": "Backpack Storage & Releaser Refresh! - Adopt Me!",
+            "published_at": "2026-08-21T15:05:00.000Z",
+            "text": (
+                "New Releaser Pets!\n"
+                "There are two new Legendary pets to collect from "
+                "Basic & Crystal Eggs:\n"
+                "🥝 Kiwi Kiwi -\nLegendary\n"
+                "🍓 Strawberry Tortle -\nLegendary\n"
+                "Backpack Storage!\n"
+                "Storage gives you a new space to place your items "
+                "outside of your backpack.\n"
+                "You can move items between your Backpack and Storage.\n"
+                "You can select multiple items and move them all at once!\n"
+                "Storage Tabs let you organize your Storage."
+            )
+        }
+
+        facts = extract_external_facts(
+            "Adopt Me!",
+            article,
+            now=datetime(2026, 8, 23, 8, tzinfo=timezone.utc)
+        )
+        summaries = [fact["summary_ru"] for fact in facts]
+
+        self.assertTrue(any(
+            "Kiwi Kiwi" in summary
+            and "Strawberry Tortle" in summary
+            and "легендар" in summary
+            for summary in summaries
+        ))
+        self.assertTrue(any(
+            "Backpack Storage" in summary
+            and "несколько" in summary
+            for summary in summaries
+        ))
+        self.assertLessEqual(len(facts), 5)
+        self.assertGreater(facts[0]["value"], 6)
+
+    def test_rejects_pet_simulator_title_only_article(self):
+        article = {
+            "success": True,
+            "url": "https://www.biggames.io/post/pet-simulator-99-update-90",
+            "title": "Lucky Block Breakout!",
+            "published_at": "2026-08-22",
+            "text": "Lucky Block Breakout!"
+        }
+
+        self.assertEqual(
+            extract_external_facts(
+                "Pet Simulator 99",
+                article,
+                now=datetime(2026, 8, 23, 8, tzinfo=timezone.utc)
+            ),
+            []
+        )
+
+    def test_keeps_title_only_article_when_title_is_concrete(self):
+        article = {
+            "success": True,
+            "url": "https://example.com/new-prison-landmark",
+            "title": "New Prison Landmark",
+            "published_at": "2026-08-22",
+            "text": "New Prison Landmark"
+        }
+
+        facts = extract_external_facts(
+            "Brookhaven",
+            article,
+            now=datetime(2026, 8, 23, 8, tzinfo=timezone.utc)
+        )
+
+        self.assertTrue(facts)
+        self.assertTrue(any(
+            fact["kind"] == "official_article"
+            for fact in facts
+        ))
+
 
 if __name__ == "__main__":
     unittest.main()

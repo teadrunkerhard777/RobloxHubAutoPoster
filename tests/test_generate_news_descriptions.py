@@ -112,6 +112,40 @@ class GenerateNewsDescriptionTests(unittest.TestCase):
         self.assertTrue({"event", "quests", "pets"}.issubset(kinds))
         self.assertGreaterEqual(candidate["score"], 9)
 
+    def test_brookhaven_prison_lines_are_facts_without_update_word(self):
+        candidate = self.run_generator(
+            "Welcome to Brookhaven!",
+            (
+                "Welcome to Brookhaven!\n"
+                "Prison Landmark\n"
+                "Warden tear gas launcher and pistol\n"
+                "prisoner bus\n"
+                "new handcuffs\n"
+                "shank\n"
+                "scanner wand\n"
+                "prison props"
+            )
+        )
+
+        kinds = {fact["kind"] for fact in candidate["facts"]}
+        summaries = [fact.get("summary_ru", "") for fact in candidate["facts"]]
+
+        self.assertTrue({"locations", "items", "vehicle"}.issubset(kinds))
+        self.assertTrue(any("тюрьм" in summary for summary in summaries))
+        self.assertTrue(any("автобус" in summary for summary in summaries))
+        self.assertTrue(any(
+            "пусковую установку со слезоточивым газом" in summary
+            for summary in summaries
+        ))
+        self.assertTrue(all(summaries))
+        self.assertFalse(any(
+            summary.strip().lower() in {
+                "prison landmark", "prisoner bus", "shank",
+                "scanner wand", "prison props"
+            }
+            for summary in summaries
+        ))
+
 
 if __name__ == "__main__":
     unittest.main()

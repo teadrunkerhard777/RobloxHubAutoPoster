@@ -2,6 +2,12 @@ import re
 
 from datetime import datetime, timezone
 
+from news_fact_utils import (
+    classify_content_line,
+    clean_content_line,
+    summarize_content_line_ru
+)
+
 
 MAX_ARTICLE_AGE_DAYS = 3
 
@@ -140,6 +146,46 @@ def clean_article_title(
     return result.strip()
 
 
+def is_concrete_article_title(game, title):
+    cleaned = clean_article_title(
+        game,
+        title
+    )
+    without_game = re.sub(
+        re.escape(game),
+        " ",
+        cleaned,
+        flags=re.IGNORECASE
+    )
+    without_game = re.sub(
+        r"\b(?:19|20)\d{2}\b|\b\d{1,2}\b",
+        " ",
+        without_game
+    )
+    without_game = re.sub(
+        r"\s+",
+        " ",
+        without_game
+    ).strip(" -–—:!?")
+
+    if not classify_content_line(without_game):
+        return False
+
+    # Эти заголовки называют лишь тип публикации. Конкретным исключением
+    # считается заголовок с игровой сущностью: например Prison Landmark
+    # или Backpack Storage, но не просто New Pets / Items Update.
+    generic_title = re.fullmatch(
+        r"(?:new\s+|updated\s+)?"
+        r"(?:pets?|items?|tools?|vehicles?|events?|"
+        r"updates?|patch(?: notes?)?)"
+        r"(?:\s+updates?)?",
+        without_game,
+        flags=re.IGNORECASE
+    )
+
+    return generic_title is None
+
+
 def build_title_fact(
     game,
     article
@@ -155,6 +201,8 @@ def build_title_fact(
     if not title:
         return None
 
+    body_contains_specific_fact = False
+
     if game == "Blox Fruits":
         patch_match = re.search(
             r"(.+?)\s+Patch Notes\s*-\s*"
@@ -164,6 +212,7 @@ def build_title_fact(
         )
 
         if patch_match:
+            body_contains_specific_fact = True
             patch_name = patch_match.group(
                 1
             ).strip()
@@ -194,18 +243,49 @@ def build_title_fact(
             f"«{title}»."
         )
 
-    return make_external_fact(
+    fact = make_external_fact(
         article=article,
         text=title,
         summary_ru=summary,
         kind="official_article",
-        value=7
+        value=6
     )
 
+    fact["title_is_concrete"] = (
+        body_contains_specific_fact
+        or is_concrete_article_title(
+            game,
+            article.get("title", "")
+        )
+    )
 
-def extract_adopt_me_facts(
-    article
-):
+    return fact
+
+
+def extract_pet_entries(text):
+    entries = []
+    pattern = re.compile(
+        r"(?:[^A-Za-z0-9\n]*)([A-Z][A-Za-z0-9' ]{1,40}?)\s*"
+        r"(?:,|-)\s*\n?\s*"
+        r"(Legendary|Ultra Rare|Rare|Uncommon|Common)\b",
+        flags=re.IGNORECASE
+    )
+
+    for match in pattern.finditer(text):
+        name = match.group(1).strip()
+        rarity = match.group(2).title()
+
+        if name.lower().startswith(("hatch from", "collecting the")):
+            continue
+
+        entry = (name, rarity)
+        if entry not in entries:
+            entries.append(entry)
+
+    return entries
+
+
+def extract_adopt_me_facts(article):
     text = article.get(
         "text",
         ""
@@ -241,6 +321,93 @@ def extract_adopt_me_facts(
             )
         )
 
+    pet_entries = extract_pet_entries(
+        text
+    )
+
+    # Статья может перечислять несколько питомцев отдельными строками.
+    # Собираем их в один полезный факт, а не публикуем каждую сырую строку.
+    if pet_entries and not pet_match:
+        names = [name for name, _ in pet_entries]
+        all_legendary = all(
+            rarity.lower() == "legendary"
+            for _, rarity in pet_entries
+        )
+        rarity_ru = "легендарных " if all_legendary else ""
+        names_ru = (
+            names[0]
+            if len(names) == 1
+            else ", ".join(names[:-1]) + " и " + names[-1]
+        )
+        egg_context = (
+            "В Releaser Eggs"
+            if "RELEASER" in text.upper()
+            else "В игре"
+        )
+
+        facts.append(
+            make_external_fact(
+                article=article,
+                text="; ".join(
+                    f"{name} — {rarity}"
+                    for name, rarity in pet_entries
+                ),
+                summary_ru=(
+                    f"{egg_context} добавили {len(names)} "
+                    f"{rarity_ru}питомцев: {names_ru}."
+                ),
+                kind="pets",
+                value=10
+            )
+        )
+
+    storage_lines = [
+        clean_content_line(line)
+        for line in text.splitlines()
+        if (
+            "storage" in line.lower()
+            or "backpack" in line.lower()
+            or "multiple items" in line.lower()
+        )
+        and len(clean_content_line(line)) >= 12
+    ]
+
+    if storage_lines:
+        lower_storage = " ".join(storage_lines).lower()
+        features = []
+
+        if "outside" in lower_storage or "between your backpack" in lower_storage:
+            features.append(
+                "предметы можно хранить отдельно от рюкзака"
+            )
+        if "multiple items" in lower_storage or "all at once" in lower_storage:
+            features.append(
+                "переносить сразу по несколько штук"
+            )
+        if "tabs" in lower_storage:
+            features.append(
+                "раскладывать по вкладкам"
+            )
+
+        if features:
+            feature_text = (
+                features[0]
+                if len(features) == 1
+                else ", ".join(features[:-1]) + " и " + features[-1]
+            )
+            facts.append(
+                make_external_fact(
+                    article=article,
+                    text=" ".join(storage_lines[:6]),
+                    summary_ru=(
+                        "Появилось Backpack Storage: "
+                        f"{feature_text}."
+                    ),
+                    kind="mechanics_storage",
+                    value=10
+                )
+            )
+
     task_match = re.search(
         r"Bring the Mysterious Stranger\s+"
         r"(\d+) Bundles of Forks\s+"
@@ -264,6 +431,124 @@ def extract_adopt_me_facts(
                 ),
                 kind="quests",
                 value=8
+            )
+        )
+
+    return facts
+
+
+ARTICLE_NOISE = {
+    "DISCOVER", "NEWS", "MEDIA", "SUPPORT", "MERCH", "WATCH",
+    "PLAY", "BLOG", "UPDATES", "READ MORE", "VIEW ALL", "CONTACT",
+    "PRIVACY POLICY", "TERMS OF SERVICE", "PLAY NOW"
+}
+
+
+GENERIC_SUMMARIES = {
+    "В игре появилась новая локация.",
+    "В игру добавили новый транспорт.",
+    "В игре появились новые инструменты и оружие.",
+    "В игре появились новые предметы.",
+    "Добавили новый реквизит для ролевых сцен.",
+    "В игре появилась новая полезная механика.",
+    "В игре появились новые питомцы.",
+    "В игре появились новые задания.",
+    "Появились новые задания с наградами.",
+    "В игре началось новое событие."
+}
+
+
+def extract_generic_article_facts(article, excluded_kinds=None):
+    if excluded_kinds is None:
+        excluded_kinds = set()
+
+    grouped = {}
+
+    for raw_line in article.get("text", "").splitlines():
+        line = clean_content_line(raw_line)
+        upper = line.upper()
+
+        if upper in {
+            "LATEST UPDATES", "LATEST UPDATE", "LATEST NEWS",
+            "LATEST BLOGS",
+            "OUR TERMS OF SERVICE HAVE BEEN UPDATED."
+        }:
+            break
+
+        if (
+            not line
+            or upper in ARTICLE_NOISE
+            or len(line) < 5
+            or len(line) > 180
+        ):
+            continue
+
+        kind = classify_content_line(line)
+
+        if not kind or kind in excluded_kinds:
+            continue
+
+        line_summary = summarize_content_line_ru(
+            line,
+            kind
+        )
+
+        # Статья содержит меню и общие рекламные фразы. Для факта нужен
+        # маркер изменения либо короткая предметная строка из списка.
+        has_change_signal = bool(re.search(
+            r"\b(?:NEW|UPDATED|ADDED|INCLUDES?|APPEARED|NOW|CAN)\b",
+            upper
+        ))
+        list_like = (
+            line_summary not in GENERIC_SUMMARIES
+        )
+
+        if not has_change_signal and not list_like:
+            continue
+
+
+        if (
+            line_summary in GENERIC_SUMMARIES
+            and (
+                not has_change_signal
+                or len(line.split()) < 3
+            )
+        ):
+            continue
+
+        group_key = kind
+        if kind == "items" and "PROP" in upper:
+            group_key = "items_props"
+
+        grouped.setdefault(group_key, []).append(line)
+
+    values = {
+        "locations": 9,
+        "pets": 9,
+        "mechanics_storage": 7,
+        "vehicle": 8,
+        "items": 8,
+        "items_props": 8,
+        "quests": 8,
+        "event": 8
+    }
+    facts = []
+
+    for group_key, lines in grouped.items():
+        kind = "items" if group_key == "items_props" else group_key
+        evidence = " ".join(lines[:6])
+        summary_ru = summarize_content_line_ru(evidence, kind)
+
+        if not summary_ru:
+            continue
+
+        facts.append(
+            make_external_fact(
+                article=article,
+                text=evidence,
+                summary_ru=summary_ru,
+                kind=kind,
+                value=values[group_key]
             )
         )
 
@@ -294,15 +579,42 @@ def extract_external_facts(
         )
 
     if game == "Adopt Me!":
-        facts.extend(
-            extract_adopt_me_facts(
-                article
-            )
+        adopt_facts = extract_adopt_me_facts(
+            article
         )
+        facts.extend(adopt_facts)
+        excluded_kinds = {
+            fact["kind"]
+            for fact in adopt_facts
+        }
+    else:
+        excluded_kinds = set()
+
+    facts.extend(
+        extract_generic_article_facts(
+            article,
+            excluded_kinds=excluded_kinds
+        )
+    )
 
     facts.sort(
         key=lambda item: item["value"],
         reverse=True
     )
 
-    return facts
+    detail_facts = [
+        fact
+        for fact in facts
+        if fact.get("kind") != "official_article"
+    ]
+
+    if (
+        not detail_facts
+        and title_fact
+        and not title_fact.get("title_is_concrete")
+    ):
+        return []
+
+    # Одна статья даёт компактный набор: 2–5 самых полезных изменений.
+    # Заголовок остаётся допустимым запасным фактом, но детали выше него.
+    return facts[:5]
