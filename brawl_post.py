@@ -31,6 +31,34 @@ DEBUG = False
 
 
 # ---------------------------------------------------------
+# ОГРАНИЧЕНИЯ РУССКОГО NEWS PREVIEW
+# ---------------------------------------------------------
+
+# Берём не больше четырёх официальных текстовых блоков.
+NEWS_MAX_BLOCKS = 4
+
+# Общий объём выбранного текста ограничиваем,
+# чтобы терминальный preview оставался коротким.
+NEWS_MAX_CHARS = 700
+
+# Короткие подписи и элементы навигации обычно
+# не содержат самостоятельной новости.
+NEWS_MIN_BLOCK_LENGTH = 25
+
+# Эти префиксы относятся к навигации, социальным сетям
+# и техническим элементам сайта, а не к тексту статьи.
+NEWS_SERVICE_PREFIXES = (
+    "download our games from",
+    "follow us on",
+    "share",
+    "загрузите наши игры",
+    "поделиться",
+    "подписывайтесь на нас",
+    "скачайте наши игры",
+)
+
+
+# ---------------------------------------------------------
 # ВСПОМОГАТЕЛЬНЫЕ ФУНКЦИИ
 # ---------------------------------------------------------
 
@@ -138,6 +166,162 @@ def print_russian_article_status(article):
 
     else:
         print(Fore.YELLOW + "⚠ Русская версия пока не найдена")
+
+
+def select_news_content(article):
+    """
+    Выбирает короткий набор содержательных русских блоков.
+
+    Используем только официальный ru_clean_content.
+    Текст не переводим, не пересказываем и не исправляем:
+    функция лишь исключает служебные строки и применяет
+    безопасные ограничения количества и общей длины.
+    """
+
+    # Английский текст не используем как fallback.
+    # Без найденной русской версии preview не создаётся.
+    if not article.get("ru_found"):
+        return []
+
+    ru_content = article.get(
+        "ru_clean_content",
+        [],
+    )
+
+    if not ru_content:
+        return []
+
+    ru_title_value = article.get("ru_title") or ""
+    ru_title = " ".join(ru_title_value.split()).casefold()
+    selected_blocks = []
+    selected_chars = 0
+
+    for raw_block in ru_content:
+        if len(selected_blocks) >= NEWS_MAX_BLOCKS:
+            break
+
+        # Неожиданные значения в старом JSON пропускаем,
+        # чтобы одна повреждённая строка не ломала preview.
+        if not isinstance(raw_block, str):
+            continue
+
+        # Нормализуем только пробелы. Слова, числа, даты
+        # и пунктуацию официального текста не переписываем.
+        block = " ".join(raw_block.split())
+
+        if not block:
+            continue
+
+        normalized_block = block.casefold()
+
+        # Повтор русского заголовка не является
+        # самостоятельным содержательным абзацем.
+        if ru_title and normalized_block == ru_title:
+            continue
+
+        if len(block) < NEWS_MIN_BLOCK_LENGTH:
+            continue
+
+        # Очевидные элементы подвала и навигации
+        # отбрасываем независимо от их длины.
+        if normalized_block.startswith(NEWS_SERVICE_PREFIXES):
+            continue
+
+        # Повторный блок не добавляет новой информации.
+        if block in selected_blocks:
+            continue
+
+        # Между блоками в preview будет пустая строка.
+        # Учитываем эти два символа в общем лимите.
+        separator_length = 2 if selected_blocks else 0
+        candidate_length = separator_length + len(block)
+
+        if selected_chars + candidate_length > NEWS_MAX_CHARS:
+            continue
+
+        selected_blocks.append(block)
+        selected_chars += candidate_length
+
+    return selected_blocks
+
+
+def build_article_news_preview(article):
+    """
+    Формирует отдельный русский preview одной статьи.
+
+    HIGH отмечаем как основной материал, MEDIUM — как
+    запасной. LOW и статьи без полезного официального
+    русского текста автоматический блок не получают.
+    """
+
+    priority = article.get("priority")
+
+    if priority not in ("high", "medium"):
+        return None
+
+    if not article.get("ru_found"):
+        return None
+
+    ru_title = article.get("ru_title")
+
+    if not ru_title:
+        return None
+
+    selected_blocks = select_news_content(article)
+
+    if not selected_blocks:
+        return None
+
+    if priority == "high":
+        marker = "🔥 HIGH"
+    else:
+        marker = "🟡 MEDIUM"
+
+    # Склеиваем только выбранные фрагменты оригинального
+    # русского текста, не добавляя выводов от генератора.
+    news_text = "\n\n".join(selected_blocks)
+
+    return f"{marker}\n\n{ru_title}\n\n{news_text}\n\nИсточник: Supercell"
+
+
+def print_russian_news_previews(high_priority_articles, medium_priority_articles):
+    """
+    Показывает русские новостные блоки в терминале.
+
+    Это отдельный предпросмотр pipeline. Он не передаётся
+    в build_post() и не становится частью Telegram-поста.
+    """
+
+    print_section("RUSSIAN NEWS PREVIEW")
+
+    candidates = high_priority_articles + medium_priority_articles
+
+    for article in candidates:
+        # Даже если старый или повреждённый JSON случайно
+        # содержит LOW в списке, генератор его игнорирует.
+        if article.get("priority") not in ("high", "medium"):
+            continue
+
+        if not article.get("ru_found"):
+            print(Fore.YELLOW + "\n⚠ Пропущено: официальная русская версия не найдена")
+
+            continue
+
+        preview = build_article_news_preview(article)
+
+        if preview is None:
+            print(
+                Fore.YELLOW + "\n⚠ Пропущено: не удалось получить содержательный текст"
+            )
+
+            continue
+
+        if article["priority"] == "high":
+            color = Fore.GREEN
+        else:
+            color = Fore.YELLOW
+
+        print(color + "\n" + preview)
 
 
 # ---------------------------------------------------------
@@ -803,6 +987,13 @@ print(f"Новых нерфов: {len(new_nerfs)}")
 # Отдельно показываем подготовленные статьи-кандидаты.
 # Этот debug-блок не является частью Telegram-поста.
 print_news_candidates(
+    high_priority_articles,
+    medium_priority_articles,
+)
+
+# Русские тексты показываем отдельным preview-разделом.
+# В готовый Telegram-пост эти блоки пока не добавляются.
+print_russian_news_previews(
     high_priority_articles,
     medium_priority_articles,
 )

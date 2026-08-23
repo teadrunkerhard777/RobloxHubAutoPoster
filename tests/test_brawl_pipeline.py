@@ -122,6 +122,23 @@ russian_archive_namespace = load_members(
 
 fetch_russian_articles = russian_archive_namespace["fetch_russian_articles"]
 
+russian_preview_namespace = load_members(
+    "brawl_post.py",
+    {
+        "select_news_content",
+        "build_article_news_preview",
+    },
+    {
+        "NEWS_MAX_BLOCKS",
+        "NEWS_MAX_CHARS",
+        "NEWS_MIN_BLOCK_LENGTH",
+        "NEWS_SERVICE_PREFIXES",
+    },
+)
+
+select_news_content = russian_preview_namespace["select_news_content"]
+build_article_news_preview = russian_preview_namespace["build_article_news_preview"]
+
 
 class BrawlPipelineTests(unittest.TestCase):
     def test_collects_russian_articles_and_skips_pagination_and_duplicates(self):
@@ -334,6 +351,139 @@ class BrawlPipelineTests(unittest.TestCase):
         self.assertEqual(high_articles, [])
         self.assertEqual(medium_articles, [])
         self.assertNotIn("ru_found", low_article)
+
+    def test_high_article_with_russian_content_builds_preview(self):
+        official_text = "Событие начнётся 24 августа 2026 года и принесёт 10 наград."
+        article = {
+            "priority": "high",
+            "ru_found": True,
+            "ru_title": "Новое событие Brawl Stars",
+            "ru_clean_content": [official_text],
+        }
+
+        preview = build_article_news_preview(article)
+
+        self.assertIsNotNone(preview)
+        self.assertIn("🔥 HIGH", preview)
+        self.assertIn(article["ru_title"], preview)
+        self.assertIn(official_text, preview)
+        self.assertIn("Источник: Supercell", preview)
+
+    def test_medium_article_builds_backup_preview(self):
+        article = {
+            "priority": "medium",
+            "ru_found": True,
+            "ru_title": "Запасная новость Brawl Stars",
+            "ru_clean_content": [
+                "В официальной статье подробно описано новое игровое событие."
+            ],
+        }
+
+        preview = build_article_news_preview(article)
+
+        self.assertIsNotNone(preview)
+        self.assertIn("🟡 MEDIUM", preview)
+
+    def test_article_without_russian_version_does_not_build_preview(self):
+        article = {
+            "priority": "high",
+            "ru_found": False,
+            "ru_clean_content": [
+                "Этот текст не должен использоваться без найденной русской версии."
+            ],
+        }
+
+        self.assertIsNone(build_article_news_preview(article))
+
+    def test_empty_russian_content_does_not_build_preview(self):
+        article = {
+            "priority": "high",
+            "ru_found": True,
+            "ru_title": "Пустая статья",
+            "ru_clean_content": [],
+        }
+
+        self.assertIsNone(build_article_news_preview(article))
+
+    def test_short_service_and_title_blocks_are_removed(self):
+        useful_block = "Официальный содержательный абзац сохраняется без переписывания."
+        article = {
+            "priority": "high",
+            "ru_found": True,
+            "ru_title": "Заголовок русской статьи",
+            "ru_clean_content": [
+                "Заголовок русской статьи",
+                "Короткая строка",
+                "Поделиться этой новостью в социальных сетях",
+                useful_block,
+            ],
+        }
+
+        selected = select_news_content(article)
+
+        self.assertEqual(selected, [useful_block])
+
+    def test_news_content_respects_block_limit(self):
+        blocks = [
+            f"Содержательный официальный блок номер {index} с подробностями."
+            for index in range(1, 7)
+        ]
+        article = {
+            "priority": "high",
+            "ru_found": True,
+            "ru_title": "Новость",
+            "ru_clean_content": blocks,
+        }
+
+        selected = select_news_content(article)
+
+        self.assertEqual(
+            len(selected),
+            russian_preview_namespace["NEWS_MAX_BLOCKS"],
+        )
+        self.assertEqual(selected, blocks[:4])
+
+    def test_news_content_respects_total_character_limit(self):
+        blocks = [
+            "А" * 300,
+            "Б" * 300,
+            "В" * 300,
+        ]
+        article = {
+            "priority": "high",
+            "ru_found": True,
+            "ru_title": "Новость",
+            "ru_clean_content": blocks,
+        }
+
+        selected = select_news_content(article)
+        selected_length = len("\n\n".join(selected))
+
+        self.assertEqual(selected, blocks[:2])
+        self.assertLessEqual(
+            selected_length,
+            russian_preview_namespace["NEWS_MAX_CHARS"],
+        )
+
+    def test_old_json_without_russian_fields_does_not_build_preview(self):
+        old_article = {
+            "title": "Old article",
+            "priority": "high",
+        }
+
+        self.assertIsNone(build_article_news_preview(old_article))
+
+    def test_low_article_does_not_build_russian_preview(self):
+        low_article = {
+            "priority": "low",
+            "ru_found": True,
+            "ru_title": "LOW статья",
+            "ru_clean_content": [
+                "Даже содержательный русский текст LOW статьи игнорируется."
+            ],
+        }
+
+        self.assertIsNone(build_article_news_preview(low_article))
 
 
 if __name__ == "__main__":
