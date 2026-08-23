@@ -325,5 +325,54 @@
     "published_at": "2026-08-22T18:00:41.371414+05:00",
     "attempts": 1,
     "last_error": null
+  },
+  {
+    "id": "2026-08-23-10",
+    "publish_at": "2026-08-23T10:00:00+05:00",
+    "game": "разные игры",
+    "rubric": "Выпуск дня",
+    "source": "auto_verified",
+    "text": "🎮 ROBLOX HUB — СЕГОДНЯ\n\n🐾 Adopt Me!\n\nВ Releaser Eggs добавили 2 легендарных питомцев: Kiwi Kiwi и Strawberry Tortle. Появилось Backpack Storage: предметы можно хранить отдельно от рюкзака, переносить сразу по несколько штук и раскладывать по вкладкам.\n\n🏡 Brookhaven\n\nВ игре появилась новая локация — тюрьма. Для смотрителя добавили пусковую установку со слезоточивым газом, сканирующую палочку, сканер безопасности, наручники, пистолет, прожектор и сигнализацию. В игру добавили тюремный автобус.\n\n🎮 Roblox Hub",
+    "status": "pending",
+    "published_at": null,
+    "attempts": 0,
+    "last_error": null
+  },
+  {
+    "id": "2026-08-23-15",
+    "publish_at": "2026-08-23T15:00:00+05:00",
+    "game": "Pet Simulator 99 + Steal a Brainrot + Blox Fruits",
+    "rubric": "Полезно знать",
+    "source": "verified_db",
+    "text": "💡 ПОЛЕЗНО ЗНАТЬ\n\n🐶 Pet Simulator 99\nЕсли застрял на прогрессе, сначала проверь состав питомцев, а не пытайся просто дольше фармить тем же набором.\n\n🧠 Steal a Brainrot\nПри краже соперник становится уязвимее, поэтому защищать базу лучше активно, а не просто наблюдать.\n\n🍈 Blox Fruits\nНе пытайся прокачивать всё одновременно — цель вроде уровня, нового моря или конкретного предмета ускоряет прогресс.\n\n🎮 Roblox Hub",
+    "status": "pending",
+    "published_at": null,
+    "attempts": 0,
+    "last_error": null
+  },
+  {
+    "id": "2026-08-23-16",
+    "publish_at": "2026-08-23T16:00:00+05:00",
+    "game": "Roblox",
+    "rubric": "Картинка дня",
+    "source": "image_library",
+    "text": "",
+    "status": "pending",
+    "published_at": null,
+    "attempts": 0,
+    "last_error": null,
+    "image_path": "images/16-00/d6c5b60b-899f-457b-9586-007e452ada15.jpeg"
+  },
+  {
+    "id": "2026-08-23-18",
+    "publish_at": "2026-08-23T18:00:00+05:00",
+    "game": "Brookhaven",
+    "rubric": "Миф или правда",
+    "source": "verified_db",
+    "text": "🧠 МИФ ИЛИ ПРАВДА?\n\n🏡 Brookhaven\n\n🔥 В Brookhaven можно менять транспорт прямо во время игры.\n\nКак думаешь — правда или миф?\n\n✅ ПРАВДА!\n\nИгрок может выбирать и менять доступный транспорт прямо во время сессии.\n\n🎮 Roblox Hub",
+    "status": "pending",
+    "published_at": null,
+    "attempts": 0,
+    "last_error": null
   }
 ]

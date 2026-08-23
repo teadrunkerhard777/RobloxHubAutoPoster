@@ -1,5 +1,100 @@
 [
   {
+    "game": "Steal a Brainrot",
+    "universe_id": 7709344486,
+    "roblox_name": "[🐝] Steal a Brainrot",
+    "description": "🗣️ Welcome to Steal a Brainrot!\n\n👍 Like the game and join the group\n\nHow to Play:\n👽 Buy a Brainrot\n🥷 Steal Brainrots from other players\n💸 Generate money\n🐦‍🔥 Rebirth\n✋ Buy slaps and troll gear to troll other players!\n\n💻 Supports Desktop, Mobile and Tablet players\n\n🙏 Credit to Chris for letting us use the Nyan Cat!\n🙏 Credit to @WinnersTakesAll for the backpack system!",
+    "updated": "2026-08-22T19:54:43.4713408Z",
+    "created": "2025-05-16T00:49:12.563Z",
+    "creator": {
+      "id": 35815907,
+      "name": "BRAZILIAN SPYDER",
+      "type": "Group",
+      "isRNVAccount": false,
+      "hasVerifiedBadge": true
+    },
+    "description_changed": false,
+    "added_lines": [],
+    "keywords": [],
+    "score": 0,
+    "confidence": "low",
+    "facts": [],
+    "description_facts": [
+      {
+        "text": "🙏 Credit to @WinnersTakesAll for the backpack system!",
+        "kind": "mechanics_storage",
+        "value": 8,
+        "specific": true,
+        "reason": "Строка называет конкретное игровое содержимое",
+        "summary_ru": "Появилось отдельное хранилище для предметов из рюкзака.",
+        "is_new_line": false
+      }
+    ],
+    "priority": true,
+    "checked_at": "2026-08-23T03:00:54.549658+00:00"
+  },
+  {
+    "game": "99 Nights in the Forest",
+    "universe_id": 7326934954,
+    "roblox_name": "[🪶] 99 Nights in the Forest 🔦",
+    "description": "Build a camp with friends. \n\nSomething is watching you.\n\n99 Nights in the Forest",
+    "updated": "2026-08-22T18:12:19.4456506Z",
+    "created": "2025-03-04T04:46:49.73Z",
+    "creator": {
+      "id": 6042520,
+      "name": "Grandma's Favourite Games",
+      "type": "Group",
+      "isRNVAccount": false,
+      "hasVerifiedBadge": true
+    },
+    "description_changed": false,
+    "added_lines": [],
+    "keywords": [],
+    "score": 0,
+    "confidence": "low",
+    "facts": [],
+    "description_facts": [],
+    "priority": true,
+    "checked_at": "2026-08-23T03:00:54.550137+00:00"
+  },
+  {
+    "game": "Blox Fruits",
+    "universe_id": 994732206,
+    "roblox_name": "⚔️ Blox Fruits",
+    "description": "⚔️ PvP Balance out now! \nWelcome to Blox Fruits! Become a master swordsman or a powerful blox fruit user as you train to become the strongest player to ever live. You can choose to fight against tough enemies or have powerful boss battles while sailing across the ocean to find hidden secrets. \n\nCurrent level cap: 2800\nCurrent fruits in the game:\nRocket, Spin, Blade, Spring, Bomb, Smoke, Spike, Flame, Ice, Sand, Dark, Eagle, Diamond, Light, Rubber, Ghost, Magma, Quake, Buddha, Love, Creation, Spider, Sound, Phoenix, Portal, Lightning, Pain, Blizzard, Gravity, Mammoth, T-Rex, Dough, Shadow, Venom, Gas, Spirit, Tiger, Yeti, Kitsune, Control, and Dragon\n\nFAQ:\n-Fruits spawn in the map every hour / despawn after 20 mins\n-You can buy fruits from the Blox Fruits Dealer. He restocks random fruits every 4 hours\n-More info in the group description\n\nDo not exploit, our auto-detection will catch you and we do not appeal our bans.",
+    "updated": "2026-08-08T15:12:32.925Z",
+    "created": "2019-01-16T03:29:19.433Z",
+    "creator": {
+      "id": 4372130,
+      "name": "Gamer Robot Inc",
+      "type": "Group",
+      "isRNVAccount": false,
+      "hasVerifiedBadge": true
+    },
+    "description_changed": false,
+    "added_lines": [],
+    "keywords": [
+      "BOSS",
+      "MAP"
+    ],
+    "score": 0,
+    "confidence": "low",
+    "facts": [],
+    "description_facts": [
+      {
+        "text": "-Fruits spawn in the map every hour / despawn after 20 mins",
+        "kind": "locations",
+        "value": 8,
+        "specific": true,
+        "reason": "Строка называет конкретное игровое содержимое",
+        "summary_ru": "В игре появилась новая локация.",
+        "is_new_line": false
+      }
+    ],
+    "priority": false,
+    "checked_at": "2026-08-23T03:00:54.552912+00:00"
+  },
+  {
     "game": "Brookhaven",
     "universe_id": 1686885941,
     "roblox_name": "Brookhaven 🏡RP",
@@ -13,75 +108,43 @@
       "isRNVAccount": false,
       "hasVerifiedBadge": false
     },
-    "description_changed": true,
-    "added_lines": [
-      "🔐 Prison Landmark - New roleplay! Warden tear gas launcher and pistol, and prisoner bus.",
-      "👮‍♂️ Prison Tools - New handcuffs, shank, and scanner wand!",
-      "🚨 Prison Props - New alarm, spotlight, security scanner, yard props, and more!"
-    ],
+    "description_changed": false,
+    "added_lines": [],
     "keywords": [
       "NEW",
       "UPDATE",
       "VEHICLES"
     ],
-    "score": 10,
-    "confidence": "high",
-    "facts": [
-      {
-        "text": "🔐 Prison Landmark - New roleplay! Warden tear gas launcher and pistol, and prisoner bus.",
-        "kind": "locations",
-        "value": 10,
-        "specific": true,
-        "reason": "Строка называет конкретное игровое содержимое",
-        "summary_ru": "В игре появилась новая локация — тюрьма.",
-        "is_new_line": true
-      },
-      {
-        "text": "👮‍♂️ Prison Tools - New handcuffs, shank, and scanner wand!",
-        "kind": "items",
-        "value": 9,
-        "specific": true,
-        "reason": "Строка называет конкретное игровое содержимое",
-        "summary_ru": "В игру добавили сканирующую палочку, наручники и заточку.",
-        "is_new_line": true
-      },
-      {
-        "text": "🚨 Prison Props - New alarm, spotlight, security scanner, yard props, and more!",
-        "kind": "items",
-        "value": 9,
-        "specific": true,
-        "reason": "Строка называет конкретное игровое содержимое",
-        "summary_ru": "В игру добавили сканер безопасности, прожектор, сигнализацию, реквизит для тюремного двора и тюремный реквизит.",
-        "is_new_line": true
-      }
-    ],
+    "score": 0,
+    "confidence": "low",
+    "facts": [],
     "description_facts": [
       {
         "text": "🔐 Prison Landmark - New roleplay! Warden tear gas launcher and pistol, and prisoner bus.",
         "kind": "locations",
-        "value": 10,
+        "value": 8,
         "specific": true,
         "reason": "Строка называет конкретное игровое содержимое",
-        "summary_ru": "В игре появилась новая локация — тюрьма.",
-        "is_new_line": true
+        "summary_ru": "В игре появилась новая локация — тюрьма. Для ролевых сцен добавили пусковую установку со слезоточивым газом, пистолет и тюремный автобус.",
+        "is_new_line": false
       },
       {
         "text": "👮‍♂️ Prison Tools - New handcuffs, shank, and scanner wand!",
         "kind": "items",
-        "value": 9,
+        "value": 7,
         "specific": true,
         "reason": "Строка называет конкретное игровое содержимое",
         "summary_ru": "В игру добавили сканирующую палочку, наручники и заточку.",
-        "is_new_line": true
+        "is_new_line": false
       },
       {
         "text": "🚨 Prison Props - New alarm, spotlight, security scanner, yard props, and more!",
         "kind": "items",
-        "value": 9,
+        "value": 7,
         "specific": true,
         "reason": "Строка называет конкретное игровое содержимое",
         "summary_ru": "В игру добавили сканер безопасности, прожектор, сигнализацию, реквизит для тюремного двора и тюремный реквизит.",
-        "is_new_line": true
+        "is_new_line": false
       },
       {
         "text": "· Prop Saving",
@@ -130,7 +193,7 @@
       }
     ],
     "priority": false,
-    "checked_at": "2026-08-22T19:48:15.698832+00:00"
+    "checked_at": "2026-08-23T03:00:54.556092+00:00"
   },
   {
     "game": "Adopt Me!",
@@ -146,95 +209,17 @@
       "isRNVAccount": false,
       "hasVerifiedBadge": true
     },
-    "description_changed": true,
-    "added_lines": [
-      "🎒 Backpack Storage & Releaser Refresh! 🎒",
-      "🦴 Store unused items for smoother gameplay!",
-      "🧸 Sort pets and items, trade directly from tabs!",
-      "🍓 Kiwi Kiwi and Strawberry Tortle in Releaser Eggs!"
-    ],
+    "description_changed": false,
+    "added_lines": [],
     "keywords": [
       "ITEMS",
       "NEW",
       "PETS"
     ],
-    "score": 10,
-    "confidence": "high",
-    "facts": [
-      {
-        "text": "🎒 Backpack Storage & Releaser Refresh! 🎒",
-        "kind": "mechanics_storage",
-        "value": 10,
-        "specific": true,
-        "reason": "Строка называет конкретное игровое содержимое",
-        "summary_ru": "Появилось отдельное хранилище для предметов из рюкзака.",
-        "is_new_line": true
-      },
-      {
-        "text": "🧸 Sort pets and items, trade directly from tabs!",
-        "kind": "mechanics_storage",
-        "value": 10,
-        "specific": true,
-        "reason": "Строка называет конкретное игровое содержимое",
-        "summary_ru": "В игре появилась новая полезная механика.",
-        "is_new_line": true
-      },
-      {
-        "text": "🍓 Kiwi Kiwi and Strawberry Tortle in Releaser Eggs!",
-        "kind": "pets",
-        "value": 10,
-        "specific": true,
-        "reason": "Строка называет конкретное игровое содержимое",
-        "summary_ru": "В игре появились новые питомцы.",
-        "is_new_line": true
-      },
-      {
-        "text": "🦴 Store unused items for smoother gameplay!",
-        "kind": "items",
-        "value": 9,
-        "specific": true,
-        "reason": "Строка называет конкретное игровое содержимое",
-        "summary_ru": "В игре появились новые предметы.",
-        "is_new_line": true
-      }
-    ],
+    "score": 0,
+    "confidence": "low",
+    "facts": [],
     "description_facts": [
-      {
-        "text": "🎒 Backpack Storage & Releaser Refresh! 🎒",
-        "kind": "mechanics_storage",
-        "value": 10,
-        "specific": true,
-        "reason": "Строка называет конкретное игровое содержимое",
-        "summary_ru": "Появилось отдельное хранилище для предметов из рюкзака.",
-        "is_new_line": true
-      },
-      {
-        "text": "🧸 Sort pets and items, trade directly from tabs!",
-        "kind": "mechanics_storage",
-        "value": 10,
-        "specific": true,
-        "reason": "Строка называет конкретное игровое содержимое",
-        "summary_ru": "В игре появилась новая полезная механика.",
-        "is_new_line": true
-      },
-      {
-        "text": "🍓 Kiwi Kiwi and Strawberry Tortle in Releaser Eggs!",
-        "kind": "pets",
-        "value": 10,
-        "specific": true,
-        "reason": "Строка называет конкретное игровое содержимое",
-        "summary_ru": "В игре появились новые питомцы.",
-        "is_new_line": true
-      },
-      {
-        "text": "🦴 Store unused items for smoother gameplay!",
-        "kind": "items",
-        "value": 9,
-        "specific": true,
-        "reason": "Строка называет конкретное игровое содержимое",
-        "summary_ru": "В игре появились новые предметы.",
-        "is_new_line": true
-      },
       {
         "text": "Adopt and raise 🐶🦄👶, trade and collect legendary pets, build your dream home, and roleplay with friends!",
         "kind": "pets",
@@ -242,6 +227,42 @@
         "specific": true,
         "reason": "Строка называет конкретное игровое содержимое",
         "summary_ru": "В игре появились новые питомцы.",
+        "is_new_line": false
+      },
+      {
+        "text": "🎒 Backpack Storage & Releaser Refresh! 🎒",
+        "kind": "mechanics_storage",
+        "value": 8,
+        "specific": true,
+        "reason": "Строка называет конкретное игровое содержимое",
+        "summary_ru": "Появилось отдельное хранилище для предметов из рюкзака.",
+        "is_new_line": false
+      },
+      {
+        "text": "🧸 Sort pets and items, trade directly from tabs!",
+        "kind": "mechanics_storage",
+        "value": 8,
+        "specific": true,
+        "reason": "Строка называет конкретное игровое содержимое",
+        "summary_ru": "В игре появилась новая полезная механика.",
+        "is_new_line": false
+      },
+      {
+        "text": "🍓 Kiwi Kiwi and Strawberry Tortle in Releaser Eggs!",
+        "kind": "pets",
+        "value": 8,
+        "specific": true,
+        "reason": "Строка называет конкретное игровое содержимое",
+        "summary_ru": "В игре появились новые питомцы.",
+        "is_new_line": false
+      },
+      {
+        "text": "🦴 Store unused items for smoother gameplay!",
+        "kind": "items",
+        "value": 7,
+        "specific": true,
+        "reason": "Строка называет конкретное игровое содержимое",
+        "summary_ru": "В игре появились новые предметы.",
         "is_new_line": false
       },
       {
@@ -255,102 +276,7 @@
       }
     ],
     "priority": false,
-    "checked_at": "2026-08-22T19:48:15.700082+00:00"
-  },
-  {
-    "game": "Steal a Brainrot",
-    "universe_id": 7709344486,
-    "roblox_name": "Steal a Brainrot",
-    "description": "🗣️ Welcome to Steal a Brainrot!\n\n👍 Like the game and join the group\n\nHow to Play:\n👽 Buy a Brainrot\n🥷 Steal Brainrots from other players\n💸 Generate money\n🐦‍🔥 Rebirth\n✋ Buy slaps and troll gear to troll other players!\n\n💻 Supports Desktop, Mobile and Tablet players\n\n🙏 Credit to Chris for letting us use the Nyan Cat!\n🙏 Credit to @WinnersTakesAll for the backpack system!",
-    "updated": "2026-08-22T19:36:23.944668Z",
-    "created": "2025-05-16T00:49:12.563Z",
-    "creator": {
-      "id": 35815907,
-      "name": "BRAZILIAN SPYDER",
-      "type": "Group",
-      "isRNVAccount": false,
-      "hasVerifiedBadge": true
-    },
-    "description_changed": false,
-    "added_lines": [],
-    "keywords": [],
-    "score": 0,
-    "confidence": "low",
-    "facts": [],
-    "description_facts": [
-      {
-        "text": "🙏 Credit to @WinnersTakesAll for the backpack system!",
-        "kind": "mechanics_storage",
-        "value": 8,
-        "specific": true,
-        "reason": "Строка называет конкретное игровое содержимое",
-        "summary_ru": "Появилось отдельное хранилище для предметов из рюкзака.",
-        "is_new_line": false
-      }
-    ],
-    "priority": true,
-    "checked_at": "2026-08-22T19:48:15.695044+00:00"
-  },
-  {
-    "game": "99 Nights in the Forest",
-    "universe_id": 7326934954,
-    "roblox_name": "[🪶] 99 Nights in the Forest 🔦",
-    "description": "Build a camp with friends. \n\nSomething is watching you.\n\n99 Nights in the Forest",
-    "updated": "2026-08-22T18:12:19.4456506Z",
-    "created": "2025-03-04T04:46:49.73Z",
-    "creator": {
-      "id": 6042520,
-      "name": "Grandma's Favourite Games",
-      "type": "Group",
-      "isRNVAccount": false,
-      "hasVerifiedBadge": true
-    },
-    "description_changed": false,
-    "added_lines": [],
-    "keywords": [],
-    "score": 0,
-    "confidence": "low",
-    "facts": [],
-    "description_facts": [],
-    "priority": true,
-    "checked_at": "2026-08-22T19:48:15.695280+00:00"
-  },
-  {
-    "game": "Blox Fruits",
-    "universe_id": 994732206,
-    "roblox_name": "⚔️ Blox Fruits",
-    "description": "⚔️ PvP Balance out now! \nWelcome to Blox Fruits! Become a master swordsman or a powerful blox fruit user as you train to become the strongest player to ever live. You can choose to fight against tough enemies or have powerful boss battles while sailing across the ocean to find hidden secrets. \n\nCurrent level cap: 2800\nCurrent fruits in the game:\nRocket, Spin, Blade, Spring, Bomb, Smoke, Spike, Flame, Ice, Sand, Dark, Eagle, Diamond, Light, Rubber, Ghost, Magma, Quake, Buddha, Love, Creation, Spider, Sound, Phoenix, Portal, Lightning, Pain, Blizzard, Gravity, Mammoth, T-Rex, Dough, Shadow, Venom, Gas, Spirit, Tiger, Yeti, Kitsune, Control, and Dragon\n\nFAQ:\n-Fruits spawn in the map every hour / despawn after 20 mins\n-You can buy fruits from the Blox Fruits Dealer. He restocks random fruits every 4 hours\n-More info in the group description\n\nDo not exploit, our auto-detection will catch you and we do not appeal our bans.",
-    "updated": "2026-08-08T15:12:32.925Z",
-    "created": "2019-01-16T03:29:19.433Z",
-    "creator": {
-      "id": 4372130,
-      "name": "Gamer Robot Inc",
-      "type": "Group",
-      "isRNVAccount": false,
-      "hasVerifiedBadge": true
-    },
-    "description_changed": false,
-    "added_lines": [],
-    "keywords": [
-      "BOSS",
-      "MAP"
-    ],
-    "score": 0,
-    "confidence": "low",
-    "facts": [],
-    "description_facts": [
-      {
-        "text": "-Fruits spawn in the map every hour / despawn after 20 mins",
-        "kind": "locations",
-        "value": 8,
-        "specific": true,
-        "reason": "Строка называет конкретное игровое содержимое",
-        "summary_ru": "В игре появилась новая локация.",
-        "is_new_line": false
-      }
-    ],
-    "priority": false,
-    "checked_at": "2026-08-22T19:48:15.697090+00:00"
+    "checked_at": "2026-08-23T03:00:54.557842+00:00"
   },
   {
     "game": "RIVALS",
@@ -417,14 +343,14 @@
       }
     ],
     "priority": false,
-    "checked_at": "2026-08-22T19:48:15.701281+00:00"
+    "checked_at": "2026-08-23T03:00:54.559969+00:00"
   },
   {
     "game": "Grow a Garden",
     "universe_id": 7436755782,
     "roblox_name": "[📜] Grow a Garden 🌶️",
     "description": "🍅Welcome to Grow a Garden🍅\n\nAre you ready to grow your very own garden? Buy seeds from the shop when they restock, plant them, wait for them to grow, and collect the profits! Flex fruits and finds on friends, and have fun!\n\n[How To Plant]\n• Equip your seed you want to plant!\n• Click in your farm on the brown plots to plant!\n• Wait to see it start growing!\n• After its fully grown, it is time to harvest the goods!\n\nRemember, your garden literally grows while you are offline⭐",
-    "updated": "2026-08-22T18:49:53.3527627Z",
+    "updated": "2026-08-22T20:40:45.6013496Z",
     "created": "2025-03-25T22:32:09.437Z",
     "creator": {
       "id": 35789249,
@@ -441,14 +367,14 @@
     "facts": [],
     "description_facts": [],
     "priority": false,
-    "checked_at": "2026-08-22T19:48:15.702211+00:00"
+    "checked_at": "2026-08-23T03:00:54.561649+00:00"
   },
   {
     "game": "Dress To Impress",
     "universe_id": 5203828273,
     "roblox_name": "[🌴] Dress To Impress",
     "description": "Create stunning outfits 👗💖⭐, and strut the runway to show off your unique style. Collaborate, compete, and explore a world of glamour with friends!\n\n⭐ Are you ready to be the TOP MODEL?\n👗 NEW ITEMS! Check them out.\n🍿 Vote for your favorite outfits!\n💃 Use poses on the runway to show off your outfit!\n\nFind more about Dress To Impress by joining our community.\nhttps://www.roblox.com/communities/17264167/Dress-To-Impress-Group#!/about",
-    "updated": "2026-08-22T17:32:21.9892054Z",
+    "updated": "2026-08-22T21:06:44.9223506Z",
     "created": "2023-10-18T09:11:36.563Z",
     "creator": {
       "id": 17264167,
@@ -505,14 +431,14 @@
       }
     ],
     "priority": false,
-    "checked_at": "2026-08-22T19:48:15.702921+00:00"
+    "checked_at": "2026-08-23T03:00:54.562974+00:00"
   },
   {
     "game": "Pet Simulator 99",
     "universe_id": 3317771874,
     "roblox_name": "🍀 [LUCKY BLOCK] Pet Simulator 99! 🧱",
     "description": "Create an army of the coolest pets! They will help you get RICH!\n\n✨ Currently 2,000+ pets to collect! 🐾\n\n🧡 Thanks for playing!",
-    "updated": "2026-08-22T17:22:47.3822231Z",
+    "updated": "2026-08-22T20:47:36.4568522Z",
     "created": "2022-02-05T13:30:02.357Z",
     "creator": {
       "id": 3959677,
@@ -550,7 +476,7 @@
       }
     ],
     "priority": false,
-    "checked_at": "2026-08-22T19:48:15.703116+00:00"
+    "checked_at": "2026-08-23T03:00:54.563379+00:00"
   },
   {
     "game": "Blade Ball",
@@ -586,6 +512,6 @@
       }
     ],
     "priority": false,
-    "checked_at": "2026-08-22T19:48:15.704526+00:00"
+    "checked_at": "2026-08-23T03:00:54.565457+00:00"
   }
 ]
