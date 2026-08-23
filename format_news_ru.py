@@ -3,6 +3,11 @@ import re
 
 from datetime import datetime, timedelta, timezone
 
+from news_post_formatting import (
+    format_fact_paragraph,
+    join_fact_paragraphs
+)
+
 
 MIN_SCORE = 5
 MAX_NEWS_ITEMS = 3
@@ -529,6 +534,11 @@ def build_item(candidate):
         if not text:
             continue
 
+        text = format_fact_paragraph(
+            fact,
+            text
+        )
+
         target = (
             title_translated
             if fact.get("kind") == "official_article"
@@ -561,7 +571,7 @@ def build_item(candidate):
             "score",
             0
         ),
-        "text": " ".join(
+        "text": join_fact_paragraphs(
             translated
         )
     }
