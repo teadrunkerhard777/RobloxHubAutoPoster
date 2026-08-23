@@ -1,6 +1,7 @@
 import json
 import os
 import re
+from datetime import date
 from difflib import SequenceMatcher
 
 import requests
@@ -36,6 +37,63 @@ RU_TITLE_MATCH_THRESHOLD = 0.55
 # Если два кандидата получили почти одинаковый score,
 # безопаснее не выбирать ни один из них автоматически.
 RU_TITLE_MATCH_MARGIN = 0.05
+
+# Подробную диагностику сопоставления можно включить
+# отдельно, не делая обычный запуск монитора шумным.
+DEBUG_RU_MATCHING = False
+
+# Английские и русские названия месяцев приводим
+# к одному номеру без сторонних библиотек и API.
+ARTICLE_MONTHS = {
+    "jan": 1,
+    "january": 1,
+    "янв": 1,
+    "января": 1,
+    "feb": 2,
+    "february": 2,
+    "фев": 2,
+    "февраля": 2,
+    "mar": 3,
+    "march": 3,
+    "мар": 3,
+    "марта": 3,
+    "apr": 4,
+    "april": 4,
+    "апр": 4,
+    "апреля": 4,
+    "may": 5,
+    "мая": 5,
+    "jun": 6,
+    "june": 6,
+    "июн": 6,
+    "июня": 6,
+    "jul": 7,
+    "july": 7,
+    "июл": 7,
+    "июля": 7,
+    "aug": 8,
+    "august": 8,
+    "авг": 8,
+    "августа": 8,
+    "sep": 9,
+    "sept": 9,
+    "september": 9,
+    "сен": 9,
+    "сент": 9,
+    "сентября": 9,
+    "oct": 10,
+    "october": 10,
+    "окт": 10,
+    "октября": 10,
+    "nov": 11,
+    "november": 11,
+    "ноя": 11,
+    "ноября": 11,
+    "dec": 12,
+    "december": 12,
+    "дек": 12,
+    "декабря": 12,
+}
 
 # Здесь хранится полное состояние монитора.
 STATE_FILE = "data/brawl_monitor_state.json"
@@ -420,6 +478,103 @@ def clean_article_content(content, article_title):
     return cleaned
 
 
+def normalize_article_date(date_text):
+    """
+    Приводит английскую или русскую дату статьи
+    к безопасному формату YYYY-MM-DD.
+
+    Поддерживаем цифровой ISO-формат, английский порядок
+    month-day-year и порядок day-month-year, используемый
+    как английскими, так и русскими страницами архива.
+
+    Если набор токенов, месяц или календарная дата
+    не распознаны надёжно, ничего не угадываем.
+    """
+
+    if not isinstance(date_text, str):
+        return None
+
+    normalized_text = date_text.strip().casefold()
+
+    if not normalized_text:
+        return None
+
+    # Уже нормализованную дату проверяем через date,
+    # чтобы исключить невозможные значения календаря.
+    if re.fullmatch(r"\d{4}-\d{2}-\d{2}", normalized_text):
+        try:
+            return date.fromisoformat(normalized_text).isoformat()
+        except ValueError:
+            return None
+
+    # Запятые, точки и русское сокращение года
+    # являются оформлением и не влияют на саму дату.
+    normalized_text = re.sub(
+        r"[.,]",
+        " ",
+        normalized_text,
+    )
+    tokens = normalized_text.split()
+    tokens = [token for token in tokens if token not in ("г", "год", "года")]
+
+    if len(tokens) != 3:
+        return None
+
+    # Aug 3 2026 и August 3 2026.
+    if tokens[0] in ARTICLE_MONTHS:
+        month_token, day_token, year_token = tokens
+
+    # 3 Aug 2026 и 3 августа 2026.
+    elif tokens[1] in ARTICLE_MONTHS:
+        day_token, month_token, year_token = tokens
+
+    else:
+        return None
+
+    if not day_token.isdigit() or not year_token.isdigit():
+        return None
+
+    day_value = int(day_token)
+    month_value = ARTICLE_MONTHS[month_token]
+    year_value = int(year_token)
+
+    try:
+        return date(
+            year_value,
+            month_value,
+            day_value,
+        ).isoformat()
+    except ValueError:
+        return None
+
+
+def extract_archive_article_date(link):
+    """
+    Извлекает дату из карточки статьи архива Supercell.
+
+    Заголовок и дата находятся внутри одного контейнера
+    archived-article. Если структура страницы изменилась
+    или дата отсутствует, возвращаем None без догадок.
+    """
+
+    article_container = link.find_parent(attrs={"data-test-class": "archived-article"})
+
+    if article_container is None:
+        return None
+
+    date_element = article_container.find(attrs={"data-test-id": "publish-date-text"})
+
+    if date_element is None:
+        return None
+
+    date_text = date_element.get_text(
+        " ",
+        strip=True,
+    )
+
+    return normalize_article_date(date_text)
+
+
 def fetch_russian_articles():
     """
     Загружает официальный русский архив Brawl Stars
@@ -489,6 +644,10 @@ def fetch_russian_articles():
                 "title": title,
                 "url": full_url,
                 "category": get_article_category(href),
+                "date": extract_archive_article_date(link),
+                # Индекс отражает порядок только среди
+                # уникальных статей текущей страницы архива.
+                "archive_index": len(russian_articles),
             }
         )
 
@@ -505,6 +664,9 @@ def normalize_article_title(title):
     чтобы не создавать слишком агрессивные совпадения.
     """
 
+    if not isinstance(title, str):
+        return ""
+
     normalized_title = title.lower()
 
     # Заменяем пунктуацию пробелами, но сохраняем буквы
@@ -520,26 +682,20 @@ def normalize_article_title(title):
     return " ".join(normalized_title.split())
 
 
-def find_russian_article(article, russian_articles):
+def find_article_by_title_similarity(article, candidates):
     """
-    Ищет безопасное соответствие английской статьи
-    среди материалов официального русского архива.
+    Выбирает кандидата по сходству заголовков.
 
-    Сначала ограничиваем кандидатов той же категорией,
-    затем сравниваем нормализованные заголовки.
-    Если лучший результат ниже порога или почти равен
-    второму кандидату, соответствие считаем ненадёжным.
+    Этот способ используется только как дополнительный
+    сигнал или fallback, когда надёжной даты нет.
+    Порог и margin защищают от слабых и неоднозначных
+    совпадений между разными языками.
     """
 
-    normalized_title = normalize_article_title(article["title"])
-    candidates = []
+    normalized_title = normalize_article_title(article.get("title", ""))
+    scored_candidates = []
 
-    for russian_article in russian_articles:
-        # Статьи разных разделов не могут считаться
-        # надёжными версиями одного материала.
-        if russian_article["category"] != article["category"]:
-            continue
-
+    for russian_article in candidates:
         normalized_russian_title = normalize_article_title(russian_article["title"])
 
         if not normalized_title or not normalized_russian_title:
@@ -551,36 +707,164 @@ def find_russian_article(article, russian_articles):
             normalized_russian_title,
         ).ratio()
 
-        candidates.append(
+        scored_candidates.append(
             (
                 similarity,
                 russian_article,
             )
         )
 
-    if not candidates:
+    if not scored_candidates:
         return None
 
     # Сначала рассматриваем наиболее похожий заголовок.
-    candidates.sort(
+    scored_candidates.sort(
         key=lambda item: item[0],
         reverse=True,
     )
 
-    best_similarity, best_article = candidates[0]
+    best_similarity, best_article = scored_candidates[0]
 
     if best_similarity < RU_TITLE_MATCH_THRESHOLD:
         return None
 
     # Два почти одинаковых результата создают риск
     # выбора неправильной русской статьи.
-    if len(candidates) > 1:
-        second_similarity = candidates[1][0]
+    if len(scored_candidates) > 1:
+        second_similarity = scored_candidates[1][0]
 
         if best_similarity - second_similarity < RU_TITLE_MATCH_MARGIN:
             return None
 
     return best_article
+
+
+def print_russian_match_debug(article, russian_article, method=None):
+    """
+    Показывает краткую диагностику RU-сопоставления.
+
+    Вывод включается только отдельным флагом, поэтому
+    обычный запуск монитора не перегружается деталями.
+    Старые статьи без date обрабатываются через get().
+    """
+
+    if not DEBUG_RU_MATCHING:
+        return
+
+    print(Fore.CYAN + f"\nEN: {article.get('title')}")
+    print(Fore.CYAN + f"EN date: {article.get('date')}")
+
+    if russian_article is None:
+        print(Fore.YELLOW + "⚠ Русская версия не найдена")
+        return
+
+    print(Fore.CYAN + "\nRU candidate:")
+    print(Fore.CYAN + russian_article["title"])
+    print(Fore.CYAN + f"RU date: {russian_article.get('date')}")
+    print(Fore.GREEN + f"🇷🇺 Совпадение найдено по {method}")
+
+
+def find_russian_article(article, russian_articles):
+    """
+    Ищет безопасное соответствие английской статьи
+    среди материалов официального русского архива.
+
+    Категория является обязательным первым фильтром.
+    Одинаковая нормализованная дата считается главным
+    межъязыковым сигналом. Заголовок и позиция в архиве
+    используются только для fallback или разрешения tie.
+    """
+
+    article_category = article.get("category")
+    category_candidates = [
+        russian_article
+        for russian_article in russian_articles
+        if russian_article.get("category") == article_category
+    ]
+
+    if not category_candidates:
+        print_russian_match_debug(article, None)
+        return None
+
+    article_date = normalize_article_date(article.get("date"))
+
+    if article_date:
+        same_date_candidates = [
+            russian_article
+            for russian_article in category_candidates
+            if normalize_article_date(russian_article.get("date")) == article_date
+        ]
+
+        # Единственная статья той же категории и даты
+        # считается надёжным межъязыковым соответствием.
+        if len(same_date_candidates) == 1:
+            match = same_date_candidates[0]
+            print_russian_match_debug(article, match, "category + date")
+            return match
+
+        if len(same_date_candidates) > 1:
+            # Сначала пробуем консервативный title similarity.
+            title_match = find_article_by_title_similarity(
+                article,
+                same_date_candidates,
+            )
+
+            if title_match is not None:
+                print_russian_match_debug(
+                    article,
+                    title_match,
+                    "category + date + title similarity",
+                )
+                return title_match
+
+            # Одинаковая позиция помогает только после того,
+            # как category и date уже надёжно совпали.
+            article_index = article.get("archive_index")
+
+            if article_index is not None:
+                index_candidates = [
+                    russian_article
+                    for russian_article in same_date_candidates
+                    if russian_article.get("archive_index") == article_index
+                ]
+
+                if len(index_candidates) == 1:
+                    match = index_candidates[0]
+                    print_russian_match_debug(
+                        article,
+                        match,
+                        "category + date + archive index",
+                    )
+                    return match
+
+            print_russian_match_debug(article, None)
+            return None
+
+        # Известные несовпадающие даты являются сильным
+        # отрицательным сигналом. В fallback оставляем только
+        # кандидатов, у которых дату определить не удалось.
+        fallback_candidates = [
+            russian_article
+            for russian_article in category_candidates
+            if normalize_article_date(russian_article.get("date")) is None
+        ]
+
+    else:
+        # Старые структуры без date продолжают работать
+        # через прежний консервативный title similarity.
+        fallback_candidates = category_candidates
+
+    title_match = find_article_by_title_similarity(
+        article,
+        fallback_candidates,
+    )
+
+    if title_match is not None:
+        print_russian_match_debug(article, title_match, "title similarity")
+        return title_match
+
+    print_russian_match_debug(article, None)
+    return None
 
 
 def enrich_articles_with_russian_versions(articles, russian_articles):
@@ -971,6 +1255,10 @@ for link in links:
         "title": title,
         "url": full_url,
         "category": category,
+        "date": extract_archive_article_date(link),
+        # Позиция считается только среди уникальных
+        # статей текущей страницы английского архива.
+        "archive_index": len(articles),
     }
 
     articles.append(article)

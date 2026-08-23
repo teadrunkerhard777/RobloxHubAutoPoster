@@ -2,6 +2,7 @@ import ast
 import re
 import unittest
 from contextlib import redirect_stdout
+from datetime import date
 from difflib import SequenceMatcher
 from io import StringIO
 from pathlib import Path
@@ -45,6 +46,7 @@ def load_members(file_name, function_names, constant_names=()):
     # Передаём их явно, не выполняя все импорты рабочего скрипта.
     namespace = {
         "Fore": Fore,
+        "date": date,
         "re": re,
         "SequenceMatcher": SequenceMatcher,
         "Style": Style,
@@ -93,17 +95,23 @@ print_russian_article_status = load_function(
 russian_matching_namespace = load_members(
     "brawl_monitor.py",
     {
+        "normalize_article_date",
         "normalize_article_title",
+        "find_article_by_title_similarity",
+        "print_russian_match_debug",
         "find_russian_article",
         "enrich_articles_with_russian_versions",
     },
     {
+        "ARTICLE_MONTHS",
+        "DEBUG_RU_MATCHING",
         "RU_TITLE_MATCH_THRESHOLD",
         "RU_TITLE_MATCH_MARGIN",
     },
 )
 
 find_russian_article = russian_matching_namespace["find_russian_article"]
+normalize_article_date = russian_matching_namespace["normalize_article_date"]
 enrich_articles_with_russian_versions = russian_matching_namespace[
     "enrich_articles_with_russian_versions"
 ]
@@ -112,9 +120,12 @@ russian_archive_namespace = load_members(
     "brawl_monitor.py",
     {
         "get_article_category",
+        "normalize_article_date",
+        "extract_archive_article_date",
         "fetch_russian_articles",
     },
     {
+        "ARTICLE_MONTHS",
         "BASE_URL",
         "RU_BLOG_URL",
     },
@@ -144,12 +155,15 @@ class BrawlPipelineTests(unittest.TestCase):
     def test_collects_russian_articles_and_skips_pagination_and_duplicates(self):
         html = """
         <html>
-          <a href="/en/games/brawlstars/ru/blog/release-notes/test-ru/">
-            Русская статья
-          </a>
-          <a href="/en/games/brawlstars/ru/blog/release-notes/test-ru/">
-            Русская статья
-          </a>
+          <div data-test-class="archived-article">
+            <p data-test-id="publish-date-text">3 авг. 2026 г.</p>
+            <a href="/en/games/brawlstars/ru/blog/release-notes/test-ru/">
+              Русская статья
+            </a>
+            <a href="/en/games/brawlstars/ru/blog/release-notes/test-ru/">
+              Русская статья
+            </a>
+          </div>
           <a href="/en/games/brawlstars/ru/blog/page/2/">2</a>
         </html>
         """
@@ -178,6 +192,8 @@ class BrawlPipelineTests(unittest.TestCase):
                         "ru/blog/release-notes/test-ru/"
                     ),
                     "category": "release-notes",
+                    "date": "2026-08-03",
+                    "archive_index": 0,
                 }
             ],
         )
@@ -257,6 +273,177 @@ class BrawlPipelineTests(unittest.TestCase):
         )
 
         self.assertEqual(match, russian_article)
+
+    def test_matches_different_titles_by_category_and_date(self):
+        article = {
+            "title": "Release Notes June 2026",
+            "category": "release-notes",
+            "date": "2026-08-03",
+        }
+        russian_article = {
+            "title": "Информация о версии: июнь 2026 г.",
+            "url": "https://example.com/ru/release-notes-june",
+            "category": "release-notes",
+            "date": "2026-08-03",
+        }
+
+        match = find_russian_article(
+            article,
+            [russian_article],
+        )
+
+        self.assertEqual(match, russian_article)
+
+    def test_same_category_with_different_dates_does_not_match(self):
+        article = {
+            "title": "Identical Release Notes Title",
+            "category": "release-notes",
+            "date": "2026-08-03",
+        }
+        russian_article = {
+            "title": "Identical Release Notes Title",
+            "url": "https://example.com/ru/other-date",
+            "category": "release-notes",
+            "date": "2026-08-04",
+        }
+
+        match = find_russian_article(
+            article,
+            [russian_article],
+        )
+
+        self.assertIsNone(match)
+
+    def test_same_date_with_different_category_does_not_match(self):
+        article = {
+            "title": "Release Notes June 2026",
+            "category": "release-notes",
+            "date": "2026-08-03",
+        }
+        russian_article = {
+            "title": "Release Notes June 2026",
+            "url": "https://example.com/ru/esports",
+            "category": "esports",
+            "date": "2026-08-03",
+        }
+
+        match = find_russian_article(
+            article,
+            [russian_article],
+        )
+
+        self.assertIsNone(match)
+
+    def test_missing_date_uses_title_similarity_fallback(self):
+        article = {
+            "title": "Brawl Stars Championship 2026 Format",
+            "category": "esports",
+        }
+        russian_article = {
+            "title": "Brawl Stars Championship 2026: формат",
+            "url": "https://example.com/ru/championship-2026",
+            "category": "esports",
+        }
+
+        match = find_russian_article(
+            article,
+            [russian_article],
+        )
+
+        self.assertEqual(match, russian_article)
+
+    def test_multiple_articles_on_same_date_remain_ambiguous(self):
+        article = {
+            "title": "English release article",
+            "category": "release-notes",
+            "date": "2026-08-03",
+        }
+        russian_articles = [
+            {
+                "title": "Первая русская статья",
+                "url": "https://example.com/ru/first",
+                "category": "release-notes",
+                "date": "2026-08-03",
+                "archive_index": 0,
+            },
+            {
+                "title": "Вторая русская статья",
+                "url": "https://example.com/ru/second",
+                "category": "release-notes",
+                "date": "2026-08-03",
+                "archive_index": 1,
+            },
+        ]
+
+        match = find_russian_article(
+            article,
+            russian_articles,
+        )
+
+        self.assertIsNone(match)
+
+    def test_archive_index_resolves_same_date_tie(self):
+        article = {
+            "title": "English release article",
+            "category": "release-notes",
+            "date": "2026-08-03",
+            "archive_index": 1,
+        }
+        expected_article = {
+            "title": "Вторая русская статья",
+            "url": "https://example.com/ru/second",
+            "category": "release-notes",
+            "date": "2026-08-03",
+            "archive_index": 1,
+        }
+        russian_articles = [
+            {
+                "title": "Первая русская статья",
+                "url": "https://example.com/ru/first",
+                "category": "release-notes",
+                "date": "2026-08-03",
+                "archive_index": 0,
+            },
+            expected_article,
+        ]
+
+        match = find_russian_article(
+            article,
+            russian_articles,
+        )
+
+        self.assertEqual(match, expected_article)
+
+    def test_unrecognized_article_date_returns_none(self):
+        self.assertIsNone(normalize_article_date("когда-нибудь в августе"))
+        self.assertIsNone(normalize_article_date("2026-02-31"))
+
+    def test_normalizes_russian_month_names(self):
+        date_variants = (
+            "3 авг. 2026 г.",
+            "3 августа 2026 г.",
+        )
+
+        for date_text in date_variants:
+            with self.subTest(date_text=date_text):
+                self.assertEqual(
+                    normalize_article_date(date_text),
+                    "2026-08-03",
+                )
+
+    def test_normalizes_english_article_dates(self):
+        date_variants = (
+            "Aug 3, 2026",
+            "August 3, 2026",
+            "3 Aug 2026",
+        )
+
+        for date_text in date_variants:
+            with self.subTest(date_text=date_text):
+                self.assertEqual(
+                    normalize_article_date(date_text),
+                    "2026-08-03",
+                )
 
     def test_does_not_match_article_from_other_category(self):
         article = {
