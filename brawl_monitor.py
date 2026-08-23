@@ -233,6 +233,8 @@ def save_latest_changes(
     new_buffs,
     new_nerfs,
     new_articles,
+    high_priority_articles,
+    medium_priority_articles,
 ):
     """
     Сохраняет только свежие данные,
@@ -247,7 +249,13 @@ def save_latest_changes(
         "release_url": release_url,
         "new_buffs": new_buffs,
         "new_nerfs": new_nerfs,
+        # Полный список сохраняем для совместимости
+        # и возможной ручной редакторской проверки.
         "new_articles": new_articles,
+        # Отдельные списки нужны генератору поста.
+        # LOW остаются только в общем new_articles.
+        "high_priority_articles": high_priority_articles,
+        "medium_priority_articles": medium_priority_articles,
     }
 
     os.makedirs(
@@ -627,6 +635,35 @@ def enrich_new_articles(articles):
     return enriched_articles
 
 
+def split_articles_by_priority(articles):
+    """
+    Разделяет новые статьи на основные
+    и запасные кандидаты для выпуска.
+
+    Статьи с высоким приоритетом считаются
+    основными кандидатами. Средний приоритет
+    оставляем как запасной источник новости.
+
+    Низкоприоритетные статьи намеренно не входят
+    ни в один список кандидатов, но продолжают
+    храниться в общем поле new_articles.
+    """
+
+    high_priority_articles = []
+    medium_priority_articles = []
+
+    for article in articles:
+        priority = article.get("priority", "low")
+
+        if priority == "high":
+            high_priority_articles.append(article)
+
+        elif priority == "medium":
+            medium_priority_articles.append(article)
+
+    return high_priority_articles, medium_priority_articles
+
+
 # ---------------------------------------------------------
 # 1. ЗАГРУЖАЕМ БЛОГ
 # ---------------------------------------------------------
@@ -909,6 +946,13 @@ new_articles = [
 # Старые статьи повторно открывать нет смысла.
 enriched_new_articles = enrich_new_articles(new_articles)
 
+# Готовим отдельные списки кандидатов для генератора поста.
+# Полный список enriched_new_articles при этом сохраняется:
+# статьи с низким приоритетом из JSON не удаляются.
+high_priority_articles, medium_priority_articles = split_articles_by_priority(
+    enriched_new_articles
+)
+
 
 # ---------------------------------------------------------
 # 12. ОПРЕДЕЛЯЕМ ПЕРВЫЙ ЗАПУСК
@@ -1024,6 +1068,8 @@ save_latest_changes(
     new_buffs,
     new_nerfs,
     enriched_new_articles,
+    high_priority_articles,
+    medium_priority_articles,
 )
 
 print_success(f"\n✓ Свежие данные сохранены в " f"{LATEST_CHANGES_FILE}")
@@ -1054,6 +1100,10 @@ print(f"Release Notes: {latest_release_title}")
 print(f"Всего статей: {len(articles)}")
 
 print(f"Новых статей: {len(new_articles)}")
+
+print(f"High priority статей: {len(high_priority_articles)}")
+
+print(f"Medium priority статей: {len(medium_priority_articles)}")
 
 print(f"Всего баффов: {len(parsed_buffs)}")
 

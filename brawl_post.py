@@ -4,7 +4,6 @@ import re
 
 from colorama import Fore, Style, init
 
-
 # ---------------------------------------------------------
 # НАСТРОЙКА ЦВЕТНОГО ВЫВОДА
 # ---------------------------------------------------------
@@ -58,6 +57,67 @@ def load_latest_changes():
         encoding="utf-8",
     ) as file:
         return json.load(file)
+
+
+def get_news_candidates(data):
+    """
+    Получает подготовленные монитором статьи-кандидаты.
+
+    Используем get() с пустыми списками, чтобы генератор
+    продолжал работать со старыми latest changes JSON,
+    в которых новых полей ещё не было.
+
+    HIGH считаются основными кандидатами выпуска.
+    MEDIUM остаются запасными. LOW монитор не добавляет
+    ни в один из этих списков, поэтому генератор их
+    полностью игнорирует.
+    """
+
+    high_priority_articles = data.get(
+        "high_priority_articles",
+        [],
+    )
+
+    medium_priority_articles = data.get(
+        "medium_priority_articles",
+        [],
+    )
+
+    return high_priority_articles, medium_priority_articles
+
+
+def print_news_candidates(high_priority_articles, medium_priority_articles):
+    """
+    Показывает статьи-кандидаты только в терминале.
+
+    Этот блок нужен для проверки нового pipeline данных.
+    В готовый Telegram-пост статьи пока не добавляются.
+    """
+
+    print_section("NEWS CANDIDATES")
+
+    # Все HIGH показываем как основных кандидатов.
+    for article in high_priority_articles:
+        print(Fore.GREEN + Style.BRIGHT + "\n🔥 HIGH")
+        print(Fore.WHITE + Style.BRIGHT + article["title"])
+        print(f"Категория: {article['category']}")
+        print(f"Score: {article['score']}")
+
+    # MEDIUM выводим отдельно как запасные новости.
+    for article in medium_priority_articles:
+        print(Fore.YELLOW + Style.BRIGHT + "\n🟡 MEDIUM")
+        print(Fore.WHITE + Style.BRIGHT + article["title"])
+        print(f"Категория: {article['category']}")
+        print(f"Score: {article['score']}")
+
+    # Если основных кандидатов нет, явно подсказываем,
+    # что редактор может использовать запасной материал.
+    if not high_priority_articles and medium_priority_articles:
+        print(
+            Fore.YELLOW
+            + "\nВысокоприоритетных новостей нет, "
+            + "можно использовать MEDIUM."
+        )
 
 
 # ---------------------------------------------------------
@@ -221,10 +281,7 @@ def translate_change(change_text):
             1,
         )[1].strip()
 
-        return (
-            "Время до получения дополнительной дальности: "
-            f"{values}"
-        )
+        return "Время до получения дополнительной дальности: " f"{values}"
 
     # -----------------------------------------------------
     # HYPERCHARGE
@@ -246,47 +303,31 @@ def translate_change(change_text):
 
         return f"Скорость зарядки Hypercharge увеличена на {value}"
 
-    if (
-        "Hypercharge main attack Super charge rate reduced from"
-        in change_text
-    ):
+    if "Hypercharge main attack Super charge rate reduced from" in change_text:
         values = change_text.split(
             "Hypercharge main attack Super charge rate reduced from",
             1,
         )[1].strip()
 
-        return (
-            "Зарядка Super основной атакой "
-            f"во время Hypercharge: {values}"
-        )
+        return "Зарядка Super основной атакой " f"во время Hypercharge: {values}"
 
-    if (
-        "Hypercharge main attack Super charge rate reduced by"
-        in change_text
-    ):
+    if "Hypercharge main attack Super charge rate reduced by" in change_text:
         value = change_text.split(
             "Hypercharge main attack Super charge rate reduced by",
             1,
         )[1].strip()
 
         return (
-            "Зарядка Super основной атакой "
-            f"во время Hypercharge снижена на {value}"
+            "Зарядка Super основной атакой " f"во время Hypercharge снижена на {value}"
         )
 
-    if (
-        "Hypercharge main attack's second shot damage was reduced from"
-        in change_text
-    ):
+    if "Hypercharge main attack's second shot damage was reduced from" in change_text:
         values = change_text.split(
             "Hypercharge main attack's second shot damage was reduced from",
             1,
         )[1].strip()
 
-        return (
-            "Урон второго выстрела основной атаки "
-            f"в Hypercharge: {values}"
-        )
+        return "Урон второго выстрела основной атаки " f"в Hypercharge: {values}"
 
     if "Hypercharge projectile damage reduced from" in change_text:
         values = change_text.split(
@@ -306,10 +347,7 @@ def translate_change(change_text):
             1,
         )[1].strip()
 
-        return (
-            "Зарядка Super основной атакой мехи "
-            f"снижена на {value}"
-        )
+        return "Зарядка Super основной атакой мехи " f"снижена на {value}"
 
     if "Super charge rate increased by" in change_text:
         value = change_text.split(
@@ -398,9 +436,7 @@ def format_brawler_change(item, symbol):
     lines = []
 
     # Имя бойца выводим отдельной строкой.
-    lines.append(
-        f"{symbol} {item['brawler']}"
-    )
+    lines.append(f"{symbol} {item['brawler']}")
 
     # У одного бойца может быть несколько изменений.
     for change in item["changes"]:
@@ -410,16 +446,13 @@ def format_brawler_change(item, symbol):
 
         # Потом приводим секунды и дробные числа
         # к более привычному русскому виду.
-        translated_change = normalize_values(
-            translated_change
-        )
+        translated_change = normalize_values(translated_change)
 
         # Добавляем готовую строку в пост.
-        lines.append(
-            f"• {translated_change}"
-        )
+        lines.append(f"• {translated_change}")
 
     return "\n".join(lines)
+
 
 def print_colored_post(post):
     """
@@ -434,73 +467,39 @@ def print_colored_post(post):
 
         # Заголовок Brawl Stars.
         if line.startswith("💥 BRAWL STARS"):
-            print(
-                Fore.MAGENTA
-                + Style.BRIGHT
-                + line
-            )
+            print(Fore.MAGENTA + Style.BRIGHT + line)
 
         # Основной заголовок выпуска.
         elif line.startswith("⚖️"):
-            print(
-                Fore.CYAN
-                + Style.BRIGHT
-                + line
-            )
+            print(Fore.CYAN + Style.BRIGHT + line)
 
         # Заголовок раздела баффов.
         elif line.startswith("📈"):
-            print(
-                Fore.GREEN
-                + Style.BRIGHT
-                + line
-            )
+            print(Fore.GREEN + Style.BRIGHT + line)
 
         # Заголовок раздела нерфов.
         elif line.startswith("📉"):
-            print(
-                Fore.RED
-                + Style.BRIGHT
-                + line
-            )
+            print(Fore.RED + Style.BRIGHT + line)
 
         # Имя бойца с баффом.
         elif line.startswith("🔺"):
-            print(
-                Fore.GREEN
-                + Style.BRIGHT
-                + line
-            )
+            print(Fore.GREEN + Style.BRIGHT + line)
 
         # Имя бойца с нерфом.
         elif line.startswith("🔻"):
-            print(
-                Fore.RED
-                + Style.BRIGHT
-                + line
-            )
+            print(Fore.RED + Style.BRIGHT + line)
 
         # Информация о скрытых изменениях.
         elif line.startswith("👀"):
-            print(
-                Fore.YELLOW
-                + Style.BRIGHT
-                + line
-            )
+            print(Fore.YELLOW + Style.BRIGHT + line)
 
         # Подвал Roblox Hub.
         elif line.startswith("⭐"):
-            print(
-                Fore.BLUE
-                + line
-            )
+            print(Fore.BLUE + line)
 
         # Обычный текст изменений.
         elif line.startswith("•"):
-            print(
-                Fore.WHITE
-                + line
-            )
+            print(Fore.WHITE + line)
 
         # Пустые и прочие строки.
         else:
@@ -562,6 +561,7 @@ def score_change(item):
 
     return score
 
+
 def print_debug_scores(buffs, nerfs):
     """
     Показывает рейтинг важности изменений.
@@ -617,6 +617,7 @@ def print_debug_scores(buffs, nerfs):
                 + str(score)
             )
 
+
 def build_post(data):
     """
     Собирает полный текст будущего Telegram-поста
@@ -637,19 +638,19 @@ def build_post(data):
     # Для короткого выпуска ограничиваем количество бойцов.
     # Полные данные при этом остаются в JSON.
     # Сортируем бойцов по важности.
-# reverse=True означает: сначала самый высокий score.
+    # reverse=True означает: сначала самый высокий score.
     sorted_buffs = sorted(
-    all_buffs,
-    key=score_change,
-    reverse=True,
-)
+        all_buffs,
+        key=score_change,
+        reverse=True,
+    )
     sorted_nerfs = sorted(
-    all_nerfs,
-    key=score_change,
-    reverse=True,
-)
+        all_nerfs,
+        key=score_change,
+        reverse=True,
+    )
 
-# В короткий выпуск берём только самых заметных.
+    # В короткий выпуск берём только самых заметных.
     new_buffs = sorted_buffs[:3]
     new_nerfs = sorted_nerfs[:4]
     # Считаем, сколько изменений не вошло
@@ -675,15 +676,11 @@ def build_post(data):
     # ЗАГОЛОВОК
     # -----------------------------------------------------
 
-    post_parts.append(
-        "💥 BRAWL STARS | ROBLOX HUB"
-    )
+    post_parts.append("💥 BRAWL STARS | ROBLOX HUB")
 
     post_parts.append("")
 
-    post_parts.append(
-        "⚖️ ИЗМЕНЕНИЯ БАЛАНСА"
-    )
+    post_parts.append("⚖️ ИЗМЕНЕНИЯ БАЛАНСА")
 
     # -----------------------------------------------------
     # БАФФЫ
@@ -725,17 +722,12 @@ def build_post(data):
     # НЕ ПОМЕСТИВШИЕСЯ ИЗМЕНЕНИЯ
     # -----------------------------------------------------
 
-    hidden_total = (
-        hidden_buffs
-        + hidden_nerfs
-    )
+    hidden_total = hidden_buffs + hidden_nerfs
 
     if hidden_total > 0:
         post_parts.append("")
 
-        post_parts.append(
-            f"👀 Ещё изменений в обновлении: {hidden_total}"
-        )
+        post_parts.append(f"👀 Ещё изменений в обновлении: {hidden_total}")
 
     # -----------------------------------------------------
     # ПОДВАЛ ПОСТА
@@ -743,9 +735,7 @@ def build_post(data):
 
     post_parts.append("")
 
-    post_parts.append(
-        "⭐ Roblox Hub следит за изменениями Brawl Stars"
-    )
+    post_parts.append("⭐ Roblox Hub следит за изменениями Brawl Stars")
 
     # Склеиваем все части через перенос строки.
     return "\n".join(post_parts)
@@ -760,23 +750,14 @@ print_section("BRAWL POST GENERATOR")
 data = load_latest_changes()
 
 if data is None:
-    print(
-        Fore.RED
-        + Style.BRIGHT
-        + "✗ Файл свежих изменений не найден"
-    )
+    print(Fore.RED + Style.BRIGHT + "✗ Файл свежих изменений не найден")
 
-    print(
-        "Сначала запусти brawl_monitor.py"
-    )
+    print("Сначала запусти brawl_monitor.py")
 
     raise SystemExit
 
 
-print(
-    Fore.GREEN
-    + f"✓ Загружен файл {LATEST_CHANGES_FILE}"
-)
+print(Fore.GREEN + f"✓ Загружен файл {LATEST_CHANGES_FILE}")
 
 
 # ---------------------------------------------------------
@@ -793,12 +774,17 @@ new_nerfs = data.get(
     [],
 )
 
-print(
-    f"Новых баффов: {len(new_buffs)}"
-)
+high_priority_articles, medium_priority_articles = get_news_candidates(data)
 
-print(
-    f"Новых нерфов: {len(new_nerfs)}"
+print(f"Новых баффов: {len(new_buffs)}")
+
+print(f"Новых нерфов: {len(new_nerfs)}")
+
+# Отдельно показываем подготовленные статьи-кандидаты.
+# Этот debug-блок не является частью Telegram-поста.
+print_news_candidates(
+    high_priority_articles,
+    medium_priority_articles,
 )
 
 # В debug-режиме показываем,
@@ -820,15 +806,9 @@ post = build_post(data)
 # ---------------------------------------------------------
 
 if post is None:
-    print(
-        Fore.YELLOW
-        + "\nНовых изменений нет."
-    )
+    print(Fore.YELLOW + "\nНовых изменений нет.")
 
-    print(
-        Fore.YELLOW
-        + "Пост сегодня не требуется."
-    )
+    print(Fore.YELLOW + "Пост сегодня не требуется.")
 
 else:
     print_section("ГОТОВЫЙ ПОСТ")
