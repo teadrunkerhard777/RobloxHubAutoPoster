@@ -370,9 +370,9 @@
     "rubric": "Миф или правда",
     "source": "verified_db",
     "text": "🧠 МИФ ИЛИ ПРАВДА?\n\n🏡 Brookhaven\n\n🔥 В Brookhaven можно менять транспорт прямо во время игры.\n\nКак думаешь — правда или миф?\n\n✅ ПРАВДА!\n\nИгрок может выбирать и менять доступный транспорт прямо во время сессии.\n\n🎮 Roblox Hub",
-    "status": "pending",
-    "published_at": null,
-    "attempts": 0,
+    "status": "published",
+    "published_at": "2026-08-23T18:00:42.393695+05:00",
+    "attempts": 1,
     "last_error": null
   }
 ]
