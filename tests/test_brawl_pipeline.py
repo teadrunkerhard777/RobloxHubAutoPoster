@@ -138,17 +138,21 @@ russian_preview_namespace = load_members(
     {
         "select_news_content",
         "build_article_news_preview",
+        "print_generation_result",
     },
     {
         "NEWS_MAX_BLOCKS",
         "NEWS_MAX_CHARS",
         "NEWS_MIN_BLOCK_LENGTH",
+        "NEWS_SHORT_HEADING_MAX_CHARS",
+        "NEWS_DAY_STAGE_PATTERN",
         "NEWS_SERVICE_PREFIXES",
     },
 )
 
 select_news_content = russian_preview_namespace["select_news_content"]
 build_article_news_preview = russian_preview_namespace["build_article_news_preview"]
+print_generation_result = russian_preview_namespace["print_generation_result"]
 
 
 class BrawlPipelineTests(unittest.TestCase):
@@ -628,7 +632,7 @@ class BrawlPipelineTests(unittest.TestCase):
             len(selected),
             russian_preview_namespace["NEWS_MAX_BLOCKS"],
         )
-        self.assertEqual(selected, blocks[:4])
+        self.assertEqual(selected, blocks[:2])
 
     def test_news_content_respects_total_character_limit(self):
         blocks = [
@@ -646,11 +650,109 @@ class BrawlPipelineTests(unittest.TestCase):
         selected = select_news_content(article)
         selected_length = len("\n\n".join(selected))
 
-        self.assertEqual(selected, blocks[:2])
+        self.assertEqual(selected, blocks[:1])
         self.assertLessEqual(
             selected_length,
             russian_preview_namespace["NEWS_MAX_CHARS"],
         )
+
+    def test_russian_day_stage_is_removed(self):
+        useful_block = "В первый день игроки смогут получить особую награду."
+        article = {
+            "priority": "medium",
+            "ru_found": True,
+            "ru_title": "Кубок Старр",
+            "ru_clean_content": [
+                "День 2 | Создание эмблемы.",
+                useful_block,
+            ],
+        }
+
+        self.assertEqual(select_news_content(article), [useful_block])
+
+    def test_english_day_stage_is_removed(self):
+        useful_block = "Официальный русский абзац содержит подробности события."
+        article = {
+            "priority": "high",
+            "ru_found": True,
+            "ru_title": "Новость",
+            "ru_clean_content": [
+                "Day 2 | Create your club badge.",
+                useful_block,
+            ],
+        }
+
+        self.assertEqual(select_news_content(article), [useful_block])
+
+    def test_regular_paragraph_with_day_word_is_preserved(self):
+        useful_block = "В этот день игроки получат десять особых наград."
+        article = {
+            "priority": "medium",
+            "ru_found": True,
+            "ru_title": "Новость",
+            "ru_clean_content": [useful_block],
+        }
+
+        self.assertEqual(select_news_content(article), [useful_block])
+
+    def test_short_heading_without_sentence_is_removed(self):
+        useful_block = "Участники события смогут создать собственную эмблему клуба."
+        article = {
+            "priority": "medium",
+            "ru_found": True,
+            "ru_title": "Новость",
+            "ru_clean_content": [
+                "Создание клубной эмблемы",
+                useful_block,
+            ],
+        }
+
+        self.assertEqual(select_news_content(article), [useful_block])
+
+    def test_medium_preview_counts_as_news_material(self):
+        article = {
+            "priority": "medium",
+            "ru_found": True,
+            "ru_title": "Запасная новость",
+            "ru_clean_content": [
+                "Официальная статья подробно рассказывает об игровом событии."
+            ],
+        }
+        preview = build_article_news_preview(article)
+        output = StringIO()
+
+        with redirect_stdout(output):
+            print_generation_result(None, [preview])
+
+        self.assertIn("✓ Есть новостной материал для выпуска", output.getvalue())
+        self.assertNotIn("Пост сегодня не требуется", output.getvalue())
+
+    def test_high_preview_counts_as_news_material(self):
+        article = {
+            "priority": "high",
+            "ru_found": True,
+            "ru_title": "Основная новость",
+            "ru_clean_content": [
+                "Официальная статья подробно рассказывает о новом бойце."
+            ],
+        }
+        preview = build_article_news_preview(article)
+        output = StringIO()
+
+        with redirect_stdout(output):
+            print_generation_result(None, [preview])
+
+        self.assertIn("✓ Есть новостной материал для выпуска", output.getvalue())
+        self.assertNotIn("Пост сегодня не требуется", output.getvalue())
+
+    def test_no_balance_or_news_material_does_not_require_post(self):
+        output = StringIO()
+
+        with redirect_stdout(output):
+            print_generation_result(None, [])
+
+        self.assertIn("Новых материалов нет.", output.getvalue())
+        self.assertIn("Пост сегодня не требуется.", output.getvalue())
 
     def test_old_json_without_russian_fields_does_not_build_preview(self):
         old_article = {

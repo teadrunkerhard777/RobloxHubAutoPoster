@@ -34,16 +34,28 @@ DEBUG = False
 # ОГРАНИЧЕНИЯ РУССКОГО NEWS PREVIEW
 # ---------------------------------------------------------
 
-# Берём не больше четырёх официальных текстовых блоков.
-NEWS_MAX_BLOCKS = 4
+# Берём не больше двух официальных текстовых блоков.
+# Этого достаточно для короткого редакторского preview,
+# который удобно просматривать перед Telegram-выпуском.
+NEWS_MAX_BLOCKS = 2
 
 # Общий объём выбранного текста ограничиваем,
 # чтобы терминальный preview оставался коротким.
-NEWS_MAX_CHARS = 700
+NEWS_MAX_CHARS = 450
 
 # Короткие подписи и элементы навигации обычно
 # не содержат самостоятельной новости.
 NEWS_MIN_BLOCK_LENGTH = 25
+
+# Короткий блок без завершающей пунктуации чаще всего
+# оказывается подзаголовком или названием этапа, а не
+# самостоятельным содержательным предложением.
+NEWS_SHORT_HEADING_MAX_CHARS = 60
+
+# Удаляем только строки, которые начинаются с явной
+# структуры расписания «День N |» или «Day N |».
+# Обычный абзац со словом «день» это правило не затронет.
+NEWS_DAY_STAGE_PATTERN = r"^(?:день|day)\s+\d+\s*\|"
 
 # Эти префиксы относятся к навигации, социальным сетям
 # и техническим элементам сайта, а не к тексту статьи.
@@ -222,6 +234,24 @@ def select_news_content(article):
         if len(block) < NEWS_MIN_BLOCK_LENGTH:
             continue
 
+        # Короткие названия этапов из календаря события
+        # не несут достаточно контекста для отдельного
+        # preview-блока. Проверяем только строгое начало
+        # «День N |» / «Day N |», поэтому содержательные
+        # предложения со словом «день» сохраняются.
+        if re.match(NEWS_DAY_STAGE_PATTERN, normalized_block):
+            continue
+
+        # Одиночный короткий блок без точки, вопросительного
+        # или восклицательного знака обычно является ещё одним
+        # подзаголовком. Более длинные абзацы не отбрасываем:
+        # у официального сайта завершающая пунктуация иногда
+        # может отсутствовать после извлечения HTML-текста.
+        if len(block) <= NEWS_SHORT_HEADING_MAX_CHARS and not re.search(
+            r"[.!?…][\"'»”)]*$", block
+        ):
+            continue
+
         # Очевидные элементы подвала и навигации
         # отбрасываем независимо от их длины.
         if normalized_block.startswith(NEWS_SERVICE_PREFIXES):
@@ -295,6 +325,7 @@ def print_russian_news_previews(high_priority_articles, medium_priority_articles
     print_section("RUSSIAN NEWS PREVIEW")
 
     candidates = high_priority_articles + medium_priority_articles
+    available_previews = []
 
     for article in candidates:
         # Даже если старый или повреждённый JSON случайно
@@ -322,6 +353,43 @@ def print_russian_news_previews(high_priority_articles, medium_priority_articles
             color = Fore.YELLOW
 
         print(color + "\n" + preview)
+
+        # Возвращаем только действительно построенные блоки.
+        # Итоговый статус генератора не должен считать статью
+        # материалом, если русская версия пуста или непригодна.
+        available_previews.append(preview)
+
+    return available_previews
+
+
+def print_generation_result(post, russian_news_previews):
+    """
+    Выводит итог генерации с учётом двух типов материала.
+
+    Balance Changes по-прежнему формируют готовый пост через
+    build_post(). Русские HIGH/MEDIUM статьи пока остаются
+    отдельным preview, но их наличие уже означает, что у
+    редактора есть материал для будущего выпуска.
+    """
+
+    if post is not None:
+        print_section("ГОТОВЫЙ ПОСТ")
+
+        # Выводим предпросмотр balance-поста с цветами
+        # для удобства чтения в терминале.
+        print_colored_post(post)
+
+        return
+
+    if russian_news_previews:
+        print(Fore.GREEN + "\n✓ Есть новостной материал для выпуска")
+
+        return
+
+    # Сообщаем об отсутствии выпуска только тогда, когда
+    # нет ни Balance Changes, ни пригодного русского preview.
+    print(Fore.YELLOW + "\nНовых материалов нет.")
+    print(Fore.YELLOW + "Пост сегодня не требуется.")
 
 
 # ---------------------------------------------------------
@@ -993,7 +1061,7 @@ print_news_candidates(
 
 # Русские тексты показываем отдельным preview-разделом.
 # В готовый Telegram-пост эти блоки пока не добавляются.
-print_russian_news_previews(
+russian_news_previews = print_russian_news_previews(
     high_priority_articles,
     medium_priority_articles,
 )
@@ -1016,14 +1084,7 @@ post = build_post(data)
 # 4. ВЫВОДИМ РЕЗУЛЬТАТ
 # ---------------------------------------------------------
 
-if post is None:
-    print(Fore.YELLOW + "\nНовых изменений нет.")
-
-    print(Fore.YELLOW + "Пост сегодня не требуется.")
-
-else:
-    print_section("ГОТОВЫЙ ПОСТ")
-
-    # Выводим предпросмотр поста
-    # с цветами для удобства чтения в терминале.
-    print_colored_post(post)
+print_generation_result(
+    post,
+    russian_news_previews,
+)
