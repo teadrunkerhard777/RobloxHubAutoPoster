@@ -19,12 +19,12 @@ init(autoreset=True)
 # Главная страница официального блога Brawl Stars.
 BLOG_URL = "https://supercell.com/en/games/brawlstars/blog/"
 
-# Пока указываем Release Notes вручную.
-# Позже монитор будет находить актуальную страницу автоматически.
-RELEASE_URL = (
-    "https://supercell.com"
-    "/en/games/brawlstars/blog/release-notes/release-notes-june-2026/"
-)
+# Базовый адрес Supercell.
+# Ссылки внутри HTML часто приходят в сокращённом виде:
+# /en/games/brawlstars/blog/...
+#
+# Поэтому позже будем добавлять этот адрес к найденной ссылке.
+BASE_URL = "https://supercell.com"
 
 
 # ---------------------------------------------------------
@@ -74,11 +74,11 @@ def parse_balance_change(text):
     """
 
     # Делим только по первому разделителю.
-    # Внутри самого описания тоже могут встречаться " - ".
+    # Внутри описания тоже могут встречаться " - ".
     parts = text.split(" - ", 1)
 
-    # На случай неожиданного формата страницы
-    # не падаем с ошибкой, а сохраняем исходный текст.
+    # Если Supercell неожиданно изменит формат,
+    # скрипт не упадёт, а сохранит исходный текст.
     if len(parts) != 2:
         return {
             "brawler": "UNKNOWN",
@@ -103,19 +103,17 @@ def split_changes(change_text):
     Hypercharge range reduced from 20 ➡️ 16
     - Projectile damage reduced from 1000 ➡️ 800
 
-    превращается в список из двух изменений.
+    превращается в список из двух элементов.
     """
 
-    # На странице Supercell отдельные изменения
-    # обычно разделяются строкой " - ".
     parts = change_text.split(" - ")
 
-    # Убираем пробелы и возможные пустые элементы.
+    # Убираем лишние пробелы и пустые строки.
     return [part.strip() for part in parts if part.strip()]
 
 
 # ---------------------------------------------------------
-# 1. ПОЛУЧАЕМ ГЛАВНУЮ СТРАНИЦУ БЛОГА
+# 1. ЗАГРУЖАЕМ ГЛАВНУЮ СТРАНИЦУ БЛОГА
 # ---------------------------------------------------------
 
 print_section("BRAWL STARS BLOG")
@@ -127,40 +125,51 @@ if response.status_code == 200:
 else:
     print_error(f"✗ Ошибка загрузки блога: {response.status_code}")
 
+    # Если сам блог недоступен, продолжать работу нет смысла.
+    raise SystemExit
+
 
 # Supercell использует UTF-8.
-# Декодируем байты вручную, чтобы эмодзи и стрелки
-# отображались корректно.
+# Декодируем байты вручную для корректных эмодзи
+# и специальных символов.
 blog_html = response.content.decode("utf-8")
 
-# Превращаем HTML в структуру BeautifulSoup.
+# BeautifulSoup превращает HTML
+# в удобную для поиска структуру.
 soup = BeautifulSoup(blog_html, "html.parser")
 
-# Получаем все ссылки страницы.
+# Находим все ссылки на странице.
 links = soup.find_all("a")
 
 print(f"Всего ссылок на странице: {len(links)}")
 
 
 # ---------------------------------------------------------
-# 2. ИЩЕМ СТАТЬИ BRAWL STARS
+# 2. ИЩЕМ СТАТЬИ И АКТУАЛЬНЫЕ RELEASE NOTES
 # ---------------------------------------------------------
 
 print_section("ПОСЛЕДНИЕ СТАТЬИ")
 
-# set удобен тем, что не позволяет хранить дубли.
+# set используем для защиты от повторяющихся ссылок.
 seen_links = set()
 
 article_number = 1
 
+# Здесь сохраним первую найденную статью Release Notes.
+# Блог Supercell выводит свежие статьи выше старых,
+# поэтому первая такая ссылка считается актуальной.
+latest_release_url = None
+latest_release_title = None
+
+
 for link in links:
     href = link.get("href")
 
-    # Элемент без ссылки нам не нужен.
+    # Если у тега <a> нет адреса, пропускаем.
     if not href:
         continue
 
-    # Оставляем только статьи блога Brawl Stars.
+    # Берём только ссылки из блога Brawl Stars.
     if "/games/brawlstars/blog/" not in href:
         continue
 
@@ -169,7 +178,7 @@ for link in links:
     if "/blog/page/" in href:
         continue
 
-    # Повторно найденную статью не выводим.
+    # Не обрабатываем одну статью несколько раз.
     if href in seen_links:
         continue
 
@@ -177,6 +186,24 @@ for link in links:
 
     # Получаем заголовок статьи.
     title = link.get_text(strip=True)
+
+    # -----------------------------------------------------
+    # ИЩЕМ АКТУАЛЬНЫЕ RELEASE NOTES
+    # -----------------------------------------------------
+
+    # Если встретили статью категории release-notes
+    # и раньше такую ещё не находили,
+    # сохраняем её как самую свежую.
+    if (
+        "/blog/release-notes/" in href
+        and latest_release_url is None
+    ):
+        latest_release_url = BASE_URL + href
+        latest_release_title = title
+
+    # -----------------------------------------------------
+    # КРАСИВО ВЫВОДИМ СТАТЬЮ
+    # -----------------------------------------------------
 
     print(
         Fore.YELLOW
@@ -194,51 +221,92 @@ for link in links:
 
 
 # ---------------------------------------------------------
-# 3. ОТКРЫВАЕМ RELEASE NOTES
+# 3. ПРОВЕРЯЕМ НАЙДЕННЫЕ RELEASE NOTES
 # ---------------------------------------------------------
 
-print_section("RELEASE NOTES")
+print_section("АКТУАЛЬНЫЕ RELEASE NOTES")
 
-release_response = requests.get(RELEASE_URL, timeout=15)
+if latest_release_url:
+    print_success(
+        f"✓ Найдены Release Notes: {latest_release_title}"
+    )
+
+    print(Fore.BLUE + latest_release_url)
+
+else:
+    print_error("✗ В блоге не удалось найти Release Notes")
+
+    # Без Release Notes баланс парсить неоткуда.
+    raise SystemExit
+
+
+# ---------------------------------------------------------
+# 4. ЗАГРУЖАЕМ НАЙДЕННЫЕ RELEASE NOTES
+# ---------------------------------------------------------
+
+release_response = requests.get(
+    latest_release_url,
+    timeout=15,
+)
 
 if release_response.status_code == 200:
     print_success(
-        f"✓ Release Notes загружены, статус {release_response.status_code}"
+        f"✓ Release Notes загружены, "
+        f"статус {release_response.status_code}"
     )
 else:
     print_error(
-        f"✗ Ошибка загрузки Release Notes: {release_response.status_code}"
+        f"✗ Ошибка загрузки Release Notes: "
+        f"{release_response.status_code}"
     )
 
+    raise SystemExit
 
-# Явно декодируем HTML как UTF-8.
+
+# Декодируем страницу вручную как UTF-8.
 release_html = release_response.content.decode("utf-8")
 
-release_soup = BeautifulSoup(release_html, "html.parser")
+# Разбираем HTML Release Notes.
+release_soup = BeautifulSoup(
+    release_html,
+    "html.parser",
+)
 
 
 # ---------------------------------------------------------
-# 4. ПОКАЗЫВАЕМ СТРУКТУРУ RELEASE NOTES
+# 5. ПОКАЗЫВАЕМ СТРУКТУРУ RELEASE NOTES
 # ---------------------------------------------------------
 
 print_section("РАЗДЕЛЫ RELEASE NOTES")
 
 # Пока оставляем этот вывод для обучения и отладки.
-# Позже его можно будет убрать или включать только
-# в специальном debug-режиме.
-headings = release_soup.find_all(["h1", "h2", "h3"])
+# Когда монитор будет готов, можно будет
+# убрать его или включать через debug-режим.
+headings = release_soup.find_all(
+    ["h1", "h2", "h3"]
+)
 
 for heading in headings:
     heading_text = heading.get_text(strip=True)
 
+    # h1 и h2 делаем заметнее.
     if heading.name in ["h1", "h2"]:
-        print(Fore.MAGENTA + Style.BRIGHT + heading_text)
+        print(
+            Fore.MAGENTA
+            + Style.BRIGHT
+            + heading_text
+        )
+
+    # h3 выводим как подзаголовки.
     else:
-        print(Fore.CYAN + f"• {heading_text}")
+        print(
+            Fore.CYAN
+            + f"• {heading_text}"
+        )
 
 
 # ---------------------------------------------------------
-# 5. ИЩЕМ ПЕРВЫЙ BALANCE CHANGES
+# 6. ИЩЕМ ПЕРВЫЙ РАЗДЕЛ BALANCE CHANGES
 # ---------------------------------------------------------
 
 balance_heading = None
@@ -246,66 +314,79 @@ balance_heading = None
 for heading in release_soup.find_all("h3"):
     heading_text = heading.get_text(strip=True)
 
-    # Пока берём первый найденный Balance Changes,
-    # потому что он относится к наиболее свежему
-    # дополнению Release Notes.
+    # Пока берём первый найденный Balance Changes.
+    #
+    # На текущей странице именно первый блок содержит
+    # наиболее свежие изменения, добавленные позже
+    # первоначальной публикации Release Notes.
     if heading_text == "Balance Changes:":
         balance_heading = heading
         break
 
 
 # ---------------------------------------------------------
-# 6. СОБИРАЕМ BUFFS И NERFS
+# 7. СОБИРАЕМ BUFFS И NERFS
 # ---------------------------------------------------------
 
 print_section("BALANCE CHANGES")
 
-# Сырые строки с сайта сначала собираем
-# в два отдельных списка.
+# Здесь сначала храним сырые строки с сайта.
 buffs = []
 nerfs = []
 
-# Здесь запоминаем, какой блок сейчас читаем.
-# Возможные значения:
-# None, "buffs", "nerfs".
+# Запоминаем, какой подраздел сейчас читаем:
+#
+# None
+# "buffs"
+# "nerfs"
 current_section = None
 
 
 if balance_heading:
 
-    # Идём по элементам после заголовка Balance Changes.
+    # Идём по HTML-элементам после Balance Changes.
     for element in balance_heading.find_all_next():
 
-        # Следующий h3 означает конец текущего раздела.
+        # Следующий h3 означает,
+        # что текущий Balance Changes закончился.
         if element.name == "h3":
             break
 
-        # Нас интересуют только обычные абзацы.
+        # Пока работаем только с текстовыми абзацами.
         if element.name != "p":
             continue
 
-        text = element.get_text(" ", strip=True)
+        text = element.get_text(
+            " ",
+            strip=True,
+        )
 
+        # Пустые строки не нужны.
         if not text:
             continue
 
-        # Supercell после списка баланса иногда начинает
-        # перечислять исправления приложения без отдельного h3.
-        # Эта фраза означает, что баланс уже закончился.
-        if text.startswith("AND we're rolling out"):
+        # После баланса Supercell иногда сразу начинает
+        # перечислять исправления приложения,
+        # не создавая для них отдельный h3.
+        #
+        # Эта фраза означает конец интересующего
+        # нас блока Balance Changes.
+        if text.startswith(
+            "AND we're rolling out"
+        ):
             break
 
-        # Начался раздел баффов.
+        # Начался раздел BUFFS.
         if "BUFFS" in text.upper():
             current_section = "buffs"
             continue
 
-        # Начался раздел нерфов.
+        # Начался раздел NERFS.
         if "NERFS" in text.upper():
             current_section = "nerfs"
             continue
 
-        # Сохраняем строку в соответствующий список.
+        # Добавляем строку в нужную категорию.
         if current_section == "buffs":
             buffs.append(text)
 
@@ -313,43 +394,58 @@ if balance_heading:
             nerfs.append(text)
 
 else:
-    print_warning("⚠ Раздел Balance Changes не найден")
+    print_warning(
+        "⚠ Раздел Balance Changes не найден"
+    )
 
 
 # ---------------------------------------------------------
-# 7. ПРЕВРАЩАЕМ СЫРЫЕ СТРОКИ В СТРУКТУРИРОВАННЫЕ ДАННЫЕ
+# 8. ПРЕВРАЩАЕМ СТРОКИ В СТРУКТУРИРОВАННЫЕ ДАННЫЕ
 # ---------------------------------------------------------
 
-# Сначала отделяем имя бойца от описания.
-parsed_buffs = [parse_balance_change(buff) for buff in buffs]
-parsed_nerfs = [parse_balance_change(nerf) for nerf in nerfs]
+# Отделяем имя бойца от описания изменения.
+parsed_buffs = [
+    parse_balance_change(buff)
+    for buff in buffs
+]
+
+parsed_nerfs = [
+    parse_balance_change(nerf)
+    for nerf in nerfs
+]
 
 
-# Теперь внутри каждого бойца разбиваем длинное описание
+# Теперь разбиваем длинное описание
 # на отдельные изменения.
 #
-# В результате структура выглядит примерно так:
+# Получаем структуру примерно такого вида:
 #
 # {
 #     "brawler": "SURGE",
+#     "change": "...",
 #     "changes": [
-#         "Power Shield cooldown increased...",
-#         "Hypercharge range reduced...",
-#         ...
+#         "...",
+#         "...",
+#         "..."
 #     ]
 # }
 for buff in parsed_buffs:
-    buff["changes"] = split_changes(buff["change"])
+    buff["changes"] = split_changes(
+        buff["change"]
+    )
 
 for nerf in parsed_nerfs:
-    nerf["changes"] = split_changes(nerf["change"])
+    nerf["changes"] = split_changes(
+        nerf["change"]
+    )
 
 
 # ---------------------------------------------------------
-# 8. КРАСИВО ВЫВОДИМ BUFFS
+# 9. ВЫВОДИМ BUFFS
 # ---------------------------------------------------------
 
 print()
+
 print(
     Fore.GREEN
     + Style.BRIGHT
@@ -357,23 +453,28 @@ print(
 )
 
 for buff in parsed_buffs:
-    # Сначала имя бойца.
+
+    # Имя бойца выделяем отдельно.
     print(
         Fore.GREEN
         + Style.BRIGHT
         + f"\n  + {buff['brawler']}"
     )
 
-    # Затем каждое изменение отдельной строкой.
+    # Каждое изменение показываем отдельной строкой.
     for change in buff["changes"]:
-        print(Fore.WHITE + f"      • {change}")
+        print(
+            Fore.WHITE
+            + f"      • {change}"
+        )
 
 
 # ---------------------------------------------------------
-# 9. КРАСИВО ВЫВОДИМ NERFS
+# 10. ВЫВОДИМ NERFS
 # ---------------------------------------------------------
 
 print()
+
 print(
     Fore.RED
     + Style.BRIGHT
@@ -381,31 +482,50 @@ print(
 )
 
 for nerf in parsed_nerfs:
-    # Имя бойца выводим красным.
+
+    # Имя бойца выделяем красным.
     print(
         Fore.RED
         + Style.BRIGHT
         + f"\n  - {nerf['brawler']}"
     )
 
-    # Несколько изменений одного бойца
-    # показываем отдельными строками.
+    # Каждое изменение показываем
+    # отдельным пунктом.
     for change in nerf["changes"]:
-        print(Fore.WHITE + f"      • {change}")
+        print(
+            Fore.WHITE
+            + f"      • {change}"
+        )
 
 
 # ---------------------------------------------------------
-# 10. ИТОГОВЫЙ СТАТУС
+# 11. ИТОГОВЫЙ СТАТУС
 # ---------------------------------------------------------
 
 print_section("STATUS")
 
-print_success(f"✓ Статус блога: {response.status_code}")
 print_success(
-    f"✓ Статус Release Notes: {release_response.status_code}"
+    f"✓ Статус блога: {response.status_code}"
 )
 
-print(f"Размер страницы блога: {len(blog_html)} символов")
-print(f"Найдено статей: {len(seen_links)}")
-print(f"Найдено баффов: {len(parsed_buffs)}")
-print(f"Найдено нерфов: {len(parsed_nerfs)}")
+print_success(
+    f"✓ Статус Release Notes: "
+    f"{release_response.status_code}"
+)
+
+print(
+    f"Release Notes: {latest_release_title}"
+)
+
+print(
+    f"Найдено статей: {len(seen_links)}"
+)
+
+print(
+    f"Найдено баффов: {len(parsed_buffs)}"
+)
+
+print(
+    f"Найдено нерфов: {len(parsed_nerfs)}"
+)
