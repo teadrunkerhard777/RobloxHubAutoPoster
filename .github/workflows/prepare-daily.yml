@@ -2,6 +2,10 @@ name: Prepare Daily Roblox Hub Posts
 
 on:
   workflow_dispatch:
+  schedule:
+    # 04:00 UTC = 09:00 в текущей timezone проекта UTC+5.
+    # Очередь готовится до первого ежедневного слота 10:00.
+    - cron: "0 4 * * *"
 
 permissions:
   contents: write

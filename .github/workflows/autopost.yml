@@ -2,6 +2,18 @@ name: Roblox Hub AutoPost
 
 on:
   workflow_dispatch:
+  schedule:
+    # GitHub Actions использует UTC. Эти часы соответствуют
+    # текущей timezone проекта UTC+5 и всем существующим слотам:
+    # 10:00, 12:00, 15:00, 17:00, 18:00 и 22:00.
+    - cron: "0 5,7,10,12,13,17 * * *"
+
+# Не допускаем двух параллельных отправителей.
+# Повторный запуск дождётся сохранения published-статуса
+# и прочитает уже обновлённую очередь.
+concurrency:
+  group: roblox-hub-autopost
+  cancel-in-progress: false
 
 permissions:
   contents: write
