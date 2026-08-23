@@ -1,0 +1,94 @@
+{
+  "release_url": "https://supercell.com/en/games/brawlstars/blog/release-notes/release-notes-june-2026/",
+  "buffs": [
+    {
+      "brawler": "JACKY",
+      "change": "Health increased from 5000 ➡️ 5200",
+      "changes": [
+        "Health increased from 5000 ➡️ 5200"
+      ]
+    },
+    {
+      "brawler": "BONNIE",
+      "change": "Main attack damage increased from 1120 ➡️ 1220",
+      "changes": [
+        "Main attack damage increased from 1120 ➡️ 1220"
+      ]
+    },
+    {
+      "brawler": "JESSIE",
+      "change": "Main attack projectile speed increased from 2870 ➡️ 3050",
+      "changes": [
+        "Main attack projectile speed increased from 2870 ➡️ 3050"
+      ]
+    }
+  ],
+  "nerfs": [
+    {
+      "brawler": "8-BIT",
+      "change": "Buffied \"Extra Credits\" Gadget bouncing projectile damage reduced from 75% ➡️ 60% - Buffied \"Boosted Booster\" Star Power ammo spawn time increased from 3s ➡️ 5s - Hypercharge rate reduced by 15%",
+      "changes": [
+        "Buffied \"Extra Credits\" Gadget bouncing projectile damage reduced from 75% ➡️ 60%",
+        "Buffied \"Boosted Booster\" Star Power ammo spawn time increased from 3s ➡️ 5s",
+        "Hypercharge rate reduced by 15%"
+      ]
+    },
+    {
+      "brawler": "SURGE",
+      "change": "\"Power Shield\" Gadget cooldown increased from 18s ➡️ 22s - Hypercharge range reduced from 20 ➡️ 16 - Buffied Hypercharge main attack's second shot damage was reduced from 70% ➡️ 50% - Hypercharge projectile damage reduced from 1000 ➡️ 800",
+      "changes": [
+        "\"Power Shield\" Gadget cooldown increased from 18s ➡️ 22s",
+        "Hypercharge range reduced from 20 ➡️ 16",
+        "Buffied Hypercharge main attack's second shot damage was reduced from 70% ➡️ 50%",
+        "Hypercharge projectile damage reduced from 1000 ➡️ 800"
+      ]
+    },
+    {
+      "brawler": "BROCK",
+      "change": "Buffie'd \"Rocket No. 4\" Star Power time for extra range increased from 4s ➡️ 6s - \"Rocket Barrage\" Gadget knockback removed",
+      "changes": [
+        "Buffie'd \"Rocket No. 4\" Star Power time for extra range increased from 4s ➡️ 6s",
+        "\"Rocket Barrage\" Gadget knockback removed"
+      ]
+    },
+    {
+      "brawler": "MEG",
+      "change": "\"Toolbox\" Gadget Super charge duration increased from 4s ➡️ 6s - Buffied \"Jolting Volts\" Gadget extra duration reduced from 2s ➡️ 1s - Mecha's main attack Super charge rate reduced by 60% - Buffied Hypercharge main attack Super charge rate reduced by 60%",
+      "changes": [
+        "\"Toolbox\" Gadget Super charge duration increased from 4s ➡️ 6s",
+        "Buffied \"Jolting Volts\" Gadget extra duration reduced from 2s ➡️ 1s",
+        "Mecha's main attack Super charge rate reduced by 60%",
+        "Buffied Hypercharge main attack Super charge rate reduced by 60%"
+      ]
+    },
+    {
+      "brawler": "CROW",
+      "change": "Main attack damage reduced from 420 ➡️ 380",
+      "changes": [
+        "Main attack damage reduced from 420 ➡️ 380"
+      ]
+    },
+    {
+      "brawler": "COLETTE",
+      "change": "\"Gotcha!\" Gadget duration of charm reduced from 1s ➡️ 0.5s",
+      "changes": [
+        "\"Gotcha!\" Gadget duration of charm reduced from 1s ➡️ 0.5s"
+      ]
+    },
+    {
+      "brawler": "STARR NOVA",
+      "change": "Main attack damage reduced from 540 ➡️ 480 - Super charge rate increased by 11% Note: This change keeps the number of attacks to charge Super the same as before the main attack damage nerf (10 hits to charge Super)",
+      "changes": [
+        "Main attack damage reduced from 540 ➡️ 480",
+        "Super charge rate increased by 11% Note: This change keeps the number of attacks to charge Super the same as before the main attack damage nerf (10 hits to charge Super)"
+      ]
+    },
+    {
+      "brawler": "MAX",
+      "change": "Hypercharge main attack Super charge rate reduced from 8% ➡️ 7%",
+      "changes": [
+        "Hypercharge main attack Super charge rate reduced from 8% ➡️ 7%"
+      ]
+    }
+  ]
+}
