@@ -1,9 +1,9 @@
-from bs4 import BeautifulSoup
-from colorama import Fore, Style, init
 import json
 import os
-import requests
 
+import requests
+from bs4 import BeautifulSoup
+from colorama import Fore, Style, init
 
 # ---------------------------------------------------------
 # НАСТРОЙКА ЦВЕТНОГО ВЫВОДА
@@ -148,11 +148,7 @@ def split_changes(change_text):
 
     parts = change_text.split(" - ")
 
-    return [
-        part.strip()
-        for part in parts
-        if part.strip()
-    ]
+    return [part.strip() for part in parts if part.strip()]
 
 
 # ---------------------------------------------------------
@@ -280,11 +276,7 @@ def make_change_key(item):
     и новых баффов / нерфов.
     """
 
-    return (
-        item["brawler"]
-        + "|"
-        + item["change"]
-    )
+    return item["brawler"] + "|" + item["change"]
 
 
 def make_article_key(article):
@@ -297,6 +289,7 @@ def make_article_key(article):
     """
 
     return article["url"]
+
 
 def fetch_article_text(article_url):
     """
@@ -318,9 +311,7 @@ def fetch_article_text(article_url):
     # Если статья не загрузилась,
     # возвращаем пустой список.
     if response.status_code != 200:
-        print_warning(
-            f"⚠ Не удалось загрузить статью: {article_url}"
-        )
+        print_warning(f"⚠ Не удалось загрузить статью: {article_url}")
 
         return []
 
@@ -335,9 +326,7 @@ def fetch_article_text(article_url):
     content = []
 
     # Собираем основные текстовые элементы статьи.
-    for element in soup.find_all(
-        ["h1", "h2", "h3", "p"]
-    ):
+    for element in soup.find_all(["h1", "h2", "h3", "p"]):
         text = element.get_text(
             " ",
             strip=True,
@@ -359,6 +348,224 @@ def fetch_article_text(article_url):
     return content
 
 
+def clean_article_content(content, article_title):
+    """
+    Очищает сырой текст статьи от повторов и служебных строк.
+
+    На входе:
+    [
+        "Название статьи",
+        "Название статьи",
+        "Some useful paragraph...",
+        "Another paragraph...",
+        ...
+    ]
+
+    На выходе:
+    [
+        "Some useful paragraph...",
+        "Another paragraph...",
+        ...
+    ]
+    """
+
+    cleaned = []
+
+    for text in content:
+
+        # Убираем пустые строки.
+        if not text:
+            continue
+
+        # Убираем повтор самого заголовка статьи.
+        if text.strip() == article_title.strip():
+            continue
+
+        # Убираем служебные элементы Supercell.
+        if text in (
+            "Follow us on",
+            "Download our games from",
+        ):
+            continue
+
+        # Не сохраняем одинаковый текст дважды подряд.
+        if cleaned and cleaned[-1] == text:
+            continue
+
+        cleaned.append(text)
+
+    return cleaned
+
+
+def evaluate_article(article):
+    """
+    Оценивает, стоит ли использовать статью
+    в будущем утреннем выпуске Roblox Hub.
+
+    Возвращаем словарь:
+
+    {
+        "is_relevant": True,
+        "priority": "high",
+        "score": 7,
+        "reasons": [
+            "Есть изменения баланса",
+            "Есть новый боец",
+        ],
+    }
+
+    Чем выше score, тем интереснее статья
+    для новостного выпуска.
+    """
+
+    category = article["category"]
+
+    # clean_content уже содержит очищенный текст статьи.
+    content = article.get(
+        "clean_content",
+        [],
+    )
+
+    # Склеиваем весь текст в одну строку,
+    # чтобы было удобнее искать ключевые слова.
+    full_text = " ".join(content).lower()
+
+    score = 0
+    reasons = []
+
+    # -----------------------------------------------------
+    # RELEASE NOTES
+    # -----------------------------------------------------
+
+    # Release Notes почти всегда потенциально полезны,
+    # потому что содержат реальные изменения игры.
+    if category == "release-notes":
+        score += 3
+
+        reasons.append("Официальные Release Notes")
+
+    # -----------------------------------------------------
+    # БАЛАНС
+    # -----------------------------------------------------
+
+    balance_keywords = [
+        "balance changes",
+        "buffs",
+        "nerfs",
+        "buff",
+        "nerf",
+    ]
+
+    if any(keyword in full_text for keyword in balance_keywords):
+        score += 4
+
+        reasons.append("Есть изменения баланса")
+
+    # -----------------------------------------------------
+    # НОВЫЕ БОЙЦЫ
+    # -----------------------------------------------------
+
+    brawler_keywords = [
+        "new brawler",
+        "new brawlers",
+    ]
+
+    if any(keyword in full_text for keyword in brawler_keywords):
+        score += 5
+
+        reasons.append("Есть новый боец")
+
+    # -----------------------------------------------------
+    # HYPERCHARGE / NANOpower
+    # -----------------------------------------------------
+
+    power_keywords = [
+        "new hypercharge",
+        "new hypercharges",
+        "nanopower",
+    ]
+
+    if any(keyword in full_text for keyword in power_keywords):
+        score += 4
+
+        reasons.append("Есть новая способность или Hypercharge")
+
+    # -----------------------------------------------------
+    # НОВЫЕ РЕЖИМЫ
+    # -----------------------------------------------------
+
+    mode_keywords = [
+        "new game mode",
+        "new game modes",
+        "game mode",
+        "game modes",
+    ]
+
+    if any(keyword in full_text for keyword in mode_keywords):
+        score += 3
+
+        reasons.append("Есть информация об игровых режимах")
+
+    # -----------------------------------------------------
+    # СОБЫТИЯ / КОЛЛАБОРАЦИИ
+    # -----------------------------------------------------
+
+    event_keywords = [
+        "event",
+        "collaboration",
+        "collab",
+    ]
+
+    if any(keyword in full_text for keyword in event_keywords):
+        score += 2
+
+        reasons.append("Есть игровое событие или коллаборация")
+
+    # -----------------------------------------------------
+    # ESPORTS
+    # -----------------------------------------------------
+
+    # Киберспорт считаем менее приоритетным,
+    # потому что он нужен не в каждый утренний выпуск.
+    if category == "esports":
+        score += 1
+
+        reasons.append("Новость Brawl Stars Esports")
+
+    # -----------------------------------------------------
+    # ИТОГОВОЕ РЕШЕНИЕ
+    # -----------------------------------------------------
+
+    # Высокий приоритет получают главные материалы,
+    # которые можно автоматически рассматривать
+    # как кандидатов для утреннего выпуска.
+    if score >= 6:
+        priority = "high"
+
+    # Средний приоритет оставляем для запасных новостей.
+    # Они достаточно содержательные, но пока не должны
+    # автоматически попадать в утренний выпуск.
+    elif score >= 3:
+        priority = "medium"
+
+    # Остальные статьи сохраняем с низким приоритетом.
+    # Они остаются доступны редактору и не удаляются.
+    else:
+        priority = "low"
+
+    # Поле is_relevant сохраняем для совместимости
+    # с текущей структурой данных. Теперь только статьи
+    # с высоким приоритетом считаются кандидатами в выпуск.
+    is_relevant = priority == "high"
+
+    return {
+        "is_relevant": is_relevant,
+        "priority": priority,
+        "score": score,
+        "reasons": reasons,
+    }
+
+
 def enrich_new_articles(articles):
     """
     Добавляет к новым статьям их текст.
@@ -377,32 +584,48 @@ def enrich_new_articles(articles):
         "title": "...",
         "url": "...",
         "category": "esports",
-        "content": [...]
+        "content": [...],
+        "clean_content": [...],
+        "is_relevant": False,
+        "priority": "low",
+        "score": 1,
+        "reasons": [...]
     }
     """
 
     enriched_articles = []
 
     for article in articles:
-        print(
-            Fore.CYAN
-            + f"Читаю статью: {article['title']}"
-        )
+        print(Fore.CYAN + f"Читаю статью: {article['title']}")
 
-        content = fetch_article_text(
-            article["url"]
+        content = fetch_article_text(article["url"])
+
+        # Убираем повторы заголовка и служебные строки.
+        clean_content = clean_article_content(
+            content,
+            article["title"],
         )
 
         enriched_article = {
             **article,
+            # Полный сырой текст оставляем для отладки.
             "content": content,
+            # Очищенный текст будет использовать
+            # будущий генератор новостей.
+            "clean_content": clean_content,
         }
 
-        enriched_articles.append(
-            enriched_article
-        )
+        # Добавляем редакторскую оценку статьи:
+        # is_relevant, priority, score и reasons.
+        # Эти поля пока не влияют на сохранение материалов.
+        evaluation = evaluate_article(enriched_article)
+
+        enriched_article.update(evaluation)
+
+        enriched_articles.append(enriched_article)
 
     return enriched_articles
+
 
 # ---------------------------------------------------------
 # 1. ЗАГРУЖАЕМ БЛОГ
@@ -416,13 +639,9 @@ response = requests.get(
 )
 
 if response.status_code == 200:
-    print_success(
-        f"✓ Блог загружен, статус {response.status_code}"
-    )
+    print_success(f"✓ Блог загружен, статус {response.status_code}")
 else:
-    print_error(
-        f"✗ Ошибка загрузки блога: {response.status_code}"
-    )
+    print_error(f"✗ Ошибка загрузки блога: {response.status_code}")
 
     raise SystemExit
 
@@ -438,9 +657,7 @@ soup = BeautifulSoup(
 
 links = soup.find_all("a")
 
-print(
-    f"Всего ссылок на странице: {len(links)}"
-)
+print(f"Всего ссылок на странице: {len(links)}")
 
 
 # ---------------------------------------------------------
@@ -498,10 +715,7 @@ for link in links:
 
     # Первая найденная статья release-notes
     # считается актуальной.
-    if (
-        category == "release-notes"
-        and latest_release_url is None
-    ):
+    if category == "release-notes" and latest_release_url is None:
         latest_release_url = full_url
         latest_release_title = title
 
@@ -511,26 +725,13 @@ for link in links:
 # ---------------------------------------------------------
 
 for article in articles:
-    icon = get_category_icon(
-        article["category"]
-    )
+    icon = get_category_icon(article["category"])
 
-    print(
-        Fore.YELLOW
-        + Style.BRIGHT
-        + f"{icon} {article['category'].upper()}"
-    )
+    print(Fore.YELLOW + Style.BRIGHT + f"{icon} {article['category'].upper()}")
 
-    print(
-        Fore.WHITE
-        + Style.BRIGHT
-        + article["title"]
-    )
+    print(Fore.WHITE + Style.BRIGHT + article["title"])
 
-    print(
-        Fore.BLUE
-        + article["url"]
-    )
+    print(Fore.BLUE + article["url"])
 
     print()
 
@@ -542,20 +743,12 @@ for article in articles:
 print_section("АКТУАЛЬНЫЕ RELEASE NOTES")
 
 if latest_release_url:
-    print_success(
-        f"✓ Найдены Release Notes: "
-        f"{latest_release_title}"
-    )
+    print_success(f"✓ Найдены Release Notes: " f"{latest_release_title}")
 
-    print(
-        Fore.BLUE
-        + latest_release_url
-    )
+    print(Fore.BLUE + latest_release_url)
 
 else:
-    print_error(
-        "✗ Release Notes не найдены"
-    )
+    print_error("✗ Release Notes не найдены")
 
     raise SystemExit
 
@@ -571,21 +764,15 @@ release_response = requests.get(
 
 if release_response.status_code == 200:
     print_success(
-        f"✓ Release Notes загружены, "
-        f"статус {release_response.status_code}"
+        f"✓ Release Notes загружены, " f"статус {release_response.status_code}"
     )
 else:
-    print_error(
-        f"✗ Ошибка загрузки Release Notes: "
-        f"{release_response.status_code}"
-    )
+    print_error(f"✗ Ошибка загрузки Release Notes: " f"{release_response.status_code}")
 
     raise SystemExit
 
 
-release_html = release_response.content.decode(
-    "utf-8"
-)
+release_html = release_response.content.decode("utf-8")
 
 release_soup = BeautifulSoup(
     release_html,
@@ -641,9 +828,7 @@ if balance_heading:
 
         # После этой строки в текущей статье
         # начинаются bug fixes.
-        if text.startswith(
-            "AND we're rolling out"
-        ):
+        if text.startswith("AND we're rolling out"):
             break
 
         if "BUFFS" in text.upper():
@@ -661,35 +846,23 @@ if balance_heading:
             nerfs.append(text)
 
 else:
-    print_warning(
-        "⚠ Balance Changes не найден"
-    )
+    print_warning("⚠ Balance Changes не найден")
 
 
 # ---------------------------------------------------------
 # 8. СТРУКТУРИРУЕМ БАЛАНС
 # ---------------------------------------------------------
 
-parsed_buffs = [
-    parse_balance_change(buff)
-    for buff in buffs
-]
+parsed_buffs = [parse_balance_change(buff) for buff in buffs]
 
-parsed_nerfs = [
-    parse_balance_change(nerf)
-    for nerf in nerfs
-]
+parsed_nerfs = [parse_balance_change(nerf) for nerf in nerfs]
 
 
 for buff in parsed_buffs:
-    buff["changes"] = split_changes(
-        buff["change"]
-    )
+    buff["changes"] = split_changes(buff["change"])
 
 for nerf in parsed_nerfs:
-    nerf["changes"] = split_changes(
-        nerf["change"]
-    )
+    nerf["changes"] = split_changes(nerf["change"])
 
 
 # ---------------------------------------------------------
@@ -705,20 +878,11 @@ old_state = load_state()
 # 10. ГОТОВИМ КЛЮЧИ СТАРЫХ ДАННЫХ
 # ---------------------------------------------------------
 
-old_buff_keys = {
-    make_change_key(item)
-    for item in old_state["buffs"]
-}
+old_buff_keys = {make_change_key(item) for item in old_state["buffs"]}
 
-old_nerf_keys = {
-    make_change_key(item)
-    for item in old_state["nerfs"]
-}
+old_nerf_keys = {make_change_key(item) for item in old_state["nerfs"]}
 
-old_article_keys = {
-    make_article_key(article)
-    for article in old_state["articles"]
-}
+old_article_keys = {make_article_key(article) for article in old_state["articles"]}
 
 
 # ---------------------------------------------------------
@@ -726,24 +890,15 @@ old_article_keys = {
 # ---------------------------------------------------------
 
 new_buffs = [
-    buff
-    for buff in parsed_buffs
-    if make_change_key(buff)
-    not in old_buff_keys
+    buff for buff in parsed_buffs if make_change_key(buff) not in old_buff_keys
 ]
 
 new_nerfs = [
-    nerf
-    for nerf in parsed_nerfs
-    if make_change_key(nerf)
-    not in old_nerf_keys
+    nerf for nerf in parsed_nerfs if make_change_key(nerf) not in old_nerf_keys
 ]
 
 new_articles = [
-    article
-    for article in articles
-    if make_article_key(article)
-    not in old_article_keys
+    article for article in articles if make_article_key(article) not in old_article_keys
 ]
 
 # ---------------------------------------------------------
@@ -752,44 +907,26 @@ new_articles = [
 
 # Полный текст загружаем только для новых статей.
 # Старые статьи повторно открывать нет смысла.
-enriched_new_articles = enrich_new_articles(
-    new_articles
-)
+enriched_new_articles = enrich_new_articles(new_articles)
 
 
 # ---------------------------------------------------------
 # 12. ОПРЕДЕЛЯЕМ ПЕРВЫЙ ЗАПУСК
 # ---------------------------------------------------------
 
-first_run = (
-    old_state["release_url"] is None
-    and not old_state["articles"]
-)
+first_run = old_state["release_url"] is None and not old_state["articles"]
 
 
 if first_run:
-    print_warning(
-        "Первый запуск монитора."
-    )
+    print_warning("Первый запуск монитора.")
 
-    print_warning(
-        "Текущие данные будут сохранены "
-        "как базовое состояние."
-    )
+    print_warning("Текущие данные будут сохранены " "как базовое состояние.")
 
-elif (
-    not new_buffs
-    and not new_nerfs
-    and not new_articles
-):
-    print_success(
-        "✓ Ничего нового не найдено"
-    )
+elif not new_buffs and not new_nerfs and not new_articles:
+    print_success("✓ Ничего нового не найдено")
 
 else:
-    print_success(
-        "✓ Найдены новые материалы"
-    )
+    print_success("✓ Найдены новые материалы")
 
 
 # ---------------------------------------------------------
@@ -800,38 +937,45 @@ if enriched_new_articles:
     print_section("НОВЫЕ МАТЕРИАЛЫ")
 
     for article in enriched_new_articles:
-        icon = get_category_icon(
-            article["category"]
-        )
+        icon = get_category_icon(article["category"])
 
-        print(
-            Fore.YELLOW
-            + Style.BRIGHT
-            + f"{icon} {article['category'].upper()}"
-        )
+        print(Fore.YELLOW + Style.BRIGHT + f"{icon} {article['category'].upper()}")
 
-        print(
-            Fore.WHITE
-            + Style.BRIGHT
-            + article["title"]
-        )
+        print(Fore.WHITE + Style.BRIGHT + article["title"])
 
-        print(
-            Fore.BLUE
-            + article["url"]
-        )
+        print(Fore.BLUE + article["url"])
+
+        # Цвет и формулировка помогают сразу увидеть,
+        # насколько статья подходит для выпуска.
+        if article["priority"] == "high":
+            print(
+                Fore.GREEN + f"🔥 HIGH | кандидат в выпуск | score: {article['score']}"
+            )
+
+        elif article["priority"] == "medium":
+            print(
+                Fore.YELLOW
+                + f"🟡 MEDIUM | запасная новость | score: {article['score']}"
+            )
+
+        else:
+            print(
+                Fore.WHITE
+                + Style.DIM
+                + f"⚪ LOW | можно пропустить | score: {article['score']}"
+            )
+
+        for reason in article["reasons"]:
+            print(Fore.WHITE + f"  • {reason}")
 
         print()
 
-                # Для теста показываем первые несколько
+        # Для теста показываем первые несколько
         # текстовых блоков статьи.
-        preview = article["content"][:5]
+        preview = article["clean_content"][:5]
 
         for text in preview:
-            print(
-                Fore.WHITE
-                + f"  • {text}"
-            )
+            print(Fore.WHITE + f"  • {text}")
 
 
 # ---------------------------------------------------------
@@ -842,25 +986,14 @@ if new_buffs:
 
     print()
 
-    print(
-        Fore.GREEN
-        + Style.BRIGHT
-        + f"📈 НОВЫЕ BUFFS: {len(new_buffs)}"
-    )
+    print(Fore.GREEN + Style.BRIGHT + f"📈 НОВЫЕ BUFFS: {len(new_buffs)}")
 
     for buff in new_buffs:
 
-        print(
-            Fore.GREEN
-            + Style.BRIGHT
-            + f"\n  + {buff['brawler']}"
-        )
+        print(Fore.GREEN + Style.BRIGHT + f"\n  + {buff['brawler']}")
 
         for change in buff["changes"]:
-            print(
-                Fore.WHITE
-                + f"      • {change}"
-            )
+            print(Fore.WHITE + f"      • {change}")
 
 
 # ---------------------------------------------------------
@@ -871,25 +1004,14 @@ if new_nerfs:
 
     print()
 
-    print(
-        Fore.RED
-        + Style.BRIGHT
-        + f"📉 НОВЫЕ NERFS: {len(new_nerfs)}"
-    )
+    print(Fore.RED + Style.BRIGHT + f"📉 НОВЫЕ NERFS: {len(new_nerfs)}")
 
     for nerf in new_nerfs:
 
-        print(
-            Fore.RED
-            + Style.BRIGHT
-            + f"\n  - {nerf['brawler']}"
-        )
+        print(Fore.RED + Style.BRIGHT + f"\n  - {nerf['brawler']}")
 
         for change in nerf["changes"]:
-            print(
-                Fore.WHITE
-                + f"      • {change}"
-            )
+            print(Fore.WHITE + f"      • {change}")
 
 
 # ---------------------------------------------------------
@@ -904,10 +1026,7 @@ save_latest_changes(
     enriched_new_articles,
 )
 
-print_success(
-    f"\n✓ Свежие данные сохранены в "
-    f"{LATEST_CHANGES_FILE}"
-)
+print_success(f"\n✓ Свежие данные сохранены в " f"{LATEST_CHANGES_FILE}")
 
 
 # ---------------------------------------------------------
@@ -921,9 +1040,7 @@ save_state(
     articles,
 )
 
-print_success(
-    "✓ Состояние монитора обновлено"
-)
+print_success("✓ Состояние монитора обновлено")
 
 
 # ---------------------------------------------------------
@@ -932,34 +1049,18 @@ print_success(
 
 print_section("STATUS")
 
-print(
-    f"Release Notes: {latest_release_title}"
-)
+print(f"Release Notes: {latest_release_title}")
 
-print(
-    f"Всего статей: {len(articles)}"
-)
+print(f"Всего статей: {len(articles)}")
 
-print(
-    f"Новых статей: {len(new_articles)}"
-)
+print(f"Новых статей: {len(new_articles)}")
 
-print(
-    f"Всего баффов: {len(parsed_buffs)}"
-)
+print(f"Всего баффов: {len(parsed_buffs)}")
 
-print(
-    f"Всего нерфов: {len(parsed_nerfs)}"
-)
+print(f"Всего нерфов: {len(parsed_nerfs)}")
 
-print(
-    f"Новых баффов: {len(new_buffs)}"
-)
+print(f"Новых баффов: {len(new_buffs)}")
 
-print(
-    f"Новых нерфов: {len(new_nerfs)}"
-)
+print(f"Новых нерфов: {len(new_nerfs)}")
 
-print(
-    f"State-файл: {STATE_FILE}"
-)
+print(f"State-файл: {STATE_FILE}")
