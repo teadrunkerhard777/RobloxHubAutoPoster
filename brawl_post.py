@@ -22,6 +22,14 @@ init(autoreset=True)
 # найденные во время последнего запуска монитора.
 LATEST_CHANGES_FILE = "data/brawl_latest_changes.json"
 
+# ---------------------------------------------------------
+# DEBUG-РЕЖИМ
+# ---------------------------------------------------------
+
+# True  -> показываем служебную информацию и score бойцов.
+# False -> выводим только обычный результат.
+DEBUG = False
+
 
 # ---------------------------------------------------------
 # ВСПОМОГАТЕЛЬНЫЕ ФУНКЦИИ
@@ -554,7 +562,60 @@ def score_change(item):
 
     return score
 
+def print_debug_scores(buffs, nerfs):
+    """
+    Показывает рейтинг важности изменений.
 
+    Этот вывод нужен только для настройки алгоритма.
+    В Telegram он никогда не попадёт.
+    """
+
+    if not DEBUG:
+        return
+
+    print_section("DEBUG: CHANGE SCORES")
+
+    # Сортируем баффы по score, от большего к меньшему.
+    sorted_buffs = sorted(
+        buffs,
+        key=score_change,
+        reverse=True,
+    )
+
+    # Сортируем нерфы по тому же принципу.
+    sorted_nerfs = sorted(
+        nerfs,
+        key=score_change,
+        reverse=True,
+    )
+
+    if sorted_buffs:
+        print(Fore.GREEN + Style.BRIGHT + "\n📈 BUFF SCORES")
+
+        for item in sorted_buffs:
+            score = score_change(item)
+
+            print(
+                Fore.GREEN
+                + f"{item['brawler']}: "
+                + Fore.YELLOW
+                + Style.BRIGHT
+                + str(score)
+            )
+
+    if sorted_nerfs:
+        print(Fore.RED + Style.BRIGHT + "\n📉 NERF SCORES")
+
+        for item in sorted_nerfs:
+            score = score_change(item)
+
+            print(
+                Fore.RED
+                + f"{item['brawler']}: "
+                + Fore.YELLOW
+                + Style.BRIGHT
+                + str(score)
+            )
 
 def build_post(data):
     """
@@ -740,6 +801,12 @@ print(
     f"Новых нерфов: {len(new_nerfs)}"
 )
 
+# В debug-режиме показываем,
+# какие бойцы получили самый высокий приоритет.
+print_debug_scores(
+    new_buffs,
+    new_nerfs,
+)
 
 # ---------------------------------------------------------
 # 3. СОБИРАЕМ ПОСТ
