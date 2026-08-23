@@ -1,5 +1,7 @@
 import json
 import os
+import re
+from difflib import SequenceMatcher
 
 import requests
 from bs4 import BeautifulSoup
@@ -19,8 +21,21 @@ init(autoreset=True)
 # Главная страница официального блога Brawl Stars.
 BLOG_URL = "https://supercell.com/en/games/brawlstars/blog/"
 
+# Официальный русский архив Brawl Stars.
+# Slug русской статьи может отличаться от английского,
+# поэтому ссылки из него собираем отдельно.
+RU_BLOG_URL = "https://supercell.com/en/games/brawlstars/ru/blog/"
+
 # Базовый адрес сайта.
 BASE_URL = "https://supercell.com"
+
+# Минимальное сходство нормализованных заголовков,
+# при котором соответствие считаем достаточно надёжным.
+RU_TITLE_MATCH_THRESHOLD = 0.55
+
+# Если два кандидата получили почти одинаковый score,
+# безопаснее не выбирать ни один из них автоматически.
+RU_TITLE_MATCH_MARGIN = 0.05
 
 # Здесь хранится полное состояние монитора.
 STATE_FILE = "data/brawl_monitor_state.json"
@@ -403,6 +418,216 @@ def clean_article_content(content, article_title):
         cleaned.append(text)
 
     return cleaned
+
+
+def fetch_russian_articles():
+    """
+    Загружает официальный русский архив Brawl Stars
+    и возвращает краткие данные опубликованных статей.
+
+    Русский slug может быть переведён и не совпадать
+    с английским URL. Поэтому собираем реальные ссылки
+    из архива, а не пытаемся построить их заменой строки.
+    """
+
+    response = requests.get(
+        RU_BLOG_URL,
+        timeout=15,
+    )
+
+    # Ошибка русского архива не должна останавливать
+    # основной английский монитор и сохранение изменений.
+    if response.status_code != 200:
+        print_warning(f"⚠ Не удалось загрузить русский архив: {response.status_code}")
+
+        return []
+
+    html = response.content.decode("utf-8")
+
+    soup = BeautifulSoup(
+        html,
+        "html.parser",
+    )
+
+    russian_articles = []
+    seen_links = set()
+
+    for link in soup.find_all("a"):
+        href = link.get("href")
+
+        if not href:
+            continue
+
+        # Оставляем только статьи русского архива Brawl Stars.
+        if "/games/brawlstars/ru/blog/" not in href:
+            continue
+
+        # Ссылки пагинации не являются статьями.
+        if "/ru/blog/page/" in href:
+            continue
+
+        # Не добавляем одну русскую статью несколько раз,
+        # даже если на странице есть повторяющиеся ссылки.
+        if href in seen_links:
+            continue
+
+        seen_links.add(href)
+
+        title = link.get_text(strip=True)
+
+        # Технические ссылки без заголовка пропускаем.
+        if not title:
+            continue
+
+        if href.startswith("http"):
+            full_url = href
+        else:
+            full_url = BASE_URL + href
+
+        russian_articles.append(
+            {
+                "title": title,
+                "url": full_url,
+                "category": get_article_category(href),
+            }
+        )
+
+    return russian_articles
+
+
+def normalize_article_title(title):
+    """
+    Нормализует заголовок для безопасного сравнения.
+
+    Регистр, пунктуация и лишние пробелы не должны
+    мешать сопоставлению одинаковых или близких названий.
+    При этом слова не переводим и не угадываем смысл,
+    чтобы не создавать слишком агрессивные совпадения.
+    """
+
+    normalized_title = title.lower()
+
+    # Заменяем пунктуацию пробелами, но сохраняем буквы
+    # разных алфавитов и цифры, важные для названий и дат.
+    normalized_title = re.sub(
+        r"[^\w\s]",
+        " ",
+        normalized_title,
+    )
+
+    # Несколько пробелов и неразрывные пробелы
+    # приводим к одному обычному разделителю.
+    return " ".join(normalized_title.split())
+
+
+def find_russian_article(article, russian_articles):
+    """
+    Ищет безопасное соответствие английской статьи
+    среди материалов официального русского архива.
+
+    Сначала ограничиваем кандидатов той же категорией,
+    затем сравниваем нормализованные заголовки.
+    Если лучший результат ниже порога или почти равен
+    второму кандидату, соответствие считаем ненадёжным.
+    """
+
+    normalized_title = normalize_article_title(article["title"])
+    candidates = []
+
+    for russian_article in russian_articles:
+        # Статьи разных разделов не могут считаться
+        # надёжными версиями одного материала.
+        if russian_article["category"] != article["category"]:
+            continue
+
+        normalized_russian_title = normalize_article_title(russian_article["title"])
+
+        if not normalized_title or not normalized_russian_title:
+            continue
+
+        similarity = SequenceMatcher(
+            None,
+            normalized_title,
+            normalized_russian_title,
+        ).ratio()
+
+        candidates.append(
+            (
+                similarity,
+                russian_article,
+            )
+        )
+
+    if not candidates:
+        return None
+
+    # Сначала рассматриваем наиболее похожий заголовок.
+    candidates.sort(
+        key=lambda item: item[0],
+        reverse=True,
+    )
+
+    best_similarity, best_article = candidates[0]
+
+    if best_similarity < RU_TITLE_MATCH_THRESHOLD:
+        return None
+
+    # Два почти одинаковых результата создают риск
+    # выбора неправильной русской статьи.
+    if len(candidates) > 1:
+        second_similarity = candidates[1][0]
+
+        if best_similarity - second_similarity < RU_TITLE_MATCH_MARGIN:
+            return None
+
+    return best_article
+
+
+def enrich_articles_with_russian_versions(articles, russian_articles):
+    """
+    Добавляет к HIGH и MEDIUM статьям русские данные.
+
+    Английские content и clean_content не изменяются.
+    Если соответствие найдено, русский текст загружается
+    теми же функциями чтения и очистки, что английский.
+    """
+
+    for article in articles:
+        russian_article = find_russian_article(
+            article,
+            russian_articles,
+        )
+
+        if russian_article is None:
+            article.update(
+                {
+                    "ru_found": False,
+                    "ru_title": None,
+                    "ru_url": None,
+                    "ru_content": [],
+                    "ru_clean_content": [],
+                }
+            )
+
+            continue
+
+        ru_content = fetch_article_text(russian_article["url"])
+        ru_clean_content = clean_article_content(
+            ru_content,
+            russian_article["title"],
+        )
+
+        article.update(
+            {
+                "ru_found": True,
+                "ru_title": russian_article["title"],
+                "ru_url": russian_article["url"],
+                "ru_content": ru_content,
+                "ru_clean_content": ru_clean_content,
+            }
+        )
+
+    return articles
 
 
 def evaluate_article(article):
@@ -952,6 +1177,22 @@ enriched_new_articles = enrich_new_articles(new_articles)
 high_priority_articles, medium_priority_articles = split_articles_by_priority(
     enriched_new_articles
 )
+
+# Русский архив загружаем только при наличии кандидатов.
+# LOW статьи не входят в эти списки и не требуют поиска
+# или дополнительного сетевого запроса.
+if high_priority_articles or medium_priority_articles:
+    russian_articles = fetch_russian_articles()
+
+    enrich_articles_with_russian_versions(
+        high_priority_articles,
+        russian_articles,
+    )
+
+    enrich_articles_with_russian_versions(
+        medium_priority_articles,
+        russian_articles,
+    )
 
 
 # ---------------------------------------------------------

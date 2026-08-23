@@ -102,6 +102,7 @@ def print_news_candidates(high_priority_articles, medium_priority_articles):
         print(Fore.WHITE + Style.BRIGHT + article["title"])
         print(f"Категория: {article['category']}")
         print(f"Score: {article['score']}")
+        print_russian_article_status(article)
 
     # MEDIUM выводим отдельно как запасные новости.
     for article in medium_priority_articles:
@@ -109,6 +110,7 @@ def print_news_candidates(high_priority_articles, medium_priority_articles):
         print(Fore.WHITE + Style.BRIGHT + article["title"])
         print(f"Категория: {article['category']}")
         print(f"Score: {article['score']}")
+        print_russian_article_status(article)
 
     # Если основных кандидатов нет, явно подсказываем,
     # что редактор может использовать запасной материал.
@@ -118,6 +120,24 @@ def print_news_candidates(high_priority_articles, medium_priority_articles):
             + "\nВысокоприоритетных новостей нет, "
             + "можно использовать MEDIUM."
         )
+
+
+def print_russian_article_status(article):
+    """
+    Показывает наличие официальной русской версии.
+
+    Старые JSON могут не содержать ru_found и другие
+    новые поля. В этом случае безопасно показываем,
+    что русская версия пока не найдена.
+    """
+
+    if article.get("ru_found"):
+        print(Fore.GREEN + "🇷🇺 Русская версия найдена")
+        print(Fore.GREEN + f"Название: {article['ru_title']}")
+        print(Fore.GREEN + f"URL: {article['ru_url']}")
+
+    else:
+        print(Fore.YELLOW + "⚠ Русская версия пока не найдена")
 
 
 # ---------------------------------------------------------
