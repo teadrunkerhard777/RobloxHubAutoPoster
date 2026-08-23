@@ -25,6 +25,10 @@ BASE_URL = "https://supercell.com"
 # Файл, в котором монитор будет хранить уже увиденные изменения.
 STATE_FILE = "data/brawl_monitor_state.json"
 
+# Файл только с новыми изменениями текущего запуска.
+# Его позже будет читать генератор Telegram-поста.
+LATEST_CHANGES_FILE = "data/brawl_latest_changes.json"
+
 
 # ---------------------------------------------------------
 # ВСПОМОГАТЕЛЬНЫЕ ФУНКЦИИ ДЛЯ ВЫВОДА
@@ -135,34 +139,75 @@ def load_state():
 
 def save_state(release_url, buffs, nerfs):
     """
-    Сохраняет текущее состояние монитора.
+    Сохраняет полное текущее состояние монитора.
 
-    В следующий запуск эти данные будут использоваться
-    для сравнения со свежими данными Supercell.
+    Этот файл нужен для следующего запуска,
+    чтобы понимать, какие изменения мы уже видели.
     """
 
+    # Формируем данные, которые будем хранить между запусками.
     state = {
         "release_url": release_url,
         "buffs": buffs,
         "nerfs": nerfs,
     }
 
-    # Создаём папку data, если её вдруг нет.
+    # Создаём папку data, если её ещё нет.
     os.makedirs(
         os.path.dirname(STATE_FILE),
         exist_ok=True,
     )
 
+    # Сохраняем состояние в JSON.
     with open(
         STATE_FILE,
         "w",
         encoding="utf-8",
     ) as file:
-
-        # ensure_ascii=False сохраняет русский текст
-        # и специальные символы нормально, а не через \uXXXX.
         json.dump(
             state,
+            file,
+            ensure_ascii=False,
+            indent=2,
+        )
+
+
+def save_latest_changes(
+    release_title,
+    release_url,
+    new_buffs,
+    new_nerfs,
+):
+    """
+    Сохраняет только новые изменения текущего запуска.
+
+    Этот файл позже будет читать генератор
+    утреннего Brawl Stars-поста.
+    """
+
+    # Здесь уже используется отдельная переменная data,
+    # потому что это другой JSON-файл с другой задачей.
+    data = {
+        "release_title": release_title,
+        "release_url": release_url,
+        "new_buffs": new_buffs,
+        "new_nerfs": new_nerfs,
+    }
+
+    # Создаём папку data, если её ещё нет.
+    os.makedirs(
+        os.path.dirname(LATEST_CHANGES_FILE),
+        exist_ok=True,
+    )
+
+    # Сохраняем только свежие изменения.
+    with open(
+        LATEST_CHANGES_FILE,
+        "w",
+        encoding="utf-8",
+    ) as file:
+        json.dump(
+            data,
             file,
             ensure_ascii=False,
             indent=2,
@@ -568,7 +613,22 @@ if new_nerfs:
 
 
 # ---------------------------------------------------------
-# 13. СОХРАНЯЕМ НОВОЕ СОСТОЯНИЕ
+# 13. СОХРАНЯЕМ ТОЛЬКО НОВЫЕ ИЗМЕНЕНИЯ
+# ---------------------------------------------------------
+
+save_latest_changes(
+    latest_release_title,
+    latest_release_url,
+    new_buffs,
+    new_nerfs,
+)
+
+print_success(
+    f"\n✓ Свежие изменения сохранены в {LATEST_CHANGES_FILE}"
+)
+
+# ---------------------------------------------------------
+# 14. СОХРАНЯЕМ НОВОЕ СОСТОЯНИЕ
 # ---------------------------------------------------------
 
 save_state(
