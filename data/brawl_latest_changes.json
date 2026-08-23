@@ -1,94 +1,60 @@
 {
   "release_title": "Release Notes June 2026",
   "release_url": "https://supercell.com/en/games/brawlstars/blog/release-notes/release-notes-june-2026/",
-  "new_buffs": [
+  "new_buffs": [],
+  "new_nerfs": [],
+  "new_articles": [
     {
-      "brawler": "JACKY",
-      "change": "Health increased from 5000 ➡️ 5200",
-      "changes": [
-        "Health increased from 5000 ➡️ 5200"
-      ]
-    },
-    {
-      "brawler": "BONNIE",
-      "change": "Main attack damage increased from 1120 ➡️ 1220",
-      "changes": [
-        "Main attack damage increased from 1120 ➡️ 1220"
-      ]
-    },
-    {
-      "brawler": "JESSIE",
-      "change": "Main attack projectile speed increased from 2870 ➡️ 3050",
-      "changes": [
-        "Main attack projectile speed increased from 2870 ➡️ 3050"
-      ]
-    }
-  ],
-  "new_nerfs": [
-    {
-      "brawler": "8-BIT",
-      "change": "Buffied \"Extra Credits\" Gadget bouncing projectile damage reduced from 75% ➡️ 60% - Buffied \"Boosted Booster\" Star Power ammo spawn time increased from 3s ➡️ 5s - Hypercharge rate reduced by 15%",
-      "changes": [
-        "Buffied \"Extra Credits\" Gadget bouncing projectile damage reduced from 75% ➡️ 60%",
-        "Buffied \"Boosted Booster\" Star Power ammo spawn time increased from 3s ➡️ 5s",
-        "Hypercharge rate reduced by 15%"
-      ]
-    },
-    {
-      "brawler": "SURGE",
-      "change": "\"Power Shield\" Gadget cooldown increased from 18s ➡️ 22s - Hypercharge range reduced from 20 ➡️ 16 - Buffied Hypercharge main attack's second shot damage was reduced from 70% ➡️ 50% - Hypercharge projectile damage reduced from 1000 ➡️ 800",
-      "changes": [
-        "\"Power Shield\" Gadget cooldown increased from 18s ➡️ 22s",
-        "Hypercharge range reduced from 20 ➡️ 16",
-        "Buffied Hypercharge main attack's second shot damage was reduced from 70% ➡️ 50%",
-        "Hypercharge projectile damage reduced from 1000 ➡️ 800"
-      ]
-    },
-    {
-      "brawler": "BROCK",
-      "change": "Buffie'd \"Rocket No. 4\" Star Power time for extra range increased from 4s ➡️ 6s - \"Rocket Barrage\" Gadget knockback removed",
-      "changes": [
-        "Buffie'd \"Rocket No. 4\" Star Power time for extra range increased from 4s ➡️ 6s",
-        "\"Rocket Barrage\" Gadget knockback removed"
-      ]
-    },
-    {
-      "brawler": "MEG",
-      "change": "\"Toolbox\" Gadget Super charge duration increased from 4s ➡️ 6s - Buffied \"Jolting Volts\" Gadget extra duration reduced from 2s ➡️ 1s - Mecha's main attack Super charge rate reduced by 60% - Buffied Hypercharge main attack Super charge rate reduced by 60%",
-      "changes": [
-        "\"Toolbox\" Gadget Super charge duration increased from 4s ➡️ 6s",
-        "Buffied \"Jolting Volts\" Gadget extra duration reduced from 2s ➡️ 1s",
-        "Mecha's main attack Super charge rate reduced by 60%",
-        "Buffied Hypercharge main attack Super charge rate reduced by 60%"
-      ]
-    },
-    {
-      "brawler": "CROW",
-      "change": "Main attack damage reduced from 420 ➡️ 380",
-      "changes": [
-        "Main attack damage reduced from 420 ➡️ 380"
-      ]
-    },
-    {
-      "brawler": "COLETTE",
-      "change": "\"Gotcha!\" Gadget duration of charm reduced from 1s ➡️ 0.5s",
-      "changes": [
-        "\"Gotcha!\" Gadget duration of charm reduced from 1s ➡️ 0.5s"
-      ]
-    },
-    {
-      "brawler": "STARR NOVA",
-      "change": "Main attack damage reduced from 540 ➡️ 480 - Super charge rate increased by 11% Note: This change keeps the number of attacks to charge Super the same as before the main attack damage nerf (10 hits to charge Super)",
-      "changes": [
-        "Main attack damage reduced from 540 ➡️ 480",
-        "Super charge rate increased by 11% Note: This change keeps the number of attacks to charge Super the same as before the main attack damage nerf (10 hits to charge Super)"
-      ]
-    },
-    {
-      "brawler": "MAX",
-      "change": "Hypercharge main attack Super charge rate reduced from 8% ➡️ 7%",
-      "changes": [
-        "Hypercharge main attack Super charge rate reduced from 8% ➡️ 7%"
+      "title": "THE ADIDAS STARR CUP IS ON!",
+      "url": "https://supercell.com/en/games/brawlstars/blog/community/the-adidas-starr-cup-is-on/",
+      "category": "community",
+      "content": [
+        "THE ADIDAS STARR CUP IS ON!",
+        "The adidas Starr Cup is the first football Community Event where players come together to build their own Brawl Ball teams and compete in a full-blown tournament for the ultimate prize: the title of adidas Champion ! On top of this Title, you can also get a free Brawler, a free Skin, Chaos Drops, and more!",
+        "The Event starts now and ends July 1 (final rewards delivered by July 2), featuring NPC Brawler teams, two real Community teams, and a Grand Final rematch that'll decide everything! Let's goooo 🔥",
+        "HOW IT WORKS",
+        "The Brawl Stars Community will be split into 2 teams, and before the matches start, the Community will decide which teams they are (choosing logos, names, etc.).",
+        "Over the first 2 days, both teams will vote to build their teams from scratch:",
+        "Day 1 | Pick Your Name:",
+        "Mix and match words from two pools (adjectives + nouns) to vote on your team's name.",
+        "Day 2 | Design Your Badge:",
+        "Choose your badge shape, color, and icon to represent your team throughout the tournament.",
+        "THE TOURNAMENT",
+        "Once the teams are formed, the adidas Starr Cup Tournament kicks off, a 12-day competition split across 2 stages.",
+        "STAGE 1 | GROUP STAGE (June 20 - June 25)",
+        "The tournament runs with 3 group matches. Some are against NPC Brawler teams, featuring Brawlers from the Ranger Ranch trio, Candy Stand, and more. But don't let that fool you, the competition is real!",
+        "How do matches work?",
+        "Each match lasts 2 days. During that time, your team needs to fill the Community bar before the opponent does, and the way you do it is by winning Super Brawl Ball matches, a new Game Mode! The NPC teams have their own bars that fill over time, so make sure your team stays ahead of theirs!",
+        "GROUP MATCH 3 (June 24 to 25)",
+        "This is the first real showdown: Community Team 1 vs. Community Team 2, and it is your first shot at settling the score!",
+        "STAGE 2 | ELIMINATION STAGE (June 26 - July 1)",
+        "After the Group Stage:",
+        "Quarter-Finals",
+        "(June 26 to 27)",
+        "Semi-Finals",
+        "(June 28 to 29)",
+        "Grand Finals",
+        "(June 30 to July 1),",
+        "Community Team 1 vs. Community Team 2",
+        "The rematch!",
+        "In the Grand Finals, both teams race to fill their bar first. There's no waiting for time to run out; whoever fills it first wins the adidas Starr Cup Tournament!",
+        "adidas Half-Time Challenges",
+        "To keep things spicy, on the second day of each match, there'll be an adidas Half-Time Challenge , which will earn you a bonus reward on top of everything else. Every 2 days by 08:00 UTC, we will post a short video with more info, so stay tuned to the event screen and our socials!",
+        "REWARDS",
+        "Here's a list of the rewards you can get throughout the event, plus the upgraded versions if the Community completes the adidas Half-time challenges:",
+        "1000 XP Doublers or Brawler Jae-yong (1000 Credits fallback)",
+        "3000 Bling or Gridiron Otis Skin",
+        "Mega Trophy Box or Ultra Trophy Box",
+        "5 Chaos Drops or 10 Chaos Drops",
+        "1000 Coins or 2000 Coins",
+        "1000 Power Points or 2000 Power Points",
+        "SPECIAL GIVEAWAY",
+        "We're giving away 1 MILLION COINS + 1 MILLION POWER POINTS to a total of 10 players!",
+        "How to participate?",
+        "Share a daily video on socials (Instagram, X, Reddit, or TikTok) showing off your best Super Ball goal!",
+        "Use the hashtags: #adidas #BrawlStars",
+        "The winners will be contacted after the event ends, which might take a few days.",
+        "Good luck, everyone!"
       ]
     }
   ]

@@ -90,5 +90,37 @@
         "Hypercharge main attack Super charge rate reduced from 8% ➡️ 7%"
       ]
     }
+  ],
+  "articles": [
+    {
+      "title": "Brawl Stars Challengers Finals Format",
+      "url": "https://supercell.com/en/games/brawlstars/blog/esports/brawl-stars-challengers-finals-format--2/",
+      "category": "esports"
+    },
+    {
+      "title": "Release Notes June 2026",
+      "url": "https://supercell.com/en/games/brawlstars/blog/release-notes/release-notes-june-2026/",
+      "category": "release-notes"
+    },
+    {
+      "title": "2026 Brawl Stars World Finals Ticketing Guide",
+      "url": "https://supercell.com/en/games/brawlstars/blog/esports/2026-brawl-stars-world-finals-ticketing-guide-2/",
+      "category": "esports"
+    },
+    {
+      "title": "Brawl Stars World Finals Format",
+      "url": "https://supercell.com/en/games/brawlstars/blog/esports/brawl-stars-world-finals-format/",
+      "category": "esports"
+    },
+    {
+      "title": "Last Chance Qualifier Format",
+      "url": "https://supercell.com/en/games/brawlstars/blog/esports/last-chance-qualifier-format-2/",
+      "category": "esports"
+    },
+    {
+      "title": "THE ADIDAS STARR CUP IS ON!",
+      "url": "https://supercell.com/en/games/brawlstars/blog/community/the-adidas-starr-cup-is-on/",
+      "category": "community"
+    }
   ]
 }

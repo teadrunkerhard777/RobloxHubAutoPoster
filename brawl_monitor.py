@@ -19,14 +19,14 @@ init(autoreset=True)
 # Главная страница официального блога Brawl Stars.
 BLOG_URL = "https://supercell.com/en/games/brawlstars/blog/"
 
-# Базовый адрес Supercell.
+# Базовый адрес сайта.
 BASE_URL = "https://supercell.com"
 
-# Файл, в котором монитор будет хранить уже увиденные изменения.
+# Здесь хранится полное состояние монитора.
 STATE_FILE = "data/brawl_monitor_state.json"
 
-# Файл только с новыми изменениями текущего запуска.
-# Его позже будет читать генератор Telegram-поста.
+# Здесь хранятся только свежие изменения
+# последнего запуска.
 LATEST_CHANGES_FILE = "data/brawl_latest_changes.json"
 
 
@@ -56,13 +56,59 @@ def print_error(text):
 
 
 # ---------------------------------------------------------
+# КАТЕГОРИИ СТАТЕЙ
+# ---------------------------------------------------------
+
+
+def get_article_category(href):
+    """
+    Определяет тип статьи по URL.
+
+    Пока используем четыре категории:
+
+    release-notes -> обновления и изменения игры
+    esports       -> турниры и чемпионаты
+    community     -> коллаборации и события
+    other         -> всё остальное
+    """
+
+    if "/blog/release-notes/" in href:
+        return "release-notes"
+
+    if "/blog/esports/" in href:
+        return "esports"
+
+    if "/blog/community/" in href:
+        return "community"
+
+    return "other"
+
+
+def get_category_icon(category):
+    """
+    Возвращает иконку для красивого вывода
+    категории статьи в терминале.
+    """
+
+    icons = {
+        "release-notes": "⚖️",
+        "esports": "🏆",
+        "community": "🎉",
+        "other": "📰",
+    }
+
+    return icons.get(category, "📰")
+
+
+# ---------------------------------------------------------
 # ФУНКЦИИ ДЛЯ БАЛАНСА
 # ---------------------------------------------------------
 
 
 def parse_balance_change(text):
     """
-    Разделяет строку на имя бойца и описание изменения.
+    Разделяет строку Supercell
+    на имя бойца и описание изменения.
 
     Например:
 
@@ -78,7 +124,7 @@ def parse_balance_change(text):
 
     parts = text.split(" - ", 1)
 
-    # Если формат неожиданно изменился,
+    # Если формат неожиданно изменится,
     # не падаем с ошибкой.
     if len(parts) != 2:
         return {
@@ -96,8 +142,8 @@ def parse_balance_change(text):
 
 def split_changes(change_text):
     """
-    Разбивает несколько изменений одного бойца
-    на отдельные пункты.
+    Разбивает несколько изменений
+    одного бойца на отдельные пункты.
     """
 
     parts = change_text.split(" - ")
@@ -110,13 +156,13 @@ def split_changes(change_text):
 
 
 # ---------------------------------------------------------
-# ФУНКЦИИ ДЛЯ СОСТОЯНИЯ МОНИТОРА
+# РАБОТА С СОСТОЯНИЕМ МОНИТОРА
 # ---------------------------------------------------------
 
 
 def load_state():
     """
-    Загружает прошлое состояние монитора из JSON.
+    Загружает прошлое состояние монитора.
 
     Если файл ещё не существует,
     возвращаем пустое состояние.
@@ -127,6 +173,7 @@ def load_state():
             "release_url": None,
             "buffs": [],
             "nerfs": [],
+            "articles": [],
         }
 
     with open(
@@ -134,31 +181,43 @@ def load_state():
         "r",
         encoding="utf-8",
     ) as file:
-        return json.load(file)
+        state = json.load(file)
+
+    # Эти значения добавляем через get(),
+    # чтобы старый state-файл тоже продолжал работать.
+    state.setdefault("release_url", None)
+    state.setdefault("buffs", [])
+    state.setdefault("nerfs", [])
+    state.setdefault("articles", [])
+
+    return state
 
 
-def save_state(release_url, buffs, nerfs):
+def save_state(
+    release_url,
+    buffs,
+    nerfs,
+    articles,
+):
     """
     Сохраняет полное текущее состояние монитора.
 
-    Этот файл нужен для следующего запуска,
-    чтобы понимать, какие изменения мы уже видели.
+    Оно понадобится при следующем запуске,
+    чтобы понять, что уже было обработано.
     """
 
-    # Формируем данные, которые будем хранить между запусками.
     state = {
         "release_url": release_url,
         "buffs": buffs,
         "nerfs": nerfs,
+        "articles": articles,
     }
 
-    # Создаём папку data, если её ещё нет.
     os.makedirs(
         os.path.dirname(STATE_FILE),
         exist_ok=True,
     )
 
-    # Сохраняем состояние в JSON.
     with open(
         STATE_FILE,
         "w",
@@ -177,30 +236,29 @@ def save_latest_changes(
     release_url,
     new_buffs,
     new_nerfs,
+    new_articles,
 ):
     """
-    Сохраняет только новые изменения текущего запуска.
+    Сохраняет только свежие данные,
+    найденные во время текущего запуска.
 
-    Этот файл позже будет читать генератор
-    утреннего Brawl Stars-поста.
+    Позже этот JSON будет использоваться
+    генератором утреннего поста.
     """
 
-    # Здесь уже используется отдельная переменная data,
-    # потому что это другой JSON-файл с другой задачей.
     data = {
         "release_title": release_title,
         "release_url": release_url,
         "new_buffs": new_buffs,
         "new_nerfs": new_nerfs,
+        "new_articles": new_articles,
     }
 
-    # Создаём папку data, если её ещё нет.
     os.makedirs(
         os.path.dirname(LATEST_CHANGES_FILE),
         exist_ok=True,
     )
 
-    # Сохраняем только свежие изменения.
     with open(
         LATEST_CHANGES_FILE,
         "w",
@@ -216,13 +274,10 @@ def save_latest_changes(
 
 def make_change_key(item):
     """
-    Создаёт уникальную строку для изменения.
+    Создаёт уникальный ключ изменения баланса.
 
-    Она нужна, чтобы сравнивать старые и новые данные.
-
-    Например:
-
-    CROW|Main attack damage reduced from 420 ➡️ 380
+    Он нужен для сравнения старых
+    и новых баффов / нерфов.
     """
 
     return (
@@ -231,6 +286,123 @@ def make_change_key(item):
         + item["change"]
     )
 
+
+def make_article_key(article):
+    """
+    Создаёт уникальный ключ статьи.
+
+    Пока достаточно URL,
+    потому что каждая статья Supercell
+    имеет собственный адрес.
+    """
+
+    return article["url"]
+
+def fetch_article_text(article_url):
+    """
+    Загружает страницу статьи Supercell
+    и вытаскивает из неё основной текст.
+
+    Пока собираем:
+    - заголовки h1 / h2 / h3;
+    - обычные абзацы p.
+
+    Возвращаем список текстовых блоков.
+    """
+
+    response = requests.get(
+        article_url,
+        timeout=15,
+    )
+
+    # Если статья не загрузилась,
+    # возвращаем пустой список.
+    if response.status_code != 200:
+        print_warning(
+            f"⚠ Не удалось загрузить статью: {article_url}"
+        )
+
+        return []
+
+    # Supercell использует UTF-8.
+    html = response.content.decode("utf-8")
+
+    soup = BeautifulSoup(
+        html,
+        "html.parser",
+    )
+
+    content = []
+
+    # Собираем основные текстовые элементы статьи.
+    for element in soup.find_all(
+        ["h1", "h2", "h3", "p"]
+    ):
+        text = element.get_text(
+            " ",
+            strip=True,
+        )
+
+        # Пустые элементы пропускаем.
+        if not text:
+            continue
+
+        # Не сохраняем технический подвал Supercell.
+        if text in (
+            "Follow us on",
+            "Download our games from",
+        ):
+            break
+
+        content.append(text)
+
+    return content
+
+
+def enrich_new_articles(articles):
+    """
+    Добавляет к новым статьям их текст.
+
+    Было:
+
+    {
+        "title": "...",
+        "url": "...",
+        "category": "esports"
+    }
+
+    Станет:
+
+    {
+        "title": "...",
+        "url": "...",
+        "category": "esports",
+        "content": [...]
+    }
+    """
+
+    enriched_articles = []
+
+    for article in articles:
+        print(
+            Fore.CYAN
+            + f"Читаю статью: {article['title']}"
+        )
+
+        content = fetch_article_text(
+            article["url"]
+        )
+
+        enriched_article = {
+            **article,
+            "content": content,
+        }
+
+        enriched_articles.append(
+            enriched_article
+        )
+
+    return enriched_articles
 
 # ---------------------------------------------------------
 # 1. ЗАГРУЖАЕМ БЛОГ
@@ -255,6 +427,8 @@ else:
     raise SystemExit
 
 
+# Явно декодируем UTF-8,
+# чтобы эмодзи отображались корректно.
 blog_html = response.content.decode("utf-8")
 
 soup = BeautifulSoup(
@@ -270,14 +444,14 @@ print(
 
 
 # ---------------------------------------------------------
-# 2. ИЩЕМ СТАТЬИ И RELEASE NOTES
+# 2. СОБИРАЕМ СТАТЬИ BRAWL STARS
 # ---------------------------------------------------------
 
 print_section("ПОСЛЕДНИЕ СТАТЬИ")
 
 seen_links = set()
 
-article_number = 1
+articles = []
 
 latest_release_url = None
 latest_release_title = None
@@ -289,12 +463,15 @@ for link in links:
     if not href:
         continue
 
+    # Оставляем только ссылки из блога Brawl Stars.
     if "/games/brawlstars/blog/" not in href:
         continue
 
+    # Пагинация статьёй не является.
     if "/blog/page/" in href:
         continue
 
+    # Не сохраняем одну ссылку несколько раз.
     if href in seen_links:
         continue
 
@@ -302,39 +479,72 @@ for link in links:
 
     title = link.get_text(strip=True)
 
+    # Иногда ссылка может быть технической
+    # и не иметь нормального заголовка.
+    if not title:
+        continue
+
+    category = get_article_category(href)
+
+    full_url = BASE_URL + href
+
+    article = {
+        "title": title,
+        "url": full_url,
+        "category": category,
+    }
+
+    articles.append(article)
+
     # Первая найденная статья release-notes
-    # считается самой свежей.
+    # считается актуальной.
     if (
-        "/blog/release-notes/" in href
+        category == "release-notes"
         and latest_release_url is None
     ):
-        latest_release_url = BASE_URL + href
+        latest_release_url = full_url
         latest_release_title = title
+
+
+# ---------------------------------------------------------
+# 3. КРАСИВО ПОКАЗЫВАЕМ СТАТЬИ
+# ---------------------------------------------------------
+
+for article in articles:
+    icon = get_category_icon(
+        article["category"]
+    )
 
     print(
         Fore.YELLOW
         + Style.BRIGHT
-        + f"{article_number}. "
-        + Fore.WHITE
-        + Style.BRIGHT
-        + title
+        + f"{icon} {article['category'].upper()}"
     )
 
-    print(Fore.BLUE + href)
-    print()
+    print(
+        Fore.WHITE
+        + Style.BRIGHT
+        + article["title"]
+    )
 
-    article_number += 1
+    print(
+        Fore.BLUE
+        + article["url"]
+    )
+
+    print()
 
 
 # ---------------------------------------------------------
-# 3. ПРОВЕРЯЕМ RELEASE NOTES
+# 4. ПРОВЕРЯЕМ RELEASE NOTES
 # ---------------------------------------------------------
 
 print_section("АКТУАЛЬНЫЕ RELEASE NOTES")
 
 if latest_release_url:
     print_success(
-        f"✓ Найдены Release Notes: {latest_release_title}"
+        f"✓ Найдены Release Notes: "
+        f"{latest_release_title}"
     )
 
     print(
@@ -351,7 +561,7 @@ else:
 
 
 # ---------------------------------------------------------
-# 4. ЗАГРУЖАЕМ RELEASE NOTES
+# 5. ЗАГРУЖАЕМ RELEASE NOTES
 # ---------------------------------------------------------
 
 release_response = requests.get(
@@ -384,7 +594,7 @@ release_soup = BeautifulSoup(
 
 
 # ---------------------------------------------------------
-# 5. ИЩЕМ BALANCE CHANGES
+# 6. ИЩЕМ BALANCE CHANGES
 # ---------------------------------------------------------
 
 balance_heading = None
@@ -392,13 +602,15 @@ balance_heading = None
 for heading in release_soup.find_all("h3"):
     heading_text = heading.get_text(strip=True)
 
+    # Первый Balance Changes пока считаем
+    # самым свежим блоком изменений.
     if heading_text == "Balance Changes:":
         balance_heading = heading
         break
 
 
 # ---------------------------------------------------------
-# 6. СОБИРАЕМ BUFFS И NERFS
+# 7. СОБИРАЕМ BUFFS И NERFS
 # ---------------------------------------------------------
 
 buffs = []
@@ -411,7 +623,8 @@ if balance_heading:
 
     for element in balance_heading.find_all_next():
 
-        # Следующий h3 означает конец блока.
+        # Следующий h3 означает конец
+        # текущего блока Balance Changes.
         if element.name == "h3":
             break
 
@@ -426,8 +639,8 @@ if balance_heading:
         if not text:
             continue
 
-        # После этой строки начинаются bug fixes,
-        # которые к балансу уже не относятся.
+        # После этой строки в текущей статье
+        # начинаются bug fixes.
         if text.startswith(
             "AND we're rolling out"
         ):
@@ -454,7 +667,7 @@ else:
 
 
 # ---------------------------------------------------------
-# 7. СТРУКТУРИРУЕМ ДАННЫЕ
+# 8. СТРУКТУРИРУЕМ БАЛАНС
 # ---------------------------------------------------------
 
 parsed_buffs = [
@@ -480,15 +693,18 @@ for nerf in parsed_nerfs:
 
 
 # ---------------------------------------------------------
-# 8. ЗАГРУЖАЕМ ПРОШЛОЕ СОСТОЯНИЕ
+# 9. ЗАГРУЖАЕМ ПРОШЛОЕ СОСТОЯНИЕ
 # ---------------------------------------------------------
 
 print_section("СРАВНЕНИЕ С ПРОШЛЫМ ЗАПУСКОМ")
 
 old_state = load_state()
 
-# Превращаем прошлые изменения в set,
-# чтобы быстро проверять наличие каждого элемента.
+
+# ---------------------------------------------------------
+# 10. ГОТОВИМ КЛЮЧИ СТАРЫХ ДАННЫХ
+# ---------------------------------------------------------
+
 old_buff_keys = {
     make_change_key(item)
     for item in old_state["buffs"]
@@ -499,9 +715,14 @@ old_nerf_keys = {
     for item in old_state["nerfs"]
 }
 
+old_article_keys = {
+    make_article_key(article)
+    for article in old_state["articles"]
+}
+
 
 # ---------------------------------------------------------
-# 9. ИЩЕМ ТОЛЬКО НОВЫЕ ИЗМЕНЕНИЯ
+# 11. ИЩЕМ НОВЫЕ ИЗМЕНЕНИЯ
 # ---------------------------------------------------------
 
 new_buffs = [
@@ -518,44 +739,103 @@ new_nerfs = [
     not in old_nerf_keys
 ]
 
+new_articles = [
+    article
+    for article in articles
+    if make_article_key(article)
+    not in old_article_keys
+]
 
 # ---------------------------------------------------------
-# 10. ПОКАЗЫВАЕМ РЕЗУЛЬТАТ СРАВНЕНИЯ
+# ЗАГРУЖАЕМ СОДЕРЖИМОЕ НОВЫХ СТАТЕЙ
 # ---------------------------------------------------------
 
-# Если состояние пустое, это первый запуск монитора.
+# Полный текст загружаем только для новых статей.
+# Старые статьи повторно открывать нет смысла.
+enriched_new_articles = enrich_new_articles(
+    new_articles
+)
+
+
+# ---------------------------------------------------------
+# 12. ОПРЕДЕЛЯЕМ ПЕРВЫЙ ЗАПУСК
+# ---------------------------------------------------------
+
 first_run = (
     old_state["release_url"] is None
+    and not old_state["articles"]
 )
 
 
 if first_run:
-
     print_warning(
         "Первый запуск монитора."
     )
 
     print_warning(
-        "Текущие изменения будут сохранены "
+        "Текущие данные будут сохранены "
         "как базовое состояние."
     )
 
+elif (
+    not new_buffs
+    and not new_nerfs
+    and not new_articles
+):
+    print_success(
+        "✓ Ничего нового не найдено"
+    )
+
 else:
-
-    if not new_buffs and not new_nerfs:
-        print_success(
-            "✓ Новых изменений баланса нет"
-        )
-
-    else:
-
-        print_success(
-            "✓ Найдены новые изменения!"
-        )
+    print_success(
+        "✓ Найдены новые материалы"
+    )
 
 
 # ---------------------------------------------------------
-# 11. НОВЫЕ BUFFS
+# 13. ПОКАЗЫВАЕМ НОВЫЕ СТАТЬИ
+# ---------------------------------------------------------
+
+if enriched_new_articles:
+    print_section("НОВЫЕ МАТЕРИАЛЫ")
+
+    for article in enriched_new_articles:
+        icon = get_category_icon(
+            article["category"]
+        )
+
+        print(
+            Fore.YELLOW
+            + Style.BRIGHT
+            + f"{icon} {article['category'].upper()}"
+        )
+
+        print(
+            Fore.WHITE
+            + Style.BRIGHT
+            + article["title"]
+        )
+
+        print(
+            Fore.BLUE
+            + article["url"]
+        )
+
+        print()
+
+                # Для теста показываем первые несколько
+        # текстовых блоков статьи.
+        preview = article["content"][:5]
+
+        for text in preview:
+            print(
+                Fore.WHITE
+                + f"  • {text}"
+            )
+
+
+# ---------------------------------------------------------
+# 14. ПОКАЗЫВАЕМ НОВЫЕ BUFFS
 # ---------------------------------------------------------
 
 if new_buffs:
@@ -584,7 +864,7 @@ if new_buffs:
 
 
 # ---------------------------------------------------------
-# 12. НОВЫЕ NERFS
+# 15. ПОКАЗЫВАЕМ НОВЫЕ NERFS
 # ---------------------------------------------------------
 
 if new_nerfs:
@@ -613,7 +893,7 @@ if new_nerfs:
 
 
 # ---------------------------------------------------------
-# 13. СОХРАНЯЕМ ТОЛЬКО НОВЫЕ ИЗМЕНЕНИЯ
+# 16. СОХРАНЯЕМ СВЕЖИЕ ДАННЫЕ
 # ---------------------------------------------------------
 
 save_latest_changes(
@@ -621,35 +901,47 @@ save_latest_changes(
     latest_release_url,
     new_buffs,
     new_nerfs,
+    enriched_new_articles,
 )
 
 print_success(
-    f"\n✓ Свежие изменения сохранены в {LATEST_CHANGES_FILE}"
+    f"\n✓ Свежие данные сохранены в "
+    f"{LATEST_CHANGES_FILE}"
 )
 
+
 # ---------------------------------------------------------
-# 14. СОХРАНЯЕМ НОВОЕ СОСТОЯНИЕ
+# 17. ОБНОВЛЯЕМ ПОЛНОЕ СОСТОЯНИЕ
 # ---------------------------------------------------------
 
 save_state(
     latest_release_url,
     parsed_buffs,
     parsed_nerfs,
+    articles,
 )
 
 print_success(
-    "\n✓ Состояние монитора сохранено"
+    "✓ Состояние монитора обновлено"
 )
 
 
 # ---------------------------------------------------------
-# 14. ИТОГ
+# 18. ИТОГ
 # ---------------------------------------------------------
 
 print_section("STATUS")
 
 print(
     f"Release Notes: {latest_release_title}"
+)
+
+print(
+    f"Всего статей: {len(articles)}"
+)
+
+print(
+    f"Новых статей: {len(new_articles)}"
 )
 
 print(
