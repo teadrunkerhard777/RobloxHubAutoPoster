@@ -79,6 +79,20 @@ NEWS_SERVICE_PREFIXES = (
 # потому что это редакционное правило короткого формата.
 FINAL_POST_MAX_CHARS = 1400
 
+# Мягкий редакционный ориентир помогает держать выпуск
+# компактным на телефоне. Пост может быть немного длиннее,
+# если дальнейшее сокращение потребовало бы удалить главный
+# официальный факт или последнее важное Balance Change.
+FINAL_POST_TARGET_CHARS = 900
+
+# HIGH без Balance может раскрывать новость двумя блоками.
+# MEDIUM всегда остаётся запасным коротким материалом.
+# При совместном выпуске с Balance любая новость получает
+# только один официальный содержательный блок.
+FINAL_HIGH_NEWS_MAX_BLOCKS = 2
+FINAL_MEDIUM_NEWS_MAX_BLOCKS = 1
+FINAL_NEWS_WITH_BALANCE_MAX_BLOCKS = 1
+
 # Сохраняем уже принятую для Balance Changes квоту:
 # максимум три бойца с баффами и четыре с нерфами.
 FINAL_BALANCE_MAX_BUFFS = 3
@@ -1289,10 +1303,11 @@ def build_final_post(data: dict) -> str | None:
     Собирает короткий готовый Brawl Stars пост для Telegram.
 
     Поддерживаются news + balance, только news и только
-    balance. При превышении лимита сначала убирается второй
-    официальный новостной блок, затем по одному исключаются
-    наименее важные изменения баланса. Срез строки никогда
-    не используется: каждый факт остаётся целым.
+    balance. HIGH без Balance может содержать два официальных
+    блока, MEDIUM и любая новость рядом с Balance — только один.
+    Сначала пытаемся уложиться в мягкую цель, удаляя целые
+    блоки и менее важные изменения. Жёсткий лимит соблюдается
+    всегда, а срез строки никогда не используется.
     """
 
     high_priority_articles, medium_priority_articles = get_news_candidates(data)
@@ -1301,16 +1316,25 @@ def build_final_post(data: dict) -> str | None:
         medium_priority_articles,
     )
 
+    selected_buffs, selected_nerfs, _ = select_balance_changes(data)
+    balance_change_count = len(selected_buffs) + len(selected_nerfs)
+
     if news_article is None:
         news_block_count = 0
     else:
+        # Наличие Balance определяем по реально отобранным
+        # изменениям, а не просто по полям исходного JSON.
+        if balance_change_count > 0:
+            news_block_limit = FINAL_NEWS_WITH_BALANCE_MAX_BLOCKS
+        elif news_article.get("priority") == "medium":
+            news_block_limit = FINAL_MEDIUM_NEWS_MAX_BLOCKS
+        else:
+            news_block_limit = FINAL_HIGH_NEWS_MAX_BLOCKS
+
         news_block_count = min(
-            NEWS_MAX_BLOCKS,
+            news_block_limit,
             len(select_news_content(news_article)),
         )
-
-    selected_buffs, selected_nerfs, _ = select_balance_changes(data)
-    balance_change_count = len(selected_buffs) + len(selected_nerfs)
 
     while True:
         if news_article is None:
@@ -1346,7 +1370,15 @@ def build_final_post(data: dict) -> str | None:
         post_parts.append("🎮 Roblox Hub")
         final_post = "\n\n".join(post_parts)
 
-        if len(final_post) <= FINAL_POST_MAX_CHARS:
+        # В обычной ситуации target меньше hard limit. min()
+        # дополнительно сохраняет корректность при локальной
+        # настройке констант в тестах или окружении редактора.
+        preferred_limit = min(
+            FINAL_POST_TARGET_CHARS,
+            FINAL_POST_MAX_CHARS,
+        )
+
+        if len(final_post) <= preferred_limit:
             return final_post
 
         # Первый шаг сокращения — оставить у новости только
@@ -1358,6 +1390,21 @@ def build_final_post(data: dict) -> str | None:
         # Затем убираем по одному наименее важному бойцу.
         # Повторная сортировка сохраняет кандидатов с высоким
         # score независимо от того, buff это или nerf.
+        if balance_change_count > 1:
+            balance_change_count -= 1
+            continue
+
+        # Мягкая цель не должна удалять последний balance-факт
+        # или единственный официальный новостной абзац. Если
+        # после безопасного сокращения пост укладывается в 1400,
+        # допускаем результат немного длиннее target.
+        if len(final_post) <= FINAL_POST_MAX_CHARS:
+            return final_post
+
+        # Ради жёсткого технического лимита последнее Balance
+        # Change тоже можно убрать целиком. Новость при этом
+        # остаётся нетронутой; если новости нет, следующий цикл
+        # корректно вернёт None вместо пустого поста.
         if balance_change_count > 0:
             balance_change_count -= 1
             continue

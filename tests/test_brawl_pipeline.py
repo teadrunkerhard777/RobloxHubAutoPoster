@@ -178,8 +178,12 @@ final_post_namespace = load_members(
         "NEWS_DAY_STAGE_PATTERN",
         "NEWS_SERVICE_PREFIXES",
         "FINAL_POST_MAX_CHARS",
+        "FINAL_POST_TARGET_CHARS",
         "FINAL_BALANCE_MAX_BUFFS",
         "FINAL_BALANCE_MAX_NERFS",
+        "FINAL_HIGH_NEWS_MAX_BLOCKS",
+        "FINAL_MEDIUM_NEWS_MAX_BLOCKS",
+        "FINAL_NEWS_WITH_BALANCE_MAX_BLOCKS",
         "NEWS_TITLE_CASE_EXCEPTIONS",
         "NEWS_TITLE_SAFE_LATIN_WORDS",
     },
@@ -808,16 +812,19 @@ class BrawlPipelineTests(unittest.TestCase):
 
         self.assertIsNone(build_article_news_preview(low_article))
 
-    def make_final_news_article(self, priority):
+    def make_final_news_article(self, priority, content_blocks=None):
         """Создаёт пригодную официальную RU-статью для final-тестов."""
+
+        if content_blocks is None:
+            content_blocks = [
+                "Игроки могут объединиться в команды и принять участие в турнире."
+            ]
 
         return {
             "priority": priority,
             "ru_found": True,
             "ru_title": "НОВОЕ СОБЫТИЕ BRAWL STARS УЖЕ НАЧАЛОСЬ!",
-            "ru_clean_content": [
-                "Игроки могут объединиться в команды и принять участие в турнире."
-            ],
+            "ru_clean_content": content_blocks,
         }
 
     def make_balance_change(self, brawler, change):
@@ -827,6 +834,14 @@ class BrawlPipelineTests(unittest.TestCase):
             "brawler": brawler,
             "changes": [change],
         }
+
+    def make_two_news_blocks(self):
+        """Возвращает два различимых официальных блока для проверки лимита."""
+
+        return [
+            "Первый официальный абзац подробно описывает главное событие.",
+            "Второй официальный абзац содержит дополнительные подробности.",
+        ]
 
     def test_final_post_with_high_news_and_balance_contains_both_sections(self):
         data = {
@@ -862,6 +877,22 @@ class BrawlPipelineTests(unittest.TestCase):
         self.assertIn("🔥 ГЛАВНОЕ", final_post)
         self.assertNotIn("⚖️", final_post)
 
+    def test_high_news_without_balance_keeps_up_to_two_blocks(self):
+        content_blocks = self.make_two_news_blocks()
+        data = {
+            "high_priority_articles": [
+                self.make_final_news_article("high", content_blocks)
+            ],
+            "medium_priority_articles": [],
+            "new_buffs": [],
+            "new_nerfs": [],
+        }
+
+        final_post = build_final_post(data)
+
+        self.assertIn(content_blocks[0], final_post)
+        self.assertIn(content_blocks[1], final_post)
+
     def test_final_post_with_medium_news_and_balance_contains_both_sections(self):
         data = {
             "high_priority_articles": [],
@@ -881,6 +912,50 @@ class BrawlPipelineTests(unittest.TestCase):
         self.assertIn("🔥 ГЛАВНОЕ", final_post)
         self.assertIn("⚖️ БАЛАНС", final_post)
         self.assertIn("🔻 SURGE", final_post)
+
+    def test_high_news_with_balance_keeps_only_one_block(self):
+        content_blocks = self.make_two_news_blocks()
+        data = {
+            "high_priority_articles": [
+                self.make_final_news_article("high", content_blocks)
+            ],
+            "medium_priority_articles": [],
+            "new_buffs": [
+                self.make_balance_change(
+                    "JACKY",
+                    "Health increased from 5000 to 5200",
+                )
+            ],
+            "new_nerfs": [],
+        }
+
+        final_post = build_final_post(data)
+
+        self.assertIn(content_blocks[0], final_post)
+        self.assertNotIn(content_blocks[1], final_post)
+        self.assertIn("⚖️ БАЛАНС", final_post)
+
+    def test_medium_news_with_balance_keeps_only_one_block(self):
+        content_blocks = self.make_two_news_blocks()
+        data = {
+            "high_priority_articles": [],
+            "medium_priority_articles": [
+                self.make_final_news_article("medium", content_blocks)
+            ],
+            "new_buffs": [],
+            "new_nerfs": [
+                self.make_balance_change(
+                    "SURGE",
+                    "Main attack damage reduced from 2000 to 1900",
+                )
+            ],
+        }
+
+        final_post = build_final_post(data)
+
+        self.assertIn(content_blocks[0], final_post)
+        self.assertNotIn(content_blocks[1], final_post)
+        self.assertIn("⚖️ БАЛАНС", final_post)
 
     def test_final_post_with_only_balance_is_created(self):
         data = {
@@ -912,6 +987,22 @@ class BrawlPipelineTests(unittest.TestCase):
         self.assertIsNotNone(final_post)
         self.assertIn("🔥 ГЛАВНОЕ", final_post)
         self.assertNotIn("⚖️", final_post)
+
+    def test_medium_news_without_balance_keeps_only_one_block(self):
+        content_blocks = self.make_two_news_blocks()
+        data = {
+            "high_priority_articles": [],
+            "medium_priority_articles": [
+                self.make_final_news_article("medium", content_blocks)
+            ],
+            "new_buffs": [],
+            "new_nerfs": [],
+        }
+
+        final_post = build_final_post(data)
+
+        self.assertIn(content_blocks[0], final_post)
+        self.assertNotIn(content_blocks[1], final_post)
 
     def test_final_post_prefers_first_usable_high_news(self):
         high_article = self.make_final_news_article("high")
@@ -1042,6 +1133,28 @@ class BrawlPipelineTests(unittest.TestCase):
             len(final_post),
             final_post_namespace["FINAL_POST_MAX_CHARS"],
         )
+
+    def test_final_post_compacts_toward_editorial_target(self):
+        long_changes = [
+            self.make_balance_change(
+                f"BRAWLER_{index}",
+                "Official detailed balance change " + ("X" * 150),
+            )
+            for index in range(7)
+        ]
+        data = {
+            "new_buffs": long_changes[:3],
+            "new_nerfs": long_changes[3:],
+        }
+
+        final_post = build_final_post(data)
+
+        self.assertIsNotNone(final_post)
+        self.assertLessEqual(
+            len(final_post),
+            final_post_namespace["FINAL_POST_TARGET_CHARS"],
+        )
+        self.assertIn("👀 Ещё изменений в обновлении", final_post)
 
     def test_length_reduction_keeps_higher_score_change(self):
         original_limit = final_post_namespace["FINAL_POST_MAX_CHARS"]
