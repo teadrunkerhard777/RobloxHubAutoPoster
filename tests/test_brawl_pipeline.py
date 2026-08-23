@@ -154,6 +154,40 @@ select_news_content = russian_preview_namespace["select_news_content"]
 build_article_news_preview = russian_preview_namespace["build_article_news_preview"]
 print_generation_result = russian_preview_namespace["print_generation_result"]
 
+final_post_namespace = load_members(
+    "brawl_post.py",
+    {
+        "get_news_candidates",
+        "select_news_content",
+        "normalize_values",
+        "translate_change",
+        "format_brawler_change",
+        "score_change",
+        "normalize_news_title",
+        "build_news_section",
+        "select_final_news",
+        "select_balance_changes",
+        "build_balance_section",
+        "build_final_post",
+    },
+    {
+        "NEWS_MAX_BLOCKS",
+        "NEWS_MAX_CHARS",
+        "NEWS_MIN_BLOCK_LENGTH",
+        "NEWS_SHORT_HEADING_MAX_CHARS",
+        "NEWS_DAY_STAGE_PATTERN",
+        "NEWS_SERVICE_PREFIXES",
+        "FINAL_POST_MAX_CHARS",
+        "FINAL_BALANCE_MAX_BUFFS",
+        "FINAL_BALANCE_MAX_NERFS",
+        "NEWS_TITLE_CASE_EXCEPTIONS",
+        "NEWS_TITLE_SAFE_LATIN_WORDS",
+    },
+)
+
+build_final_post = final_post_namespace["build_final_post"]
+normalize_news_title = final_post_namespace["normalize_news_title"]
+
 
 class BrawlPipelineTests(unittest.TestCase):
     def test_collects_russian_articles_and_skips_pagination_and_duplicates(self):
@@ -773,6 +807,320 @@ class BrawlPipelineTests(unittest.TestCase):
         }
 
         self.assertIsNone(build_article_news_preview(low_article))
+
+    def make_final_news_article(self, priority):
+        """Создаёт пригодную официальную RU-статью для final-тестов."""
+
+        return {
+            "priority": priority,
+            "ru_found": True,
+            "ru_title": "НОВОЕ СОБЫТИЕ BRAWL STARS УЖЕ НАЧАЛОСЬ!",
+            "ru_clean_content": [
+                "Игроки могут объединиться в команды и принять участие в турнире."
+            ],
+        }
+
+    def make_balance_change(self, brawler, change):
+        """Создаёт один элемент существующей balance-структуры."""
+
+        return {
+            "brawler": brawler,
+            "changes": [change],
+        }
+
+    def test_final_post_with_high_news_and_balance_contains_both_sections(self):
+        data = {
+            "high_priority_articles": [self.make_final_news_article("high")],
+            "medium_priority_articles": [],
+            "new_buffs": [
+                self.make_balance_change(
+                    "JACKY",
+                    "Health increased from 5000 to 5200",
+                )
+            ],
+            "new_nerfs": [],
+        }
+
+        final_post = build_final_post(data)
+
+        self.assertIsNotNone(final_post)
+        self.assertIn("🔥 ГЛАВНОЕ", final_post)
+        self.assertIn("⚖️ БАЛАНС", final_post)
+        self.assertIn("🔺 JACKY", final_post)
+
+    def test_final_post_with_high_news_without_balance_omits_balance(self):
+        data = {
+            "high_priority_articles": [self.make_final_news_article("high")],
+            "medium_priority_articles": [],
+            "new_buffs": [],
+            "new_nerfs": [],
+        }
+
+        final_post = build_final_post(data)
+
+        self.assertIsNotNone(final_post)
+        self.assertIn("🔥 ГЛАВНОЕ", final_post)
+        self.assertNotIn("⚖️", final_post)
+
+    def test_final_post_with_medium_news_and_balance_contains_both_sections(self):
+        data = {
+            "high_priority_articles": [],
+            "medium_priority_articles": [self.make_final_news_article("medium")],
+            "new_buffs": [],
+            "new_nerfs": [
+                self.make_balance_change(
+                    "SURGE",
+                    "Main attack damage reduced from 2000 to 1900",
+                )
+            ],
+        }
+
+        final_post = build_final_post(data)
+
+        self.assertIsNotNone(final_post)
+        self.assertIn("🔥 ГЛАВНОЕ", final_post)
+        self.assertIn("⚖️ БАЛАНС", final_post)
+        self.assertIn("🔻 SURGE", final_post)
+
+    def test_final_post_with_only_balance_is_created(self):
+        data = {
+            "new_buffs": [
+                self.make_balance_change(
+                    "BONNIE",
+                    "Main attack damage increased from 1120 to 1220",
+                )
+            ],
+            "new_nerfs": [],
+        }
+
+        final_post = build_final_post(data)
+
+        self.assertIsNotNone(final_post)
+        self.assertIn("⚖️ ИЗМЕНЕНИЯ БАЛАНСА", final_post)
+        self.assertNotIn("🔥 ГЛАВНОЕ", final_post)
+
+    def test_final_post_with_only_medium_news_is_created(self):
+        data = {
+            "high_priority_articles": [],
+            "medium_priority_articles": [self.make_final_news_article("medium")],
+            "new_buffs": [],
+            "new_nerfs": [],
+        }
+
+        final_post = build_final_post(data)
+
+        self.assertIsNotNone(final_post)
+        self.assertIn("🔥 ГЛАВНОЕ", final_post)
+        self.assertNotIn("⚖️", final_post)
+
+    def test_final_post_prefers_first_usable_high_news(self):
+        high_article = self.make_final_news_article("high")
+        high_article["ru_title"] = "ГЛАВНАЯ НОВОСТЬ BRAWL STARS"
+        medium_article = self.make_final_news_article("medium")
+        medium_article["ru_title"] = "ЗАПАСНАЯ НОВОСТЬ BRAWL STARS"
+        data = {
+            "high_priority_articles": [high_article],
+            "medium_priority_articles": [medium_article],
+            "new_buffs": [],
+            "new_nerfs": [],
+        }
+
+        final_post = build_final_post(data)
+
+        self.assertIn("Главная новость Brawl Stars", final_post)
+        self.assertNotIn("Запасная новость Brawl Stars", final_post)
+
+    def test_final_post_uses_medium_when_high_has_no_russian_text(self):
+        unusable_high = {
+            "priority": "high",
+            "ru_found": False,
+        }
+        medium_article = self.make_final_news_article("medium")
+        medium_article["ru_title"] = "ЗАПАСНАЯ НОВОСТЬ BRAWL STARS"
+        data = {
+            "high_priority_articles": [unusable_high],
+            "medium_priority_articles": [medium_article],
+            "new_buffs": [],
+            "new_nerfs": [],
+        }
+
+        final_post = build_final_post(data)
+
+        self.assertIn("Запасная новость Brawl Stars", final_post)
+
+    def test_low_news_without_other_material_does_not_create_final_post(self):
+        low_article = self.make_final_news_article("low")
+        data = {
+            "high_priority_articles": [low_article],
+            "medium_priority_articles": [],
+            "new_buffs": [],
+            "new_nerfs": [],
+        }
+
+        self.assertIsNone(build_final_post(data))
+
+    def test_english_article_without_russian_version_is_not_used(self):
+        english_only_article = {
+            "priority": "high",
+            "ru_found": False,
+            "title": "English article",
+            "clean_content": ["English content must not be used."],
+        }
+        data = {
+            "high_priority_articles": [english_only_article],
+            "medium_priority_articles": [],
+            "new_buffs": [],
+            "new_nerfs": [],
+        }
+
+        self.assertIsNone(build_final_post(data))
+
+    def test_final_post_without_any_material_returns_none(self):
+        data = {
+            "high_priority_articles": [],
+            "medium_priority_articles": [],
+            "new_buffs": [],
+            "new_nerfs": [],
+        }
+
+        self.assertIsNone(build_final_post(data))
+
+    def test_final_balance_does_not_print_empty_change_sections(self):
+        test_cases = (
+            (
+                {
+                    "new_buffs": [
+                        self.make_balance_change(
+                            "JACKY",
+                            "Health increased from 5000 to 5200",
+                        )
+                    ],
+                    "new_nerfs": [],
+                },
+                "📈 БАФФЫ",
+                "📉 НЕРФЫ",
+            ),
+            (
+                {
+                    "new_buffs": [],
+                    "new_nerfs": [
+                        self.make_balance_change(
+                            "SURGE",
+                            "Main attack damage reduced from 2000 to 1900",
+                        )
+                    ],
+                },
+                "📉 НЕРФЫ",
+                "📈 БАФФЫ",
+            ),
+        )
+
+        for data, expected_heading, missing_heading in test_cases:
+            with self.subTest(expected_heading=expected_heading):
+                final_post = build_final_post(data)
+
+                self.assertIn(expected_heading, final_post)
+                self.assertNotIn(missing_heading, final_post)
+
+    def test_final_post_does_not_exceed_character_limit(self):
+        long_changes = [
+            self.make_balance_change(
+                f"BRAWLER_{index}",
+                "Detailed official balance change " + ("X" * 260),
+            )
+            for index in range(10)
+        ]
+        data = {
+            "new_buffs": long_changes[:5],
+            "new_nerfs": long_changes[5:],
+        }
+
+        final_post = build_final_post(data)
+
+        self.assertIsNotNone(final_post)
+        self.assertLessEqual(
+            len(final_post),
+            final_post_namespace["FINAL_POST_MAX_CHARS"],
+        )
+
+    def test_length_reduction_keeps_higher_score_change(self):
+        original_limit = final_post_namespace["FINAL_POST_MAX_CHARS"]
+        final_post_namespace["FINAL_POST_MAX_CHARS"] = 220
+        data = {
+            "new_buffs": [
+                self.make_balance_change(
+                    "IMPORTANT",
+                    "Hypercharge main attack Super charge rate reduced by 20%",
+                ),
+                self.make_balance_change(
+                    "MINOR",
+                    "Reload speed changed " + ("X" * 100),
+                ),
+            ],
+            "new_nerfs": [],
+        }
+
+        try:
+            final_post = build_final_post(data)
+        finally:
+            final_post_namespace["FINAL_POST_MAX_CHARS"] = original_limit
+
+        self.assertIsNotNone(final_post)
+        self.assertIn("IMPORTANT", final_post)
+        self.assertNotIn("MINOR", final_post)
+
+    def test_length_reduction_removes_whole_news_block(self):
+        first_block = "Первый официальный факт: " + ("А" * 140) + "."
+        second_block = "Второй официальный факт: " + ("Б" * 140) + "."
+        article = {
+            "priority": "high",
+            "ru_found": True,
+            "ru_title": "КОРОТКАЯ НОВОСТЬ BRAWL STARS",
+            "ru_clean_content": [first_block, second_block],
+        }
+        data = {
+            "high_priority_articles": [article],
+            "medium_priority_articles": [],
+            "new_buffs": [],
+            "new_nerfs": [],
+        }
+        original_limit = final_post_namespace["FINAL_POST_MAX_CHARS"]
+        final_post_namespace["FINAL_POST_MAX_CHARS"] = 330
+
+        try:
+            final_post = build_final_post(data)
+        finally:
+            final_post_namespace["FINAL_POST_MAX_CHARS"] = original_limit
+
+        self.assertIsNotNone(final_post)
+        self.assertIn(first_block, final_post)
+        self.assertNotIn(second_block, final_post)
+        self.assertLessEqual(len(final_post), 330)
+
+    def test_uppercase_official_title_uses_safe_telegram_case(self):
+        title = "КУБОК СТАРР ОТ ADIDAS УЖЕ ИДЁТ!"
+
+        self.assertEqual(
+            normalize_news_title(title),
+            "Кубок Старр от adidas уже идёт!",
+        )
+
+    def test_old_json_without_news_fields_still_builds_balance(self):
+        old_data = {
+            "new_buffs": [
+                self.make_balance_change(
+                    "JACKY",
+                    "Health increased from 5000 to 5200",
+                )
+            ],
+            "new_nerfs": [],
+            "new_articles": [],
+        }
+
+        final_post = build_final_post(old_data)
+
+        self.assertIsNotNone(final_post)
+        self.assertIn("⚖️ ИЗМЕНЕНИЯ БАЛАНСА", final_post)
 
 
 if __name__ == "__main__":

@@ -71,6 +71,46 @@ NEWS_SERVICE_PREFIXES = (
 
 
 # ---------------------------------------------------------
+# ОГРАНИЧЕНИЯ ФИНАЛЬНОГО TELEGRAM-ПОСТА
+# ---------------------------------------------------------
+
+# Финальный выпуск должен быстро читаться с телефона.
+# Лимит заметно ниже технического ограничения Telegram,
+# потому что это редакционное правило короткого формата.
+FINAL_POST_MAX_CHARS = 1400
+
+# Сохраняем уже принятую для Balance Changes квоту:
+# максимум три бойца с баффами и четыре с нерфами.
+FINAL_BALANCE_MAX_BUFFS = 3
+FINAL_BALANCE_MAX_NERFS = 4
+
+# Автоматически меняем регистр только у полностью прописных
+# заголовков. Эти известные игровые и брендовые названия
+# восстанавливаем после безопасного перевода остальных слов
+# в обычный регистр.
+NEWS_TITLE_CASE_EXCEPTIONS = (
+    ("brawl stars", "Brawl Stars"),
+    ("hypercharge", "Hypercharge"),
+    ("supercell", "Supercell"),
+    ("adidas", "adidas"),
+    ("npc", "NPC"),
+    ("старр", "Старр"),
+)
+
+# Если полностью прописной заголовок содержит неизвестную
+# латинскую аббревиатуру, оставляем официальный вариант как
+# есть. Так генератор не испортит новое имя или бренд.
+NEWS_TITLE_SAFE_LATIN_WORDS = {
+    "ADIDAS",
+    "BRAWL",
+    "HYPERCHARGE",
+    "NPC",
+    "STARS",
+    "SUPERCELL",
+}
+
+
+# ---------------------------------------------------------
 # ВСПОМОГАТЕЛЬНЫЕ ФУНКЦИИ
 # ---------------------------------------------------------
 
@@ -1014,6 +1054,322 @@ def build_post(data):
 
 
 # ---------------------------------------------------------
+# ФОРМИРОВАНИЕ ФИНАЛЬНОГО TELEGRAM-ПОСТА
+# ---------------------------------------------------------
+
+
+def normalize_news_title(title: str) -> str:
+    """
+    Безопасно приводит полностью прописной заголовок
+    к более спокойному Telegram-регистру.
+
+    Заголовки со смешанным регистром уже содержат решение
+    редактора Supercell, поэтому возвращаем их без изменений.
+    Для полностью прописного текста дополнительно проверяем
+    латинские слова: неизвестную аббревиатуру лучше сохранить,
+    чем случайно испортить её автоматическим преобразованием.
+    """
+
+    if not title:
+        return title
+
+    letters = [character for character in title if character.isalpha()]
+
+    # Если в заголовке уже есть строчная буква, официальный
+    # смешанный регистр считаем более надёжным вариантом.
+    if not letters or any(character.islower() for character in letters):
+        return title
+
+    latin_words = set(re.findall(r"[A-Z][A-Z0-9-]*", title))
+
+    if latin_words - NEWS_TITLE_SAFE_LATIN_WORDS:
+        return title
+
+    normalized_title = title.lower()
+
+    # Поднимаем только первую буквенную позицию, не предполагая,
+    # что заголовок обязательно начинается с буквы или цифры.
+    for index, character in enumerate(normalized_title):
+        if character.isalpha():
+            normalized_title = (
+                normalized_title[:index]
+                + character.upper()
+                + normalized_title[index + 1 :]
+            )
+            break
+
+    # Возвращаем точное написание известных имён после общей
+    # нормализации. Замена ограничена границами слова и потому
+    # не меняет похожие части внутри других названий.
+    for source, replacement in NEWS_TITLE_CASE_EXCEPTIONS:
+        normalized_title = re.sub(
+            rf"(?<!\w){re.escape(source)}(?!\w)",
+            replacement,
+            normalized_title,
+            flags=re.IGNORECASE,
+        )
+
+    return normalized_title
+
+
+def build_news_section(article: dict, max_blocks: int = NEWS_MAX_BLOCKS) -> str | None:
+    """
+    Собирает новостную секцию только из официального RU-текста.
+
+    Функция повторно использует select_news_content(), поэтому
+    в финальный пост действуют те же фильтры служебных строк,
+    подзаголовков и лимита официального текста. Содержимое
+    блоков не пересказывается и не обрезается.
+    """
+
+    if not article.get("ru_found") or max_blocks <= 0:
+        return None
+
+    ru_title = article.get("ru_title")
+
+    if not isinstance(ru_title, str) or not ru_title.strip():
+        return None
+
+    selected_blocks = select_news_content(article)[:max_blocks]
+
+    if not selected_blocks:
+        return None
+
+    section_parts = [
+        "🔥 ГЛАВНОЕ",
+        normalize_news_title(ru_title.strip()),
+        *selected_blocks,
+        "Источник: Supercell",
+    ]
+
+    return "\n\n".join(section_parts)
+
+
+def select_final_news(
+    high_priority_articles: list[dict],
+    medium_priority_articles: list[dict],
+) -> dict | None:
+    """
+    Выбирает одну статью для финального выпуска.
+
+    Сначала просматриваем HIGH в архивном порядке, затем
+    MEDIUM. Статья считается пригодной только если для неё
+    действительно строится русская секция. LOW игнорируется,
+    даже если повреждённый JSON поместил её не в тот список.
+    """
+
+    priority_groups = (
+        ("high", high_priority_articles),
+        ("medium", medium_priority_articles),
+    )
+
+    for expected_priority, articles in priority_groups:
+        for article in articles:
+            if article.get("priority") != expected_priority:
+                continue
+
+            if build_news_section(article) is not None:
+                return article
+
+    return None
+
+
+def select_balance_changes(
+    data: dict,
+    max_changes: int | None = None,
+) -> tuple[list[dict], list[dict], int]:
+    """
+    Отбирает наиболее важные изменения для общей секции.
+
+    Первичный отбор полностью сохраняет текущие правила:
+    максимум три buff, четыре nerf и сортировка score_change().
+    Если общий пост не помещается, max_changes постепенно
+    уменьшается. Тогда удаляются целые бойцы с минимальным
+    score, а более важные изменения остаются в выпуске.
+    """
+
+    all_buffs = data.get("new_buffs", [])
+    all_nerfs = data.get("new_nerfs", [])
+
+    selected_buffs = sorted(
+        all_buffs,
+        key=score_change,
+        reverse=True,
+    )[:FINAL_BALANCE_MAX_BUFFS]
+    selected_nerfs = sorted(
+        all_nerfs,
+        key=score_change,
+        reverse=True,
+    )[:FINAL_BALANCE_MAX_NERFS]
+
+    selected_total = len(selected_buffs) + len(selected_nerfs)
+
+    if max_changes is not None and selected_total > max_changes:
+        # В ключе храним тип и позицию, а не сам словарь:
+        # словари нельзя безопасно помещать в set.
+        ranked_changes = []
+
+        for index, item in enumerate(selected_buffs):
+            ranked_changes.append((score_change(item), "buff", index))
+
+        for index, item in enumerate(selected_nerfs):
+            ranked_changes.append((score_change(item), "nerf", index))
+
+        ranked_changes.sort(
+            key=lambda ranked_item: ranked_item[0],
+            reverse=True,
+        )
+        retained_keys = {
+            (change_type, index)
+            for _, change_type, index in ranked_changes[:max_changes]
+        }
+
+        selected_buffs = [
+            item
+            for index, item in enumerate(selected_buffs)
+            if ("buff", index) in retained_keys
+        ]
+        selected_nerfs = [
+            item
+            for index, item in enumerate(selected_nerfs)
+            if ("nerf", index) in retained_keys
+        ]
+
+    hidden_total = (
+        len(all_buffs) + len(all_nerfs) - len(selected_buffs) - len(selected_nerfs)
+    )
+
+    return selected_buffs, selected_nerfs, hidden_total
+
+
+def build_balance_section(
+    data: dict,
+    max_changes: int | None = None,
+    heading: str = "⚖️ БАЛАНС",
+) -> str | None:
+    """
+    Формирует компактную balance-секцию общего выпуска.
+
+    Перевод и форматирование каждого бойца выполняют прежние
+    normalize_values(), translate_change() и
+    format_brawler_change(). Пустые BUFF/NERF-разделы никогда
+    не добавляются.
+    """
+
+    selected_buffs, selected_nerfs, hidden_total = select_balance_changes(
+        data,
+        max_changes=max_changes,
+    )
+
+    if not selected_buffs and not selected_nerfs:
+        return None
+
+    section_parts = [heading]
+
+    if selected_buffs:
+        section_parts.append("📈 БАФФЫ")
+
+        for buff in selected_buffs:
+            section_parts.append(format_brawler_change(buff, "🔺"))
+
+    if selected_nerfs:
+        section_parts.append("📉 НЕРФЫ")
+
+        for nerf in selected_nerfs:
+            section_parts.append(format_brawler_change(nerf, "🔻"))
+
+    if hidden_total > 0:
+        section_parts.append(f"👀 Ещё изменений в обновлении: {hidden_total}")
+
+    return "\n\n".join(section_parts)
+
+
+def build_final_post(data: dict) -> str | None:
+    """
+    Собирает короткий готовый Brawl Stars пост для Telegram.
+
+    Поддерживаются news + balance, только news и только
+    balance. При превышении лимита сначала убирается второй
+    официальный новостной блок, затем по одному исключаются
+    наименее важные изменения баланса. Срез строки никогда
+    не используется: каждый факт остаётся целым.
+    """
+
+    high_priority_articles, medium_priority_articles = get_news_candidates(data)
+    news_article = select_final_news(
+        high_priority_articles,
+        medium_priority_articles,
+    )
+
+    if news_article is None:
+        news_block_count = 0
+    else:
+        news_block_count = min(
+            NEWS_MAX_BLOCKS,
+            len(select_news_content(news_article)),
+        )
+
+    selected_buffs, selected_nerfs, _ = select_balance_changes(data)
+    balance_change_count = len(selected_buffs) + len(selected_nerfs)
+
+    while True:
+        if news_article is None:
+            news_section = None
+        else:
+            news_section = build_news_section(
+                news_article,
+                max_blocks=news_block_count,
+            )
+
+        if news_section is None:
+            balance_heading = "⚖️ ИЗМЕНЕНИЯ БАЛАНСА"
+        else:
+            balance_heading = "⚖️ БАЛАНС"
+
+        balance_section = build_balance_section(
+            data,
+            max_changes=balance_change_count,
+            heading=balance_heading,
+        )
+
+        if news_section is None and balance_section is None:
+            return None
+
+        post_parts = ["💥 BRAWL STARS | ROBLOX HUB"]
+
+        if news_section is not None:
+            post_parts.append(news_section)
+
+        if balance_section is not None:
+            post_parts.append(balance_section)
+
+        post_parts.append("🎮 Roblox Hub")
+        final_post = "\n\n".join(post_parts)
+
+        if len(final_post) <= FINAL_POST_MAX_CHARS:
+            return final_post
+
+        # Первый шаг сокращения — оставить у новости только
+        # один официальный содержательный блок целиком.
+        if news_block_count > 1:
+            news_block_count = 1
+            continue
+
+        # Затем убираем по одному наименее важному бойцу.
+        # Повторная сортировка сохраняет кандидатов с высоким
+        # score независимо от того, buff это или nerf.
+        if balance_change_count > 0:
+            balance_change_count -= 1
+            continue
+
+        # Теоретически один официальный блок или заголовок
+        # тоже может быть длиннее редакционного лимита. Его
+        # нельзя резать или переписывать, поэтому безопаснее
+        # не создавать пост, чем публиковать обрывок.
+        return None
+
+
+# ---------------------------------------------------------
 # 1. ЗАГРУЖАЕМ ДАННЫЕ
 # ---------------------------------------------------------
 
@@ -1088,3 +1444,20 @@ print_generation_result(
     post,
     russian_news_previews,
 )
+
+
+# ---------------------------------------------------------
+# 5. ПОКАЗЫВАЕМ ФИНАЛЬНЫЙ TELEGRAM-ПОСТ
+# ---------------------------------------------------------
+
+# Этот блок пока служит только редакторским предпросмотром.
+# Генератор не записывает результат в posts.json, не меняет
+# state монитора и ничего автоматически не публикует.
+final_post = build_final_post(data)
+
+print_section("FINAL TELEGRAM POST")
+
+if final_post is None:
+    print(Fore.YELLOW + "\nПост не создан: подходящих новых материалов нет.")
+else:
+    print("\n" + final_post)
