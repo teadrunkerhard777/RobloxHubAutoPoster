@@ -2,6 +2,8 @@ import json
 from pathlib import Path
 from urllib.parse import urlparse
 
+from tips_rotation import validate_tip_catalog
+
 
 GAMES_FILE = Path("games.json")
 SOURCES_FILE = Path("official_sources.json")
@@ -192,6 +194,14 @@ def validate_content_files(canonical_names):
             + ", ".join(missing_tips)
             + "."
         )
+
+    errors.extend(
+        validate_tip_catalog(
+            tips,
+            canonical_names,
+            minimum_per_game=15
+        )
+    )
 
     return errors
 

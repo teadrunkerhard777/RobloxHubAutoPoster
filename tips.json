@@ -6,7 +6,8 @@
     "text": "В начале забега сначала подкинь топливо в костёр, а уже потом уходи далеко за ресурсами.",
     "source": "verified_core_mechanic",
     "reviewed_at": "2026-08-14",
-    "used": false
+    "used": false,
+    "category": "survival"
   },
   {
     "id": 2,
@@ -15,7 +16,8 @@
     "text": "Не трать всё дерево на костёр: часть древесины пригодится для крафта и развития лагеря.",
     "source": "verified_core_mechanic",
     "reviewed_at": "2026-08-14",
-    "used": false
+    "used": false,
+    "category": "items"
   },
   {
     "id": 3,
@@ -24,7 +26,8 @@
     "text": "Следи за уровнем костра: его улучшение расширяет безопасную зону и помогает продвигаться дальше.",
     "source": "verified_core_mechanic",
     "reviewed_at": "2026-08-14",
-    "used": true
+    "used": true,
+    "category": "mechanics"
   },
   {
     "id": 4,
@@ -33,7 +36,8 @@
     "text": "Перед наступлением ночи лучше заранее вернуться ближе к лагерю, если у тебя мало света и лечения.",
     "source": "verified_core_mechanic",
     "reviewed_at": "2026-08-14",
-    "used": false
+    "used": false,
+    "category": "survival"
   },
   {
     "id": 5,
@@ -42,7 +46,8 @@
     "text": "Обыскивай здания днём: там можно найти полезные предметы и топливо, не тратя время ночью.",
     "source": "verified_core_mechanic",
     "reviewed_at": "2026-08-14",
-    "used": false
+    "used": false,
+    "category": "exploration"
   },
   {
     "id": 6,
@@ -51,7 +56,8 @@
     "text": "Карта полезна не только новичкам: с ней проще планировать длинные вылазки и возвращаться к лагерю.",
     "source": "verified_core_mechanic",
     "reviewed_at": "2026-08-14",
-    "used": false
+    "used": false,
+    "category": "exploration"
   },
   {
     "id": 7,
@@ -60,7 +66,8 @@
     "text": "Храни несколько лечащих предметов на случай, если придётся поднимать товарища после тяжёлой атаки.",
     "source": "verified_core_mechanic",
     "reviewed_at": "2026-08-14",
-    "used": false
+    "used": false,
+    "category": "items"
   },
   {
     "id": 8,
@@ -69,7 +76,8 @@
     "text": "В команде разделяйте роли: один собирает топливо, другой исследует, третий занимается лагерем — так прогресс идёт быстрее.",
     "source": "verified_core_mechanic",
     "reviewed_at": "2026-08-14",
-    "used": true
+    "used": true,
+    "category": "strategy"
   },
   {
     "id": 9,
@@ -78,7 +86,8 @@
     "text": "Не вырубай все деревья рядом с лагерем бездумно: древесина нужна на протяжении всего забега.",
     "source": "verified_core_mechanic",
     "reviewed_at": "2026-08-14",
-    "used": true
+    "used": true,
+    "category": "economy"
   },
   {
     "id": 10,
@@ -87,7 +96,8 @@
     "text": "Если используешь приручаемых животных, развивай Taming Flute — более сильные союзники полезнее в поздних ночах.",
     "source": "verified_core_mechanic",
     "reviewed_at": "2026-08-14",
-    "used": true
+    "used": true,
+    "category": "mechanics"
   },
   {
     "id": 11,
@@ -96,7 +106,8 @@
     "text": "Не считай костёр абсолютной защитой: некоторые угрозы всё равно могут добраться до лагеря.",
     "source": "verified_core_mechanic",
     "reviewed_at": "2026-08-14",
-    "used": true
+    "used": true,
+    "category": "survival"
   },
   {
     "id": 12,
@@ -105,7 +116,8 @@
     "text": "Перед длинной вылазкой проверь три вещи: еда, источник света и свободное место для добычи.",
     "source": "verified_core_mechanic",
     "reviewed_at": "2026-08-14",
-    "used": false
+    "used": false,
+    "category": "strategy"
   },
   {
     "id": 13,
@@ -114,7 +126,8 @@
     "text": "Закрывай базу вовремя: открытая база — самый простой шанс для соперника унести Brainrot.",
     "source": "verified_core_mechanic",
     "reviewed_at": "2026-08-14",
-    "used": false
+    "used": false,
+    "category": "strategy"
   },
   {
     "id": 14,
@@ -123,7 +136,8 @@
     "text": "Не уходи далеко от базы сразу после снятия защиты — сначала проверь, кто находится рядом.",
     "source": "verified_core_mechanic",
     "reviewed_at": "2026-08-14",
-    "used": false
+    "used": false,
+    "category": "strategy"
   },
   {
     "id": 15,
@@ -132,7 +146,8 @@
     "text": "Чем больше доход приносит Brainrot, тем внимательнее стоит следить за его безопасностью.",
     "source": "verified_core_mechanic",
     "reviewed_at": "2026-08-14",
-    "used": true
+    "used": true,
+    "category": "economy"
   },
   {
     "id": 16,
@@ -141,7 +156,8 @@
     "text": "При краже соперник становится уязвимее, поэтому защищать базу лучше активно, а не просто наблюдать.",
     "source": "verified_core_mechanic",
     "reviewed_at": "2026-08-14",
-    "used": true
+    "used": true,
+    "category": "combat"
   },
   {
     "id": 17,
@@ -150,7 +166,8 @@
     "text": "Не делай Rebirth, пока не готов потерять текущие деньги и Brainrot: это обмен прогресса на постоянные улучшения.",
     "source": "verified_core_mechanic",
     "reviewed_at": "2026-08-14",
-    "used": true
+    "used": true,
+    "category": "mechanics"
   },
   {
     "id": 18,
@@ -159,7 +176,8 @@
     "text": "Rebirth полезен в долгой игре: он открывает дополнительные улучшения, слоты и усиливает дальнейший заработок.",
     "source": "verified_core_mechanic",
     "reviewed_at": "2026-08-14",
-    "used": true
+    "used": true,
+    "category": "mechanics"
   },
   {
     "id": 19,
@@ -168,7 +186,8 @@
     "text": "Перед Rebirth проверь требования заранее, чтобы не продавать и не терять нужных Brainrot по ошибке.",
     "source": "verified_core_mechanic",
     "reviewed_at": "2026-08-14",
-    "used": false
+    "used": false,
+    "category": "strategy"
   },
   {
     "id": 20,
@@ -177,7 +196,8 @@
     "text": "Хорошая защита базы важна не меньше высокого дохода: редкий Brainrot бесполезен, если его сразу украдут.",
     "source": "verified_core_mechanic",
     "reviewed_at": "2026-08-14",
-    "used": false
+    "used": false,
+    "category": "building"
   },
   {
     "id": 21,
@@ -186,7 +206,8 @@
     "text": "Если видишь открытую чужую базу, сначала оцени путь назад — украсть Brainrot мало, его ещё нужно донести.",
     "source": "verified_core_mechanic",
     "reviewed_at": "2026-08-14",
-    "used": true
+    "used": true,
+    "category": "strategy"
   },
   {
     "id": 22,
@@ -195,7 +216,8 @@
     "text": "Используй защитное снаряжение и slaps тогда, когда соперник действительно несёт ценный Brainrot, а не впустую.",
     "source": "verified_core_mechanic",
     "reviewed_at": "2026-08-14",
-    "used": true
+    "used": true,
+    "category": "items"
   },
   {
     "id": 23,
@@ -204,7 +226,8 @@
     "text": "После расширения базы размещай самые ценные Brainrot так, чтобы до них было сложнее добраться.",
     "source": "verified_core_mechanic",
     "reviewed_at": "2026-08-14",
-    "used": false
+    "used": false,
+    "category": "building"
   },
   {
     "id": 24,
@@ -213,7 +236,8 @@
     "text": "Не гоняйся только за редкостью: сравнивай, насколько конкретный Brainrot улучшает твой доход.",
     "source": "verified_core_mechanic",
     "reviewed_at": "2026-08-14",
-    "used": true
+    "used": true,
+    "category": "economy"
   },
   {
     "id": 25,
@@ -222,7 +246,8 @@
     "text": "Не трать всё время на случайный поиск фруктов: Blox Fruits Dealer регулярно обновляет ассортимент.",
     "source": "verified_core_mechanic",
     "reviewed_at": "2026-08-14",
-    "used": false
+    "used": false,
+    "category": "economy"
   },
   {
     "id": 26,
@@ -231,7 +256,8 @@
     "text": "Если ждёшь фрукт на карте, помни, что найденный фрукт не лежит бесконечно — проверяй места появления вовремя.",
     "source": "verified_core_mechanic",
     "reviewed_at": "2026-08-14",
-    "used": false
+    "used": false,
+    "category": "exploration"
   },
   {
     "id": 27,
@@ -240,7 +266,8 @@
     "text": "На старте выгоднее сосредоточиться на прокачке одного основного стиля боя, а не распыляться на всё сразу.",
     "source": "verified_core_mechanic",
     "reviewed_at": "2026-08-14",
-    "used": true
+    "used": true,
+    "category": "combat"
   },
   {
     "id": 28,
@@ -249,7 +276,8 @@
     "text": "Перед переходом в более опасные зоны убедись, что текущие враги уже не требуют слишком много времени на победу.",
     "source": "verified_core_mechanic",
     "reviewed_at": "2026-08-14",
-    "used": true
+    "used": true,
+    "category": "exploration"
   },
   {
     "id": 29,
@@ -258,7 +286,8 @@
     "text": "Квесты помогают направлять прокачку: бери задания на противников, которых ты и так собираешься побеждать.",
     "source": "verified_core_mechanic",
     "reviewed_at": "2026-08-14",
-    "used": true
+    "used": true,
+    "category": "strategy"
   },
   {
     "id": 30,
@@ -267,7 +296,8 @@
     "text": "Не выбирай фрукт только по редкости — удобство для прокачки и твой стиль игры тоже важны.",
     "source": "verified_core_mechanic",
     "reviewed_at": "2026-08-14",
-    "used": true
+    "used": true,
+    "category": "strategy"
   },
   {
     "id": 31,
@@ -276,7 +306,8 @@
     "text": "Если используешь фрукт для фарма, обращай внимание на атаки по площади: ими проще справляться с группами врагов.",
     "source": "verified_core_mechanic",
     "reviewed_at": "2026-08-14",
-    "used": false
+    "used": false,
+    "category": "combat"
   },
   {
     "id": 32,
@@ -285,7 +316,8 @@
     "text": "Боссов удобнее атаковать подготовленным: сначала восстанови здоровье и проверь откаты способностей.",
     "source": "verified_core_mechanic",
     "reviewed_at": "2026-08-14",
-    "used": false
+    "used": false,
+    "category": "combat"
   },
   {
     "id": 33,
@@ -294,7 +326,8 @@
     "text": "Во время путешествий между островами запоминай удобные маршруты — это экономит много времени на повторных квестах.",
     "source": "verified_core_mechanic",
     "reviewed_at": "2026-08-14",
-    "used": true
+    "used": true,
+    "category": "exploration"
   },
   {
     "id": 34,
@@ -303,7 +336,8 @@
     "text": "Перед заменой текущего фрукта подумай дважды: новый фрукт может быть редким, но хуже подходить твоей прокачке.",
     "source": "verified_core_mechanic",
     "reviewed_at": "2026-08-14",
-    "used": false
+    "used": false,
+    "category": "strategy"
   },
   {
     "id": 35,
@@ -312,7 +346,8 @@
     "text": "Следи за ассортиментом Dealer, если ищешь конкретный фрукт: ждать случайного появления на карте не всегда выгодно.",
     "source": "verified_core_mechanic",
     "reviewed_at": "2026-08-14",
-    "used": false
+    "used": false,
+    "category": "economy"
   },
   {
     "id": 36,
@@ -321,7 +356,8 @@
     "text": "Не пытайся прокачивать всё одновременно — цель вроде уровня, нового моря или конкретного предмета ускоряет прогресс.",
     "source": "verified_core_mechanic",
     "reviewed_at": "2026-08-14",
-    "used": true
+    "used": true,
+    "category": "strategy"
   },
   {
     "id": 37,
@@ -330,7 +366,8 @@
     "text": "Перед ролевой сценой договоритесь, кто кем играет — так история не развалится через пару минут.",
     "source": "verified_core_mechanic",
     "reviewed_at": "2026-08-14",
-    "used": false
+    "used": false,
+    "category": "social"
   },
   {
     "id": 38,
@@ -339,7 +376,8 @@
     "text": "Используй дома не только как декорацию: разные комнаты помогают делать ролевые сцены понятнее.",
     "source": "verified_core_mechanic",
     "reviewed_at": "2026-08-14",
-    "used": false
+    "used": false,
+    "category": "building"
   },
   {
     "id": 39,
@@ -348,7 +386,8 @@
     "text": "Если играете компанией, заранее выберите место встречи, чтобы не искать друг друга по всему городу.",
     "source": "verified_core_mechanic",
     "reviewed_at": "2026-08-14",
-    "used": true
+    "used": true,
+    "category": "social"
   },
   {
     "id": 40,
@@ -357,7 +396,8 @@
     "text": "Машины удобны для ролевых историй, но для коротких сцен иногда быстрее выбрать локацию рядом.",
     "source": "verified_core_mechanic",
     "reviewed_at": "2026-08-14",
-    "used": false
+    "used": false,
+    "category": "mechanics"
   },
   {
     "id": 41,
@@ -366,7 +406,8 @@
     "text": "Попробуй менять профессии в разных историях: полиция, врач или пожарный дают совсем разные сценарии.",
     "source": "verified_core_mechanic",
     "reviewed_at": "2026-08-14",
-    "used": false
+    "used": false,
+    "category": "social"
   },
   {
     "id": 42,
@@ -375,7 +416,8 @@
     "text": "Не обязательно постоянно искать секреты — Brookhaven хорошо работает как конструктор собственных историй.",
     "source": "verified_core_mechanic",
     "reviewed_at": "2026-08-14",
-    "used": false
+    "used": false,
+    "category": "strategy"
   },
   {
     "id": 43,
@@ -384,7 +426,8 @@
     "text": "Если создаёшь длинную ролевую игру, придумай простую цель: расследование, поездка, переезд или спасательная операция.",
     "source": "verified_core_mechanic",
     "reviewed_at": "2026-08-14",
-    "used": false
+    "used": false,
+    "category": "strategy"
   },
   {
     "id": 44,
@@ -393,7 +436,8 @@
     "text": "Используй внешний вид персонажа под роль — даже небольшая смена одежды делает сцену понятнее другим игрокам.",
     "source": "verified_core_mechanic",
     "reviewed_at": "2026-08-14",
-    "used": false
+    "used": false,
+    "category": "items"
   },
   {
     "id": 45,
@@ -402,7 +446,8 @@
     "text": "В приватном сервере удобнее проводить сложные сценки, потому что хозяин может лучше контролировать окружение.",
     "source": "verified_core_mechanic",
     "reviewed_at": "2026-08-14",
-    "used": false
+    "used": false,
+    "category": "social"
   },
   {
     "id": 46,
@@ -411,7 +456,8 @@
     "text": "Для групповой игры распределяйте транспорт: так меньше игроков остаются без места и сцена начинается быстрее.",
     "source": "verified_core_mechanic",
     "reviewed_at": "2026-08-14",
-    "used": false
+    "used": false,
+    "category": "social"
   },
   {
     "id": 47,
@@ -420,7 +466,8 @@
     "text": "Сначала выбери локацию, а уже потом придумывай детали истории — окружение часто само подсказывает сюжет.",
     "source": "verified_core_mechanic",
     "reviewed_at": "2026-08-14",
-    "used": false
+    "used": false,
+    "category": "exploration"
   },
   {
     "id": 48,
@@ -429,7 +476,8 @@
     "text": "Если в ролевой игре слишком много участников, разделите её на небольшие команды с отдельными задачами.",
     "source": "verified_core_mechanic",
     "reviewed_at": "2026-08-14",
-    "used": true
+    "used": true,
+    "category": "social"
   },
   {
     "id": 49,
@@ -438,7 +486,8 @@
     "text": "Перед обменом внимательно проверяй финальное окно трейда и все предметы — не торопись подтверждать сделку.",
     "source": "verified_core_mechanic",
     "reviewed_at": "2026-08-14",
-    "used": false
+    "used": false,
+    "category": "economy"
   },
   {
     "id": 50,
@@ -447,7 +496,8 @@
     "text": "Не оценивай питомца только по внешнему виду: редкость и спрос игроков тоже влияют на обмены.",
     "source": "verified_core_mechanic",
     "reviewed_at": "2026-08-14",
-    "used": false
+    "used": false,
+    "category": "economy"
   },
   {
     "id": 51,
@@ -456,7 +506,8 @@
     "text": "Если собираешь коллекцию, заранее выбери цель — так проще не тратить ресурсы на случайные обмены.",
     "source": "verified_core_mechanic",
     "reviewed_at": "2026-08-14",
-    "used": false
+    "used": false,
+    "category": "collection"
   },
   {
     "id": 52,
@@ -465,7 +516,8 @@
     "text": "Дом можно использовать не только для красоты: продуманная планировка делает ролевые сцены удобнее.",
     "source": "verified_core_mechanic",
     "reviewed_at": "2026-08-14",
-    "used": false
+    "used": false,
+    "category": "building"
   },
   {
     "id": 53,
@@ -474,7 +526,8 @@
     "text": "При обменах лучше отказаться от сделки, которую ты не понимаешь, чем соглашаться из-за спешки.",
     "source": "verified_core_mechanic",
     "reviewed_at": "2026-08-14",
-    "used": true
+    "used": true,
+    "category": "economy"
   },
   {
     "id": 54,
@@ -483,7 +536,8 @@
     "text": "Сравнивай предложения нескольких игроков, если обмениваешь ценного питомца.",
     "source": "verified_core_mechanic",
     "reviewed_at": "2026-08-14",
-    "used": false
+    "used": false,
+    "category": "economy"
   },
   {
     "id": 55,
@@ -492,7 +546,8 @@
     "text": "Не передавай питомцев незнакомцам по обещанию вернуть их позже — используй обычную систему обмена.",
     "source": "verified_core_mechanic",
     "reviewed_at": "2026-08-14",
-    "used": true
+    "used": true,
+    "category": "social"
   },
   {
     "id": 56,
@@ -501,7 +556,8 @@
     "text": "Для ролевой игры с друзьями заранее решите, кто заботится о питомцах, а кто отвечает за дом или поездки.",
     "source": "verified_core_mechanic",
     "reviewed_at": "2026-08-14",
-    "used": true
+    "used": true,
+    "category": "social"
   },
   {
     "id": 57,
@@ -510,7 +566,8 @@
     "text": "Если хочется быстрее собрать коллекцию, веди для себя список питомцев, которых уже имеешь и которых ищешь.",
     "source": "verified_core_mechanic",
     "reviewed_at": "2026-08-14",
-    "used": true
+    "used": true,
+    "category": "collection"
   },
   {
     "id": 58,
@@ -519,7 +576,8 @@
     "text": "Не соглашайся на обмен только потому, что другой игрок пишет «быстро» или «последний шанс».",
     "source": "verified_core_mechanic",
     "reviewed_at": "2026-08-14",
-    "used": false
+    "used": false,
+    "category": "social"
   },
   {
     "id": 59,
@@ -528,7 +586,8 @@
     "text": "Новые события могут временно менять доступные награды, поэтому перед тратой валюты проверь, что именно сейчас можно получить.",
     "source": "verified_core_mechanic",
     "reviewed_at": "2026-08-14",
-    "used": false
+    "used": false,
+    "category": "economy"
   },
   {
     "id": 60,
@@ -537,7 +596,8 @@
     "text": "Хорошая коллекция строится постепенно: безопасные обмены важнее одной рискованной попытки получить редкого питомца.",
     "source": "verified_core_mechanic",
     "reviewed_at": "2026-08-14",
-    "used": false
+    "used": false,
+    "category": "collection"
   },
   {
     "id": 61,
@@ -546,7 +606,8 @@
     "text": "В RIVALS побеждает не только меткость: движение и выбор момента для атаки часто решают дуэль.",
     "source": "verified_core_mechanic",
     "reviewed_at": "2026-08-14",
-    "used": false
+    "used": false,
+    "category": "combat"
   },
   {
     "id": 62,
@@ -555,7 +616,8 @@
     "text": "В дуэлях до пяти побед не сдавайся после проигранного раунда — у тебя есть время изменить тактику.",
     "source": "verified_core_mechanic",
     "reviewed_at": "2026-08-14",
-    "used": false
+    "used": false,
+    "category": "strategy"
   },
   {
     "id": 63,
@@ -564,7 +626,8 @@
     "text": "Используй тренировочные раунды, чтобы понять отдачу и удобство оружия до серьёзных матчей.",
     "source": "verified_core_mechanic",
     "reviewed_at": "2026-08-14",
-    "used": true
+    "used": true,
+    "category": "combat"
   },
   {
     "id": 64,
@@ -573,7 +636,8 @@
     "text": "Не выбегай на один и тот же угол одинаково несколько раундов подряд — соперник быстро это запомнит.",
     "source": "verified_core_mechanic",
     "reviewed_at": "2026-08-14",
-    "used": true
+    "used": true,
+    "category": "strategy"
   },
   {
     "id": 65,
@@ -582,7 +646,8 @@
     "text": "Слушай звуки и следи за направлением противника: информация иногда полезнее лишнего выстрела.",
     "source": "verified_core_mechanic",
     "reviewed_at": "2026-08-14",
-    "used": false
+    "used": false,
+    "category": "combat"
   },
   {
     "id": 66,
@@ -591,7 +656,8 @@
     "text": "Если оружие не подходит твоему стилю, не держись за него только из-за редкости или внешнего вида.",
     "source": "verified_core_mechanic",
     "reviewed_at": "2026-08-14",
-    "used": true
+    "used": true,
+    "category": "items"
   },
   {
     "id": 67,
@@ -600,7 +666,8 @@
     "text": "В командных матчах 2v2–5v5 держись достаточно близко к союзникам, чтобы вы могли помогать друг другу.",
     "source": "verified_core_mechanic",
     "reviewed_at": "2026-08-14",
-    "used": false
+    "used": false,
+    "category": "social"
   },
   {
     "id": 68,
@@ -609,7 +676,8 @@
     "text": "Контракты дают дополнительную цель на матч — проверяй их, чтобы прогрессировать параллельно с обычной игрой.",
     "source": "verified_core_mechanic",
     "reviewed_at": "2026-08-14",
-    "used": false
+    "used": false,
+    "category": "strategy"
   },
   {
     "id": 69,
@@ -618,7 +686,8 @@
     "text": "Ключи используются для открытия оружия и скинов, поэтому не трать их без понимания, что хочешь получить.",
     "source": "verified_core_mechanic",
     "reviewed_at": "2026-08-14",
-    "used": false
+    "used": false,
+    "category": "economy"
   },
   {
     "id": 70,
@@ -627,7 +696,8 @@
     "text": "После поражения попробуй определить одну причину: позиция, прицеливание или слишком рискованный выход.",
     "source": "verified_core_mechanic",
     "reviewed_at": "2026-08-14",
-    "used": false
+    "used": false,
+    "category": "strategy"
   },
   {
     "id": 71,
@@ -636,7 +706,8 @@
     "text": "Не стреляй без необходимости, если противник ещё не заметил тебя — неожиданная атака может дать преимущество.",
     "source": "verified_core_mechanic",
     "reviewed_at": "2026-08-14",
-    "used": false
+    "used": false,
+    "category": "combat"
   },
   {
     "id": 72,
@@ -645,7 +716,8 @@
     "text": "Серия побед приятна, но не меняй рабочую тактику только ради более эффектной игры.",
     "source": "verified_core_mechanic",
     "reviewed_at": "2026-08-14",
-    "used": true
+    "used": true,
+    "category": "strategy"
   },
   {
     "id": 73,
@@ -654,7 +726,8 @@
     "text": "Проверяй магазин семян после пополнения: нужные семена могут быть доступны не постоянно.",
     "source": "verified_core_mechanic",
     "reviewed_at": "2026-08-14",
-    "used": true
+    "used": true,
+    "category": "economy"
   },
   {
     "id": 74,
@@ -663,7 +736,8 @@
     "text": "Сажай семена только на коричневых участках своей фермы — именно они предназначены для посадки.",
     "source": "verified_core_mechanic",
     "reviewed_at": "2026-08-14",
-    "used": true
+    "used": true,
+    "category": "mechanics"
   },
   {
     "id": 75,
@@ -672,7 +746,8 @@
     "text": "Не переживай, если выходишь из игры: сад продолжает расти, пока тебя нет онлайн.",
     "source": "verified_core_mechanic",
     "reviewed_at": "2026-08-14",
-    "used": true
+    "used": true,
+    "category": "mechanics"
   },
   {
     "id": 76,
@@ -681,7 +756,8 @@
     "text": "Перед выходом посади то, что хочешь собрать позже — офлайн-рост можно использовать в свою пользу.",
     "source": "verified_core_mechanic",
     "reviewed_at": "2026-08-14",
-    "used": false
+    "used": false,
+    "category": "strategy"
   },
   {
     "id": 77,
@@ -690,7 +766,8 @@
     "text": "Не трать все деньги сразу после сбора урожая: оставляй запас на хорошие семена после следующего restock.",
     "source": "verified_core_mechanic",
     "reviewed_at": "2026-08-14",
-    "used": false
+    "used": false,
+    "category": "economy"
   },
   {
     "id": 78,
@@ -699,7 +776,8 @@
     "text": "Если у тебя несколько видов растений, оставляй достаточно свободного места для новых посадок.",
     "source": "verified_core_mechanic",
     "reviewed_at": "2026-08-14",
-    "used": false
+    "used": false,
+    "category": "building"
   },
   {
     "id": 79,
@@ -708,7 +786,8 @@
     "text": "Сначала собирай полностью выросшие растения, а уже потом решай, куда вложить прибыль.",
     "source": "verified_core_mechanic",
     "reviewed_at": "2026-08-14",
-    "used": false
+    "used": false,
+    "category": "economy"
   },
   {
     "id": 80,
@@ -717,7 +796,8 @@
     "text": "Планируй покупки семян по бюджету: дорогая покупка не всегда выгодна, если после неё нечего будет сажать.",
     "source": "verified_core_mechanic",
     "reviewed_at": "2026-08-14",
-    "used": false
+    "used": false,
+    "category": "economy"
   },
   {
     "id": 81,
@@ -726,7 +806,8 @@
     "text": "Регулярно возвращайся к саду после перерыва — офлайн-рост может подготовить большой урожай.",
     "source": "verified_core_mechanic",
     "reviewed_at": "2026-08-14",
-    "used": false
+    "used": false,
+    "category": "mechanics"
   },
   {
     "id": 82,
@@ -735,7 +816,8 @@
     "text": "Не заполняй участок случайными семенами только потому, что они есть в магазине — оставляй место под более желанные.",
     "source": "verified_core_mechanic",
     "reviewed_at": "2026-08-14",
-    "used": false
+    "used": false,
+    "category": "building"
   },
   {
     "id": 83,
@@ -744,7 +826,8 @@
     "text": "Цикл игры простой: купить семена → посадить → дождаться роста → собрать → вложить прибыль. Не пропускай последний шаг.",
     "source": "verified_core_mechanic",
     "reviewed_at": "2026-08-14",
-    "used": true
+    "used": true,
+    "category": "strategy"
   },
   {
     "id": 84,
@@ -753,7 +836,8 @@
     "text": "Если играешь недолго, сделай посадки перед выходом: следующая сессия начнётся уже с выросшего сада.",
     "source": "verified_core_mechanic",
     "reviewed_at": "2026-08-14",
-    "used": false
+    "used": false,
+    "category": "strategy"
   },
   {
     "id": 85,
@@ -762,7 +846,8 @@
     "text": "Сначала прочитай тему раунда, а уже потом выбирай одежду — красивый образ не всегда подходит заданию.",
     "source": "verified_core_mechanic",
     "reviewed_at": "2026-08-14",
-    "used": false
+    "used": false,
+    "category": "strategy"
   },
   {
     "id": 86,
@@ -771,7 +856,8 @@
     "text": "Лучше один понятный образ по теме, чем много случайных дорогих или ярких вещей.",
     "source": "verified_core_mechanic",
     "reviewed_at": "2026-08-14",
-    "used": false
+    "used": false,
+    "category": "strategy"
   },
   {
     "id": 87,
@@ -780,7 +866,8 @@
     "text": "Используй позы на подиуме, чтобы показать детали образа, которые плохо заметны в обычной стойке.",
     "source": "verified_core_mechanic",
     "reviewed_at": "2026-08-14",
-    "used": true
+    "used": true,
+    "category": "mechanics"
   },
   {
     "id": 88,
@@ -789,7 +876,8 @@
     "text": "Не трать всё время на одну деталь: оставь несколько секунд перед показом, чтобы проверить весь образ целиком.",
     "source": "verified_core_mechanic",
     "reviewed_at": "2026-08-14",
-    "used": false
+    "used": false,
+    "category": "strategy"
   },
   {
     "id": 89,
@@ -798,7 +886,8 @@
     "text": "Цвета помогают связать вещи в единый комплект — выбери 2–3 основных оттенка и строй образ вокруг них.",
     "source": "verified_core_mechanic",
     "reviewed_at": "2026-08-14",
-    "used": false
+    "used": false,
+    "category": "items"
   },
   {
     "id": 90,
@@ -807,7 +896,8 @@
     "text": "Перед голосованием внимательно посмотри, насколько чужой образ соответствует теме, а не только насколько он яркий.",
     "source": "verified_core_mechanic",
     "reviewed_at": "2026-08-14",
-    "used": false
+    "used": false,
+    "category": "social"
   },
   {
     "id": 91,
@@ -816,7 +906,8 @@
     "text": "Если тема непонятна, выбери самую очевидную интерпретацию — зрителям будет легче считать идею.",
     "source": "verified_core_mechanic",
     "reviewed_at": "2026-08-14",
-    "used": true
+    "used": true,
+    "category": "strategy"
   },
   {
     "id": 92,
@@ -825,7 +916,8 @@
     "text": "Пробуй сочетать разные категории одежды, а не повторять один и тот же готовый комплект.",
     "source": "verified_core_mechanic",
     "reviewed_at": "2026-08-14",
-    "used": false
+    "used": false,
+    "category": "items"
   },
   {
     "id": 93,
@@ -834,7 +926,8 @@
     "text": "Не забывай про причёску и аксессуары: они могут сделать простую одежду более цельным образом.",
     "source": "verified_core_mechanic",
     "reviewed_at": "2026-08-14",
-    "used": true
+    "used": true,
+    "category": "items"
   },
   {
     "id": 94,
@@ -843,7 +936,8 @@
     "text": "Слишком много аксессуаров иногда мешает идее — убирай детали, которые не помогают теме.",
     "source": "verified_core_mechanic",
     "reviewed_at": "2026-08-14",
-    "used": false
+    "used": false,
+    "category": "strategy"
   },
   {
     "id": 95,
@@ -852,7 +946,8 @@
     "text": "Запоминай удачные комбинации цветов и силуэтов: это ускорит сбор образа в следующих раундах.",
     "source": "verified_core_mechanic",
     "reviewed_at": "2026-08-14",
-    "used": false
+    "used": false,
+    "category": "strategy"
   },
   {
     "id": 96,
@@ -861,7 +956,8 @@
     "text": "Во время подиума используй несколько подходящих поз, но не переключай их так быстро, чтобы зрители не успевали увидеть образ.",
     "source": "verified_core_mechanic",
     "reviewed_at": "2026-08-14",
-    "used": false
+    "used": false,
+    "category": "mechanics"
   },
   {
     "id": 97,
@@ -870,7 +966,8 @@
     "text": "Собирай питомцев с целью усиливать свою команду, а не только ради количества в коллекции.",
     "source": "verified_core_mechanic",
     "reviewed_at": "2026-08-14",
-    "used": false
+    "used": false,
+    "category": "collection"
   },
   {
     "id": 98,
@@ -879,7 +976,8 @@
     "text": "Когда получаешь новых питомцев, сравнивай их с текущей командой и заменяй более слабых.",
     "source": "verified_core_mechanic",
     "reviewed_at": "2026-08-14",
-    "used": false
+    "used": false,
+    "category": "strategy"
   },
   {
     "id": 99,
@@ -888,7 +986,8 @@
     "text": "Не трать ресурсы только на внешний вид питомца, если твоя цель сейчас — быстрее продвигаться.",
     "source": "verified_core_mechanic",
     "reviewed_at": "2026-08-14",
-    "used": false
+    "used": false,
+    "category": "economy"
   },
   {
     "id": 100,
@@ -897,7 +996,8 @@
     "text": "Большая коллекция полезна, но сильная активная команда важнее для обычного прохождения.",
     "source": "verified_core_mechanic",
     "reviewed_at": "2026-08-14",
-    "used": true
+    "used": true,
+    "category": "strategy"
   },
   {
     "id": 101,
@@ -906,7 +1006,8 @@
     "text": "Перед долгой игровой сессией реши, что именно собираешь: монеты, новых питомцев или прогресс в текущем событии.",
     "source": "verified_core_mechanic",
     "reviewed_at": "2026-08-14",
-    "used": false
+    "used": false,
+    "category": "strategy"
   },
   {
     "id": 102,
@@ -915,7 +1016,8 @@
     "text": "Если открываешь много яиц, периодически проверяй команду — среди новых питомцев могут быть более сильные.",
     "source": "verified_core_mechanic",
     "reviewed_at": "2026-08-14",
-    "used": false
+    "used": false,
+    "category": "collection"
   },
   {
     "id": 103,
@@ -924,7 +1026,8 @@
     "text": "Не оставляй сильных питомцев вне команды случайно: после массового получения новых проверь состав.",
     "source": "verified_core_mechanic",
     "reviewed_at": "2026-08-14",
-    "used": true
+    "used": true,
+    "category": "strategy"
   },
   {
     "id": 104,
@@ -933,7 +1036,8 @@
     "text": "Событийные режимы могут менять выгодные цели, поэтому перед фармом посмотри, какая активность сейчас даёт нужную тебе награду.",
     "source": "verified_core_mechanic",
     "reviewed_at": "2026-08-14",
-    "used": false
+    "used": false,
+    "category": "strategy"
   },
   {
     "id": 105,
@@ -942,7 +1046,8 @@
     "text": "Не оценивай прогресс только по числу питомцев: важнее, насколько быстро команда помогает добывать ресурсы.",
     "source": "verified_core_mechanic",
     "reviewed_at": "2026-08-14",
-    "used": false
+    "used": false,
+    "category": "economy"
   },
   {
     "id": 106,
@@ -951,7 +1056,8 @@
     "text": "Сохраняй часть ресурсов, если не уверен, что текущая покупка действительно улучшит команду.",
     "source": "verified_core_mechanic",
     "reviewed_at": "2026-08-14",
-    "used": false
+    "used": false,
+    "category": "economy"
   },
   {
     "id": 107,
@@ -960,7 +1066,8 @@
     "text": "Если застрял на прогрессе, сначала проверь состав питомцев, а не пытайся просто дольше фармить тем же набором.",
     "source": "verified_core_mechanic",
     "reviewed_at": "2026-08-14",
-    "used": true
+    "used": true,
+    "category": "strategy"
   },
   {
     "id": 108,
@@ -969,7 +1076,8 @@
     "text": "Коллекционирование и прогресс — разные цели: заранее реши, что для тебя важнее в текущей сессии.",
     "source": "verified_core_mechanic",
     "reviewed_at": "2026-08-14",
-    "used": true
+    "used": true,
+    "category": "collection"
   },
   {
     "id": 109,
@@ -978,7 +1086,8 @@
     "text": "Не нажимай блок слишком рано: в Blade Ball точный тайминг важнее частого нажатия.",
     "source": "verified_core_mechanic",
     "reviewed_at": "2026-08-14",
-    "used": false
+    "used": false,
+    "category": "combat"
   },
   {
     "id": 110,
@@ -987,7 +1096,8 @@
     "text": "Следи за ускорением мяча — по мере роста скорости окно для блока становится меньше.",
     "source": "verified_core_mechanic",
     "reviewed_at": "2026-08-14",
-    "used": true
+    "used": true,
+    "category": "combat"
   },
   {
     "id": 111,
@@ -996,7 +1106,8 @@
     "text": "Смотри не только на мяч, но и на следующую возможную цель: это помогает заранее выбрать позицию.",
     "source": "verified_core_mechanic",
     "reviewed_at": "2026-08-14",
-    "used": true
+    "used": true,
+    "category": "strategy"
   },
   {
     "id": 112,
@@ -1005,7 +1116,8 @@
     "text": "Тренируй блок без способностей — чистый тайминг пригодится с любым набором умений.",
     "source": "verified_core_mechanic",
     "reviewed_at": "2026-08-14",
-    "used": false
+    "used": false,
+    "category": "combat"
   },
   {
     "id": 113,
@@ -1014,7 +1126,8 @@
     "text": "Способности лучше подбирать под свой стиль: кому-то полезнее мобильность, кому-то контроль или защита.",
     "source": "verified_core_mechanic",
     "reviewed_at": "2026-08-14",
-    "used": true
+    "used": true,
+    "category": "strategy"
   },
   {
     "id": 114,
@@ -1023,7 +1136,8 @@
     "text": "Не стой вплотную к другим игрокам без необходимости — так сложнее понять, в кого полетит мяч дальше.",
     "source": "verified_core_mechanic",
     "reviewed_at": "2026-08-14",
-    "used": false
+    "used": false,
+    "category": "strategy"
   },
   {
     "id": 115,
@@ -1032,7 +1146,8 @@
     "text": "После успешного блока сразу возвращай внимание к мячу: он может быстро вернуться обратно.",
     "source": "verified_core_mechanic",
     "reviewed_at": "2026-08-14",
-    "used": false
+    "used": false,
+    "category": "combat"
   },
   {
     "id": 116,
@@ -1041,7 +1156,8 @@
     "text": "Чем быстрее становится мяч, тем меньше лишних движений нужно делать перед блоком.",
     "source": "verified_core_mechanic",
     "reviewed_at": "2026-08-14",
-    "used": true
+    "used": true,
+    "category": "combat"
   },
   {
     "id": 117,
@@ -1050,7 +1166,8 @@
     "text": "Если часто проигрываешь одному типу атаки, потренируй именно этот момент вместо постоянной смены способности.",
     "source": "verified_core_mechanic",
     "reviewed_at": "2026-08-14",
-    "used": true
+    "used": true,
+    "category": "strategy"
   },
   {
     "id": 118,
@@ -1059,7 +1176,8 @@
     "text": "Используй Shift Lock, если такой способ камеры помогает тебе лучше контролировать направление персонажа.",
     "source": "verified_core_mechanic",
     "reviewed_at": "2026-08-14",
-    "used": false
+    "used": false,
+    "category": "mechanics"
   },
   {
     "id": 119,
@@ -1068,7 +1186,8 @@
     "text": "Не расходуй способность автоматически в начале раунда — иногда она полезнее в решающий момент.",
     "source": "verified_core_mechanic",
     "reviewed_at": "2026-08-14",
-    "used": false
+    "used": false,
+    "category": "strategy"
   },
   {
     "id": 120,
@@ -1077,6 +1196,307 @@
     "text": "В поздней стадии раунда сохраняй спокойствие: серия быстрых блоков чаще проигрывается из-за спешки, чем из-за скорости мяча.",
     "source": "verified_core_mechanic",
     "reviewed_at": "2026-08-14",
+    "used": false,
+    "category": "combat"
+  },
+  {
+    "id": 121,
+    "game": "99 Nights in the Forest",
+    "type": "Совет",
+    "category": "exploration",
+    "text": "Исследуй дальние участки днём, а к ночи возвращайся к защите лагеря.",
+    "source": "verified_core_mechanic",
+    "reviewed_at": "2026-08-24",
+    "used": false
+  },
+  {
+    "id": 122,
+    "game": "99 Nights in the Forest",
+    "type": "Совет",
+    "category": "strategy",
+    "text": "Сначала укрепи костёр и лагерь, а потом планируй длинные вылазки за редкими ресурсами.",
+    "source": "verified_core_mechanic",
+    "reviewed_at": "2026-08-24",
+    "used": false
+  },
+  {
+    "id": 123,
+    "game": "99 Nights in the Forest",
+    "type": "Совет",
+    "category": "social",
+    "text": "Перед спасением союзника отвлеки угрозу или попроси команду прикрыть тебя.",
+    "source": "verified_core_mechanic",
+    "reviewed_at": "2026-08-24",
+    "used": false
+  },
+  {
+    "id": 124,
+    "game": "Steal a Brainrot",
+    "type": "Совет",
+    "category": "strategy",
+    "text": "Следи за защитой базы: перед её отключением лучше вернуться и проверить входы.",
+    "source": "verified_core_mechanic",
+    "reviewed_at": "2026-08-24",
+    "used": false
+  },
+  {
+    "id": 125,
+    "game": "Steal a Brainrot",
+    "type": "Совет",
+    "category": "economy",
+    "text": "В начале игры выбирай Brainrot, который быстрее увеличит доход для следующих покупок.",
+    "source": "verified_core_mechanic",
+    "reviewed_at": "2026-08-24",
+    "used": false
+  },
+  {
+    "id": 126,
+    "game": "Steal a Brainrot",
+    "type": "Совет",
+    "category": "combat",
+    "text": "Не начинай кражу без пути отхода и готового предмета для защиты от погони.",
+    "source": "verified_core_mechanic",
+    "reviewed_at": "2026-08-24",
+    "used": false
+  },
+  {
+    "id": 127,
+    "game": "Blox Fruits",
+    "type": "Совет",
+    "category": "strategy",
+    "text": "Распределяй характеристики под основной источник урона и не забывай про защиту.",
+    "source": "verified_core_mechanic",
+    "reviewed_at": "2026-08-24",
+    "used": false
+  },
+  {
+    "id": 128,
+    "game": "Blox Fruits",
+    "type": "Совет",
+    "category": "combat",
+    "text": "Наблюдай за атаками босса: после опасного приёма часто появляется момент для ответа.",
+    "source": "verified_core_mechanic",
+    "reviewed_at": "2026-08-24",
+    "used": false
+  },
+  {
+    "id": 129,
+    "game": "Blox Fruits",
+    "type": "Совет",
+    "category": "exploration",
+    "text": "Перед новым островом проверь уровень заданий, чтобы не тратить время на слишком сильных врагов.",
+    "source": "verified_core_mechanic",
+    "reviewed_at": "2026-08-24",
+    "used": false
+  },
+  {
+    "id": 130,
+    "game": "Brookhaven",
+    "type": "Совет",
+    "category": "exploration",
+    "text": "Исследуй здания внимательнее: интересные комнаты и детали легко пропустить.",
+    "source": "verified_core_mechanic",
+    "reviewed_at": "2026-08-24",
+    "used": false
+  },
+  {
+    "id": 131,
+    "game": "Brookhaven",
+    "type": "Совет",
+    "category": "social",
+    "text": "Для большой ролевой сцены заранее назначьте ведущего, чтобы история двигалась понятнее.",
+    "source": "verified_core_mechanic",
+    "reviewed_at": "2026-08-24",
+    "used": false
+  },
+  {
+    "id": 132,
+    "game": "Brookhaven",
+    "type": "Совет",
+    "category": "mechanics",
+    "text": "На приватном сервере настрой время и погоду под сцену до начала ролевой игры.",
+    "source": "verified_core_mechanic",
+    "reviewed_at": "2026-08-24",
+    "used": false
+  },
+  {
+    "id": 133,
+    "game": "Adopt Me!",
+    "type": "Совет",
+    "category": "collection",
+    "text": "Разложи питомцев и предметы по вкладкам Storage, чтобы быстрее находить нужное.",
+    "source": "verified_core_mechanic",
+    "reviewed_at": "2026-08-24",
+    "used": false
+  },
+  {
+    "id": 134,
+    "game": "Adopt Me!",
+    "type": "Совет",
+    "category": "building",
+    "text": "Перед украшением дома реши, какие комнаты нужны для игры, и только потом расставляй мебель.",
+    "source": "verified_core_mechanic",
+    "reviewed_at": "2026-08-24",
+    "used": false
+  },
+  {
+    "id": 135,
+    "game": "Adopt Me!",
+    "type": "Совет",
+    "category": "social",
+    "text": "Для поездки с друзьями выбирай транспорт, в котором хватит места всей компании.",
+    "source": "verified_core_mechanic",
+    "reviewed_at": "2026-08-24",
+    "used": false
+  },
+  {
+    "id": 136,
+    "game": "RIVALS",
+    "type": "Совет",
+    "category": "combat",
+    "text": "После выстрела меняй позицию и используй укрытие, чтобы сопернику было сложнее ответить.",
+    "source": "verified_core_mechanic",
+    "reviewed_at": "2026-08-24",
+    "used": false
+  },
+  {
+    "id": 137,
+    "game": "RIVALS",
+    "type": "Совет",
+    "category": "items",
+    "text": "Проверь новое оружие в тренировке, прежде чем брать его в важный матч.",
+    "source": "verified_core_mechanic",
+    "reviewed_at": "2026-08-24",
+    "used": false
+  },
+  {
+    "id": 138,
+    "game": "RIVALS",
+    "type": "Совет",
+    "category": "social",
+    "text": "В командном режиме коротко сообщай союзникам, откуда выходит противник.",
+    "source": "verified_core_mechanic",
+    "reviewed_at": "2026-08-24",
+    "used": false
+  },
+  {
+    "id": 139,
+    "game": "Grow a Garden",
+    "type": "Совет",
+    "category": "building",
+    "text": "Оставляй свободное место на участке, чтобы новые семена было куда посадить.",
+    "source": "verified_core_mechanic",
+    "reviewed_at": "2026-08-24",
+    "used": false
+  },
+  {
+    "id": 140,
+    "game": "Grow a Garden",
+    "type": "Совет",
+    "category": "economy",
+    "text": "Сначала собери и продай готовый урожай, а затем планируй следующую покупку семян.",
+    "source": "verified_core_mechanic",
+    "reviewed_at": "2026-08-24",
+    "used": false
+  },
+  {
+    "id": 141,
+    "game": "Grow a Garden",
+    "type": "Совет",
+    "category": "strategy",
+    "text": "Перед покупкой семян проверь участок и бюджет, чтобы покупка не лежала без дела.",
+    "source": "verified_core_mechanic",
+    "reviewed_at": "2026-08-24",
+    "used": false
+  },
+  {
+    "id": 142,
+    "game": "Dress To Impress",
+    "type": "Совет",
+    "category": "strategy",
+    "text": "Выбери одну главную деталь образа и подстрой остальные вещи под неё и тему.",
+    "source": "verified_core_mechanic",
+    "reviewed_at": "2026-08-24",
+    "used": false
+  },
+  {
+    "id": 143,
+    "game": "Dress To Impress",
+    "type": "Совет",
+    "category": "items",
+    "text": "Добавляй аксессуар только тогда, когда он помогает теме, а не просто заполняет образ.",
+    "source": "verified_core_mechanic",
+    "reviewed_at": "2026-08-24",
+    "used": false
+  },
+  {
+    "id": 144,
+    "game": "Dress To Impress",
+    "type": "Совет",
+    "category": "mechanics",
+    "text": "Перед подиумом поверни персонажа и проверь образ со всех сторон.",
+    "source": "verified_core_mechanic",
+    "reviewed_at": "2026-08-24",
+    "used": false
+  },
+  {
+    "id": 145,
+    "game": "Pet Simulator 99",
+    "type": "Совет",
+    "category": "economy",
+    "text": "Не трать все ресурсы сразу: оставь запас на улучшение активной команды.",
+    "source": "verified_core_mechanic",
+    "reviewed_at": "2026-08-24",
+    "used": false
+  },
+  {
+    "id": 146,
+    "game": "Pet Simulator 99",
+    "type": "Совет",
+    "category": "collection",
+    "text": "Поддерживай порядок в коллекции, чтобы быстрее находить питомцев для команды и обмена.",
+    "source": "verified_core_mechanic",
+    "reviewed_at": "2026-08-24",
+    "used": false
+  },
+  {
+    "id": 147,
+    "game": "Pet Simulator 99",
+    "type": "Совет",
+    "category": "strategy",
+    "text": "Выбирай улучшения, которые заметно усиливают активную команду, а не только коллекцию.",
+    "source": "verified_core_mechanic",
+    "reviewed_at": "2026-08-24",
+    "used": false
+  },
+  {
+    "id": 148,
+    "game": "Blade Ball",
+    "type": "Совет",
+    "category": "combat",
+    "text": "Жди, пока мяч действительно нацелится на тебя, и только потом готовь блок.",
+    "source": "verified_core_mechanic",
+    "reviewed_at": "2026-08-24",
+    "used": false
+  },
+  {
+    "id": 149,
+    "game": "Blade Ball",
+    "type": "Совет",
+    "category": "mechanics",
+    "text": "Помни об откате блока: случайное раннее нажатие может оставить тебя без защиты.",
+    "source": "verified_core_mechanic",
+    "reviewed_at": "2026-08-24",
+    "used": false
+  },
+  {
+    "id": 150,
+    "game": "Blade Ball",
+    "type": "Совет",
+    "category": "strategy",
+    "text": "Держи камеру так, чтобы видеть мяч даже во время перемещения между игроками.",
+    "source": "verified_core_mechanic",
+    "reviewed_at": "2026-08-24",
     "used": false
   }
 ]

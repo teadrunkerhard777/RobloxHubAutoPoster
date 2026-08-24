@@ -4,6 +4,7 @@ import random
 from datetime import datetime, timedelta, timezone
 
 from image_library import select_daily_image
+from tips_rotation import build_tips_post, choose_tips
 
 LOCAL_TIMEZONE = timezone(timedelta(hours=5))
 
@@ -27,6 +28,9 @@ BRAWL_SKIP_ENVIRONMENT_VARIABLE = "ROBLOX_HUB_SKIP_BRAWL"
 
 MYTH_HISTORY_LIMIT = 3
 GAME_HISTORY_LIMIT = 5
+TIPS_RELEASE_HISTORY_LIMIT = 3
+TIPS_GAME_HISTORY_FILE = "tips_game_history.json"
+TIPS_CATEGORY_HISTORY_FILE = "tips_category_history.json"
 
 
 GAME_EMOJIS = {
@@ -296,72 +300,44 @@ def schedule_brawl_post(
 # --------------------------------------------------
 
 
-def reset_tips_if_needed(tips, minimum_needed):
-    unused = [tip for tip in tips if not tip.get("used", False)]
-
-    if len(unused) >= minimum_needed:
-        return tips
-
-    for tip in tips:
-        tip["used"] = False
-
-    return tips
-
-
 def select_tips(count, excluded_games=None):
     if excluded_games is None:
         excluded_games = set()
 
     tips = load_json("tips.json")
 
-    tips = reset_tips_if_needed(tips, count)
-
-    game_history = load_json("game_history.json", [])
-
-    unused = [tip for tip in tips if not tip.get("used", False)]
-
-    preferred = [
-        tip
-        for tip in unused
-        if tip["game"] not in excluded_games and tip["game"] not in game_history
+    release_history = load_json(TIPS_GAME_HISTORY_FILE, [])
+    recent_games = [
+        game
+        for release in release_history
+        for game in release
     ]
+    category_history = load_json(TIPS_CATEGORY_HISTORY_FILE, {})
 
-    fallback = [tip for tip in unused if tip["game"] not in excluded_games]
-
-    candidates = preferred + fallback
-
-    random.shuffle(candidates)
-
-    selected = []
-    selected_ids = set()
-    selected_games = set()
-
-    for tip in candidates:
-        if tip["id"] in selected_ids:
-            continue
-
-        if tip["game"] in selected_games:
-            continue
-
-        selected.append(tip)
-
-        selected_ids.add(tip["id"])
-
-        selected_games.add(tip["game"])
-
-        if len(selected) == count:
-            break
-
-    if len(selected) < count:
-        raise RuntimeError(
-            f"Не удалось выбрать " f"{count} советов " "по разным играм."
-        )
-
-    for tip in tips:
-        if tip["id"] in selected_ids:
-            tip["used"] = True
+    selected = choose_tips(
+        tips=tips,
+        count=count,
+        recent_games=recent_games,
+        category_history=category_history,
+        excluded_games=excluded_games,
+        rng=random
+    )
 
     save_json("tips.json", tips)
+
+    selected_games = [tip["game"] for tip in selected]
+    release_history.append(selected_games)
+    save_json(
+        TIPS_GAME_HISTORY_FILE,
+        release_history[-TIPS_RELEASE_HISTORY_LIMIT:]
+    )
+
+    for tip in selected:
+        game_categories = category_history.setdefault(tip["game"], [])
+        game_categories.append(tip["category"])
+        category_history[tip["game"]] = game_categories[-3:]
+
+    save_json(TIPS_CATEGORY_HISTORY_FILE, category_history)
 
     for tip in selected:
         remember_game(tip["game"])
@@ -495,20 +471,8 @@ def generate_freebie_post():
 
 
 def generate_tips_post():
-    selected_tips = select_tips(count=3)
-
-    blocks = []
-
-    for tip in selected_tips:
-        emoji = GAME_EMOJIS.get(tip["game"], "🎮")
-
-        blocks.append(f"{emoji} {tip['game']}\n" f"{tip['text']}")
-
-    text = "💡 ПОЛЕЗНО ЗНАТЬ\n\n" + "\n\n".join(blocks) + "\n\n🎮 Roblox Hub"
-
-    games = " + ".join(tip["game"] for tip in selected_tips)
-
-    return games, text
+    selected_tips = select_tips(count=5)
+    return build_tips_post(selected_tips, GAME_EMOJIS)
 
 
 # --------------------------------------------------
