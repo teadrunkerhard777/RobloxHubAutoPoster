@@ -31,7 +31,7 @@
       }
     ],
     "priority": true,
-    "checked_at": "2026-08-24T04:49:51.983952+00:00",
+    "checked_at": "2026-08-24T06:08:40.096113+00:00",
     "sources": [
       {
         "type": "official_game_description",
@@ -115,7 +115,7 @@
     "facts": [],
     "description_facts": [],
     "priority": true,
-    "checked_at": "2026-08-24T04:49:51.984431+00:00",
+    "checked_at": "2026-08-24T06:08:40.096618+00:00",
     "sources": [
       {
         "type": "official_game_description",
@@ -212,7 +212,7 @@
       }
     ],
     "priority": false,
-    "checked_at": "2026-08-24T04:49:51.987272+00:00",
+    "checked_at": "2026-08-24T06:08:40.099776+00:00",
     "sources": [
       {
         "type": "official_game_description",
@@ -395,7 +395,7 @@
       }
     ],
     "priority": false,
-    "checked_at": "2026-08-24T04:49:51.990429+00:00",
+    "checked_at": "2026-08-24T06:08:40.102996+00:00",
     "sources": [
       {
         "type": "official_game_description",
@@ -415,7 +415,7 @@
         "source_url": "https://www.brookhavenrp.com/",
         "latest_published_at": "2026-08-21",
         "status": "rejected",
-        "reason": "Публикация устарела: 3.2 дн. (лимит 3).",
+        "reason": "Публикация устарела: 3.3 дн. (лимит 3).",
         "latest_url": "https://www.brookhavenrp.com/posts/brookhaven-update-august-21-2026"
       },
       {
@@ -473,7 +473,7 @@
       "source_url": "https://www.brookhavenrp.com/",
       "latest_published_at": "2026-08-21",
       "status": "rejected",
-      "reason": "Публикация устарела: 3.2 дн. (лимит 3).",
+      "reason": "Публикация устарела: 3.3 дн. (лимит 3).",
       "latest_url": "https://www.brookhavenrp.com/posts/brookhaven-update-august-21-2026"
     },
     "candidate_decision": {
@@ -486,7 +486,7 @@
     "universe_id": 383310974,
     "roblox_name": "[🍓] Adopt Me!",
     "description": "Adopt and raise 🐶🦄👶, trade and collect legendary pets, build your dream home, and roleplay with friends!\n\n🎒 Backpack Storage & Releaser Refresh! 🎒\n🦴 Store unused items for smoother gameplay!\n🧸 Sort pets and items, trade directly from tabs!\n🍓 Kiwi Kiwi and Strawberry Tortle in Releaser Eggs!\n\nBe FIRST 🏆 To experience new updates by pressing 🔔NOTIFY.\n\nMeet the founders!\nNewFissy - Tech Director\nBethink - Creative Director\n\nFind out more about Uplift Games, our policies and creative attributions:\nhttps://devforum.roblox.com/t/credits/71812",
-    "updated": "2026-08-22T17:00:02.7439969Z",
+    "updated": "2026-08-22T17:00:02.743Z",
     "created": "2017-07-14T19:26:21.347Z",
     "creator": {
       "id": 295182,
@@ -562,7 +562,7 @@
       }
     ],
     "priority": false,
-    "checked_at": "2026-08-24T04:49:51.992184+00:00",
+    "checked_at": "2026-08-24T06:08:40.104839+00:00",
     "sources": [
       {
         "type": "official_game_description",
@@ -588,7 +588,7 @@
       {
         "source_type": "official_game_description",
         "source_url": "https://www.roblox.com/games/920587237/Adopt-Me",
-        "latest_published_at": "2026-08-22T17:00:02.7439969Z",
+        "latest_published_at": "2026-08-22T17:00:02.743Z",
         "status": "rejected",
         "reason": "Нет новой конкретной строки со времени прошлого снимка."
       },
@@ -718,7 +718,7 @@
       }
     ],
     "priority": false,
-    "checked_at": "2026-08-24T04:49:51.994310+00:00",
+    "checked_at": "2026-08-24T06:08:40.106832+00:00",
     "sources": [
       {
         "type": "official_game_description",
@@ -815,7 +815,7 @@
     "facts": [],
     "description_facts": [],
     "priority": false,
-    "checked_at": "2026-08-24T04:49:51.995947+00:00",
+    "checked_at": "2026-08-24T06:08:40.108360+00:00",
     "sources": [
       {
         "type": "official_game_description",
@@ -835,7 +835,7 @@
         "source_url": "https://www.youtube.com/feeds/videos.xml?channel_id=UCP6KpgkAq2-MH67kS5WLqFQ",
         "latest_published_at": null,
         "status": "rejected",
-        "reason": "В официальной ленте нет записи с датой, содержанием и признаками новости этой игры."
+        "reason": "Источник недоступен: 404 Client Error: Not Found for url: https://www.youtube.com/feeds/videos.xml?channel_id=UCP6KpgkAq2-MH67kS5WLqFQ"
       },
       {
         "source_type": "official_game_description",
@@ -884,7 +884,7 @@
       "source_url": "https://www.youtube.com/feeds/videos.xml?channel_id=UCP6KpgkAq2-MH67kS5WLqFQ",
       "latest_published_at": null,
       "status": "rejected",
-      "reason": "В официальной ленте нет записи с датой, содержанием и признаками новости этой игры."
+      "reason": "Источник недоступен: 404 Client Error: Not Found for url: https://www.youtube.com/feeds/videos.xml?channel_id=UCP6KpgkAq2-MH67kS5WLqFQ"
     },
     "candidate_decision": {
       "status": "rejected",
@@ -953,7 +953,7 @@
       }
     ],
     "priority": false,
-    "checked_at": "2026-08-24T04:49:51.997265+00:00",
+    "checked_at": "2026-08-24T06:08:40.109529+00:00",
     "sources": [
       {
         "type": "official_game_description",
@@ -971,10 +971,9 @@
       {
         "source_type": "official_youtube_feed",
         "source_url": "https://www.youtube.com/feeds/videos.xml?channel_id=UCCVWvf_e5oRb6RfXyluR7UA",
-        "latest_published_at": "2026-07-02T15:00:06+00:00",
+        "latest_published_at": null,
         "status": "rejected",
-        "reason": "Публикация устарела: 52.6 дн. (лимит 3).",
-        "latest_url": "https://www.youtube.com/watch?v=5Zfy9QW4s5A"
+        "reason": "Источник недоступен: 404 Client Error: Not Found for url: https://www.youtube.com/feeds/videos.xml?channel_id=UCCVWvf_e5oRb6RfXyluR7UA"
       },
       {
         "source_type": "official_game_description",
@@ -1029,10 +1028,9 @@
     "external_source_diagnostic": {
       "source_type": "official_youtube_feed",
       "source_url": "https://www.youtube.com/feeds/videos.xml?channel_id=UCCVWvf_e5oRb6RfXyluR7UA",
-      "latest_published_at": "2026-07-02T15:00:06+00:00",
+      "latest_published_at": null,
       "status": "rejected",
-      "reason": "Публикация устарела: 52.6 дн. (лимит 3).",
-      "latest_url": "https://www.youtube.com/watch?v=5Zfy9QW4s5A"
+      "reason": "Источник недоступен: 404 Client Error: Not Found for url: https://www.youtube.com/feeds/videos.xml?channel_id=UCCVWvf_e5oRb6RfXyluR7UA"
     },
     "candidate_decision": {
       "status": "rejected",
@@ -1082,7 +1080,7 @@
       }
     ],
     "priority": false,
-    "checked_at": "2026-08-24T04:49:51.997640+00:00",
+    "checked_at": "2026-08-24T06:08:40.109851+00:00",
     "sources": [
       {
         "type": "official_game_description",
@@ -1200,7 +1198,7 @@
       }
     ],
     "priority": false,
-    "checked_at": "2026-08-24T04:49:51.999702+00:00",
+    "checked_at": "2026-08-24T06:08:40.111812+00:00",
     "sources": [
       {
         "type": "official_game_description",
@@ -1220,7 +1218,7 @@
         "source_url": "https://bladeball.com/blogs/news",
         "latest_published_at": "2024-03-23T18:51:42Z",
         "status": "rejected",
-        "reason": "Публикация устарела: 883.4 дн. (лимит 3).",
+        "reason": "Публикация устарела: 883.5 дн. (лимит 3).",
         "latest_url": "https://bladeball.com/blogs/news/comptetetive-leaderboards"
       },
       {
@@ -1274,7 +1272,7 @@
       "source_url": "https://bladeball.com/blogs/news",
       "latest_published_at": "2024-03-23T18:51:42Z",
       "status": "rejected",
-      "reason": "Публикация устарела: 883.4 дн. (лимит 3).",
+      "reason": "Публикация устарела: 883.5 дн. (лимит 3).",
       "latest_url": "https://bladeball.com/blogs/news/comptetetive-leaderboards"
     },
     "candidate_decision": {
