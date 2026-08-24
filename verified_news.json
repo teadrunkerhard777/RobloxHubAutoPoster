@@ -31,7 +31,7 @@
       }
     ],
     "priority": true,
-    "checked_at": "2026-08-24T03:00:59.042107+00:00",
+    "checked_at": "2026-08-24T04:49:51.983952+00:00",
     "sources": [
       {
         "type": "official_game_description",
@@ -115,7 +115,7 @@
     "facts": [],
     "description_facts": [],
     "priority": true,
-    "checked_at": "2026-08-24T03:00:59.042619+00:00",
+    "checked_at": "2026-08-24T04:49:51.984431+00:00",
     "sources": [
       {
         "type": "official_game_description",
@@ -212,7 +212,7 @@
       }
     ],
     "priority": false,
-    "checked_at": "2026-08-24T03:00:59.045467+00:00",
+    "checked_at": "2026-08-24T04:49:51.987272+00:00",
     "sources": [
       {
         "type": "official_game_description",
@@ -232,7 +232,7 @@
         "source_url": "https://gamerrobot.com/blogs/news",
         "latest_published_at": "2026-08-06T22:02:43Z",
         "status": "rejected",
-        "reason": "Публикация устарела: 17.2 дн. (лимит 3).",
+        "reason": "Публикация устарела: 17.3 дн. (лимит 3).",
         "latest_url": "https://gamerrobot.com/blogs/news/the-balance-log"
       },
       {
@@ -288,7 +288,7 @@
       "source_url": "https://gamerrobot.com/blogs/news",
       "latest_published_at": "2026-08-06T22:02:43Z",
       "status": "rejected",
-      "reason": "Публикация устарела: 17.2 дн. (лимит 3).",
+      "reason": "Публикация устарела: 17.3 дн. (лимит 3).",
       "latest_url": "https://gamerrobot.com/blogs/news/the-balance-log"
     },
     "candidate_decision": {
@@ -395,7 +395,7 @@
       }
     ],
     "priority": false,
-    "checked_at": "2026-08-24T03:00:59.048630+00:00",
+    "checked_at": "2026-08-24T04:49:51.990429+00:00",
     "sources": [
       {
         "type": "official_game_description",
@@ -415,7 +415,7 @@
         "source_url": "https://www.brookhavenrp.com/",
         "latest_published_at": "2026-08-21",
         "status": "rejected",
-        "reason": "Публикация устарела: 3.1 дн. (лимит 3).",
+        "reason": "Публикация устарела: 3.2 дн. (лимит 3).",
         "latest_url": "https://www.brookhavenrp.com/posts/brookhaven-update-august-21-2026"
       },
       {
@@ -473,7 +473,7 @@
       "source_url": "https://www.brookhavenrp.com/",
       "latest_published_at": "2026-08-21",
       "status": "rejected",
-      "reason": "Публикация устарела: 3.1 дн. (лимит 3).",
+      "reason": "Публикация устарела: 3.2 дн. (лимит 3).",
       "latest_url": "https://www.brookhavenrp.com/posts/brookhaven-update-august-21-2026"
     },
     "candidate_decision": {
@@ -562,7 +562,7 @@
       }
     ],
     "priority": false,
-    "checked_at": "2026-08-24T03:00:59.050346+00:00",
+    "checked_at": "2026-08-24T04:49:51.992184+00:00",
     "sources": [
       {
         "type": "official_game_description",
@@ -718,7 +718,7 @@
       }
     ],
     "priority": false,
-    "checked_at": "2026-08-24T03:00:59.052471+00:00",
+    "checked_at": "2026-08-24T04:49:51.994310+00:00",
     "sources": [
       {
         "type": "official_game_description",
@@ -798,7 +798,7 @@
     "universe_id": 7436755782,
     "roblox_name": "[📜] Grow a Garden 🌶️",
     "description": "🍅Welcome to Grow a Garden🍅\n\nAre you ready to grow your very own garden? Buy seeds from the shop when they restock, plant them, wait for them to grow, and collect the profits! Flex fruits and finds on friends, and have fun!\n\n[How To Plant]\n• Equip your seed you want to plant!\n• Click in your farm on the brown plots to plant!\n• Wait to see it start growing!\n• After its fully grown, it is time to harvest the goods!\n\nRemember, your garden literally grows while you are offline⭐",
-    "updated": "2026-08-22T20:40:45.6013496Z",
+    "updated": "2026-08-24T03:29:38.6054351Z",
     "created": "2025-03-25T22:32:09.437Z",
     "creator": {
       "id": 35789249,
@@ -815,7 +815,7 @@
     "facts": [],
     "description_facts": [],
     "priority": false,
-    "checked_at": "2026-08-24T03:00:59.054171+00:00",
+    "checked_at": "2026-08-24T04:49:51.995947+00:00",
     "sources": [
       {
         "type": "official_game_description",
@@ -840,7 +840,7 @@
       {
         "source_type": "official_game_description",
         "source_url": "https://www.roblox.com/games/126884695634066/Grow-a-Garden",
-        "latest_published_at": "2026-08-22T20:40:45.6013496Z",
+        "latest_published_at": "2026-08-24T03:29:38.6054351Z",
         "status": "rejected",
         "reason": "Нет новой конкретной строки со времени прошлого снимка."
       },
@@ -953,7 +953,7 @@
       }
     ],
     "priority": false,
-    "checked_at": "2026-08-24T03:00:59.055473+00:00",
+    "checked_at": "2026-08-24T04:49:51.997265+00:00",
     "sources": [
       {
         "type": "official_game_description",
@@ -973,7 +973,7 @@
         "source_url": "https://www.youtube.com/feeds/videos.xml?channel_id=UCCVWvf_e5oRb6RfXyluR7UA",
         "latest_published_at": "2026-07-02T15:00:06+00:00",
         "status": "rejected",
-        "reason": "Публикация устарела: 52.5 дн. (лимит 3).",
+        "reason": "Публикация устарела: 52.6 дн. (лимит 3).",
         "latest_url": "https://www.youtube.com/watch?v=5Zfy9QW4s5A"
       },
       {
@@ -1031,7 +1031,7 @@
       "source_url": "https://www.youtube.com/feeds/videos.xml?channel_id=UCCVWvf_e5oRb6RfXyluR7UA",
       "latest_published_at": "2026-07-02T15:00:06+00:00",
       "status": "rejected",
-      "reason": "Публикация устарела: 52.5 дн. (лимит 3).",
+      "reason": "Публикация устарела: 52.6 дн. (лимит 3).",
       "latest_url": "https://www.youtube.com/watch?v=5Zfy9QW4s5A"
     },
     "candidate_decision": {
@@ -1082,7 +1082,7 @@
       }
     ],
     "priority": false,
-    "checked_at": "2026-08-24T03:00:59.055862+00:00",
+    "checked_at": "2026-08-24T04:49:51.997640+00:00",
     "sources": [
       {
         "type": "official_game_description",
@@ -1200,7 +1200,7 @@
       }
     ],
     "priority": false,
-    "checked_at": "2026-08-24T03:00:59.057926+00:00",
+    "checked_at": "2026-08-24T04:49:51.999702+00:00",
     "sources": [
       {
         "type": "official_game_description",
@@ -1220,7 +1220,7 @@
         "source_url": "https://bladeball.com/blogs/news",
         "latest_published_at": "2024-03-23T18:51:42Z",
         "status": "rejected",
-        "reason": "Публикация устарела: 883.3 дн. (лимит 3).",
+        "reason": "Публикация устарела: 883.4 дн. (лимит 3).",
         "latest_url": "https://bladeball.com/blogs/news/comptetetive-leaderboards"
       },
       {
@@ -1274,7 +1274,7 @@
       "source_url": "https://bladeball.com/blogs/news",
       "latest_published_at": "2024-03-23T18:51:42Z",
       "status": "rejected",
-      "reason": "Публикация устарела: 883.3 дн. (лимит 3).",
+      "reason": "Публикация устарела: 883.4 дн. (лимит 3).",
       "latest_url": "https://bladeball.com/blogs/news/comptetetive-leaderboards"
     },
     "candidate_decision": {

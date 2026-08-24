@@ -31,7 +31,7 @@
       }
     ],
     "priority": true,
-    "checked_at": "2026-08-24T03:00:59.042107+00:00"
+    "checked_at": "2026-08-24T04:49:51.983952+00:00"
   },
   {
     "game": "99 Nights in the Forest",
@@ -55,7 +55,7 @@
     "facts": [],
     "description_facts": [],
     "priority": true,
-    "checked_at": "2026-08-24T03:00:59.042619+00:00"
+    "checked_at": "2026-08-24T04:49:51.984431+00:00"
   },
   {
     "game": "Blox Fruits",
@@ -92,7 +92,7 @@
       }
     ],
     "priority": false,
-    "checked_at": "2026-08-24T03:00:59.045467+00:00"
+    "checked_at": "2026-08-24T04:49:51.987272+00:00"
   },
   {
     "game": "Brookhaven",
@@ -193,7 +193,7 @@
       }
     ],
     "priority": false,
-    "checked_at": "2026-08-24T03:00:59.048630+00:00"
+    "checked_at": "2026-08-24T04:49:51.990429+00:00"
   },
   {
     "game": "Adopt Me!",
@@ -276,7 +276,7 @@
       }
     ],
     "priority": false,
-    "checked_at": "2026-08-24T03:00:59.050346+00:00"
+    "checked_at": "2026-08-24T04:49:51.992184+00:00"
   },
   {
     "game": "RIVALS",
@@ -343,14 +343,14 @@
       }
     ],
     "priority": false,
-    "checked_at": "2026-08-24T03:00:59.052471+00:00"
+    "checked_at": "2026-08-24T04:49:51.994310+00:00"
   },
   {
     "game": "Grow a Garden",
     "universe_id": 7436755782,
     "roblox_name": "[📜] Grow a Garden 🌶️",
     "description": "🍅Welcome to Grow a Garden🍅\n\nAre you ready to grow your very own garden? Buy seeds from the shop when they restock, plant them, wait for them to grow, and collect the profits! Flex fruits and finds on friends, and have fun!\n\n[How To Plant]\n• Equip your seed you want to plant!\n• Click in your farm on the brown plots to plant!\n• Wait to see it start growing!\n• After its fully grown, it is time to harvest the goods!\n\nRemember, your garden literally grows while you are offline⭐",
-    "updated": "2026-08-22T20:40:45.6013496Z",
+    "updated": "2026-08-24T03:29:38.6054351Z",
     "created": "2025-03-25T22:32:09.437Z",
     "creator": {
       "id": 35789249,
@@ -367,7 +367,7 @@
     "facts": [],
     "description_facts": [],
     "priority": false,
-    "checked_at": "2026-08-24T03:00:59.054171+00:00"
+    "checked_at": "2026-08-24T04:49:51.995947+00:00"
   },
   {
     "game": "Dress To Impress",
@@ -431,7 +431,7 @@
       }
     ],
     "priority": false,
-    "checked_at": "2026-08-24T03:00:59.055473+00:00"
+    "checked_at": "2026-08-24T04:49:51.997265+00:00"
   },
   {
     "game": "Pet Simulator 99",
@@ -476,7 +476,7 @@
       }
     ],
     "priority": false,
-    "checked_at": "2026-08-24T03:00:59.055862+00:00"
+    "checked_at": "2026-08-24T04:49:51.997640+00:00"
   },
   {
     "game": "Blade Ball",
@@ -512,6 +512,6 @@
       }
     ],
     "priority": false,
-    "checked_at": "2026-08-24T03:00:59.057926+00:00"
+    "checked_at": "2026-08-24T04:49:51.999702+00:00"
   }
 ]
