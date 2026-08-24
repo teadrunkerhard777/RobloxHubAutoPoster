@@ -433,9 +433,9 @@
     "rubric": "Картинка дня",
     "source": "image_library",
     "text": "",
-    "status": "pending",
-    "published_at": null,
-    "attempts": 0,
+    "status": "published",
+    "published_at": "2026-08-24T17:00:42.740145+05:00",
+    "attempts": 1,
     "last_error": null,
     "image_path": "images/16-00/c2588f40-d770-436f-9740-180efd203131.jpeg"
   },
