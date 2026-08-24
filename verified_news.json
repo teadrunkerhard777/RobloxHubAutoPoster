@@ -1,472 +1,10 @@
 [
   {
-    "game": "Adopt Me!",
-    "universe_id": 383310974,
-    "roblox_name": "[🍓] Adopt Me!",
-    "description": "Adopt and raise 🐶🦄👶, trade and collect legendary pets, build your dream home, and roleplay with friends!\n\n🎒 Backpack Storage & Releaser Refresh! 🎒\n🦴 Store unused items for smoother gameplay!\n🧸 Sort pets and items, trade directly from tabs!\n🍓 Kiwi Kiwi and Strawberry Tortle in Releaser Eggs!\n\nBe FIRST 🏆 To experience new updates by pressing 🔔NOTIFY.\n\nMeet the founders!\nNewFissy - Tech Director\nBethink - Creative Director\n\nFind out more about Uplift Games, our policies and creative attributions:\nhttps://devforum.roblox.com/t/credits/71812",
-    "updated": "2026-08-22T17:00:02.7439969Z",
-    "created": "2017-07-14T19:26:21.347Z",
-    "creator": {
-      "id": 295182,
-      "name": "Uplift Games",
-      "type": "Group",
-      "isRNVAccount": false,
-      "hasVerifiedBadge": true
-    },
-    "description_changed": false,
-    "added_lines": [],
-    "keywords": [
-      "ITEMS",
-      "NEW",
-      "PETS"
-    ],
-    "score": 10,
-    "confidence": "high",
-    "facts": [
-      {
-        "text": "Kiwi Kiwi — Legendary; Strawberry Tortle — Legendary",
-        "summary_ru": "В Releaser Eggs добавили 2 легендарных питомцев: Kiwi Kiwi и Strawberry Tortle.",
-        "kind": "pets",
-        "value": 10,
-        "specific": true,
-        "reason": "Факт из официальной новостной статьи",
-        "is_new_line": true,
-        "source_url": "https://www.playadopt.me/news/backpack-storage-and-releaser-refresh"
-      },
-      {
-        "text": "Backpack Storage & Releaser Refresh! - Adopt Me! Backpack Storage & Releaser Refresh! Happy update day! This week, two new pets have joined Adoption Island and there's a new way to organize your backpack! Backpack Storage! Tired of digging through your backpack to find the pet you were raising? Did you fill your backpack with cheap cheese and you wish you could get rid of the smell? With Backpack Storage, you can! Storage gives you a brand new space to place your items",
-        "summary_ru": "Появилось Backpack Storage: предметы можно хранить отдельно от рюкзака, переносить сразу по несколько штук и раскладывать по вкладкам.",
-        "kind": "mechanics_storage",
-        "value": 10,
-        "specific": true,
-        "reason": "Факт из официальной новостной статьи",
-        "is_new_line": true,
-        "source_url": "https://www.playadopt.me/news/backpack-storage-and-releaser-refresh"
-      },
-      {
-        "text": "Backpack Storage & Releaser Refresh!",
-        "summary_ru": "В Adopt Me! вышло обновление «Backpack Storage & Releaser Refresh!».",
-        "kind": "official_article",
-        "value": 6,
-        "specific": true,
-        "reason": "Факт из официальной новостной статьи",
-        "is_new_line": true,
-        "source_url": "https://www.playadopt.me/news/backpack-storage-and-releaser-refresh",
-        "title_is_concrete": true
-      }
-    ],
-    "description_facts": [
-      {
-        "text": "Adopt and raise 🐶🦄👶, trade and collect legendary pets, build your dream home, and roleplay with friends!",
-        "kind": "pets",
-        "value": 8,
-        "specific": true,
-        "reason": "Строка называет конкретное игровое содержимое",
-        "summary_ru": "В игре появились новые питомцы.",
-        "is_new_line": false
-      },
-      {
-        "text": "🎒 Backpack Storage & Releaser Refresh! 🎒",
-        "kind": "mechanics_storage",
-        "value": 8,
-        "specific": true,
-        "reason": "Строка называет конкретное игровое содержимое",
-        "summary_ru": "Появилось отдельное хранилище для предметов из рюкзака.",
-        "is_new_line": false
-      },
-      {
-        "text": "🧸 Sort pets and items, trade directly from tabs!",
-        "kind": "mechanics_storage",
-        "value": 8,
-        "specific": true,
-        "reason": "Строка называет конкретное игровое содержимое",
-        "summary_ru": "В игре появилась новая полезная механика.",
-        "is_new_line": false
-      },
-      {
-        "text": "🍓 Kiwi Kiwi and Strawberry Tortle in Releaser Eggs!",
-        "kind": "pets",
-        "value": 8,
-        "specific": true,
-        "reason": "Строка называет конкретное игровое содержимое",
-        "summary_ru": "В игре появились новые питомцы.",
-        "is_new_line": false
-      },
-      {
-        "text": "🦴 Store unused items for smoother gameplay!",
-        "kind": "items",
-        "value": 7,
-        "specific": true,
-        "reason": "Строка называет конкретное игровое содержимое",
-        "summary_ru": "В игре появились новые предметы.",
-        "is_new_line": false
-      },
-      {
-        "text": "Be FIRST 🏆 To experience new updates by pressing 🔔NOTIFY.",
-        "kind": "update",
-        "value": 2,
-        "specific": false,
-        "reason": "Упоминание обновления без конкретики",
-        "summary_ru": "В игре вышло новое обновление.",
-        "is_new_line": false
-      }
-    ],
-    "priority": false,
-    "checked_at": "2026-08-23T03:00:54.557842+00:00",
-    "sources": [
-      {
-        "type": "official_game_description",
-        "verified": true
-      },
-      {
-        "type": "official_roblox_group",
-        "verified": true,
-        "group_id": 295182,
-        "group_name": "Uplift Games"
-      },
-      {
-        "type": "official_news_website",
-        "verified": true,
-        "url": "https://www.playadopt.me/news/backpack-storage-and-releaser-refresh"
-      }
-    ],
-    "cross_source_confirmations": [],
-    "source_diagnostics": [
-      {
-        "source_type": "official_news_website",
-        "source_url": "https://www.playadopt.me/news",
-        "latest_published_at": "2026-08-21T15:05:00.000Z",
-        "status": "accepted",
-        "reason": "Свежая официальная публикация (1.5 дн.) с датой и содержанием.",
-        "latest_url": "https://www.playadopt.me/news/backpack-storage-and-releaser-refresh"
-      },
-      {
-        "source_type": "official_game_description",
-        "source_url": "https://www.roblox.com/games/920587237/Adopt-Me",
-        "latest_published_at": "2026-08-22T17:00:02.7439969Z",
-        "status": "rejected",
-        "reason": "Нет новой конкретной строки со времени прошлого снимка."
-      },
-      {
-        "source_type": "official_roblox_group",
-        "source_url": "https://www.roblox.com/communities/295182/Uplift-Games",
-        "latest_published_at": null,
-        "status": "checked",
-        "reason": "Официальная группа подтверждена; датированной новости нет."
-      }
-    ],
-    "official_description_analysis": {
-      "keywords": [
-        "UPDATE",
-        "NEW",
-        "ITEM",
-        "ITEMS",
-        "PET",
-        "PETS"
-      ],
-      "news_lines": [
-        "Adopt and raise 🐶🦄👶, trade and collect legendary pets, build your dream home, and roleplay with friends!",
-        "🦴 Store unused items for smoother gameplay!",
-        "🧸 Sort pets and items, trade directly from tabs!",
-        "Be FIRST 🏆 To experience new updates by pressing 🔔NOTIFY.",
-        "NewFissy - Tech Director"
-      ]
-    },
-    "source_registry": {
-      "universe_id": 383310974,
-      "root_place_id": 920587237,
-      "roblox_game_url": "https://www.roblox.com/games/920587237/Adopt-Me",
-      "roblox_group_id": 295182,
-      "roblox_group_name": "Uplift Games",
-      "roblox_group_url": "https://www.roblox.com/communities/295182/Uplift-Games",
-      "news_strategy": "official_news_website",
-      "website": "https://www.playadopt.me/",
-      "news_url": "https://www.playadopt.me/news",
-      "discord": "https://discord.com/invite/adoptme",
-      "youtube": "https://www.youtube.com/PlayAdoptMe",
-      "x": "https://x.com/PlayAdoptMe"
-    },
-    "official_group": {
-      "id": 295182,
-      "name": "Uplift Games",
-      "expected_name": "Uplift Games",
-      "name_matches_registry": true,
-      "description": "Welcome to Uplift Games, the studio behind Adopt Me!",
-      "has_verified_badge": true,
-      "news_lines": []
-    },
-    "external_source_diagnostic": {
-      "source_type": "official_news_website",
-      "source_url": "https://www.playadopt.me/news",
-      "latest_published_at": "2026-08-21T15:05:00.000Z",
-      "status": "accepted",
-      "reason": "Свежая официальная публикация (1.5 дн.) с датой и содержанием.",
-      "latest_url": "https://www.playadopt.me/news/backpack-storage-and-releaser-refresh"
-    },
-    "external_news_article": {
-      "url": "https://www.playadopt.me/news/backpack-storage-and-releaser-refresh",
-      "title": "Backpack Storage & Releaser Refresh! - Adopt Me!",
-      "published_at": "2026-08-21T15:05:00.000Z",
-      "age_days": 1.497161100636574
-    },
-    "candidate_decision": {
-      "status": "accepted",
-      "reason": "Есть достойный свежий факт."
-    }
-  },
-  {
-    "game": "Brookhaven",
-    "universe_id": 1686885941,
-    "roblox_name": "Brookhaven 🏡RP",
-    "description": "A place to play with like minded people and roleplay. Own and live in amazing houses, drive cool vehicles and explore the city. Be whoever you want to be in Brookhaven RP.\n\nLatest Update:\n🔐 Prison Landmark - New roleplay! Warden tear gas launcher and pistol, and prisoner bus.\n👮‍♂️ Prison Tools - New handcuffs, shank, and scanner wand!\n🚨 Prison Props - New alarm, spotlight, security scanner, yard props, and more!\n\nThanks for playing! \n\nPrivate Server Benefits:\n· Prop Saving\n· Server-Wide Music\n· Server-Wide Announcements\n· Remove or Lock Props\n· Check Prop Owners\n· Set Players as Admins\n· Kick / Temp Ban Players\n· Set Day of the Week\n· Set Time by the Hour\n· Change Weather and Lighting\n· Speed up Time\n· Server Theme Controls\n· No Wait Time for Changing House \n· Spawn Up to Three Vehicles\n· Prop Limit Increased\n· Freecam for PC users (Shift+P)",
-    "updated": "2026-08-21T21:45:59.5181811Z",
-    "created": "2020-04-21T02:15:38.373Z",
-    "creator": {
-      "id": 3104358,
-      "name": "Brookhaven by Voldex",
-      "type": "Group",
-      "isRNVAccount": false,
-      "hasVerifiedBadge": false
-    },
-    "description_changed": false,
-    "added_lines": [],
-    "keywords": [
-      "NEW",
-      "UPDATE",
-      "VEHICLES"
-    ],
-    "score": 9,
-    "confidence": "high",
-    "facts": [
-      {
-        "text": "Brookhaven Update August 21, 2026: Prison Landmark NEW PRISON LANDMARK a guard officer, where you can: keep the inmates in order, monitor CCTV cameras, or patrol the facility",
-        "summary_ru": "В игре появилась новая локация — тюрьма.",
-        "kind": "locations",
-        "value": 9,
-        "specific": true,
-        "reason": "Факт из официальной новостной статьи",
-        "is_new_line": true,
-        "source_url": "https://www.brookhavenrp.com/posts/brookhaven-update-august-21-2026"
-      },
-      {
-        "text": "the warden, where you can: trigger lockdowns, work in your private office, chill in your private game room, or equip unique weapons Warden pistol Warden tear gas launcher New handcuffs - escort other players New scanner wand - detect if other players have weapons New alarm, spotlight, and security scanner",
-        "summary_ru": "Для смотрителя добавили пусковую установку со слезоточивым газом, сканирующую палочку, сканер безопасности, наручники, пистолет, прожектор и сигнализацию.",
-        "kind": "items",
-        "value": 8,
-        "specific": true,
-        "reason": "Факт из официальной новостной статьи",
-        "is_new_line": true,
-        "source_url": "https://www.brookhavenrp.com/posts/brookhaven-update-august-21-2026"
-      },
-      {
-        "text": "Prisoner bus vehicle",
-        "summary_ru": "В игру добавили тюремный автобус.",
-        "kind": "vehicle",
-        "value": 8,
-        "specific": true,
-        "reason": "Факт из официальной новостной статьи",
-        "is_new_line": true,
-        "source_url": "https://www.brookhavenrp.com/posts/brookhaven-update-august-21-2026"
-      },
-      {
-        "text": "PRISON PROPS 6 new yard props 2 new jail building props",
-        "summary_ru": "В игру добавили реквизит для тюремного двора, детали здания тюрьмы и тюремный реквизит.",
-        "kind": "items",
-        "value": 8,
-        "specific": true,
-        "reason": "Факт из официальной новостной статьи",
-        "is_new_line": true,
-        "source_url": "https://www.brookhavenrp.com/posts/brookhaven-update-august-21-2026"
-      },
-      {
-        "text": "an inmate, where you can: cause chaos, explore escape routes, work in the cafeteria, or work out in the yard",
-        "summary_ru": "В игре появилась новая полезная механика.",
-        "kind": "mechanics_storage",
-        "value": 7,
-        "specific": true,
-        "reason": "Факт из официальной новостной статьи",
-        "is_new_line": true,
-        "source_url": "https://www.brookhavenrp.com/posts/brookhaven-update-august-21-2026"
-      }
-    ],
-    "description_facts": [
-      {
-        "text": "🔐 Prison Landmark - New roleplay! Warden tear gas launcher and pistol, and prisoner bus.",
-        "kind": "locations",
-        "value": 8,
-        "specific": true,
-        "reason": "Строка называет конкретное игровое содержимое",
-        "summary_ru": "В игре появилась новая локация — тюрьма. Для ролевых сцен добавили пусковую установку со слезоточивым газом, пистолет и тюремный автобус.",
-        "is_new_line": false
-      },
-      {
-        "text": "👮‍♂️ Prison Tools - New handcuffs, shank, and scanner wand!",
-        "kind": "items",
-        "value": 7,
-        "specific": true,
-        "reason": "Строка называет конкретное игровое содержимое",
-        "summary_ru": "В игру добавили сканирующую палочку, наручники и заточку.",
-        "is_new_line": false
-      },
-      {
-        "text": "🚨 Prison Props - New alarm, spotlight, security scanner, yard props, and more!",
-        "kind": "items",
-        "value": 7,
-        "specific": true,
-        "reason": "Строка называет конкретное игровое содержимое",
-        "summary_ru": "В игру добавили сканер безопасности, прожектор, сигнализацию, реквизит для тюремного двора и тюремный реквизит.",
-        "is_new_line": false
-      },
-      {
-        "text": "· Prop Saving",
-        "kind": "items",
-        "value": 7,
-        "specific": true,
-        "reason": "Строка называет конкретное игровое содержимое",
-        "summary_ru": "Добавили новый реквизит для ролевых сцен.",
-        "is_new_line": false
-      },
-      {
-        "text": "· Remove or Lock Props",
-        "kind": "items",
-        "value": 7,
-        "specific": true,
-        "reason": "Строка называет конкретное игровое содержимое",
-        "summary_ru": "Добавили новый реквизит для ролевых сцен.",
-        "is_new_line": false
-      },
-      {
-        "text": "· Check Prop Owners",
-        "kind": "items",
-        "value": 7,
-        "specific": true,
-        "reason": "Строка называет конкретное игровое содержимое",
-        "summary_ru": "Добавили новый реквизит для ролевых сцен.",
-        "is_new_line": false
-      },
-      {
-        "text": "· Prop Limit Increased",
-        "kind": "items",
-        "value": 7,
-        "specific": true,
-        "reason": "Строка называет конкретное игровое содержимое",
-        "summary_ru": "Добавили новый реквизит для ролевых сцен.",
-        "is_new_line": false
-      },
-      {
-        "text": "Latest Update:",
-        "kind": "update",
-        "value": 2,
-        "specific": false,
-        "reason": "Упоминание обновления без конкретики",
-        "summary_ru": "В игре вышло новое обновление.",
-        "is_new_line": false
-      }
-    ],
-    "priority": false,
-    "checked_at": "2026-08-23T03:00:54.556092+00:00",
-    "sources": [
-      {
-        "type": "official_game_description",
-        "verified": true
-      },
-      {
-        "type": "official_roblox_group",
-        "verified": true,
-        "group_id": 3104358,
-        "group_name": "Brookhaven by Voldex"
-      },
-      {
-        "type": "official_news_website",
-        "verified": true,
-        "url": "https://www.brookhavenrp.com/posts/brookhaven-update-august-21-2026"
-      }
-    ],
-    "cross_source_confirmations": [],
-    "source_diagnostics": [
-      {
-        "source_type": "official_news_website",
-        "source_url": "https://www.brookhavenrp.com/",
-        "latest_published_at": "2026-08-21",
-        "status": "accepted",
-        "reason": "Свежая официальная публикация (2.1 дн.) с датой и содержанием.",
-        "latest_url": "https://www.brookhavenrp.com/posts/brookhaven-update-august-21-2026"
-      },
-      {
-        "source_type": "official_game_description",
-        "source_url": "https://www.roblox.com/games/4924922222/Brookhaven-RP",
-        "latest_published_at": "2026-08-21T21:45:59.5181811Z",
-        "status": "rejected",
-        "reason": "Нет новой конкретной строки со времени прошлого снимка."
-      },
-      {
-        "source_type": "official_roblox_group",
-        "source_url": "https://www.roblox.com/communities/3104358/Brookhaven-by-Voldex",
-        "latest_published_at": null,
-        "status": "checked",
-        "reason": "Официальная группа подтверждена; датированной новости нет."
-      }
-    ],
-    "official_description_analysis": {
-      "keywords": [
-        "UPDATE",
-        "NEW"
-      ],
-      "news_lines": [
-        "Latest Update:",
-        "🔐 Prison Landmark - New roleplay! Warden tear gas launcher and pistol, and prisoner bus.",
-        "👮‍♂️ Prison Tools - New handcuffs, shank, and scanner wand!",
-        "🚨 Prison Props - New alarm, spotlight, security scanner, yard props, and more!"
-      ]
-    },
-    "source_registry": {
-      "universe_id": 1686885941,
-      "root_place_id": 4924922222,
-      "roblox_game_url": "https://www.roblox.com/games/4924922222/Brookhaven-RP",
-      "roblox_group_id": 3104358,
-      "roblox_group_name": "Brookhaven by Voldex",
-      "roblox_group_url": "https://www.roblox.com/communities/3104358/Brookhaven-by-Voldex",
-      "news_strategy": "official_news_website",
-      "website": "https://www.brookhavenrp.com/",
-      "news_url": "https://www.brookhavenrp.com/",
-      "discord": null,
-      "youtube": null,
-      "x": null
-    },
-    "official_group": {
-      "id": 3104358,
-      "name": "Brookhaven by Voldex",
-      "expected_name": "Brookhaven by Voldex",
-      "name_matches_registry": true,
-      "description": "Brookhaven originally created by Wolfpaq, now developed by Voldex",
-      "has_verified_badge": false,
-      "news_lines": []
-    },
-    "external_source_diagnostic": {
-      "source_type": "official_news_website",
-      "source_url": "https://www.brookhavenrp.com/",
-      "latest_published_at": "2026-08-21",
-      "status": "accepted",
-      "reason": "Свежая официальная публикация (2.1 дн.) с датой и содержанием.",
-      "latest_url": "https://www.brookhavenrp.com/posts/brookhaven-update-august-21-2026"
-    },
-    "external_news_article": {
-      "url": "https://www.brookhavenrp.com/posts/brookhaven-update-august-21-2026",
-      "title": "Brookhaven Update August 21, 2026: Prison Landmark",
-      "published_at": "2026-08-21",
-      "age_days": 2.1256333228587962
-    },
-    "candidate_decision": {
-      "status": "accepted",
-      "reason": "Есть достойный свежий факт."
-    }
-  },
-  {
     "game": "Steal a Brainrot",
     "universe_id": 7709344486,
     "roblox_name": "[🐝] Steal a Brainrot",
     "description": "🗣️ Welcome to Steal a Brainrot!\n\n👍 Like the game and join the group\n\nHow to Play:\n👽 Buy a Brainrot\n🥷 Steal Brainrots from other players\n💸 Generate money\n🐦‍🔥 Rebirth\n✋ Buy slaps and troll gear to troll other players!\n\n💻 Supports Desktop, Mobile and Tablet players\n\n🙏 Credit to Chris for letting us use the Nyan Cat!\n🙏 Credit to @WinnersTakesAll for the backpack system!",
-    "updated": "2026-08-22T19:54:43.4713408Z",
+    "updated": "2026-08-23T22:53:58.2104576Z",
     "created": "2025-05-16T00:49:12.563Z",
     "creator": {
       "id": 35815907,
@@ -493,7 +31,7 @@
       }
     ],
     "priority": true,
-    "checked_at": "2026-08-23T03:00:54.549658+00:00",
+    "checked_at": "2026-08-24T03:00:59.042107+00:00",
     "sources": [
       {
         "type": "official_game_description",
@@ -511,7 +49,7 @@
       {
         "source_type": "official_game_description",
         "source_url": "https://www.roblox.com/games/109983668079237/Steal-a-Brainrot",
-        "latest_published_at": "2026-08-22T19:54:43.4713408Z",
+        "latest_published_at": "2026-08-23T22:53:58.2104576Z",
         "status": "rejected",
         "reason": "Нет новой конкретной строки со времени прошлого снимка."
       },
@@ -577,7 +115,7 @@
     "facts": [],
     "description_facts": [],
     "priority": true,
-    "checked_at": "2026-08-23T03:00:54.550137+00:00",
+    "checked_at": "2026-08-24T03:00:59.042619+00:00",
     "sources": [
       {
         "type": "official_game_description",
@@ -674,7 +212,7 @@
       }
     ],
     "priority": false,
-    "checked_at": "2026-08-23T03:00:54.552912+00:00",
+    "checked_at": "2026-08-24T03:00:59.045467+00:00",
     "sources": [
       {
         "type": "official_game_description",
@@ -694,7 +232,7 @@
         "source_url": "https://gamerrobot.com/blogs/news",
         "latest_published_at": "2026-08-06T22:02:43Z",
         "status": "rejected",
-        "reason": "Публикация устарела: 16.2 дн. (лимит 3).",
+        "reason": "Публикация устарела: 17.2 дн. (лимит 3).",
         "latest_url": "https://gamerrobot.com/blogs/news/the-balance-log"
       },
       {
@@ -750,8 +288,365 @@
       "source_url": "https://gamerrobot.com/blogs/news",
       "latest_published_at": "2026-08-06T22:02:43Z",
       "status": "rejected",
-      "reason": "Публикация устарела: 16.2 дн. (лимит 3).",
+      "reason": "Публикация устарела: 17.2 дн. (лимит 3).",
       "latest_url": "https://gamerrobot.com/blogs/news/the-balance-log"
+    },
+    "candidate_decision": {
+      "status": "rejected",
+      "reason": "Нет свежего факта с редакционным баллом 5 или выше."
+    }
+  },
+  {
+    "game": "Brookhaven",
+    "universe_id": 1686885941,
+    "roblox_name": "Brookhaven 🏡RP",
+    "description": "A place to play with like minded people and roleplay. Own and live in amazing houses, drive cool vehicles and explore the city. Be whoever you want to be in Brookhaven RP.\n\nLatest Update:\n🔐 Prison Landmark - New roleplay! Warden tear gas launcher and pistol, and prisoner bus.\n👮‍♂️ Prison Tools - New handcuffs, shank, and scanner wand!\n🚨 Prison Props - New alarm, spotlight, security scanner, yard props, and more!\n\nThanks for playing! \n\nPrivate Server Benefits:\n· Prop Saving\n· Server-Wide Music\n· Server-Wide Announcements\n· Remove or Lock Props\n· Check Prop Owners\n· Set Players as Admins\n· Kick / Temp Ban Players\n· Set Day of the Week\n· Set Time by the Hour\n· Change Weather and Lighting\n· Speed up Time\n· Server Theme Controls\n· No Wait Time for Changing House \n· Spawn Up to Three Vehicles\n· Prop Limit Increased\n· Freecam for PC users (Shift+P)",
+    "updated": "2026-08-21T21:45:59.518Z",
+    "created": "2020-04-21T02:15:38.373Z",
+    "creator": {
+      "id": 3104358,
+      "name": "Brookhaven by Voldex",
+      "type": "Group",
+      "isRNVAccount": false,
+      "hasVerifiedBadge": false
+    },
+    "description_changed": false,
+    "added_lines": [],
+    "keywords": [
+      "NEW",
+      "UPDATE",
+      "VEHICLES"
+    ],
+    "score": 0,
+    "confidence": "low",
+    "facts": [],
+    "description_facts": [
+      {
+        "text": "🔐 Prison Landmark - New roleplay! Warden tear gas launcher and pistol, and prisoner bus.",
+        "kind": "locations",
+        "value": 8,
+        "specific": true,
+        "reason": "Строка называет конкретное игровое содержимое",
+        "summary_ru": "В игре появилась новая локация — тюрьма. Для ролевых сцен добавили пусковую установку со слезоточивым газом, пистолет и тюремный автобус.",
+        "is_new_line": false
+      },
+      {
+        "text": "👮‍♂️ Prison Tools - New handcuffs, shank, and scanner wand!",
+        "kind": "items",
+        "value": 7,
+        "specific": true,
+        "reason": "Строка называет конкретное игровое содержимое",
+        "summary_ru": "В игру добавили сканирующую палочку, наручники и заточку.",
+        "is_new_line": false
+      },
+      {
+        "text": "🚨 Prison Props - New alarm, spotlight, security scanner, yard props, and more!",
+        "kind": "items",
+        "value": 7,
+        "specific": true,
+        "reason": "Строка называет конкретное игровое содержимое",
+        "summary_ru": "В игру добавили сканер безопасности, прожектор, сигнализацию, реквизит для тюремного двора и тюремный реквизит.",
+        "is_new_line": false
+      },
+      {
+        "text": "· Prop Saving",
+        "kind": "items",
+        "value": 7,
+        "specific": true,
+        "reason": "Строка называет конкретное игровое содержимое",
+        "summary_ru": "Добавили новый реквизит для ролевых сцен.",
+        "is_new_line": false
+      },
+      {
+        "text": "· Remove or Lock Props",
+        "kind": "items",
+        "value": 7,
+        "specific": true,
+        "reason": "Строка называет конкретное игровое содержимое",
+        "summary_ru": "Добавили новый реквизит для ролевых сцен.",
+        "is_new_line": false
+      },
+      {
+        "text": "· Check Prop Owners",
+        "kind": "items",
+        "value": 7,
+        "specific": true,
+        "reason": "Строка называет конкретное игровое содержимое",
+        "summary_ru": "Добавили новый реквизит для ролевых сцен.",
+        "is_new_line": false
+      },
+      {
+        "text": "· Prop Limit Increased",
+        "kind": "items",
+        "value": 7,
+        "specific": true,
+        "reason": "Строка называет конкретное игровое содержимое",
+        "summary_ru": "Добавили новый реквизит для ролевых сцен.",
+        "is_new_line": false
+      },
+      {
+        "text": "Latest Update:",
+        "kind": "update",
+        "value": 2,
+        "specific": false,
+        "reason": "Упоминание обновления без конкретики",
+        "summary_ru": "В игре вышло новое обновление.",
+        "is_new_line": false
+      }
+    ],
+    "priority": false,
+    "checked_at": "2026-08-24T03:00:59.048630+00:00",
+    "sources": [
+      {
+        "type": "official_game_description",
+        "verified": true
+      },
+      {
+        "type": "official_roblox_group",
+        "verified": true,
+        "group_id": 3104358,
+        "group_name": "Brookhaven by Voldex"
+      }
+    ],
+    "cross_source_confirmations": [],
+    "source_diagnostics": [
+      {
+        "source_type": "official_news_website",
+        "source_url": "https://www.brookhavenrp.com/",
+        "latest_published_at": "2026-08-21",
+        "status": "rejected",
+        "reason": "Публикация устарела: 3.1 дн. (лимит 3).",
+        "latest_url": "https://www.brookhavenrp.com/posts/brookhaven-update-august-21-2026"
+      },
+      {
+        "source_type": "official_game_description",
+        "source_url": "https://www.roblox.com/games/4924922222/Brookhaven-RP",
+        "latest_published_at": "2026-08-21T21:45:59.518Z",
+        "status": "rejected",
+        "reason": "Нет новой конкретной строки со времени прошлого снимка."
+      },
+      {
+        "source_type": "official_roblox_group",
+        "source_url": "https://www.roblox.com/communities/3104358/Brookhaven-by-Voldex",
+        "latest_published_at": null,
+        "status": "checked",
+        "reason": "Официальная группа подтверждена; датированной новости нет."
+      }
+    ],
+    "official_description_analysis": {
+      "keywords": [
+        "UPDATE",
+        "NEW"
+      ],
+      "news_lines": [
+        "Latest Update:",
+        "🔐 Prison Landmark - New roleplay! Warden tear gas launcher and pistol, and prisoner bus.",
+        "👮‍♂️ Prison Tools - New handcuffs, shank, and scanner wand!",
+        "🚨 Prison Props - New alarm, spotlight, security scanner, yard props, and more!"
+      ]
+    },
+    "source_registry": {
+      "universe_id": 1686885941,
+      "root_place_id": 4924922222,
+      "roblox_game_url": "https://www.roblox.com/games/4924922222/Brookhaven-RP",
+      "roblox_group_id": 3104358,
+      "roblox_group_name": "Brookhaven by Voldex",
+      "roblox_group_url": "https://www.roblox.com/communities/3104358/Brookhaven-by-Voldex",
+      "news_strategy": "official_news_website",
+      "website": "https://www.brookhavenrp.com/",
+      "news_url": "https://www.brookhavenrp.com/",
+      "discord": null,
+      "youtube": null,
+      "x": null
+    },
+    "official_group": {
+      "id": 3104358,
+      "name": "Brookhaven by Voldex",
+      "expected_name": "Brookhaven by Voldex",
+      "name_matches_registry": true,
+      "description": "Brookhaven originally created by Wolfpaq, now developed by Voldex",
+      "has_verified_badge": false,
+      "news_lines": []
+    },
+    "external_source_diagnostic": {
+      "source_type": "official_news_website",
+      "source_url": "https://www.brookhavenrp.com/",
+      "latest_published_at": "2026-08-21",
+      "status": "rejected",
+      "reason": "Публикация устарела: 3.1 дн. (лимит 3).",
+      "latest_url": "https://www.brookhavenrp.com/posts/brookhaven-update-august-21-2026"
+    },
+    "candidate_decision": {
+      "status": "rejected",
+      "reason": "Нет свежего факта с редакционным баллом 5 или выше."
+    }
+  },
+  {
+    "game": "Adopt Me!",
+    "universe_id": 383310974,
+    "roblox_name": "[🍓] Adopt Me!",
+    "description": "Adopt and raise 🐶🦄👶, trade and collect legendary pets, build your dream home, and roleplay with friends!\n\n🎒 Backpack Storage & Releaser Refresh! 🎒\n🦴 Store unused items for smoother gameplay!\n🧸 Sort pets and items, trade directly from tabs!\n🍓 Kiwi Kiwi and Strawberry Tortle in Releaser Eggs!\n\nBe FIRST 🏆 To experience new updates by pressing 🔔NOTIFY.\n\nMeet the founders!\nNewFissy - Tech Director\nBethink - Creative Director\n\nFind out more about Uplift Games, our policies and creative attributions:\nhttps://devforum.roblox.com/t/credits/71812",
+    "updated": "2026-08-22T17:00:02.7439969Z",
+    "created": "2017-07-14T19:26:21.347Z",
+    "creator": {
+      "id": 295182,
+      "name": "Uplift Games",
+      "type": "Group",
+      "isRNVAccount": false,
+      "hasVerifiedBadge": true
+    },
+    "description_changed": false,
+    "added_lines": [],
+    "keywords": [
+      "ITEMS",
+      "NEW",
+      "PETS"
+    ],
+    "score": 0,
+    "confidence": "low",
+    "facts": [],
+    "description_facts": [
+      {
+        "text": "Adopt and raise 🐶🦄👶, trade and collect legendary pets, build your dream home, and roleplay with friends!",
+        "kind": "pets",
+        "value": 8,
+        "specific": true,
+        "reason": "Строка называет конкретное игровое содержимое",
+        "summary_ru": "В игре появились новые питомцы.",
+        "is_new_line": false
+      },
+      {
+        "text": "🎒 Backpack Storage & Releaser Refresh! 🎒",
+        "kind": "mechanics_storage",
+        "value": 8,
+        "specific": true,
+        "reason": "Строка называет конкретное игровое содержимое",
+        "summary_ru": "Появилось отдельное хранилище для предметов из рюкзака.",
+        "is_new_line": false
+      },
+      {
+        "text": "🧸 Sort pets and items, trade directly from tabs!",
+        "kind": "mechanics_storage",
+        "value": 8,
+        "specific": true,
+        "reason": "Строка называет конкретное игровое содержимое",
+        "summary_ru": "В игре появилась новая полезная механика.",
+        "is_new_line": false
+      },
+      {
+        "text": "🍓 Kiwi Kiwi and Strawberry Tortle in Releaser Eggs!",
+        "kind": "pets",
+        "value": 8,
+        "specific": true,
+        "reason": "Строка называет конкретное игровое содержимое",
+        "summary_ru": "В игре появились новые питомцы.",
+        "is_new_line": false
+      },
+      {
+        "text": "🦴 Store unused items for smoother gameplay!",
+        "kind": "items",
+        "value": 7,
+        "specific": true,
+        "reason": "Строка называет конкретное игровое содержимое",
+        "summary_ru": "В игре появились новые предметы.",
+        "is_new_line": false
+      },
+      {
+        "text": "Be FIRST 🏆 To experience new updates by pressing 🔔NOTIFY.",
+        "kind": "update",
+        "value": 2,
+        "specific": false,
+        "reason": "Упоминание обновления без конкретики",
+        "summary_ru": "В игре вышло новое обновление.",
+        "is_new_line": false
+      }
+    ],
+    "priority": false,
+    "checked_at": "2026-08-24T03:00:59.050346+00:00",
+    "sources": [
+      {
+        "type": "official_game_description",
+        "verified": true
+      },
+      {
+        "type": "official_roblox_group",
+        "verified": true,
+        "group_id": 295182,
+        "group_name": "Uplift Games"
+      }
+    ],
+    "cross_source_confirmations": [],
+    "source_diagnostics": [
+      {
+        "source_type": "official_news_website",
+        "source_url": "https://www.playadopt.me/news",
+        "latest_published_at": "2026-08-21T15:05:00.000Z",
+        "status": "rejected",
+        "reason": "Публикация уже использовалась в выпуске другого дня.",
+        "latest_url": "https://www.playadopt.me/news/backpack-storage-and-releaser-refresh"
+      },
+      {
+        "source_type": "official_game_description",
+        "source_url": "https://www.roblox.com/games/920587237/Adopt-Me",
+        "latest_published_at": "2026-08-22T17:00:02.7439969Z",
+        "status": "rejected",
+        "reason": "Нет новой конкретной строки со времени прошлого снимка."
+      },
+      {
+        "source_type": "official_roblox_group",
+        "source_url": "https://www.roblox.com/communities/295182/Uplift-Games",
+        "latest_published_at": null,
+        "status": "checked",
+        "reason": "Официальная группа подтверждена; датированной новости нет."
+      }
+    ],
+    "official_description_analysis": {
+      "keywords": [
+        "UPDATE",
+        "NEW",
+        "ITEM",
+        "ITEMS",
+        "PET",
+        "PETS"
+      ],
+      "news_lines": [
+        "Adopt and raise 🐶🦄👶, trade and collect legendary pets, build your dream home, and roleplay with friends!",
+        "🦴 Store unused items for smoother gameplay!",
+        "🧸 Sort pets and items, trade directly from tabs!",
+        "Be FIRST 🏆 To experience new updates by pressing 🔔NOTIFY.",
+        "NewFissy - Tech Director"
+      ]
+    },
+    "source_registry": {
+      "universe_id": 383310974,
+      "root_place_id": 920587237,
+      "roblox_game_url": "https://www.roblox.com/games/920587237/Adopt-Me",
+      "roblox_group_id": 295182,
+      "roblox_group_name": "Uplift Games",
+      "roblox_group_url": "https://www.roblox.com/communities/295182/Uplift-Games",
+      "news_strategy": "official_news_website",
+      "website": "https://www.playadopt.me/",
+      "news_url": "https://www.playadopt.me/news",
+      "discord": "https://discord.com/invite/adoptme",
+      "youtube": "https://www.youtube.com/PlayAdoptMe",
+      "x": "https://x.com/PlayAdoptMe"
+    },
+    "official_group": {
+      "id": 295182,
+      "name": "Uplift Games",
+      "expected_name": "Uplift Games",
+      "name_matches_registry": true,
+      "description": "Welcome to Uplift Games, the studio behind Adopt Me!",
+      "has_verified_badge": true,
+      "news_lines": []
+    },
+    "external_source_diagnostic": {
+      "source_type": "official_news_website",
+      "source_url": "https://www.playadopt.me/news",
+      "latest_published_at": "2026-08-21T15:05:00.000Z",
+      "status": "rejected",
+      "reason": "Публикация уже использовалась в выпуске другого дня.",
+      "latest_url": "https://www.playadopt.me/news/backpack-storage-and-releaser-refresh"
     },
     "candidate_decision": {
       "status": "rejected",
@@ -823,7 +718,7 @@
       }
     ],
     "priority": false,
-    "checked_at": "2026-08-23T03:00:54.559969+00:00",
+    "checked_at": "2026-08-24T03:00:59.052471+00:00",
     "sources": [
       {
         "type": "official_game_description",
@@ -920,7 +815,7 @@
     "facts": [],
     "description_facts": [],
     "priority": false,
-    "checked_at": "2026-08-23T03:00:54.561649+00:00",
+    "checked_at": "2026-08-24T03:00:59.054171+00:00",
     "sources": [
       {
         "type": "official_game_description",
@@ -1001,7 +896,7 @@
     "universe_id": 5203828273,
     "roblox_name": "[🌴] Dress To Impress",
     "description": "Create stunning outfits 👗💖⭐, and strut the runway to show off your unique style. Collaborate, compete, and explore a world of glamour with friends!\n\n⭐ Are you ready to be the TOP MODEL?\n👗 NEW ITEMS! Check them out.\n🍿 Vote for your favorite outfits!\n💃 Use poses on the runway to show off your outfit!\n\nFind more about Dress To Impress by joining our community.\nhttps://www.roblox.com/communities/17264167/Dress-To-Impress-Group#!/about",
-    "updated": "2026-08-22T21:06:44.9223506Z",
+    "updated": "2026-08-23T23:13:29.899003Z",
     "created": "2023-10-18T09:11:36.563Z",
     "creator": {
       "id": 17264167,
@@ -1058,7 +953,7 @@
       }
     ],
     "priority": false,
-    "checked_at": "2026-08-23T03:00:54.562974+00:00",
+    "checked_at": "2026-08-24T03:00:59.055473+00:00",
     "sources": [
       {
         "type": "official_game_description",
@@ -1078,13 +973,13 @@
         "source_url": "https://www.youtube.com/feeds/videos.xml?channel_id=UCCVWvf_e5oRb6RfXyluR7UA",
         "latest_published_at": "2026-07-02T15:00:06+00:00",
         "status": "rejected",
-        "reason": "Публикация устарела: 51.5 дн. (лимит 3).",
+        "reason": "Публикация устарела: 52.5 дн. (лимит 3).",
         "latest_url": "https://www.youtube.com/watch?v=5Zfy9QW4s5A"
       },
       {
         "source_type": "official_game_description",
         "source_url": "https://www.roblox.com/games/15101393044/Dress-To-Impress",
-        "latest_published_at": "2026-08-22T21:06:44.9223506Z",
+        "latest_published_at": "2026-08-23T23:13:29.899003Z",
         "status": "rejected",
         "reason": "Нет новой конкретной строки со времени прошлого снимка."
       },
@@ -1136,7 +1031,7 @@
       "source_url": "https://www.youtube.com/feeds/videos.xml?channel_id=UCCVWvf_e5oRb6RfXyluR7UA",
       "latest_published_at": "2026-07-02T15:00:06+00:00",
       "status": "rejected",
-      "reason": "Публикация устарела: 51.5 дн. (лимит 3).",
+      "reason": "Публикация устарела: 52.5 дн. (лимит 3).",
       "latest_url": "https://www.youtube.com/watch?v=5Zfy9QW4s5A"
     },
     "candidate_decision": {
@@ -1149,7 +1044,7 @@
     "universe_id": 3317771874,
     "roblox_name": "🍀 [LUCKY BLOCK] Pet Simulator 99! 🧱",
     "description": "Create an army of the coolest pets! They will help you get RICH!\n\n✨ Currently 2,000+ pets to collect! 🐾\n\n🧡 Thanks for playing!",
-    "updated": "2026-08-22T20:47:36.4568522Z",
+    "updated": "2026-08-24T01:35:52.791173Z",
     "created": "2022-02-05T13:30:02.357Z",
     "creator": {
       "id": 3959677,
@@ -1187,7 +1082,7 @@
       }
     ],
     "priority": false,
-    "checked_at": "2026-08-23T03:00:54.563379+00:00",
+    "checked_at": "2026-08-24T03:00:59.055862+00:00",
     "sources": [
       {
         "type": "official_game_description",
@@ -1213,7 +1108,7 @@
       {
         "source_type": "official_game_description",
         "source_url": "https://www.roblox.com/games/8737899170/Pet-Simulator-99",
-        "latest_published_at": "2026-08-22T20:47:36.4568522Z",
+        "latest_published_at": "2026-08-24T01:35:52.791173Z",
         "status": "rejected",
         "reason": "Нет новой конкретной строки со времени прошлого снимка."
       },
@@ -1276,7 +1171,7 @@
     "universe_id": 4777817887,
     "roblox_name": "Blade Ball",
     "description": "⚡  In this game of focus, timing, and strategy, your skill is tested as a deflectable homing ball hunts players with increasing speed. But there's more than what meets the eye.\n\n🔥  Gain new abilities and upgrade them to compliment your playstyle. Rise through the ranks by mastering your skill, and stand out with a variety of iconic weapon skins and finisher effects.\n\n🏆 Shoot for the leaderboard or play casually! The choice is yours.\n \nCONTROLS:\nBLOCK - F/R1/Tap Screen/Tap UI Button/Left Click\nABILITY - Q/ButtonX/Tap UI Button/Right Click\nSHIFTLOCK - Shift/Button-Y/Tap UI Button\nEMOTE - R/L1/Tap UI Button\n\ntags: minigame, battle game, pvp, multiplayer, abilities, dodgeball, sports, mobile, console, xbox, pc",
-    "updated": "2026-08-22T17:47:54.1764983Z",
+    "updated": "2026-08-23T21:39:04.4870714Z",
     "created": "2023-06-17T00:05:26.103Z",
     "creator": {
       "id": 12836673,
@@ -1305,7 +1200,7 @@
       }
     ],
     "priority": false,
-    "checked_at": "2026-08-23T03:00:54.565457+00:00",
+    "checked_at": "2026-08-24T03:00:59.057926+00:00",
     "sources": [
       {
         "type": "official_game_description",
@@ -1325,13 +1220,13 @@
         "source_url": "https://bladeball.com/blogs/news",
         "latest_published_at": "2024-03-23T18:51:42Z",
         "status": "rejected",
-        "reason": "Публикация устарела: 882.3 дн. (лимит 3).",
+        "reason": "Публикация устарела: 883.3 дн. (лимит 3).",
         "latest_url": "https://bladeball.com/blogs/news/comptetetive-leaderboards"
       },
       {
         "source_type": "official_game_description",
         "source_url": "https://www.roblox.com/games/13772394625/Blade-Ball",
-        "latest_published_at": "2026-08-22T17:47:54.1764983Z",
+        "latest_published_at": "2026-08-23T21:39:04.4870714Z",
         "status": "rejected",
         "reason": "Нет новой конкретной строки со времени прошлого снимка."
       },
@@ -1379,7 +1274,7 @@
       "source_url": "https://bladeball.com/blogs/news",
       "latest_published_at": "2024-03-23T18:51:42Z",
       "status": "rejected",
-      "reason": "Публикация устарела: 882.3 дн. (лимит 3).",
+      "reason": "Публикация устарела: 883.3 дн. (лимит 3).",
       "latest_url": "https://bladeball.com/blogs/news/comptetetive-leaderboards"
     },
     "candidate_decision": {

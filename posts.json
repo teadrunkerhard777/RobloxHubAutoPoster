@@ -374,5 +374,68 @@
     "published_at": "2026-08-23T18:00:42.393695+05:00",
     "attempts": 1,
     "last_error": null
+  },
+  {
+    "id": "2026-08-24-image-12",
+    "publish_at": "2026-08-24T12:00:00+05:00",
+    "game": "Roblox",
+    "rubric": "Картинка дня",
+    "source": "image_library",
+    "text": "",
+    "status": "pending",
+    "published_at": null,
+    "attempts": 0,
+    "last_error": null,
+    "image_path": "images/16-00/4a19d514-9ff1-4dcb-92da-2b49a5fbd37b.jpeg"
+  },
+  {
+    "id": "2026-08-24-15",
+    "publish_at": "2026-08-24T15:00:00+05:00",
+    "game": "99 Nights in the Forest + Adopt Me! + Dress To Impress",
+    "rubric": "Полезно знать",
+    "source": "verified_db",
+    "text": "💡 ПОЛЕЗНО ЗНАТЬ\n\n🌲 99 Nights in the Forest\nСледи за уровнем костра: его улучшение расширяет безопасную зону и помогает продвигаться дальше.\n\n🐾 Adopt Me!\nЕсли хочется быстрее собрать коллекцию, веди для себя список питомцев, которых уже имеешь и которых ищешь.\n\n👗 Dress To Impress\nИспользуй позы на подиуме, чтобы показать детали образа, которые плохо заметны в обычной стойке.\n\n🎮 Roblox Hub",
+    "status": "pending",
+    "published_at": null,
+    "attempts": 0,
+    "last_error": null
+  },
+  {
+    "id": "2026-08-24-image-17",
+    "publish_at": "2026-08-24T17:00:00+05:00",
+    "game": "Roblox",
+    "rubric": "Картинка дня",
+    "source": "image_library",
+    "text": "",
+    "status": "pending",
+    "published_at": null,
+    "attempts": 0,
+    "last_error": null,
+    "image_path": "images/16-00/c2588f40-d770-436f-9740-180efd203131.jpeg"
+  },
+  {
+    "id": "2026-08-24-18",
+    "publish_at": "2026-08-24T18:00:00+05:00",
+    "game": "Steal a Brainrot",
+    "rubric": "Миф или правда",
+    "source": "verified_db",
+    "text": "🧠 МИФ ИЛИ ПРАВДА?\n\n🧠 Steal a Brainrot\n\n🔥 Если спрятать брейнрот подальше от входа, его вообще невозможно украсть.\n\nКак думаешь — правда или миф?\n\n❌ МИФ!\n\nРасположение может усложнить кражу, но полной защиты всё равно не даёт.\n\n🎮 Roblox Hub",
+    "status": "pending",
+    "published_at": null,
+    "attempts": 0,
+    "last_error": null
+  },
+  {
+    "id": "2026-08-24-image-22",
+    "publish_at": "2026-08-24T22:00:00+05:00",
+    "game": "Roblox",
+    "rubric": "Картинка дня",
+    "source": "image_library",
+    "text": "",
+    "status": "pending",
+    "published_at": null,
+    "attempts": 0,
+    "last_error": null,
+    "image_path": "images/16-00/b6d55951-2341-49c0-9073-15452703c79e.jpeg"
   }
 ]
