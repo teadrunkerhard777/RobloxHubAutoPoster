@@ -376,6 +376,19 @@
     "last_error": null
   },
   {
+    "id": "2026-08-24-image-11",
+    "publish_at": "2026-08-24T11:00:00+05:00",
+    "game": "Roblox",
+    "rubric": "Картинка дня",
+    "source": "image_library",
+    "text": "",
+    "status": "pending",
+    "published_at": null,
+    "attempts": 0,
+    "last_error": null,
+    "image_path": "images/16-00/52a995ac-91e5-440d-8326-3a744a0806ee.jpeg"
+  },
+  {
     "id": "2026-08-24-image-12",
     "publish_at": "2026-08-24T12:00:00+05:00",
     "game": "Roblox",
@@ -387,6 +400,19 @@
     "attempts": 0,
     "last_error": null,
     "image_path": "images/16-00/4a19d514-9ff1-4dcb-92da-2b49a5fbd37b.jpeg"
+  },
+  {
+    "id": "2026-08-24-image-14",
+    "publish_at": "2026-08-24T14:00:00+05:00",
+    "game": "Roblox",
+    "rubric": "Картинка дня",
+    "source": "image_library",
+    "text": "",
+    "status": "pending",
+    "published_at": null,
+    "attempts": 0,
+    "last_error": null,
+    "image_path": "images/16-00/9a41c876-f828-4850-942c-6cdbc92c5bd1.jpeg"
   },
   {
     "id": "2026-08-24-15",
@@ -424,6 +450,31 @@
     "published_at": null,
     "attempts": 0,
     "last_error": null
+  },
+  {
+    "id": "2026-08-24-19",
+    "publish_at": "2026-08-24T19:00:00+05:00",
+    "game": "99 Nights in the Forest",
+    "rubric": "Миф или правда",
+    "source": "verified_db",
+    "text": "🧠 МИФ ИЛИ ПРАВДА?\n\n🌲 99 Nights in the Forest\n\n🔥 Если всю ночь сидеть у костра, монстры тебя не достанут.\n\nКак думаешь — правда или миф?\n\n❌ МИФ!\n\nКостёр помогает выживать, но не делает тебя полностью неуязвимым.\n\n🎮 Roblox Hub",
+    "status": "pending",
+    "published_at": null,
+    "attempts": 0,
+    "last_error": null
+  },
+  {
+    "id": "2026-08-24-image-21",
+    "publish_at": "2026-08-24T21:00:00+05:00",
+    "game": "Roblox",
+    "rubric": "Картинка дня",
+    "source": "image_library",
+    "text": "",
+    "status": "pending",
+    "published_at": null,
+    "attempts": 0,
+    "last_error": null,
+    "image_path": "images/16-00/065cbbaa-3e3b-4a5b-875a-f12aab21a0f9.jpeg"
   },
   {
     "id": "2026-08-24-image-22",
