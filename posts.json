@@ -382,9 +382,9 @@
     "rubric": "Картинка дня",
     "source": "image_library",
     "text": "",
-    "status": "pending",
-    "published_at": null,
-    "attempts": 0,
+    "status": "published",
+    "published_at": "2026-08-24T11:13:55.785405+05:00",
+    "attempts": 1,
     "last_error": null,
     "image_path": "images/16-00/52a995ac-91e5-440d-8326-3a744a0806ee.jpeg"
   },
