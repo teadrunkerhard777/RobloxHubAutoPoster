@@ -1,4 +1,5 @@
 import json
+import os
 import random
 from datetime import datetime, timedelta, timezone
 
@@ -6,11 +7,23 @@ from image_library import select_daily_image
 
 LOCAL_TIMEZONE = timezone(timedelta(hours=5))
 
-# Картинки публикуются три раза в день.
+# Картинки публикуются четыре раза в день.
 # Один генератор обслуживает все слоты без отдельных скриптов.
-IMAGE_POST_HOURS = (12, 17, 22)
+IMAGE_POST_HOURS = (11, 14, 17, 21)
 IMAGE_DIRECTORY = "images/16-00"
 IMAGE_HISTORY_FILE = "image_history.json"
+
+# Текстовые слоты храним рядом с image-расписанием,
+# чтобы генератор и тесты использовали единый источник времени.
+ROBLOX_NEWS_HOUR = 10
+BRAWL_POST_HOUR = 12
+TIPS_POST_HOUR = 15
+MYTH_POST_HOUR = 19
+
+# Brawl monitor сохраняет сюда подготовленные данные.
+# generate_posts.py только читает файл и не меняет state.
+BRAWL_LATEST_CHANGES_FILE = "data/brawl_latest_changes.json"
+BRAWL_SKIP_ENVIRONMENT_VARIABLE = "ROBLOX_HUB_SKIP_BRAWL"
 
 MYTH_HISTORY_LIMIT = 3
 GAME_HISTORY_LIMIT = 5
@@ -72,6 +85,12 @@ def save_json(filename, data):
         json.dump(data, file, ensure_ascii=False, indent=2)
 
 
+def load_brawl_latest_changes():
+    """Загружает последний подготовленный monitor JSON для Brawl."""
+
+    return load_json(BRAWL_LATEST_CHANGES_FILE)
+
+
 def remember_game(game):
     history = load_json("game_history.json", [])
 
@@ -94,7 +113,8 @@ def schedule_image_posts(
     image_selector=None,
 ):
     """
-    Добавляет недостающие image-посты на 12:00, 17:00 и 22:00.
+    Добавляет недостающие image-посты на 11:00, 14:00,
+    17:00 и 21:00.
 
     У каждого слота собственный стабильный ID. Поэтому повторный
     запуск генератора на ту же дату не создаёт вторую запись и
@@ -178,6 +198,97 @@ def schedule_image_posts(
         print(f"{publish_hour:02d}:00 — картинка добавлена: {image_path}")
 
     return posts_added
+
+
+def schedule_brawl_post(
+    existing_posts,
+    target_date,
+    data_loader=None,
+    final_post_builder=None,
+):
+    """
+    Добавляет готовый Brawl Stars пост в слот 12:00.
+
+    Функция читает только уже подготовленный monitor JSON и
+    вызывает существующий build_final_post(). Зависимости можно
+    заменить в тестах, не обращаясь к рабочим файлам.
+
+    Любая ожидаемая ошибка чтения или повреждённых данных
+    локализуется внутри Brawl-этапа: остальные публикации дня
+    продолжают собираться обычным образом.
+    """
+
+    post_id = f"{target_date}-brawl-{BRAWL_POST_HOUR}"
+
+    if find_post(existing_posts, post_id) is not None:
+        print("12:00 — Brawl Stars пост уже существует.")
+        return 0
+
+    # Старые версии генератора могли уже поставить другой
+    # текстовый пост на 12:00 с прежним ID. Не удаляем и не
+    # перезаписываем такую запись, чтобы сохранить очередь.
+    for post in existing_posts:
+        publish_at_value = post.get("publish_at")
+
+        if not publish_at_value or post.get("image_path"):
+            continue
+
+        try:
+            publish_at = datetime.fromisoformat(publish_at_value)
+        except (TypeError, ValueError):
+            continue
+
+        local_publish_at = publish_at.astimezone(LOCAL_TIMEZONE)
+
+        if (
+            local_publish_at.date() == target_date
+            and local_publish_at.hour == BRAWL_POST_HOUR
+        ):
+            print("12:00 — слот уже занят существующим текстовым постом.")
+            return 0
+
+    if data_loader is None:
+        data_loader = load_brawl_latest_changes
+
+    if final_post_builder is None:
+        # Импорт выполняем только при реальной сборке. Так тесты
+        # расписания могут передать локальную функцию, а обычный
+        # запуск использует единственный рабочий Brawl-генератор.
+        from brawl_post import build_final_post
+
+        final_post_builder = build_final_post
+
+    try:
+        brawl_data = data_loader()
+        final_text = final_post_builder(brawl_data)
+    except (OSError, ValueError, TypeError, KeyError, AttributeError) as error:
+        print(f"12:00 — Brawl pipeline недоступен: {error}")
+        return 0
+
+    if final_text is None:
+        print("12:00 — подходящих Brawl Stars материалов нет.")
+        return 0
+
+    existing_posts.append(
+        build_post(
+            post_id=post_id,
+            publish_at=datetime(
+                target_date.year,
+                target_date.month,
+                target_date.day,
+                BRAWL_POST_HOUR,
+                0,
+                tzinfo=LOCAL_TIMEZONE,
+            ),
+            game="Brawl Stars",
+            rubric="Brawl Stars",
+            source="brawl_pipeline",
+            text=final_text,
+        )
+    )
+
+    print("12:00 — Brawl Stars пост добавлен.")
+    return 1
 
 
 # --------------------------------------------------
@@ -342,7 +453,11 @@ def generate_morning_post():
 
 
 # --------------------------------------------------
-# 12:00 — бесплатно
+# Архивный генератор бесплатных предложений
+#
+# Функцию сохраняем для совместимости и будущего использования,
+# но в новом ежедневном расписании отдельного freebie-слота нет:
+# 12:00 теперь зарезервировано за Brawl Stars.
 # --------------------------------------------------
 
 
@@ -397,7 +512,7 @@ def generate_tips_post():
 
 
 # --------------------------------------------------
-# 18:00 — Миф или правда
+# 19:00 — Миф или правда
 # --------------------------------------------------
 
 
@@ -457,10 +572,9 @@ now = datetime.now(LOCAL_TIMEZONE)
 target_date = now.date()
 
 
-id_10 = f"{target_date}-10"
-id_12 = f"{target_date}-12"
-id_15 = f"{target_date}-15"
-id_18 = f"{target_date}-18"
+id_10 = f"{target_date}-{ROBLOX_NEWS_HOUR}"
+id_15 = f"{target_date}-{TIPS_POST_HOUR}"
+id_19 = f"{target_date}-{MYTH_POST_HOUR}"
 
 
 # --------------------------------------------------
@@ -511,7 +625,7 @@ elif post_10 is None:
                 target_date.year,
                 target_date.month,
                 target_date.day,
-                10,
+                ROBLOX_NEWS_HOUR,
                 0,
                 tzinfo=LOCAL_TIMEZONE,
             ),
@@ -540,43 +654,20 @@ else:
 
 
 # --------------------------------------------------
-# 12:00
+# 12:00 — Brawl Stars
+#
+# Отдельной искусственной замены нет: если monitor JSON
+# отсутствует, повреждён или build_final_post() вернул None,
+# слот остаётся пустым, а остальная очередь собирается дальше.
 # --------------------------------------------------
 
-post_12 = find_post(existing_posts, id_12)
-
-
-if post_12 is None:
-    freebie = generate_freebie_post()
-
-    if freebie is not None:
-        existing_posts.append(
-            build_post(
-                post_id=id_12,
-                publish_at=datetime(
-                    target_date.year,
-                    target_date.month,
-                    target_date.day,
-                    12,
-                    0,
-                    tzinfo=LOCAL_TIMEZONE,
-                ),
-                game=freebie["game"],
-                rubric="Бесплатно в Roblox",
-                source=freebie["source"],
-                text=freebie["text"],
-            )
-        )
-
-        posts_added += 1
-
-        print("12:00 — бесплатный пост добавлен.")
-
-    else:
-        print("12:00 — подтверждённых " "бесплатных предложений нет.")
-
+if os.getenv(BRAWL_SKIP_ENVIRONMENT_VARIABLE) == "1":
+    print("12:00 — Brawl monitor недоступен; старые данные не используем.")
 else:
-    print("12:00 — пост уже существует.")
+    posts_added += schedule_brawl_post(
+        existing_posts,
+        target_date,
+    )
 
 
 # --------------------------------------------------
@@ -596,7 +687,7 @@ if post_15 is None:
                 target_date.year,
                 target_date.month,
                 target_date.day,
-                15,
+                TIPS_POST_HOUR,
                 0,
                 tzinfo=LOCAL_TIMEZONE,
             ),
@@ -616,10 +707,10 @@ else:
 
 
 # --------------------------------------------------
-# 12:00, 17:00, 22:00 — посты с картинками
+# 11:00, 14:00, 17:00, 21:00 — посты с картинками
 #
-# Старый отдельный слот 16:00 больше не создаётся.
-# Все три времени обслуживает одна общая функция.
+# Старые image-слоты 12:00 и 22:00 больше не создаются.
+# Все четыре времени обслуживает одна общая функция.
 # --------------------------------------------------
 
 posts_added += schedule_image_posts(
@@ -629,23 +720,23 @@ posts_added += schedule_image_posts(
 
 
 # --------------------------------------------------
-# 18:00
+# 19:00
 # --------------------------------------------------
 
-post_18 = find_post(existing_posts, id_18)
+post_19 = find_post(existing_posts, id_19)
 
 
-if post_18 is None:
+if post_19 is None:
     myth_game, myth_text = generate_myth_post()
 
     existing_posts.append(
         build_post(
-            post_id=id_18,
+            post_id=id_19,
             publish_at=datetime(
                 target_date.year,
                 target_date.month,
                 target_date.day,
-                18,
+                MYTH_POST_HOUR,
                 0,
                 tzinfo=LOCAL_TIMEZONE,
             ),
@@ -658,10 +749,10 @@ if post_18 is None:
 
     posts_added += 1
 
-    print(f"18:00 — Миф или правда: " f"{myth_game}")
+    print(f"19:00 — Миф или правда: " f"{myth_game}")
 
 else:
-    print("18:00 — пост уже существует.")
+    print("19:00 — пост уже существует.")
 
 
 # --------------------------------------------------

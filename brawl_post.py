@@ -1416,95 +1416,101 @@ def build_final_post(data: dict) -> str | None:
         return None
 
 
-# ---------------------------------------------------------
-# 1. ЗАГРУЖАЕМ ДАННЫЕ
-# ---------------------------------------------------------
+def main():
+    """
+    Запускает прежний терминальный Brawl preview.
 
-print_section("BRAWL POST GENERATOR")
+    Исполняемый блок отделён от функций, чтобы общий генератор
+    мог безопасно импортировать build_final_post() без чтения
+    JSON, печати диагностики и изменения состояния процесса.
+    Прямой запуск brawl_post.py работает как раньше.
+    """
 
-data = load_latest_changes()
+    # ---------------------------------------------------------
+    # 1. ЗАГРУЖАЕМ ДАННЫЕ
+    # ---------------------------------------------------------
 
-if data is None:
-    print(Fore.RED + Style.BRIGHT + "✗ Файл свежих изменений не найден")
+    print_section("BRAWL POST GENERATOR")
 
-    print("Сначала запусти brawl_monitor.py")
+    data = load_latest_changes()
 
-    raise SystemExit
+    if data is None:
+        print(Fore.RED + Style.BRIGHT + "✗ Файл свежих изменений не найден")
+        print("Сначала запусти brawl_monitor.py")
+
+        raise SystemExit
+
+    print(Fore.GREEN + f"✓ Загружен файл {LATEST_CHANGES_FILE}")
+
+    # ---------------------------------------------------------
+    # 2. ПОКАЗЫВАЕМ ПОЛУЧЕННЫЕ ДАННЫЕ
+    # ---------------------------------------------------------
+
+    new_buffs = data.get(
+        "new_buffs",
+        [],
+    )
+    new_nerfs = data.get(
+        "new_nerfs",
+        [],
+    )
+    high_priority_articles, medium_priority_articles = get_news_candidates(data)
+
+    print(f"Новых баффов: {len(new_buffs)}")
+    print(f"Новых нерфов: {len(new_nerfs)}")
+
+    # Отдельно показываем подготовленные статьи-кандидаты.
+    # Этот debug-блок не является частью Telegram-поста.
+    print_news_candidates(
+        high_priority_articles,
+        medium_priority_articles,
+    )
+
+    # Русские тексты показываем отдельным preview-разделом.
+    # В готовый Telegram-пост эти блоки пока не добавляются.
+    russian_news_previews = print_russian_news_previews(
+        high_priority_articles,
+        medium_priority_articles,
+    )
+
+    # В debug-режиме показываем,
+    # какие бойцы получили самый высокий приоритет.
+    print_debug_scores(
+        new_buffs,
+        new_nerfs,
+    )
+
+    # ---------------------------------------------------------
+    # 3. СОБИРАЕМ ПОСТ
+    # ---------------------------------------------------------
+
+    post = build_post(data)
+
+    # ---------------------------------------------------------
+    # 4. ВЫВОДИМ РЕЗУЛЬТАТ
+    # ---------------------------------------------------------
+
+    print_generation_result(
+        post,
+        russian_news_previews,
+    )
+
+    # ---------------------------------------------------------
+    # 5. ПОКАЗЫВАЕМ ФИНАЛЬНЫЙ TELEGRAM-ПОСТ
+    # ---------------------------------------------------------
+
+    # Этот блок пока служит только редакторским предпросмотром.
+    # Генератор не записывает результат в posts.json, не меняет
+    # state монитора и ничего автоматически не публикует.
+    final_post = build_final_post(data)
+
+    print_section("FINAL TELEGRAM POST")
+
+    if final_post is None:
+        print(Fore.YELLOW + "\nПост не создан: подходящих новых материалов нет.")
+    else:
+        print("\n" + final_post)
 
 
-print(Fore.GREEN + f"✓ Загружен файл {LATEST_CHANGES_FILE}")
-
-
-# ---------------------------------------------------------
-# 2. ПОКАЗЫВАЕМ ПОЛУЧЕННЫЕ ДАННЫЕ
-# ---------------------------------------------------------
-
-new_buffs = data.get(
-    "new_buffs",
-    [],
-)
-
-new_nerfs = data.get(
-    "new_nerfs",
-    [],
-)
-
-high_priority_articles, medium_priority_articles = get_news_candidates(data)
-
-print(f"Новых баффов: {len(new_buffs)}")
-
-print(f"Новых нерфов: {len(new_nerfs)}")
-
-# Отдельно показываем подготовленные статьи-кандидаты.
-# Этот debug-блок не является частью Telegram-поста.
-print_news_candidates(
-    high_priority_articles,
-    medium_priority_articles,
-)
-
-# Русские тексты показываем отдельным preview-разделом.
-# В готовый Telegram-пост эти блоки пока не добавляются.
-russian_news_previews = print_russian_news_previews(
-    high_priority_articles,
-    medium_priority_articles,
-)
-
-# В debug-режиме показываем,
-# какие бойцы получили самый высокий приоритет.
-print_debug_scores(
-    new_buffs,
-    new_nerfs,
-)
-
-# ---------------------------------------------------------
-# 3. СОБИРАЕМ ПОСТ
-# ---------------------------------------------------------
-
-post = build_post(data)
-
-
-# ---------------------------------------------------------
-# 4. ВЫВОДИМ РЕЗУЛЬТАТ
-# ---------------------------------------------------------
-
-print_generation_result(
-    post,
-    russian_news_previews,
-)
-
-
-# ---------------------------------------------------------
-# 5. ПОКАЗЫВАЕМ ФИНАЛЬНЫЙ TELEGRAM-ПОСТ
-# ---------------------------------------------------------
-
-# Этот блок пока служит только редакторским предпросмотром.
-# Генератор не записывает результат в posts.json, не меняет
-# state монитора и ничего автоматически не публикует.
-final_post = build_final_post(data)
-
-print_section("FINAL TELEGRAM POST")
-
-if final_post is None:
-    print(Fore.YELLOW + "\nПост не создан: подходящих новых материалов нет.")
-else:
-    print("\n" + final_post)
+if __name__ == "__main__":
+    main()
