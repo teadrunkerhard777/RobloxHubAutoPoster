@@ -1,4 +1,5 @@
 import ast
+import json
 import unittest
 from datetime import date, datetime, timedelta, timezone
 from pathlib import Path
@@ -58,7 +59,11 @@ generate_namespace = load_members(
     "generate_posts.py",
     {
         "build_post",
+        "build_brawl_fallback",
         "find_post",
+        "generate_brawl_fallback",
+        "is_verified_brawl_tip",
+        "select_brawl_fallback_tip",
         "schedule_image_posts",
         "schedule_brawl_post",
     },
@@ -69,6 +74,7 @@ generate_namespace = load_members(
         "IMAGE_HISTORY_FILE",
         "ROBLOX_NEWS_HOUR",
         "BRAWL_POST_HOUR",
+        "BRAWL_TIP_HISTORY_LIMIT",
         "TIPS_POST_HOUR",
         "MYTH_POST_HOUR",
     },
@@ -76,6 +82,9 @@ generate_namespace = load_members(
 
 schedule_image_posts = generate_namespace["schedule_image_posts"]
 schedule_brawl_post = generate_namespace["schedule_brawl_post"]
+build_brawl_fallback = generate_namespace["build_brawl_fallback"]
+generate_brawl_fallback = generate_namespace["generate_brawl_fallback"]
+select_brawl_fallback_tip = generate_namespace["select_brawl_fallback_tip"]
 
 app_namespace = load_members(
     "app.py",
@@ -431,7 +440,59 @@ class ImageScheduleTests(unittest.TestCase):
         self.assertIn("💥 BRAWL STARS | ROBLOX HUB", posts[0]["text"])
         self.assertIn("Официальный русский абзац", posts[0]["text"])
 
-    def test_brawl_none_does_not_create_slot(self):
+    def test_high_brawl_material_uses_news_pipeline(self):
+        article = {
+            "priority": "high",
+            "ru_found": True,
+            "ru_title": "ВАЖНАЯ НОВОСТЬ BRAWL STARS",
+            "ru_clean_content": [
+                "Официальный русский абзац содержит подробности новости."
+            ],
+        }
+        posts = []
+
+        added = schedule_brawl_post(
+            posts,
+            date(2026, 8, 24),
+            data_loader=lambda: {
+                "high_priority_articles": [article],
+                "medium_priority_articles": [],
+                "new_buffs": [],
+                "new_nerfs": [],
+            },
+            fallback_builder=lambda: self.fail(
+                "При HIGH-материале fallback не должен использоваться"
+            ),
+        )
+
+        self.assertEqual(added, 1)
+        self.assertEqual(posts[0]["source"], "brawl_pipeline")
+
+    def test_balance_material_uses_news_pipeline(self):
+        posts = []
+
+        added = schedule_brawl_post(
+            posts,
+            date(2026, 8, 24),
+            data_loader=lambda: {
+                "new_buffs": [
+                    {
+                        "brawler": "BONNIE",
+                        "changes": ["Main attack damage increased from 1120 to 1220"],
+                    }
+                ],
+                "new_nerfs": [],
+            },
+            fallback_builder=lambda: self.fail(
+                "При Balance Changes fallback не должен использоваться"
+            ),
+        )
+
+        self.assertEqual(added, 1)
+        self.assertEqual(posts[0]["source"], "brawl_pipeline")
+        self.assertIn("ИЗМЕНЕНИЯ БАЛАНСА", posts[0]["text"])
+
+    def test_brawl_none_creates_mandatory_fallback_slot(self):
         posts = []
 
         added = schedule_brawl_post(
@@ -439,10 +500,12 @@ class ImageScheduleTests(unittest.TestCase):
             date(2026, 8, 24),
             data_loader=dict,
             final_post_builder=lambda data: None,
+            fallback_builder=lambda: "Проверенный Brawl fallback",
         )
 
-        self.assertEqual(added, 0)
-        self.assertEqual(posts, [])
+        self.assertEqual(added, 1)
+        self.assertEqual(posts[0]["source"], "verified_brawl_fallback")
+        self.assertEqual(posts[0]["text"], "Проверенный Brawl fallback")
 
     def test_repeated_generation_does_not_duplicate_brawl_post(self):
         posts = []
@@ -467,6 +530,137 @@ class ImageScheduleTests(unittest.TestCase):
 
         self.assertEqual(added, 0)
         self.assertEqual(len(posts), 1)
+
+    def test_repeated_fallback_does_not_consume_next_tip(self):
+        posts = []
+        fallback_calls = []
+
+        def fallback_builder():
+            fallback_calls.append("used")
+            return "Проверенный Brawl fallback"
+
+        for _ in range(2):
+            schedule_brawl_post(
+                posts,
+                date(2026, 8, 24),
+                data_loader=dict,
+                final_post_builder=lambda data: None,
+                fallback_builder=fallback_builder,
+            )
+
+        self.assertEqual(fallback_calls, ["used"])
+        self.assertEqual(len(posts), 1)
+
+    def test_recent_brawl_tip_is_not_selected_again(self):
+        tips = [
+            {
+                "id": f"tip-{index}",
+                "game": "Brawl Stars",
+                "topic": "topic",
+                "text": f"Проверенный совет номер {index}.",
+                "source": "verified_static",
+            }
+            for index in range(8)
+        ]
+
+        class FirstChoice:
+            @staticmethod
+            def choice(values):
+                return values[0]
+
+        selected, history = select_brawl_fallback_tip(
+            tips,
+            [f"tip-{index}" for index in range(7)],
+            rng=FirstChoice(),
+        )
+
+        self.assertEqual(selected["id"], "tip-7")
+        self.assertNotIn("tip-0", history)
+        self.assertEqual(history[-1], "tip-7")
+
+    def test_finished_brawl_tip_cycle_does_not_repeat_last_tip(self):
+        tips = [
+            {
+                "id": f"tip-{index}",
+                "game": "Brawl Stars",
+                "topic": "topic",
+                "text": f"Проверенный совет номер {index}.",
+                "source": "verified_static",
+            }
+            for index in range(3)
+        ]
+
+        class FirstChoice:
+            @staticmethod
+            def choice(values):
+                return values[0]
+
+        selected, history = select_brawl_fallback_tip(
+            tips,
+            ["tip-0", "tip-1", "tip-2"],
+            rng=FirstChoice(),
+        )
+
+        self.assertNotEqual(selected["id"], "tip-2")
+        self.assertEqual(history, [selected["id"]])
+
+    def test_brawl_fallback_is_explicitly_a_tip_not_fresh_news(self):
+        tip = {
+            "id": "tip-safe",
+            "game": "Brawl Stars",
+            "topic": "positioning",
+            "text": "Используй укрытия и следи за позицией союзников.",
+            "source": "verified_static",
+        }
+
+        fallback = build_brawl_fallback(tip)
+
+        self.assertIn("🎯 СОВЕТ ДНЯ", fallback)
+        self.assertNotIn("🔥 ГЛАВНОЕ", fallback)
+        self.assertNotIn("свежая новость", fallback.lower())
+
+    def test_supercell_failure_uses_fallback_without_loading_old_json(self):
+        posts = []
+
+        added = schedule_brawl_post(
+            posts,
+            date(2026, 8, 24),
+            data_loader=lambda: self.fail("Старый JSON читать нельзя"),
+            fallback_builder=lambda: "Локальный Brawl fallback",
+            skip_fresh_material=True,
+        )
+
+        self.assertEqual(added, 1)
+        self.assertEqual(posts[0]["source"], "verified_brawl_fallback")
+
+    def test_missing_brawl_tip_database_uses_emergency_post(self):
+        saved_history = []
+
+        def missing_database():
+            raise FileNotFoundError("База отсутствует")
+
+        fallback = generate_brawl_fallback(
+            tips_loader=missing_database,
+            history_loader=list,
+            history_saver=saved_history.append,
+        )
+
+        self.assertIn("без свежих подтверждённых новостей", fallback)
+        self.assertEqual(saved_history, [])
+
+    def test_brawl_tip_database_contains_verified_evergreen_entries(self):
+        tips = json.loads(
+            (PROJECT_ROOT / "brawl_tips.json").read_text(encoding="utf-8")
+        )
+
+        self.assertGreaterEqual(len(tips), 10)
+        self.assertTrue(
+            all(
+                tip.get("game") == "Brawl Stars"
+                and tip.get("source") == "verified_static"
+                for tip in tips
+            )
+        )
 
     def test_published_brawl_post_is_not_created_again(self):
         posts = [
@@ -509,7 +703,7 @@ class ImageScheduleTests(unittest.TestCase):
         self.assertEqual(added, 0)
         self.assertEqual(posts, [legacy_post])
 
-    def test_brawl_failure_does_not_change_other_posts(self):
+    def test_brawl_failure_preserves_other_posts_and_adds_fallback(self):
         existing_post = {
             "id": "2026-08-24-10",
             "publish_at": "2026-08-24T10:00:00+05:00",
@@ -526,10 +720,12 @@ class ImageScheduleTests(unittest.TestCase):
             date(2026, 8, 24),
             data_loader=broken_loader,
             final_post_builder=lambda data: "Не будет вызван",
+            fallback_builder=lambda: "Аварийный Brawl fallback",
         )
 
-        self.assertEqual(added, 0)
-        self.assertEqual(posts, [existing_post])
+        self.assertEqual(added, 1)
+        self.assertEqual(posts[0], existing_post)
+        self.assertEqual(posts[1]["source"], "verified_brawl_fallback")
 
     def test_workflows_run_preparation_and_all_publish_slots(self):
         autopost_workflow = (PROJECT_ROOT / ".github/workflows/autopost.yml").read_text(

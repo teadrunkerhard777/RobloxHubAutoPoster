@@ -32,6 +32,13 @@ MORNING_FALLBACK_MIN_TIPS = 2
 BRAWL_LATEST_CHANGES_FILE = "data/brawl_latest_changes.json"
 BRAWL_SKIP_ENVIRONMENT_VARIABLE = "ROBLOX_HUB_SKIP_BRAWL"
 
+# Локальная база содержит только заранее проверенные evergreen-советы.
+# Историю храним отдельно: статический справочник не меняется во время
+# генерации, а служебное состояние легко сохранить между запусками.
+BRAWL_TIPS_FILE = "brawl_tips.json"
+BRAWL_TIP_HISTORY_FILE = "brawl_tip_history.json"
+BRAWL_TIP_HISTORY_LIMIT = 7
+
 MYTH_HISTORY_LIMIT = 3
 GAME_HISTORY_LIMIT = 5
 TIPS_RELEASE_HISTORY_LIMIT = 3
@@ -99,6 +106,24 @@ def load_brawl_latest_changes():
     """Загружает последний подготовленный monitor JSON для Brawl."""
 
     return load_json(BRAWL_LATEST_CHANGES_FILE)
+
+
+def load_brawl_tips():
+    """Загружает локальную базу проверенных Brawl Stars советов."""
+
+    return load_json(BRAWL_TIPS_FILE)
+
+
+def load_brawl_tip_history():
+    """Загружает историю fallback без ошибки при первом запуске."""
+
+    return load_json(BRAWL_TIP_HISTORY_FILE, [])
+
+
+def save_brawl_tip_history(history):
+    """Сохраняет только короткое окно последних использованных ID."""
+
+    save_json(BRAWL_TIP_HISTORY_FILE, history)
 
 
 def remember_game(game):
@@ -210,22 +235,170 @@ def schedule_image_posts(
     return posts_added
 
 
+def is_verified_brawl_tip(tip):
+    """
+    Проверяет минимальную структуру локального Brawl-совета.
+
+    Fallback не должен случайно публиковать произвольные данные
+    из повреждённого или подменённого JSON. Поэтому принимаем
+    только явно помеченные статические записи для Brawl Stars.
+    """
+
+    return (
+        isinstance(tip, dict)
+        and isinstance(tip.get("id"), str)
+        and bool(tip["id"].strip())
+        and tip.get("game") == "Brawl Stars"
+        and isinstance(tip.get("topic"), str)
+        and bool(tip["topic"].strip())
+        and isinstance(tip.get("text"), str)
+        and bool(tip["text"].strip())
+        and tip.get("source") == "verified_static"
+    )
+
+
+def select_brawl_fallback_tip(tips, recent_tip_ids, rng=None):
+    """
+    Выбирает совет без повтора среди семи последних публикаций.
+
+    Пока в базе есть неиспользованные недавно записи, выбираем
+    только среди них. После полного цикла начинаем новое окно,
+    но по возможности исключаем последний показанный совет —
+    одинаковые публикации не идут две даты подряд.
+
+    Возвращаем также готовую новую историю. Записывает её уже
+    вызывающая функция и только после успешного выбора совета.
+    """
+
+    if rng is None:
+        rng = random
+
+    verified_tips = [tip for tip in tips if is_verified_brawl_tip(tip)]
+
+    if not verified_tips:
+        return None, []
+
+    if not isinstance(recent_tip_ids, list):
+        recent_tip_ids = []
+
+    recent_tip_ids = [tip_id for tip_id in recent_tip_ids if isinstance(tip_id, str)][
+        -BRAWL_TIP_HISTORY_LIMIT:
+    ]
+    recent_ids = set(recent_tip_ids)
+    candidates = [tip for tip in verified_tips if tip["id"] not in recent_ids]
+    starts_new_cycle = not candidates
+
+    if starts_new_cycle:
+        last_tip_id = recent_tip_ids[-1] if recent_tip_ids else None
+        candidates = [tip for tip in verified_tips if tip["id"] != last_tip_id]
+
+        # Для базы из одной записи немедленный повтор неизбежен,
+        # но обязательный слот всё равно должен быть заполнен.
+        if not candidates:
+            candidates = verified_tips
+
+    selected_tip = rng.choice(candidates)
+
+    if starts_new_cycle:
+        updated_history = [selected_tip["id"]]
+    else:
+        updated_history = (recent_tip_ids + [selected_tip["id"]])[
+            -BRAWL_TIP_HISTORY_LIMIT:
+        ]
+
+    return selected_tip, updated_history
+
+
+def build_brawl_fallback(tip=None):
+    """
+    Собирает короткий обязательный пост без выдуманных новостей.
+
+    Обычный fallback дословно использует проверенный текст из
+    локальной базы. Если база недоступна или повреждена, выдаём
+    нейтральное сообщение без утверждений о событиях в игре.
+    """
+
+    if tip is not None and is_verified_brawl_tip(tip):
+        return (
+            "💥 BRAWL STARS | ROBLOX HUB\n\n"
+            "🎯 СОВЕТ ДНЯ\n\n"
+            f"{tip['text'].strip()}\n\n"
+            "⭐ Roblox Hub"
+        )
+
+    return (
+        "💥 BRAWL STARS | ROBLOX HUB\n\n"
+        "🎮 Сегодня без свежих подтверждённых новостей.\n\n"
+        "Следим за официальными обновлениями Brawl Stars и вернёмся "
+        "с новым выпуском, когда появится проверенный материал. 👀\n\n"
+        "⭐ Roblox Hub"
+    )
+
+
+def generate_brawl_fallback(
+    tips_loader=None,
+    history_loader=None,
+    history_saver=None,
+    rng=None,
+):
+    """
+    Выбирает локальный совет и безопасно обновляет его историю.
+
+    Ошибка базы или истории не должна оставлять ежедневный слот
+    пустым. В таком случае используем аварийный нейтральный текст.
+    Если состояние нельзя надёжно сохранить, совет не публикуем:
+    иначе следующий запуск мог бы повторить его как новый.
+    """
+
+    if tips_loader is None:
+        tips_loader = load_brawl_tips
+
+    if history_loader is None:
+        history_loader = load_brawl_tip_history
+
+    if history_saver is None:
+        history_saver = save_brawl_tip_history
+
+    try:
+        tips = tips_loader()
+
+        if not isinstance(tips, list):
+            raise TypeError("Brawl tips JSON должен содержать список")
+
+        history = history_loader()
+        selected_tip, updated_history = select_brawl_fallback_tip(
+            tips,
+            history,
+            rng=rng,
+        )
+
+        if selected_tip is None:
+            return build_brawl_fallback()
+
+        history_saver(updated_history)
+        return build_brawl_fallback(selected_tip)
+    except (OSError, ValueError, TypeError, KeyError, AttributeError):
+        return build_brawl_fallback()
+
+
 def schedule_brawl_post(
     existing_posts,
     target_date,
     data_loader=None,
     final_post_builder=None,
+    fallback_builder=None,
+    skip_fresh_material=False,
 ):
     """
     Добавляет готовый Brawl Stars пост в слот 12:00.
 
-    Функция читает только уже подготовленный monitor JSON и
-    вызывает существующий build_final_post(). Зависимости можно
-    заменить в тестах, не обращаясь к рабочим файлам.
+    Сначала функция читает подготовленный monitor JSON и вызывает
+    существующий build_final_post(). Если свежего материала нет,
+    обязательный слот заполняется локальным проверенным fallback.
+    Зависимости можно заменить в тестах без рабочих файлов.
 
-    Любая ожидаемая ошибка чтения или повреждённых данных
-    локализуется внутри Brawl-этапа: остальные публикации дня
-    продолжают собираться обычным образом.
+    Проверка стабильного ID выполняется до выбора fallback-совета.
+    Поэтому повторный запуск не создаёт дубль и не сдвигает ротацию.
     """
 
     post_id = f"{target_date}-brawl-{BRAWL_POST_HOUR}"
@@ -257,10 +430,13 @@ def schedule_brawl_post(
             print("12:00 — слот уже занят существующим текстовым постом.")
             return 0
 
+    if fallback_builder is None:
+        fallback_builder = generate_brawl_fallback
+
     if data_loader is None:
         data_loader = load_brawl_latest_changes
 
-    if final_post_builder is None:
+    if final_post_builder is None and not skip_fresh_material:
         # Импорт выполняем только при реальной сборке. Так тесты
         # расписания могут передать локальную функцию, а обычный
         # запуск использует единственный рабочий Brawl-генератор.
@@ -268,16 +444,32 @@ def schedule_brawl_post(
 
         final_post_builder = build_final_post
 
-    try:
-        brawl_data = data_loader()
-        final_text = final_post_builder(brawl_data)
-    except (OSError, ValueError, TypeError, KeyError, AttributeError) as error:
-        print(f"12:00 — Brawl pipeline недоступен: {error}")
-        return 0
+    final_text = None
 
-    if final_text is None:
-        print("12:00 — подходящих Brawl Stars материалов нет.")
-        return 0
+    if not skip_fresh_material:
+        try:
+            brawl_data = data_loader()
+            final_text = final_post_builder(brawl_data)
+        except (OSError, ValueError, TypeError, KeyError, AttributeError) as error:
+            print(f"12:00 — Brawl pipeline недоступен: {error}")
+
+    if final_text is not None:
+        rubric = "Brawl Stars"
+        source = "brawl_pipeline"
+        status_message = "12:00 — создан Brawl Stars новостной выпуск."
+    else:
+        try:
+            final_text = fallback_builder()
+        except (OSError, ValueError, TypeError, KeyError, AttributeError):
+            # Даже пользовательская тестовая зависимость или ошибка
+            # записи истории не может отменить обязательный слот.
+            final_text = build_brawl_fallback()
+
+        rubric = "Brawl Stars: совет дня"
+        source = "verified_brawl_fallback"
+        status_message = (
+            "12:00 — свежих Brawl Stars материалов нет; " "создан fallback-пост."
+        )
 
     existing_posts.append(
         build_post(
@@ -291,13 +483,13 @@ def schedule_brawl_post(
                 tzinfo=LOCAL_TIMEZONE,
             ),
             game="Brawl Stars",
-            rubric="Brawl Stars",
-            source="brawl_pipeline",
+            rubric=rubric,
+            source=source,
             text=final_text,
         )
     )
 
-    print("12:00 — Brawl Stars пост добавлен.")
+    print(status_message)
     return 1
 
 
@@ -759,18 +951,16 @@ posts_updated += morning_updated
 # --------------------------------------------------
 # 12:00 — Brawl Stars
 #
-# Отдельной искусственной замены нет: если monitor JSON
-# отсутствует, повреждён или build_final_post() вернул None,
-# слот остаётся пустым, а остальная очередь собирается дальше.
+# Свежие HIGH/MEDIUM статьи и Balance Changes имеют приоритет.
+# Если monitor недоступен или готового выпуска нет, тот же
+# стабильный слот получает локальный проверенный fallback.
 # --------------------------------------------------
 
-if os.getenv(BRAWL_SKIP_ENVIRONMENT_VARIABLE) == "1":
-    print("12:00 — Brawl monitor недоступен; старые данные не используем.")
-else:
-    posts_added += schedule_brawl_post(
-        existing_posts,
-        target_date,
-    )
+posts_added += schedule_brawl_post(
+    existing_posts,
+    target_date,
+    skip_fresh_material=os.getenv(BRAWL_SKIP_ENVIRONMENT_VARIABLE) == "1",
+)
 
 
 # --------------------------------------------------
