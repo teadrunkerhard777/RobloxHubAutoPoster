@@ -488,5 +488,81 @@
     "attempts": 0,
     "last_error": null,
     "image_path": "images/16-00/b6d55951-2341-49c0-9073-15452703c79e.jpeg"
+  },
+  {
+    "id": "2026-08-25-image-11",
+    "publish_at": "2026-08-25T11:00:00+05:00",
+    "game": "Roblox",
+    "rubric": "Картинка дня",
+    "source": "image_library",
+    "text": "",
+    "status": "pending",
+    "published_at": null,
+    "attempts": 0,
+    "last_error": null,
+    "image_path": "images/16-00/1b5c1b92-a569-48d3-85d6-26c11fa991ef.jpeg"
+  },
+  {
+    "id": "2026-08-25-image-14",
+    "publish_at": "2026-08-25T14:00:00+05:00",
+    "game": "Roblox",
+    "rubric": "Картинка дня",
+    "source": "image_library",
+    "text": "",
+    "status": "pending",
+    "published_at": null,
+    "attempts": 0,
+    "last_error": null,
+    "image_path": "images/16-00/watermarked_img_8348351067297089708.jpg"
+  },
+  {
+    "id": "2026-08-25-15",
+    "publish_at": "2026-08-25T15:00:00+05:00",
+    "game": "Pet Simulator 99 + 99 Nights in the Forest + Adopt Me! + Brookhaven + Blade Ball",
+    "rubric": "Полезно знать",
+    "source": "verified_db",
+    "text": "💡 ПОЛЕЗНО ЗНАТЬ\n\n🐶 Pet Simulator 99\n🎯 Выбирай улучшения, которые заметно усиливают активную команду, а не только коллекцию.\n\n🌲 99 Nights in the Forest\n🤝 Перед спасением союзника отвлеки угрозу или попроси команду прикрыть тебя.\n\n🐾 Adopt Me!\n🏗️ Перед украшением дома реши, какие комнаты нужны для игры, и только потом расставляй мебель.\n\n🏡 Brookhaven\n🏗️ Используй дома не только как декорацию: разные комнаты помогают делать ролевые сцены понятнее.\n\n⚔️ Blade Ball\n🎯 Держи камеру так, чтобы видеть мяч даже во время перемещения между игроками.\n\n🎮 Roblox Hub",
+    "status": "pending",
+    "published_at": null,
+    "attempts": 0,
+    "last_error": null
+  },
+  {
+    "id": "2026-08-25-image-17",
+    "publish_at": "2026-08-25T17:00:00+05:00",
+    "game": "Roblox",
+    "rubric": "Картинка дня",
+    "source": "image_library",
+    "text": "",
+    "status": "pending",
+    "published_at": null,
+    "attempts": 0,
+    "last_error": null,
+    "image_path": "images/16-00/watermarked_img_2785834846399789101.jpg"
+  },
+  {
+    "id": "2026-08-25-19",
+    "publish_at": "2026-08-25T19:00:00+05:00",
+    "game": "Steal a Brainrot",
+    "rubric": "Миф или правда",
+    "source": "verified_db",
+    "text": "🧠 МИФ ИЛИ ПРАВДА?\n\n🧠 Steal a Brainrot\n\n🔥 Если спрятать брейнрот подальше от входа, его вообще невозможно украсть.\n\nКак думаешь — правда или миф?\n\n❌ МИФ!\n\nРасположение может усложнить кражу, но полной защиты всё равно не даёт.\n\n🎮 Roblox Hub",
+    "status": "pending",
+    "published_at": null,
+    "attempts": 0,
+    "last_error": null
+  },
+  {
+    "id": "2026-08-25-image-21",
+    "publish_at": "2026-08-25T21:00:00+05:00",
+    "game": "Roblox",
+    "rubric": "Картинка дня",
+    "source": "image_library",
+    "text": "",
+    "status": "pending",
+    "published_at": null,
+    "attempts": 0,
+    "last_error": null,
+    "image_path": "images/16-00/ae0c448e-9061-48ab-88d6-50b802377929.png"
   }
 ]

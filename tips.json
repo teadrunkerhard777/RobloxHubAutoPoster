@@ -376,7 +376,7 @@
     "text": "Используй дома не только как декорацию: разные комнаты помогают делать ролевые сцены понятнее.",
     "source": "verified_core_mechanic",
     "reviewed_at": "2026-08-14",
-    "used": false,
+    "used": true,
     "category": "building"
   },
   {
@@ -1227,7 +1227,7 @@
     "text": "Перед спасением союзника отвлеки угрозу или попроси команду прикрыть тебя.",
     "source": "verified_core_mechanic",
     "reviewed_at": "2026-08-24",
-    "used": false
+    "used": true
   },
   {
     "id": 124,
@@ -1337,7 +1337,7 @@
     "text": "Перед украшением дома реши, какие комнаты нужны для игры, и только потом расставляй мебель.",
     "source": "verified_core_mechanic",
     "reviewed_at": "2026-08-24",
-    "used": false
+    "used": true
   },
   {
     "id": 135,
@@ -1467,7 +1467,7 @@
     "text": "Выбирай улучшения, которые заметно усиливают активную команду, а не только коллекцию.",
     "source": "verified_core_mechanic",
     "reviewed_at": "2026-08-24",
-    "used": false
+    "used": true
   },
   {
     "id": 148,
@@ -1497,6 +1497,6 @@
     "text": "Держи камеру так, чтобы видеть мяч даже во время перемещения между игроками.",
     "source": "verified_core_mechanic",
     "reviewed_at": "2026-08-24",
-    "used": false
+    "used": true
   }
 ]
