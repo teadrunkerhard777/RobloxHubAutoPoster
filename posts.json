@@ -534,9 +534,9 @@
     "rubric": "Картинка дня",
     "source": "image_library",
     "text": "",
-    "status": "pending",
-    "published_at": null,
-    "attempts": 0,
+    "status": "published",
+    "published_at": "2026-08-25T17:00:45.999551+05:00",
+    "attempts": 1,
     "last_error": null,
     "image_path": "images/16-00/watermarked_img_2785834846399789101.jpg"
   },
