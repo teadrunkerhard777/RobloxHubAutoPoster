@@ -21,6 +21,12 @@ BRAWL_POST_HOUR = 12
 TIPS_POST_HOUR = 15
 MYTH_POST_HOUR = 19
 
+# Утренний fallback старается показать три разные игры,
+# но два проверенных совета уже считаются достаточным
+# содержательным выпуском для обязательного слота 10:00.
+MORNING_FALLBACK_MAX_TIPS = 3
+MORNING_FALLBACK_MIN_TIPS = 2
+
 # Brawl monitor сохраняет сюда подготовленные данные.
 # generate_posts.py только читает файл и не меняет state.
 BRAWL_LATEST_CHANGES_FILE = "data/brawl_latest_changes.json"
@@ -307,11 +313,7 @@ def select_tips(count, excluded_games=None):
     tips = load_json("tips.json")
 
     release_history = load_json(TIPS_GAME_HISTORY_FILE, [])
-    recent_games = [
-        game
-        for release in release_history
-        for game in release
-    ]
+    recent_games = [game for release in release_history for game in release]
     category_history = load_json(TIPS_CATEGORY_HISTORY_FILE, {})
 
     selected = choose_tips(
@@ -320,17 +322,14 @@ def select_tips(count, excluded_games=None):
         recent_games=recent_games,
         category_history=category_history,
         excluded_games=excluded_games,
-        rng=random
+        rng=random,
     )
 
     save_json("tips.json", tips)
 
     selected_games = [tip["game"] for tip in selected]
     release_history.append(selected_games)
-    save_json(
-        TIPS_GAME_HISTORY_FILE,
-        release_history[-TIPS_RELEASE_HISTORY_LIMIT:]
-    )
+    save_json(TIPS_GAME_HISTORY_FILE, release_history[-TIPS_RELEASE_HISTORY_LIMIT:])
 
     for tip in selected:
         game_categories = category_history.setdefault(tip["game"], [])
@@ -426,6 +425,194 @@ def generate_morning_post():
     blocks.append("🎮 Roblox Hub")
 
     return "\n\n".join(blocks)
+
+
+def is_verified_fallback_tip(tip):
+    """
+    Проверяет, можно ли использовать локальный совет утром.
+
+    Fallback допускает только записи с заполненными игрой и
+    текстом, источник которых явно относится к проверенной
+    базе проекта. Это не позволяет случайной или неполной
+    записи из JSON попасть в обязательный выпуск.
+    """
+
+    if not isinstance(tip, dict):
+        return False
+
+    source = tip.get("source", "")
+
+    return bool(
+        tip.get("game")
+        and tip.get("text")
+        and isinstance(source, str)
+        and source.startswith("verified_")
+    )
+
+
+def build_morning_fallback(selected_tips):
+    """
+    Формирует утренний пост из уже выбранных локальных советов.
+
+    Текст каждого факта переносится без пересказа. Вступление
+    прямо сообщает, что подтверждённых обновлений сегодня нет,
+    поэтому советы нельзя принять за свежие новости.
+    """
+
+    if not isinstance(selected_tips, (list, tuple)):
+        selected_tips = []
+
+    verified_tips = []
+    selected_games = set()
+
+    # Даже если нестандартный selector вернул несколько советов
+    # одной игры, утром показываем каждую игру только один раз.
+    for tip in selected_tips:
+        if not is_verified_fallback_tip(tip):
+            continue
+
+        if tip["game"] in selected_games:
+            continue
+
+        verified_tips.append(tip)
+        selected_games.add(tip["game"])
+
+        if len(verified_tips) == MORNING_FALLBACK_MAX_TIPS:
+            break
+
+    if len(verified_tips) < MORNING_FALLBACK_MIN_TIPS:
+        return (
+            "🎮 ROBLOX HUB — УТРО\n\n"
+            "Сегодня без подтверждённых игровых новостей.\n\n"
+            "Следим за обновлениями и вернёмся, "
+            "когда будет что рассказать 👀\n\n"
+            "🎮 Roblox Hub"
+        )
+
+    blocks = [
+        "🎮 ROBLOX HUB — УТРО",
+        ("Сегодня без крупных подтверждённых обновлений, " "поэтому держи полезное 👇"),
+    ]
+
+    for tip in verified_tips:
+        emoji = GAME_EMOJIS.get(tip["game"], "🎮")
+        blocks.append(f"{emoji} {tip['game']}\n{tip['text']}")
+
+    blocks.append("🎮 Roblox Hub")
+
+    return "\n\n".join(blocks)
+
+
+def generate_morning_fallback(tip_selector=None):
+    """
+    Выбирает проверенные советы для обязательного слота 10:00.
+
+    Используем существующую select_tips(), которая сохраняет
+    used-флаги, историю игр и историю категорий. Если выбрать
+    три разные игры невозможно, безопасно пробуем две. Ошибка
+    локального JSON не отменяет слот: build_morning_fallback()
+    создаст нейтральный выпуск без конкретных фактов.
+    """
+
+    if tip_selector is None:
+        tip_selector = select_tips
+
+    selected_tips = []
+
+    for count in (
+        MORNING_FALLBACK_MAX_TIPS,
+        MORNING_FALLBACK_MIN_TIPS,
+    ):
+        try:
+            selected_tips = tip_selector(count=count)
+        except (OSError, ValueError, TypeError, KeyError, RuntimeError):
+            continue
+
+        break
+
+    return build_morning_fallback(selected_tips)
+
+
+def schedule_morning_post(
+    existing_posts,
+    target_date,
+    news_text,
+    fallback_builder=None,
+):
+    """
+    Создаёт или обновляет обязательный текстовый слот 10:00.
+
+    Свежий news-текст всегда имеет приоритет. Если его нет,
+    используем только локальный fallback. Stable ID остаётся
+    общим для обоих вариантов, поэтому повторный запуск не
+    создаёт дубль, а published-запись никогда не меняется.
+
+    Возвращаем отдельно количество добавленных и обновлённых
+    записей, чтобы сохранить текущую итоговую статистику.
+    """
+
+    post_id = f"{target_date}-{ROBLOX_NEWS_HOUR}"
+    existing_post = find_post(existing_posts, post_id)
+
+    if existing_post is not None and existing_post.get("status") == "published":
+        print("10:00 — пост уже опубликован, не изменяем.")
+        return 0, 0
+
+    if news_text is not None:
+        final_text = news_text
+        rubric = "Выпуск дня"
+        source = "auto_verified"
+        status_message = "10:00 — создан новостной выпуск."
+    else:
+        # Уже подготовленный fallback не пересобираем при каждом
+        # повторном запуске: иначе ротация зря потратит новые
+        # советы, хотя запись с тем же ID уже находится в очереди.
+        if (
+            existing_post is not None
+            and existing_post.get("source") == "verified_fallback"
+        ):
+            print("10:00 — полезный fallback-выпуск уже существует.")
+            return 0, 0
+
+        if fallback_builder is None:
+            fallback_builder = generate_morning_fallback
+
+        final_text = fallback_builder()
+        rubric = "Утренний выпуск"
+        source = "verified_fallback"
+        status_message = (
+            "10:00 — свежих новостей нет; " "создан полезный fallback-выпуск."
+        )
+
+    if existing_post is None:
+        existing_posts.append(
+            build_post(
+                post_id=post_id,
+                publish_at=datetime(
+                    target_date.year,
+                    target_date.month,
+                    target_date.day,
+                    ROBLOX_NEWS_HOUR,
+                    0,
+                    tzinfo=LOCAL_TIMEZONE,
+                ),
+                game="разные игры",
+                rubric=rubric,
+                source=source,
+                text=final_text,
+            )
+        )
+        print(status_message)
+        return 1, 0
+
+    # Pending/failed запись обновляем на месте: ID, attempts,
+    # published_at и остальные поля очереди не теряются.
+    existing_post["text"] = final_text
+    existing_post["rubric"] = rubric
+    existing_post["source"] = source
+
+    print(status_message)
+    return 0, 1
 
 
 # --------------------------------------------------
@@ -536,7 +723,6 @@ now = datetime.now(LOCAL_TIMEZONE)
 target_date = now.date()
 
 
-id_10 = f"{target_date}-{ROBLOX_NEWS_HOUR}"
 id_15 = f"{target_date}-{TIPS_POST_HOUR}"
 id_19 = f"{target_date}-{MYTH_POST_HOUR}"
 
@@ -555,66 +741,19 @@ posts_updated = 0
 # --------------------------------------------------
 # 10:00
 #
-# Особое правило:
-# если пост уже существует, но ещё pending,
-# обновляем его свежей утренней сводкой.
+# Слот обязателен каждый день. Свежие проверенные новости
+# имеют приоритет; при их отсутствии используем локальные
+# проверенные советы или последний нейтральный fallback.
 # --------------------------------------------------
 
-post_10 = find_post(existing_posts, id_10)
-
-morning_text = generate_morning_post()
-
-
-if morning_text is None:
-    if (
-        post_10 is not None
-        and post_10.get("status") != "published"
-        and post_10.get("source") == "auto_verified"
-    ):
-        existing_posts.remove(post_10)
-        posts_updated += 1
-        print(
-            "10:00 — достойных свежих новостей нет; "
-            "неопубликованный выпуск удалён из очереди."
-        )
-    else:
-        print("10:00 — достойных свежих новостей нет; " "утренний выпуск не создаём.")
-
-elif post_10 is None:
-
-    existing_posts.append(
-        build_post(
-            post_id=id_10,
-            publish_at=datetime(
-                target_date.year,
-                target_date.month,
-                target_date.day,
-                ROBLOX_NEWS_HOUR,
-                0,
-                tzinfo=LOCAL_TIMEZONE,
-            ),
-            game="разные игры",
-            rubric="Выпуск дня",
-            source="auto_verified",
-            text=morning_text,
-        )
-    )
-
-    posts_added += 1
-
-    print("10:00 — выпуск дня добавлен.")
-
-elif post_10.get("status") == "pending":
-    post_10["text"] = morning_text
-    post_10["rubric"] = "Выпуск дня"
-    post_10["source"] = "auto_verified"
-
-    posts_updated += 1
-
-    print("10:00 — pending-выпуск обновлён " "свежими утренними данными.")
-
-else:
-    print("10:00 — пост уже опубликован, " "не изменяем.")
+morning_news_text = generate_morning_post()
+morning_added, morning_updated = schedule_morning_post(
+    existing_posts,
+    target_date,
+    news_text=morning_news_text,
+)
+posts_added += morning_added
+posts_updated += morning_updated
 
 
 # --------------------------------------------------
