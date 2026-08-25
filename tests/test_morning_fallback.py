@@ -1,4 +1,5 @@
 import ast
+import os
 import unittest
 from datetime import date, datetime, timedelta, timezone
 from pathlib import Path
@@ -19,6 +20,7 @@ def load_morning_functions():
     tree = ast.parse(path.read_text(encoding="utf-8"))
     function_names = {
         "build_post",
+        "fit_telegram_caption",
         "find_post",
         "build_news_action",
         "generate_morning_post",
@@ -26,12 +28,15 @@ def load_morning_functions():
         "build_morning_fallback",
         "generate_morning_fallback",
         "schedule_morning_post",
+        "resolve_news_header",
     }
     constant_names = {
         "LOCAL_TIMEZONE",
         "ROBLOX_NEWS_HOUR",
         "MORNING_FALLBACK_MAX_TIPS",
         "MORNING_FALLBACK_MIN_TIPS",
+        "ROBLOX_NEWS_HEADER_PATH",
+        "TELEGRAM_CAPTION_MAX_CHARS",
         "GAME_EMOJIS",
     }
     selected_nodes = []
@@ -52,6 +57,7 @@ def load_morning_functions():
         "datetime": datetime,
         "timedelta": timedelta,
         "timezone": timezone,
+        "os": os,
     }
     isolated_module = ast.Module(
         body=selected_nodes,
@@ -73,6 +79,7 @@ build_morning_fallback = morning_namespace["build_morning_fallback"]
 generate_morning_fallback = morning_namespace["generate_morning_fallback"]
 generate_morning_post = morning_namespace["generate_morning_post"]
 schedule_morning_post = morning_namespace["schedule_morning_post"]
+fit_telegram_caption = morning_namespace["fit_telegram_caption"]
 
 
 class MorningFallbackTests(unittest.TestCase):
@@ -114,6 +121,10 @@ class MorningFallbackTests(unittest.TestCase):
         self.assertEqual(posts[0]["rubric"], "Выпуск дня")
         self.assertIn("🎮 ROBLOX HUB — СЕГОДНЯ", posts[0]["text"])
         self.assertIn("Проверенная свежая новость.", posts[0]["text"])
+        self.assertEqual(
+            posts[0]["image_path"],
+            "assets/news_headers/roblox_news_header.png",
+        )
 
     def test_no_fresh_news_creates_fallback_at_ten(self):
         posts = []
@@ -132,9 +143,43 @@ class MorningFallbackTests(unittest.TestCase):
         self.assertEqual(posts[0]["rubric"], "Утренний выпуск")
         self.assertEqual(posts[0]["text"], fallback_text)
         self.assertEqual(
+            posts[0]["image_path"],
+            "assets/news_headers/roblox_news_header.png",
+        )
+        self.assertEqual(
             datetime.fromisoformat(posts[0]["publish_at"]).hour,
             10,
         )
+
+    def test_missing_roblox_header_keeps_text_only_slot(self):
+        posts = []
+
+        added, updated = schedule_morning_post(
+            posts,
+            date(2026, 8, 25),
+            news_text="Проверенный Roblox выпуск",
+            header_checker=lambda path: False,
+        )
+
+        self.assertEqual((added, updated), (1, 0))
+        self.assertNotIn("image_path", posts[0])
+        self.assertEqual(posts[0]["text"], "Проверенный Roblox выпуск")
+
+    def test_roblox_photo_caption_respects_telegram_limit(self):
+        long_text = f"Заголовок\n\n{'важный факт ' * 200}\n\n🎮 Roblox Hub"
+        posts = []
+
+        schedule_morning_post(
+            posts,
+            date(2026, 8, 25),
+            news_text=long_text,
+            header_checker=lambda path: True,
+        )
+
+        caption = posts[0]["text"]
+        self.assertLessEqual(len(caption), 1024)
+        self.assertTrue(caption.endswith("🎮 Roblox Hub"))
+        self.assertNotIn("важ…", caption)
 
     def test_fallback_contains_at_least_two_different_games(self):
         tips = [

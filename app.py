@@ -17,10 +17,41 @@ LOCAL_TIMEZONE = timezone(timedelta(hours=5))
 # Это защищает от случайной поздней публикации при ручном запуске.
 IMAGE_PUBLISH_HOURS = (11, 14, 17, 21)
 
+# Фиксированные шапки превращают два текстовых выпуска в photo post.
+# Они получают собственные допустимые часы, не расширяя расписание
+# обычных image_library-публикаций.
+NEWS_HEADER_PUBLISH_HOURS = (10, 12)
+NEWS_HEADER_DIRECTORY = "assets/news_headers/"
+
 
 def is_image_post(post):
     """Проверяет, содержит ли запись файл изображения."""
     return bool(post.get("image_path"))
+
+
+def is_news_header_post(post):
+    """Отличает новостную шапку от самостоятельного image-поста."""
+
+    image_path = post.get("image_path")
+
+    return isinstance(image_path, str) and image_path.startswith(NEWS_HEADER_DIRECTORY)
+
+
+def build_photo_data(post):
+    """
+    Готовит поля Telegram sendPhoto для любого photo post.
+
+    Проект продолжает хранить редакционный текст в общем поле
+    text. Для Telegram это поле становится caption, поэтому
+    новостные шапки и обычные image-посты используют один sender.
+    """
+
+    data = {"chat_id": "@RobloxHubRU"}
+
+    if post.get("text"):
+        data["caption"] = post["text"]
+
+    return data
 
 
 def should_publish_post(post, now):
@@ -28,8 +59,9 @@ def should_publish_post(post, now):
     Определяет, можно ли отправлять запись в текущий момент.
 
     Обычные текстовые посты сохраняют прежнюю логику: любой
-    просроченный pending/failed пост можно отправить. Картинки
-    публикуются только в назначенный час 11, 14, 17 или 21.
+    просроченный pending/failed пост можно отправить. Самостоятельные
+    картинки публикуются в 11, 14, 17 и 21 час, а фиксированные
+    новостные шапки — только в своих слотах 10:00 и 12:00.
 
     Повторный запуск безопасен: published-запись сразу
     исключается и не отправляется второй раз.
@@ -49,7 +81,12 @@ def should_publish_post(post, now):
     local_publish_at = publish_at.astimezone(LOCAL_TIMEZONE)
     local_now = now.astimezone(LOCAL_TIMEZONE)
 
-    if local_publish_at.hour not in IMAGE_PUBLISH_HOURS:
+    if is_news_header_post(post):
+        allowed_hours = NEWS_HEADER_PUBLISH_HOURS
+    else:
+        allowed_hours = IMAGE_PUBLISH_HOURS
+
+    if local_publish_at.hour not in allowed_hours:
         return False
 
     return (
@@ -92,10 +129,7 @@ for post in posts_to_publish:
         image_path = post.get("image_path")
 
         if image_path:
-            data = {"chat_id": "@RobloxHubRU"}
-
-            if post.get("text"):
-                data["caption"] = post["text"]
+            data = build_photo_data(post)
 
             with open(image_path, "rb") as image_file:
                 response = requests.post(

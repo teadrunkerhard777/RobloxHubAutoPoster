@@ -1,5 +1,6 @@
 import ast
 import json
+import os
 import unittest
 from datetime import date, datetime, timedelta, timezone
 from pathlib import Path
@@ -39,6 +40,7 @@ def load_members(file_name, function_names, constant_names):
         "datetime": datetime,
         "timedelta": timedelta,
         "timezone": timezone,
+        "os": os,
     }
     isolated_module = ast.Module(
         body=selected_nodes,
@@ -60,9 +62,11 @@ generate_namespace = load_members(
     {
         "build_post",
         "build_brawl_fallback",
+        "fit_telegram_caption",
         "find_post",
         "generate_brawl_fallback",
         "is_verified_brawl_tip",
+        "resolve_news_header",
         "select_brawl_fallback_tip",
         "schedule_image_posts",
         "schedule_brawl_post",
@@ -74,7 +78,9 @@ generate_namespace = load_members(
         "IMAGE_HISTORY_FILE",
         "ROBLOX_NEWS_HOUR",
         "BRAWL_POST_HOUR",
+        "BRAWL_NEWS_HEADER_PATH",
         "BRAWL_TIP_HISTORY_LIMIT",
+        "TELEGRAM_CAPTION_MAX_CHARS",
         "TIPS_POST_HOUR",
         "MYTH_POST_HOUR",
     },
@@ -89,16 +95,21 @@ select_brawl_fallback_tip = generate_namespace["select_brawl_fallback_tip"]
 app_namespace = load_members(
     "app.py",
     {
+        "build_photo_data",
         "is_image_post",
+        "is_news_header_post",
         "should_publish_post",
     },
     {
         "LOCAL_TIMEZONE",
         "IMAGE_PUBLISH_HOURS",
+        "NEWS_HEADER_DIRECTORY",
+        "NEWS_HEADER_PUBLISH_HOURS",
     },
 )
 
 should_publish_post = app_namespace["should_publish_post"]
+build_photo_data = app_namespace["build_photo_data"]
 local_timezone = app_namespace["LOCAL_TIMEZONE"]
 
 
@@ -409,6 +420,10 @@ class ImageScheduleTests(unittest.TestCase):
         self.assertEqual(posts[0]["source"], "brawl_pipeline")
         self.assertEqual(posts[0]["status"], "pending")
         self.assertEqual(
+            posts[0]["image_path"],
+            "assets/news_headers/brawl_news_header.png",
+        )
+        self.assertEqual(
             datetime.fromisoformat(posts[0]["publish_at"]).hour,
             12,
         )
@@ -506,6 +521,100 @@ class ImageScheduleTests(unittest.TestCase):
         self.assertEqual(added, 1)
         self.assertEqual(posts[0]["source"], "verified_brawl_fallback")
         self.assertEqual(posts[0]["text"], "Проверенный Brawl fallback")
+        self.assertEqual(
+            posts[0]["image_path"],
+            "assets/news_headers/brawl_news_header.png",
+        )
+
+    def test_missing_brawl_header_keeps_text_only_slot(self):
+        posts = []
+
+        added = schedule_brawl_post(
+            posts,
+            date(2026, 8, 24),
+            data_loader=dict,
+            final_post_builder=lambda data: None,
+            fallback_builder=lambda: "Проверенный Brawl fallback",
+            header_checker=lambda path: False,
+        )
+
+        self.assertEqual(added, 1)
+        self.assertNotIn("image_path", posts[0])
+        self.assertEqual(posts[0]["text"], "Проверенный Brawl fallback")
+
+    def test_news_header_text_is_sent_as_photo_caption(self):
+        post = {
+            "image_path": "assets/news_headers/brawl_news_header.png",
+            "text": "Готовый Brawl caption",
+        }
+
+        data = build_photo_data(post)
+
+        self.assertEqual(data["caption"], "Готовый Brawl caption")
+        self.assertEqual(data["chat_id"], "@RobloxHubRU")
+
+    def test_news_headers_publish_only_in_their_scheduled_hours(self):
+        for publish_hour, header_name in (
+            (10, "roblox_news_header.png"),
+            (12, "brawl_news_header.png"),
+        ):
+            with self.subTest(publish_hour=publish_hour):
+                post = {
+                    "publish_at": datetime(
+                        2026,
+                        8,
+                        24,
+                        publish_hour,
+                        0,
+                        tzinfo=local_timezone,
+                    ).isoformat(),
+                    "status": "pending",
+                    "text": "Новостной caption",
+                    "image_path": f"assets/news_headers/{header_name}",
+                }
+                now = datetime(
+                    2026,
+                    8,
+                    24,
+                    publish_hour,
+                    5,
+                    tzinfo=local_timezone,
+                )
+
+                self.assertTrue(should_publish_post(post, now))
+                self.assertFalse(
+                    should_publish_post(
+                        post,
+                        now.replace(hour=(publish_hour + 1) % 24),
+                    )
+                )
+
+    def test_brawl_photo_caption_respects_telegram_limit(self):
+        posts = []
+        long_post = f"Brawl заголовок\n\n{'официальный факт ' * 200}\n\n⭐ Roblox Hub"
+
+        schedule_brawl_post(
+            posts,
+            date(2026, 8, 24),
+            data_loader=dict,
+            final_post_builder=lambda data: long_post,
+            header_checker=lambda path: True,
+        )
+
+        caption = posts[0]["text"]
+        self.assertLessEqual(len(caption), 1024)
+        self.assertTrue(caption.endswith("⭐ Roblox Hub"))
+
+    def test_published_news_header_is_not_sent_again(self):
+        post = {
+            "publish_at": "2026-08-24T12:00:00+05:00",
+            "status": "published",
+            "text": "Уже опубликованный Brawl caption",
+            "image_path": "assets/news_headers/brawl_news_header.png",
+        }
+        now = datetime(2026, 8, 24, 12, 5, tzinfo=local_timezone)
+
+        self.assertFalse(should_publish_post(post, now))
 
     def test_repeated_generation_does_not_duplicate_brawl_post(self):
         posts = []

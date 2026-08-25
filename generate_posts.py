@@ -39,6 +39,13 @@ BRAWL_TIPS_FILE = "brawl_tips.json"
 BRAWL_TIP_HISTORY_FILE = "brawl_tip_history.json"
 BRAWL_TIP_HISTORY_LIMIT = 7
 
+# Telegram принимает у photo post более короткую подпись, чем
+# у обычного text post. Оба новостных слота заранее приводим
+# к безопасному лимиту, не разрезая слово посередине.
+TELEGRAM_CAPTION_MAX_CHARS = 1024
+ROBLOX_NEWS_HEADER_PATH = "assets/news_headers/roblox_news_header.png"
+BRAWL_NEWS_HEADER_PATH = "assets/news_headers/brawl_news_header.png"
+
 MYTH_HISTORY_LIMIT = 3
 GAME_HISTORY_LIMIT = 5
 TIPS_RELEASE_HISTORY_LIMIT = 3
@@ -100,6 +107,65 @@ def load_json(filename, default=None):
 def save_json(filename, data):
     with open(filename, "w", encoding="utf-8") as file:
         json.dump(data, file, ensure_ascii=False, indent=2)
+
+
+def fit_telegram_caption(text, max_chars=TELEGRAM_CAPTION_MAX_CHARS):
+    """
+    Укладывает готовый редакционный текст в лимит photo caption.
+
+    Сначала убираем последние дополнительные блоки, сохраняя
+    первый смысловой блок и footer. Если один блок всё равно
+    слишком длинный, сокращаем его по последнему целому слову.
+    Исходные формулировки не переписываются и новые факты не
+    добавляются.
+    """
+
+    normalized_text = text.strip()
+
+    if len(normalized_text) <= max_chars:
+        return normalized_text
+
+    blocks = [block.strip() for block in normalized_text.split("\n\n") if block.strip()]
+
+    if len(blocks) == 1:
+        shortened = blocks[0][: max_chars - 1].rsplit(maxsplit=1)[0].rstrip()
+        return f"{shortened}…"
+
+    footer = blocks[-1]
+    content_blocks = blocks[:-1]
+
+    while len(content_blocks) > 1:
+        candidate = "\n\n".join([*content_blocks, footer])
+
+        if len(candidate) <= max_chars:
+            return candidate
+
+        content_blocks.pop()
+
+    footer_suffix = f"\n\n{footer}"
+    available_chars = max_chars - len(footer_suffix) - 1
+    shortened = content_blocks[0][:available_chars].rsplit(maxsplit=1)[0].rstrip()
+
+    return f"{shortened}…{footer_suffix}"
+
+
+def resolve_news_header(header_path, path_checker=None):
+    """
+    Возвращает путь только к реально существующей шапке.
+
+    Отсутствующий ассет не должен останавливать всю дневную
+    очередь. В этом редком случае генератор создаёт прежний
+    text-only пост и оставляет понятную запись в терминале.
+    """
+
+    if path_checker is None:
+        path_checker = os.path.isfile
+
+    if path_checker(header_path):
+        return header_path
+
+    print("Шапка не найдена, создан пост без изображения.")
+    return None
 
 
 def load_brawl_latest_changes():
@@ -388,6 +454,7 @@ def schedule_brawl_post(
     final_post_builder=None,
     fallback_builder=None,
     skip_fresh_material=False,
+    header_checker=None,
 ):
     """
     Добавляет готовый Brawl Stars пост в слот 12:00.
@@ -402,9 +469,32 @@ def schedule_brawl_post(
     """
 
     post_id = f"{target_date}-brawl-{BRAWL_POST_HOUR}"
+    existing_post = find_post(existing_posts, post_id)
 
-    if find_post(existing_posts, post_id) is not None:
+    if existing_post is not None and existing_post.get("status") == "published":
         print("12:00 — Brawl Stars пост уже существует.")
+        return 0
+
+    if existing_post is not None:
+        # Pending/failed Brawl-пост не пересобираем и не расходуем
+        # следующий fallback-совет. Только безопасно переводим
+        # существующую запись на photo-формат с тем же ID.
+        existing_post["text"] = fit_telegram_caption(existing_post.get("text", ""))
+        header_path = resolve_news_header(
+            BRAWL_NEWS_HEADER_PATH,
+            path_checker=header_checker,
+        )
+
+        if header_path is None:
+            existing_post.pop("image_path", None)
+        else:
+            existing_post["image_path"] = header_path
+
+        print("12:00 — Brawl Stars пост уже существует.")
+
+        if header_path is not None:
+            print("12:00 — создан Brawl news post с шапкой.")
+
         return 0
 
     # Старые версии генератора могли уже поставить другой
@@ -471,6 +561,15 @@ def schedule_brawl_post(
             "12:00 — свежих Brawl Stars материалов нет; " "создан fallback-пост."
         )
 
+    # И новостной выпуск, и локальный fallback используют одну
+    # постоянную Brawl-шапку. Текст остаётся в поле text — app.py
+    # уже передаёт его Telegram как caption для image_path.
+    final_text = fit_telegram_caption(final_text)
+    header_path = resolve_news_header(
+        BRAWL_NEWS_HEADER_PATH,
+        path_checker=header_checker,
+    )
+
     existing_posts.append(
         build_post(
             post_id=post_id,
@@ -486,10 +585,15 @@ def schedule_brawl_post(
             rubric=rubric,
             source=source,
             text=final_text,
+            image_path=header_path,
         )
     )
 
     print(status_message)
+
+    if header_path is not None:
+        print("12:00 — создан Brawl news post с шапкой.")
+
     return 1
 
 
@@ -730,9 +834,10 @@ def schedule_morning_post(
     target_date,
     news_text,
     fallback_builder=None,
+    header_checker=None,
 ):
     """
-    Создаёт или обновляет обязательный текстовый слот 10:00.
+    Создаёт или обновляет обязательный photo-слот 10:00.
 
     Свежий news-текст всегда имеет приоритет. Если его нет,
     используем только локальный fallback. Stable ID остаётся
@@ -763,8 +868,29 @@ def schedule_morning_post(
             existing_post is not None
             and existing_post.get("source") == "verified_fallback"
         ):
+            # Старую pending/failed запись можно безопасно
+            # перевести на новый photo-формат без повторного
+            # выбора советов и изменения стабильного ID.
+            final_text = fit_telegram_caption(existing_post.get("text", ""))
+            header_path = resolve_news_header(
+                ROBLOX_NEWS_HEADER_PATH,
+                path_checker=header_checker,
+            )
+            changed = existing_post.get("text") != final_text
+            existing_post["text"] = final_text
+
+            if header_path is None:
+                changed = existing_post.pop("image_path", None) is not None or changed
+            else:
+                changed = existing_post.get("image_path") != header_path or changed
+                existing_post["image_path"] = header_path
+
             print("10:00 — полезный fallback-выпуск уже существует.")
-            return 0, 0
+
+            if header_path is not None:
+                print("10:00 — создан Roblox news post с шапкой.")
+
+            return 0, int(changed)
 
         if fallback_builder is None:
             fallback_builder = generate_morning_fallback
@@ -775,6 +901,15 @@ def schedule_morning_post(
         status_message = (
             "10:00 — свежих новостей нет; " "создан полезный fallback-выпуск."
         )
+
+    # Утренний news и fallback получают одинаковую Roblox-шапку.
+    # При отсутствии файла resolve_news_header() вернёт None,
+    # и build_post() сохранит рабочую text-only запись.
+    final_text = fit_telegram_caption(final_text)
+    header_path = resolve_news_header(
+        ROBLOX_NEWS_HEADER_PATH,
+        path_checker=header_checker,
+    )
 
     if existing_post is None:
         existing_posts.append(
@@ -792,9 +927,14 @@ def schedule_morning_post(
                 rubric=rubric,
                 source=source,
                 text=final_text,
+                image_path=header_path,
             )
         )
         print(status_message)
+
+        if header_path is not None:
+            print("10:00 — создан Roblox news post с шапкой.")
+
         return 1, 0
 
     # Pending/failed запись обновляем на месте: ID, attempts,
@@ -803,7 +943,16 @@ def schedule_morning_post(
     existing_post["rubric"] = rubric
     existing_post["source"] = source
 
+    if header_path is None:
+        existing_post.pop("image_path", None)
+    else:
+        existing_post["image_path"] = header_path
+
     print(status_message)
+
+    if header_path is not None:
+        print("10:00 — создан Roblox news post с шапкой.")
+
     return 0, 1
 
 
