@@ -585,9 +585,9 @@
     "rubric": "Картинка дня",
     "source": "image_library",
     "text": "",
-    "status": "pending",
-    "published_at": null,
-    "attempts": 0,
+    "status": "published",
+    "published_at": "2026-08-26T11:00:51.312941+05:00",
+    "attempts": 1,
     "last_error": null,
     "image_path": "images/16-00/fa1a7809-f1e9-4b1e-ab5f-af30a10488de.png"
   },
