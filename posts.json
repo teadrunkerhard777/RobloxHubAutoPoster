@@ -598,9 +598,9 @@
     "rubric": "Brawl Stars: совет дня",
     "source": "verified_brawl_fallback",
     "text": "💥 BRAWL STARS | ROBLOX HUB\n\n🎯 СОВЕТ ДНЯ\n\nСледи не только за своими боеприпасами, но и за темпом атак соперника. После его серии выстрелов появляется удобное окно, чтобы безопаснее продвинуться, занять позицию или начать ответную атаку.\n\n⭐ Roblox Hub",
-    "status": "pending",
-    "published_at": null,
-    "attempts": 0,
+    "status": "published",
+    "published_at": "2026-08-26T12:00:39.421192+05:00",
+    "attempts": 1,
     "last_error": null,
     "image_path": "assets/news_headers/brawl_news_header.png"
   },
