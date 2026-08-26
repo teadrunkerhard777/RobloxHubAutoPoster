@@ -186,7 +186,7 @@
     "text": "Перед Rebirth проверь требования заранее, чтобы не продавать и не терять нужных Brainrot по ошибке.",
     "source": "verified_core_mechanic",
     "reviewed_at": "2026-08-14",
-    "used": false,
+    "used": true,
     "category": "strategy"
   },
   {
@@ -306,7 +306,7 @@
     "text": "Если используешь фрукт для фарма, обращай внимание на атаки по площади: ими проще справляться с группами врагов.",
     "source": "verified_core_mechanic",
     "reviewed_at": "2026-08-14",
-    "used": false,
+    "used": true,
     "category": "combat"
   },
   {
@@ -496,7 +496,7 @@
     "text": "Не оценивай питомца только по внешнему виду: редкость и спрос игроков тоже влияют на обмены.",
     "source": "verified_core_mechanic",
     "reviewed_at": "2026-08-14",
-    "used": false,
+    "used": true,
     "category": "economy"
   },
   {
@@ -836,7 +836,7 @@
     "text": "Если играешь недолго, сделай посадки перед выходом: следующая сессия начнётся уже с выросшего сада.",
     "source": "verified_core_mechanic",
     "reviewed_at": "2026-08-14",
-    "used": false,
+    "used": true,
     "category": "strategy"
   },
   {
@@ -846,7 +846,7 @@
     "text": "Сначала прочитай тему раунда, а уже потом выбирай одежду — красивый образ не всегда подходит заданию.",
     "source": "verified_core_mechanic",
     "reviewed_at": "2026-08-14",
-    "used": false,
+    "used": true,
     "category": "strategy"
   },
   {
@@ -1006,7 +1006,7 @@
     "text": "Перед долгой игровой сессией реши, что именно собираешь: монеты, новых питомцев или прогресс в текущем событии.",
     "source": "verified_core_mechanic",
     "reviewed_at": "2026-08-14",
-    "used": false,
+    "used": true,
     "category": "strategy"
   },
   {
@@ -1207,7 +1207,7 @@
     "text": "Исследуй дальние участки днём, а к ночи возвращайся к защите лагеря.",
     "source": "verified_core_mechanic",
     "reviewed_at": "2026-08-24",
-    "used": false
+    "used": true
   },
   {
     "id": 122,
@@ -1487,7 +1487,7 @@
     "text": "Помни об откате блока: случайное раннее нажатие может оставить тебя без защиты.",
     "source": "verified_core_mechanic",
     "reviewed_at": "2026-08-24",
-    "used": false
+    "used": true
   },
   {
     "id": 150,
