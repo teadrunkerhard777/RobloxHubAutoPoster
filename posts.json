@@ -572,9 +572,9 @@
     "rubric": "Утренний выпуск",
     "source": "verified_fallback",
     "text": "🎮 ROBLOX HUB — УТРО\n\nСегодня без крупных подтверждённых обновлений, поэтому держи полезное 👇\n\n🌲 99 Nights in the Forest\nИсследуй дальние участки днём, а к ночи возвращайся к защите лагеря.\n\n🐾 Adopt Me!\nНе оценивай питомца только по внешнему виду: редкость и спрос игроков тоже влияют на обмены.\n\n⚔️ Blade Ball\nПомни об откате блока: случайное раннее нажатие может оставить тебя без защиты.\n\n🎮 Roblox Hub",
-    "status": "pending",
-    "published_at": null,
-    "attempts": 0,
+    "status": "published",
+    "published_at": "2026-08-26T10:00:44.413854+05:00",
+    "attempts": 1,
     "last_error": null,
     "image_path": "assets/news_headers/roblox_news_header.png"
   },
