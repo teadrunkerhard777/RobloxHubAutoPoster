@@ -700,9 +700,9 @@
     "rubric": "Brawl Stars: совет дня",
     "source": "verified_brawl_fallback",
     "text": "💥 BRAWL STARS | ROBLOX HUB\n\n🎯 СОВЕТ ДНЯ\n\nИспользуй стены, чтобы безопасно восстанавливать здоровье и вынуждать соперника менять позицию. Перед выходом из укрытия дождись боеприпасов, чтобы не начинать следующую дуэль без возможности ответить.\n\n⭐ Roblox Hub",
-    "status": "pending",
-    "published_at": null,
-    "attempts": 0,
+    "status": "published",
+    "published_at": "2026-08-27T12:00:40.656337+05:00",
+    "attempts": 1,
     "last_error": null,
     "image_path": "assets/news_headers/brawl_news_header.png"
   },
