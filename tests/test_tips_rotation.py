@@ -3,6 +3,7 @@ import unittest
 
 from tips_rotation import (
     ALLOWED_TIP_CATEGORIES,
+    CURRENT_HIT_GAMES,
     PRIORITY_TIP_GAMES,
     build_tips_post,
     choose_tips,
@@ -79,20 +80,28 @@ class TipsRotationTests(unittest.TestCase):
         self.assertTrue(all(tip["category"] != "strategy" for tip in selected))
 
     def test_priority_is_strong_but_not_mandatory(self):
-        releases_with_priority = 0
-        releases_without_priority = 0
+        selections = {game: 0 for game in CURRENT_HIT_GAMES}
+        old_game_selections = 0
+        tips = make_tips() + [
+            {
+                "id": 1000 + index,
+                "game": game,
+                "text": f"Новый совет {index}",
+                "category": "strategy",
+                "used": False,
+            }
+            for index, game in enumerate(CURRENT_HIT_GAMES)
+        ]
 
         for seed in range(100):
-            selected = choose_tips(make_tips(), 5, rng=random.Random(seed))
+            selected = choose_tips(tips, 5, rng=random.Random(seed))
             games = {tip["game"] for tip in selected}
+            for game in CURRENT_HIT_GAMES:
+                selections[game] += game in games
+            old_game_selections += len(games - PRIORITY_TIP_GAMES)
 
-            if games & PRIORITY_TIP_GAMES:
-                releases_with_priority += 1
-            else:
-                releases_without_priority += 1
-
-        self.assertGreaterEqual(releases_with_priority, 80)
-        self.assertGreater(releases_without_priority, 0)
+        self.assertTrue(all(count > 0 for count in selections.values()))
+        self.assertGreater(sum(selections.values()), old_game_selections / len(GAMES))
 
     def test_resets_only_after_game_tips_are_exhausted(self):
         tips = make_tips(used=True)
@@ -120,8 +129,28 @@ class TipsRotationTests(unittest.TestCase):
             tips = json.load(file)
 
         self.assertEqual(
-            validate_tip_catalog(tips, set(GAMES), minimum_per_game=15), []
+            validate_tip_catalog(
+                tips,
+                set(GAMES) | set(CURRENT_HIT_GAMES),
+                minimum_per_game=15,
+                minimum_by_game={game: 12 for game in CURRENT_HIT_GAMES},
+            ),
+            [],
         )
+
+    def test_new_games_have_twelve_tips_and_unique_ids(self):
+        import json
+
+        with open("tips.json", "r", encoding="utf-8") as file:
+            tips = json.load(file)
+
+        ids = [tip["id"] for tip in tips]
+        self.assertEqual(len(ids), len(set(ids)))
+
+        for game in CURRENT_HIT_GAMES:
+            game_tips = [tip for tip in tips if tip["game"] == game]
+            self.assertGreaterEqual(len(game_tips), 12)
+            self.assertTrue(all(tip.get("emoji") for tip in game_tips))
 
 
 if __name__ == "__main__":

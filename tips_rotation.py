@@ -1,6 +1,15 @@
 import random
 
-PRIORITY_TIP_GAMES = {"Steal a Brainrot", "99 Nights in the Forest"}
+CURRENT_HIT_GAMES = (
+    "Steal An Egg",
+    "Animal Hospital (Anomaly)",
+    "+1 Speed Keyboard Escape",
+    "Murder Mystery 2",
+)
+
+# Временный редакционный приоритет: новые игры должны заметно появляться
+# в ближайших выпусках 15:00, а не теряться среди старой истории.
+PRIORITY_TIP_GAMES = set(CURRENT_HIT_GAMES)
 
 ALLOWED_TIP_CATEGORIES = {
     "survival",
@@ -73,9 +82,15 @@ def validate_tip_categories(tips):
             )
 
 
-def validate_tip_catalog(tips, game_names, minimum_per_game=15):
+def validate_tip_catalog(
+    tips,
+    game_names,
+    minimum_per_game=15,
+    minimum_by_game=None,
+):
     errors = []
     known_ids = set()
+    minimum_by_game = minimum_by_game or {}
 
     for tip in tips:
         tip_id = tip.get("id")
@@ -90,10 +105,11 @@ def validate_tip_catalog(tips, game_names, minimum_per_game=15):
 
     for game in sorted(game_names):
         count = sum(tip.get("game") == game for tip in tips)
-        if count < minimum_per_game:
+        required_count = minimum_by_game.get(game, minimum_per_game)
+        if count < required_count:
             errors.append(
                 f"В tips.json для {game} только {count} советов; "
-                f"нужно минимум {minimum_per_game}."
+                f"нужно минимум {required_count}."
             )
 
     return errors
@@ -104,8 +120,8 @@ def build_tips_post(selected_tips, game_emojis):
 
     for tip in selected_tips:
         game_emoji = game_emojis.get(tip["game"], "🎮")
-        category_emoji = TIP_CATEGORY_EMOJIS[tip["category"]]
-        blocks.append(f"{game_emoji} {tip['game']}\n" f"{category_emoji} {tip['text']}")
+        tip_emoji = tip.get("emoji", TIP_CATEGORY_EMOJIS[tip["category"]])
+        blocks.append(f"{game_emoji} {tip['game']}\n" f"{tip_emoji} {tip['text']}")
 
     text = "💡 ПОЛЕЗНО ЗНАТЬ\n\n" + "\n\n".join(blocks) + "\n\n🎮 Roblox Hub"
     games = " + ".join(tip["game"] for tip in selected_tips)
@@ -141,7 +157,11 @@ def choose_tips(
 
     recent_set = set(recent_games)
     fresh_games = [game for game in games if game not in recent_set]
-    game_pool = fresh_games if len(fresh_games) >= count else games
+    priority_candidates = [game for game in games if game in priority_games]
+    game_pool = sorted(set(fresh_games + priority_candidates))
+
+    if len(game_pool) < count:
+        game_pool = games
 
     def game_weight(game):
         recent_count = recent_games.count(game)
@@ -172,3 +192,88 @@ def choose_tips(
         selected.append(tip)
 
     return selected
+
+
+def choose_hit_game(games=CURRENT_HIT_GAMES, recent_games=None, rng=None):
+    """Выбирает игру для 19:00 без повтора соседнего выпуска."""
+
+    if recent_games is None:
+        recent_games = []
+    if rng is None:
+        rng = random
+
+    candidates = list(games)
+    if recent_games and len(candidates) > 1:
+        candidates = [game for game in candidates if game != recent_games[-1]]
+
+    if not candidates:
+        raise RuntimeError("Нет игр для рубрики Новинки и хиты Roblox.")
+
+    return rng.choice(candidates)
+
+
+def choose_tips_for_game(tips, game, count=3, rng=None):
+    """Берёт разные советы одной игры, соблюдая полный цикл used."""
+
+    if rng is None:
+        rng = random
+
+    validate_tip_categories(tips)
+    game_tips = [tip for tip in tips if tip.get("game") == game]
+
+    if len(game_tips) < count:
+        raise RuntimeError(f"Для {game} недостаточно советов: {len(game_tips)}.")
+
+    selected = []
+
+    while len(selected) < count:
+        unused = [
+            tip
+            for tip in game_tips
+            if not tip.get("used", False)
+            and tip.get("id") not in {item.get("id") for item in selected}
+        ]
+
+        if not unused:
+            # Новый цикл начинается только после полного расходования игры.
+            for tip in game_tips:
+                tip["used"] = False
+            unused = [
+                tip
+                for tip in game_tips
+                if tip.get("id") not in {item.get("id") for item in selected}
+            ]
+
+        tip = rng.choice(unused)
+        tip["used"] = True
+        selected.append(tip)
+
+    return selected
+
+
+def build_hits_post(game, description, selected_tips, game_emojis):
+    """Собирает единый формат ежедневной рубрики 19:00."""
+
+    if len(selected_tips) != 3:
+        raise ValueError("Для Новинок и хитов нужно ровно три совета.")
+    if any(tip.get("game") != game for tip in selected_tips):
+        raise ValueError("Все советы выпуска должны относиться к выбранной игре.")
+    if len({tip.get("id") for tip in selected_tips}) != 3:
+        raise ValueError("Советы выпуска должны быть разными.")
+
+    game_emoji = game_emojis.get(game, "🎮")
+    tip_lines = []
+
+    for tip in selected_tips:
+        tip_emoji = tip.get("emoji", TIP_CATEGORY_EMOJIS[tip["category"]])
+        tip_lines.append(f"{tip_emoji} {tip['text']}")
+
+    text = (
+        "🔥 НОВИНКИ И ХИТЫ ROBLOX\n\n"
+        f"{game_emoji} {game}\n\n"
+        f"🎮 Что за игра?\n{description}\n\n"
+        + "\n\n".join(tip_lines)
+        + "\n\n🎮 Roblox Hub"
+    )
+
+    return game, text

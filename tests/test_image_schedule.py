@@ -82,7 +82,7 @@ generate_namespace = load_members(
         "BRAWL_TIP_HISTORY_LIMIT",
         "TELEGRAM_CAPTION_MAX_CHARS",
         "TIPS_POST_HOUR",
-        "MYTH_POST_HOUR",
+        "HITS_POST_HOUR",
     },
 )
 
@@ -364,7 +364,7 @@ class ImageScheduleTests(unittest.TestCase):
         self.assertEqual(generate_namespace["ROBLOX_NEWS_HOUR"], 10)
         self.assertEqual(generate_namespace["BRAWL_POST_HOUR"], 12)
         self.assertEqual(generate_namespace["TIPS_POST_HOUR"], 15)
-        self.assertEqual(generate_namespace["MYTH_POST_HOUR"], 19)
+        self.assertEqual(generate_namespace["HITS_POST_HOUR"], 19)
 
         for publish_hour in (10, 12, 15, 19):
             with self.subTest(publish_hour=publish_hour):
@@ -396,7 +396,7 @@ class ImageScheduleTests(unittest.TestCase):
             generate_namespace["ROBLOX_NEWS_HOUR"],
             generate_namespace["BRAWL_POST_HOUR"],
             generate_namespace["TIPS_POST_HOUR"],
-            generate_namespace["MYTH_POST_HOUR"],
+            generate_namespace["HITS_POST_HOUR"],
         )
         all_hours = sorted(
             text_hours + generate_namespace["IMAGE_POST_HOURS"],

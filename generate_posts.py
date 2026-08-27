@@ -4,7 +4,14 @@ import random
 from datetime import datetime, timedelta, timezone
 
 from image_library import select_daily_image
-from tips_rotation import build_tips_post, choose_tips
+from tips_rotation import (
+    CURRENT_HIT_GAMES,
+    build_hits_post,
+    build_tips_post,
+    choose_hit_game,
+    choose_tips,
+    choose_tips_for_game,
+)
 
 LOCAL_TIMEZONE = timezone(timedelta(hours=5))
 
@@ -19,7 +26,7 @@ IMAGE_HISTORY_FILE = "image_history.json"
 ROBLOX_NEWS_HOUR = 10
 BRAWL_POST_HOUR = 12
 TIPS_POST_HOUR = 15
-MYTH_POST_HOUR = 19
+HITS_POST_HOUR = 19
 
 # Утренний fallback старается показать три разные игры,
 # но два проверенных совета уже считаются достаточным
@@ -46,11 +53,12 @@ TELEGRAM_CAPTION_MAX_CHARS = 1024
 ROBLOX_NEWS_HEADER_PATH = "assets/news_headers/roblox_news_header.png"
 BRAWL_NEWS_HEADER_PATH = "assets/news_headers/brawl_news_header.png"
 
-MYTH_HISTORY_LIMIT = 3
 GAME_HISTORY_LIMIT = 5
 TIPS_RELEASE_HISTORY_LIMIT = 3
 TIPS_GAME_HISTORY_FILE = "tips_game_history.json"
 TIPS_CATEGORY_HISTORY_FILE = "tips_category_history.json"
+HITS_GAME_HISTORY_FILE = "hits_game_history.json"
+HITS_GAME_HISTORY_LIMIT = 8
 
 
 GAME_EMOJIS = {
@@ -64,6 +72,29 @@ GAME_EMOJIS = {
     "Dress To Impress": "👗",
     "Pet Simulator 99": "🐶",
     "Blade Ball": "⚔️",
+    "Steal An Egg": "🥚",
+    "Animal Hospital (Anomaly)": "🏥",
+    "+1 Speed Keyboard Escape": "⌨️",
+    "Murder Mystery 2": "🔪",
+}
+
+HITS_GAME_DESCRIPTIONS = {
+    "Steal An Egg": (
+        "Кради яйца, возвращай их на базу и вылупляй питомцев. "
+        "Доход от питомцев помогает улучшать скорость и базу."
+    ),
+    "Animal Hospital (Anomaly)": (
+        "Проверяй пациентов на аномалии по внешности, фото и CCTV. "
+        "Принятых обычных пациентов затем нужно лечить в больнице."
+    ),
+    "+1 Speed Keyboard Escape": (
+        "Набирай Speed, проходи полосы препятствий и получай Wins. "
+        "Улучшения и Rebirth ускоряют следующий цикл прохождения."
+    ),
+    "Murder Mystery 2": (
+        "В каждом раунде Innocent выживают, Sheriff ищет убийцу, "
+        "а Murderer старается не раскрыть себя раньше времени."
+    ),
 }
 
 
@@ -1004,52 +1035,91 @@ def generate_tips_post():
 
 
 # --------------------------------------------------
-# 19:00 — Миф или правда
+# 19:00 — Новинки и хиты Roblox
 # --------------------------------------------------
 
 
-def generate_myth_post():
-    myths = load_json("myths.json")
+def generate_hits_post(rng=None):
+    """Выбирает одну хит-игру и три совета из общей tips.json."""
 
-    myth_history = load_json("myth_history.json", [])
+    if rng is None:
+        rng = random
 
-    game_history = load_json("game_history.json", [])
+    tips = load_json("tips.json")
+    history = load_json(HITS_GAME_HISTORY_FILE, [])
+    game = choose_hit_game(CURRENT_HIT_GAMES, recent_games=history, rng=rng)
+    selected_tips = choose_tips_for_game(tips, game, count=3, rng=rng)
 
-    recent_myth_ids = myth_history[-MYTH_HISTORY_LIMIT:]
+    save_json("tips.json", tips)
+    history.append(game)
+    save_json(HITS_GAME_HISTORY_FILE, history[-HITS_GAME_HISTORY_LIMIT:])
+    remember_game(game)
 
-    available_myths = [
-        myth
-        for myth in myths
-        if myth["id"] not in recent_myth_ids and myth["game"] not in game_history
-    ]
-
-    if not available_myths:
-        available_myths = [myth for myth in myths if myth["id"] not in recent_myth_ids]
-
-    if not available_myths:
-        available_myths = myths
-
-    myth = random.choice(available_myths)
-
-    myth_history.append(myth["id"])
-
-    save_json("myth_history.json", myth_history[-MYTH_HISTORY_LIMIT:])
-
-    remember_game(myth["game"])
-
-    emoji = GAME_EMOJIS.get(myth["game"], "🎮")
-
-    text = (
-        "🧠 МИФ ИЛИ ПРАВДА?\n\n"
-        f"{emoji} {myth['game']}\n\n"
-        f"🔥 {myth['claim']}\n\n"
-        "Как думаешь — правда или миф?\n\n"
-        f"{myth['answer']}\n\n"
-        f"{myth['explanation']}\n\n"
-        "🎮 Roblox Hub"
+    return build_hits_post(
+        game,
+        HITS_GAME_DESCRIPTIONS[game],
+        selected_tips,
+        GAME_EMOJIS,
     )
 
-    return (myth["game"], text)
+
+def remove_pending_legacy_myth(posts, target_date):
+    """Удаляет только неопубликованный старый 19:00-пост текущей даты."""
+
+    target_prefix = target_date.isoformat()
+    kept_posts = []
+    removed = 0
+
+    for post in posts:
+        is_current_pending_myth = (
+            post.get("rubric") == "Миф или правда"
+            and post.get("status") == "pending"
+            and post.get("publish_at", "").startswith(target_prefix)
+            and datetime.fromisoformat(post["publish_at"]).hour == HITS_POST_HOUR
+        )
+
+        if is_current_pending_myth:
+            removed += 1
+        else:
+            kept_posts.append(post)
+
+    posts[:] = kept_posts
+    return removed
+
+
+def schedule_hits_post(existing_posts, target_date, post_generator=None):
+    """Мигрирует legacy pending и создаёт максимум один пост на 19:00."""
+
+    remove_pending_legacy_myth(existing_posts, target_date)
+    post_id = f"{target_date}-{HITS_POST_HOUR}"
+
+    if find_post(existing_posts, post_id) is not None:
+        print("19:00 — пост уже существует.")
+        return 0
+
+    if post_generator is None:
+        post_generator = generate_hits_post
+
+    game, text = post_generator()
+    existing_posts.append(
+        build_post(
+            post_id=post_id,
+            publish_at=datetime(
+                target_date.year,
+                target_date.month,
+                target_date.day,
+                HITS_POST_HOUR,
+                0,
+                tzinfo=LOCAL_TIMEZONE,
+            ),
+            game=game,
+            rubric="Новинки и хиты Roblox",
+            source="verified_db",
+            text=text,
+        )
+    )
+    print(f"19:00 — Новинки и хиты Roblox: {game}")
+    return 1
 
 
 # --------------------------------------------------
@@ -1065,7 +1135,6 @@ target_date = now.date()
 
 
 id_15 = f"{target_date}-{TIPS_POST_HOUR}"
-id_19 = f"{target_date}-{MYTH_POST_HOUR}"
 
 
 # --------------------------------------------------
@@ -1162,39 +1231,10 @@ posts_added += schedule_image_posts(
 
 
 # --------------------------------------------------
-# 19:00
+# 19:00 — Новинки и хиты Roblox
 # --------------------------------------------------
 
-post_19 = find_post(existing_posts, id_19)
-
-
-if post_19 is None:
-    myth_game, myth_text = generate_myth_post()
-
-    existing_posts.append(
-        build_post(
-            post_id=id_19,
-            publish_at=datetime(
-                target_date.year,
-                target_date.month,
-                target_date.day,
-                MYTH_POST_HOUR,
-                0,
-                tzinfo=LOCAL_TIMEZONE,
-            ),
-            game=myth_game,
-            rubric="Миф или правда",
-            source="verified_db",
-            text=myth_text,
-        )
-    )
-
-    posts_added += 1
-
-    print(f"19:00 — Миф или правда: " f"{myth_game}")
-
-else:
-    print("19:00 — пост уже существует.")
+posts_added += schedule_hits_post(existing_posts, target_date)
 
 
 # --------------------------------------------------

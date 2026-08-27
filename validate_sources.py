@@ -2,7 +2,7 @@ import json
 from pathlib import Path
 from urllib.parse import urlparse
 
-from tips_rotation import validate_tip_catalog
+from tips_rotation import CURRENT_HIT_GAMES, validate_tip_catalog
 
 GAMES_FILE = Path("games.json")
 SOURCES_FILE = Path("official_sources.json")
@@ -166,8 +166,12 @@ def validate_content_files(canonical_names):
         if not path.exists():
             continue
 
+        allowed_names = set(canonical_names)
+        if path == Path("tips.json"):
+            allowed_names.update(CURRENT_HIT_GAMES)
+
         for name in sorted(set(walk_game_names(load_json(path)))):
-            if name not in canonical_names:
+            if name not in allowed_names:
                 errors.append(
                     f"{path}: неизвестное или иначе написанное название «{name}»."
                 )
@@ -181,7 +185,15 @@ def validate_content_files(canonical_names):
             "В tips.json нет советов для игр: " + ", ".join(missing_tips) + "."
         )
 
-    errors.extend(validate_tip_catalog(tips, canonical_names, minimum_per_game=15))
+    all_tip_games = canonical_names | set(CURRENT_HIT_GAMES)
+    errors.extend(
+        validate_tip_catalog(
+            tips,
+            all_tip_games,
+            minimum_per_game=15,
+            minimum_by_game={game: 12 for game in CURRENT_HIT_GAMES},
+        )
+    )
 
     return errors
 
