@@ -73,7 +73,7 @@
       }
     ],
     "priority": false,
-    "checked_at": "2026-08-27T08:26:43.532469+00:00",
+    "checked_at": "2026-08-27T15:03:46.644553+00:00",
     "sources": [
       {
         "type": "official_game_description",
@@ -99,7 +99,7 @@
         "latest_published_at": "2026-08-22",
         "status": "accepted",
         "result_code": "FOUND_VERIFIED",
-        "reason": "Свежая официальная публикация (5.4 дн.) с датой и содержанием.",
+        "reason": "Свежая официальная публикация (5.6 дн.) с датой и содержанием.",
         "available": true,
         "article_found": true,
         "date_found": true,
@@ -177,7 +177,7 @@
         "latest_published_at": "2026-08-22",
         "status": "accepted",
         "result_code": "FOUND_VERIFIED",
-        "reason": "Свежая официальная публикация (5.4 дн.) с датой и содержанием.",
+        "reason": "Свежая официальная публикация (5.6 дн.) с датой и содержанием.",
         "available": true,
         "article_found": true,
         "date_found": true,
@@ -193,7 +193,7 @@
       "latest_published_at": "2026-08-22",
       "status": "accepted",
       "result_code": "FOUND_VERIFIED",
-      "reason": "Свежая официальная публикация (5.4 дн.) с датой и содержанием.",
+      "reason": "Свежая официальная публикация (5.6 дн.) с датой и содержанием.",
       "available": true,
       "article_found": true,
       "date_found": true,
@@ -206,7 +206,7 @@
       "url": "https://www.biggames.io/post/pet-simulator-99-update-90",
       "title": "Lucky Block Breakout!",
       "published_at": "2026-08-22",
-      "age_days": 5.356133415081018
+      "age_days": 5.627625077627315
     },
     "candidate_decision": {
       "status": "accepted",
@@ -245,7 +245,7 @@
       }
     ],
     "priority": true,
-    "checked_at": "2026-08-27T08:26:43.517632+00:00",
+    "checked_at": "2026-08-27T15:03:46.630533+00:00",
     "sources": [
       {
         "type": "official_game_description",
@@ -344,7 +344,7 @@
     "facts": [],
     "description_facts": [],
     "priority": true,
-    "checked_at": "2026-08-27T08:26:43.518173+00:00",
+    "checked_at": "2026-08-27T15:03:46.631006+00:00",
     "sources": [
       {
         "type": "official_game_description",
@@ -456,7 +456,7 @@
       }
     ],
     "priority": false,
-    "checked_at": "2026-08-27T08:26:43.521684+00:00",
+    "checked_at": "2026-08-27T15:03:46.633879+00:00",
     "sources": [
       {
         "type": "official_game_description",
@@ -477,7 +477,7 @@
         "latest_published_at": "2026-08-06T22:02:43Z",
         "status": "rejected",
         "result_code": "SOURCE_STALE",
-        "reason": "Публикация устарела: 20.4 дн. (лимит 7).",
+        "reason": "Публикация устарела: 20.7 дн. (лимит 7).",
         "available": true,
         "article_found": true,
         "date_found": true,
@@ -555,7 +555,7 @@
         "latest_published_at": "2026-08-06T22:02:43Z",
         "status": "rejected",
         "result_code": "SOURCE_STALE",
-        "reason": "Публикация устарела: 20.4 дн. (лимит 7).",
+        "reason": "Публикация устарела: 20.7 дн. (лимит 7).",
         "available": true,
         "article_found": true,
         "date_found": true,
@@ -571,7 +571,7 @@
       "latest_published_at": "2026-08-06T22:02:43Z",
       "status": "rejected",
       "result_code": "SOURCE_STALE",
-      "reason": "Публикация устарела: 20.4 дн. (лимит 7).",
+      "reason": "Публикация устарела: 20.7 дн. (лимит 7).",
       "available": true,
       "article_found": true,
       "date_found": true,
@@ -684,7 +684,7 @@
       }
     ],
     "priority": false,
-    "checked_at": "2026-08-27T08:26:43.525211+00:00",
+    "checked_at": "2026-08-27T15:03:46.637113+00:00",
     "sources": [
       {
         "type": "official_game_description",
@@ -896,7 +896,7 @@
       }
     ],
     "priority": false,
-    "checked_at": "2026-08-27T08:26:43.526953+00:00",
+    "checked_at": "2026-08-27T15:03:46.638886+00:00",
     "sources": [
       {
         "type": "official_game_description",
@@ -1097,7 +1097,7 @@
       }
     ],
     "priority": false,
-    "checked_at": "2026-08-27T08:26:43.529175+00:00",
+    "checked_at": "2026-08-27T15:03:46.641096+00:00",
     "sources": [
       {
         "type": "official_game_description",
@@ -1209,7 +1209,7 @@
     "facts": [],
     "description_facts": [],
     "priority": false,
-    "checked_at": "2026-08-27T08:26:43.530936+00:00",
+    "checked_at": "2026-08-27T15:03:46.642811+00:00",
     "sources": [
       {
         "type": "official_game_description",
@@ -1291,7 +1291,7 @@
     "universe_id": 5203828273,
     "roblox_name": "[🌴] Dress To Impress",
     "description": "Create stunning outfits 👗💖⭐, and strut the runway to show off your unique style. Collaborate, compete, and explore a world of glamour with friends!\n\n⭐ Are you ready to be the TOP MODEL?\n👗 NEW ITEMS! Check them out.\n🍿 Vote for your favorite outfits!\n💃 Use poses on the runway to show off your outfit!\n\nFind more about Dress To Impress by joining our community.\nhttps://www.roblox.com/communities/17264167/Dress-To-Impress-Group#!/about",
-    "updated": "2026-08-27T04:15:14.930764Z",
+    "updated": "2026-08-27T13:57:35.3819089Z",
     "created": "2023-10-18T09:11:36.563Z",
     "creator": {
       "id": 17264167,
@@ -1348,7 +1348,7 @@
       }
     ],
     "priority": false,
-    "checked_at": "2026-08-27T08:26:43.532139+00:00",
+    "checked_at": "2026-08-27T15:03:46.644170+00:00",
     "sources": [
       {
         "type": "official_game_description",
@@ -1369,7 +1369,7 @@
         "latest_published_at": "2026-07-02T15:00:06+00:00",
         "status": "rejected",
         "result_code": "SOURCE_STALE",
-        "reason": "Публикация устарела: 55.7 дн. (лимит 7).",
+        "reason": "Публикация устарела: 56.0 дн. (лимит 7).",
         "available": true,
         "article_found": true,
         "date_found": true,
@@ -1381,7 +1381,7 @@
       {
         "source_type": "official_game_description",
         "source_url": "https://www.roblox.com/games/15101393044/Dress-To-Impress",
-        "latest_published_at": "2026-08-27T04:15:14.930764Z",
+        "latest_published_at": "2026-08-27T13:57:35.3819089Z",
         "status": "rejected",
         "result_code": "NO_NEW_CONTENT",
         "available": true,
@@ -1449,7 +1449,7 @@
         "latest_published_at": "2026-07-02T15:00:06+00:00",
         "status": "rejected",
         "result_code": "SOURCE_STALE",
-        "reason": "Публикация устарела: 55.7 дн. (лимит 7).",
+        "reason": "Публикация устарела: 56.0 дн. (лимит 7).",
         "available": true,
         "article_found": true,
         "date_found": true,
@@ -1465,7 +1465,7 @@
       "latest_published_at": "2026-07-02T15:00:06+00:00",
       "status": "rejected",
       "result_code": "SOURCE_STALE",
-      "reason": "Публикация устарела: 55.7 дн. (лимит 7).",
+      "reason": "Публикация устарела: 56.0 дн. (лимит 7).",
       "available": true,
       "article_found": true,
       "date_found": true,
@@ -1513,7 +1513,7 @@
       }
     ],
     "priority": false,
-    "checked_at": "2026-08-27T08:26:43.534456+00:00",
+    "checked_at": "2026-08-27T15:03:46.646679+00:00",
     "sources": [
       {
         "type": "official_game_description",
@@ -1549,7 +1549,7 @@
         "latest_published_at": "2024-03-23T18:51:42Z",
         "status": "rejected",
         "result_code": "SOURCE_STALE",
-        "reason": "Публикация устарела: 886.6 дн. (лимит 7).",
+        "reason": "Публикация устарела: 886.8 дн. (лимит 7).",
         "available": true,
         "article_found": true,
         "date_found": true,
@@ -1640,7 +1640,7 @@
         "latest_published_at": "2024-03-23T18:51:42Z",
         "status": "rejected",
         "result_code": "SOURCE_STALE",
-        "reason": "Публикация устарела: 886.6 дн. (лимит 7).",
+        "reason": "Публикация устарела: 886.8 дн. (лимит 7).",
         "available": true,
         "article_found": true,
         "date_found": true,
@@ -1656,7 +1656,7 @@
       "latest_published_at": "2024-03-23T18:51:42Z",
       "status": "rejected",
       "result_code": "SOURCE_STALE",
-      "reason": "Публикация устарела: 886.6 дн. (лимит 7).",
+      "reason": "Публикация устарела: 886.8 дн. (лимит 7).",
       "available": true,
       "article_found": true,
       "date_found": true,
