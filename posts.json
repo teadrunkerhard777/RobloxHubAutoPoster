@@ -674,9 +674,9 @@
     "rubric": "Утренний выпуск",
     "source": "verified_fallback",
     "text": "🎮 ROBLOX HUB — УТРО\n\nСегодня без крупных подтверждённых обновлений, поэтому держи полезное 👇\n\n🐾 Adopt Me!\nЕсли собираешь коллекцию, заранее выбери цель — так проще не тратить ресурсы на случайные обмены.\n\n🔫 RIVALS\nПосле поражения попробуй определить одну причину: позиция, прицеливание или слишком рискованный выход.\n\n🐶 Pet Simulator 99\nКогда получаешь новых питомцев, сравнивай их с текущей командой и заменяй более слабых.\n\n🎮 Roblox Hub",
-    "status": "pending",
-    "published_at": null,
-    "attempts": 0,
+    "status": "published",
+    "published_at": "2026-08-27T10:00:39.679550+05:00",
+    "attempts": 1,
     "last_error": null,
     "image_path": "assets/news_headers/roblox_news_header.png"
   },
