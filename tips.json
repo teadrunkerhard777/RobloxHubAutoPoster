@@ -66,7 +66,7 @@
     "text": "Храни несколько лечащих предметов на случай, если придётся поднимать товарища после тяжёлой атаки.",
     "source": "verified_core_mechanic",
     "reviewed_at": "2026-08-14",
-    "used": false,
+    "used": true,
     "category": "items"
   },
   {
@@ -226,7 +226,7 @@
     "text": "После расширения базы размещай самые ценные Brainrot так, чтобы до них было сложнее добраться.",
     "source": "verified_core_mechanic",
     "reviewed_at": "2026-08-14",
-    "used": false,
+    "used": true,
     "category": "building"
   },
   {
@@ -346,7 +346,7 @@
     "text": "Следи за ассортиментом Dealer, если ищешь конкретный фрукт: ждать случайного появления на карте не всегда выгодно.",
     "source": "verified_core_mechanic",
     "reviewed_at": "2026-08-14",
-    "used": false,
+    "used": true,
     "category": "economy"
   },
   {
@@ -436,7 +436,7 @@
     "text": "Используй внешний вид персонажа под роль — даже небольшая смена одежды делает сцену понятнее другим игрокам.",
     "source": "verified_core_mechanic",
     "reviewed_at": "2026-08-14",
-    "used": false,
+    "used": true,
     "category": "items"
   },
   {
@@ -506,7 +506,7 @@
     "text": "Если собираешь коллекцию, заранее выбери цель — так проще не тратить ресурсы на случайные обмены.",
     "source": "verified_core_mechanic",
     "reviewed_at": "2026-08-14",
-    "used": false,
+    "used": true,
     "category": "collection"
   },
   {
@@ -696,7 +696,7 @@
     "text": "После поражения попробуй определить одну причину: позиция, прицеливание или слишком рискованный выход.",
     "source": "verified_core_mechanic",
     "reviewed_at": "2026-08-14",
-    "used": false,
+    "used": true,
     "category": "strategy"
   },
   {
@@ -976,7 +976,7 @@
     "text": "Когда получаешь новых питомцев, сравнивай их с текущей командой и заменяй более слабых.",
     "source": "verified_core_mechanic",
     "reviewed_at": "2026-08-14",
-    "used": false,
+    "used": true,
     "category": "strategy"
   },
   {
@@ -1136,7 +1136,7 @@
     "text": "Не стой вплотную к другим игрокам без необходимости — так сложнее понять, в кого полетит мяч дальше.",
     "source": "verified_core_mechanic",
     "reviewed_at": "2026-08-14",
-    "used": false,
+    "used": true,
     "category": "strategy"
   },
   {
