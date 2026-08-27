@@ -7,6 +7,7 @@ from pathlib import Path
 from tempfile import TemporaryDirectory
 
 from image_library import select_daily_image
+from post_hashtags import add_post_hashtags
 
 PROJECT_ROOT = Path(__file__).parents[1]
 
@@ -37,6 +38,7 @@ def load_members(file_name, function_names, constant_names):
                 selected_nodes.append(node)
 
     namespace = {
+        "add_post_hashtags": add_post_hashtags,
         "datetime": datetime,
         "timedelta": timedelta,
         "timezone": timezone,
@@ -161,6 +163,12 @@ class ImageScheduleTests(unittest.TestCase):
         self.assertEqual(
             len({post["image_path"] for post in posts}),
             4,
+        )
+        self.assertTrue(
+            all(
+                post["text"] == "#Roblox #BrawlStars #StealABrainrot #99Nights"
+                for post in posts
+            )
         )
 
     def test_only_new_image_hours_are_scheduled(self):
@@ -520,7 +528,10 @@ class ImageScheduleTests(unittest.TestCase):
 
         self.assertEqual(added, 1)
         self.assertEqual(posts[0]["source"], "verified_brawl_fallback")
-        self.assertEqual(posts[0]["text"], "Проверенный Brawl fallback")
+        self.assertEqual(
+            posts[0]["text"],
+            "Проверенный Brawl fallback\n\n" "#BrawlStars #ПолезноЗнать #RobloxHub",
+        )
         self.assertEqual(
             posts[0]["image_path"],
             "assets/news_headers/brawl_news_header.png",
@@ -540,7 +551,10 @@ class ImageScheduleTests(unittest.TestCase):
 
         self.assertEqual(added, 1)
         self.assertNotIn("image_path", posts[0])
-        self.assertEqual(posts[0]["text"], "Проверенный Brawl fallback")
+        self.assertEqual(
+            posts[0]["text"],
+            "Проверенный Brawl fallback\n\n" "#BrawlStars #ПолезноЗнать #RobloxHub",
+        )
 
     def test_news_header_text_is_sent_as_photo_caption(self):
         post = {
@@ -603,7 +617,7 @@ class ImageScheduleTests(unittest.TestCase):
 
         caption = posts[0]["text"]
         self.assertLessEqual(len(caption), 1024)
-        self.assertTrue(caption.endswith("⭐ Roblox Hub"))
+        self.assertTrue(caption.endswith("#BrawlStars #ПолезноЗнать #RobloxHub"))
 
     def test_published_news_header_is_not_sent_again(self):
         post = {

@@ -4,6 +4,7 @@ import random
 from datetime import datetime, timedelta, timezone
 
 from image_library import select_daily_image
+from post_hashtags import add_post_hashtags, update_pending_post_hashtags
 from tips_rotation import (
     CURRENT_HIT_GAMES,
     build_hits_post,
@@ -104,6 +105,11 @@ HITS_GAME_DESCRIPTIONS = {
 
 
 def build_post(post_id, publish_at, game, rubric, text, source, image_path=None):
+    text = add_post_hashtags(text, rubric, game, source=source)
+
+    if image_path is not None:
+        text = fit_telegram_caption(text)
+
     post = {
         "id": post_id,
         "publish_at": publish_at.isoformat(),
@@ -280,6 +286,15 @@ def schedule_image_posts(
         )
 
         if existing_post is not None:
+            if existing_post.get("status") != "published":
+                existing_post["text"] = fit_telegram_caption(
+                    add_post_hashtags(
+                        existing_post.get("text", ""),
+                        existing_post.get("rubric"),
+                        existing_post.get("game"),
+                        source=existing_post.get("source"),
+                    )
+                )
             print(f"{publish_hour:02d}:00 — пост с картинкой уже существует.")
             continue
 
@@ -510,7 +525,14 @@ def schedule_brawl_post(
         # Pending/failed Brawl-пост не пересобираем и не расходуем
         # следующий fallback-совет. Только безопасно переводим
         # существующую запись на photo-формат с тем же ID.
-        existing_post["text"] = fit_telegram_caption(existing_post.get("text", ""))
+        existing_post["text"] = fit_telegram_caption(
+            add_post_hashtags(
+                existing_post.get("text", ""),
+                existing_post.get("rubric"),
+                existing_post.get("game"),
+                source=existing_post.get("source"),
+            )
+        )
         header_path = resolve_news_header(
             BRAWL_NEWS_HEADER_PATH,
             path_checker=header_checker,
@@ -1142,6 +1164,10 @@ id_15 = f"{target_date}-{TIPS_POST_HOUR}"
 # --------------------------------------------------
 
 existing_posts = load_json("posts.json", [])
+
+# Старые published-записи остаются архивом без изменений. Pending/failed
+# записи получают теги идемпотентно при следующей подготовке очереди.
+update_pending_post_hashtags(existing_posts)
 
 
 posts_added = 0

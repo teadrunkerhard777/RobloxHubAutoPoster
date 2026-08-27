@@ -4,6 +4,8 @@ import unittest
 from datetime import date, datetime, timedelta, timezone
 from pathlib import Path
 
+from post_hashtags import add_post_hashtags
+
 PROJECT_ROOT = Path(__file__).parents[1]
 
 
@@ -54,6 +56,7 @@ def load_morning_functions():
                 selected_nodes.append(node)
 
     namespace = {
+        "add_post_hashtags": add_post_hashtags,
         "datetime": datetime,
         "timedelta": timedelta,
         "timezone": timezone,

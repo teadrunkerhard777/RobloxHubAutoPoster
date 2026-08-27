@@ -5,6 +5,7 @@ import unittest
 from datetime import date, datetime, timedelta, timezone
 from pathlib import Path
 
+from post_hashtags import add_post_hashtags
 from tips_rotation import (
     CURRENT_HIT_GAMES,
     build_hits_post,
@@ -38,6 +39,7 @@ def load_schedule_members():
                 nodes.append(node)
 
     namespace = {
+        "add_post_hashtags": add_post_hashtags,
         "datetime": datetime,
         "timedelta": timedelta,
         "timezone": timezone,
@@ -114,6 +116,7 @@ class HitsRotationTests(unittest.TestCase):
         self.assertEqual(len(posts), 1)
         self.assertEqual(posts[0]["rubric"], "Новинки и хиты Roblox")
         self.assertEqual(datetime.fromisoformat(posts[0]["publish_at"]).hour, 19)
+        self.assertTrue(posts[0]["text"].endswith("#Roblox #StealAnEgg #НовинкиRoblox"))
 
     def test_pending_current_myth_is_replaced_without_duplicate(self):
         target = date(2026, 8, 28)
