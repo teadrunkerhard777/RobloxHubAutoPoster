@@ -1,8 +1,9 @@
 import json
 import os
 import re
-from datetime import date
+from datetime import date, datetime, timezone
 from difflib import SequenceMatcher
+from urllib.parse import urljoin
 
 import requests
 from bs4 import BeautifulSoup
@@ -21,6 +22,16 @@ init(autoreset=True)
 
 # Главная страница официального блога Brawl Stars.
 BLOG_URL = "https://supercell.com/en/games/brawlstars/blog/"
+
+# Корневая страница и page/1 сейчас частично дублируются, но проверяем обе:
+# Supercell может изменить каноническую пагинацию без предупреждения.
+BLOG_PAGE_URLS = (
+    BLOG_URL,
+    f"{BLOG_URL}page/1/",
+    f"{BLOG_URL}page/2/",
+)
+
+BRAWL_NEWS_MAX_AGE_DAYS = 7
 
 # Официальный русский архив Brawl Stars.
 # Slug русской статьи может отличаться от английского,
@@ -372,6 +383,35 @@ def make_article_key(article):
     return article["url"]
 
 
+def is_recent_article(article, today=None, max_age_days=BRAWL_NEWS_MAX_AGE_DAYS):
+    """Не позволяет старой статье стать новой лишь из-за новой pagination."""
+
+    published_date = normalize_article_date(article.get("date"))
+
+    if published_date is None:
+        return False
+
+    if today is None:
+        today = datetime.now(timezone.utc).date()
+
+    age_days = (today - date.fromisoformat(published_date)).days
+
+    return 0 <= age_days <= max_age_days
+
+
+def find_new_articles(articles, old_articles, today=None):
+    """Возвращает только ранее неизвестные и реально свежие URL."""
+
+    old_article_keys = {make_article_key(article) for article in old_articles}
+
+    return [
+        article
+        for article in articles
+        if make_article_key(article) not in old_article_keys
+        and is_recent_article(article, today=today)
+    ]
+
+
 def fetch_article_text(article_url):
     """
     Загружает страницу статьи Supercell
@@ -384,49 +424,14 @@ def fetch_article_text(article_url):
     Возвращаем список текстовых блоков.
     """
 
-    response = requests.get(
-        article_url,
-        timeout=15,
-    )
+    details = fetch_article_details(article_url)
 
-    # Если статья не загрузилась,
-    # возвращаем пустой список.
-    if response.status_code != 200:
+    if not details["available"]:
         print_warning(f"⚠ Не удалось загрузить статью: {article_url}")
 
         return []
 
-    # Supercell использует UTF-8.
-    html = response.content.decode("utf-8")
-
-    soup = BeautifulSoup(
-        html,
-        "html.parser",
-    )
-
-    content = []
-
-    # Собираем основные текстовые элементы статьи.
-    for element in soup.find_all(["h1", "h2", "h3", "p"]):
-        text = element.get_text(
-            " ",
-            strip=True,
-        )
-
-        # Пустые элементы пропускаем.
-        if not text:
-            continue
-
-        # Не сохраняем технический подвал Supercell.
-        if text in (
-            "Follow us on",
-            "Download our games from",
-        ):
-            break
-
-        content.append(text)
-
-    return content
+    return details["content"]
 
 
 def clean_article_content(content, article_title):
@@ -573,6 +578,234 @@ def extract_archive_article_date(link):
     )
 
     return normalize_article_date(date_text)
+
+
+def extract_blog_articles(html, page_url):
+    """Собирает официальные статьи с одной страницы архива."""
+
+    soup = BeautifulSoup(
+        html,
+        "html.parser",
+    )
+    articles = []
+    seen_urls = set()
+
+    for link in soup.find_all("a", href=True):
+        href = link.get("href", "")
+
+        if "/games/brawlstars/blog/" not in href:
+            continue
+
+        if "/blog/page/" in href:
+            continue
+
+        full_url = urljoin(BASE_URL, href)
+
+        if full_url in seen_urls:
+            continue
+
+        title = link.get_text(" ", strip=True)
+
+        if not title:
+            continue
+
+        seen_urls.add(full_url)
+        articles.append(
+            {
+                "title": title,
+                "url": full_url,
+                "category": get_article_category(href),
+                "date": extract_archive_article_date(link),
+                "archive_page": page_url,
+            }
+        )
+
+    return articles
+
+
+def fetch_blog_articles(page_urls=None):
+    """Читает несколько страниц, не падая из-за сбоя одной из них."""
+
+    if page_urls is None:
+        page_urls = BLOG_PAGE_URLS
+
+    articles_by_url = {}
+    page_health = []
+
+    for page_url in page_urls:
+        try:
+            response = requests.get(
+                page_url,
+                timeout=15,
+            )
+        except requests.RequestException as error:
+            page_health.append(
+                {
+                    "url": page_url,
+                    "available": False,
+                    "status_code": None,
+                    "articles_found": 0,
+                    "error": str(error),
+                }
+            )
+            continue
+
+        if response.status_code != 200:
+            page_health.append(
+                {
+                    "url": page_url,
+                    "available": False,
+                    "status_code": response.status_code,
+                    "articles_found": 0,
+                    "error": f"HTTP {response.status_code}",
+                }
+            )
+            continue
+
+        page_articles = extract_blog_articles(
+            response.content.decode("utf-8"),
+            page_url,
+        )
+        page_health.append(
+            {
+                "url": page_url,
+                "available": True,
+                "status_code": response.status_code,
+                "articles_found": len(page_articles),
+                "error": None,
+            }
+        )
+
+        for article in page_articles:
+            existing = articles_by_url.get(article["url"])
+
+            # Если дубликат на другой странице содержит дату, сохраняем её.
+            if existing is None or (not existing.get("date") and article.get("date")):
+                articles_by_url[article["url"]] = article
+
+    articles = list(articles_by_url.values())
+    articles.sort(
+        key=lambda article: (
+            article.get("date") is not None,
+            article.get("date") or "",
+        ),
+        reverse=True,
+    )
+
+    for index, article in enumerate(articles):
+        article["archive_index"] = index
+
+    return articles, page_health
+
+
+def extract_article_page_date(soup):
+    """Читает дату статьи: содержимое страницы, затем metadata."""
+
+    article_scope = soup.find("article") or soup.find("main") or soup
+
+    for element in article_scope.find_all(
+        ["time", "p", "span"],
+    ):
+        candidates = [
+            element.get("datetime"),
+            element.get_text(" ", strip=True),
+        ]
+
+        for candidate in candidates:
+            if isinstance(candidate, str):
+                iso_match = re.match(
+                    r"(\d{4}-\d{2}-\d{2})",
+                    candidate.strip(),
+                )
+
+                if iso_match:
+                    normalized = normalize_article_date(iso_match.group(1))
+
+                    if normalized:
+                        return normalized
+
+            normalized = normalize_article_date(candidate)
+
+            if normalized:
+                return normalized
+
+    for attributes in (
+        {"property": "article:published_time"},
+        {"name": "date"},
+        {"name": "publish_date"},
+    ):
+        meta = soup.find("meta", attrs=attributes)
+
+        if not meta:
+            continue
+
+        raw_value = meta.get("content", "")
+        iso_match = re.match(r"(\d{4}-\d{2}-\d{2})", raw_value)
+
+        if iso_match:
+            return normalize_article_date(iso_match.group(1))
+
+        normalized = normalize_article_date(raw_value)
+
+        if normalized:
+            return normalized
+
+    return None
+
+
+def fetch_article_details(article_url, archive_date=None):
+    """Загружает текст и точную дату официальной статьи."""
+
+    try:
+        response = requests.get(
+            article_url,
+            timeout=15,
+        )
+    except requests.RequestException as error:
+        return {
+            "content": [],
+            "published_date": None,
+            "available": False,
+            "error": str(error),
+            "html": "",
+        }
+
+    if response.status_code != 200:
+        return {
+            "content": [],
+            "published_date": None,
+            "available": False,
+            "error": f"HTTP {response.status_code}",
+            "html": "",
+        }
+
+    html = response.content.decode("utf-8")
+    soup = BeautifulSoup(
+        html,
+        "html.parser",
+    )
+    content = []
+
+    for element in soup.find_all(["h1", "h2", "h3", "p"]):
+        text = element.get_text(" ", strip=True)
+
+        if not text:
+            continue
+
+        if text in ("Follow us on", "Download our games from"):
+            break
+
+        content.append(text)
+
+    return {
+        "content": content,
+        "published_date": (
+            extract_article_page_date(soup) or normalize_article_date(archive_date)
+        ),
+        "available": True,
+        "error": None,
+        "html": html,
+    }
 
 
 def fetch_russian_articles():
@@ -1115,7 +1348,11 @@ def enrich_new_articles(articles):
     for article in articles:
         print(Fore.CYAN + f"Читаю статью: {article['title']}")
 
-        content = fetch_article_text(article["url"])
+        details = fetch_article_details(
+            article["url"],
+            archive_date=article.get("date"),
+        )
+        content = details["content"]
 
         # Убираем повторы заголовка и служебные строки.
         clean_content = clean_article_content(
@@ -1130,6 +1367,12 @@ def enrich_new_articles(articles):
             # Очищенный текст будет использовать
             # будущий генератор новостей.
             "clean_content": clean_content,
+            # Дата страницы имеет приоритет над metadata карточки;
+            # если её нет, fetch_article_details сохраняет дату архива.
+            "date": details["published_date"],
+            "source_available": details["available"],
+            "source_error": details["error"],
+            "extraction_success": bool(clean_content),
         }
 
         # Добавляем редакторскую оценку статьи:
@@ -1173,37 +1416,124 @@ def split_articles_by_priority(articles):
     return high_priority_articles, medium_priority_articles
 
 
+def build_brawl_source_health(
+    page_health,
+    articles,
+    new_articles,
+):
+    """Формирует прозрачную статистику Brawl без влияния на публикацию."""
+
+    return {
+        "pages_checked": len(page_health),
+        "pages_available": sum(page.get("available") is True for page in page_health),
+        "pages_failed": sum(page.get("available") is not True for page in page_health),
+        "articles_found": len(articles),
+        "new_articles": len(new_articles),
+        "extraction_success": sum(
+            article.get("extraction_success") is True for article in new_articles
+        ),
+        "extraction_failed": sum(
+            article.get("source_available") is True
+            and article.get("extraction_success") is not True
+            for article in new_articles
+        ),
+        "high": sum(article.get("priority") == "high" for article in new_articles),
+        "medium": sum(article.get("priority") == "medium" for article in new_articles),
+        "low": sum(article.get("priority") == "low" for article in new_articles),
+        "verification_passed": sum(
+            article.get("priority") in {"high", "medium"}
+            and article.get("ru_found") is True
+            for article in new_articles
+        ),
+        "verification_rejected": sum(
+            article.get("priority") == "low"
+            or (
+                article.get("priority") in {"high", "medium"}
+                and article.get("ru_found") is not True
+            )
+            for article in new_articles
+        ),
+    }
+
+
+def print_brawl_source_health(page_health, articles, new_articles):
+    """Показывает, на каком этапе потерялась каждая Brawl-статья."""
+
+    health = build_brawl_source_health(
+        page_health,
+        articles,
+        new_articles,
+    )
+
+    print_section("NEWS SOURCE HEALTH — BRAWL")
+    print("Страниц блога проверено:", health["pages_checked"])
+    print("Страниц работают:", health["pages_available"])
+    print("Ошибок страниц:", health["pages_failed"])
+    print("Статей найдено:", health["articles_found"])
+    print("Новых:", health["new_articles"])
+    print("Extraction успешен:", health["extraction_success"])
+    print("Extraction failed:", health["extraction_failed"])
+    print("HIGH:", health["high"])
+    print("MEDIUM:", health["medium"])
+    print("LOW:", health["low"])
+    print("Прошли verification:", health["verification_passed"])
+    print("Отклонены verification:", health["verification_rejected"])
+
+    for page in page_health:
+        code = "SOURCE_AVAILABLE" if page["available"] else "SOURCE_UNAVAILABLE"
+        reason = (
+            f"найдено статей: {page['articles_found']}"
+            if page["available"]
+            else page["error"]
+        )
+        print(f"- {page['url']}: {code} — {reason}")
+
+    for article in new_articles:
+        if not article.get("source_available"):
+            code = "SOURCE_UNAVAILABLE"
+            reason = article.get("source_error") or "страница не загрузилась"
+        elif not article.get("extraction_success"):
+            code = "EXTRACTION_FAILED"
+            reason = "страница загружена, но содержательный текст не извлечён"
+        elif (
+            article.get("priority") in {"high", "medium"}
+            and article.get("ru_found") is not True
+        ):
+            code = "FOUND_REJECTED"
+            reason = "кандидат найден, но официальная русская версия " "не подтверждена"
+        elif article.get("priority") in {"high", "medium"}:
+            code = "FOUND_VERIFIED"
+            reason = f"приоритет {article['priority'].upper()}"
+        else:
+            code = "FOUND_REJECTED"
+            reason = "приоритет LOW"
+
+        print(
+            f"- {article.get('title', '?')}: {code} — {reason}; "
+            f"дата={article.get('date') or 'не найдена'}"
+        )
+
+
 # ---------------------------------------------------------
 # 1. ЗАГРУЖАЕМ БЛОГ
 # ---------------------------------------------------------
 
 print_section("BRAWL STARS BLOG")
 
-response = requests.get(
-    BLOG_URL,
-    timeout=15,
-)
+articles, brawl_page_health = fetch_blog_articles()
 
-if response.status_code == 200:
-    print_success(f"✓ Блог загружен, статус {response.status_code}")
-else:
-    print_error(f"✗ Ошибка загрузки блога: {response.status_code}")
+for page in brawl_page_health:
+    if page["available"]:
+        print_success(
+            f"✓ {page['url']} — HTTP {page['status_code']}, "
+            f"статей: {page['articles_found']}"
+        )
+    else:
+        print_warning(f"⚠ {page['url']} — {page['error']}")
 
-    raise SystemExit
-
-
-# Явно декодируем UTF-8,
-# чтобы эмодзи отображались корректно.
-blog_html = response.content.decode("utf-8")
-
-soup = BeautifulSoup(
-    blog_html,
-    "html.parser",
-)
-
-links = soup.find_all("a")
-
-print(f"Всего ссылок на странице: {len(links)}")
+if not articles:
+    print_error("✗ Ни одна страница блога не вернула статьи")
+    raise SystemExit(1)
 
 
 # ---------------------------------------------------------
@@ -1212,62 +1542,13 @@ print(f"Всего ссылок на странице: {len(links)}")
 
 print_section("ПОСЛЕДНИЕ СТАТЬИ")
 
-seen_links = set()
-
-articles = []
-
 latest_release_url = None
 latest_release_title = None
 
-
-for link in links:
-    href = link.get("href")
-
-    if not href:
-        continue
-
-    # Оставляем только ссылки из блога Brawl Stars.
-    if "/games/brawlstars/blog/" not in href:
-        continue
-
-    # Пагинация статьёй не является.
-    if "/blog/page/" in href:
-        continue
-
-    # Не сохраняем одну ссылку несколько раз.
-    if href in seen_links:
-        continue
-
-    seen_links.add(href)
-
-    title = link.get_text(strip=True)
-
-    # Иногда ссылка может быть технической
-    # и не иметь нормального заголовка.
-    if not title:
-        continue
-
-    category = get_article_category(href)
-
-    full_url = BASE_URL + href
-
-    article = {
-        "title": title,
-        "url": full_url,
-        "category": category,
-        "date": extract_archive_article_date(link),
-        # Позиция считается только среди уникальных
-        # статей текущей страницы английского архива.
-        "archive_index": len(articles),
-    }
-
-    articles.append(article)
-
-    # Первая найденная статья release-notes
-    # считается актуальной.
-    if category == "release-notes" and latest_release_url is None:
-        latest_release_url = full_url
-        latest_release_title = title
+for article in articles:
+    if article["category"] == "release-notes" and latest_release_url is None:
+        latest_release_url = article["url"]
+        latest_release_title = article["title"]
 
 
 # ---------------------------------------------------------
@@ -1298,36 +1579,31 @@ if latest_release_url:
     print(Fore.BLUE + latest_release_url)
 
 else:
-    print_error("✗ Release Notes не найдены")
-
-    raise SystemExit
+    print_warning(
+        "⚠ Release Notes не найдены; community/news/esports "
+        "материалы всё равно будут обработаны"
+    )
 
 
 # ---------------------------------------------------------
 # 5. ЗАГРУЖАЕМ RELEASE NOTES
 # ---------------------------------------------------------
 
-release_response = requests.get(
-    latest_release_url,
-    timeout=15,
-)
+release_soup = BeautifulSoup("", "html.parser")
 
-if release_response.status_code == 200:
-    print_success(
-        f"✓ Release Notes загружены, " f"статус {release_response.status_code}"
-    )
-else:
-    print_error(f"✗ Ошибка загрузки Release Notes: " f"{release_response.status_code}")
+if latest_release_url:
+    release_details = fetch_article_details(latest_release_url)
 
-    raise SystemExit
-
-
-release_html = release_response.content.decode("utf-8")
-
-release_soup = BeautifulSoup(
-    release_html,
-    "html.parser",
-)
+    if release_details["available"]:
+        release_soup = BeautifulSoup(
+            release_details["html"],
+            "html.parser",
+        )
+        print_success("✓ Release Notes загружены")
+    else:
+        print_warning(
+            "⚠ Release Notes недоступны; остальные статьи " "всё равно будут обработаны"
+        )
 
 
 # ---------------------------------------------------------
@@ -1432,9 +1708,6 @@ old_buff_keys = {make_change_key(item) for item in old_state["buffs"]}
 
 old_nerf_keys = {make_change_key(item) for item in old_state["nerfs"]}
 
-old_article_keys = {make_article_key(article) for article in old_state["articles"]}
-
-
 # ---------------------------------------------------------
 # 11. ИЩЕМ НОВЫЕ ИЗМЕНЕНИЯ
 # ---------------------------------------------------------
@@ -1447,9 +1720,10 @@ new_nerfs = [
     nerf for nerf in parsed_nerfs if make_change_key(nerf) not in old_nerf_keys
 ]
 
-new_articles = [
-    article for article in articles if make_article_key(article) not in old_article_keys
-]
+new_articles = find_new_articles(
+    articles,
+    old_state["articles"],
+)
 
 # ---------------------------------------------------------
 # ЗАГРУЖАЕМ СОДЕРЖИМОЕ НОВЫХ СТАТЕЙ
@@ -1481,6 +1755,13 @@ if high_priority_articles or medium_priority_articles:
         medium_priority_articles,
         russian_articles,
     )
+
+
+print_brawl_source_health(
+    brawl_page_health,
+    articles,
+    enriched_new_articles,
+)
 
 
 # ---------------------------------------------------------

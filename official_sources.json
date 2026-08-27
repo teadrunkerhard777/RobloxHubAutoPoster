@@ -96,18 +96,13 @@
     "roblox_group_id": 35789249,
     "roblox_group_name": "The Garden Game",
     "roblox_group_url": "https://www.roblox.com/communities/35789249/The-Garden-Game",
-    "news_strategy": "official_youtube_feed",
+    "news_strategy": "roblox_game_description_and_group",
     "website": null,
     "news_url": null,
     "discord": null,
-    "youtube": "https://www.youtube.com/@jandellive",
-    "youtube_feed_url": "https://www.youtube.com/feeds/videos.xml?channel_id=UCP6KpgkAq2-MH67kS5WLqFQ",
-    "youtube_channel_name": "Jandel",
-    "youtube_match_terms": [
-      "grow a garden"
-    ],
+    "youtube": null,
     "x": null,
-    "verified_at": "2026-08-21"
+    "verified_at": "2026-08-27"
   },
   "Dress To Impress": {
     "universe_id": 5203828273,
@@ -156,8 +151,13 @@
     "website": "https://bladeball.com/",
     "news_url": "https://bladeball.com/blogs/news",
     "discord": "https://discord.com/servers/1141515589924429869",
-    "youtube": null,
+    "youtube": "https://www.youtube.com/@Blade-Ball",
+    "youtube_feed_url": "https://www.youtube.com/feeds/videos.xml?channel_id=UCPttFx0zI4Zv9M4i3Q2ylsw",
+    "youtube_channel_name": "Blade Ball",
+    "youtube_match_terms": [
+      "blade ball"
+    ],
     "x": null,
-    "verified_at": "2026-08-21"
+    "verified_at": "2026-08-27"
   }
 }

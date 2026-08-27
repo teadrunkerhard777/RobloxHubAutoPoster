@@ -5,21 +5,15 @@ import validate_sources
 
 class ValidateSourcesTests(unittest.TestCase):
     def test_project_registry_is_consistent(self):
-        games = validate_sources.load_json(
-            validate_sources.GAMES_FILE
-        )
-        sources = validate_sources.load_json(
-            validate_sources.SOURCES_FILE
-        )
+        games = validate_sources.load_json(validate_sources.GAMES_FILE)
+        sources = validate_sources.load_json(validate_sources.SOURCES_FILE)
         names = {game["name"] for game in games}
 
         errors = validate_sources.validate_registry(
             games,
             sources,
         )
-        errors.extend(
-            validate_sources.validate_content_files(names)
-        )
+        errors.extend(validate_sources.validate_content_files(names))
 
         self.assertEqual(errors, [])
 
@@ -36,9 +30,7 @@ class ValidateSourcesTests(unittest.TestCase):
             {},
         )
 
-        self.assertTrue(
-            any("Нет источников" in error for error in errors)
-        )
+        self.assertTrue(any("Нет источников" in error for error in errors))
 
 
 if __name__ == "__main__":

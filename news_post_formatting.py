@@ -5,21 +5,13 @@ def _enumeration_parts(text):
     if ":" in text:
         body = text.split(":", 1)[1]
     else:
-        match = re.search(
-            r"\bдобавили\s+(.+)",
-            text,
-            flags=re.IGNORECASE
-        )
+        match = re.search(r"\bдобавили\s+(.+)", text, flags=re.IGNORECASE)
         if not match:
             return []
         body = match.group(1)
 
     body = body.strip().rstrip(".")
-    return [
-        part.strip()
-        for part in re.split(r",\s*|\s+и\s+", body)
-        if part.strip()
-    ]
+    return [part.strip() for part in re.split(r",\s*|\s+и\s+", body) if part.strip()]
 
 
 def compact_long_enumeration(text, fact):
@@ -43,11 +35,7 @@ def compact_long_enumeration(text, fact):
             grouped.append("сигнализацию")
 
         if len(grouped) >= 3:
-            audience = (
-                "Для смотрителя "
-                if "для смотрителя" in lower
-                else "В игре "
-            )
+            audience = "Для смотрителя " if "для смотрителя" in lower else "В игре "
             return (
                 f"{audience}добавили новые инструменты и оборудование: "
                 f"{', '.join(grouped)} и другое."
@@ -59,18 +47,12 @@ def compact_long_enumeration(text, fact):
 
 
 def format_fact_paragraph(fact, text):
-    text = compact_long_enumeration(
-        text.strip(),
-        fact
-    )
+    text = compact_long_enumeration(text.strip(), fact)
     kind = fact.get("kind", "")
     lower = text.lower()
 
     if kind == "locations":
-        text = text.replace(
-            "новая локация — тюрьма",
-            "новая локация, тюрьма"
-        )
+        text = text.replace("новая локация — тюрьма", "новая локация, тюрьма")
 
     if kind == "vehicle" and "тюремный автобус" in lower:
         return "🚌 Ещё появился тюремный автобус."
@@ -96,7 +78,5 @@ def format_fact_paragraph(fact, text):
 
 def join_fact_paragraphs(paragraphs):
     return "\n\n".join(
-        paragraph.strip()
-        for paragraph in paragraphs
-        if paragraph and paragraph.strip()
+        paragraph.strip() for paragraph in paragraphs if paragraph and paragraph.strip()
     )

@@ -1,3 +1,11 @@
 {
-  "items": []
+  "items": [
+    {
+      "game": "Pet Simulator 99",
+      "emoji": "🐶",
+      "score": 10,
+      "text": "🎉 В Pet Simulator 99 стартовало событие «Lucky Block Breakout!».\n\nДобавлен режим Breakout Board: блоки появляются волнами, а питомцы разбивают их на поле.\n\nВ коллекцию добавили 13 новых питомцев серии Lucky Block.",
+      "external_article_url": "https://www.biggames.io/post/pet-simulator-99-update-90"
+    }
+  ]
 }

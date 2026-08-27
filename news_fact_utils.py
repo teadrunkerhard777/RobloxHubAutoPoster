@@ -1,36 +1,71 @@
 import re
 
-
 CONTENT_TERMS = {
     "locations": (
-        "LANDMARK", "LOCATION", "PRISON", "BANK", "SCHOOL",
-        "HOSPITAL", "ISLAND", "MAP", "FACILITY", "BUILDING"
+        "LANDMARK",
+        "LOCATION",
+        "PRISON",
+        "BANK",
+        "SCHOOL",
+        "HOSPITAL",
+        "ISLAND",
+        "MAP",
+        "FACILITY",
+        "BUILDING",
     ),
     "vehicle": (
-        "VEHICLE", "CAR", "TRUCK", "BUS", "BIKE", "BOAT",
-        "HELICOPTER", "PLANE"
+        "VEHICLE",
+        "CAR",
+        "TRUCK",
+        "BUS",
+        "BIKE",
+        "BOAT",
+        "HELICOPTER",
+        "PLANE",
     ),
     "mechanics_storage": (
-        "STORAGE", "BACKPACK", "INVENTORY", "MOVE ITEMS",
-        "MULTIPLE ITEMS", "TABS", "LOCKDOWN", "ESCAPE ROUTES"
+        "STORAGE",
+        "BACKPACK",
+        "INVENTORY",
+        "MOVE ITEMS",
+        "MULTIPLE ITEMS",
+        "TABS",
+        "LOCKDOWN",
+        "ESCAPE ROUTES",
     ),
-    "pets": (
-        "PET", "PETS", "EGG", "EGGS", "LEGENDARY",
-        "ULTRA RARE"
-    ),
+    "pets": ("PET", "PETS", "EGG", "EGGS", "LEGENDARY", "ULTRA RARE"),
     "quests": (
-        "QUEST", "QUESTS", "TASK", "TASKS", "CONTRACT",
-        "CONTRACTS", "MISSION", "MISSIONS", "REWARD", "REWARDS"
+        "QUEST",
+        "QUESTS",
+        "TASK",
+        "TASKS",
+        "CONTRACT",
+        "CONTRACTS",
+        "MISSION",
+        "MISSIONS",
+        "REWARD",
+        "REWARDS",
     ),
-    "event": (
-        "EVENT", "CASE", "FESTIVAL", "PARTY"
-    ),
+    "event": ("EVENT", "CASE", "FESTIVAL", "PARTY"),
     "items": (
-        "TOOL", "TOOLS", "ITEM", "ITEMS", "HANDCUFF",
-        "HANDCUFFS", "PISTOL", "LAUNCHER", "SHANK", "WAND",
-        "WEAPON", "WEAPONS", "PROP", "PROPS", "OUTFIT",
-        "OUTFITS", "SCANNER"
-    )
+        "TOOL",
+        "TOOLS",
+        "ITEM",
+        "ITEMS",
+        "HANDCUFF",
+        "HANDCUFFS",
+        "PISTOL",
+        "LAUNCHER",
+        "SHANK",
+        "WAND",
+        "WEAPON",
+        "WEAPONS",
+        "PROP",
+        "PROPS",
+        "OUTFIT",
+        "OUTFITS",
+        "SCANNER",
+    ),
 }
 
 
@@ -48,7 +83,7 @@ ITEM_NAMES_RU = (
     ("prison props", "тюремный реквизит"),
     ("credit cards", "банковские карты"),
     ("cash bags", "мешки с деньгами"),
-    ("keycards", "ключ-карты")
+    ("keycards", "ключ-карты"),
 )
 
 
@@ -56,7 +91,7 @@ VEHICLE_NAMES_RU = (
     ("prisoner bus", "тюремный автобус"),
     ("prison bus", "тюремный автобус"),
     ("armored bank truck", "бронированный банковский грузовик"),
-    ("rocket car", "ракетную машину")
+    ("rocket car", "ракетную машину"),
 )
 
 
@@ -66,10 +101,7 @@ def clean_content_line(line):
 
 
 def _contains_term(upper, term):
-    return bool(re.search(
-        rf"(?<![A-Z0-9]){re.escape(term)}(?![A-Z0-9])",
-        upper
-    ))
+    return bool(re.search(rf"(?<![A-Z0-9]){re.escape(term)}(?![A-Z0-9])", upper))
 
 
 def classify_content_line(line):
@@ -85,8 +117,13 @@ def classify_content_line(line):
         return "locations"
 
     for kind in (
-        "mechanics_storage", "pets", "quests", "event",
-        "vehicle", "items", "locations"
+        "mechanics_storage",
+        "pets",
+        "quests",
+        "event",
+        "vehicle",
+        "items",
+        "locations",
     ):
         if any(_contains_term(upper, term) for term in CONTENT_TERMS[kind]):
             return kind
@@ -125,11 +162,7 @@ def summarize_content_line_ru(line, kind):
             extras = item_names + vehicle_names
 
             if extras:
-                result += (
-                    " Для ролевых сцен добавили "
-                    + _join_ru(extras)
-                    + "."
-                )
+                result += " Для ролевых сцен добавили " + _join_ru(extras) + "."
 
             return result
         if "bank" in lower:
@@ -150,9 +183,7 @@ def summarize_content_line_ru(line, kind):
         names = _found_names(clean, ITEM_NAMES_RU)
         if names:
             prefix = (
-                "Для смотрителя добавили "
-                if "warden" in lower
-                else "В игру добавили "
+                "Для смотрителя добавили " if "warden" in lower else "В игру добавили "
             )
             return prefix + _join_ru(names) + "."
         if "prop" in lower:
@@ -163,19 +194,14 @@ def summarize_content_line_ru(line, kind):
 
     if kind == "mechanics_storage":
         if "storage" in lower or "backpack" in lower:
-            return (
-                "Появилось отдельное хранилище для предметов "
-                "из рюкзака."
-            )
+            return "Появилось отдельное хранилище для предметов " "из рюкзака."
         if "lockdown" in lower:
             return "В тюрьме можно включать режим изоляции."
         return "В игре появилась новая полезная механика."
 
     if kind == "pets":
         egg_match = re.search(
-            r"(.+?)\s+found in\s+(.+?\bEggs?)",
-            clean,
-            flags=re.IGNORECASE
+            r"(.+?)\s+found in\s+(.+?\bEggs?)", clean, flags=re.IGNORECASE
         )
         if egg_match:
             return (

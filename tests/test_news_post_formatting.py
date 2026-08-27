@@ -3,7 +3,7 @@ import unittest
 from news_post_formatting import (
     compact_long_enumeration,
     format_fact_paragraph,
-    join_fact_paragraphs
+    join_fact_paragraphs,
 )
 
 
@@ -23,7 +23,7 @@ class NewsPostFormattingTests(unittest.TestCase):
             compact,
             "Для смотрителя добавили новые инструменты и "
             "оборудование: наручники, сканеры, прожектор, "
-            "сигнализацию и другое."
+            "сигнализацию и другое.",
         )
         self.assertNotIn("пистолет", compact)
         self.assertNotIn("пусковую установку", compact)
@@ -31,17 +31,14 @@ class NewsPostFormattingTests(unittest.TestCase):
     def test_joins_game_facts_as_short_paragraphs(self):
         paragraphs = [
             format_fact_paragraph(
-                {"kind": "locations"},
-                "В игре появилась новая локация — тюрьма."
+                {"kind": "locations"}, "В игре появилась новая локация — тюрьма."
             ),
             format_fact_paragraph(
-                {"kind": "items"},
-                "Для смотрителя добавили новые инструменты."
+                {"kind": "items"}, "Для смотрителя добавили новые инструменты."
             ),
             format_fact_paragraph(
-                {"kind": "vehicle"},
-                "В игру добавили тюремный автобус."
-            )
+                {"kind": "vehicle"}, "В игру добавили тюремный автобус."
+            ),
         ]
 
         block = join_fact_paragraphs(paragraphs)

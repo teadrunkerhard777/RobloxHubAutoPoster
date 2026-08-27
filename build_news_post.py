@@ -1,6 +1,5 @@
 import json
 
-
 MIN_SCORE = 5
 MAX_NEWS_ITEMS = 3
 
@@ -20,7 +19,7 @@ STRONG_NEWS_PHRASES = [
     "QUEST",
     "REWARD",
     "SEASON",
-    "UPDATE"
+    "UPDATE",
 ]
 
 
@@ -33,7 +32,7 @@ NOISE_PHRASES = [
     "TRADE AND COLLECT",
     "CURRENTLY",
     "CREATE AN ARMY",
-    "HELP YOU GET RICH"
+    "HELP YOU GET RICH",
 ]
 
 
@@ -48,39 +47,24 @@ def load_json(filename, default):
 def contains_any(text, phrases):
     text_upper = text.upper()
 
-    return any(
-        phrase in text_upper
-        for phrase in phrases
-    )
+    return any(phrase in text_upper for phrase in phrases)
 
 
 def is_noise_line(line):
-    return contains_any(
-        line,
-        NOISE_PHRASES
-    )
+    return contains_any(line, NOISE_PHRASES)
 
 
 def is_news_line(line):
     if is_noise_line(line):
         return False
 
-    return contains_any(
-        line,
-        STRONG_NEWS_PHRASES
-    )
+    return contains_any(line, STRONG_NEWS_PHRASES)
 
 
 def get_clean_news_lines(item):
-    analysis = item.get(
-        "official_description_analysis",
-        {}
-    )
+    analysis = item.get("official_description_analysis", {})
 
-    lines = analysis.get(
-        "news_lines",
-        []
-    )
+    lines = analysis.get("news_lines", [])
 
     clean_lines = []
 
@@ -91,9 +75,7 @@ def get_clean_news_lines(item):
             continue
 
         if is_news_line(line):
-            clean_lines.append(
-                line
-            )
+            clean_lines.append(line)
 
     return clean_lines[:3]
 
@@ -102,38 +84,23 @@ def get_best_news(candidates):
     suitable = []
 
     for item in candidates:
-        score = item.get(
-            "score",
-            0
-        )
+        score = item.get("score", 0)
 
         if score < MIN_SCORE:
             continue
 
-        clean_lines = get_clean_news_lines(
-            item
-        )
+        clean_lines = get_clean_news_lines(item)
 
         if not clean_lines:
             continue
 
         item_copy = item.copy()
 
-        item_copy[
-            "clean_news_lines"
-        ] = clean_lines
+        item_copy["clean_news_lines"] = clean_lines
 
-        suitable.append(
-            item_copy
-        )
+        suitable.append(item_copy)
 
-    suitable.sort(
-        key=lambda item: item.get(
-            "score",
-            0
-        ),
-        reverse=True
-    )
+    suitable.sort(key=lambda item: item.get("score", 0), reverse=True)
 
     return suitable[:MAX_NEWS_ITEMS]
 
@@ -148,67 +115,35 @@ def build_news_post(news_items):
             "🎮 Roblox Hub"
         )
 
-    parts = [
-        "🎮 Roblox Hub — утренняя сводка",
-        ""
-    ]
+    parts = ["🎮 Roblox Hub — утренняя сводка", ""]
 
-    for index, item in enumerate(
-        news_items,
-        start=1
-    ):
-        parts.append(
-            f"{index}. 🔥 {item['game']}"
-        )
+    for index, item in enumerate(news_items, start=1):
+        parts.append(f"{index}. 🔥 {item['game']}")
 
-        for line in item[
-            "clean_news_lines"
-        ]:
-            parts.append(
-                f"• {line}"
-            )
+        for line in item["clean_news_lines"]:
+            parts.append(f"• {line}")
 
         parts.append("")
 
-    parts.append(
-        "🎮 Roblox Hub"
-    )
+    parts.append("🎮 Roblox Hub")
 
-    return "\n".join(
-        parts
-    )
+    return "\n".join(parts)
 
 
-verified_news = load_json(
-    "verified_news.json",
-    []
-)
+verified_news = load_json("verified_news.json", [])
 
 
-best_news = get_best_news(
-    verified_news
-)
+best_news = get_best_news(verified_news)
 
 
-post_text = build_news_post(
-    best_news
-)
+post_text = build_news_post(best_news)
 
 
-with open(
-    "generated_news_post.txt",
-    "w",
-    encoding="utf-8"
-) as file:
-    file.write(
-        post_text
-    )
+with open("generated_news_post.txt", "w", encoding="utf-8") as file:
+    file.write(post_text)
 
 
-print(
-    f"Подходящих новостей после фильтрации: "
-    f"{len(best_news)}"
-)
+print(f"Подходящих новостей после фильтрации: " f"{len(best_news)}")
 
 print()
 print("Готовый пост:")

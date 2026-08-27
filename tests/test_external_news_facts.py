@@ -1,68 +1,60 @@
 import unittest
-
 from datetime import datetime, timezone
 
 from external_news_facts import (
+    NEWS_MAX_AGE_DAYS,
     extract_external_facts,
-    is_fresh_article
+    is_fresh_article,
 )
 
-
-NOW = datetime(
-    2026,
-    8,
-    16,
-    12,
-    0,
-    tzinfo=timezone.utc
-)
+NOW = datetime(2026, 8, 16, 12, 0, tzinfo=timezone.utc)
 
 
 class ExternalNewsFactsTests(unittest.TestCase):
+    def test_freshness_window_is_seven_days(self):
+        self.assertEqual(NEWS_MAX_AGE_DAYS, 7)
+
+        article = {
+            "success": True,
+            "url": "https://example.com/six-days-old",
+            "published_at": "2026-08-10T12:00:00Z",
+        }
+
+        self.assertTrue(is_fresh_article(article, now=NOW))
+
+    def test_rejects_article_older_than_seven_days(self):
+        article = {
+            "success": True,
+            "url": "https://example.com/eight-days-old",
+            "published_at": "2026-08-08T00:00:00Z",
+        }
+
+        self.assertFalse(is_fresh_article(article, now=NOW))
+
     def test_rejects_old_article(self):
         article = {
             "success": True,
             "url": "https://example.com/old",
-            "published_at": (
-                "2026-08-06T22:02:43Z"
-            )
+            "published_at": ("2026-08-06T22:02:43Z"),
         }
 
-        self.assertFalse(
-            is_fresh_article(
-                article,
-                now=NOW
-            )
-        )
+        self.assertFalse(is_fresh_article(article, now=NOW))
 
     def test_rejects_article_without_date(self):
         article = {
             "success": True,
             "url": "https://example.com/no-date",
-            "published_at": None
+            "published_at": None,
         }
 
-        self.assertFalse(
-            is_fresh_article(
-                article,
-                now=NOW
-            )
-        )
+        self.assertFalse(is_fresh_article(article, now=NOW))
 
     def test_extracts_adopt_me_pet_and_task(self):
         article = {
             "success": True,
-            "url": (
-                "https://www.playadopt.me/"
-                "news/stray-case"
-            ),
-            "title": (
-                "Tux & Shepherd on the "
-                "Stray Case Notes! - Adopt Me!"
-            ),
-            "published_at": (
-                "2026-08-14T15:00:00.000Z"
-            ),
+            "url": ("https://www.playadopt.me/" "news/stray-case"),
+            "title": ("Tux & Shepherd on the " "Stray Case Notes! - Adopt Me!"),
+            "published_at": ("2026-08-14T15:00:00.000Z"),
             "text": (
                 "Bring the Mysterious Stranger "
                 "6 Bundles of Forks in exchange "
@@ -70,64 +62,36 @@ class ExternalNewsFactsTests(unittest.TestCase):
                 "🐶 Chihuahua - Hatch from the "
                 "Basic & Crystal Egg -\n"
                 "Ultra Rare"
-            )
+            ),
         }
 
-        facts = extract_external_facts(
-            "Adopt Me!",
-            article,
-            now=NOW
-        )
+        facts = extract_external_facts("Adopt Me!", article, now=NOW)
 
-        summaries = [
-            fact["summary_ru"]
-            for fact in facts
-        ]
+        summaries = [fact["summary_ru"] for fact in facts]
 
-        self.assertEqual(
-            len(facts),
-            3
-        )
+        self.assertEqual(len(facts), 3)
         self.assertTrue(
             any(
-                "Chihuahua" in summary
-                and "Ultra Rare" in summary
+                "Chihuahua" in summary and "Ultra Rare" in summary
                 for summary in summaries
             )
         )
         self.assertTrue(
             any(
-                "6 связок" in summary
-                and "75 Bucks" in summary
-                for summary in summaries
+                "6 связок" in summary and "75 Bucks" in summary for summary in summaries
             )
         )
 
     def test_skips_stale_blox_fruits_facts(self):
         article = {
             "success": True,
-            "url": (
-                "https://gamerrobot.com/"
-                "blogs/news/the-balance-log"
-            ),
+            "url": ("https://gamerrobot.com/" "blogs/news/the-balance-log"),
             "title": "The Balance Log",
-            "published_at": (
-                "2026-08-06T22:02:43Z"
-            ),
-            "text": (
-                "The Summer PvP Patch Notes "
-                "- Balance Patch 001"
-            )
+            "published_at": ("2026-08-06T22:02:43Z"),
+            "text": ("The Summer PvP Patch Notes " "- Balance Patch 001"),
         }
 
-        self.assertEqual(
-            extract_external_facts(
-                "Blox Fruits",
-                article,
-                now=NOW
-            ),
-            []
-        )
+        self.assertEqual(extract_external_facts("Blox Fruits", article, now=NOW), [])
 
     def test_extracts_backpack_storage_and_releaser_details(self):
         article = {
@@ -147,27 +111,28 @@ class ExternalNewsFactsTests(unittest.TestCase):
                 "You can move items between your Backpack and Storage.\n"
                 "You can select multiple items and move them all at once!\n"
                 "Storage Tabs let you organize your Storage."
-            )
+            ),
         }
 
         facts = extract_external_facts(
-            "Adopt Me!",
-            article,
-            now=datetime(2026, 8, 23, 8, tzinfo=timezone.utc)
+            "Adopt Me!", article, now=datetime(2026, 8, 23, 8, tzinfo=timezone.utc)
         )
         summaries = [fact["summary_ru"] for fact in facts]
 
-        self.assertTrue(any(
-            "Kiwi Kiwi" in summary
-            and "Strawberry Tortle" in summary
-            and "легендар" in summary
-            for summary in summaries
-        ))
-        self.assertTrue(any(
-            "Backpack Storage" in summary
-            and "несколько" in summary
-            for summary in summaries
-        ))
+        self.assertTrue(
+            any(
+                "Kiwi Kiwi" in summary
+                and "Strawberry Tortle" in summary
+                and "легендар" in summary
+                for summary in summaries
+            )
+        )
+        self.assertTrue(
+            any(
+                "Backpack Storage" in summary and "несколько" in summary
+                for summary in summaries
+            )
+        )
         self.assertLessEqual(len(facts), 5)
         self.assertGreater(facts[0]["value"], 6)
 
@@ -177,16 +142,16 @@ class ExternalNewsFactsTests(unittest.TestCase):
             "url": "https://www.biggames.io/post/pet-simulator-99-update-90",
             "title": "Lucky Block Breakout!",
             "published_at": "2026-08-22",
-            "text": "Lucky Block Breakout!"
+            "text": "Lucky Block Breakout!",
         }
 
         self.assertEqual(
             extract_external_facts(
                 "Pet Simulator 99",
                 article,
-                now=datetime(2026, 8, 23, 8, tzinfo=timezone.utc)
+                now=datetime(2026, 8, 23, 8, tzinfo=timezone.utc),
             ),
-            []
+            [],
         )
 
     def test_keeps_title_only_article_when_title_is_concrete(self):
@@ -195,20 +160,61 @@ class ExternalNewsFactsTests(unittest.TestCase):
             "url": "https://example.com/new-prison-landmark",
             "title": "New Prison Landmark",
             "published_at": "2026-08-22",
-            "text": "New Prison Landmark"
+            "text": "New Prison Landmark",
         }
 
         facts = extract_external_facts(
-            "Brookhaven",
-            article,
-            now=datetime(2026, 8, 23, 8, tzinfo=timezone.utc)
+            "Brookhaven", article, now=datetime(2026, 8, 23, 8, tzinfo=timezone.utc)
         )
 
         self.assertTrue(facts)
-        self.assertTrue(any(
-            fact["kind"] == "official_article"
-            for fact in facts
-        ))
+        self.assertTrue(any(fact["kind"] == "official_article" for fact in facts))
+
+    def test_extracts_big_games_update_from_split_layout(self):
+        article = {
+            "success": True,
+            "url": "https://www.biggames.io/post/pet-simulator-99-update-90",
+            "title": "Lucky Block Breakout!",
+            "published_at": "2026-08-22",
+            "text": (
+                "Lucky Block Breakout!\n"
+                "Event\n"
+                "Breakout Board\n"
+                "Lucky Blocks\nspawn in\nwaves\n"
+                "Collect all\n13\nbrand-new\nLucky Block\npets!\n"
+                "Breakout Leaderboard\nPush as deep as you can."
+            ),
+        }
+
+        facts = extract_external_facts(
+            "Pet Simulator 99",
+            article,
+            now=datetime(2026, 8, 27, 8, tzinfo=timezone.utc),
+        )
+        summaries = [fact["summary_ru"] for fact in facts]
+
+        self.assertEqual(len(facts), 3)
+        self.assertTrue(any("Lucky Block Breakout" in value for value in summaries))
+        self.assertTrue(any("Breakout Board" in value for value in summaries))
+        self.assertTrue(any("13" in value and "питом" in value for value in summaries))
+
+    def test_rejects_empty_big_games_article(self):
+        article = {
+            "success": True,
+            "url": "https://www.biggames.io/post/empty",
+            "title": "Update",
+            "published_at": "2026-08-22",
+            "text": "Home Blogs Merch Contact",
+        }
+
+        self.assertEqual(
+            extract_external_facts(
+                "Pet Simulator 99",
+                article,
+                now=datetime(2026, 8, 27, 8, tzinfo=timezone.utc),
+            ),
+            [],
+        )
 
 
 if __name__ == "__main__":

@@ -1,10 +1,6 @@
 import random
 
-
-PRIORITY_TIP_GAMES = {
-    "Steal a Brainrot",
-    "99 Nights in the Forest"
-}
+PRIORITY_TIP_GAMES = {"Steal a Brainrot", "99 Nights in the Forest"}
 
 ALLOWED_TIP_CATEGORIES = {
     "survival",
@@ -16,7 +12,7 @@ ALLOWED_TIP_CATEGORIES = {
     "mechanics",
     "strategy",
     "building",
-    "social"
+    "social",
 }
 
 TIP_CATEGORY_EMOJIS = {
@@ -29,7 +25,7 @@ TIP_CATEGORY_EMOJIS = {
     "mechanics": "⚙️",
     "strategy": "🎯",
     "building": "🏗️",
-    "social": "🤝"
+    "social": "🤝",
 }
 
 
@@ -89,8 +85,7 @@ def validate_tip_catalog(tips, game_names, minimum_per_game=15):
 
         if tip.get("category") not in ALLOWED_TIP_CATEGORIES:
             errors.append(
-                f"Совет {tip_id}: некорректная category "
-                f"{tip.get('category')}."
+                f"Совет {tip_id}: некорректная category " f"{tip.get('category')}."
             )
 
     for game in sorted(game_names):
@@ -110,16 +105,9 @@ def build_tips_post(selected_tips, game_emojis):
     for tip in selected_tips:
         game_emoji = game_emojis.get(tip["game"], "🎮")
         category_emoji = TIP_CATEGORY_EMOJIS[tip["category"]]
-        blocks.append(
-            f"{game_emoji} {tip['game']}\n"
-            f"{category_emoji} {tip['text']}"
-        )
+        blocks.append(f"{game_emoji} {tip['game']}\n" f"{category_emoji} {tip['text']}")
 
-    text = (
-        "💡 ПОЛЕЗНО ЗНАТЬ\n\n"
-        + "\n\n".join(blocks)
-        + "\n\n🎮 Roblox Hub"
-    )
+    text = "💡 ПОЛЕЗНО ЗНАТЬ\n\n" + "\n\n".join(blocks) + "\n\n🎮 Roblox Hub"
     games = " + ".join(tip["game"] for tip in selected_tips)
     return games, text
 
@@ -131,7 +119,7 @@ def choose_tips(
     category_history=None,
     excluded_games=None,
     priority_games=None,
-    rng=None
+    rng=None,
 ):
     if recent_games is None:
         recent_games = []
@@ -146,16 +134,10 @@ def choose_tips(
 
     validate_tip_categories(tips)
 
-    games = sorted({
-        tip["game"]
-        for tip in tips
-        if tip["game"] not in excluded_games
-    })
+    games = sorted({tip["game"] for tip in tips if tip["game"] not in excluded_games})
 
     if len(games) < count:
-        raise RuntimeError(
-            f"Не удалось выбрать {count} советов по разным играм."
-        )
+        raise RuntimeError(f"Не удалось выбрать {count} советов по разным играм.")
 
     recent_set = set(recent_games)
     fresh_games = [game for game in games if game not in recent_set]
@@ -163,17 +145,12 @@ def choose_tips(
 
     def game_weight(game):
         recent_count = recent_games.count(game)
-        weight = 6.0 / (4 ** recent_count)
+        weight = 6.0 / (4**recent_count)
         if game in priority_games:
             weight *= 3.0
         return weight
 
-    selected_games = _weighted_sample(
-        game_pool,
-        count,
-        game_weight,
-        rng
-    )
+    selected_games = _weighted_sample(game_pool, count, game_weight, rng)
     selected = []
 
     for game in selected_games:
@@ -188,11 +165,7 @@ def choose_tips(
             unused = list(game_tips)
 
         last_category = _last_category(category_history, game)
-        category_fresh = [
-            tip
-            for tip in unused
-            if tip.get("category") != last_category
-        ]
+        category_fresh = [tip for tip in unused if tip.get("category") != last_category]
         candidates = category_fresh or unused
         tip = rng.choice(candidates)
         tip["used"] = True

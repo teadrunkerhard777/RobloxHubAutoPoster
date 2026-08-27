@@ -4,7 +4,6 @@ from urllib.parse import urlparse
 
 from tips_rotation import validate_tip_catalog
 
-
 GAMES_FILE = Path("games.json")
 SOURCES_FILE = Path("official_sources.json")
 
@@ -66,9 +65,7 @@ def validate_url(value, field, game, errors):
     parsed = urlparse(value)
 
     if parsed.scheme != "https" or not parsed.netloc:
-        errors.append(
-            f"{game}: поле {field} должно содержать HTTPS URL или null."
-        )
+        errors.append(f"{game}: поле {field} должно содержать HTTPS URL или null.")
 
 
 def validate_registry(games, sources):
@@ -88,15 +85,11 @@ def validate_registry(games, sources):
         extra = sorted(set(sources) - set(game_names))
 
         if missing:
-            errors.append(
-                "Нет источников для игр: " + ", ".join(missing) + "."
-            )
+            errors.append("Нет источников для игр: " + ", ".join(missing) + ".")
 
         if extra:
             errors.append(
-                "Лишние игры в official_sources.json: "
-                + ", ".join(extra)
-                + "."
+                "Лишние игры в official_sources.json: " + ", ".join(extra) + "."
             )
 
     for game in games:
@@ -107,15 +100,11 @@ def validate_registry(games, sources):
             continue
 
         missing_fields = [
-            field
-            for field in REQUIRED_SOURCE_FIELDS
-            if field not in source
+            field for field in REQUIRED_SOURCE_FIELDS if field not in source
         ]
 
         if missing_fields:
-            errors.append(
-                f"{name}: отсутствуют поля: {', '.join(missing_fields)}."
-            )
+            errors.append(f"{name}: отсутствуют поля: {', '.join(missing_fields)}.")
             continue
 
         if source["universe_id"] != game["universe_id"]:
@@ -144,8 +133,7 @@ def validate_registry(games, sources):
                 errors.append(f"{name}: не задано имя официального YouTube-канала.")
 
         if (
-            source["news_strategy"]
-            == "roblox_game_description_and_group"
+            source["news_strategy"] == "roblox_game_description_and_group"
             and source["news_url"] is not None
         ):
             errors.append(f"{name}: news_url не соответствует стратегии Roblox.")
@@ -190,18 +178,10 @@ def validate_content_files(canonical_names):
 
     if missing_tips:
         errors.append(
-            "В tips.json нет советов для игр: "
-            + ", ".join(missing_tips)
-            + "."
+            "В tips.json нет советов для игр: " + ", ".join(missing_tips) + "."
         )
 
-    errors.extend(
-        validate_tip_catalog(
-            tips,
-            canonical_names,
-            minimum_per_game=15
-        )
-    )
+    errors.extend(validate_tip_catalog(tips, canonical_names, minimum_per_game=15))
 
     return errors
 

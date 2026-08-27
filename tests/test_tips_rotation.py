@@ -1,4 +1,3 @@
-import copy
 import random
 import unittest
 
@@ -7,9 +6,8 @@ from tips_rotation import (
     PRIORITY_TIP_GAMES,
     build_tips_post,
     choose_tips,
-    validate_tip_catalog
+    validate_tip_catalog,
 )
-
 
 GAMES = [
     "Steal a Brainrot",
@@ -21,7 +19,7 @@ GAMES = [
     "Grow a Garden",
     "Dress To Impress",
     "Pet Simulator 99",
-    "Blade Ball"
+    "Blade Ball",
 ]
 
 
@@ -31,13 +29,15 @@ def make_tips(used=False):
 
     for game in GAMES:
         for category in ("strategy", "mechanics", "items"):
-            tips.append({
-                "id": tip_id,
-                "game": game,
-                "text": f"Совет {tip_id}",
-                "category": category,
-                "used": used
-            })
+            tips.append(
+                {
+                    "id": tip_id,
+                    "game": game,
+                    "text": f"Совет {tip_id}",
+                    "category": category,
+                    "used": used,
+                }
+            )
             tip_id += 1
 
     return tips
@@ -45,11 +45,7 @@ def make_tips(used=False):
 
 class TipsRotationTests(unittest.TestCase):
     def test_selects_exactly_five_tips_from_different_games(self):
-        selected = choose_tips(
-            make_tips(),
-            count=5,
-            rng=random.Random(4)
-        )
+        selected = choose_tips(make_tips(), count=5, rng=random.Random(4))
 
         self.assertEqual(len(selected), 5)
         self.assertEqual(len({tip["game"] for tip in selected}), 5)
@@ -61,53 +57,33 @@ class TipsRotationTests(unittest.TestCase):
         second = choose_tips(tips, 5, rng=random.Random(2))
 
         self.assertTrue(
-            {tip["id"] for tip in first}.isdisjoint(
-                {tip["id"] for tip in second}
-            )
+            {tip["id"] for tip in first}.isdisjoint({tip["id"] for tip in second})
         )
 
     def test_avoids_recent_games_when_five_fresh_games_exist(self):
         recent_games = GAMES[:5]
         selected = choose_tips(
-            make_tips(),
-            5,
-            recent_games=recent_games,
-            rng=random.Random(5)
+            make_tips(), 5, recent_games=recent_games, rng=random.Random(5)
         )
 
-        self.assertTrue(
-            {tip["game"] for tip in selected}.isdisjoint(recent_games)
-        )
+        self.assertTrue({tip["game"] for tip in selected}.isdisjoint(recent_games))
 
     def test_categories_are_valid_and_avoid_last_game_category(self):
         tips = make_tips()
         history = {game: ["strategy"] for game in GAMES}
-        selected = choose_tips(
-            tips,
-            5,
-            category_history=history,
-            rng=random.Random(7)
-        )
+        selected = choose_tips(tips, 5, category_history=history, rng=random.Random(7))
 
-        self.assertTrue(all(
-            tip["category"] in ALLOWED_TIP_CATEGORIES
-            for tip in selected
-        ))
-        self.assertTrue(all(
-            tip["category"] != "strategy"
-            for tip in selected
-        ))
+        self.assertTrue(
+            all(tip["category"] in ALLOWED_TIP_CATEGORIES for tip in selected)
+        )
+        self.assertTrue(all(tip["category"] != "strategy" for tip in selected))
 
     def test_priority_is_strong_but_not_mandatory(self):
         releases_with_priority = 0
         releases_without_priority = 0
 
         for seed in range(100):
-            selected = choose_tips(
-                make_tips(),
-                5,
-                rng=random.Random(seed)
-            )
+            selected = choose_tips(make_tips(), 5, rng=random.Random(seed))
             games = {tip["game"] for tip in selected}
 
             if games & PRIORITY_TIP_GAMES:
@@ -120,30 +96,16 @@ class TipsRotationTests(unittest.TestCase):
 
     def test_resets_only_after_game_tips_are_exhausted(self):
         tips = make_tips(used=True)
-        selected = choose_tips(
-            tips,
-            5,
-            rng=random.Random(3)
-        )
+        selected = choose_tips(tips, 5, rng=random.Random(3))
         selected_games = {tip["game"] for tip in selected}
 
         for game in selected_games:
             game_tips = [tip for tip in tips if tip["game"] == game]
-            self.assertEqual(
-                sum(bool(tip["used"]) for tip in game_tips),
-                1
-            )
+            self.assertEqual(sum(bool(tip["used"]) for tip in game_tips), 1)
 
     def test_builds_five_game_blocks_with_category_emojis(self):
-        selected = choose_tips(
-            make_tips(),
-            5,
-            rng=random.Random(9)
-        )
-        games, text = build_tips_post(
-            selected,
-            {game: "🎮" for game in GAMES}
-        )
+        selected = choose_tips(make_tips(), 5, rng=random.Random(9))
+        games, text = build_tips_post(selected, {game: "🎮" for game in GAMES})
 
         self.assertEqual(games.count(" + "), 4)
         for tip in selected:
@@ -158,8 +120,7 @@ class TipsRotationTests(unittest.TestCase):
             tips = json.load(file)
 
         self.assertEqual(
-            validate_tip_catalog(tips, set(GAMES), minimum_per_game=15),
-            []
+            validate_tip_catalog(tips, set(GAMES), minimum_per_game=15), []
         )
 
 

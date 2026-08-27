@@ -3,10 +3,8 @@ import os
 import runpy
 import tempfile
 import unittest
-
 from pathlib import Path
 from unittest.mock import Mock, patch
-
 
 PROJECT_DIR = Path(__file__).resolve().parents[1]
 
@@ -66,9 +64,7 @@ class GenerateNewsDescriptionTests(unittest.TestCase):
                 os.chdir(previous_cwd)
 
             return json.loads(
-                (temp_path / "news_candidates.json").read_text(
-                    encoding="utf-8"
-                )
+                (temp_path / "news_candidates.json").read_text(encoding="utf-8")
             )[0]
 
     def test_unchanged_description_is_not_republished(self):
@@ -124,7 +120,7 @@ class GenerateNewsDescriptionTests(unittest.TestCase):
                 "shank\n"
                 "scanner wand\n"
                 "prison props"
-            )
+            ),
         )
 
         kinds = {fact["kind"] for fact in candidate["facts"]}
@@ -133,18 +129,26 @@ class GenerateNewsDescriptionTests(unittest.TestCase):
         self.assertTrue({"locations", "items", "vehicle"}.issubset(kinds))
         self.assertTrue(any("тюрьм" in summary for summary in summaries))
         self.assertTrue(any("автобус" in summary for summary in summaries))
-        self.assertTrue(any(
-            "пусковую установку со слезоточивым газом" in summary
-            for summary in summaries
-        ))
+        self.assertTrue(
+            any(
+                "пусковую установку со слезоточивым газом" in summary
+                for summary in summaries
+            )
+        )
         self.assertTrue(all(summaries))
-        self.assertFalse(any(
-            summary.strip().lower() in {
-                "prison landmark", "prisoner bus", "shank",
-                "scanner wand", "prison props"
-            }
-            for summary in summaries
-        ))
+        self.assertFalse(
+            any(
+                summary.strip().lower()
+                in {
+                    "prison landmark",
+                    "prisoner bus",
+                    "shank",
+                    "scanner wand",
+                    "prison props",
+                }
+                for summary in summaries
+            )
+        )
 
 
 if __name__ == "__main__":
