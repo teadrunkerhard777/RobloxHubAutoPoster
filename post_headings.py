@@ -3,12 +3,12 @@
 # Заголовки остаются обычным текстом без HTML/Markdown, чтобы одинаково
 # отображаться в Telegram и MAX. Пустую строку после них добавляют сборщики
 # постов через существующее разделение блоков ``\n\n``.
-ROBLOX_NEWS_HEADING = "🎮 🎮🎮 ROBLOX HUB — СЕГОДНЯ 🎮🎮🎮"
-ROBLOX_FALLBACK_HEADING = "🎮 🎮🎮 ROBLOX HUB — УТРО 🎮🎮🎮"
-BRAWL_NEWS_HEADING = "💥 💥💥 НОВОСТИ BRAWL STARS 💥💥💥"
-USEFUL_TIPS_HEADING = "💡 💡 💡   ПОЛЕЗНО ЗНАТЬ   💡 💡 💡"
-HITS_HEADING = "🔥 🔥🔥 НОВИНКИ И ХИТЫ ROBLOX 🔥🔥🔥"
+ROBLOX_NEWS_HEADING = "🎮🎮🎮 ROBLOX HUB — СЕГОДНЯ 🎮🎮🎮"
+ROBLOX_FALLBACK_HEADING = "🎮🎮🎮 ROBLOX HUB — УТРО 🎮🎮🎮"
+BRAWL_NEWS_HEADING = "💥💥💥 НОВОСТИ BRAWL STARS 💥💥💥"
+USEFUL_TIPS_HEADING = "💡💡💡 ПОЛЕЗНО ЗНАТЬ 💡💡💡"
+HITS_HEADING = "🔥🔥🔥 НОВИНКИ И ХИТЫ ROBLOX 🔥🔥🔥"
 
 # Рубрика больше не входит в ежедневное расписание, но единый заголовок
 # оставляем для совместимости со старыми инструментами и возможным preview.
-MYTH_OR_TRUTH_HEADING = "🧠 🧠🧠 МИФ ИЛИ ПРАВДА? 🧠🧠🧠"
+MYTH_OR_TRUTH_HEADING = "🧠🧠🧠 МИФ ИЛИ ПРАВДА? 🧠🧠🧠"

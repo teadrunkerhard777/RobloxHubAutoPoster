@@ -13,13 +13,14 @@ from tips_rotation import build_hits_post, build_tips_post
 
 class PostHeadingTests(unittest.TestCase):
     def test_roblox_news_headings_use_plain_symmetric_text(self):
-        self.assertEqual(ROBLOX_NEWS_HEADING, "🎮 🎮🎮 ROBLOX HUB — СЕГОДНЯ 🎮🎮🎮")
-        self.assertEqual(ROBLOX_FALLBACK_HEADING, "🎮 🎮🎮 ROBLOX HUB — УТРО 🎮🎮🎮")
+        self.assertEqual(ROBLOX_NEWS_HEADING, "🎮🎮🎮 ROBLOX HUB — СЕГОДНЯ 🎮🎮🎮")
+        self.assertEqual(ROBLOX_FALLBACK_HEADING, "🎮🎮🎮 ROBLOX HUB — УТРО 🎮🎮🎮")
 
     def test_brawl_news_uses_new_heading(self):
-        self.assertEqual(BRAWL_NEWS_HEADING, "💥 💥💥 НОВОСТИ BRAWL STARS 💥💥💥")
+        self.assertEqual(BRAWL_NEWS_HEADING, "💥💥💥 НОВОСТИ BRAWL STARS 💥💥💥")
 
     def test_useful_tips_heading_is_followed_by_blank_line(self):
+        self.assertEqual(USEFUL_TIPS_HEADING, "💡💡💡 ПОЛЕЗНО ЗНАТЬ 💡💡💡")
         _, text = build_tips_post(
             [{"game": "RIVALS", "text": "Тест", "category": "strategy"}],
             {"RIVALS": "🔫"},
@@ -28,6 +29,7 @@ class PostHeadingTests(unittest.TestCase):
         self.assertIn("🔫 RIVALS\n🎯 Тест", text)
 
     def test_hits_heading_is_followed_by_blank_line(self):
+        self.assertEqual(HITS_HEADING, "🔥🔥🔥 НОВИНКИ И ХИТЫ ROBLOX 🔥🔥🔥")
         tips = [
             {
                 "id": index,
@@ -42,7 +44,7 @@ class PostHeadingTests(unittest.TestCase):
         self.assertIn("🎮 Что за игра?\nОписание.", text)
 
     def test_legacy_myth_heading_is_available_in_new_style(self):
-        self.assertEqual(MYTH_OR_TRUTH_HEADING, "🧠 🧠🧠 МИФ ИЛИ ПРАВДА? 🧠🧠🧠")
+        self.assertEqual(MYTH_OR_TRUTH_HEADING, "🧠🧠🧠 МИФ ИЛИ ПРАВДА? 🧠🧠🧠")
 
     def test_headings_do_not_use_telegram_markup(self):
         headings = (
