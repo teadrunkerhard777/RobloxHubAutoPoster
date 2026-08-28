@@ -802,9 +802,9 @@
     "rubric": "Brawl Stars: совет дня",
     "source": "verified_brawl_fallback",
     "text": "💥 BRAWL STARS | ROBLOX HUB\n\n🎯 СОВЕТ ДНЯ\n\nНе трать Супер автоматически сразу после зарядки. Сохрани его для момента, когда он поможет выполнить цель режима, остановить атаку соперника или поддержать командное наступление.\n\n⭐ Roblox Hub\n\n#BrawlStars #ПолезноЗнать #RobloxHub",
-    "status": "pending",
-    "published_at": null,
-    "attempts": 0,
+    "status": "published",
+    "published_at": "2026-08-28T12:00:44.234443+05:00",
+    "attempts": 1,
     "last_error": null,
     "image_path": "assets/news_headers/brawl_news_header.png"
   },
