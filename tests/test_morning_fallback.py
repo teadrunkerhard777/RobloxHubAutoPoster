@@ -5,6 +5,7 @@ from datetime import date, datetime, timedelta, timezone
 from pathlib import Path
 
 from post_hashtags import add_post_hashtags
+from post_headings import ROBLOX_FALLBACK_HEADING, ROBLOX_NEWS_HEADING
 
 PROJECT_ROOT = Path(__file__).parents[1]
 
@@ -58,6 +59,8 @@ def load_morning_functions():
 
     namespace = {
         "add_post_hashtags": add_post_hashtags,
+        "ROBLOX_FALLBACK_HEADING": ROBLOX_FALLBACK_HEADING,
+        "ROBLOX_NEWS_HEADING": ROBLOX_NEWS_HEADING,
         "datetime": datetime,
         "timedelta": timedelta,
         "timezone": timezone,
@@ -124,7 +127,7 @@ class MorningFallbackTests(unittest.TestCase):
         self.assertEqual((added, updated), (1, 0))
         self.assertEqual(posts[0]["source"], "auto_verified")
         self.assertEqual(posts[0]["rubric"], "Выпуск дня")
-        self.assertIn("🎮 ROBLOX HUB — СЕГОДНЯ", posts[0]["text"])
+        self.assertIn(ROBLOX_NEWS_HEADING, posts[0]["text"])
         self.assertIn("Проверенная свежая новость.", posts[0]["text"])
         self.assertEqual(
             posts[0]["image_path"],

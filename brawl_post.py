@@ -9,6 +9,7 @@ from brawl_news_formatter import (
     contains_rumor_signal,
     has_concrete_brawl_news,
 )
+from post_headings import BRAWL_NEWS_HEADING
 
 # ---------------------------------------------------------
 # НАСТРОЙКА ЦВЕТНОГО ВЫВОДА
@@ -808,7 +809,7 @@ def print_colored_post(post):
     for line in post.splitlines():
 
         # Заголовок Brawl Stars.
-        if line.startswith("💥 BRAWL STARS"):
+        if line.startswith("💥") and "BRAWL STARS" in line:
             print(Fore.MAGENTA + Style.BRIGHT + line)
 
         # Основной заголовок выпуска.
@@ -1018,7 +1019,7 @@ def build_post(data):
     # ЗАГОЛОВОК
     # -----------------------------------------------------
 
-    post_parts.append("💥 BRAWL STARS | ROBLOX HUB")
+    post_parts.append(BRAWL_NEWS_HEADING)
 
     post_parts.append("")
 
@@ -1474,7 +1475,7 @@ def build_final_post(data: dict) -> str | None:
         if news_section is None and balance_section is None:
             return None
 
-        post_parts = ["💥 BRAWL STARS | ROBLOX HUB"]
+        post_parts = [BRAWL_NEWS_HEADING]
 
         if news_section is not None:
             post_parts.append(news_section)

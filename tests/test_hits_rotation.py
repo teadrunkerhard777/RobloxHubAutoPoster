@@ -6,6 +6,7 @@ from datetime import date, datetime, timedelta, timezone
 from pathlib import Path
 
 from post_hashtags import add_post_hashtags
+from post_headings import HITS_HEADING
 from tips_rotation import (
     CURRENT_HIT_GAMES,
     build_hits_post,
@@ -88,7 +89,7 @@ class HitsRotationTests(unittest.TestCase):
         self.assertEqual(len(selected), 3)
         self.assertEqual(len({tip["id"] for tip in selected}), 3)
         self.assertTrue(all(tip["game"] == game for tip in selected))
-        self.assertTrue(text.startswith("🔥 НОВИНКИ И ХИТЫ ROBLOX"))
+        self.assertTrue(text.startswith(f"{HITS_HEADING}\n\n"))
         self.assertIn("🎮 Что за игра?", text)
         self.assertTrue(text.endswith("🎮 Roblox Hub"))
 

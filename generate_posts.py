@@ -5,6 +5,11 @@ from datetime import datetime, timedelta, timezone
 
 from image_library import select_daily_image
 from post_hashtags import add_post_hashtags, update_pending_post_hashtags
+from post_headings import (
+    BRAWL_NEWS_HEADING,
+    ROBLOX_FALLBACK_HEADING,
+    ROBLOX_NEWS_HEADING,
+)
 from tips_rotation import (
     CURRENT_HIT_GAMES,
     build_hits_post,
@@ -460,14 +465,14 @@ def build_brawl_fallback(tip=None):
 
     if tip is not None and is_verified_brawl_tip(tip):
         return (
-            "💥 BRAWL STARS | ROBLOX HUB\n\n"
+            f"{BRAWL_NEWS_HEADING}\n\n"
             "🎯 СОВЕТ ДНЯ\n\n"
             f"{tip['text'].strip()}\n\n"
             "⭐ Roblox Hub"
         )
 
     return (
-        "💥 BRAWL STARS | ROBLOX HUB\n\n"
+        f"{BRAWL_NEWS_HEADING}\n\n"
         "🎮 Сегодня без свежих подтверждённых новостей.\n\n"
         "Следим за официальными обновлениями Brawl Stars и вернёмся "
         "с новым выпуском, когда появится проверенный материал. 👀\n\n"
@@ -828,7 +833,7 @@ def generate_morning_post():
     if not news_items:
         return None
 
-    blocks = ["🎮 ROBLOX HUB — СЕГОДНЯ"]
+    blocks = [ROBLOX_NEWS_HEADING]
 
     # --------------------------------------------------
     # Новости
@@ -966,7 +971,7 @@ def build_morning_fallback(selected_tips):
 
     if len(verified_tips) < MORNING_FALLBACK_MIN_TIPS:
         return (
-            "🎮 ROBLOX HUB — УТРО\n\n"
+            f"{ROBLOX_FALLBACK_HEADING}\n\n"
             "Сегодня без подтверждённых игровых новостей.\n\n"
             "Следим за обновлениями и вернёмся, "
             "когда будет что рассказать 👀\n\n"
@@ -974,7 +979,7 @@ def build_morning_fallback(selected_tips):
         )
 
     blocks = [
-        "🎮 ROBLOX HUB — УТРО",
+        ROBLOX_FALLBACK_HEADING,
         ("Сегодня без крупных подтверждённых обновлений, " "поэтому держи полезное 👇"),
     ]
 

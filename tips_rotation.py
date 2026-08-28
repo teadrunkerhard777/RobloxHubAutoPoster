@@ -1,5 +1,7 @@
 import random
 
+from post_headings import HITS_HEADING, USEFUL_TIPS_HEADING
+
 CURRENT_HIT_GAMES = (
     "Steal An Egg",
     "Animal Hospital (Anomaly)",
@@ -123,7 +125,7 @@ def build_tips_post(selected_tips, game_emojis):
         tip_emoji = tip.get("emoji", TIP_CATEGORY_EMOJIS[tip["category"]])
         blocks.append(f"{game_emoji} {tip['game']}\n" f"{tip_emoji} {tip['text']}")
 
-    text = "💡 ПОЛЕЗНО ЗНАТЬ\n\n" + "\n\n".join(blocks) + "\n\n🎮 Roblox Hub"
+    text = USEFUL_TIPS_HEADING + "\n\n" + "\n\n".join(blocks) + "\n\n🎮 Roblox Hub"
     games = " + ".join(tip["game"] for tip in selected_tips)
     return games, text
 
@@ -269,7 +271,7 @@ def build_hits_post(game, description, selected_tips, game_emojis):
         tip_lines.append(f"{tip_emoji} {tip['text']}")
 
     text = (
-        "🔥 НОВИНКИ И ХИТЫ ROBLOX\n\n"
+        f"{HITS_HEADING}\n\n"
         f"{game_emoji} {game}\n\n"
         f"🎮 Что за игра?\n{description}\n\n"
         + "\n\n".join(tip_lines)

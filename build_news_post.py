@@ -1,5 +1,7 @@
 import json
 
+from post_headings import ROBLOX_NEWS_HEADING
+
 MIN_SCORE = 5
 MAX_NEWS_ITEMS = 3
 
@@ -108,14 +110,14 @@ def get_best_news(candidates):
 def build_news_post(news_items):
     if not news_items:
         return (
-            "🎮 Roblox Hub — утренняя сводка\n\n"
+            f"{ROBLOX_NEWS_HEADING}\n\n"
             "Сегодня пока нет достаточно "
             "подтверждённых свежих новостей.\n\n"
             "Лучше без новости, чем с выдуманной 🙂\n\n"
             "🎮 Roblox Hub"
         )
 
-    parts = ["🎮 Roblox Hub — утренняя сводка", ""]
+    parts = [ROBLOX_NEWS_HEADING, ""]
 
     for index, item in enumerate(news_items, start=1):
         parts.append(f"{index}. 🔥 {item['game']}")

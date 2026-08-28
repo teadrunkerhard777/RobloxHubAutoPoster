@@ -16,6 +16,7 @@ from brawl_news_formatter import (
     contains_rumor_signal,
     has_concrete_brawl_news,
 )
+from post_headings import BRAWL_NEWS_HEADING
 
 PROJECT_ROOT = Path(__file__).parents[1]
 
@@ -52,6 +53,7 @@ def load_members(file_name, function_names, constant_names=()):
     # Передаём их явно, не выполняя все импорты рабочего скрипта.
     namespace = {
         "build_deterministic_translation": build_deterministic_translation,
+        "BRAWL_NEWS_HEADING": BRAWL_NEWS_HEADING,
         "contains_rumor_signal": contains_rumor_signal,
         "Fore": Fore,
         "has_concrete_brawl_news": has_concrete_brawl_news,
@@ -1024,6 +1026,7 @@ class BrawlPipelineTests(unittest.TestCase):
         final_post = build_final_post(data)
 
         self.assertIsNotNone(final_post)
+        self.assertTrue(final_post.startswith(f"{BRAWL_NEWS_HEADING}\n\n"))
         self.assertIn("⚖️ ИЗМЕНЕНИЯ БАЛАНСА", final_post)
         self.assertNotIn("🔥 ГЛАВНОЕ", final_post)
 

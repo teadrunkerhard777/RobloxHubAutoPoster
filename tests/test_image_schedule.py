@@ -8,6 +8,7 @@ from tempfile import TemporaryDirectory
 
 from image_library import select_daily_image
 from post_hashtags import add_post_hashtags
+from post_headings import BRAWL_NEWS_HEADING
 
 PROJECT_ROOT = Path(__file__).parents[1]
 
@@ -39,6 +40,7 @@ def load_members(file_name, function_names, constant_names):
 
     namespace = {
         "add_post_hashtags": add_post_hashtags,
+        "BRAWL_NEWS_HEADING": BRAWL_NEWS_HEADING,
         "datetime": datetime,
         "timedelta": timedelta,
         "timezone": timezone,
@@ -460,7 +462,7 @@ class ImageScheduleTests(unittest.TestCase):
         )
 
         self.assertEqual(added, 1)
-        self.assertIn("💥 BRAWL STARS | ROBLOX HUB", posts[0]["text"])
+        self.assertIn(BRAWL_NEWS_HEADING, posts[0]["text"])
         self.assertIn("Официальный русский абзац", posts[0]["text"])
 
     def test_high_brawl_material_uses_news_pipeline(self):
