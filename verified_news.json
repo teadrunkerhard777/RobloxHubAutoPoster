@@ -90,7 +90,7 @@
       }
     ],
     "pool": "active",
-    "checked_at": "2026-08-28T08:17:16.722997+00:00",
+    "checked_at": "2026-08-28T16:26:40.970008+00:00",
     "sources": [
       {
         "type": "official_game_description",
@@ -116,7 +116,7 @@
         "latest_published_at": "2026-08-26T06:24:00+00:00",
         "status": "accepted",
         "result_code": "FOUND_VERIFIED",
-        "reason": "Tier b публикация (2.1 дн.) с датой и игровым содержанием; окно primary_14_day.",
+        "reason": "Tier b публикация (2.4 дн.) с датой и игровым содержанием; окно primary_14_day.",
         "available": true,
         "article_found": true,
         "date_found": true,
@@ -207,7 +207,7 @@
         "latest_published_at": "2026-08-26T06:24:00+00:00",
         "status": "accepted",
         "result_code": "FOUND_VERIFIED",
-        "reason": "Tier b публикация (2.1 дн.) с датой и игровым содержанием; окно primary_14_day.",
+        "reason": "Tier b публикация (2.4 дн.) с датой и игровым содержанием; окно primary_14_day.",
         "available": true,
         "article_found": true,
         "date_found": true,
@@ -229,7 +229,7 @@
       "latest_published_at": "2026-08-26T06:24:00+00:00",
       "status": "accepted",
       "result_code": "FOUND_VERIFIED",
-      "reason": "Tier b публикация (2.1 дн.) с датой и игровым содержанием; окно primary_14_day.",
+      "reason": "Tier b публикация (2.4 дн.) с датой и игровым содержанием; окно primary_14_day.",
       "available": true,
       "article_found": true,
       "date_found": true,
@@ -248,7 +248,7 @@
       "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxNQ3FPNzgxV3NUZm5fS0R0R25RUnZnRU15d1ZJcWU4RzBMSzlRRUduOVlIYUhheC1JdDNsSWdXZ1JhWWl0M05hVXczZVFaNmlfSC1FTkhLMWhreFpERWpCSzhPdXJjSlF0a011YXB4LUhKUDVLLUZWM3FFejFaaEdCMg?oc=5",
       "title": "All Pets in Steal An Egg: Rarity, income, and more",
       "published_at": "2026-08-26T06:24:00+00:00",
-      "age_days": 2.0786674108217595,
+      "age_days": 2.4185313331250002,
       "source_tier": "B",
       "publisher": "Sportskeeda",
       "freshness_window": "primary_14_day"
@@ -314,7 +314,7 @@
       }
     ],
     "pool": "active",
-    "checked_at": "2026-08-28T08:17:16.726585+00:00",
+    "checked_at": "2026-08-28T16:26:40.973308+00:00",
     "sources": [
       {
         "type": "official_game_description",
@@ -334,7 +334,7 @@
         "latest_published_at": "2026-08-21T07:00:00+00:00",
         "status": "accepted",
         "result_code": "FOUND_VERIFIED",
-        "reason": "Tier b публикация (7.1 дн.) с датой и игровым содержанием; окно primary_14_day.",
+        "reason": "Tier b публикация (7.4 дн.) с датой и игровым содержанием; окно primary_14_day.",
         "available": true,
         "article_found": true,
         "date_found": true,
@@ -416,7 +416,7 @@
         "latest_published_at": "2026-08-21T07:00:00+00:00",
         "status": "accepted",
         "result_code": "FOUND_VERIFIED",
-        "reason": "Tier b публикация (7.1 дн.) с датой и игровым содержанием; окно primary_14_day.",
+        "reason": "Tier b публикация (7.4 дн.) с датой и игровым содержанием; окно primary_14_day.",
         "available": true,
         "article_found": true,
         "date_found": true,
@@ -438,7 +438,7 @@
       "latest_published_at": "2026-08-21T07:00:00+00:00",
       "status": "accepted",
       "result_code": "FOUND_VERIFIED",
-      "reason": "Tier b публикация (7.1 дн.) с датой и игровым содержанием; окно primary_14_day.",
+      "reason": "Tier b публикация (7.4 дн.) с датой и игровым содержанием; окно primary_14_day.",
       "available": true,
       "article_found": true,
       "date_found": true,
@@ -457,7 +457,7 @@
       "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxOQXJhRzNyOHlLUGNJbUdPR3Nsc0xNdGtxNVdiZXhZNVN3bGVibXYtMmpiUUtIcEFXT2RLc2ZRaUFkaERyZjFYVTlFNnRFUGVjM2FJeTRYeTJHbVJVMWk5ZjFXNjkzdVVhQ2hwOWo5U2FnZFd5cmpJNlRfR0VRLXBycnJGeGZKS2xDRzFfRzBydXlDSVZFTVpmTTJsVFVhQ1NtM1VjWGVB?oc=5",
       "title": "Roblox MM2 values list: Murder Mystery 2 weapon, knife & pet trade values",
       "published_at": "2026-08-21T07:00:00+00:00",
-      "age_days": 7.053667410821759,
+      "age_days": 7.393531333124999,
       "source_tier": "B",
       "publisher": "Dexerto",
       "freshness_window": "primary_14_day"
@@ -514,7 +514,7 @@
       }
     ],
     "pool": "active",
-    "checked_at": "2026-08-28T08:17:16.730885+00:00",
+    "checked_at": "2026-08-28T16:26:40.977953+00:00",
     "sources": [
       {
         "type": "official_game_description",
@@ -540,7 +540,7 @@
         "latest_published_at": "2026-08-06T22:02:43Z",
         "status": "accepted",
         "result_code": "FOUND_VERIFIED",
-        "reason": "Официальная публикация (21.4 дн.) с датой и игровым содержанием; окно emergency_30_day.",
+        "reason": "Официальная публикация (21.8 дн.) с датой и игровым содержанием; окно emergency_30_day.",
         "available": true,
         "article_found": true,
         "date_found": true,
@@ -561,7 +561,7 @@
         "latest_published_at": "2026-08-19T07:00:00+00:00",
         "status": "accepted",
         "result_code": "FOUND_VERIFIED",
-        "reason": "Tier b публикация (9.1 дн.) с датой и игровым содержанием; окно primary_14_day.",
+        "reason": "Tier b публикация (9.4 дн.) с датой и игровым содержанием; окно primary_14_day.",
         "available": true,
         "article_found": true,
         "date_found": true,
@@ -650,7 +650,7 @@
         "latest_published_at": "2026-08-06T22:02:43Z",
         "status": "accepted",
         "result_code": "FOUND_VERIFIED",
-        "reason": "Официальная публикация (21.4 дн.) с датой и игровым содержанием; окно emergency_30_day.",
+        "reason": "Официальная публикация (21.8 дн.) с датой и игровым содержанием; окно emergency_30_day.",
         "available": true,
         "article_found": true,
         "date_found": true,
@@ -671,7 +671,7 @@
         "latest_published_at": "2026-08-19T07:00:00+00:00",
         "status": "accepted",
         "result_code": "FOUND_VERIFIED",
-        "reason": "Tier b публикация (9.1 дн.) с датой и игровым содержанием; окно primary_14_day.",
+        "reason": "Tier b публикация (9.4 дн.) с датой и игровым содержанием; окно primary_14_day.",
         "available": true,
         "article_found": true,
         "date_found": true,
@@ -693,7 +693,7 @@
       "latest_published_at": "2026-08-19T07:00:00+00:00",
       "status": "accepted",
       "result_code": "FOUND_VERIFIED",
-      "reason": "Tier b публикация (9.1 дн.) с датой и игровым содержанием; окно primary_14_day.",
+      "reason": "Tier b публикация (9.4 дн.) с датой и игровым содержанием; окно primary_14_day.",
       "available": true,
       "article_found": true,
       "date_found": true,
@@ -712,7 +712,7 @@
       "url": "https://gamerrobot.com/blogs/news/the-balance-log",
       "title": "The Balance Log",
       "published_at": "2026-08-06T22:02:43Z",
-      "age_days": 21.426780836747685,
+      "age_days": 21.766644759050926,
       "source_tier": "A",
       "publisher": null,
       "freshness_window": "emergency_30_day"
@@ -754,7 +754,7 @@
       }
     ],
     "pool": "active",
-    "checked_at": "2026-08-28T08:17:16.723377+00:00",
+    "checked_at": "2026-08-28T16:26:40.970400+00:00",
     "sources": [
       {
         "type": "official_game_description",
@@ -899,7 +899,7 @@
     "universe_id": 9831440772,
     "roblox_name": "[UPD] +1 Speed Keyboard Escape",
     "description": "🎀 Join the XSpeed Games group!\n\n👟 Welcome to +1 Speed Keyboard Escape 👟\n\n⚡ Every step = +1 Speed\n👟 Run, jump, and escape across a world made of keyboard keys\n💪 Train your speed and unlock powerful multipliers\n🌍 Become the FASTEST player in the world\n👥 Race against friends and other players\n🚀 Speed is everything… but one wrong step and you’re back at the start 😱\n\n🎧 ASMR vibes included\nSmooth movement, satisfying keyboard clicks, and relaxing, chill sounds! ✨\n\n🔑 Tags:\nSpeed, Keyboard, ASMR, Obby, Escape, Parkour, Multiplayer, Racing, Competitive, Satisfying, Relaxing, Physics, Ragdoll, Challenge, Speedrun",
-    "updated": "2026-08-24T07:35:04.219Z",
+    "updated": "2026-08-28T16:24:56.4877169Z",
     "created": "2026-03-04T03:51:10.46Z",
     "creator": {
       "id": 175742687,
@@ -916,7 +916,7 @@
     "facts": [],
     "description_facts": [],
     "pool": "active",
-    "checked_at": "2026-08-28T08:17:16.725133+00:00",
+    "checked_at": "2026-08-28T16:26:40.972129+00:00",
     "sources": [
       {
         "type": "official_game_description",
@@ -953,7 +953,7 @@
       {
         "source_type": "official_game_description",
         "source_url": "https://www.roblox.com/games/81245647985532/1-Speed-Keyboard-Escape",
-        "latest_published_at": "2026-08-24T07:35:04.219Z",
+        "latest_published_at": "2026-08-28T16:24:56.4877169Z",
         "status": "rejected",
         "result_code": "NO_NEW_CONTENT",
         "available": true,
@@ -1065,7 +1065,7 @@
     "universe_id": 1686885941,
     "roblox_name": "Brookhaven 🏡RP",
     "description": "A place to play with like minded people and roleplay. Own and live in amazing houses, drive cool vehicles and explore the city. Be whoever you want to be in Brookhaven RP.\n\nLatest Update:\n🔐 Prison Landmark - New roleplay! Warden tear gas launcher and pistol, and prisoner bus.\n👮‍♂️ Prison Tools - New handcuffs, shank, and scanner wand!\n🚨 Prison Props - New alarm, spotlight, security scanner, yard props, and more!\n\nThanks for playing! \n\nPrivate Server Benefits:\n· Prop Saving\n· Server-Wide Music\n· Server-Wide Announcements\n· Remove or Lock Props\n· Check Prop Owners\n· Set Players as Admins\n· Kick / Temp Ban Players\n· Set Day of the Week\n· Set Time by the Hour\n· Change Weather and Lighting\n· Speed up Time\n· Server Theme Controls\n· No Wait Time for Changing House \n· Spawn Up to Three Vehicles\n· Prop Limit Increased\n· Freecam for PC users (Shift+P)",
-    "updated": "2026-08-25T20:01:31.224Z",
+    "updated": "2026-08-28T13:31:14.4429782Z",
     "created": "2020-04-21T02:15:38.373Z",
     "creator": {
       "id": 3104358,
@@ -1159,7 +1159,7 @@
       }
     ],
     "pool": "active",
-    "checked_at": "2026-08-28T08:17:16.729000+00:00",
+    "checked_at": "2026-08-28T16:26:40.975809+00:00",
     "sources": [
       {
         "type": "official_game_description",
@@ -1216,7 +1216,7 @@
       {
         "source_type": "official_game_description",
         "source_url": "https://www.roblox.com/games/4924922222/Brookhaven-RP",
-        "latest_published_at": "2026-08-25T20:01:31.224Z",
+        "latest_published_at": "2026-08-28T13:31:14.4429782Z",
         "status": "rejected",
         "result_code": "NO_NEW_CONTENT",
         "available": true,
@@ -1350,9 +1350,9 @@
   {
     "game": "Adopt Me!",
     "universe_id": 383310974,
-    "roblox_name": "[🍓] Adopt Me!",
+    "roblox_name": "[24H⌛] Adopt Me!",
     "description": "Adopt and raise 🐶🦄👶, trade and collect legendary pets, build your dream home, and roleplay with friends!\n\n🎒 Backpack Storage & Releaser Refresh! 🎒\n🦴 Store unused items for smoother gameplay!\n🧸 Sort pets and items, trade directly from tabs!\n🍓 Kiwi Kiwi and Strawberry Tortle in Releaser Eggs!\n\nBe FIRST 🏆 To experience new updates by pressing 🔔NOTIFY.\n\nMeet the founders!\nNewFissy - Tech Director\nBethink - Creative Director\n\nFind out more about Uplift Games, our policies and creative attributions:\nhttps://devforum.roblox.com/t/credits/71812",
-    "updated": "2026-08-28T03:00:04.119911Z",
+    "updated": "2026-08-28T16:12:35.7363651Z",
     "created": "2017-07-14T19:26:21.347Z",
     "creator": {
       "id": 295182,
@@ -1428,7 +1428,7 @@
       }
     ],
     "pool": "active",
-    "checked_at": "2026-08-28T08:17:16.732071+00:00",
+    "checked_at": "2026-08-28T16:26:40.979186+00:00",
     "sources": [
       {
         "type": "official_game_description",
@@ -1487,7 +1487,7 @@
       {
         "source_type": "official_game_description",
         "source_url": "https://www.roblox.com/games/920587237/Adopt-Me",
-        "latest_published_at": "2026-08-28T03:00:04.119911Z",
+        "latest_published_at": "2026-08-28T16:12:35.7363651Z",
         "status": "rejected",
         "result_code": "NO_NEW_CONTENT",
         "available": true,
@@ -1692,7 +1692,7 @@
       }
     ],
     "pool": "active",
-    "checked_at": "2026-08-28T08:17:16.733564+00:00",
+    "checked_at": "2026-08-28T16:26:40.980848+00:00",
     "sources": [
       {
         "type": "official_game_description",
@@ -1785,7 +1785,7 @@
       "news_url": null,
       "discord": "https://discord.com/servers/nosniy-games-170261767480410112",
       "youtube": null,
-      "x": null,
+      "x": "https://x.com/NosniyRBLX",
       "roblox_creator_type": null,
       "roblox_creator_id": null,
       "roblox_creator_name": null,
@@ -1867,7 +1867,7 @@
     "facts": [],
     "description_facts": [],
     "pool": "active",
-    "checked_at": "2026-08-28T08:17:16.733819+00:00",
+    "checked_at": "2026-08-28T16:26:40.981179+00:00",
     "sources": [
       {
         "type": "official_game_description",
@@ -2042,7 +2042,7 @@
       }
     ],
     "pool": "active",
-    "checked_at": "2026-08-28T08:17:16.734740+00:00",
+    "checked_at": "2026-08-28T16:26:40.982325+00:00",
     "sources": [
       {
         "type": "official_game_description",
@@ -2123,7 +2123,7 @@
       "news_url": null,
       "discord": "https://discord.com/servers/steal-a-brainrot-1376018788041887795",
       "youtube": null,
-      "x": null,
+      "x": "https://x.com/StealaBrainrotR",
       "roblox_creator_type": null,
       "roblox_creator_id": null,
       "roblox_creator_name": null,
@@ -2231,7 +2231,7 @@
       }
     ],
     "pool": "legacy",
-    "checked_at": "2026-08-28T08:17:16.738706+00:00",
+    "checked_at": "2026-08-28T16:26:40.986456+00:00",
     "sources": [
       {
         "type": "official_game_description",
@@ -2257,7 +2257,7 @@
         "latest_published_at": "2026-08-23T23:00:24+00:00",
         "status": "accepted",
         "result_code": "FOUND_VERIFIED",
-        "reason": "Официальная публикация (4.4 дн.) с датой и игровым содержанием; окно primary_14_day.",
+        "reason": "Официальная публикация (4.7 дн.) с датой и игровым содержанием; окно primary_14_day.",
         "available": true,
         "article_found": true,
         "date_found": true,
@@ -2278,7 +2278,7 @@
         "latest_published_at": "2024-03-23T18:51:42Z",
         "status": "rejected",
         "result_code": "SOURCE_STALE",
-        "reason": "Публикация устарела: 887.6 дн. (аварийный лимит 30).",
+        "reason": "Публикация устарела: 887.9 дн. (аварийный лимит 30).",
         "available": true,
         "article_found": true,
         "date_found": true,
@@ -2383,7 +2383,7 @@
         "latest_published_at": "2026-08-23T23:00:24+00:00",
         "status": "accepted",
         "result_code": "FOUND_VERIFIED",
-        "reason": "Официальная публикация (4.4 дн.) с датой и игровым содержанием; окно primary_14_day.",
+        "reason": "Официальная публикация (4.7 дн.) с датой и игровым содержанием; окно primary_14_day.",
         "available": true,
         "article_found": true,
         "date_found": true,
@@ -2404,7 +2404,7 @@
         "latest_published_at": "2024-03-23T18:51:42Z",
         "status": "rejected",
         "result_code": "SOURCE_STALE",
-        "reason": "Публикация устарела: 887.6 дн. (аварийный лимит 30).",
+        "reason": "Публикация устарела: 887.9 дн. (аварийный лимит 30).",
         "available": true,
         "article_found": true,
         "date_found": true,
@@ -2461,7 +2461,7 @@
       "url": "https://www.youtube.com/watch?v=5E4tYNtntFc",
       "title": "BEST SWORDS IN BLADE BALL! 🔥 - Blade Ball Update Showcase",
       "published_at": "2026-08-23T23:00:24+00:00",
-      "age_days": 4.386722966377315,
+      "age_days": 4.726586888680556,
       "source_tier": "A",
       "publisher": null,
       "freshness_window": "primary_14_day"
@@ -2476,7 +2476,7 @@
     "universe_id": 7436755782,
     "roblox_name": "[📜] Grow a Garden 🌶️",
     "description": "🍅Welcome to Grow a Garden🍅\n\nAre you ready to grow your very own garden? Buy seeds from the shop when they restock, plant them, wait for them to grow, and collect the profits! Flex fruits and finds on friends, and have fun!\n\n[How To Plant]\n• Equip your seed you want to plant!\n• Click in your farm on the brown plots to plant!\n• Wait to see it start growing!\n• After its fully grown, it is time to harvest the goods!\n\nRemember, your garden literally grows while you are offline⭐",
-    "updated": "2026-08-27T01:57:32.0552942Z",
+    "updated": "2026-08-27T01:57:32.055Z",
     "created": "2025-03-25T22:32:09.437Z",
     "creator": {
       "id": 35789249,
@@ -2493,7 +2493,7 @@
     "facts": [],
     "description_facts": [],
     "pool": "legacy",
-    "checked_at": "2026-08-28T08:17:16.735844+00:00",
+    "checked_at": "2026-08-28T16:26:40.983585+00:00",
     "sources": [
       {
         "type": "official_game_description",
@@ -2531,7 +2531,7 @@
       {
         "source_type": "official_game_description",
         "source_url": "https://www.roblox.com/games/126884695634066/Grow-a-Garden",
-        "latest_published_at": "2026-08-27T01:57:32.0552942Z",
+        "latest_published_at": "2026-08-27T01:57:32.055Z",
         "status": "rejected",
         "result_code": "NO_NEW_CONTENT",
         "available": true,
@@ -2698,7 +2698,7 @@
       }
     ],
     "pool": "legacy",
-    "checked_at": "2026-08-28T08:17:16.736717+00:00",
+    "checked_at": "2026-08-28T16:26:40.984589+00:00",
     "sources": [
       {
         "type": "official_game_description",
@@ -2719,7 +2719,7 @@
         "latest_published_at": "2026-07-02T15:00:06+00:00",
         "status": "rejected",
         "result_code": "SOURCE_STALE",
-        "reason": "Публикация устарела: 56.7 дн. (аварийный лимит 30).",
+        "reason": "Публикация устарела: 57.1 дн. (аварийный лимит 30).",
         "available": true,
         "article_found": true,
         "date_found": true,
@@ -2828,7 +2828,7 @@
         "latest_published_at": "2026-07-02T15:00:06+00:00",
         "status": "rejected",
         "result_code": "SOURCE_STALE",
-        "reason": "Публикация устарела: 56.7 дн. (аварийный лимит 30).",
+        "reason": "Публикация устарела: 57.1 дн. (аварийный лимит 30).",
         "available": true,
         "article_found": true,
         "date_found": true,
@@ -2891,7 +2891,7 @@
     "universe_id": 3317771874,
     "roblox_name": "🍀 [LUCKY BLOCK] Pet Simulator 99! 🧱",
     "description": "Create an army of the coolest pets! They will help you get RICH!\n\n✨ Currently 2,000+ pets to collect! 🐾\n\n🧡 Thanks for playing!",
-    "updated": "2026-08-27T04:03:22.9479054Z",
+    "updated": "2026-08-28T08:38:07.6264095Z",
     "created": "2022-02-05T13:30:02.357Z",
     "creator": {
       "id": 3959677,
@@ -2929,7 +2929,7 @@
       }
     ],
     "pool": "legacy",
-    "checked_at": "2026-08-28T08:17:16.736978+00:00",
+    "checked_at": "2026-08-28T16:26:40.984877+00:00",
     "sources": [
       {
         "type": "official_game_description",
@@ -2988,7 +2988,7 @@
       {
         "source_type": "official_game_description",
         "source_url": "https://www.roblox.com/games/8737899170/Pet-Simulator-99",
-        "latest_published_at": "2026-08-27T04:03:22.9479054Z",
+        "latest_published_at": "2026-08-28T08:38:07.6264095Z",
         "status": "rejected",
         "result_code": "NO_NEW_CONTENT",
         "available": true,
