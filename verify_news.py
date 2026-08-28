@@ -1,12 +1,16 @@
 import json
+import re
 from datetime import datetime, timedelta, timezone
 
 import requests
 
 from external_news_facts import (
     MAX_ARTICLE_AGE_DAYS,
+    SECONDARY_NEWS_MAX_AGE_DAYS,
+    contains_rumor_signal,
     extract_external_facts,
     get_article_age_days,
+    has_game_news_meaning,
 )
 from source_health import (
     ALREADY_USED,
@@ -297,8 +301,37 @@ def article_used_on_another_day(article_url, external_history, local_date):
     return False
 
 
+def articles_describe_same_news(first_article, second_article):
+    """Detects a syndicated Tier B copy of an already used official update."""
+
+    ignored_words = {
+        "roblox",
+        "update",
+        "updates",
+        "patch",
+        "notes",
+        "news",
+        "the",
+        "and",
+        "for",
+        "with",
+    }
+
+    def title_words(article):
+        return {
+            word
+            for word in re.findall(r"[a-z0-9]+", article.get("title", "").casefold())
+            if len(word) >= 4 and word not in ignored_words
+        }
+
+    shared_words = title_words(first_article).intersection(title_words(second_article))
+    return len(shared_words) >= 2
+
+
 def evaluate_external_result(candidate, result, external_history, now):
     """Проводит один официальный источник по всем этапам проверки."""
+
+    source_tier = result.get("source_tier", "A")
 
     diagnostic = {
         "source_type": result.get("source_type", "official_news_website"),
@@ -313,6 +346,11 @@ def evaluate_external_result(candidate, result, external_history, now):
         "content_found": False,
         "extraction_success": False,
         "verification_passed": False,
+        "source_tier": source_tier,
+        "official": source_tier == "A",
+        "selected": False,
+        "formatted": False,
+        "scheduled": False,
     }
     candidate["external_source_diagnostic"] = diagnostic
 
@@ -339,6 +377,13 @@ def evaluate_external_result(candidate, result, external_history, now):
     diagnostic["content_found"] = bool(
         article.get("title") and article.get("text", "").strip()
     )
+    article["source_tier"] = source_tier
+    article["publisher"] = result.get("publisher")
+
+    if contains_rumor_signal(article):
+        diagnostic["result_code"] = FOUND_REJECTED
+        diagnostic["reason"] = "Материал содержит признаки слуха или утечки."
+        return diagnostic, article, []
 
     if article.get("success") is not True:
         diagnostic["result_code"] = SOURCE_UNAVAILABLE
@@ -359,12 +404,17 @@ def evaluate_external_result(candidate, result, external_history, now):
         diagnostic["reason"] = "Дата публикации находится в будущем."
         return diagnostic, article, []
 
-    if age_days > MAX_ARTICLE_AGE_DAYS:
+    if age_days > SECONDARY_NEWS_MAX_AGE_DAYS:
         diagnostic["result_code"] = SOURCE_STALE
         diagnostic["reason"] = (
             f"Публикация устарела: {age_days:.1f} дн. "
-            f"(лимит {MAX_ARTICLE_AGE_DAYS})."
+            f"(аварийный лимит {SECONDARY_NEWS_MAX_AGE_DAYS})."
         )
+        return diagnostic, article, []
+
+    if source_tier == "B" and not has_game_news_meaning(article):
+        diagnostic["result_code"] = FOUND_REJECTED
+        diagnostic["reason"] = "Tier B не содержит конкретного игрового изменения."
         return diagnostic, article, []
 
     article_url = article.get("url", "")
@@ -376,7 +426,12 @@ def evaluate_external_result(candidate, result, external_history, now):
         diagnostic["reason"] = "Публикация уже использовалась в выпуске другого дня."
         return diagnostic, article, []
 
-    external_facts = extract_external_facts(candidate.get("game", ""), article, now=now)
+    external_facts = extract_external_facts(
+        candidate.get("game", ""),
+        article,
+        now=now,
+        max_age_days=SECONDARY_NEWS_MAX_AGE_DAYS,
+    )
 
     if not external_facts:
         diagnostic["result_code"] = EXTRACTION_FAILED
@@ -390,8 +445,13 @@ def evaluate_external_result(candidate, result, external_history, now):
     diagnostic["status"] = "accepted"
     diagnostic["result_code"] = FOUND_VERIFIED
     diagnostic["verification_passed"] = True
+    diagnostic["freshness_window"] = (
+        "primary_14_day" if age_days <= MAX_ARTICLE_AGE_DAYS else "emergency_30_day"
+    )
+    reliability = "официальная" if source_tier == "A" else "Tier B"
     diagnostic["reason"] = (
-        f"Свежая официальная публикация ({age_days:.1f} дн.) " "с датой и содержанием."
+        f"{reliability.capitalize()} публикация ({age_days:.1f} дн.) "
+        f"с датой и игровым содержанием; окно {diagnostic['freshness_window']}."
     )
 
     return diagnostic, article, external_facts
@@ -405,6 +465,19 @@ def enrich_with_external_news(candidate, external_results, external_history, now
     if not results:
         return candidate
 
+    local_date = now.astimezone(LOCAL_TIMEZONE).date()
+    used_official_articles = [
+        result.get("latest_article")
+        for result in results
+        if result.get("source_tier", "A") == "A"
+        and result.get("latest_article")
+        and article_used_on_another_day(
+            result["latest_article"].get("url", ""),
+            external_history,
+            local_date,
+        )
+    ]
+
     accepted_articles = []
     for result in results:
         diagnostic, article, external_facts = evaluate_external_result(
@@ -412,11 +485,28 @@ def enrich_with_external_news(candidate, external_results, external_history, now
         )
         candidate["external_source_diagnostics"].append(diagnostic)
 
+        if (
+            external_facts
+            and result.get("source_tier") == "B"
+            and any(
+                articles_describe_same_news(article, used_article)
+                for used_article in used_official_articles
+            )
+        ):
+            diagnostic["status"] = "rejected"
+            diagnostic["result_code"] = ALREADY_USED
+            diagnostic["verification_passed"] = False
+            diagnostic["reason"] = (
+                "Tier B повторяет уже использованную официальную новость."
+            )
+            external_facts = []
+
         if not external_facts:
             continue
 
         accepted_articles.append(
             (
+                1 if result.get("source_tier", "A") == "B" else 0,
                 1 if result.get("source_type") == "official_youtube_feed" else 0,
                 get_article_age_days(article, now=now),
                 article,
@@ -426,8 +516,8 @@ def enrich_with_external_news(candidate, external_results, external_history, now
         )
 
     if accepted_articles:
-        _, _, article, result, external_facts = min(
-            accepted_articles, key=lambda item: (item[0], item[1])
+        _, _, _, article, result, external_facts = min(
+            accepted_articles, key=lambda item: (item[0], item[1], item[2])
         )
         current_facts = candidate.setdefault("facts", [])
         known_fact_keys = {
@@ -456,6 +546,13 @@ def enrich_with_external_news(candidate, external_results, external_history, now
             "title": article.get("title", ""),
             "published_at": article.get("published_at"),
             "age_days": get_article_age_days(article, now=now),
+            "source_tier": result.get("source_tier", "A"),
+            "publisher": result.get("publisher"),
+            "freshness_window": (
+                "primary_14_day"
+                if get_article_age_days(article, now=now) <= MAX_ARTICLE_AGE_DAYS
+                else "emergency_30_day"
+            ),
         }
 
     return candidate
@@ -657,6 +754,9 @@ candidates = load_json("news_candidates.json", [])
 source_registry = load_json("official_sources.json", {})
 
 external_results = load_json("external_news_raw.json", [])
+
+secondary_results = load_json("secondary_news_raw.json", [])
+external_results.extend(secondary_results)
 
 external_history = load_json("external_news_history.json", [])
 

@@ -674,6 +674,34 @@ class ImageScheduleTests(unittest.TestCase):
         self.assertEqual(fallback_calls, ["used"])
         self.assertEqual(len(posts), 1)
 
+    def test_pending_fallback_is_upgraded_when_official_news_appears(self):
+        posts = [
+            {
+                "id": "2026-08-24-brawl-12",
+                "publish_at": "2026-08-24T12:00:00+05:00",
+                "status": "pending",
+                "game": "Brawl Stars",
+                "rubric": "Brawl Stars: совет дня",
+                "source": "verified_brawl_fallback",
+                "text": "Старый fallback",
+            }
+        ]
+        data = {"fresh": True}
+
+        added = schedule_brawl_post(
+            posts,
+            date(2026, 8, 24),
+            data_loader=lambda: data,
+            final_post_builder=lambda loaded: "Свежая официальная новость",
+            fallback_builder=lambda: self.fail("Fallback не нужен"),
+        )
+
+        self.assertEqual(added, 0)
+        self.assertEqual(len(posts), 1)
+        self.assertEqual(posts[0]["source"], "brawl_pipeline")
+        self.assertEqual(posts[0]["rubric"], "Brawl Stars")
+        self.assertIn("Свежая официальная новость", posts[0]["text"])
+
     def test_recent_brawl_tip_is_not_selected_again(self):
         tips = [
             {

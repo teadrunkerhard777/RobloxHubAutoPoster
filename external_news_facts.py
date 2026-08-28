@@ -7,13 +7,80 @@ from news_fact_utils import (
     summarize_content_line_ru,
 )
 
-# Ежедневный выпуск не всегда успевает взять официальный материал в первые
-# трое суток. Семь дней дают недельным update-постам шанс попасть в выпуск,
-# а external_news_history.json по-прежнему не позволяет повторять их каждый день.
-NEWS_MAX_AGE_DAYS = 7
+# Основное окно официальных новостей. История использованных URL по-прежнему
+# обязательна и не позволяет расширенному окну превращаться в повторы.
+NEWS_MAX_AGE_DAYS = 14
+
+# Если в основном окне нет ни одной пригодной новости, финальный отбор может
+# использовать ещё не публиковавшийся материал не старше 30 дней.
+SECONDARY_NEWS_MAX_AGE_DAYS = 30
 
 # Старое имя сохраняем для совместимости остальных этапов и тестов.
 MAX_ARTICLE_AGE_DAYS = NEWS_MAX_AGE_DAYS
+
+RUMOR_MARKERS = (
+    "leak",
+    "leaked",
+    "rumor",
+    "rumour",
+    "allegedly",
+    "datamine",
+    "datamined",
+    "утечк",
+    "слух",
+)
+
+SPECULATIVE_PATTERNS = (
+    r"\bpossible\s+(?:new\s+)?(?:update|event|mode|item|pet|release|collab)",
+    r"\bpossibly\s+(?:coming|arriving|adding|revealing)",
+)
+
+GAME_NEWS_MARKERS = (
+    "update",
+    "event",
+    "mode",
+    "map",
+    "item",
+    "pet",
+    "reward",
+    "season",
+    "tournament",
+    "championship",
+    "competition",
+    "esports",
+    "world finals",
+    "bsc",
+    "collab",
+    "release",
+    "patch",
+    "balance",
+    "new ",
+    "обновлен",
+    "событ",
+    "режим",
+    "карт",
+    "предмет",
+    "питом",
+    "наград",
+    "сезон",
+    "турнир",
+    "анонс",
+)
+
+
+def contains_rumor_signal(article):
+    text = " ".join([article.get("title", ""), article.get("text", "")]).casefold()
+    return any(marker in text for marker in RUMOR_MARKERS) or any(
+        re.search(pattern, text) for pattern in SPECULATIVE_PATTERNS
+    )
+
+
+def has_game_news_meaning(article):
+    body = article.get("text", "").strip()
+    if len(body) < 25:
+        return False
+    text = " ".join([article.get("title", ""), body]).casefold()
+    return any(marker in text for marker in GAME_NEWS_MARKERS)
 
 
 def parse_published_at(value):
@@ -147,6 +214,10 @@ def build_title_fact(game, article):
             )
         else:
             summary = "Blox Fruits опубликовала " f"новость «{title}»."
+
+    elif article.get("source_tier") == "B":
+        publisher = article.get("publisher") or "игрового издания"
+        summary = f"По данным {publisher}, в {game} вышел материал «{title}»."
 
     elif game == "Adopt Me!":
         summary = "В Adopt Me! вышло обновление " f"«{title}»."
@@ -566,8 +637,16 @@ def extract_generic_article_facts(article, excluded_kinds=None):
     return facts
 
 
-def extract_external_facts(game, article, now=None):
-    if not is_fresh_article(article, now=now):
+def extract_external_facts(
+    game,
+    article,
+    now=None,
+    max_age_days=MAX_ARTICLE_AGE_DAYS,
+):
+    if not is_fresh_article(article, now=now, max_age_days=max_age_days):
+        return []
+
+    if contains_rumor_signal(article):
         return []
 
     facts = []
@@ -596,7 +675,13 @@ def extract_external_facts(game, article, now=None):
     detail_facts = [fact for fact in facts if fact.get("kind") != "official_article"]
 
     if not detail_facts and title_fact and not title_fact.get("title_is_concrete"):
-        return []
+        # Для официального источника нормальный игровой смысл в теле статьи
+        # достаточен: сложная semantic verification здесь не нужна.
+        if article.get("source_tier", "A") == "A" and has_game_news_meaning(article):
+            title_fact["title_is_concrete"] = True
+            title_fact["reason"] = "Свежий игровой анонс из официального источника"
+        else:
+            return []
 
     # Одна статья даёт компактный набор: не более трёх ключевых изменений.
     # Заголовок остаётся допустимым запасным фактом, но детали выше него.

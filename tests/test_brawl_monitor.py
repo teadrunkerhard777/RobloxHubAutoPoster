@@ -2,6 +2,8 @@ import ast
 import unittest
 from pathlib import Path
 
+from brawl_news_formatter import contains_rumor_signal, has_concrete_brawl_news
+
 BRAWL_MONITOR_PATH = Path(__file__).parents[1] / "brawl_monitor.py"
 
 
@@ -28,7 +30,10 @@ def load_evaluate_article():
         body=[evaluate_node],
         type_ignores=[],
     )
-    namespace = {}
+    namespace = {
+        "contains_rumor_signal": contains_rumor_signal,
+        "has_concrete_brawl_news": has_concrete_brawl_news,
+    }
 
     # Выполняется только один узел функции из локального файла проекта.
     # Внешние данные и произвольный пользовательский код сюда не попадают.
@@ -66,7 +71,7 @@ class EvaluateArticlePriorityTests(unittest.TestCase):
 
         self.assertEqual(evaluation["score"], 4)
         self.assertEqual(evaluation["priority"], "medium")
-        self.assertFalse(evaluation["is_relevant"])
+        self.assertTrue(evaluation["is_relevant"])
 
     def test_low_priority_for_score_below_three(self):
         article = {
@@ -76,9 +81,33 @@ class EvaluateArticlePriorityTests(unittest.TestCase):
 
         evaluation = evaluate_article(article)
 
-        self.assertEqual(evaluation["score"], 1)
+        self.assertEqual(evaluation["score"], 2)
         self.assertEqual(evaluation["priority"], "low")
         self.assertFalse(evaluation["is_relevant"])
+
+    def test_rumor_is_rejected_even_if_it_contains_high_priority_words(self):
+        article = {
+            "category": "release-notes",
+            "title": "Leaked new brawler and balance changes",
+            "clean_content": ["A datamine allegedly reveals a new game mode."],
+        }
+
+        evaluation = evaluate_article(article)
+
+        self.assertFalse(evaluation["is_relevant"])
+        self.assertEqual(evaluation["score"], 0)
+        self.assertEqual(evaluation["rejection_reason"], "rumor_or_leak")
+
+    def test_as_many_as_possible_is_not_a_rumor_signal(self):
+        article = {
+            "category": "esports",
+            "title": "First Look at BSC 2027",
+            "clean_content": [
+                "The team will answer as many community questions as possible."
+            ],
+        }
+
+        self.assertFalse(contains_rumor_signal(article))
 
 
 if __name__ == "__main__":

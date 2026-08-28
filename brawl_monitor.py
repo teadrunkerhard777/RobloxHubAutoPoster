@@ -9,6 +9,12 @@ import requests
 from bs4 import BeautifulSoup
 from colorama import Fore, Style, init
 
+from brawl_news_formatter import (
+    build_deterministic_translation,
+    contains_rumor_signal,
+    has_concrete_brawl_news,
+)
+
 # ---------------------------------------------------------
 # НАСТРОЙКА ЦВЕТНОГО ВЫВОДА
 # ---------------------------------------------------------
@@ -328,6 +334,19 @@ def save_latest_changes(
     генератором утреннего поста.
     """
 
+    previous_data = {}
+    if os.path.exists(LATEST_CHANGES_FILE):
+        try:
+            with open(LATEST_CHANGES_FILE, "r", encoding="utf-8") as file:
+                previous_data = json.load(file)
+        except (OSError, ValueError, TypeError):
+            previous_data = {}
+
+    new_articles = carry_unscheduled_articles(new_articles, previous_data)
+    high_priority_articles, medium_priority_articles = split_articles_by_priority(
+        new_articles
+    )
+
     data = {
         "release_title": release_title,
         "release_url": release_url,
@@ -358,6 +377,35 @@ def save_latest_changes(
             ensure_ascii=False,
             indent=2,
         )
+
+
+def carry_unscheduled_articles(
+    new_articles, previous_data, today=None, max_age_days=14
+):
+    """Keeps a fresh article until a Brawl news post actually consumes it."""
+
+    if today is None:
+        today = datetime.now(timezone.utc).date()
+
+    merged = list(new_articles)
+    known_urls = {article.get("url") for article in merged}
+
+    for article in previous_data.get("new_articles", []):
+        if article.get("scheduled") is True or article.get("url") in known_urls:
+            continue
+
+        normalized_date = normalize_article_date(article.get("date"))
+        if normalized_date is None:
+            continue
+
+        age_days = (today - date.fromisoformat(normalized_date)).days
+        if age_days < 0 or age_days > max_age_days:
+            continue
+
+        merged.append(article)
+        known_urls.add(article.get("url"))
+
+    return merged
 
 
 def make_change_key(item):
@@ -1116,6 +1164,8 @@ def enrich_articles_with_russian_versions(articles, russian_articles):
         )
 
         if russian_article is None:
+            article.setdefault("source_language", "en")
+            article.setdefault("translated", False)
             article.update(
                 {
                     "ru_found": False,
@@ -1141,6 +1191,8 @@ def enrich_articles_with_russian_versions(articles, russian_articles):
                 "ru_url": russian_article["url"],
                 "ru_content": ru_content,
                 "ru_clean_content": ru_clean_content,
+                "source_language": "ru",
+                "translated": False,
             }
         )
 
@@ -1179,6 +1231,15 @@ def evaluate_article(article):
     # Склеиваем весь текст в одну строку,
     # чтобы было удобнее искать ключевые слова.
     full_text = " ".join(content).lower()
+
+    if contains_rumor_signal(article):
+        return {
+            "is_relevant": False,
+            "priority": "low",
+            "score": 0,
+            "reasons": ["Материал содержит признаки слуха или утечки"],
+            "rejection_reason": "rumor_or_leak",
+        }
 
     score = 0
     reasons = []
@@ -1275,10 +1336,8 @@ def evaluate_article(article):
     # ESPORTS
     # -----------------------------------------------------
 
-    # Киберспорт считаем менее приоритетным,
-    # потому что он нужен не в каждый утренний выпуск.
     if category == "esports":
-        score += 1
+        score += 2
 
         reasons.append("Новость Brawl Stars Esports")
 
@@ -1303,10 +1362,10 @@ def evaluate_article(article):
     else:
         priority = "low"
 
-    # Поле is_relevant сохраняем для совместимости
-    # с текущей структурой данных. Теперь только статьи
-    # с высоким приоритетом считаются кандидатами в выпуск.
-    is_relevant = priority == "high"
+    # HIGH всегда проходит, MEDIUM считается нормальным
+    # запасным материалом. LOW нужен хотя бы один явный
+    # игровой факт. Слухи отсекаются выше для любого priority.
+    is_relevant = priority in {"high", "medium"} or has_concrete_brawl_news(article)
 
     return {
         "is_relevant": is_relevant,
@@ -1373,7 +1432,16 @@ def enrich_new_articles(articles):
             "source_available": details["available"],
             "source_error": details["error"],
             "extraction_success": bool(clean_content),
+            "official": True,
+            "fresh": True,
+            "source_language": "en",
         }
+
+        translation = build_deterministic_translation(enriched_article)
+        if translation:
+            enriched_article.update(translation)
+        else:
+            enriched_article["translated"] = False
 
         # Добавляем редакторскую оценку статьи:
         # is_relevant, priority, score и reasons.
@@ -1396,9 +1464,8 @@ def split_articles_by_priority(articles):
     основными кандидатами. Средний приоритет
     оставляем как запасной источник новости.
 
-    Низкоприоритетные статьи намеренно не входят
-    ни в один список кандидатов, но продолжают
-    храниться в общем поле new_articles.
+    Содержательные LOW сохраняются в запасном списке вместе с MEDIUM:
+    финальный formatter повторно проверит официальный текст и слухи.
     """
 
     high_priority_articles = []
@@ -1410,7 +1477,7 @@ def split_articles_by_priority(articles):
         if priority == "high":
             high_priority_articles.append(article)
 
-        elif priority == "medium":
+        elif priority == "medium" or (priority == "low" and article.get("is_relevant")):
             medium_priority_articles.append(article)
 
     return high_priority_articles, medium_priority_articles
@@ -1441,17 +1508,12 @@ def build_brawl_source_health(
         "medium": sum(article.get("priority") == "medium" for article in new_articles),
         "low": sum(article.get("priority") == "low" for article in new_articles),
         "verification_passed": sum(
-            article.get("priority") in {"high", "medium"}
-            and article.get("ru_found") is True
+            article.get("is_relevant") is True
+            and (article.get("ru_found") is True or article.get("translated") is True)
             for article in new_articles
         ),
         "verification_rejected": sum(
-            article.get("priority") == "low"
-            or (
-                article.get("priority") in {"high", "medium"}
-                and article.get("ru_found") is not True
-            )
-            for article in new_articles
+            article.get("is_relevant") is not True for article in new_articles
         ),
     }
 
@@ -1495,18 +1557,15 @@ def print_brawl_source_health(page_health, articles, new_articles):
         elif not article.get("extraction_success"):
             code = "EXTRACTION_FAILED"
             reason = "страница загружена, но содержательный текст не извлечён"
-        elif (
-            article.get("priority") in {"high", "medium"}
-            and article.get("ru_found") is not True
+        elif article.get("is_relevant") and (
+            article.get("ru_found") or article.get("translated")
         ):
-            code = "FOUND_REJECTED"
-            reason = "кандидат найден, но официальная русская версия " "не подтверждена"
-        elif article.get("priority") in {"high", "medium"}:
             code = "FOUND_VERIFIED"
-            reason = f"приоритет {article['priority'].upper()}"
+            language = "RU" if article.get("ru_found") else "EN → RU deterministic"
+            reason = f"приоритет {article['priority'].upper()}, {language}"
         else:
             code = "FOUND_REJECTED"
-            reason = "приоритет LOW"
+            reason = article.get("rejection_reason") or "нет конкретного игрового факта"
 
         print(
             f"- {article.get('title', '?')}: {code} — {reason}; "
@@ -1740,19 +1799,13 @@ high_priority_articles, medium_priority_articles = split_articles_by_priority(
     enriched_new_articles
 )
 
-# Русский архив загружаем только при наличии кандидатов.
-# LOW статьи не входят в эти списки и не требуют поиска
-# или дополнительного сетевого запроса.
+# Русский архив загружаем для всех пригодных кандидатов. Если пары нет,
+# уже подготовленный deterministic EN→RU текст остаётся рабочим fallback.
 if high_priority_articles or medium_priority_articles:
     russian_articles = fetch_russian_articles()
 
     enrich_articles_with_russian_versions(
-        high_priority_articles,
-        russian_articles,
-    )
-
-    enrich_articles_with_russian_versions(
-        medium_priority_articles,
+        enriched_new_articles,
         russian_articles,
     )
 

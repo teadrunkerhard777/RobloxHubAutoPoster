@@ -95,6 +95,9 @@ class HitsRotationTests(unittest.TestCase):
     def test_tip_does_not_repeat_before_game_pool_is_exhausted(self):
         tips = json.loads(json.dumps(self.tips, ensure_ascii=False))
         game = CURRENT_HIT_GAMES[1]
+        for tip in tips:
+            if tip["game"] == game:
+                tip["used"] = False
         releases = [
             choose_tips_for_game(tips, game, count=3, rng=random.Random(seed))
             for seed in range(4)

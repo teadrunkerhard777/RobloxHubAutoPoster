@@ -29,6 +29,7 @@ def load_morning_functions():
         "is_verified_fallback_tip",
         "build_morning_fallback",
         "generate_morning_fallback",
+        "mark_roblox_news_scheduled",
         "schedule_morning_post",
         "resolve_news_header",
     }
@@ -83,6 +84,7 @@ generate_morning_fallback = morning_namespace["generate_morning_fallback"]
 generate_morning_post = morning_namespace["generate_morning_post"]
 schedule_morning_post = morning_namespace["schedule_morning_post"]
 fit_telegram_caption = morning_namespace["fit_telegram_caption"]
+mark_roblox_news_scheduled = morning_namespace["mark_roblox_news_scheduled"]
 
 
 class MorningFallbackTests(unittest.TestCase):
@@ -127,6 +129,54 @@ class MorningFallbackTests(unittest.TestCase):
         self.assertEqual(
             posts[0]["image_path"],
             "assets/news_headers/roblox_news_header.png",
+        )
+
+    def test_url_history_is_consumed_only_after_real_scheduling(self):
+        article_url = "https://example.com/fresh-news"
+        generated = {
+            "items": [
+                {
+                    "game": "Brookhaven",
+                    "external_article_url": article_url,
+                }
+            ],
+            "pipeline": [{"selected": True, "scheduled": False}],
+            "summary": {"found": 1, "verified": 1, "selected": 1},
+        }
+        history = [
+            {
+                "url": article_url,
+                "game": "Brookhaven",
+                "selected_date": datetime.now(morning_namespace["LOCAL_TIMEZONE"])
+                .date()
+                .isoformat(),
+            }
+        ]
+        saved = {}
+
+        def load_json(filename, default=None):
+            if filename == "generated_news_data_ru.json":
+                return generated
+            if filename == "external_news_history.json":
+                return history
+            return default
+
+        morning_namespace["load_json"] = load_json
+        morning_namespace["save_json"] = lambda filename, data: saved.__setitem__(
+            filename, data
+        )
+        mark_roblox_news_scheduled(False)
+
+        self.assertEqual(saved["external_news_history.json"], [])
+        self.assertEqual(
+            saved["generated_news_data_ru.json"]["summary"]["scheduled"], 0
+        )
+
+        history.clear()
+        mark_roblox_news_scheduled(True)
+        self.assertEqual(saved["external_news_history.json"][0]["url"], article_url)
+        self.assertEqual(
+            saved["generated_news_data_ru.json"]["summary"]["scheduled"], 1
         )
 
     def test_no_fresh_news_creates_fallback_at_ten(self):

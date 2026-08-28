@@ -1,14 +1,11 @@
 import json
 import re
-from datetime import datetime, timedelta, timezone
 
+from external_news_facts import NEWS_MAX_AGE_DAYS
 from news_post_formatting import format_fact_paragraph, join_fact_paragraphs
 
 MIN_SCORE = 5
 MAX_NEWS_ITEMS = 3
-
-LOCAL_TIMEZONE = timezone(timedelta(hours=5))
-
 
 GAME_NAMES = {
     "STEAL A BRAINROT": "Steal a Brainrot",
@@ -421,6 +418,32 @@ def build_item(candidate):
     return item
 
 
+def select_news_items(formatted_candidates, max_items=MAX_NEWS_ITEMS):
+    """Selects unique games, preferring the 14-day pool globally.
+
+    The 15–30 day emergency pool is considered only when no item from the
+    primary window can be formatted. This keeps the fallback deterministic and
+    makes the editorial rule independently testable.
+    """
+
+    primary_candidates = [entry for entry in formatted_candidates if not entry[2]]
+    selection_pool = primary_candidates or formatted_candidates
+    news_items = []
+    used_games = set()
+
+    for _, item, _ in selection_pool:
+        if item["game"] in used_games:
+            continue
+
+        news_items.append(item)
+        used_games.add(item["game"])
+
+        if len(news_items) == max_items:
+            break
+
+    return news_items
+
+
 # --------------------------------------------------
 # Основной запуск
 # --------------------------------------------------
@@ -431,30 +454,24 @@ verified_news = load_json("verified_news.json")
 candidates = [
     candidate for candidate in verified_news if candidate.get("score", 0) >= MIN_SCORE
 ]
-
-
 candidates.sort(key=lambda item: item.get("score", 0), reverse=True)
 
-
-news_items = []
-used_games = set()
-
+# Форматируем до выбора окна: официальный EN-факт не должен молча исчезнуть
+# между verified и formatted_ru. Аварийные 15–30 дней используются только
+# когда ни один кандидат основного 14-дневного окна не форматируется.
+formatted_candidates = []
 
 for candidate in candidates:
     item = build_item(candidate)
-
     if item is None:
         continue
 
-    if item["game"] in used_games:
-        continue
+    article = candidate.get("external_news_article") or {}
+    age_days = article.get("age_days")
+    is_emergency = isinstance(age_days, (int, float)) and age_days > NEWS_MAX_AGE_DAYS
+    formatted_candidates.append((candidate, item, is_emergency))
 
-    news_items.append(item)
-
-    used_games.add(item["game"])
-
-    if len(news_items) == MAX_NEWS_ITEMS:
-        break
+news_items = select_news_items(formatted_candidates)
 
 
 # --------------------------------------------------
@@ -462,6 +479,7 @@ for candidate in candidates:
 # --------------------------------------------------
 
 selected_games = {item["game"] for item in news_items}
+pipeline_diagnostics = []
 
 print()
 print("Диагностика утреннего отбора:")
@@ -508,41 +526,40 @@ for candidate in verified_news:
         f"{status} — {reason.rstrip('.')}."
     )
 
-
-save_json("generated_news_data_ru.json", {"items": news_items})
-
-
-# --------------------------------------------------
-# История официальных статей
-# --------------------------------------------------
-
-external_history = load_json("external_news_history.json", [])
-
-selected_date = datetime.now(LOCAL_TIMEZONE).date().isoformat()
-
-
-for item in news_items:
-    article_url = item.get("external_article_url")
-
-    if not article_url:
-        continue
-
-    existing_record = None
-
-    for record in external_history:
-        if record.get("url") == article_url:
-            existing_record = record
-            break
-
-    if existing_record:
-        existing_record["selected_date"] = selected_date
-    else:
-        external_history.append(
-            {"url": article_url, "game": item["game"], "selected_date": selected_date}
-        )
+    verified_status = candidate.get("score", 0) >= MIN_SCORE
+    formatted_status = any(
+        formatted_item["game"] == game for _, formatted_item, _ in formatted_candidates
+    )
+    selected_status = game in selected_games
+    pipeline_diagnostics.append(
+        {
+            "game": game,
+            "candidate": True,
+            "verified": verified_status,
+            "selected": selected_status,
+            "formatted_ru": formatted_status,
+            "scheduled": False,
+            "reason": reason.rstrip("."),
+        }
+    )
 
 
-save_json("external_news_history.json", external_history[-100:])
+pipeline_summary = {
+    "found": len(verified_news),
+    "verified": sum(item["verified"] for item in pipeline_diagnostics),
+    "selected": sum(item["selected"] for item in pipeline_diagnostics),
+    "formatted": sum(item["formatted_ru"] for item in pipeline_diagnostics),
+    "scheduled": 0,
+}
+
+save_json(
+    "generated_news_data_ru.json",
+    {
+        "items": news_items,
+        "pipeline": pipeline_diagnostics,
+        "summary": pipeline_summary,
+    },
+)
 
 
 preview_blocks = []
@@ -563,6 +580,14 @@ save_text("generated_news_post_ru.txt", preview)
 
 print()
 print(f"Подготовлено новостей: " f"{len(news_items)}")
+print(
+    "Roblox pipeline: "
+    f"найдено={pipeline_summary['found']}, "
+    f"verified={pipeline_summary['verified']}, "
+    f"selected={pipeline_summary['selected']}, "
+    f"formatted={pipeline_summary['formatted']}, "
+    "scheduled=0"
+)
 
 
 for item in news_items:

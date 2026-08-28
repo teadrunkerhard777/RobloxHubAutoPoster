@@ -11,6 +11,12 @@ from types import SimpleNamespace
 from bs4 import BeautifulSoup
 from colorama import Fore, Style
 
+from brawl_news_formatter import (
+    build_deterministic_translation,
+    contains_rumor_signal,
+    has_concrete_brawl_news,
+)
+
 PROJECT_ROOT = Path(__file__).parents[1]
 
 
@@ -45,7 +51,10 @@ def load_members(file_name, function_names, constant_names=()):
     # re и SequenceMatcher используются функциями сопоставления.
     # Передаём их явно, не выполняя все импорты рабочего скрипта.
     namespace = {
+        "build_deterministic_translation": build_deterministic_translation,
+        "contains_rumor_signal": contains_rumor_signal,
         "Fore": Fore,
+        "has_concrete_brawl_news": has_concrete_brawl_news,
         "date": date,
         "re": re,
         "SequenceMatcher": SequenceMatcher,
@@ -81,6 +90,13 @@ split_articles_by_priority = load_function(
     "brawl_monitor.py",
     "split_articles_by_priority",
 )
+
+carry_namespace = load_members(
+    "brawl_monitor.py",
+    {"normalize_article_date", "carry_unscheduled_articles"},
+    {"ARTICLE_MONTHS"},
+)
+carry_unscheduled_articles = carry_namespace["carry_unscheduled_articles"]
 
 get_news_candidates = load_function(
     "brawl_post.py",
@@ -194,6 +210,36 @@ normalize_news_title = final_post_namespace["normalize_news_title"]
 
 
 class BrawlPipelineTests(unittest.TestCase):
+    def test_unscheduled_fresh_article_survives_next_monitor_run(self):
+        article = {
+            "url": "https://supercell.com/bsc-2027",
+            "title": "First Look at BSC 2027",
+            "date": "2026-08-24",
+            "priority": "medium",
+            "scheduled": False,
+        }
+        carried = carry_unscheduled_articles(
+            [],
+            {"new_articles": [article]},
+            today=date(2026, 8, 28),
+        )
+        self.assertEqual(carried, [article])
+
+    def test_scheduled_article_is_not_carried_again(self):
+        article = {
+            "url": "https://supercell.com/bsc-2027",
+            "title": "First Look at BSC 2027",
+            "date": "2026-08-24",
+            "priority": "medium",
+            "scheduled": True,
+        }
+        carried = carry_unscheduled_articles(
+            [],
+            {"new_articles": [article]},
+            today=date(2026, 8, 28),
+        )
+        self.assertEqual(carried, [])
+
     def test_collects_russian_articles_and_skips_pagination_and_duplicates(self):
         html = """
         <html>
@@ -613,16 +659,20 @@ class BrawlPipelineTests(unittest.TestCase):
         self.assertIsNotNone(preview)
         self.assertIn("🟡 MEDIUM", preview)
 
-    def test_article_without_russian_version_does_not_build_preview(self):
+    def test_official_english_article_builds_translated_preview(self):
         article = {
             "priority": "high",
             "ru_found": False,
-            "ru_clean_content": [
-                "Этот текст не должен использоваться без найденной русской версии."
-            ],
+            "title": "New game mode announced",
+            "clean_content": ["Supercell announced a new game mode for players."],
         }
 
-        self.assertIsNone(build_article_news_preview(article))
+        preview = build_article_news_preview(article)
+
+        self.assertIsNotNone(preview)
+        self.assertIn("новый игровой режим", preview)
+        self.assertEqual(article["source_language"], "en")
+        self.assertTrue(article["translated"])
 
     def test_empty_russian_content_does_not_build_preview(self):
         article = {
@@ -800,7 +850,7 @@ class BrawlPipelineTests(unittest.TestCase):
 
         self.assertIsNone(build_article_news_preview(old_article))
 
-    def test_low_article_does_not_build_russian_preview(self):
+    def test_concrete_official_low_article_builds_russian_preview(self):
         low_article = {
             "priority": "low",
             "ru_found": True,
@@ -810,7 +860,10 @@ class BrawlPipelineTests(unittest.TestCase):
             ],
         }
 
-        self.assertIsNone(build_article_news_preview(low_article))
+        preview = build_article_news_preview(low_article)
+
+        self.assertIsNotNone(preview)
+        self.assertIn("⚪ LOW", preview)
 
     def make_final_news_article(self, priority, content_blocks=None):
         """Создаёт пригодную официальную RU-статью для final-тестов."""
@@ -1039,23 +1092,25 @@ class BrawlPipelineTests(unittest.TestCase):
 
         self.assertIn("Запасная новость Brawl Stars", final_post)
 
-    def test_low_news_without_other_material_does_not_create_final_post(self):
+    def test_low_official_news_without_other_material_creates_final_post(self):
         low_article = self.make_final_news_article("low")
+        low_article["is_relevant"] = True
         data = {
-            "high_priority_articles": [low_article],
+            "high_priority_articles": [],
             "medium_priority_articles": [],
+            "new_articles": [low_article],
             "new_buffs": [],
             "new_nerfs": [],
         }
 
-        self.assertIsNone(build_final_post(data))
+        self.assertIsNotNone(build_final_post(data))
 
-    def test_english_article_without_russian_version_is_not_used(self):
+    def test_english_article_without_russian_version_is_translated(self):
         english_only_article = {
             "priority": "high",
             "ru_found": False,
-            "title": "English article",
-            "clean_content": ["English content must not be used."],
+            "title": "New Brawler announced",
+            "clean_content": ["Supercell announced a new brawler in Brawl Stars."],
         }
         data = {
             "high_priority_articles": [english_only_article],
@@ -1064,7 +1119,43 @@ class BrawlPipelineTests(unittest.TestCase):
             "new_nerfs": [],
         }
 
-        self.assertIsNone(build_final_post(data))
+        final_post = build_final_post(data)
+
+        self.assertIsNotNone(final_post)
+        self.assertIn("новый боец", final_post)
+        self.assertTrue(english_only_article["translated"])
+
+    def test_first_look_at_bsc_2027_is_scheduled_from_official_english(self):
+        article = {
+            "url": "https://supercell.com/en/games/brawlstars/blog/esports/first-look-at-bsc-2027/",
+            "title": "First Look at BSC 2027",
+            "date": "2026-08-24",
+            "category": "esports",
+            "priority": "medium",
+            "official": True,
+            "fresh": True,
+            "ru_found": False,
+            "clean_content": [
+                "BSC 2027 has two connected levels including Challengers.",
+                "Split 1 leads to the Brawl Cup and Split 2 to the World Finals.",
+                "The system introduces promotion and relegation between levels.",
+            ],
+        }
+        data = {
+            "high_priority_articles": [],
+            "medium_priority_articles": [article],
+            "new_articles": [article],
+            "new_buffs": [],
+            "new_nerfs": [],
+        }
+
+        final_post = build_final_post(data)
+
+        self.assertIsNotNone(final_post)
+        self.assertIn("Первый взгляд на BSC 2027", final_post)
+        self.assertIn("два связанных уровня", final_post)
+        self.assertEqual(article["source_language"], "en")
+        self.assertTrue(article["translated"])
 
     def test_final_post_without_any_material_returns_none(self):
         data = {

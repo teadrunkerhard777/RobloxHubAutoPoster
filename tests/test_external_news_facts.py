@@ -3,6 +3,8 @@ from datetime import datetime, timezone
 
 from external_news_facts import (
     NEWS_MAX_AGE_DAYS,
+    SECONDARY_NEWS_MAX_AGE_DAYS,
+    contains_rumor_signal,
     extract_external_facts,
     is_fresh_article,
 )
@@ -11,22 +13,22 @@ NOW = datetime(2026, 8, 16, 12, 0, tzinfo=timezone.utc)
 
 
 class ExternalNewsFactsTests(unittest.TestCase):
-    def test_freshness_window_is_seven_days(self):
-        self.assertEqual(NEWS_MAX_AGE_DAYS, 7)
+    def test_freshness_window_is_fourteen_days(self):
+        self.assertEqual(NEWS_MAX_AGE_DAYS, 14)
 
         article = {
             "success": True,
-            "url": "https://example.com/six-days-old",
-            "published_at": "2026-08-10T12:00:00Z",
+            "url": "https://example.com/thirteen-days-old",
+            "published_at": "2026-08-03T12:00:00Z",
         }
 
         self.assertTrue(is_fresh_article(article, now=NOW))
 
-    def test_rejects_article_older_than_seven_days(self):
+    def test_rejects_article_older_than_fourteen_days(self):
         article = {
             "success": True,
-            "url": "https://example.com/eight-days-old",
-            "published_at": "2026-08-08T00:00:00Z",
+            "url": "https://example.com/fifteen-days-old",
+            "published_at": "2026-08-01T00:00:00Z",
         }
 
         self.assertFalse(is_fresh_article(article, now=NOW))
@@ -35,7 +37,7 @@ class ExternalNewsFactsTests(unittest.TestCase):
         article = {
             "success": True,
             "url": "https://example.com/old",
-            "published_at": ("2026-08-06T22:02:43Z"),
+            "published_at": ("2026-07-01T22:02:43Z"),
         }
 
         self.assertFalse(is_fresh_article(article, now=NOW))
@@ -82,7 +84,7 @@ class ExternalNewsFactsTests(unittest.TestCase):
             )
         )
 
-    def test_skips_stale_blox_fruits_facts(self):
+    def test_accepts_blox_fruits_inside_fourteen_days(self):
         article = {
             "success": True,
             "url": ("https://gamerrobot.com/" "blogs/news/the-balance-log"),
@@ -91,7 +93,38 @@ class ExternalNewsFactsTests(unittest.TestCase):
             "text": ("The Summer PvP Patch Notes " "- Balance Patch 001"),
         }
 
-        self.assertEqual(extract_external_facts("Blox Fruits", article, now=NOW), [])
+        self.assertTrue(extract_external_facts("Blox Fruits", article, now=NOW))
+
+    def test_secondary_window_can_reach_thirty_days_explicitly(self):
+        self.assertEqual(SECONDARY_NEWS_MAX_AGE_DAYS, 30)
+        article = {
+            "success": True,
+            "url": "https://example.com/twenty-days-old",
+            "title": "New event update",
+            "published_at": "2026-07-27T12:00:00Z",
+            "text": "A new event update adds rewards and a game mode for players.",
+        }
+
+        self.assertFalse(is_fresh_article(article, now=NOW))
+        self.assertTrue(
+            is_fresh_article(
+                article,
+                now=NOW,
+                max_age_days=SECONDARY_NEWS_MAX_AGE_DAYS,
+            )
+        )
+
+    def test_rumor_or_leak_is_rejected(self):
+        article = {
+            "success": True,
+            "url": "https://example.com/leak",
+            "title": "Possible leaked update",
+            "published_at": "2026-08-15T12:00:00Z",
+            "text": "A datamine allegedly shows a new event.",
+        }
+
+        self.assertTrue(contains_rumor_signal(article))
+        self.assertEqual(extract_external_facts("Brookhaven", article, now=NOW), [])
 
     def test_extracts_backpack_storage_and_releaser_details(self):
         article = {

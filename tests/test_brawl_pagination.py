@@ -159,7 +159,7 @@ class BrawlPaginationTests(unittest.TestCase):
 
         self.assertEqual(result, [])
 
-    def test_article_without_russian_version_is_reported_as_rejected(self):
+    def test_article_without_russian_version_is_reported_as_translated(self):
         health = COLLECTION["build_brawl_source_health"](
             [{"available": True}],
             [{"url": "https://supercell.com/article/official/"}],
@@ -167,14 +167,16 @@ class BrawlPaginationTests(unittest.TestCase):
                 {
                     "priority": "medium",
                     "ru_found": False,
+                    "translated": True,
+                    "is_relevant": True,
                     "source_available": True,
                     "extraction_success": True,
                 }
             ],
         )
 
-        self.assertEqual(health["verification_passed"], 0)
-        self.assertEqual(health["verification_rejected"], 1)
+        self.assertEqual(health["verification_passed"], 1)
+        self.assertEqual(health["verification_rejected"], 0)
 
 
 if __name__ == "__main__":

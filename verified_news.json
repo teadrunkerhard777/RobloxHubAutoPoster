@@ -1,213 +1,5 @@
 [
   {
-    "game": "Steal a Brainrot",
-    "universe_id": 7709344486,
-    "roblox_name": "[🐝] Steal a Brainrot",
-    "description": "🗣️ Welcome to Steal a Brainrot!\n\n👍 Like the game and join the group\n\nHow to Play:\n👽 Buy a Brainrot\n🥷 Steal Brainrots from other players\n💸 Generate money\n🐦‍🔥 Rebirth\n✋ Buy slaps and troll gear to troll other players!\n\n💻 Supports Desktop, Mobile and Tablet players\n\n🙏 Credit to Chris for letting us use the Nyan Cat!\n🙏 Credit to @WinnersTakesAll for the backpack system!",
-    "updated": "2026-08-25T15:42:51.315Z",
-    "created": "2025-05-16T00:49:12.563Z",
-    "creator": {
-      "id": 35815907,
-      "name": "BRAZILIAN SPYDER",
-      "type": "Group",
-      "isRNVAccount": false,
-      "hasVerifiedBadge": true
-    },
-    "description_changed": false,
-    "added_lines": [],
-    "keywords": [],
-    "score": 0,
-    "confidence": "low",
-    "facts": [],
-    "description_facts": [
-      {
-        "text": "🙏 Credit to @WinnersTakesAll for the backpack system!",
-        "kind": "mechanics_storage",
-        "value": 8,
-        "specific": true,
-        "reason": "Строка называет конкретное игровое содержимое",
-        "summary_ru": "Появилось отдельное хранилище для предметов из рюкзака.",
-        "is_new_line": false
-      }
-    ],
-    "priority": true,
-    "checked_at": "2026-08-28T03:00:57.286979+00:00",
-    "sources": [
-      {
-        "type": "official_game_description",
-        "verified": true
-      },
-      {
-        "type": "official_roblox_group",
-        "verified": true,
-        "group_id": 35815907,
-        "group_name": "BRAZILIAN SPYDER"
-      }
-    ],
-    "cross_source_confirmations": [],
-    "source_diagnostics": [
-      {
-        "source_type": "official_game_description",
-        "source_url": "https://www.roblox.com/games/109983668079237/Steal-a-Brainrot",
-        "latest_published_at": "2026-08-25T15:42:51.315Z",
-        "status": "rejected",
-        "result_code": "NO_NEW_CONTENT",
-        "available": true,
-        "article_found": false,
-        "date_found": true,
-        "content_found": true,
-        "extraction_success": false,
-        "verification_passed": false,
-        "reason": "Нет новой конкретной строки со времени прошлого снимка."
-      },
-      {
-        "source_type": "official_roblox_group",
-        "source_url": "https://www.roblox.com/communities/35815907/BRAZILIAN-SPYDER",
-        "latest_published_at": null,
-        "status": "checked",
-        "result_code": "NO_NEW_CONTENT",
-        "available": true,
-        "article_found": false,
-        "date_found": false,
-        "content_found": false,
-        "extraction_success": false,
-        "verification_passed": false,
-        "reason": "Официальная группа подтверждена; датированной новости нет."
-      }
-    ],
-    "official_description_analysis": {
-      "keywords": [],
-      "news_lines": []
-    },
-    "source_registry": {
-      "universe_id": 7709344486,
-      "root_place_id": 109983668079237,
-      "roblox_game_url": "https://www.roblox.com/games/109983668079237/Steal-a-Brainrot",
-      "roblox_group_id": 35815907,
-      "roblox_group_name": "BRAZILIAN SPYDER",
-      "roblox_group_url": "https://www.roblox.com/communities/35815907/BRAZILIAN-SPYDER",
-      "news_strategy": "roblox_game_description_and_group",
-      "website": null,
-      "news_url": null,
-      "discord": "https://discord.com/servers/steal-a-brainrot-1376018788041887795",
-      "youtube": null,
-      "x": null
-    },
-    "official_group": {
-      "id": 35815907,
-      "name": "BRAZILIAN SPYDER",
-      "expected_name": "BRAZILIAN SPYDER",
-      "name_matches_registry": true,
-      "description": "",
-      "has_verified_badge": true,
-      "news_lines": []
-    },
-    "external_source_diagnostics": [],
-    "candidate_decision": {
-      "status": "rejected",
-      "reason": "Нет свежего факта с редакционным баллом 5 или выше."
-    }
-  },
-  {
-    "game": "99 Nights in the Forest",
-    "universe_id": 7326934954,
-    "roblox_name": "[🪶] 99 Nights in the Forest 🔦",
-    "description": "Build a camp with friends. \n\nSomething is watching you.\n\n99 Nights in the Forest",
-    "updated": "2026-08-22T18:12:19.445Z",
-    "created": "2025-03-04T04:46:49.73Z",
-    "creator": {
-      "id": 6042520,
-      "name": "Grandma's Favourite Games",
-      "type": "Group",
-      "isRNVAccount": false,
-      "hasVerifiedBadge": true
-    },
-    "description_changed": false,
-    "added_lines": [],
-    "keywords": [],
-    "score": 0,
-    "confidence": "low",
-    "facts": [],
-    "description_facts": [],
-    "priority": true,
-    "checked_at": "2026-08-28T03:00:57.287533+00:00",
-    "sources": [
-      {
-        "type": "official_game_description",
-        "verified": true
-      },
-      {
-        "type": "official_roblox_group",
-        "verified": true,
-        "group_id": 6042520,
-        "group_name": "Grandma's Favourite Games"
-      }
-    ],
-    "cross_source_confirmations": [],
-    "source_diagnostics": [
-      {
-        "source_type": "official_game_description",
-        "source_url": "https://www.roblox.com/games/79546208627805/99-Nights-in-the-Forest",
-        "latest_published_at": "2026-08-22T18:12:19.445Z",
-        "status": "rejected",
-        "result_code": "NO_NEW_CONTENT",
-        "available": true,
-        "article_found": false,
-        "date_found": true,
-        "content_found": true,
-        "extraction_success": false,
-        "verification_passed": false,
-        "reason": "Нет новой конкретной строки со времени прошлого снимка."
-      },
-      {
-        "source_type": "official_roblox_group",
-        "source_url": "https://www.roblox.com/communities/6042520/Grandmas-Favourite-Games",
-        "latest_published_at": null,
-        "status": "checked",
-        "result_code": "NO_NEW_CONTENT",
-        "available": true,
-        "article_found": false,
-        "date_found": false,
-        "content_found": true,
-        "extraction_success": false,
-        "verification_passed": false,
-        "reason": "Официальная группа подтверждена; датированной новости нет."
-      }
-    ],
-    "official_description_analysis": {
-      "keywords": [],
-      "news_lines": []
-    },
-    "source_registry": {
-      "universe_id": 7326934954,
-      "root_place_id": 79546208627805,
-      "roblox_game_url": "https://www.roblox.com/games/79546208627805/99-Nights-in-the-Forest",
-      "roblox_group_id": 6042520,
-      "roblox_group_name": "Grandma's Favourite Games",
-      "roblox_group_url": "https://www.roblox.com/communities/6042520/Grandmas-Favourite-Games",
-      "news_strategy": "roblox_game_description_and_group",
-      "website": "https://www.99nitf.com/",
-      "news_url": null,
-      "discord": "https://discord.com/invite/nyyr2Qmsdp",
-      "youtube": null,
-      "x": null
-    },
-    "official_group": {
-      "id": 6042520,
-      "name": "Grandma's Favourite Games",
-      "expected_name": "Grandma's Favourite Games",
-      "name_matches_registry": true,
-      "description": "A group of 3 friends from New Zealand who develop games: ForyxeV, Viridial, and Cracky4\n\nOur most popular games are 99 Nights in the forest and Mall tycoon\n\nWe are currently at war with Bee Swarm Simulator Club",
-      "has_verified_badge": true,
-      "news_lines": []
-    },
-    "external_source_diagnostics": [],
-    "candidate_decision": {
-      "status": "rejected",
-      "reason": "Нет свежего факта с редакционным баллом 5 или выше."
-    }
-  },
-  {
     "game": "Blox Fruits",
     "universe_id": 994732206,
     "roblox_name": "⚔️ Blox Fruits",
@@ -227,9 +19,21 @@
       "BOSS",
       "MAP"
     ],
-    "score": 0,
-    "confidence": "low",
-    "facts": [],
+    "score": 6,
+    "confidence": "medium",
+    "facts": [
+      {
+        "text": "The Balance Log",
+        "summary_ru": "В Blox Fruits вышел балансный патч The Summer PvP #001.",
+        "kind": "official_article",
+        "value": 6,
+        "specific": true,
+        "reason": "Факт из официальной новостной статьи",
+        "is_new_line": true,
+        "source_url": "https://gamerrobot.com/blogs/news/the-balance-log",
+        "title_is_concrete": true
+      }
+    ],
     "description_facts": [
       {
         "text": "-Fruits spawn in the map every hour / despawn after 20 mins",
@@ -242,7 +46,7 @@
       }
     ],
     "priority": false,
-    "checked_at": "2026-08-28T03:00:57.290360+00:00",
+    "checked_at": "2026-08-28T07:45:03.160804+00:00",
     "sources": [
       {
         "type": "official_game_description",
@@ -253,6 +57,11 @@
         "verified": true,
         "group_id": 4372130,
         "group_name": "Gamer Robot Inc"
+      },
+      {
+        "type": "official_news_website",
+        "verified": true,
+        "url": "https://gamerrobot.com/blogs/news/the-balance-log"
       }
     ],
     "cross_source_confirmations": [],
@@ -261,16 +70,43 @@
         "source_type": "official_news_website",
         "source_url": "https://gamerrobot.com/blogs/news",
         "latest_published_at": "2026-08-06T22:02:43Z",
-        "status": "rejected",
-        "result_code": "SOURCE_STALE",
-        "reason": "Публикация устарела: 21.2 дн. (лимит 7).",
+        "status": "accepted",
+        "result_code": "FOUND_VERIFIED",
+        "reason": "Официальная публикация (21.4 дн.) с датой и игровым содержанием; окно emergency_30_day.",
         "available": true,
         "article_found": true,
         "date_found": true,
         "content_found": true,
-        "extraction_success": false,
-        "verification_passed": false,
-        "latest_url": "https://gamerrobot.com/blogs/news/the-balance-log"
+        "extraction_success": true,
+        "verification_passed": true,
+        "source_tier": "A",
+        "official": true,
+        "selected": false,
+        "formatted": false,
+        "scheduled": false,
+        "latest_url": "https://gamerrobot.com/blogs/news/the-balance-log",
+        "freshness_window": "emergency_30_day"
+      },
+      {
+        "source_type": "secondary_gaming_media",
+        "source_url": "https://news.google.com/rss/search?q=%22Blox%20Fruits%22%20Roblox%20when%3A30d&hl=en-US&gl=US&ceid=US:en",
+        "latest_published_at": "2026-08-19T07:00:00+00:00",
+        "status": "accepted",
+        "result_code": "FOUND_VERIFIED",
+        "reason": "Tier b публикация (9.0 дн.) с датой и игровым содержанием; окно primary_14_day.",
+        "available": true,
+        "article_found": true,
+        "date_found": true,
+        "content_found": true,
+        "extraction_success": true,
+        "verification_passed": true,
+        "source_tier": "B",
+        "official": false,
+        "selected": false,
+        "formatted": false,
+        "scheduled": false,
+        "latest_url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxQMmo0dFFqMHVzN1dMdG04UVA2Z2Q5TWx3UVp5S3BmODI2M2J6a3I0ZHNSOGp6Wk5helIyNERBMWR5X0t6dkNyZUxfWTdOZmpZN0pzeVNyWWJYLUdPdTN5cE5lUjJYN2djWHFWWnlZVDc2Ni04ZHdBRmRUaWRaWTVoYi1xdkFFWWdDUjhTZw?oc=5",
+        "freshness_window": "primary_14_day"
       },
       {
         "source_type": "official_game_description",
@@ -339,32 +175,685 @@
         "source_type": "official_news_website",
         "source_url": "https://gamerrobot.com/blogs/news",
         "latest_published_at": "2026-08-06T22:02:43Z",
+        "status": "accepted",
+        "result_code": "FOUND_VERIFIED",
+        "reason": "Официальная публикация (21.4 дн.) с датой и игровым содержанием; окно emergency_30_day.",
+        "available": true,
+        "article_found": true,
+        "date_found": true,
+        "content_found": true,
+        "extraction_success": true,
+        "verification_passed": true,
+        "source_tier": "A",
+        "official": true,
+        "selected": false,
+        "formatted": false,
+        "scheduled": false,
+        "latest_url": "https://gamerrobot.com/blogs/news/the-balance-log",
+        "freshness_window": "emergency_30_day"
+      },
+      {
+        "source_type": "secondary_gaming_media",
+        "source_url": "https://news.google.com/rss/search?q=%22Blox%20Fruits%22%20Roblox%20when%3A30d&hl=en-US&gl=US&ceid=US:en",
+        "latest_published_at": "2026-08-19T07:00:00+00:00",
+        "status": "accepted",
+        "result_code": "FOUND_VERIFIED",
+        "reason": "Tier b публикация (9.0 дн.) с датой и игровым содержанием; окно primary_14_day.",
+        "available": true,
+        "article_found": true,
+        "date_found": true,
+        "content_found": true,
+        "extraction_success": true,
+        "verification_passed": true,
+        "source_tier": "B",
+        "official": false,
+        "selected": false,
+        "formatted": false,
+        "scheduled": false,
+        "latest_url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxQMmo0dFFqMHVzN1dMdG04UVA2Z2Q5TWx3UVp5S3BmODI2M2J6a3I0ZHNSOGp6Wk5helIyNERBMWR5X0t6dkNyZUxfWTdOZmpZN0pzeVNyWWJYLUdPdTN5cE5lUjJYN2djWHFWWnlZVDc2Ni04ZHdBRmRUaWRaWTVoYi1xdkFFWWdDUjhTZw?oc=5",
+        "freshness_window": "primary_14_day"
+      }
+    ],
+    "external_source_diagnostic": {
+      "source_type": "secondary_gaming_media",
+      "source_url": "https://news.google.com/rss/search?q=%22Blox%20Fruits%22%20Roblox%20when%3A30d&hl=en-US&gl=US&ceid=US:en",
+      "latest_published_at": "2026-08-19T07:00:00+00:00",
+      "status": "accepted",
+      "result_code": "FOUND_VERIFIED",
+      "reason": "Tier b публикация (9.0 дн.) с датой и игровым содержанием; окно primary_14_day.",
+      "available": true,
+      "article_found": true,
+      "date_found": true,
+      "content_found": true,
+      "extraction_success": true,
+      "verification_passed": true,
+      "source_tier": "B",
+      "official": false,
+      "selected": false,
+      "formatted": false,
+      "scheduled": false,
+      "latest_url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxQMmo0dFFqMHVzN1dMdG04UVA2Z2Q5TWx3UVp5S3BmODI2M2J6a3I0ZHNSOGp6Wk5helIyNERBMWR5X0t6dkNyZUxfWTdOZmpZN0pzeVNyWWJYLUdPdTN5cE5lUjJYN2djWHFWWnlZVDc2Ni04ZHdBRmRUaWRaWTVoYi1xdkFFWWdDUjhTZw?oc=5",
+      "freshness_window": "primary_14_day"
+    },
+    "external_news_article": {
+      "url": "https://gamerrobot.com/blogs/news/the-balance-log",
+      "title": "The Balance Log",
+      "published_at": "2026-08-06T22:02:43Z",
+      "age_days": 21.404401260474536,
+      "source_tier": "A",
+      "publisher": null,
+      "freshness_window": "emergency_30_day"
+    },
+    "candidate_decision": {
+      "status": "accepted",
+      "reason": "Есть достойный свежий факт."
+    }
+  },
+  {
+    "game": "Blade Ball",
+    "universe_id": 4777817887,
+    "roblox_name": "Blade Ball",
+    "description": "⚡  In this game of focus, timing, and strategy, your skill is tested as a deflectable homing ball hunts players with increasing speed. But there's more than what meets the eye.\n\n🔥  Gain new abilities and upgrade them to compliment your playstyle. Rise through the ranks by mastering your skill, and stand out with a variety of iconic weapon skins and finisher effects.\n\n🏆 Shoot for the leaderboard or play casually! The choice is yours.\n \nCONTROLS:\nBLOCK - F/R1/Tap Screen/Tap UI Button/Left Click\nABILITY - Q/ButtonX/Tap UI Button/Right Click\nSHIFTLOCK - Shift/Button-Y/Tap UI Button\nEMOTE - R/L1/Tap UI Button\n\ntags: minigame, battle game, pvp, multiplayer, abilities, dodgeball, sports, mobile, console, xbox, pc",
+    "updated": "2026-08-23T21:39:04.487Z",
+    "created": "2023-06-17T00:05:26.103Z",
+    "creator": {
+      "id": 12836673,
+      "name": "Wiggity.",
+      "type": "Group",
+      "isRNVAccount": false,
+      "hasVerifiedBadge": true
+    },
+    "description_changed": false,
+    "added_lines": [],
+    "keywords": [
+      "NEW"
+    ],
+    "score": 6,
+    "confidence": "medium",
+    "facts": [
+      {
+        "text": "BEST SWORDS IN BLADE BALL! 🔥 - Blade Ball Update Showcase",
+        "summary_ru": "В Blade Ball вышло обновление «BEST SWORDS IN BLADE BALL! 🔥 - Blade Ball Update Showcase».",
+        "kind": "official_article",
+        "value": 6,
+        "specific": true,
+        "reason": "Свежий игровой анонс из официального источника",
+        "is_new_line": true,
+        "source_url": "https://www.youtube.com/watch?v=5E4tYNtntFc",
+        "title_is_concrete": true
+      }
+    ],
+    "description_facts": [
+      {
+        "text": "🔥 Gain new abilities and upgrade them to compliment your playstyle. Rise through the ranks by mastering your skill, and stand out with a variety of iconic weapon skins and finisher effects.",
+        "kind": "items",
+        "value": 7,
+        "specific": true,
+        "reason": "Строка называет конкретное игровое содержимое",
+        "summary_ru": "В игре появились новые инструменты и оружие.",
+        "is_new_line": false
+      }
+    ],
+    "priority": false,
+    "checked_at": "2026-08-28T07:45:03.168597+00:00",
+    "sources": [
+      {
+        "type": "official_game_description",
+        "verified": true
+      },
+      {
+        "type": "official_roblox_group",
+        "verified": true,
+        "group_id": 12836673,
+        "group_name": "Wiggity."
+      },
+      {
+        "type": "official_youtube_feed",
+        "verified": true,
+        "url": "https://www.youtube.com/watch?v=5E4tYNtntFc"
+      }
+    ],
+    "cross_source_confirmations": [],
+    "source_diagnostics": [
+      {
+        "source_type": "official_youtube_feed",
+        "source_url": "https://www.youtube.com/feeds/videos.xml?channel_id=UCPttFx0zI4Zv9M4i3Q2ylsw",
+        "latest_published_at": "2026-08-23T23:00:24+00:00",
+        "status": "accepted",
+        "result_code": "FOUND_VERIFIED",
+        "reason": "Официальная публикация (4.4 дн.) с датой и игровым содержанием; окно primary_14_day.",
+        "available": true,
+        "article_found": true,
+        "date_found": true,
+        "content_found": true,
+        "extraction_success": true,
+        "verification_passed": true,
+        "source_tier": "A",
+        "official": true,
+        "selected": false,
+        "formatted": false,
+        "scheduled": false,
+        "latest_url": "https://www.youtube.com/watch?v=5E4tYNtntFc",
+        "freshness_window": "primary_14_day"
+      },
+      {
+        "source_type": "official_news_website",
+        "source_url": "https://bladeball.com/blogs/news",
+        "latest_published_at": "2024-03-23T18:51:42Z",
         "status": "rejected",
         "result_code": "SOURCE_STALE",
-        "reason": "Публикация устарела: 21.2 дн. (лимит 7).",
+        "reason": "Публикация устарела: 887.5 дн. (аварийный лимит 30).",
         "available": true,
         "article_found": true,
         "date_found": true,
         "content_found": true,
         "extraction_success": false,
         "verification_passed": false,
-        "latest_url": "https://gamerrobot.com/blogs/news/the-balance-log"
+        "source_tier": "A",
+        "official": true,
+        "selected": false,
+        "formatted": false,
+        "scheduled": false,
+        "latest_url": "https://bladeball.com/blogs/news/comptetetive-leaderboards"
+      },
+      {
+        "source_type": "secondary_gaming_media",
+        "source_url": "https://news.google.com/rss/search?q=%22Blade%20Ball%22%20Roblox%20when%3A30d&hl=en-US&gl=US&ceid=US:en",
+        "latest_published_at": null,
+        "status": "rejected",
+        "result_code": "NO_NEW_CONTENT",
+        "reason": "Нет пригодной Tier B новости.",
+        "available": true,
+        "article_found": false,
+        "date_found": false,
+        "content_found": false,
+        "extraction_success": false,
+        "verification_passed": false,
+        "source_tier": "B",
+        "official": false,
+        "selected": false,
+        "formatted": false,
+        "scheduled": false
+      },
+      {
+        "source_type": "official_game_description",
+        "source_url": "https://www.roblox.com/games/13772394625/Blade-Ball",
+        "latest_published_at": "2026-08-23T21:39:04.487Z",
+        "status": "rejected",
+        "result_code": "NO_NEW_CONTENT",
+        "available": true,
+        "article_found": false,
+        "date_found": true,
+        "content_found": true,
+        "extraction_success": false,
+        "verification_passed": false,
+        "reason": "Нет новой конкретной строки со времени прошлого снимка."
+      },
+      {
+        "source_type": "official_roblox_group",
+        "source_url": "https://www.roblox.com/communities/12836673/Wiggity",
+        "latest_published_at": null,
+        "status": "checked",
+        "result_code": "NO_NEW_CONTENT",
+        "available": true,
+        "article_found": false,
+        "date_found": false,
+        "content_found": true,
+        "extraction_success": false,
+        "verification_passed": false,
+        "reason": "Официальная группа подтверждена; датированной новости нет."
+      }
+    ],
+    "official_description_analysis": {
+      "keywords": [
+        "NEW"
+      ],
+      "news_lines": [
+        "🔥  Gain new abilities and upgrade them to compliment your playstyle. Rise through the ranks by mastering your skill, and stand out with a variety of iconic weapon skins and finisher effects."
+      ]
+    },
+    "source_registry": {
+      "universe_id": 4777817887,
+      "root_place_id": 13772394625,
+      "roblox_game_url": "https://www.roblox.com/games/13772394625/Blade-Ball",
+      "roblox_group_id": 12836673,
+      "roblox_group_name": "Wiggity.",
+      "roblox_group_url": "https://www.roblox.com/communities/12836673/Wiggity",
+      "news_strategy": "official_news_website",
+      "website": "https://bladeball.com/",
+      "news_url": "https://bladeball.com/blogs/news",
+      "discord": "https://discord.com/servers/1141515589924429869",
+      "youtube": "https://www.youtube.com/@Blade-Ball",
+      "x": null
+    },
+    "official_group": {
+      "id": 12836673,
+      "name": "Wiggity.",
+      "expected_name": "Wiggity.",
+      "name_matches_registry": true,
+      "description": "Creators of Blade Ball",
+      "has_verified_badge": true,
+      "news_lines": []
+    },
+    "external_source_diagnostics": [
+      {
+        "source_type": "official_youtube_feed",
+        "source_url": "https://www.youtube.com/feeds/videos.xml?channel_id=UCPttFx0zI4Zv9M4i3Q2ylsw",
+        "latest_published_at": "2026-08-23T23:00:24+00:00",
+        "status": "accepted",
+        "result_code": "FOUND_VERIFIED",
+        "reason": "Официальная публикация (4.4 дн.) с датой и игровым содержанием; окно primary_14_day.",
+        "available": true,
+        "article_found": true,
+        "date_found": true,
+        "content_found": true,
+        "extraction_success": true,
+        "verification_passed": true,
+        "source_tier": "A",
+        "official": true,
+        "selected": false,
+        "formatted": false,
+        "scheduled": false,
+        "latest_url": "https://www.youtube.com/watch?v=5E4tYNtntFc",
+        "freshness_window": "primary_14_day"
+      },
+      {
+        "source_type": "official_news_website",
+        "source_url": "https://bladeball.com/blogs/news",
+        "latest_published_at": "2024-03-23T18:51:42Z",
+        "status": "rejected",
+        "result_code": "SOURCE_STALE",
+        "reason": "Публикация устарела: 887.5 дн. (аварийный лимит 30).",
+        "available": true,
+        "article_found": true,
+        "date_found": true,
+        "content_found": true,
+        "extraction_success": false,
+        "verification_passed": false,
+        "source_tier": "A",
+        "official": true,
+        "selected": false,
+        "formatted": false,
+        "scheduled": false,
+        "latest_url": "https://bladeball.com/blogs/news/comptetetive-leaderboards"
+      },
+      {
+        "source_type": "secondary_gaming_media",
+        "source_url": "https://news.google.com/rss/search?q=%22Blade%20Ball%22%20Roblox%20when%3A30d&hl=en-US&gl=US&ceid=US:en",
+        "latest_published_at": null,
+        "status": "rejected",
+        "result_code": "NO_NEW_CONTENT",
+        "reason": "Нет пригодной Tier B новости.",
+        "available": true,
+        "article_found": false,
+        "date_found": false,
+        "content_found": false,
+        "extraction_success": false,
+        "verification_passed": false,
+        "source_tier": "B",
+        "official": false,
+        "selected": false,
+        "formatted": false,
+        "scheduled": false
       }
     ],
     "external_source_diagnostic": {
-      "source_type": "official_news_website",
-      "source_url": "https://gamerrobot.com/blogs/news",
-      "latest_published_at": "2026-08-06T22:02:43Z",
+      "source_type": "secondary_gaming_media",
+      "source_url": "https://news.google.com/rss/search?q=%22Blade%20Ball%22%20Roblox%20when%3A30d&hl=en-US&gl=US&ceid=US:en",
+      "latest_published_at": null,
       "status": "rejected",
-      "result_code": "SOURCE_STALE",
-      "reason": "Публикация устарела: 21.2 дн. (лимит 7).",
+      "result_code": "NO_NEW_CONTENT",
+      "reason": "Нет пригодной Tier B новости.",
+      "available": true,
+      "article_found": false,
+      "date_found": false,
+      "content_found": false,
+      "extraction_success": false,
+      "verification_passed": false,
+      "source_tier": "B",
+      "official": false,
+      "selected": false,
+      "formatted": false,
+      "scheduled": false
+    },
+    "external_news_article": {
+      "url": "https://www.youtube.com/watch?v=5E4tYNtntFc",
+      "title": "BEST SWORDS IN BLADE BALL! 🔥 - Blade Ball Update Showcase",
+      "published_at": "2026-08-23T23:00:24+00:00",
+      "age_days": 4.364343390104167,
+      "source_tier": "A",
+      "publisher": null,
+      "freshness_window": "primary_14_day"
+    },
+    "candidate_decision": {
+      "status": "accepted",
+      "reason": "Есть достойный свежий факт."
+    }
+  },
+  {
+    "game": "Steal a Brainrot",
+    "universe_id": 7709344486,
+    "roblox_name": "[🐝] Steal a Brainrot",
+    "description": "🗣️ Welcome to Steal a Brainrot!\n\n👍 Like the game and join the group\n\nHow to Play:\n👽 Buy a Brainrot\n🥷 Steal Brainrots from other players\n💸 Generate money\n🐦‍🔥 Rebirth\n✋ Buy slaps and troll gear to troll other players!\n\n💻 Supports Desktop, Mobile and Tablet players\n\n🙏 Credit to Chris for letting us use the Nyan Cat!\n🙏 Credit to @WinnersTakesAll for the backpack system!",
+    "updated": "2026-08-28T03:43:23.093287Z",
+    "created": "2025-05-16T00:49:12.563Z",
+    "creator": {
+      "id": 35815907,
+      "name": "BRAZILIAN SPYDER",
+      "type": "Group",
+      "isRNVAccount": false,
+      "hasVerifiedBadge": true
+    },
+    "description_changed": false,
+    "added_lines": [],
+    "keywords": [],
+    "score": 0,
+    "confidence": "low",
+    "facts": [],
+    "description_facts": [
+      {
+        "text": "🙏 Credit to @WinnersTakesAll for the backpack system!",
+        "kind": "mechanics_storage",
+        "value": 8,
+        "specific": true,
+        "reason": "Строка называет конкретное игровое содержимое",
+        "summary_ru": "Появилось отдельное хранилище для предметов из рюкзака.",
+        "is_new_line": false
+      }
+    ],
+    "priority": true,
+    "checked_at": "2026-08-28T07:45:03.158710+00:00",
+    "sources": [
+      {
+        "type": "official_game_description",
+        "verified": true
+      },
+      {
+        "type": "official_roblox_group",
+        "verified": true,
+        "group_id": 35815907,
+        "group_name": "BRAZILIAN SPYDER"
+      }
+    ],
+    "cross_source_confirmations": [],
+    "source_diagnostics": [
+      {
+        "source_type": "secondary_gaming_media",
+        "source_url": "https://news.google.com/rss/search?q=%22Steal%20a%20Brainrot%22%20Roblox%20when%3A30d&hl=en-US&gl=US&ceid=US:en",
+        "latest_published_at": "2026-08-15T07:00:00+00:00",
+        "status": "rejected",
+        "result_code": "EXTRACTION_FAILED",
+        "reason": "В публикации не найдено достаточно конкретного содержания.",
+        "available": true,
+        "article_found": true,
+        "date_found": true,
+        "content_found": true,
+        "extraction_success": false,
+        "verification_passed": false,
+        "source_tier": "B",
+        "official": false,
+        "selected": false,
+        "formatted": false,
+        "scheduled": false,
+        "latest_url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxNSmltLXVqQnJibTN4TWF1WGNUOUd4TmdWNFFxLVUyQWpadzJueDdhUkRsT2lqUmhVTWk2ZGxydTVoZEd1ZWxUMEU4cEk5UjR4c05hNDEtM2UzUVRlWVRDdHoxTVJjOUVMOWlGVmdDX0swaFZQN3VKX05XZ1J1TXBqTFE4M2Iyblk?oc=5"
+      },
+      {
+        "source_type": "official_game_description",
+        "source_url": "https://www.roblox.com/games/109983668079237/Steal-a-Brainrot",
+        "latest_published_at": "2026-08-28T03:43:23.093287Z",
+        "status": "rejected",
+        "result_code": "NO_NEW_CONTENT",
+        "available": true,
+        "article_found": false,
+        "date_found": true,
+        "content_found": true,
+        "extraction_success": false,
+        "verification_passed": false,
+        "reason": "Нет новой конкретной строки со времени прошлого снимка."
+      },
+      {
+        "source_type": "official_roblox_group",
+        "source_url": "https://www.roblox.com/communities/35815907/BRAZILIAN-SPYDER",
+        "latest_published_at": null,
+        "status": "checked",
+        "result_code": "NO_NEW_CONTENT",
+        "available": true,
+        "article_found": false,
+        "date_found": false,
+        "content_found": false,
+        "extraction_success": false,
+        "verification_passed": false,
+        "reason": "Официальная группа подтверждена; датированной новости нет."
+      }
+    ],
+    "official_description_analysis": {
+      "keywords": [],
+      "news_lines": []
+    },
+    "source_registry": {
+      "universe_id": 7709344486,
+      "root_place_id": 109983668079237,
+      "roblox_game_url": "https://www.roblox.com/games/109983668079237/Steal-a-Brainrot",
+      "roblox_group_id": 35815907,
+      "roblox_group_name": "BRAZILIAN SPYDER",
+      "roblox_group_url": "https://www.roblox.com/communities/35815907/BRAZILIAN-SPYDER",
+      "news_strategy": "roblox_game_description_and_group",
+      "website": null,
+      "news_url": null,
+      "discord": "https://discord.com/servers/steal-a-brainrot-1376018788041887795",
+      "youtube": null,
+      "x": null
+    },
+    "official_group": {
+      "id": 35815907,
+      "name": "BRAZILIAN SPYDER",
+      "expected_name": "BRAZILIAN SPYDER",
+      "name_matches_registry": true,
+      "description": "",
+      "has_verified_badge": true,
+      "news_lines": []
+    },
+    "external_source_diagnostics": [
+      {
+        "source_type": "secondary_gaming_media",
+        "source_url": "https://news.google.com/rss/search?q=%22Steal%20a%20Brainrot%22%20Roblox%20when%3A30d&hl=en-US&gl=US&ceid=US:en",
+        "latest_published_at": "2026-08-15T07:00:00+00:00",
+        "status": "rejected",
+        "result_code": "EXTRACTION_FAILED",
+        "reason": "В публикации не найдено достаточно конкретного содержания.",
+        "available": true,
+        "article_found": true,
+        "date_found": true,
+        "content_found": true,
+        "extraction_success": false,
+        "verification_passed": false,
+        "source_tier": "B",
+        "official": false,
+        "selected": false,
+        "formatted": false,
+        "scheduled": false,
+        "latest_url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxNSmltLXVqQnJibTN4TWF1WGNUOUd4TmdWNFFxLVUyQWpadzJueDdhUkRsT2lqUmhVTWk2ZGxydTVoZEd1ZWxUMEU4cEk5UjR4c05hNDEtM2UzUVRlWVRDdHoxTVJjOUVMOWlGVmdDX0swaFZQN3VKX05XZ1J1TXBqTFE4M2Iyblk?oc=5"
+      }
+    ],
+    "external_source_diagnostic": {
+      "source_type": "secondary_gaming_media",
+      "source_url": "https://news.google.com/rss/search?q=%22Steal%20a%20Brainrot%22%20Roblox%20when%3A30d&hl=en-US&gl=US&ceid=US:en",
+      "latest_published_at": "2026-08-15T07:00:00+00:00",
+      "status": "rejected",
+      "result_code": "EXTRACTION_FAILED",
+      "reason": "В публикации не найдено достаточно конкретного содержания.",
       "available": true,
       "article_found": true,
       "date_found": true,
       "content_found": true,
       "extraction_success": false,
       "verification_passed": false,
-      "latest_url": "https://gamerrobot.com/blogs/news/the-balance-log"
+      "source_tier": "B",
+      "official": false,
+      "selected": false,
+      "formatted": false,
+      "scheduled": false,
+      "latest_url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxNSmltLXVqQnJibTN4TWF1WGNUOUd4TmdWNFFxLVUyQWpadzJueDdhUkRsT2lqUmhVTWk2ZGxydTVoZEd1ZWxUMEU4cEk5UjR4c05hNDEtM2UzUVRlWVRDdHoxTVJjOUVMOWlGVmdDX0swaFZQN3VKX05XZ1J1TXBqTFE4M2Iyblk?oc=5"
+    },
+    "candidate_decision": {
+      "status": "rejected",
+      "reason": "Нет свежего факта с редакционным баллом 5 или выше."
+    }
+  },
+  {
+    "game": "99 Nights in the Forest",
+    "universe_id": 7326934954,
+    "roblox_name": "[🪶] 99 Nights in the Forest 🔦",
+    "description": "Build a camp with friends. \n\nSomething is watching you.\n\n99 Nights in the Forest",
+    "updated": "2026-08-22T18:12:19.445Z",
+    "created": "2025-03-04T04:46:49.73Z",
+    "creator": {
+      "id": 6042520,
+      "name": "Grandma's Favourite Games",
+      "type": "Group",
+      "isRNVAccount": false,
+      "hasVerifiedBadge": true
+    },
+    "description_changed": false,
+    "added_lines": [],
+    "keywords": [],
+    "score": 0,
+    "confidence": "low",
+    "facts": [],
+    "description_facts": [],
+    "priority": true,
+    "checked_at": "2026-08-28T07:45:03.159006+00:00",
+    "sources": [
+      {
+        "type": "official_game_description",
+        "verified": true
+      },
+      {
+        "type": "official_roblox_group",
+        "verified": true,
+        "group_id": 6042520,
+        "group_name": "Grandma's Favourite Games"
+      }
+    ],
+    "cross_source_confirmations": [],
+    "source_diagnostics": [
+      {
+        "source_type": "secondary_gaming_media",
+        "source_url": "https://news.google.com/rss/search?q=%2299%20Nights%20in%20the%20Forest%22%20Roblox%20when%3A30d&hl=en-US&gl=US&ceid=US:en",
+        "latest_published_at": "2026-08-22T05:49:00+00:00",
+        "status": "rejected",
+        "result_code": "EXTRACTION_FAILED",
+        "reason": "В публикации не найдено достаточно конкретного содержания.",
+        "available": true,
+        "article_found": true,
+        "date_found": true,
+        "content_found": true,
+        "extraction_success": false,
+        "verification_passed": false,
+        "source_tier": "B",
+        "official": false,
+        "selected": false,
+        "formatted": false,
+        "scheduled": false,
+        "latest_url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxORkJ1QVNNWWdldFZrVFByU0hBRjdnNXAwa2dxc3dsOW00ZGV4ZzJHNk0zV2I5MGdOXzAxWE9kYjZjSTJnd2s3RFhGSVlLNlNrbkcxWmJuNFQzTVhpeG9FcGtYNXpSYkpfQ3laWmFlM09SNUZfcnYyd3IwRGJXM25UU3h4bEM4SlVPUXBN?oc=5"
+      },
+      {
+        "source_type": "official_game_description",
+        "source_url": "https://www.roblox.com/games/79546208627805/99-Nights-in-the-Forest",
+        "latest_published_at": "2026-08-22T18:12:19.445Z",
+        "status": "rejected",
+        "result_code": "NO_NEW_CONTENT",
+        "available": true,
+        "article_found": false,
+        "date_found": true,
+        "content_found": true,
+        "extraction_success": false,
+        "verification_passed": false,
+        "reason": "Нет новой конкретной строки со времени прошлого снимка."
+      },
+      {
+        "source_type": "official_roblox_group",
+        "source_url": "https://www.roblox.com/communities/6042520/Grandmas-Favourite-Games",
+        "latest_published_at": null,
+        "status": "checked",
+        "result_code": "NO_NEW_CONTENT",
+        "available": true,
+        "article_found": false,
+        "date_found": false,
+        "content_found": true,
+        "extraction_success": false,
+        "verification_passed": false,
+        "reason": "Официальная группа подтверждена; датированной новости нет."
+      }
+    ],
+    "official_description_analysis": {
+      "keywords": [],
+      "news_lines": []
+    },
+    "source_registry": {
+      "universe_id": 7326934954,
+      "root_place_id": 79546208627805,
+      "roblox_game_url": "https://www.roblox.com/games/79546208627805/99-Nights-in-the-Forest",
+      "roblox_group_id": 6042520,
+      "roblox_group_name": "Grandma's Favourite Games",
+      "roblox_group_url": "https://www.roblox.com/communities/6042520/Grandmas-Favourite-Games",
+      "news_strategy": "roblox_game_description_and_group",
+      "website": "https://www.99nitf.com/",
+      "news_url": null,
+      "discord": "https://discord.com/invite/nyyr2Qmsdp",
+      "youtube": null,
+      "x": null
+    },
+    "official_group": {
+      "id": 6042520,
+      "name": "Grandma's Favourite Games",
+      "expected_name": "Grandma's Favourite Games",
+      "name_matches_registry": true,
+      "description": "A group of 3 friends from New Zealand who develop games: ForyxeV, Viridial, and Cracky4\n\nOur most popular games are 99 Nights in the forest and Mall tycoon\n\nWe are currently at war with Bee Swarm Simulator Club",
+      "has_verified_badge": true,
+      "news_lines": []
+    },
+    "external_source_diagnostics": [
+      {
+        "source_type": "secondary_gaming_media",
+        "source_url": "https://news.google.com/rss/search?q=%2299%20Nights%20in%20the%20Forest%22%20Roblox%20when%3A30d&hl=en-US&gl=US&ceid=US:en",
+        "latest_published_at": "2026-08-22T05:49:00+00:00",
+        "status": "rejected",
+        "result_code": "EXTRACTION_FAILED",
+        "reason": "В публикации не найдено достаточно конкретного содержания.",
+        "available": true,
+        "article_found": true,
+        "date_found": true,
+        "content_found": true,
+        "extraction_success": false,
+        "verification_passed": false,
+        "source_tier": "B",
+        "official": false,
+        "selected": false,
+        "formatted": false,
+        "scheduled": false,
+        "latest_url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxORkJ1QVNNWWdldFZrVFByU0hBRjdnNXAwa2dxc3dsOW00ZGV4ZzJHNk0zV2I5MGdOXzAxWE9kYjZjSTJnd2s3RFhGSVlLNlNrbkcxWmJuNFQzTVhpeG9FcGtYNXpSYkpfQ3laWmFlM09SNUZfcnYyd3IwRGJXM25UU3h4bEM4SlVPUXBN?oc=5"
+      }
+    ],
+    "external_source_diagnostic": {
+      "source_type": "secondary_gaming_media",
+      "source_url": "https://news.google.com/rss/search?q=%2299%20Nights%20in%20the%20Forest%22%20Roblox%20when%3A30d&hl=en-US&gl=US&ceid=US:en",
+      "latest_published_at": "2026-08-22T05:49:00+00:00",
+      "status": "rejected",
+      "result_code": "EXTRACTION_FAILED",
+      "reason": "В публикации не найдено достаточно конкретного содержания.",
+      "available": true,
+      "article_found": true,
+      "date_found": true,
+      "content_found": true,
+      "extraction_success": false,
+      "verification_passed": false,
+      "source_tier": "B",
+      "official": false,
+      "selected": false,
+      "formatted": false,
+      "scheduled": false,
+      "latest_url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxORkJ1QVNNWWdldFZrVFByU0hBRjdnNXAwa2dxc3dsOW00ZGV4ZzJHNk0zV2I5MGdOXzAxWE9kYjZjSTJnd2s3RFhGSVlLNlNrbkcxWmJuNFQzTVhpeG9FcGtYNXpSYkpfQ3laWmFlM09SNUZfcnYyd3IwRGJXM25UU3h4bEM4SlVPUXBN?oc=5"
     },
     "candidate_decision": {
       "status": "rejected",
@@ -470,7 +959,7 @@
       }
     ],
     "priority": false,
-    "checked_at": "2026-08-28T03:00:57.293655+00:00",
+    "checked_at": "2026-08-28T07:45:03.162610+00:00",
     "sources": [
       {
         "type": "official_game_description",
@@ -490,15 +979,39 @@
         "source_url": "https://www.brookhavenrp.com/",
         "latest_published_at": "2026-08-21",
         "status": "rejected",
-        "result_code": "SOURCE_STALE",
-        "reason": "Публикация устарела: 7.1 дн. (лимит 7).",
+        "result_code": "ALREADY_USED",
+        "reason": "Публикация уже использовалась в выпуске другого дня.",
         "available": true,
         "article_found": true,
         "date_found": true,
         "content_found": true,
         "extraction_success": false,
         "verification_passed": false,
+        "source_tier": "A",
+        "official": true,
+        "selected": false,
+        "formatted": false,
+        "scheduled": false,
         "latest_url": "https://www.brookhavenrp.com/posts/brookhaven-update-august-21-2026"
+      },
+      {
+        "source_type": "secondary_gaming_media",
+        "source_url": "https://news.google.com/rss/search?q=%22Brookhaven%22%20Roblox%20when%3A30d&hl=en-US&gl=US&ceid=US:en",
+        "latest_published_at": null,
+        "status": "rejected",
+        "result_code": "NO_NEW_CONTENT",
+        "reason": "Нет пригодной Tier B новости.",
+        "available": true,
+        "article_found": false,
+        "date_found": false,
+        "content_found": false,
+        "extraction_success": false,
+        "verification_passed": false,
+        "source_tier": "B",
+        "official": false,
+        "selected": false,
+        "formatted": false,
+        "scheduled": false
       },
       {
         "source_type": "official_game_description",
@@ -570,31 +1083,59 @@
         "source_url": "https://www.brookhavenrp.com/",
         "latest_published_at": "2026-08-21",
         "status": "rejected",
-        "result_code": "SOURCE_STALE",
-        "reason": "Публикация устарела: 7.1 дн. (лимит 7).",
+        "result_code": "ALREADY_USED",
+        "reason": "Публикация уже использовалась в выпуске другого дня.",
         "available": true,
         "article_found": true,
         "date_found": true,
         "content_found": true,
         "extraction_success": false,
         "verification_passed": false,
+        "source_tier": "A",
+        "official": true,
+        "selected": false,
+        "formatted": false,
+        "scheduled": false,
         "latest_url": "https://www.brookhavenrp.com/posts/brookhaven-update-august-21-2026"
+      },
+      {
+        "source_type": "secondary_gaming_media",
+        "source_url": "https://news.google.com/rss/search?q=%22Brookhaven%22%20Roblox%20when%3A30d&hl=en-US&gl=US&ceid=US:en",
+        "latest_published_at": null,
+        "status": "rejected",
+        "result_code": "NO_NEW_CONTENT",
+        "reason": "Нет пригодной Tier B новости.",
+        "available": true,
+        "article_found": false,
+        "date_found": false,
+        "content_found": false,
+        "extraction_success": false,
+        "verification_passed": false,
+        "source_tier": "B",
+        "official": false,
+        "selected": false,
+        "formatted": false,
+        "scheduled": false
       }
     ],
     "external_source_diagnostic": {
-      "source_type": "official_news_website",
-      "source_url": "https://www.brookhavenrp.com/",
-      "latest_published_at": "2026-08-21",
+      "source_type": "secondary_gaming_media",
+      "source_url": "https://news.google.com/rss/search?q=%22Brookhaven%22%20Roblox%20when%3A30d&hl=en-US&gl=US&ceid=US:en",
+      "latest_published_at": null,
       "status": "rejected",
-      "result_code": "SOURCE_STALE",
-      "reason": "Публикация устарела: 7.1 дн. (лимит 7).",
+      "result_code": "NO_NEW_CONTENT",
+      "reason": "Нет пригодной Tier B новости.",
       "available": true,
-      "article_found": true,
-      "date_found": true,
-      "content_found": true,
+      "article_found": false,
+      "date_found": false,
+      "content_found": false,
       "extraction_success": false,
       "verification_passed": false,
-      "latest_url": "https://www.brookhavenrp.com/posts/brookhaven-update-august-21-2026"
+      "source_tier": "B",
+      "official": false,
+      "selected": false,
+      "formatted": false,
+      "scheduled": false
     },
     "candidate_decision": {
       "status": "rejected",
@@ -604,9 +1145,9 @@
   {
     "game": "Adopt Me!",
     "universe_id": 383310974,
-    "roblox_name": "[🌧️] Adopt Me!",
+    "roblox_name": "[🍓] Adopt Me!",
     "description": "Adopt and raise 🐶🦄👶, trade and collect legendary pets, build your dream home, and roleplay with friends!\n\n🎒 Backpack Storage & Releaser Refresh! 🎒\n🦴 Store unused items for smoother gameplay!\n🧸 Sort pets and items, trade directly from tabs!\n🍓 Kiwi Kiwi and Strawberry Tortle in Releaser Eggs!\n\nBe FIRST 🏆 To experience new updates by pressing 🔔NOTIFY.\n\nMeet the founders!\nNewFissy - Tech Director\nBethink - Creative Director\n\nFind out more about Uplift Games, our policies and creative attributions:\nhttps://devforum.roblox.com/t/credits/71812",
-    "updated": "2026-08-27T00:59:41.5838968Z",
+    "updated": "2026-08-28T03:00:04.119911Z",
     "created": "2017-07-14T19:26:21.347Z",
     "creator": {
       "id": 295182,
@@ -682,7 +1223,7 @@
       }
     ],
     "priority": false,
-    "checked_at": "2026-08-28T03:00:57.295486+00:00",
+    "checked_at": "2026-08-28T07:45:03.163642+00:00",
     "sources": [
       {
         "type": "official_game_description",
@@ -710,12 +1251,38 @@
         "content_found": true,
         "extraction_success": false,
         "verification_passed": false,
+        "source_tier": "A",
+        "official": true,
+        "selected": false,
+        "formatted": false,
+        "scheduled": false,
         "latest_url": "https://www.playadopt.me/news/backpack-storage-and-releaser-refresh"
+      },
+      {
+        "source_type": "secondary_gaming_media",
+        "source_url": "https://news.google.com/rss/search?q=%22Adopt%20Me%21%22%20Roblox%20when%3A30d&hl=en-US&gl=US&ceid=US:en",
+        "latest_published_at": "2026-08-21T15:30:00+00:00",
+        "status": "rejected",
+        "result_code": "ALREADY_USED",
+        "reason": "Tier B повторяет уже использованную официальную новость.",
+        "available": true,
+        "article_found": true,
+        "date_found": true,
+        "content_found": true,
+        "extraction_success": true,
+        "verification_passed": false,
+        "source_tier": "B",
+        "official": false,
+        "selected": false,
+        "formatted": false,
+        "scheduled": false,
+        "latest_url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxQSGs1V3ZkWDZ2N1dIR05Ta3BFY2NScEk1cXgtdWs2ZUFGMmlUb3AyUWtfQ3Nsa3VvQjVDSm1mYUxlOHBObVJYQWhJZ0k3X2M0dkhuNF9IS3F1cmdVOFkyc2RFTXF0TVdNV1R4dHBOTjJlNXBJaGtKMmRSYW9seWhsYnJybG5qSlQ2UW4tVzVoUk1wUmIzM3IyN0UtaG1VTkFhXzU4?oc=5",
+        "freshness_window": "primary_14_day"
       },
       {
         "source_type": "official_game_description",
         "source_url": "https://www.roblox.com/games/920587237/Adopt-Me",
-        "latest_published_at": "2026-08-27T00:59:41.5838968Z",
+        "latest_published_at": "2026-08-28T03:00:04.119911Z",
         "status": "rejected",
         "result_code": "NO_NEW_CONTENT",
         "available": true,
@@ -795,23 +1362,55 @@
         "content_found": true,
         "extraction_success": false,
         "verification_passed": false,
+        "source_tier": "A",
+        "official": true,
+        "selected": false,
+        "formatted": false,
+        "scheduled": false,
         "latest_url": "https://www.playadopt.me/news/backpack-storage-and-releaser-refresh"
+      },
+      {
+        "source_type": "secondary_gaming_media",
+        "source_url": "https://news.google.com/rss/search?q=%22Adopt%20Me%21%22%20Roblox%20when%3A30d&hl=en-US&gl=US&ceid=US:en",
+        "latest_published_at": "2026-08-21T15:30:00+00:00",
+        "status": "rejected",
+        "result_code": "ALREADY_USED",
+        "reason": "Tier B повторяет уже использованную официальную новость.",
+        "available": true,
+        "article_found": true,
+        "date_found": true,
+        "content_found": true,
+        "extraction_success": true,
+        "verification_passed": false,
+        "source_tier": "B",
+        "official": false,
+        "selected": false,
+        "formatted": false,
+        "scheduled": false,
+        "latest_url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxQSGs1V3ZkWDZ2N1dIR05Ta3BFY2NScEk1cXgtdWs2ZUFGMmlUb3AyUWtfQ3Nsa3VvQjVDSm1mYUxlOHBObVJYQWhJZ0k3X2M0dkhuNF9IS3F1cmdVOFkyc2RFTXF0TVdNV1R4dHBOTjJlNXBJaGtKMmRSYW9seWhsYnJybG5qSlQ2UW4tVzVoUk1wUmIzM3IyN0UtaG1VTkFhXzU4?oc=5",
+        "freshness_window": "primary_14_day"
       }
     ],
     "external_source_diagnostic": {
-      "source_type": "official_news_website",
-      "source_url": "https://www.playadopt.me/news",
-      "latest_published_at": "2026-08-21T15:05:00.000Z",
+      "source_type": "secondary_gaming_media",
+      "source_url": "https://news.google.com/rss/search?q=%22Adopt%20Me%21%22%20Roblox%20when%3A30d&hl=en-US&gl=US&ceid=US:en",
+      "latest_published_at": "2026-08-21T15:30:00+00:00",
       "status": "rejected",
       "result_code": "ALREADY_USED",
-      "reason": "Публикация уже использовалась в выпуске другого дня.",
+      "reason": "Tier B повторяет уже использованную официальную новость.",
       "available": true,
       "article_found": true,
       "date_found": true,
       "content_found": true,
-      "extraction_success": false,
+      "extraction_success": true,
       "verification_passed": false,
-      "latest_url": "https://www.playadopt.me/news/backpack-storage-and-releaser-refresh"
+      "source_tier": "B",
+      "official": false,
+      "selected": false,
+      "formatted": false,
+      "scheduled": false,
+      "latest_url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxQSGs1V3ZkWDZ2N1dIR05Ta3BFY2NScEk1cXgtdWs2ZUFGMmlUb3AyUWtfQ3Nsa3VvQjVDSm1mYUxlOHBObVJYQWhJZ0k3X2M0dkhuNF9IS3F1cmdVOFkyc2RFTXF0TVdNV1R4dHBOTjJlNXBJaGtKMmRSYW9seWhsYnJybG5qSlQ2UW4tVzVoUk1wUmIzM3IyN0UtaG1VTkFhXzU4?oc=5",
+      "freshness_window": "primary_14_day"
     },
     "candidate_decision": {
       "status": "rejected",
@@ -883,7 +1482,7 @@
       }
     ],
     "priority": false,
-    "checked_at": "2026-08-28T03:00:57.297682+00:00",
+    "checked_at": "2026-08-28T07:45:03.165094+00:00",
     "sources": [
       {
         "type": "official_game_description",
@@ -898,6 +1497,25 @@
     ],
     "cross_source_confirmations": [],
     "source_diagnostics": [
+      {
+        "source_type": "secondary_gaming_media",
+        "source_url": "https://news.google.com/rss/search?q=%22RIVALS%22%20Roblox%20when%3A30d&hl=en-US&gl=US&ceid=US:en",
+        "latest_published_at": null,
+        "status": "rejected",
+        "result_code": "NO_NEW_CONTENT",
+        "reason": "Нет пригодной Tier B новости.",
+        "available": true,
+        "article_found": false,
+        "date_found": false,
+        "content_found": false,
+        "extraction_success": false,
+        "verification_passed": false,
+        "source_tier": "B",
+        "official": false,
+        "selected": false,
+        "formatted": false,
+        "scheduled": false
+      },
       {
         "source_type": "official_game_description",
         "source_url": "https://www.roblox.com/games/17625359962/RIVALS",
@@ -967,7 +1585,46 @@
       "has_verified_badge": true,
       "news_lines": []
     },
-    "external_source_diagnostics": [],
+    "external_source_diagnostics": [
+      {
+        "source_type": "secondary_gaming_media",
+        "source_url": "https://news.google.com/rss/search?q=%22RIVALS%22%20Roblox%20when%3A30d&hl=en-US&gl=US&ceid=US:en",
+        "latest_published_at": null,
+        "status": "rejected",
+        "result_code": "NO_NEW_CONTENT",
+        "reason": "Нет пригодной Tier B новости.",
+        "available": true,
+        "article_found": false,
+        "date_found": false,
+        "content_found": false,
+        "extraction_success": false,
+        "verification_passed": false,
+        "source_tier": "B",
+        "official": false,
+        "selected": false,
+        "formatted": false,
+        "scheduled": false
+      }
+    ],
+    "external_source_diagnostic": {
+      "source_type": "secondary_gaming_media",
+      "source_url": "https://news.google.com/rss/search?q=%22RIVALS%22%20Roblox%20when%3A30d&hl=en-US&gl=US&ceid=US:en",
+      "latest_published_at": null,
+      "status": "rejected",
+      "result_code": "NO_NEW_CONTENT",
+      "reason": "Нет пригодной Tier B новости.",
+      "available": true,
+      "article_found": false,
+      "date_found": false,
+      "content_found": false,
+      "extraction_success": false,
+      "verification_passed": false,
+      "source_tier": "B",
+      "official": false,
+      "selected": false,
+      "formatted": false,
+      "scheduled": false
+    },
     "candidate_decision": {
       "status": "rejected",
       "reason": "Нет свежего факта с редакционным баллом 5 или выше."
@@ -995,7 +1652,7 @@
     "facts": [],
     "description_facts": [],
     "priority": false,
-    "checked_at": "2026-08-28T03:00:57.299417+00:00",
+    "checked_at": "2026-08-28T07:45:03.166182+00:00",
     "sources": [
       {
         "type": "official_game_description",
@@ -1010,6 +1667,26 @@
     ],
     "cross_source_confirmations": [],
     "source_diagnostics": [
+      {
+        "source_type": "secondary_gaming_media",
+        "source_url": "https://news.google.com/rss/search?q=%22Grow%20a%20Garden%22%20Roblox%20when%3A30d&hl=en-US&gl=US&ceid=US:en",
+        "latest_published_at": "2026-08-22T22:25:00+00:00",
+        "status": "rejected",
+        "result_code": "EXTRACTION_FAILED",
+        "reason": "В публикации не найдено достаточно конкретного содержания.",
+        "available": true,
+        "article_found": true,
+        "date_found": true,
+        "content_found": true,
+        "extraction_success": false,
+        "verification_passed": false,
+        "source_tier": "B",
+        "official": false,
+        "selected": false,
+        "formatted": false,
+        "scheduled": false,
+        "latest_url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxQSmFvb3lMcWNlaV84S3ZvamgtZENXOHFCTTBGeERibzRNTHpfUUM0RU9JOU83QjhKSnN3Tjc2RFY3dEVGZW1wMGZSSG9pbXM1bmI5X1MyUnhVMGNpNUg2XzBSNUxabmJJbTZtNlkyNE1VNVp1VkhTN0lDZHdfNzZUOHNGenNhdW9HTzZGRw?oc=5"
+      },
       {
         "source_type": "official_game_description",
         "source_url": "https://www.roblox.com/games/126884695634066/Grow-a-Garden",
@@ -1066,7 +1743,48 @@
       "has_verified_badge": false,
       "news_lines": []
     },
-    "external_source_diagnostics": [],
+    "external_source_diagnostics": [
+      {
+        "source_type": "secondary_gaming_media",
+        "source_url": "https://news.google.com/rss/search?q=%22Grow%20a%20Garden%22%20Roblox%20when%3A30d&hl=en-US&gl=US&ceid=US:en",
+        "latest_published_at": "2026-08-22T22:25:00+00:00",
+        "status": "rejected",
+        "result_code": "EXTRACTION_FAILED",
+        "reason": "В публикации не найдено достаточно конкретного содержания.",
+        "available": true,
+        "article_found": true,
+        "date_found": true,
+        "content_found": true,
+        "extraction_success": false,
+        "verification_passed": false,
+        "source_tier": "B",
+        "official": false,
+        "selected": false,
+        "formatted": false,
+        "scheduled": false,
+        "latest_url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxQSmFvb3lMcWNlaV84S3ZvamgtZENXOHFCTTBGeERibzRNTHpfUUM0RU9JOU83QjhKSnN3Tjc2RFY3dEVGZW1wMGZSSG9pbXM1bmI5X1MyUnhVMGNpNUg2XzBSNUxabmJJbTZtNlkyNE1VNVp1VkhTN0lDZHdfNzZUOHNGenNhdW9HTzZGRw?oc=5"
+      }
+    ],
+    "external_source_diagnostic": {
+      "source_type": "secondary_gaming_media",
+      "source_url": "https://news.google.com/rss/search?q=%22Grow%20a%20Garden%22%20Roblox%20when%3A30d&hl=en-US&gl=US&ceid=US:en",
+      "latest_published_at": "2026-08-22T22:25:00+00:00",
+      "status": "rejected",
+      "result_code": "EXTRACTION_FAILED",
+      "reason": "В публикации не найдено достаточно конкретного содержания.",
+      "available": true,
+      "article_found": true,
+      "date_found": true,
+      "content_found": true,
+      "extraction_success": false,
+      "verification_passed": false,
+      "source_tier": "B",
+      "official": false,
+      "selected": false,
+      "formatted": false,
+      "scheduled": false,
+      "latest_url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxQSmFvb3lMcWNlaV84S3ZvamgtZENXOHFCTTBGeERibzRNTHpfUUM0RU9JOU83QjhKSnN3Tjc2RFY3dEVGZW1wMGZSSG9pbXM1bmI5X1MyUnhVMGNpNUg2XzBSNUxabmJJbTZtNlkyNE1VNVp1VkhTN0lDZHdfNzZUOHNGenNhdW9HTzZGRw?oc=5"
+    },
     "candidate_decision": {
       "status": "rejected",
       "reason": "Нет свежего факта с редакционным баллом 5 или выше."
@@ -1134,7 +1852,7 @@
       }
     ],
     "priority": false,
-    "checked_at": "2026-08-28T03:00:57.300792+00:00",
+    "checked_at": "2026-08-28T07:45:03.166998+00:00",
     "sources": [
       {
         "type": "official_game_description",
@@ -1152,16 +1870,41 @@
       {
         "source_type": "official_youtube_feed",
         "source_url": "https://www.youtube.com/feeds/videos.xml?channel_id=UCCVWvf_e5oRb6RfXyluR7UA",
+        "latest_published_at": "2026-07-02T15:00:06+00:00",
+        "status": "rejected",
+        "result_code": "SOURCE_STALE",
+        "reason": "Публикация устарела: 56.7 дн. (аварийный лимит 30).",
+        "available": true,
+        "article_found": true,
+        "date_found": true,
+        "content_found": true,
+        "extraction_success": false,
+        "verification_passed": false,
+        "source_tier": "A",
+        "official": true,
+        "selected": false,
+        "formatted": false,
+        "scheduled": false,
+        "latest_url": "https://www.youtube.com/watch?v=5Zfy9QW4s5A"
+      },
+      {
+        "source_type": "secondary_gaming_media",
+        "source_url": "https://news.google.com/rss/search?q=%22Dress%20To%20Impress%22%20Roblox%20when%3A30d&hl=en-US&gl=US&ceid=US:en",
         "latest_published_at": null,
         "status": "rejected",
-        "result_code": "SOURCE_UNAVAILABLE",
-        "reason": "Источник недоступен: 404 Client Error: Not Found for url: https://www.youtube.com/feeds/videos.xml?channel_id=UCCVWvf_e5oRb6RfXyluR7UA",
-        "available": false,
+        "result_code": "NO_NEW_CONTENT",
+        "reason": "Нет пригодной Tier B новости.",
+        "available": true,
         "article_found": false,
         "date_found": false,
         "content_found": false,
         "extraction_success": false,
-        "verification_passed": false
+        "verification_passed": false,
+        "source_tier": "B",
+        "official": false,
+        "selected": false,
+        "formatted": false,
+        "scheduled": false
       },
       {
         "source_type": "official_game_description",
@@ -1231,31 +1974,61 @@
       {
         "source_type": "official_youtube_feed",
         "source_url": "https://www.youtube.com/feeds/videos.xml?channel_id=UCCVWvf_e5oRb6RfXyluR7UA",
+        "latest_published_at": "2026-07-02T15:00:06+00:00",
+        "status": "rejected",
+        "result_code": "SOURCE_STALE",
+        "reason": "Публикация устарела: 56.7 дн. (аварийный лимит 30).",
+        "available": true,
+        "article_found": true,
+        "date_found": true,
+        "content_found": true,
+        "extraction_success": false,
+        "verification_passed": false,
+        "source_tier": "A",
+        "official": true,
+        "selected": false,
+        "formatted": false,
+        "scheduled": false,
+        "latest_url": "https://www.youtube.com/watch?v=5Zfy9QW4s5A"
+      },
+      {
+        "source_type": "secondary_gaming_media",
+        "source_url": "https://news.google.com/rss/search?q=%22Dress%20To%20Impress%22%20Roblox%20when%3A30d&hl=en-US&gl=US&ceid=US:en",
         "latest_published_at": null,
         "status": "rejected",
-        "result_code": "SOURCE_UNAVAILABLE",
-        "reason": "Источник недоступен: 404 Client Error: Not Found for url: https://www.youtube.com/feeds/videos.xml?channel_id=UCCVWvf_e5oRb6RfXyluR7UA",
-        "available": false,
+        "result_code": "NO_NEW_CONTENT",
+        "reason": "Нет пригодной Tier B новости.",
+        "available": true,
         "article_found": false,
         "date_found": false,
         "content_found": false,
         "extraction_success": false,
-        "verification_passed": false
+        "verification_passed": false,
+        "source_tier": "B",
+        "official": false,
+        "selected": false,
+        "formatted": false,
+        "scheduled": false
       }
     ],
     "external_source_diagnostic": {
-      "source_type": "official_youtube_feed",
-      "source_url": "https://www.youtube.com/feeds/videos.xml?channel_id=UCCVWvf_e5oRb6RfXyluR7UA",
+      "source_type": "secondary_gaming_media",
+      "source_url": "https://news.google.com/rss/search?q=%22Dress%20To%20Impress%22%20Roblox%20when%3A30d&hl=en-US&gl=US&ceid=US:en",
       "latest_published_at": null,
       "status": "rejected",
-      "result_code": "SOURCE_UNAVAILABLE",
-      "reason": "Источник недоступен: 404 Client Error: Not Found for url: https://www.youtube.com/feeds/videos.xml?channel_id=UCCVWvf_e5oRb6RfXyluR7UA",
-      "available": false,
+      "result_code": "NO_NEW_CONTENT",
+      "reason": "Нет пригодной Tier B новости.",
+      "available": true,
       "article_found": false,
       "date_found": false,
       "content_found": false,
       "extraction_success": false,
-      "verification_passed": false
+      "verification_passed": false,
+      "source_tier": "B",
+      "official": false,
+      "selected": false,
+      "formatted": false,
+      "scheduled": false
     },
     "candidate_decision": {
       "status": "rejected",
@@ -1305,7 +2078,7 @@
       }
     ],
     "priority": false,
-    "checked_at": "2026-08-28T03:00:57.301203+00:00",
+    "checked_at": "2026-08-28T07:45:03.167219+00:00",
     "sources": [
       {
         "type": "official_game_description",
@@ -1333,7 +2106,33 @@
         "content_found": true,
         "extraction_success": false,
         "verification_passed": false,
+        "source_tier": "A",
+        "official": true,
+        "selected": false,
+        "formatted": false,
+        "scheduled": false,
         "latest_url": "https://www.biggames.io/post/pet-simulator-99-update-90"
+      },
+      {
+        "source_type": "secondary_gaming_media",
+        "source_url": "https://news.google.com/rss/search?q=%22Pet%20Simulator%2099%22%20Roblox%20when%3A30d&hl=en-US&gl=US&ceid=US:en",
+        "latest_published_at": "2026-08-23T22:53:00+00:00",
+        "status": "rejected",
+        "result_code": "ALREADY_USED",
+        "reason": "Tier B повторяет уже использованную официальную новость.",
+        "available": true,
+        "article_found": true,
+        "date_found": true,
+        "content_found": true,
+        "extraction_success": true,
+        "verification_passed": false,
+        "source_tier": "B",
+        "official": false,
+        "selected": false,
+        "formatted": false,
+        "scheduled": false,
+        "latest_url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxQS01ZMllCSXA3Mk83N19sWVFoT3lEUFY5NFpEdVpMMG0xa0NiR19Vd2FvQ1FnWGY4NFNLd29MNElUT3JWN3RRcWlCeXZxalFRSEFDZzJrNFhUUHRZNXU5QzlsOHRFbndkY1g1TVU5MEdIcjVZbXdFb0RuVVByemk1R1N2bGhWVTVUYmtMby0xbW9GbmM0RTYzb1FZLTRtSjNwTUxReFhqZC1qSXFDVWNFMHZJVTlybmRVaFFZWGdfMzg?oc=5",
+        "freshness_window": "primary_14_day"
       },
       {
         "source_type": "official_game_description",
@@ -1411,212 +2210,55 @@
         "content_found": true,
         "extraction_success": false,
         "verification_passed": false,
+        "source_tier": "A",
+        "official": true,
+        "selected": false,
+        "formatted": false,
+        "scheduled": false,
         "latest_url": "https://www.biggames.io/post/pet-simulator-99-update-90"
+      },
+      {
+        "source_type": "secondary_gaming_media",
+        "source_url": "https://news.google.com/rss/search?q=%22Pet%20Simulator%2099%22%20Roblox%20when%3A30d&hl=en-US&gl=US&ceid=US:en",
+        "latest_published_at": "2026-08-23T22:53:00+00:00",
+        "status": "rejected",
+        "result_code": "ALREADY_USED",
+        "reason": "Tier B повторяет уже использованную официальную новость.",
+        "available": true,
+        "article_found": true,
+        "date_found": true,
+        "content_found": true,
+        "extraction_success": true,
+        "verification_passed": false,
+        "source_tier": "B",
+        "official": false,
+        "selected": false,
+        "formatted": false,
+        "scheduled": false,
+        "latest_url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxQS01ZMllCSXA3Mk83N19sWVFoT3lEUFY5NFpEdVpMMG0xa0NiR19Vd2FvQ1FnWGY4NFNLd29MNElUT3JWN3RRcWlCeXZxalFRSEFDZzJrNFhUUHRZNXU5QzlsOHRFbndkY1g1TVU5MEdIcjVZbXdFb0RuVVByemk1R1N2bGhWVTVUYmtMby0xbW9GbmM0RTYzb1FZLTRtSjNwTUxReFhqZC1qSXFDVWNFMHZJVTlybmRVaFFZWGdfMzg?oc=5",
+        "freshness_window": "primary_14_day"
       }
     ],
     "external_source_diagnostic": {
-      "source_type": "official_news_website",
-      "source_url": "https://www.biggames.io/post",
-      "latest_published_at": "2026-08-22",
+      "source_type": "secondary_gaming_media",
+      "source_url": "https://news.google.com/rss/search?q=%22Pet%20Simulator%2099%22%20Roblox%20when%3A30d&hl=en-US&gl=US&ceid=US:en",
+      "latest_published_at": "2026-08-23T22:53:00+00:00",
       "status": "rejected",
       "result_code": "ALREADY_USED",
-      "reason": "Публикация уже использовалась в выпуске другого дня.",
+      "reason": "Tier B повторяет уже использованную официальную новость.",
       "available": true,
       "article_found": true,
       "date_found": true,
       "content_found": true,
-      "extraction_success": false,
+      "extraction_success": true,
       "verification_passed": false,
-      "latest_url": "https://www.biggames.io/post/pet-simulator-99-update-90"
-    },
-    "candidate_decision": {
-      "status": "rejected",
-      "reason": "Нет свежего факта с редакционным баллом 5 или выше."
-    }
-  },
-  {
-    "game": "Blade Ball",
-    "universe_id": 4777817887,
-    "roblox_name": "Blade Ball",
-    "description": "⚡  In this game of focus, timing, and strategy, your skill is tested as a deflectable homing ball hunts players with increasing speed. But there's more than what meets the eye.\n\n🔥  Gain new abilities and upgrade them to compliment your playstyle. Rise through the ranks by mastering your skill, and stand out with a variety of iconic weapon skins and finisher effects.\n\n🏆 Shoot for the leaderboard or play casually! The choice is yours.\n \nCONTROLS:\nBLOCK - F/R1/Tap Screen/Tap UI Button/Left Click\nABILITY - Q/ButtonX/Tap UI Button/Right Click\nSHIFTLOCK - Shift/Button-Y/Tap UI Button\nEMOTE - R/L1/Tap UI Button\n\ntags: minigame, battle game, pvp, multiplayer, abilities, dodgeball, sports, mobile, console, xbox, pc",
-    "updated": "2026-08-23T21:39:04.487Z",
-    "created": "2023-06-17T00:05:26.103Z",
-    "creator": {
-      "id": 12836673,
-      "name": "Wiggity.",
-      "type": "Group",
-      "isRNVAccount": false,
-      "hasVerifiedBadge": true
-    },
-    "description_changed": false,
-    "added_lines": [],
-    "keywords": [
-      "NEW"
-    ],
-    "score": 0,
-    "confidence": "low",
-    "facts": [],
-    "description_facts": [
-      {
-        "text": "🔥 Gain new abilities and upgrade them to compliment your playstyle. Rise through the ranks by mastering your skill, and stand out with a variety of iconic weapon skins and finisher effects.",
-        "kind": "items",
-        "value": 7,
-        "specific": true,
-        "reason": "Строка называет конкретное игровое содержимое",
-        "summary_ru": "В игре появились новые инструменты и оружие.",
-        "is_new_line": false
-      }
-    ],
-    "priority": false,
-    "checked_at": "2026-08-28T03:00:57.303352+00:00",
-    "sources": [
-      {
-        "type": "official_game_description",
-        "verified": true
-      },
-      {
-        "type": "official_roblox_group",
-        "verified": true,
-        "group_id": 12836673,
-        "group_name": "Wiggity."
-      }
-    ],
-    "cross_source_confirmations": [],
-    "source_diagnostics": [
-      {
-        "source_type": "official_youtube_feed",
-        "source_url": "https://www.youtube.com/feeds/videos.xml?channel_id=UCPttFx0zI4Zv9M4i3Q2ylsw",
-        "latest_published_at": null,
-        "status": "rejected",
-        "result_code": "SOURCE_UNAVAILABLE",
-        "reason": "Источник недоступен: 404 Client Error: Not Found for url: https://www.youtube.com/feeds/videos.xml?channel_id=UCPttFx0zI4Zv9M4i3Q2ylsw",
-        "available": false,
-        "article_found": false,
-        "date_found": false,
-        "content_found": false,
-        "extraction_success": false,
-        "verification_passed": false
-      },
-      {
-        "source_type": "official_news_website",
-        "source_url": "https://bladeball.com/blogs/news",
-        "latest_published_at": "2024-03-23T18:51:42Z",
-        "status": "rejected",
-        "result_code": "SOURCE_STALE",
-        "reason": "Публикация устарела: 887.3 дн. (лимит 7).",
-        "available": true,
-        "article_found": true,
-        "date_found": true,
-        "content_found": true,
-        "extraction_success": false,
-        "verification_passed": false,
-        "latest_url": "https://bladeball.com/blogs/news/comptetetive-leaderboards"
-      },
-      {
-        "source_type": "official_game_description",
-        "source_url": "https://www.roblox.com/games/13772394625/Blade-Ball",
-        "latest_published_at": "2026-08-23T21:39:04.487Z",
-        "status": "rejected",
-        "result_code": "NO_NEW_CONTENT",
-        "available": true,
-        "article_found": false,
-        "date_found": true,
-        "content_found": true,
-        "extraction_success": false,
-        "verification_passed": false,
-        "reason": "Нет новой конкретной строки со времени прошлого снимка."
-      },
-      {
-        "source_type": "official_roblox_group",
-        "source_url": "https://www.roblox.com/communities/12836673/Wiggity",
-        "latest_published_at": null,
-        "status": "checked",
-        "result_code": "NO_NEW_CONTENT",
-        "available": true,
-        "article_found": false,
-        "date_found": false,
-        "content_found": true,
-        "extraction_success": false,
-        "verification_passed": false,
-        "reason": "Официальная группа подтверждена; датированной новости нет."
-      }
-    ],
-    "official_description_analysis": {
-      "keywords": [
-        "NEW"
-      ],
-      "news_lines": [
-        "🔥  Gain new abilities and upgrade them to compliment your playstyle. Rise through the ranks by mastering your skill, and stand out with a variety of iconic weapon skins and finisher effects."
-      ]
-    },
-    "source_registry": {
-      "universe_id": 4777817887,
-      "root_place_id": 13772394625,
-      "roblox_game_url": "https://www.roblox.com/games/13772394625/Blade-Ball",
-      "roblox_group_id": 12836673,
-      "roblox_group_name": "Wiggity.",
-      "roblox_group_url": "https://www.roblox.com/communities/12836673/Wiggity",
-      "news_strategy": "official_news_website",
-      "website": "https://bladeball.com/",
-      "news_url": "https://bladeball.com/blogs/news",
-      "discord": "https://discord.com/servers/1141515589924429869",
-      "youtube": "https://www.youtube.com/@Blade-Ball",
-      "x": null
-    },
-    "official_group": {
-      "id": 12836673,
-      "name": "Wiggity.",
-      "expected_name": "Wiggity.",
-      "name_matches_registry": true,
-      "description": "Creators of Blade Ball",
-      "has_verified_badge": true,
-      "news_lines": []
-    },
-    "external_source_diagnostics": [
-      {
-        "source_type": "official_youtube_feed",
-        "source_url": "https://www.youtube.com/feeds/videos.xml?channel_id=UCPttFx0zI4Zv9M4i3Q2ylsw",
-        "latest_published_at": null,
-        "status": "rejected",
-        "result_code": "SOURCE_UNAVAILABLE",
-        "reason": "Источник недоступен: 404 Client Error: Not Found for url: https://www.youtube.com/feeds/videos.xml?channel_id=UCPttFx0zI4Zv9M4i3Q2ylsw",
-        "available": false,
-        "article_found": false,
-        "date_found": false,
-        "content_found": false,
-        "extraction_success": false,
-        "verification_passed": false
-      },
-      {
-        "source_type": "official_news_website",
-        "source_url": "https://bladeball.com/blogs/news",
-        "latest_published_at": "2024-03-23T18:51:42Z",
-        "status": "rejected",
-        "result_code": "SOURCE_STALE",
-        "reason": "Публикация устарела: 887.3 дн. (лимит 7).",
-        "available": true,
-        "article_found": true,
-        "date_found": true,
-        "content_found": true,
-        "extraction_success": false,
-        "verification_passed": false,
-        "latest_url": "https://bladeball.com/blogs/news/comptetetive-leaderboards"
-      }
-    ],
-    "external_source_diagnostic": {
-      "source_type": "official_news_website",
-      "source_url": "https://bladeball.com/blogs/news",
-      "latest_published_at": "2024-03-23T18:51:42Z",
-      "status": "rejected",
-      "result_code": "SOURCE_STALE",
-      "reason": "Публикация устарела: 887.3 дн. (лимит 7).",
-      "available": true,
-      "article_found": true,
-      "date_found": true,
-      "content_found": true,
-      "extraction_success": false,
-      "verification_passed": false,
-      "latest_url": "https://bladeball.com/blogs/news/comptetetive-leaderboards"
+      "source_tier": "B",
+      "official": false,
+      "selected": false,
+      "formatted": false,
+      "scheduled": false,
+      "latest_url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxQS01ZMllCSXA3Mk83N19sWVFoT3lEUFY5NFpEdVpMMG0xa0NiR19Vd2FvQ1FnWGY4NFNLd29MNElUT3JWN3RRcWlCeXZxalFRSEFDZzJrNFhUUHRZNXU5QzlsOHRFbndkY1g1TVU5MEdIcjVZbXdFb0RuVVByemk1R1N2bGhWVTVUYmtMby0xbW9GbmM0RTYzb1FZLTRtSjNwTUxReFhqZC1qSXFDVWNFMHZJVTlybmRVaFFZWGdfMzg?oc=5",
+      "freshness_window": "primary_14_day"
     },
     "candidate_decision": {
       "status": "rejected",

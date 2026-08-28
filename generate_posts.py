@@ -211,6 +211,33 @@ def load_brawl_latest_changes():
     return load_json(BRAWL_LATEST_CHANGES_FILE)
 
 
+def mark_brawl_news_scheduled(data, scheduled):
+    """Marks the selected article consumed only after it reaches the queue."""
+
+    if not scheduled or not isinstance(data, dict):
+        return
+
+    from brawl_post import build_brawl_pipeline_diagnostics
+
+    diagnostics = build_brawl_pipeline_diagnostics(data, scheduled=True)
+    selected_urls = {
+        row.get("url") for row in diagnostics["rows"] if row.get("scheduled")
+    }
+    if not selected_urls:
+        return
+
+    for field in (
+        "new_articles",
+        "high_priority_articles",
+        "medium_priority_articles",
+    ):
+        for article in data.get(field, []):
+            if article.get("url") in selected_urls:
+                article["scheduled"] = True
+
+    save_json(BRAWL_LATEST_CHANGES_FILE, data)
+
+
 def load_brawl_tips():
     """Загружает локальную базу проверенных Brawl Stars советов."""
 
@@ -519,12 +546,53 @@ def schedule_brawl_post(
 
     if existing_post is not None and existing_post.get("status") == "published":
         print("12:00 — Brawl Stars пост уже существует.")
+        if data_loader is None and not skip_fresh_material:
+            try:
+                published_slot_data = load_brawl_latest_changes()
+            except (OSError, ValueError, TypeError, KeyError, AttributeError):
+                published_slot_data = None
+
+            if isinstance(published_slot_data, dict):
+                from brawl_post import print_brawl_pipeline_diagnostics
+
+                print_brawl_pipeline_diagnostics(
+                    published_slot_data,
+                    scheduled=False,
+                    blocked_reason=(
+                        "слот 12:00 уже опубликован; "
+                        "опубликованную запись не изменяем"
+                    ),
+                )
         return 0
 
     if existing_post is not None:
-        # Pending/failed Brawl-пост не пересобираем и не расходуем
-        # следующий fallback-совет. Только безопасно переводим
-        # существующую запись на photo-формат с тем же ID.
+        # Pending fallback можно безопасно повысить до свежей
+        # официальной новости. Стабильный ID и время остаются
+        # прежними, а новый fallback-совет не расходуется.
+        brawl_data = None
+        if (
+            existing_post.get("source") == "verified_brawl_fallback"
+            and not skip_fresh_material
+        ):
+            if data_loader is None:
+                data_loader = load_brawl_latest_changes
+            if final_post_builder is None:
+                from brawl_post import build_final_post
+
+                final_post_builder = build_final_post
+
+            try:
+                brawl_data = data_loader()
+                upgraded_text = final_post_builder(brawl_data)
+            except (OSError, ValueError, TypeError, KeyError, AttributeError) as error:
+                print(f"12:00 — Brawl pipeline недоступен: {error}")
+                upgraded_text = None
+
+            if upgraded_text is not None:
+                existing_post["text"] = upgraded_text
+                existing_post["rubric"] = "Brawl Stars"
+                existing_post["source"] = "brawl_pipeline"
+
         existing_post["text"] = fit_telegram_caption(
             add_post_hashtags(
                 existing_post.get("text", ""),
@@ -547,6 +615,14 @@ def schedule_brawl_post(
 
         if header_path is not None:
             print("12:00 — создан Brawl news post с шапкой.")
+
+        if isinstance(brawl_data, dict):
+            from brawl_post import print_brawl_pipeline_diagnostics
+
+            print_brawl_pipeline_diagnostics(
+                brawl_data,
+                scheduled=existing_post.get("source") == "brawl_pipeline",
+            )
 
         return 0
 
@@ -588,6 +664,7 @@ def schedule_brawl_post(
         final_post_builder = build_final_post
 
     final_text = None
+    brawl_data = None
 
     if not skip_fresh_material:
         try:
@@ -646,6 +723,14 @@ def schedule_brawl_post(
 
     if header_path is not None:
         print("12:00 — создан Brawl news post с шапкой.")
+
+    if isinstance(brawl_data, dict):
+        from brawl_post import print_brawl_pipeline_diagnostics
+
+        print_brawl_pipeline_diagnostics(
+            brawl_data,
+            scheduled=source == "brawl_pipeline",
+        )
 
     return 1
 
@@ -774,6 +859,55 @@ def generate_morning_post():
     blocks.append("🎮 Roblox Hub")
 
     return "\n\n".join(blocks)
+
+
+def mark_roblox_news_scheduled(scheduled):
+    """Завершает диагностическую цепочку formatted_ru → scheduled."""
+
+    data = load_json("generated_news_data_ru.json", {"items": []})
+    pipeline = data.get("pipeline", [])
+
+    for diagnostic in pipeline:
+        diagnostic["scheduled"] = bool(scheduled and diagnostic.get("selected"))
+
+    summary = data.setdefault("summary", {})
+    summary["scheduled"] = sum(
+        diagnostic.get("scheduled") is True for diagnostic in pipeline
+    )
+
+    selected_date = datetime.now(LOCAL_TIMEZONE).date().isoformat()
+    external_history = load_json("external_news_history.json", [])
+
+    # Formatting is not publication. Only a post that really occupies the
+    # news slot may consume a URL; a blocked/published fallback slot must not.
+    external_history = [
+        record
+        for record in external_history
+        if record.get("selected_date") != selected_date
+    ]
+
+    if scheduled:
+        for item in data.get("items", []):
+            article_url = item.get("external_article_url")
+            if article_url:
+                external_history.append(
+                    {
+                        "url": article_url,
+                        "game": item.get("game"),
+                        "selected_date": selected_date,
+                    }
+                )
+
+    save_json("external_news_history.json", external_history[-100:])
+    save_json("generated_news_data_ru.json", data)
+
+    print(
+        "Roblox: "
+        f"найдено: {summary.get('found', 0)}, "
+        f"verified: {summary.get('verified', 0)}, "
+        f"selected: {summary.get('selected', 0)}, "
+        f"scheduled: {summary.get('scheduled', 0)}"
+    )
 
 
 def is_verified_fallback_tip(tip):
@@ -1190,6 +1324,14 @@ morning_added, morning_updated = schedule_morning_post(
 )
 posts_added += morning_added
 posts_updated += morning_updated
+morning_post = find_post(existing_posts, f"{target_date}-{ROBLOX_NEWS_HOUR}")
+mark_roblox_news_scheduled(
+    bool(
+        morning_news_text
+        and morning_post
+        and morning_post.get("source") == "auto_verified"
+    )
+)
 
 
 # --------------------------------------------------
@@ -1200,11 +1342,25 @@ posts_updated += morning_updated
 # стабильный слот получает локальный проверенный fallback.
 # --------------------------------------------------
 
-posts_added += schedule_brawl_post(
+brawl_added = schedule_brawl_post(
     existing_posts,
     target_date,
     skip_fresh_material=os.getenv(BRAWL_SKIP_ENVIRONMENT_VARIABLE) == "1",
 )
+posts_added += brawl_added
+brawl_queue_post = find_post(
+    existing_posts,
+    f"{target_date}-brawl-{BRAWL_POST_HOUR}",
+)
+if os.getenv(BRAWL_SKIP_ENVIRONMENT_VARIABLE) != "1":
+    try:
+        latest_brawl_data = load_brawl_latest_changes()
+    except (OSError, ValueError, TypeError, KeyError):
+        latest_brawl_data = None
+    mark_brawl_news_scheduled(
+        latest_brawl_data,
+        bool(brawl_queue_post and brawl_queue_post.get("source") == "brawl_pipeline"),
+    )
 
 
 # --------------------------------------------------

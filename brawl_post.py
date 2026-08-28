@@ -4,6 +4,12 @@ import re
 
 from colorama import Fore, Style, init
 
+from brawl_news_formatter import (
+    build_deterministic_translation,
+    contains_rumor_signal,
+    has_concrete_brawl_news,
+)
+
 # ---------------------------------------------------------
 # НАСТРОЙКА ЦВЕТНОГО ВЫВОДА
 # ---------------------------------------------------------
@@ -177,7 +183,20 @@ def get_news_candidates(data):
         [],
     )
 
-    return high_priority_articles, medium_priority_articles
+    known_urls = {
+        article.get("url")
+        for article in high_priority_articles + medium_priority_articles
+    }
+    low_official_articles = [
+        article
+        for article in data.get("new_articles", [])
+        if article.get("priority") == "low"
+        and article.get("url") not in known_urls
+        and article.get("official", True)
+        and article.get("is_relevant", has_concrete_brawl_news(article))
+    ]
+
+    return high_priority_articles, medium_priority_articles + low_official_articles
 
 
 def print_news_candidates(high_priority_articles, medium_priority_articles):
@@ -238,27 +257,28 @@ def select_news_content(article):
     """
     Выбирает короткий набор содержательных русских блоков.
 
-    Используем только официальный ru_clean_content.
-    Текст не переводим, не пересказываем и не исправляем:
-    функция лишь исключает служебные строки и применяет
-    безопасные ограничения количества и общей длины.
+    Официальная RU-копия имеет приоритет. Если её нет, используем
+    детерминированный краткий EN→RU formatter без внешнего API.
     """
 
-    # Английский текст не используем как fallback.
-    # Без найденной русской версии preview не создаётся.
-    if not article.get("ru_found"):
+    if contains_rumor_signal(article):
         return []
 
-    ru_content = article.get(
-        "ru_clean_content",
-        [],
-    )
+    if article.get("ru_found"):
+        ru_content = article.get("ru_clean_content", [])
+        title_value = article.get("ru_title") or ""
+    else:
+        translation = build_deterministic_translation(article)
+        if translation is None:
+            return []
+        article.update(translation)
+        ru_content = translation["translated_content"]
+        title_value = translation["translated_title"]
 
     if not ru_content:
         return []
 
-    ru_title_value = article.get("ru_title") or ""
-    ru_title = " ".join(ru_title_value.split()).casefold()
+    ru_title = " ".join(title_value.split()).casefold()
     selected_blocks = []
     selected_chars = 0
 
@@ -333,20 +353,21 @@ def build_article_news_preview(article):
     """
     Формирует отдельный русский preview одной статьи.
 
-    HIGH отмечаем как основной материал, MEDIUM — как
-    запасной. LOW и статьи без полезного официального
-    русского текста автоматический блок не получают.
+    HIGH отмечаем как основной материал, MEDIUM/LOW — как запасной.
     """
 
     priority = article.get("priority")
 
-    if priority not in ("high", "medium"):
+    if priority not in ("high", "medium", "low"):
         return None
 
-    if not article.get("ru_found"):
-        return None
+    ru_title = article.get("ru_title") or article.get("translated_title")
 
-    ru_title = article.get("ru_title")
+    if not ru_title and not article.get("ru_found"):
+        translation = build_deterministic_translation(article)
+        if translation:
+            article.update(translation)
+            ru_title = translation["translated_title"]
 
     if not ru_title:
         return None
@@ -358,8 +379,10 @@ def build_article_news_preview(article):
 
     if priority == "high":
         marker = "🔥 HIGH"
-    else:
+    elif priority == "medium":
         marker = "🟡 MEDIUM"
+    else:
+        marker = "⚪ LOW"
 
     # Склеиваем только выбранные фрагменты оригинального
     # русского текста, не добавляя выводов от генератора.
@@ -382,14 +405,7 @@ def print_russian_news_previews(high_priority_articles, medium_priority_articles
     available_previews = []
 
     for article in candidates:
-        # Даже если старый или повреждённый JSON случайно
-        # содержит LOW в списке, генератор его игнорирует.
-        if article.get("priority") not in ("high", "medium"):
-            continue
-
-        if not article.get("ru_found"):
-            print(Fore.YELLOW + "\n⚠ Пропущено: официальная русская версия не найдена")
-
+        if article.get("priority") not in ("high", "medium", "low"):
             continue
 
         preview = build_article_news_preview(article)
@@ -1128,7 +1144,7 @@ def normalize_news_title(title: str) -> str:
 
 def build_news_section(article: dict, max_blocks: int = NEWS_MAX_BLOCKS) -> str | None:
     """
-    Собирает новостную секцию только из официального RU-текста.
+    Собирает новостную секцию из RU-копии или deterministic EN→RU.
 
     Функция повторно использует select_news_content(), поэтому
     в финальный пост действуют те же фильтры служебных строк,
@@ -1136,10 +1152,16 @@ def build_news_section(article: dict, max_blocks: int = NEWS_MAX_BLOCKS) -> str 
     блоков не пересказывается и не обрезается.
     """
 
-    if not article.get("ru_found") or max_blocks <= 0:
+    if max_blocks <= 0 or contains_rumor_signal(article):
         return None
 
-    ru_title = article.get("ru_title")
+    if not article.get("ru_found"):
+        translation = build_deterministic_translation(article)
+        if translation is None:
+            return None
+        article.update(translation)
+
+    ru_title = article.get("ru_title") or article.get("translated_title")
 
     if not isinstance(ru_title, str) or not ru_title.strip():
         return None
@@ -1167,14 +1189,14 @@ def select_final_news(
     Выбирает одну статью для финального выпуска.
 
     Сначала просматриваем HIGH в архивном порядке, затем
-    MEDIUM. Статья считается пригодной только если для неё
-    действительно строится русская секция. LOW игнорируется,
-    даже если повреждённый JSON поместил её не в тот список.
+    MEDIUM и затем содержательные официальные LOW. Статья пригодна,
+    если для неё строится русская секция и нет признаков слуха.
     """
 
     priority_groups = (
         ("high", high_priority_articles),
         ("medium", medium_priority_articles),
+        ("low", medium_priority_articles),
     )
 
     for expected_priority, articles in priority_groups:
@@ -1186,6 +1208,99 @@ def select_final_news(
                 return article
 
     return None
+
+
+def build_brawl_pipeline_diagnostics(data: dict, scheduled=False, blocked_reason=None):
+    """Показывает маршрут article found → scheduled для каждой статьи."""
+
+    high_articles, backup_articles = get_news_candidates(data)
+    selected_article = select_final_news(high_articles, backup_articles)
+    selected_url = selected_article.get("url") if selected_article else None
+    rows = []
+    seen_urls = set()
+
+    for article in data.get("new_articles", []) + high_articles + backup_articles:
+        url = article.get("url")
+        if url in seen_urls:
+            continue
+        seen_urls.add(url)
+        formatted = build_news_section(article) is not None
+        selected = bool(
+            selected_article
+            and (
+                article is selected_article
+                or (selected_url and url == selected_url)
+                or (
+                    not selected_url
+                    and article.get("title") == selected_article.get("title")
+                )
+            )
+        )
+        rows.append(
+            {
+                "url": url,
+                "title": article.get("title", "?"),
+                "found": True,
+                "official": article.get("official", True),
+                "fresh": article.get("fresh", True),
+                "priority": article.get("priority", "low"),
+                "ru_version": article.get("ru_found") is True,
+                "translation": article.get("translated") is True,
+                "selected": selected,
+                "formatted": formatted,
+                "scheduled": bool(scheduled and selected),
+                "reason": (
+                    blocked_reason
+                    if selected and blocked_reason
+                    else (
+                        "selected"
+                        if selected
+                        else article.get("rejection_reason")
+                        or "другой пригодный материал получил приоритет"
+                    )
+                ),
+            }
+        )
+
+    return {
+        "rows": rows,
+        "summary": {
+            "found": len(rows),
+            "selected": sum(row["selected"] for row in rows),
+            "scheduled": sum(row["scheduled"] for row in rows),
+        },
+    }
+
+
+def print_brawl_pipeline_diagnostics(data: dict, scheduled=False, blocked_reason=None):
+    diagnostics = build_brawl_pipeline_diagnostics(
+        data,
+        scheduled=scheduled,
+        blocked_reason=blocked_reason,
+    )
+    print_section("BRAWL NEWS PIPELINE")
+
+    for row in diagnostics["rows"]:
+        print(row["title"])
+        print(f"  FOUND {'✓' if row['found'] else '✗'}")
+        print(f"  OFFICIAL {'✓' if row['official'] else '✗'}")
+        print(f"  FRESH {'✓' if row['fresh'] else '✗'}")
+        print(f"  PRIORITY {row['priority']}")
+        print(f"  RU VERSION {'✓' if row['ru_version'] else '✗'}")
+        print(f"  TRANSLATION {'✓' if row['translation'] else '✗'}")
+        print(f"  SELECTED {'✓' if row['selected'] else '✗'}")
+        print(f"  FORMATTED {'✓' if row['formatted'] else '✗'}")
+        print(f"  SCHEDULED {'✓' if row['scheduled'] else '✗'}")
+        print(f"  REASON {row['reason']}")
+
+    summary = diagnostics["summary"]
+    print(
+        "Brawl: "
+        f"найдено: {summary['found']}, "
+        f"selected: {summary['selected']}, "
+        f"scheduled: {summary['scheduled']}"
+    )
+    return diagnostics
 
 
 def select_balance_changes(
@@ -1326,7 +1441,7 @@ def build_final_post(data: dict) -> str | None:
         # изменениям, а не просто по полям исходного JSON.
         if balance_change_count > 0:
             news_block_limit = FINAL_NEWS_WITH_BALANCE_MAX_BLOCKS
-        elif news_article.get("priority") == "medium":
+        elif news_article.get("priority") in {"medium", "low"}:
             news_block_limit = FINAL_MEDIUM_NEWS_MAX_BLOCKS
         else:
             news_block_limit = FINAL_HIGH_NEWS_MAX_BLOCKS
@@ -1510,6 +1625,8 @@ def main():
         print(Fore.YELLOW + "\nПост не создан: подходящих новых материалов нет.")
     else:
         print("\n" + final_post)
+
+    print_brawl_pipeline_diagnostics(data, scheduled=final_post is not None)
 
 
 if __name__ == "__main__":

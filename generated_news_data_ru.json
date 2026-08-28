@@ -1,3 +1,110 @@
 {
-  "items": []
+  "items": [
+    {
+      "game": "Blade Ball",
+      "emoji": "⚔️",
+      "score": 6,
+      "text": "В Blade Ball вышло обновление «BEST SWORDS IN BLADE BALL! 🔥 - Blade Ball Update Showcase».",
+      "external_article_url": "https://www.youtube.com/watch?v=5E4tYNtntFc"
+    }
+  ],
+  "pipeline": [
+    {
+      "game": "Blox Fruits",
+      "candidate": true,
+      "verified": true,
+      "selected": false,
+      "formatted_ru": true,
+      "scheduled": false,
+      "reason": "ниже трёх более сильных разных новостей"
+    },
+    {
+      "game": "Blade Ball",
+      "candidate": true,
+      "verified": true,
+      "selected": true,
+      "formatted_ru": true,
+      "scheduled": false,
+      "reason": "вошёл в утренний выпуск"
+    },
+    {
+      "game": "Steal a Brainrot",
+      "candidate": true,
+      "verified": false,
+      "selected": false,
+      "formatted_ru": false,
+      "scheduled": false,
+      "reason": "В публикации не найдено достаточно конкретного содержания; Нет новой конкретной строки со времени прошлого снимка"
+    },
+    {
+      "game": "99 Nights in the Forest",
+      "candidate": true,
+      "verified": false,
+      "selected": false,
+      "formatted_ru": false,
+      "scheduled": false,
+      "reason": "В публикации не найдено достаточно конкретного содержания; Нет новой конкретной строки со времени прошлого снимка"
+    },
+    {
+      "game": "Brookhaven",
+      "candidate": true,
+      "verified": false,
+      "selected": false,
+      "formatted_ru": false,
+      "scheduled": false,
+      "reason": "Публикация уже использовалась в выпуске другого дня; Нет пригодной Tier B новости; Нет новой конкретной строки со времени прошлого снимка"
+    },
+    {
+      "game": "Adopt Me!",
+      "candidate": true,
+      "verified": false,
+      "selected": false,
+      "formatted_ru": false,
+      "scheduled": false,
+      "reason": "Публикация уже использовалась в выпуске другого дня; Tier B повторяет уже использованную официальную новость; Нет новой конкретной строки со времени прошлого снимка"
+    },
+    {
+      "game": "RIVALS",
+      "candidate": true,
+      "verified": false,
+      "selected": false,
+      "formatted_ru": false,
+      "scheduled": false,
+      "reason": "Нет пригодной Tier B новости; Нет новой конкретной строки со времени прошлого снимка"
+    },
+    {
+      "game": "Grow a Garden",
+      "candidate": true,
+      "verified": false,
+      "selected": false,
+      "formatted_ru": false,
+      "scheduled": false,
+      "reason": "В публикации не найдено достаточно конкретного содержания; Нет новой конкретной строки со времени прошлого снимка"
+    },
+    {
+      "game": "Dress To Impress",
+      "candidate": true,
+      "verified": false,
+      "selected": false,
+      "formatted_ru": false,
+      "scheduled": false,
+      "reason": "Публикация устарела: 56.7 дн. (аварийный лимит 30); Нет пригодной Tier B новости; Нет новой конкретной строки со времени прошлого снимка"
+    },
+    {
+      "game": "Pet Simulator 99",
+      "candidate": true,
+      "verified": false,
+      "selected": false,
+      "formatted_ru": false,
+      "scheduled": false,
+      "reason": "Публикация уже использовалась в выпуске другого дня; Tier B повторяет уже использованную официальную новость; Нет новой конкретной строки со времени прошлого снимка"
+    }
+  ],
+  "summary": {
+    "found": 10,
+    "verified": 2,
+    "selected": 1,
+    "formatted": 2,
+    "scheduled": 0
+  }
 }
