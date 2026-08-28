@@ -87,3 +87,64 @@ def print_source_health_report(candidates, title="NEWS SOURCE HEALTH"):
                 f"  {marker} {diagnostic.get('source_type', '?')}: "
                 f"{code} — {diagnostic.get('reason', '')}"
             )
+
+
+def configured_automated_routes(config):
+    """Returns only routes the pipeline can actually inspect for dated content."""
+
+    routes = ["official_game_description"]
+    if config.get("roblox_group_id"):
+        routes.append("official_roblox_group")
+    elif config.get("roblox_creator_url"):
+        routes.append("official_roblox_creator")
+    if config.get("news_url"):
+        routes.append("official_news_website")
+    if config.get("youtube_feed_url"):
+        routes.append("official_youtube_feed")
+    return routes
+
+
+def summarize_pool_health(candidates, source_registry):
+    """Reports configured and live-working routes separately for each pool."""
+
+    by_game = {candidate.get("game"): candidate for candidate in candidates}
+    result = {"active": [], "legacy": []}
+
+    for game, config in source_registry.items():
+        pool = config.get("pool", "legacy")
+        routes = configured_automated_routes(config)
+        diagnostics = by_game.get(game, {}).get("source_diagnostics", [])
+        working_types = {
+            item.get("source_type")
+            for item in diagnostics
+            if item.get("available") is True
+        }
+        result.setdefault(pool, []).append(
+            {
+                "game": game,
+                "routes": routes,
+                "working_routes": [route for route in routes if route in working_types],
+            }
+        )
+
+    return result
+
+
+def print_pool_health_report(candidates, source_registry):
+    summary = summarize_pool_health(candidates, source_registry)
+    print()
+    print("=== ACTIVE ROBLOX NEWS POOL ===")
+    for entry in summary.get("active", []):
+        print()
+        print(entry["game"])
+        print("sources:", len(entry["routes"]))
+        print("working:", len(entry["working_routes"]))
+
+    active = summary.get("active", [])
+    legacy = summary.get("legacy", [])
+    print()
+    print("Active games:", len(active))
+    print("Active source routes:", sum(len(entry["routes"]) for entry in active))
+    print("Working routes:", sum(len(entry["working_routes"]) for entry in active))
+    print("Legacy games:", len(legacy))
+    print("Legacy routes:", sum(len(entry["routes"]) for entry in legacy))

@@ -15,6 +15,8 @@ CONTENT_FILES = (
     Path("verified_news.json"),
 )
 
+CONTENT_NAME_ALIASES = {"Brookhaven": "Brookhaven RP"}
+
 REQUIRED_SOURCE_FIELDS = (
     "universe_id",
     "root_place_id",
@@ -72,9 +74,11 @@ def validate_registry(games, sources):
     errors = []
     game_names = [game["name"] for game in games]
 
-    if len(game_names) != 10:
+    active_games = [game["name"] for game in games if game.get("pool") == "active"]
+
+    if len(active_games) != 10:
         errors.append(
-            f"games.json должен содержать 10 игр, найдено: {len(game_names)}."
+            f"games.json должен содержать 10 active-игр, найдено: {len(active_games)}."
         )
 
     if len(set(game_names)) != len(game_names):
@@ -110,6 +114,12 @@ def validate_registry(games, sources):
         if source["universe_id"] != game["universe_id"]:
             errors.append(f"{name}: universe_id не совпадает с games.json.")
 
+        if game.get("pool") not in {"active", "legacy"}:
+            errors.append(f"{name}: pool должен быть active или legacy.")
+
+        if source.get("pool") != game.get("pool"):
+            errors.append(f"{name}: pool не совпадает с games.json.")
+
         if source["news_strategy"] not in NEWS_STRATEGIES:
             errors.append(f"{name}: неизвестная стратегия новостей.")
 
@@ -141,8 +151,24 @@ def validate_registry(games, sources):
         if str(source["root_place_id"]) not in source["roblox_game_url"]:
             errors.append(f"{name}: root_place_id не совпадает с URL игры.")
 
-        if str(source["roblox_group_id"]) not in source["roblox_group_url"]:
-            errors.append(f"{name}: group_id не совпадает с URL группы.")
+        if source["roblox_group_id"] is not None:
+            if not source["roblox_group_name"] or not source["roblox_group_url"]:
+                errors.append(f"{name}: для group_id нужны имя и URL группы.")
+            elif str(source["roblox_group_id"]) not in source["roblox_group_url"]:
+                errors.append(f"{name}: group_id не совпадает с URL группы.")
+        elif source.get("roblox_creator_type") == "user":
+            creator_id = source.get("roblox_creator_id")
+            creator_url = source.get("roblox_creator_url")
+            if (
+                not creator_id
+                or not source.get("roblox_creator_name")
+                or not creator_url
+            ):
+                errors.append(f"{name}: не полностью указан Roblox creator-user.")
+            elif str(creator_id) not in creator_url:
+                errors.append(f"{name}: creator_id не совпадает с URL автора.")
+        else:
+            errors.append(f"{name}: не указан официальный Roblox group или creator.")
 
         for field in (
             "roblox_game_url",
@@ -153,6 +179,7 @@ def validate_registry(games, sources):
             "youtube",
             "x",
             "youtube_feed_url",
+            "roblox_creator_url",
         ):
             validate_url(source.get(field), field, name, errors)
 
@@ -171,13 +198,16 @@ def validate_content_files(canonical_names):
             allowed_names.update(CURRENT_HIT_GAMES)
 
         for name in sorted(set(walk_game_names(load_json(path)))):
-            if name not in allowed_names:
+            normalized_name = CONTENT_NAME_ALIASES.get(name, name)
+            if normalized_name not in allowed_names:
                 errors.append(
                     f"{path}: неизвестное или иначе написанное название «{name}»."
                 )
 
     tips = load_json(Path("tips.json"))
-    games_with_tips = set(walk_game_names(tips))
+    games_with_tips = {
+        CONTENT_NAME_ALIASES.get(name, name) for name in walk_game_names(tips)
+    }
     missing_tips = sorted(canonical_names - games_with_tips)
 
     if missing_tips:
@@ -186,9 +216,13 @@ def validate_content_files(canonical_names):
         )
 
     all_tip_games = canonical_names | set(CURRENT_HIT_GAMES)
+    normalized_tips = [
+        {**tip, "game": CONTENT_NAME_ALIASES.get(tip.get("game"), tip.get("game"))}
+        for tip in tips
+    ]
     errors.extend(
         validate_tip_catalog(
-            tips,
+            normalized_tips,
             all_tip_games,
             minimum_per_game=15,
             minimum_by_game={game: 12 for game in CURRENT_HIT_GAMES},
@@ -224,6 +258,11 @@ def main():
         "Источники проверены: "
         f"{len(games)} игр, {external_count} официальных внешних лент, "
         f"{len(games) - external_count} Roblox-источников."
+    )
+    print(
+        "Пулы: "
+        f"active={sum(game.get('pool') == 'active' for game in games)}, "
+        f"legacy={sum(game.get('pool') == 'legacy' for game in games)}."
     )
 
 

@@ -1,4 +1,76 @@
 {
+  "Steal An Egg": {
+    "universe_id": 10563114921,
+    "root_place_id": 107778070777162,
+    "roblox_game_url": "https://www.roblox.com/games/107778070777162/Steal-An-Egg",
+    "roblox_group_id": 825735094,
+    "roblox_group_name": "and Collect Rare Pets",
+    "roblox_group_url": "https://www.roblox.com/communities/825735094/and-Collect-Rare-Pets",
+    "news_strategy": "roblox_game_description_and_group",
+    "website": null,
+    "news_url": null,
+    "discord": null,
+    "youtube": null,
+    "x": null,
+    "verified_at": "2026-08-28",
+    "pool": "active",
+    "source_notes": "No stable dated official external update feed was confirmed; Roblox experience and group are the fallback."
+  },
+  "Animal Hospital (Anomaly)": {
+    "universe_id": 10148749921,
+    "root_place_id": 78515283254292,
+    "roblox_game_url": "https://www.roblox.com/games/78515283254292/Animal-Hospital-Anomaly",
+    "roblox_group_id": 344908697,
+    "roblox_group_name": "Animal Anomaly",
+    "roblox_group_url": "https://www.roblox.com/communities/344908697/Animal-Anomaly",
+    "news_strategy": "roblox_game_description_and_group",
+    "website": null,
+    "news_url": null,
+    "discord": null,
+    "youtube": null,
+    "x": null,
+    "verified_at": "2026-08-28",
+    "pool": "active",
+    "source_notes": "Exact experience and developer group confirmed; no stable dated official external update feed was confirmed."
+  },
+  "+1 Speed Keyboard Escape": {
+    "universe_id": 9831440772,
+    "root_place_id": 81245647985532,
+    "roblox_game_url": "https://www.roblox.com/games/81245647985532/1-Speed-Keyboard-Escape",
+    "roblox_group_id": 175742687,
+    "roblox_group_name": "XSpeed Games",
+    "roblox_group_url": "https://www.roblox.com/communities/175742687/XSpeed-Games",
+    "news_strategy": "roblox_game_description_and_group",
+    "website": null,
+    "news_url": null,
+    "discord": null,
+    "youtube": null,
+    "x": null,
+    "verified_at": "2026-08-28",
+    "pool": "active",
+    "source_notes": "Exact popular experience and XSpeed Games group confirmed; similar-name clones were excluded."
+  },
+  "Murder Mystery 2": {
+    "universe_id": 66654135,
+    "root_place_id": 142823291,
+    "roblox_game_url": "https://www.roblox.com/games/142823291/Murder-Mystery-2",
+    "roblox_group_id": null,
+    "roblox_group_name": null,
+    "roblox_group_url": null,
+    "roblox_creator_type": "user",
+    "roblox_creator_id": 1848960,
+    "roblox_creator_name": "Nikilis",
+    "roblox_creator_url": "https://www.roblox.com/users/1848960/profile",
+    "news_strategy": "roblox_game_description_and_group",
+    "website": "https://nikilisrbx.com/",
+    "news_url": null,
+    "discord": null,
+    "youtube": null,
+    "x": "https://x.com/NikilisRBX",
+    "verified_at": "2026-08-28",
+    "pool": "active",
+    "source_notes": "Nikilis is the experience owner. Website and X are recorded for audit but are not used as dated automated feeds."
+  },
   "Steal a Brainrot": {
     "universe_id": 7709344486,
     "root_place_id": 109983668079237,
@@ -11,8 +83,10 @@
     "news_url": null,
     "discord": "https://discord.com/servers/steal-a-brainrot-1376018788041887795",
     "youtube": null,
-    "x": null,
-    "verified_at": "2026-08-19"
+    "x": "https://x.com/StealaBrainrotR",
+    "verified_at": "2026-08-28",
+    "pool": "active",
+    "source_notes": "No stable dated official external update feed was confirmed."
   },
   "99 Nights in the Forest": {
     "universe_id": 7326934954,
@@ -27,7 +101,9 @@
     "discord": "https://discord.com/invite/nyyr2Qmsdp",
     "youtube": null,
     "x": null,
-    "verified_at": "2026-08-19"
+    "verified_at": "2026-08-28",
+    "pool": "active",
+    "source_notes": "The official site has no usable dated update feed."
   },
   "Blox Fruits": {
     "universe_id": 994732206,
@@ -42,9 +118,10 @@
     "discord": "https://discord.com/invite/bloxfruits",
     "youtube": "https://www.youtube.com/c/GamerRobot",
     "x": "https://x.com/BloxFruits",
-    "verified_at": "2026-08-19"
+    "verified_at": "2026-08-28",
+    "pool": "active"
   },
-  "Brookhaven": {
+  "Brookhaven RP": {
     "universe_id": 1686885941,
     "root_place_id": 4924922222,
     "roblox_game_url": "https://www.roblox.com/games/4924922222/Brookhaven-RP",
@@ -57,7 +134,8 @@
     "discord": null,
     "youtube": null,
     "x": null,
-    "verified_at": "2026-08-21"
+    "verified_at": "2026-08-28",
+    "pool": "active"
   },
   "Adopt Me!": {
     "universe_id": 383310974,
@@ -72,7 +150,8 @@
     "discord": "https://discord.com/invite/adoptme",
     "youtube": "https://www.youtube.com/PlayAdoptMe",
     "x": "https://x.com/PlayAdoptMe",
-    "verified_at": "2026-08-19"
+    "verified_at": "2026-08-28",
+    "pool": "active"
   },
   "RIVALS": {
     "universe_id": 6035872082,
@@ -86,8 +165,10 @@
     "news_url": null,
     "discord": "https://discord.com/servers/nosniy-games-170261767480410112",
     "youtube": null,
-    "x": null,
-    "verified_at": "2026-08-19"
+    "x": "https://x.com/NosniyRBLX",
+    "verified_at": "2026-08-28",
+    "pool": "active",
+    "source_notes": "No reliable dated official external update feed was confirmed."
   },
   "Grow a Garden": {
     "universe_id": 7436755782,
@@ -102,7 +183,8 @@
     "discord": null,
     "youtube": null,
     "x": null,
-    "verified_at": "2026-08-27"
+    "verified_at": "2026-08-28",
+    "pool": "legacy"
   },
   "Dress To Impress": {
     "universe_id": 5203828273,
@@ -123,7 +205,8 @@
       "dti"
     ],
     "x": null,
-    "verified_at": "2026-08-21"
+    "verified_at": "2026-08-28",
+    "pool": "legacy"
   },
   "Pet Simulator 99": {
     "universe_id": 3317771874,
@@ -138,7 +221,8 @@
     "discord": "https://discord.biggames.io/",
     "youtube": "https://www.youtube.com/c/BuildIntoGames",
     "x": "https://x.com/BuildIntoGames",
-    "verified_at": "2026-08-19"
+    "verified_at": "2026-08-28",
+    "pool": "legacy"
   },
   "Blade Ball": {
     "universe_id": 4777817887,
@@ -158,6 +242,7 @@
       "blade ball"
     ],
     "x": null,
-    "verified_at": "2026-08-27"
+    "verified_at": "2026-08-28",
+    "pool": "legacy"
   }
 }

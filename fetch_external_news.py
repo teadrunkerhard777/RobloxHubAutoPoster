@@ -163,7 +163,7 @@ def find_latest_article_url(game, news_url, links):
             if article_path.startswith("/news/"):
                 return article_url
 
-        elif game == "Brookhaven":
+        elif game in {"Brookhaven", "Brookhaven RP"}:
             if article_path.startswith("/posts/brookhaven-update-"):
                 return article_url
 

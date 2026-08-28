@@ -68,6 +68,7 @@ GAME_EMOJIS = {
     "99 Nights in the Forest": "🌲",
     "Steal a Brainrot": "🧠",
     "Brookhaven": "🏡",
+    "Brookhaven RP": "🏡",
     "Adopt Me!": "🐾",
     "Grow a Garden": "🌱",
     "Dress To Impress": "👗",

@@ -11,7 +11,12 @@ GAME_NAMES = {
     "STEAL A BRAINROT": "Steal a Brainrot",
     "99 NIGHTS IN THE FOREST": "99 Nights in the Forest",
     "BLOX FRUITS": "Blox Fruits",
-    "BROOKHAVEN": "Brookhaven",
+    "BROOKHAVEN": "Brookhaven RP",
+    "BROOKHAVEN RP": "Brookhaven RP",
+    "STEAL AN EGG": "Steal An Egg",
+    "ANIMAL HOSPITAL (ANOMALY)": "Animal Hospital (Anomaly)",
+    "+1 SPEED KEYBOARD ESCAPE": "+1 Speed Keyboard Escape",
+    "MURDER MYSTERY 2": "Murder Mystery 2",
     "ADOPT ME": "Adopt Me!",
     "RIVALS": "RIVALS",
     "GROW A GARDEN": "Grow a Garden",
@@ -27,6 +32,11 @@ GAME_EMOJIS = {
     "99 Nights in the Forest": "🌲",
     "Steal a Brainrot": "🧠",
     "Brookhaven": "🏡",
+    "Brookhaven RP": "🏡",
+    "Steal An Egg": "🥚",
+    "Animal Hospital (Anomaly)": "🏥",
+    "+1 Speed Keyboard Escape": "⌨️",
+    "Murder Mystery 2": "🔪",
     "Adopt Me!": "🐾",
     "Grow a Garden": "🌱",
     "Dress To Impress": "👗",
@@ -428,6 +438,11 @@ def select_news_items(formatted_candidates, max_items=MAX_NEWS_ITEMS):
 
     primary_candidates = [entry for entry in formatted_candidates if not entry[2]]
     selection_pool = primary_candidates or formatted_candidates
+    selection_pool = sorted(
+        selection_pool,
+        key=lambda entry: entry[0].get("pool") == "active",
+        reverse=True,
+    )
     news_items = []
     used_games = set()
 
@@ -454,7 +469,10 @@ verified_news = load_json("verified_news.json")
 candidates = [
     candidate for candidate in verified_news if candidate.get("score", 0) >= MIN_SCORE
 ]
-candidates.sort(key=lambda item: item.get("score", 0), reverse=True)
+candidates.sort(
+    key=lambda item: (item.get("pool") == "active", item.get("score", 0)),
+    reverse=True,
+)
 
 # Форматируем до выбора окна: официальный EN-факт не должен молча исчезнуть
 # между verified и formatted_ru. Аварийные 15–30 дней используются только

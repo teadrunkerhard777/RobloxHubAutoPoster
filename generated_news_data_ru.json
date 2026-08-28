@@ -1,6 +1,20 @@
 {
   "items": [
     {
+      "game": "Steal An Egg",
+      "emoji": "🥚",
+      "score": 6,
+      "text": "По данным Sportskeeda, в Steal An Egg вышел материал «All Pets in Steal An Egg: Rarity, income, and more».",
+      "external_article_url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxNQ3FPNzgxV3NUZm5fS0R0R25RUnZnRU15d1ZJcWU4RzBMSzlRRUduOVlIYUhheC1JdDNsSWdXZ1JhWWl0M05hVXczZVFaNmlfSC1FTkhLMWhreFpERWpCSzhPdXJjSlF0a011YXB4LUhKUDVLLUZWM3FFejFaaEdCMg?oc=5"
+    },
+    {
+      "game": "Murder Mystery 2",
+      "emoji": "🔪",
+      "score": 6,
+      "text": "По данным Dexerto, в Murder Mystery 2 вышел материал «Roblox MM2 values list: Murder Mystery 2 weapon, knife & pet trade values».",
+      "external_article_url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxOQXJhRzNyOHlLUGNJbUdPR3Nsc0xNdGtxNVdiZXhZNVN3bGVibXYtMmpiUUtIcEFXT2RLc2ZRaUFkaERyZjFYVTlFNnRFUGVjM2FJeTRYeTJHbVJVMWk5ZjFXNjkzdVVhQ2hwOWo5U2FnZFd5cmpJNlRfR0VRLXBycnJGeGZKS2xDRzFfRzBydXlDSVZFTVpmTTJsVFVhQ1NtM1VjWGVB?oc=5"
+    },
+    {
       "game": "Blade Ball",
       "emoji": "⚔️",
       "score": 6,
@@ -9,6 +23,24 @@
     }
   ],
   "pipeline": [
+    {
+      "game": "Steal An Egg",
+      "candidate": true,
+      "verified": true,
+      "selected": true,
+      "formatted_ru": true,
+      "scheduled": false,
+      "reason": "вошёл в утренний выпуск"
+    },
+    {
+      "game": "Murder Mystery 2",
+      "candidate": true,
+      "verified": true,
+      "selected": true,
+      "formatted_ru": true,
+      "scheduled": false,
+      "reason": "вошёл в утренний выпуск"
+    },
     {
       "game": "Blox Fruits",
       "candidate": true,
@@ -19,34 +51,25 @@
       "reason": "ниже трёх более сильных разных новостей"
     },
     {
-      "game": "Blade Ball",
-      "candidate": true,
-      "verified": true,
-      "selected": true,
-      "formatted_ru": true,
-      "scheduled": false,
-      "reason": "вошёл в утренний выпуск"
-    },
-    {
-      "game": "Steal a Brainrot",
+      "game": "Animal Hospital (Anomaly)",
       "candidate": true,
       "verified": false,
       "selected": false,
       "formatted_ru": false,
       "scheduled": false,
-      "reason": "В публикации не найдено достаточно конкретного содержания; Нет новой конкретной строки со времени прошлого снимка"
+      "reason": "Нет пригодной Tier B новости; Нет новой конкретной строки со времени прошлого снимка"
     },
     {
-      "game": "99 Nights in the Forest",
+      "game": "+1 Speed Keyboard Escape",
       "candidate": true,
       "verified": false,
       "selected": false,
       "formatted_ru": false,
       "scheduled": false,
-      "reason": "В публикации не найдено достаточно конкретного содержания; Нет новой конкретной строки со времени прошлого снимка"
+      "reason": "Нет пригодной Tier B новости; Нет новой конкретной строки со времени прошлого снимка"
     },
     {
-      "game": "Brookhaven",
+      "game": "Brookhaven RP",
       "candidate": true,
       "verified": false,
       "selected": false,
@@ -71,6 +94,33 @@
       "formatted_ru": false,
       "scheduled": false,
       "reason": "Нет пригодной Tier B новости; Нет новой конкретной строки со времени прошлого снимка"
+    },
+    {
+      "game": "99 Nights in the Forest",
+      "candidate": true,
+      "verified": false,
+      "selected": false,
+      "formatted_ru": false,
+      "scheduled": false,
+      "reason": "В публикации не найдено достаточно конкретного содержания; Нет новой конкретной строки со времени прошлого снимка"
+    },
+    {
+      "game": "Steal a Brainrot",
+      "candidate": true,
+      "verified": false,
+      "selected": false,
+      "formatted_ru": false,
+      "scheduled": false,
+      "reason": "В публикации не найдено достаточно конкретного содержания; Нет новой конкретной строки со времени прошлого снимка"
+    },
+    {
+      "game": "Blade Ball",
+      "candidate": true,
+      "verified": true,
+      "selected": true,
+      "formatted_ru": true,
+      "scheduled": false,
+      "reason": "вошёл в утренний выпуск"
     },
     {
       "game": "Grow a Garden",
@@ -101,10 +151,10 @@
     }
   ],
   "summary": {
-    "found": 10,
-    "verified": 2,
-    "selected": 1,
-    "formatted": 2,
+    "found": 14,
+    "verified": 4,
+    "selected": 3,
+    "formatted": 4,
     "scheduled": 0
   }
 }

@@ -20,6 +20,7 @@ from source_health import (
     NO_NEW_CONTENT,
     SOURCE_STALE,
     SOURCE_UNAVAILABLE,
+    print_pool_health_report,
     print_source_health_report,
 )
 
@@ -211,6 +212,7 @@ def verify_registry_group(
     expected_name = config.get("roblox_group_name")
 
     candidate["source_registry"] = {
+        "pool": config.get("pool", "legacy"),
         "universe_id": config.get("universe_id"),
         "root_place_id": config.get("root_place_id"),
         "roblox_game_url": config.get("roblox_game_url"),
@@ -223,7 +225,12 @@ def verify_registry_group(
         "discord": config.get("discord"),
         "youtube": config.get("youtube"),
         "x": config.get("x"),
+        "roblox_creator_type": config.get("roblox_creator_type"),
+        "roblox_creator_id": config.get("roblox_creator_id"),
+        "roblox_creator_name": config.get("roblox_creator_name"),
+        "roblox_creator_url": config.get("roblox_creator_url"),
     }
+    candidate["pool"] = config.get("pool", candidate.get("pool", "legacy"))
 
     # Например Blade Ball пока
     # без подтверждённого group_id.
@@ -697,14 +704,24 @@ def verify_candidate(
 
     registry = candidate.get("source_registry", {})
     group = candidate.get("official_group")
+    creator_url = registry.get("roblox_creator_url")
+    source_type = (
+        "official_roblox_group"
+        if registry.get("roblox_group_id")
+        else "official_roblox_creator"
+    )
+    source_url = registry.get("roblox_group_url") or creator_url
+    source_available = (
+        bool(group) if registry.get("roblox_group_id") else bool(creator_url)
+    )
     candidate["source_diagnostics"].append(
         {
-            "source_type": "official_roblox_group",
-            "source_url": registry.get("roblox_group_url"),
+            "source_type": source_type,
+            "source_url": source_url,
             "latest_published_at": None,
             "status": "checked",
             "result_code": NO_NEW_CONTENT,
-            "available": bool(group),
+            "available": source_available,
             "article_found": False,
             "date_found": False,
             "content_found": bool(group and group.get("description")),
@@ -713,8 +730,13 @@ def verify_candidate(
             "reason": (
                 "Официальная группа подтверждена; датированной новости нет."
                 if group and group.get("name_matches_registry")
-                else candidate.get(
-                    "group_verification_note", "Группа не дала датированную публикацию."
+                else (
+                    "Официальный профиль автора подтверждён; датированной новости нет."
+                    if creator_url
+                    else candidate.get(
+                        "group_verification_note",
+                        "Группа не дала датированную публикацию.",
+                    )
                 )
             ),
         }
@@ -794,13 +816,17 @@ for candidate in candidates:
     verified.append(verified_candidate)
 
 
-verified.sort(key=lambda item: item.get("score", 0), reverse=True)
+verified.sort(
+    key=lambda item: (item.get("pool") == "active", item.get("score", 0)),
+    reverse=True,
+)
 
 
 save_json("verified_news.json", verified)
 
 
 print_source_health_report(verified, title="NEWS SOURCE HEALTH — ROBLOX")
+print_pool_health_report(verified, source_registry)
 
 
 # --------------------------------------------------

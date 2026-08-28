@@ -551,7 +551,7 @@ for config in games_config:
         # Новый главный слой.
         "facts": facts,
         "description_facts": analyzed_facts,
-        "priority": config.get("priority", False),
+        "pool": config.get("pool", "legacy"),
         "checked_at": (datetime.now(timezone.utc).isoformat()),
     }
 
@@ -571,7 +571,7 @@ for config in games_config:
 # --------------------------------------------------
 
 candidates.sort(
-    key=lambda item: (item["score"], item.get("priority", False)), reverse=True
+    key=lambda item: (item.get("pool") == "active", item["score"]), reverse=True
 )
 
 
