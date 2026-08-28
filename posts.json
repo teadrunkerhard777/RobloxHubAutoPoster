@@ -776,9 +776,9 @@
     "rubric": "Утренний выпуск",
     "source": "verified_fallback",
     "text": "🎮 ROBLOX HUB — УТРО\n\nСегодня без крупных подтверждённых обновлений, поэтому держи полезное 👇\n\n🏡 Brookhaven\nПопробуй менять профессии в разных историях: полиция, врач или пожарный дают совсем разные сценарии.\n\n🐶 Pet Simulator 99\nНе трать все ресурсы сразу: оставь запас на улучшение активной команды.\n\n🍈 Blox Fruits\nЕсли ждёшь фрукт на карте, помни, что найденный фрукт не лежит бесконечно — проверяй места появления вовремя.\n\n🎮 Roblox Hub",
-    "status": "pending",
-    "published_at": null,
-    "attempts": 0,
+    "status": "published",
+    "published_at": "2026-08-28T10:00:43.900716+05:00",
+    "attempts": 1,
     "last_error": null,
     "image_path": "assets/news_headers/roblox_news_header.png"
   },
