@@ -6,6 +6,7 @@ from pathlib import Path
 from external_news_facts import (
     MAX_ARTICLE_AGE_DAYS,
     SECONDARY_NEWS_MAX_AGE_DAYS,
+    classify_news_event,
     contains_rumor_signal,
     extract_external_facts,
     get_article_age_days,
@@ -52,6 +53,7 @@ def load_verify_functions():
         "SOURCE_STALE": SOURCE_STALE,
         "SOURCE_UNAVAILABLE": SOURCE_UNAVAILABLE,
         "contains_rumor_signal": contains_rumor_signal,
+        "classify_news_event": classify_news_event,
         "extract_external_facts": extract_external_facts,
         "get_article_age_days": get_article_age_days,
         "has_game_news_meaning": has_game_news_meaning,
@@ -179,6 +181,17 @@ class RobloxNewsStrategyTests(unittest.TestCase):
         self.assertTrue(
             any("По данным PCGamesN" in fact["summary_ru"] for fact in facts)
         )
+
+    def test_persisted_tier_b_reference_is_rejected_during_verification(self):
+        result = self.make_result(
+            tier="B",
+            title="All Pets in Steal An Egg: Rarity, income, and more",
+            text="A complete rarity and income reference for every existing pet.",
+        )
+        diagnostic, _, facts = self.evaluate(result)
+        self.assertEqual(diagnostic["result_code"], FOUND_REJECTED)
+        self.assertIn("guide/reference", diagnostic["reason"])
+        self.assertEqual(facts, [])
 
     def test_official_english_fact_is_not_silently_discarded(self):
         _, _, facts = self.evaluate(self.make_result())

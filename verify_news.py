@@ -7,6 +7,7 @@ import requests
 from external_news_facts import (
     MAX_ARTICLE_AGE_DAYS,
     SECONDARY_NEWS_MAX_AGE_DAYS,
+    classify_news_event,
     contains_rumor_signal,
     extract_external_facts,
     get_article_age_days,
@@ -423,6 +424,13 @@ def evaluate_external_result(candidate, result, external_history, now):
         diagnostic["result_code"] = FOUND_REJECTED
         diagnostic["reason"] = "Tier B не содержит конкретного игрового изменения."
         return diagnostic, article, []
+
+    if source_tier == "B":
+        is_event, classification_reason = classify_news_event(article)
+        if not is_event:
+            diagnostic["result_code"] = FOUND_REJECTED
+            diagnostic["reason"] = f"Tier B отклонён: {classification_reason}."
+            return diagnostic, article, []
 
     article_url = article.get("url", "")
 

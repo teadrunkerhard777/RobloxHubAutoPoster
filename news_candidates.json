@@ -1,120 +1,5 @@
 [
   {
-    "game": "Brookhaven RP",
-    "universe_id": 1686885941,
-    "roblox_name": "Brookhaven 🏡RP",
-    "description": "A place to play with like minded people and roleplay. Own and live in amazing houses, drive cool vehicles and explore the city. Be whoever you want to be in Brookhaven RP.\n\nLatest Update:\n📚 Library House - New free home!\n💜 Lavender Luxury - New premium home and a convertible car!\n✨ Lavender Props - 7 new props to decorate with!\n\nThanks for playing! \n\nPrivate Server Benefits:\n· Prop Saving\n· Server-Wide Music\n· Server-Wide Announcements\n· Remove or Lock Props\n· Check Prop Owners\n· Set Players as Admins\n· Kick / Temp Ban Players\n· Set Day of the Week\n· Set Time by the Hour\n· Change Weather and Lighting\n· Speed up Time\n· Server Theme Controls\n· No Wait Time for Changing House \n· Spawn Up to Three Vehicles\n· Prop Limit Increased\n· Freecam for PC users (Shift+P)",
-    "updated": "2026-08-28T19:06:16.2670249Z",
-    "created": "2020-04-21T02:15:38.373Z",
-    "creator": {
-      "id": 3104358,
-      "name": "Brookhaven by Voldex",
-      "type": "Group",
-      "isRNVAccount": false,
-      "hasVerifiedBadge": false
-    },
-    "description_changed": true,
-    "added_lines": [
-      "📚 Library House - New free home!",
-      "💜 Lavender Luxury - New premium home and a convertible car!",
-      "✨ Lavender Props - 7 new props to decorate with!"
-    ],
-    "keywords": [
-      "NEW",
-      "UPDATE",
-      "VEHICLES"
-    ],
-    "score": 10,
-    "confidence": "high",
-    "facts": [
-      {
-        "text": "💜 Lavender Luxury - New premium home and a convertible car!",
-        "kind": "vehicle",
-        "value": 10,
-        "specific": true,
-        "reason": "Строка называет конкретное игровое содержимое",
-        "summary_ru": "В игру добавили новый транспорт.",
-        "is_new_line": true
-      },
-      {
-        "text": "✨ Lavender Props - 7 new props to decorate with!",
-        "kind": "items",
-        "value": 9,
-        "specific": true,
-        "reason": "Строка называет конкретное игровое содержимое",
-        "summary_ru": "Добавили новый реквизит для ролевых сцен.",
-        "is_new_line": true
-      }
-    ],
-    "description_facts": [
-      {
-        "text": "💜 Lavender Luxury - New premium home and a convertible car!",
-        "kind": "vehicle",
-        "value": 10,
-        "specific": true,
-        "reason": "Строка называет конкретное игровое содержимое",
-        "summary_ru": "В игру добавили новый транспорт.",
-        "is_new_line": true
-      },
-      {
-        "text": "✨ Lavender Props - 7 new props to decorate with!",
-        "kind": "items",
-        "value": 9,
-        "specific": true,
-        "reason": "Строка называет конкретное игровое содержимое",
-        "summary_ru": "Добавили новый реквизит для ролевых сцен.",
-        "is_new_line": true
-      },
-      {
-        "text": "· Prop Saving",
-        "kind": "items",
-        "value": 7,
-        "specific": true,
-        "reason": "Строка называет конкретное игровое содержимое",
-        "summary_ru": "Добавили новый реквизит для ролевых сцен.",
-        "is_new_line": false
-      },
-      {
-        "text": "· Remove or Lock Props",
-        "kind": "items",
-        "value": 7,
-        "specific": true,
-        "reason": "Строка называет конкретное игровое содержимое",
-        "summary_ru": "Добавили новый реквизит для ролевых сцен.",
-        "is_new_line": false
-      },
-      {
-        "text": "· Check Prop Owners",
-        "kind": "items",
-        "value": 7,
-        "specific": true,
-        "reason": "Строка называет конкретное игровое содержимое",
-        "summary_ru": "Добавили новый реквизит для ролевых сцен.",
-        "is_new_line": false
-      },
-      {
-        "text": "· Prop Limit Increased",
-        "kind": "items",
-        "value": 7,
-        "specific": true,
-        "reason": "Строка называет конкретное игровое содержимое",
-        "summary_ru": "Добавили новый реквизит для ролевых сцен.",
-        "is_new_line": false
-      },
-      {
-        "text": "Latest Update:",
-        "kind": "update",
-        "value": 2,
-        "specific": false,
-        "reason": "Упоминание обновления без конкретики",
-        "summary_ru": "В игре вышло новое обновление.",
-        "is_new_line": false
-      }
-    ],
-    "pool": "active",
-    "checked_at": "2026-08-29T03:01:03.178673+00:00"
-  },
-  {
     "game": "Steal An Egg",
     "universe_id": 10563114921,
     "roblox_name": "Steal An Egg",
@@ -193,7 +78,7 @@
       }
     ],
     "pool": "active",
-    "checked_at": "2026-08-29T03:01:03.172234+00:00"
+    "checked_at": "2026-08-29T07:47:01.918571+00:00"
   },
   {
     "game": "Animal Hospital (Anomaly)",
@@ -227,14 +112,14 @@
       }
     ],
     "pool": "active",
-    "checked_at": "2026-08-29T03:01:03.172700+00:00"
+    "checked_at": "2026-08-29T07:47:01.919106+00:00"
   },
   {
     "game": "+1 Speed Keyboard Escape",
     "universe_id": 9831440772,
     "roblox_name": "[UPD] +1 Speed Keyboard Escape",
     "description": "🎀 Join the XSpeed Games group!\n\n👟 Welcome to +1 Speed Keyboard Escape 👟\n\n⚡ Every step = +1 Speed\n👟 Run, jump, and escape across a world made of keyboard keys\n💪 Train your speed and unlock powerful multipliers\n🌍 Become the FASTEST player in the world\n👥 Race against friends and other players\n🚀 Speed is everything… but one wrong step and you’re back at the start 😱\n\n🎧 ASMR vibes included\nSmooth movement, satisfying keyboard clicks, and relaxing, chill sounds! ✨\n\n🔑 Tags:\nSpeed, Keyboard, ASMR, Obby, Escape, Parkour, Multiplayer, Racing, Competitive, Satisfying, Relaxing, Physics, Ragdoll, Challenge, Speedrun",
-    "updated": "2026-08-28T20:21:53.6046393Z",
+    "updated": "2026-08-29T06:59:30.1503198Z",
     "created": "2026-03-04T03:51:10.46Z",
     "creator": {
       "id": 175742687,
@@ -251,7 +136,7 @@
     "facts": [],
     "description_facts": [],
     "pool": "active",
-    "checked_at": "2026-08-29T03:01:03.174647+00:00"
+    "checked_at": "2026-08-29T07:47:01.920980+00:00"
   },
   {
     "game": "Murder Mystery 2",
@@ -297,7 +182,99 @@
       }
     ],
     "pool": "active",
-    "checked_at": "2026-08-29T03:01:03.175954+00:00"
+    "checked_at": "2026-08-29T07:47:01.922186+00:00"
+  },
+  {
+    "game": "Brookhaven RP",
+    "universe_id": 1686885941,
+    "roblox_name": "Brookhaven 🏡RP",
+    "description": "A place to play with like minded people and roleplay. Own and live in amazing houses, drive cool vehicles and explore the city. Be whoever you want to be in Brookhaven RP.\n\nLatest Update:\n📚 Library House - New free home!\n💜 Lavender Luxury - New premium home and a convertible car!\n✨ Lavender Props - 7 new props to decorate with!\n\nThanks for playing! \n\nPrivate Server Benefits:\n· Prop Saving\n· Server-Wide Music\n· Server-Wide Announcements\n· Remove or Lock Props\n· Check Prop Owners\n· Set Players as Admins\n· Kick / Temp Ban Players\n· Set Day of the Week\n· Set Time by the Hour\n· Change Weather and Lighting\n· Speed up Time\n· Server Theme Controls\n· No Wait Time for Changing House \n· Spawn Up to Three Vehicles\n· Prop Limit Increased\n· Freecam for PC users (Shift+P)",
+    "updated": "2026-08-28T19:06:16.2670249Z",
+    "created": "2020-04-21T02:15:38.373Z",
+    "creator": {
+      "id": 3104358,
+      "name": "Brookhaven by Voldex",
+      "type": "Group",
+      "isRNVAccount": false,
+      "hasVerifiedBadge": false
+    },
+    "description_changed": false,
+    "added_lines": [],
+    "keywords": [
+      "NEW",
+      "UPDATE",
+      "VEHICLES"
+    ],
+    "score": 0,
+    "confidence": "low",
+    "facts": [],
+    "description_facts": [
+      {
+        "text": "💜 Lavender Luxury - New premium home and a convertible car!",
+        "kind": "vehicle",
+        "value": 8,
+        "specific": true,
+        "reason": "Строка называет конкретное игровое содержимое",
+        "summary_ru": "В игру добавили новый транспорт.",
+        "is_new_line": false
+      },
+      {
+        "text": "✨ Lavender Props - 7 new props to decorate with!",
+        "kind": "items",
+        "value": 7,
+        "specific": true,
+        "reason": "Строка называет конкретное игровое содержимое",
+        "summary_ru": "Добавили новый реквизит для ролевых сцен.",
+        "is_new_line": false
+      },
+      {
+        "text": "· Prop Saving",
+        "kind": "items",
+        "value": 7,
+        "specific": true,
+        "reason": "Строка называет конкретное игровое содержимое",
+        "summary_ru": "Добавили новый реквизит для ролевых сцен.",
+        "is_new_line": false
+      },
+      {
+        "text": "· Remove or Lock Props",
+        "kind": "items",
+        "value": 7,
+        "specific": true,
+        "reason": "Строка называет конкретное игровое содержимое",
+        "summary_ru": "Добавили новый реквизит для ролевых сцен.",
+        "is_new_line": false
+      },
+      {
+        "text": "· Check Prop Owners",
+        "kind": "items",
+        "value": 7,
+        "specific": true,
+        "reason": "Строка называет конкретное игровое содержимое",
+        "summary_ru": "Добавили новый реквизит для ролевых сцен.",
+        "is_new_line": false
+      },
+      {
+        "text": "· Prop Limit Increased",
+        "kind": "items",
+        "value": 7,
+        "specific": true,
+        "reason": "Строка называет конкретное игровое содержимое",
+        "summary_ru": "Добавили новый реквизит для ролевых сцен.",
+        "is_new_line": false
+      },
+      {
+        "text": "Latest Update:",
+        "kind": "update",
+        "value": 2,
+        "specific": false,
+        "reason": "Упоминание обновления без конкретики",
+        "summary_ru": "В игре вышло новое обновление.",
+        "is_new_line": false
+      }
+    ],
+    "pool": "active",
+    "checked_at": "2026-08-29T07:47:01.924571+00:00"
   },
   {
     "game": "Blox Fruits",
@@ -334,14 +311,14 @@
       }
     ],
     "pool": "active",
-    "checked_at": "2026-08-29T03:01:03.181057+00:00"
+    "checked_at": "2026-08-29T07:47:01.926936+00:00"
   },
   {
     "game": "Adopt Me!",
     "universe_id": 383310974,
-    "roblox_name": "[24H⌛] Adopt Me!",
+    "roblox_name": "[12H⌛] Adopt Me!",
     "description": "Adopt and raise 🐶🦄👶, trade and collect legendary pets, build your dream home, and roleplay with friends!\n\n🎒 Backpack Storage & Releaser Refresh! 🎒\n🦴 Store unused items for smoother gameplay!\n🧸 Sort pets and items, trade directly from tabs!\n🍓 Kiwi Kiwi and Strawberry Tortle in Releaser Eggs!\n\nBe FIRST 🏆 To experience new updates by pressing 🔔NOTIFY.\n\nMeet the founders!\nNewFissy - Tech Director\nBethink - Creative Director\n\nFind out more about Uplift Games, our policies and creative attributions:\nhttps://devforum.roblox.com/t/credits/71812",
-    "updated": "2026-08-28T16:12:35.7363651Z",
+    "updated": "2026-08-29T04:00:02.6211869Z",
     "created": "2017-07-14T19:26:21.347Z",
     "creator": {
       "id": 295182,
@@ -417,7 +394,7 @@
       }
     ],
     "pool": "active",
-    "checked_at": "2026-08-29T03:01:03.182467+00:00"
+    "checked_at": "2026-08-29T07:47:01.928079+00:00"
   },
   {
     "game": "RIVALS",
@@ -484,7 +461,7 @@
       }
     ],
     "pool": "active",
-    "checked_at": "2026-08-29T03:01:03.184298+00:00"
+    "checked_at": "2026-08-29T07:47:01.929600+00:00"
   },
   {
     "game": "99 Nights in the Forest",
@@ -508,7 +485,7 @@
     "facts": [],
     "description_facts": [],
     "pool": "active",
-    "checked_at": "2026-08-29T03:01:03.184670+00:00"
+    "checked_at": "2026-08-29T07:47:01.929886+00:00"
   },
   {
     "game": "Steal a Brainrot",
@@ -542,7 +519,7 @@
       }
     ],
     "pool": "active",
-    "checked_at": "2026-08-29T03:01:03.185968+00:00"
+    "checked_at": "2026-08-29T07:47:01.930896+00:00"
   },
   {
     "game": "Grow a Garden",
@@ -566,7 +543,7 @@
     "facts": [],
     "description_facts": [],
     "pool": "legacy",
-    "checked_at": "2026-08-29T03:01:03.187404+00:00"
+    "checked_at": "2026-08-29T07:47:01.932078+00:00"
   },
   {
     "game": "Dress To Impress",
@@ -630,7 +607,7 @@
       }
     ],
     "pool": "legacy",
-    "checked_at": "2026-08-29T03:01:03.188560+00:00"
+    "checked_at": "2026-08-29T07:47:01.933004+00:00"
   },
   {
     "game": "Pet Simulator 99",
@@ -675,7 +652,7 @@
       }
     ],
     "pool": "legacy",
-    "checked_at": "2026-08-29T03:01:03.188916+00:00"
+    "checked_at": "2026-08-29T07:47:01.933259+00:00"
   },
   {
     "game": "Blade Ball",
@@ -711,6 +688,6 @@
       }
     ],
     "pool": "legacy",
-    "checked_at": "2026-08-29T03:01:03.190718+00:00"
+    "checked_at": "2026-08-29T07:47:01.934872+00:00"
   }
 ]

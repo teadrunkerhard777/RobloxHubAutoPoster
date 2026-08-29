@@ -9,7 +9,11 @@ from xml.etree import ElementTree
 
 import requests
 
-from external_news_facts import contains_rumor_signal, has_game_news_meaning
+from external_news_facts import (
+    contains_rumor_signal,
+    has_game_news_meaning,
+    is_news_event,
+)
 
 OUTPUT_FILE = "secondary_news_raw.json"
 REQUEST_TIMEOUT = 20
@@ -27,20 +31,6 @@ TIER_B_PUBLISHERS = {
     "the gamer",
     "thegamer",
 }
-
-# Типичные evergreen-гайды не являются новостями, даже если
-# поисковая RSS-лента показывает свежую дату и игровые слова.
-SECONDARY_NON_NEWS_MARKERS = (
-    " codes",
-    "code list",
-    "tier list",
-    "how to ",
-    "best pets",
-    "best swords",
-    "value list",
-    "wiki",
-    "guide",
-)
 
 
 def load_games(filename="games.json"):
@@ -72,8 +62,9 @@ def game_is_explicit(game, title, description):
 
 
 def is_secondary_news_article(article):
-    text = f" {article.get('title', '')} {article.get('text', '')}".casefold()
-    return not any(marker in text for marker in SECONDARY_NON_NEWS_MARKERS)
+    # fresh article + game relevance != news; Tier B обязан содержать
+    # конкретное новое событие или изменение самой игры.
+    return is_news_event(article)
 
 
 def parse_feed(game, feed_text):

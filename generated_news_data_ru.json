@@ -3,46 +3,21 @@
     {
       "game": "Brookhaven RP",
       "emoji": "🏡",
-      "score": 10,
-      "text": "🚗 В игру добавили новый транспорт.\n\n🧰 Добавили новый реквизит для ролевых сцен.",
+      "score": 8,
+      "text": "🚗 В игру добавили кабриолет с неоновыми задними фонарями в виде цветов.\n\nВ Brookhaven RP вышло обновление «Brookhaven Update August 28, 2026: Lavender Luxury».",
       "external_article_url": "https://www.brookhavenrp.com/posts/brookhaven-update-august-28-2026"
     },
     {
-      "game": "Steal An Egg",
-      "emoji": "🥚",
+      "game": "Blade Ball",
+      "emoji": "⚔️",
       "score": 6,
-      "text": "По данным Sportskeeda, в Steal An Egg вышел материал «All Pets in Steal An Egg: Rarity, income, and more».",
-      "external_article_url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxNQ3FPNzgxV3NUZm5fS0R0R25RUnZnRU15d1ZJcWU4RzBMSzlRRUduOVlIYUhheC1JdDNsSWdXZ1JhWWl0M05hVXczZVFaNmlfSC1FTkhLMWhreFpERWpCSzhPdXJjSlF0a011YXB4LUhKUDVLLUZWM3FFejFaaEdCMg?oc=5"
-    },
-    {
-      "game": "Murder Mystery 2",
-      "emoji": "🔪",
-      "score": 6,
-      "text": "По данным Dexerto, в Murder Mystery 2 вышел материал «Roblox MM2 values list: Murder Mystery 2 weapon, knife & pet trade values».",
-      "external_article_url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxOQXJhRzNyOHlLUGNJbUdPR3Nsc0xNdGtxNVdiZXhZNVN3bGVibXYtMmpiUUtIcEFXT2RLc2ZRaUFkaERyZjFYVTlFNnRFUGVjM2FJeTRYeTJHbVJVMWk5ZjFXNjkzdVVhQ2hwOWo5U2FnZFd5cmpJNlRfR0VRLXBycnJGeGZKS2xDRzFfRzBydXlDSVZFTVpmTTJsVFVhQ1NtM1VjWGVB?oc=5"
+      "text": "В Blade Ball вышло обновление «BEST SWORDS IN BLADE BALL! 🔥 - Blade Ball Update Showcase».",
+      "external_article_url": "https://www.youtube.com/watch?v=5E4tYNtntFc"
     }
   ],
   "pipeline": [
     {
       "game": "Brookhaven RP",
-      "candidate": true,
-      "verified": true,
-      "selected": true,
-      "formatted_ru": true,
-      "scheduled": true,
-      "reason": "вошёл в утренний выпуск"
-    },
-    {
-      "game": "Steal An Egg",
-      "candidate": true,
-      "verified": true,
-      "selected": true,
-      "formatted_ru": true,
-      "scheduled": true,
-      "reason": "вошёл в утренний выпуск"
-    },
-    {
-      "game": "Murder Mystery 2",
       "candidate": true,
       "verified": true,
       "selected": true,
@@ -60,6 +35,15 @@
       "reason": "ниже трёх более сильных разных новостей"
     },
     {
+      "game": "Steal An Egg",
+      "candidate": true,
+      "verified": false,
+      "selected": false,
+      "formatted_ru": false,
+      "scheduled": false,
+      "reason": "В публикации не найдено достаточно конкретного содержания; Нет новой конкретной строки со времени прошлого снимка"
+    },
+    {
       "game": "Animal Hospital (Anomaly)",
       "candidate": true,
       "verified": false,
@@ -70,6 +54,15 @@
     },
     {
       "game": "+1 Speed Keyboard Escape",
+      "candidate": true,
+      "verified": false,
+      "selected": false,
+      "formatted_ru": false,
+      "scheduled": false,
+      "reason": "Нет пригодной Tier B новости; Нет новой конкретной строки со времени прошлого снимка"
+    },
+    {
+      "game": "Murder Mystery 2",
       "candidate": true,
       "verified": false,
       "selected": false,
@@ -117,10 +110,10 @@
       "game": "Blade Ball",
       "candidate": true,
       "verified": true,
-      "selected": false,
+      "selected": true,
       "formatted_ru": true,
-      "scheduled": false,
-      "reason": "ниже трёх более сильных разных новостей"
+      "scheduled": true,
+      "reason": "вошёл в утренний выпуск"
     },
     {
       "game": "Grow a Garden",
@@ -138,7 +131,7 @@
       "selected": false,
       "formatted_ru": false,
       "scheduled": false,
-      "reason": "Источник недоступен: 404 Client Error: Not Found for url: https://www.youtube.com/feeds/videos.xml?channel_id=UCCVWvf_e5oRb6RfXyluR7UA; Нет пригодной Tier B новости; Нет новой конкретной строки со времени прошлого снимка"
+      "reason": "Публикация устарела: 57.7 дн. (аварийный лимит 30); Нет пригодной Tier B новости; Нет новой конкретной строки со времени прошлого снимка"
     },
     {
       "game": "Pet Simulator 99",
@@ -152,9 +145,9 @@
   ],
   "summary": {
     "found": 14,
-    "verified": 5,
-    "selected": 3,
-    "formatted": 5,
-    "scheduled": 3
+    "verified": 3,
+    "selected": 2,
+    "formatted": 3,
+    "scheduled": 2
   }
 }

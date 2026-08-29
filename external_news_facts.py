@@ -67,6 +67,67 @@ GAME_NEWS_MARKERS = (
     "анонс",
 )
 
+# Tier B публикует не только новости, но и регулярно обновляемые справочники.
+# Свежая дата и упоминание игры поэтому недостаточны: сначала отсекаем формат
+# guide/reference, затем требуем конкретное событие или изменение самой игры.
+TIER_B_REFERENCE_TITLE_PATTERNS = (
+    r"\bhow to\b",
+    r"\b(?:beginner|farming|strategy|complete|ultimate)\s+guide\b",
+    r"\bguide\b",
+    r"\btier\s+list\b",
+    r"\bvalues?\s+list\b",
+    r"\btrading\s+values?\b",
+    r"\brarity\s+list\b",
+    r"\ball\s+(?:pets?|weapons?|items?)\b",
+    r"\b(?:redeem\s+)?codes?\b",
+    r"\bwiki\b",
+    r"\bwalkthrough\b",
+    r"\b(?:price|value)\s+calculators?\b",
+    r"\bbest\b",
+    r"\btips?\b",
+)
+
+TIER_B_REFERENCE_BODY_PATTERNS = (
+    *TIER_B_REFERENCE_TITLE_PATTERNS,
+    r"\b(?:rarity|income|price|value)\s+(?:table|chart|database)\b",
+    r"\btrade\s+calculator\b",
+)
+
+TIER_B_NEWS_EVENT_PATTERNS = (
+    # Действие и игровая сущность должны находиться рядом: отдельного слова
+    # pet/item/update недостаточно для признания материала новостью.
+    (
+        r"\b(?:adds?|added|introduc(?:e[ds]?|ing)|releas(?:e[ds]?|ing)|"
+        r"launch(?:e[ds]?|ing)|unveil(?:e[ds]?|ing)|announc(?:e[ds]?|ing)|"
+        r"brings?|arriv(?:e[ds]?|ing))\b.{0,100}\b(?:new\s+)?"
+        r"(?:event|map|mode|pet|weapon|item|mechanic|feature|season|"
+        r"collaboration|collab|vehicle|location|gameplay)\b"
+    ),
+    (
+        r"\b(?:new\s+)?(?:event|map|mode|pet|weapon|item|mechanic|feature|"
+        r"season|collaboration|collab|vehicle|location)\b.{0,100}\b"
+        r"(?:adds?|added|introduc(?:e[ds]?|ing)|releas(?:e[ds]?|ing)|"
+        r"launch(?:e[ds]?|ing)|unveil(?:e[ds]?|ing)|announc(?:e[ds]?|ing)|"
+        r"coming|arriv(?:e[ds]?|ing)|live)\b"
+    ),
+    (
+        r"\b(?:update|patch)\b.{0,80}\b(?:adds?|added|brings?|"
+        r"introduc(?:e[ds]?)|releas(?:e[ds]?)|launch(?:e[ds]?)|"
+        r"changes?|live|out now)\b"
+    ),
+    (
+        r"\b(?:event|season)\b.{0,50}\b(?:starts?|begins?|"
+        r"launch(?:e[ds]?)|goes live|is live)\b"
+    ),
+    r"\b(?:balance changes?|gameplay changes?|buff(?:ed|s)?|nerf(?:ed|s)?)\b",
+    r"\b(?:update|patch)\s+(?:v?\d+(?:\.\d+)*|[a-z][a-z0-9'-]+)\b",
+    r"\b[A-Za-z0-9][A-Za-z0-9 '&-]{2,45}\s+update\b",
+    (
+        r"\bnew\s+(?:event|map|mode|pet|weapon|item|mechanic|feature|"
+        r"season|collaboration|collab|vehicle|location)\b"
+    ),
+)
+
 
 def contains_rumor_signal(article):
     text = " ".join([article.get("title", ""), article.get("text", "")]).casefold()
@@ -81,6 +142,37 @@ def has_game_news_meaning(article):
         return False
     text = " ".join([article.get("title", ""), body]).casefold()
     return any(marker in text for marker in GAME_NEWS_MARKERS)
+
+
+def classify_news_event(article):
+    """Classifies whether a Tier B article describes a real game news event.
+
+    The title is authoritative for obvious reference formats. For everything
+    else the combined title/body must describe a concrete launch, addition,
+    announcement, event, patch, or gameplay/balance change.
+    """
+
+    title = " ".join(article.get("title", "").casefold().split())
+    body = " ".join(article.get("text", "").casefold().split())
+    combined = f"{title} {body}".strip()
+
+    if any(re.search(pattern, title) for pattern in TIER_B_REFERENCE_TITLE_PATTERNS):
+        return False, "guide/reference по заголовку"
+
+    if any(re.search(pattern, combined) for pattern in TIER_B_NEWS_EVENT_PATTERNS):
+        return True, "найдено конкретное игровое событие или изменение"
+
+    if any(re.search(pattern, combined) for pattern in TIER_B_REFERENCE_BODY_PATTERNS):
+        return False, "guide/reference по содержанию"
+
+    return False, "нет конкретного нового события или изменения игры"
+
+
+def is_news_event(article):
+    """Boolean helper for Tier B discovery and verification."""
+
+    accepted, _ = classify_news_event(article)
+    return accepted
 
 
 def parse_published_at(value):
@@ -217,7 +309,15 @@ def build_title_fact(game, article):
 
     elif article.get("source_tier") == "B":
         publisher = article.get("publisher") or "игрового издания"
-        summary = f"По данным {publisher}, в {game} вышел материал «{title}»."
+        title_kind = classify_content_line(title)
+        concrete_summary = (
+            summarize_content_line_ru(title, title_kind) if title_kind else None
+        )
+        summary = (
+            f"По данным {publisher}, {concrete_summary}"
+            if concrete_summary
+            else f"По данным {publisher}, в {game} вышло обновление «{title}»."
+        )
 
     elif game == "Adopt Me!":
         summary = "В Adopt Me! вышло обновление " f"«{title}»."
@@ -647,6 +747,11 @@ def extract_external_facts(
         return []
 
     if contains_rumor_signal(article):
+        return []
+
+    # Defense in depth: даже сохранённый ранее Tier B результат не должен
+    # пройти extraction только из-за свежей даты и слов pet/item/update.
+    if article.get("source_tier") == "B" and not is_news_event(article):
         return []
 
     facts = []

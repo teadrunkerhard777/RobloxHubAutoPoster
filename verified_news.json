@@ -13,41 +13,19 @@
       "isRNVAccount": false,
       "hasVerifiedBadge": false
     },
-    "description_changed": true,
-    "added_lines": [
-      "📚 Library House - New free home!",
-      "💜 Lavender Luxury - New premium home and a convertible car!",
-      "✨ Lavender Props - 7 new props to decorate with!"
-    ],
+    "description_changed": false,
+    "added_lines": [],
     "keywords": [
       "NEW",
       "UPDATE",
       "VEHICLES"
     ],
-    "score": 10,
+    "score": 8,
     "confidence": "high",
     "facts": [
       {
-        "text": "💜 Lavender Luxury - New premium home and a convertible car!",
-        "kind": "vehicle",
-        "value": 10,
-        "specific": true,
-        "reason": "Строка называет конкретное игровое содержимое",
-        "summary_ru": "В игру добавили новый транспорт.",
-        "is_new_line": true
-      },
-      {
-        "text": "✨ Lavender Props - 7 new props to decorate with!",
-        "kind": "items",
-        "value": 9,
-        "specific": true,
-        "reason": "Строка называет конкретное игровое содержимое",
-        "summary_ru": "Добавили новый реквизит для ролевых сцен.",
-        "is_new_line": true
-      },
-      {
         "text": "New vehicle pack convertible car with neon flower tail lights",
-        "summary_ru": "В игру добавили новый транспорт.",
+        "summary_ru": "В игру добавили кабриолет с неоновыми задними фонарями в виде цветов.",
         "kind": "vehicle",
         "value": 8,
         "specific": true,
@@ -71,20 +49,20 @@
       {
         "text": "💜 Lavender Luxury - New premium home and a convertible car!",
         "kind": "vehicle",
-        "value": 10,
+        "value": 8,
         "specific": true,
         "reason": "Строка называет конкретное игровое содержимое",
         "summary_ru": "В игру добавили новый транспорт.",
-        "is_new_line": true
+        "is_new_line": false
       },
       {
         "text": "✨ Lavender Props - 7 new props to decorate with!",
         "kind": "items",
-        "value": 9,
+        "value": 7,
         "specific": true,
         "reason": "Строка называет конкретное игровое содержимое",
         "summary_ru": "Добавили новый реквизит для ролевых сцен.",
-        "is_new_line": true
+        "is_new_line": false
       },
       {
         "text": "· Prop Saving",
@@ -133,7 +111,7 @@
       }
     ],
     "pool": "active",
-    "checked_at": "2026-08-29T03:01:03.178673+00:00",
+    "checked_at": "2026-08-29T07:47:01.924571+00:00",
     "sources": [
       {
         "type": "official_game_description",
@@ -159,7 +137,7 @@
         "latest_published_at": "2026-08-28",
         "status": "accepted",
         "result_code": "FOUND_VERIFIED",
-        "reason": "Официальная публикация (1.1 дн.) с датой и игровым содержанием; окно primary_14_day.",
+        "reason": "Официальная публикация (1.3 дн.) с датой и игровым содержанием; окно primary_14_day.",
         "available": true,
         "article_found": true,
         "date_found": true,
@@ -197,15 +175,15 @@
         "source_type": "official_game_description",
         "source_url": "https://www.roblox.com/games/4924922222/Brookhaven-RP",
         "latest_published_at": "2026-08-28T19:06:16.2670249Z",
-        "status": "accepted",
-        "result_code": "FOUND_VERIFIED",
+        "status": "rejected",
+        "result_code": "NO_NEW_CONTENT",
         "available": true,
-        "article_found": true,
+        "article_found": false,
         "date_found": true,
         "content_found": true,
-        "extraction_success": true,
-        "verification_passed": true,
-        "reason": "Найдена новая конкретная строка описания."
+        "extraction_success": false,
+        "verification_passed": false,
+        "reason": "Нет новой конкретной строки со времени прошлого снимка."
       },
       {
         "source_type": "official_roblox_group",
@@ -228,6 +206,8 @@
         "NEW"
       ],
       "news_lines": [
+        "Latest Update:",
+        "📚 Library House - New free home!",
         "💜 Lavender Luxury - New premium home and a convertible car!",
         "✨ Lavender Props - 7 new props to decorate with!"
       ]
@@ -267,7 +247,7 @@
         "latest_published_at": "2026-08-28",
         "status": "accepted",
         "result_code": "FOUND_VERIFIED",
-        "reason": "Официальная публикация (1.1 дн.) с датой и игровым содержанием; окно primary_14_day.",
+        "reason": "Официальная публикация (1.3 дн.) с датой и игровым содержанием; окно primary_14_day.",
         "available": true,
         "article_found": true,
         "date_found": true,
@@ -325,477 +305,9 @@
       "url": "https://www.brookhavenrp.com/posts/brookhaven-update-august-28-2026",
       "title": "Brookhaven Update August 28, 2026: Lavender Luxury",
       "published_at": "2026-08-28",
-      "age_days": 1.1257331824189816,
+      "age_days": 1.3243293025,
       "source_tier": "A",
       "publisher": null,
-      "freshness_window": "primary_14_day"
-    },
-    "candidate_decision": {
-      "status": "accepted",
-      "reason": "Есть достойный свежий факт."
-    }
-  },
-  {
-    "game": "Steal An Egg",
-    "universe_id": 10563114921,
-    "roblox_name": "Steal An Egg",
-    "description": "🥚 Welcome to Steal An Egg!\n\nHow to Play:\n🥚 Steal eggs from pets\n🐣 Hatch eggs to collect rare pets\n💰 Earn money from your pets\n⬆️ Upgrade your treadmill and base\n🏃 Train on the treadmill to gain Speed\n🥷 Steal eggs from other players\n✨ Discover rarer eggs, pets, sizes, and mutations!\n\n🎮 Supports Desktop, Console, Mobile, and Tablet players",
-    "updated": "2026-08-28T02:56:19.9167696Z",
-    "created": "2026-07-25T07:50:51.492Z",
-    "creator": {
-      "id": 825735094,
-      "name": "and Collect Rare Pets",
-      "type": "Group",
-      "isRNVAccount": false,
-      "hasVerifiedBadge": false
-    },
-    "description_changed": false,
-    "added_lines": [],
-    "keywords": [
-      "PETS"
-    ],
-    "score": 6,
-    "confidence": "medium",
-    "facts": [
-      {
-        "text": "All Pets in Steal An Egg: Rarity, income, and more",
-        "summary_ru": "По данным Sportskeeda, в Steal An Egg вышел материал «All Pets in Steal An Egg: Rarity, income, and more».",
-        "kind": "official_article",
-        "value": 6,
-        "specific": true,
-        "reason": "Факт из официальной новостной статьи",
-        "is_new_line": true,
-        "source_url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxNQ3FPNzgxV3NUZm5fS0R0R25RUnZnRU15d1ZJcWU4RzBMSzlRRUduOVlIYUhheC1JdDNsSWdXZ1JhWWl0M05hVXczZVFaNmlfSC1FTkhLMWhreFpERWpCSzhPdXJjSlF0a011YXB4LUhKUDVLLUZWM3FFejFaaEdCMg?oc=5",
-        "title_is_concrete": true
-      }
-    ],
-    "description_facts": [
-      {
-        "text": "🥚 Welcome to Steal An Egg!",
-        "kind": "pets",
-        "value": 8,
-        "specific": true,
-        "reason": "Строка называет конкретное игровое содержимое",
-        "summary_ru": "В игре появились новые питомцы.",
-        "is_new_line": false
-      },
-      {
-        "text": "🥚 Steal eggs from pets",
-        "kind": "pets",
-        "value": 8,
-        "specific": true,
-        "reason": "Строка называет конкретное игровое содержимое",
-        "summary_ru": "В игре появились новые питомцы.",
-        "is_new_line": false
-      },
-      {
-        "text": "🐣 Hatch eggs to collect rare pets",
-        "kind": "pets",
-        "value": 8,
-        "specific": true,
-        "reason": "Строка называет конкретное игровое содержимое",
-        "summary_ru": "В игре появились новые питомцы.",
-        "is_new_line": false
-      },
-      {
-        "text": "💰 Earn money from your pets",
-        "kind": "pets",
-        "value": 8,
-        "specific": true,
-        "reason": "Строка называет конкретное игровое содержимое",
-        "summary_ru": "В игре появились новые питомцы.",
-        "is_new_line": false
-      },
-      {
-        "text": "🥷 Steal eggs from other players",
-        "kind": "pets",
-        "value": 8,
-        "specific": true,
-        "reason": "Строка называет конкретное игровое содержимое",
-        "summary_ru": "В игре появились новые питомцы.",
-        "is_new_line": false
-      },
-      {
-        "text": "✨ Discover rarer eggs, pets, sizes, and mutations!",
-        "kind": "pets",
-        "value": 8,
-        "specific": true,
-        "reason": "Строка называет конкретное игровое содержимое",
-        "summary_ru": "В игре появились новые питомцы.",
-        "is_new_line": false
-      }
-    ],
-    "pool": "active",
-    "checked_at": "2026-08-29T03:01:03.172234+00:00",
-    "sources": [
-      {
-        "type": "official_game_description",
-        "verified": true
-      },
-      {
-        "type": "official_roblox_group",
-        "verified": true,
-        "group_id": 825735094,
-        "group_name": "and Collect Rare Pets"
-      },
-      {
-        "type": "secondary_gaming_media",
-        "verified": true,
-        "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxNQ3FPNzgxV3NUZm5fS0R0R25RUnZnRU15d1ZJcWU4RzBMSzlRRUduOVlIYUhheC1JdDNsSWdXZ1JhWWl0M05hVXczZVFaNmlfSC1FTkhLMWhreFpERWpCSzhPdXJjSlF0a011YXB4LUhKUDVLLUZWM3FFejFaaEdCMg?oc=5"
-      }
-    ],
-    "cross_source_confirmations": [],
-    "source_diagnostics": [
-      {
-        "source_type": "secondary_gaming_media",
-        "source_url": "https://news.google.com/rss/search?q=%22Steal%20An%20Egg%22%20Roblox%20when%3A30d&hl=en-US&gl=US&ceid=US:en",
-        "latest_published_at": "2026-08-26T06:24:00+00:00",
-        "status": "accepted",
-        "result_code": "FOUND_VERIFIED",
-        "reason": "Tier b публикация (2.9 дн.) с датой и игровым содержанием; окно primary_14_day.",
-        "available": true,
-        "article_found": true,
-        "date_found": true,
-        "content_found": true,
-        "extraction_success": true,
-        "verification_passed": true,
-        "source_tier": "B",
-        "official": false,
-        "selected": false,
-        "formatted": false,
-        "scheduled": false,
-        "latest_url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxNQ3FPNzgxV3NUZm5fS0R0R25RUnZnRU15d1ZJcWU4RzBMSzlRRUduOVlIYUhheC1JdDNsSWdXZ1JhWWl0M05hVXczZVFaNmlfSC1FTkhLMWhreFpERWpCSzhPdXJjSlF0a011YXB4LUhKUDVLLUZWM3FFejFaaEdCMg?oc=5",
-        "freshness_window": "primary_14_day"
-      },
-      {
-        "source_type": "official_game_description",
-        "source_url": "https://www.roblox.com/games/107778070777162/Steal-An-Egg",
-        "latest_published_at": "2026-08-28T02:56:19.9167696Z",
-        "status": "rejected",
-        "result_code": "NO_NEW_CONTENT",
-        "available": true,
-        "article_found": false,
-        "date_found": true,
-        "content_found": true,
-        "extraction_success": false,
-        "verification_passed": false,
-        "reason": "Нет новой конкретной строки со времени прошлого снимка."
-      },
-      {
-        "source_type": "official_roblox_group",
-        "source_url": "https://www.roblox.com/communities/825735094/and-Collect-Rare-Pets",
-        "latest_published_at": null,
-        "status": "checked",
-        "result_code": "NO_NEW_CONTENT",
-        "available": true,
-        "article_found": false,
-        "date_found": false,
-        "content_found": false,
-        "extraction_success": false,
-        "verification_passed": false,
-        "reason": "Официальная группа подтверждена; датированной новости нет."
-      }
-    ],
-    "official_description_analysis": {
-      "keywords": [
-        "PET",
-        "PETS"
-      ],
-      "news_lines": [
-        "🥚 Steal eggs from pets",
-        "🐣 Hatch eggs to collect rare pets",
-        "💰 Earn money from your pets",
-        "✨ Discover rarer eggs, pets, sizes, and mutations!"
-      ]
-    },
-    "source_registry": {
-      "pool": "active",
-      "universe_id": 10563114921,
-      "root_place_id": 107778070777162,
-      "roblox_game_url": "https://www.roblox.com/games/107778070777162/Steal-An-Egg",
-      "roblox_group_id": 825735094,
-      "roblox_group_name": "and Collect Rare Pets",
-      "roblox_group_url": "https://www.roblox.com/communities/825735094/and-Collect-Rare-Pets",
-      "news_strategy": "roblox_game_description_and_group",
-      "website": null,
-      "news_url": null,
-      "discord": null,
-      "youtube": null,
-      "x": null,
-      "roblox_creator_type": null,
-      "roblox_creator_id": null,
-      "roblox_creator_name": null,
-      "roblox_creator_url": null
-    },
-    "official_group": {
-      "id": 825735094,
-      "name": "and Collect Rare Pets",
-      "expected_name": "and Collect Rare Pets",
-      "name_matches_registry": true,
-      "description": "",
-      "has_verified_badge": false,
-      "news_lines": []
-    },
-    "external_source_diagnostics": [
-      {
-        "source_type": "secondary_gaming_media",
-        "source_url": "https://news.google.com/rss/search?q=%22Steal%20An%20Egg%22%20Roblox%20when%3A30d&hl=en-US&gl=US&ceid=US:en",
-        "latest_published_at": "2026-08-26T06:24:00+00:00",
-        "status": "accepted",
-        "result_code": "FOUND_VERIFIED",
-        "reason": "Tier b публикация (2.9 дн.) с датой и игровым содержанием; окно primary_14_day.",
-        "available": true,
-        "article_found": true,
-        "date_found": true,
-        "content_found": true,
-        "extraction_success": true,
-        "verification_passed": true,
-        "source_tier": "B",
-        "official": false,
-        "selected": false,
-        "formatted": false,
-        "scheduled": false,
-        "latest_url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxNQ3FPNzgxV3NUZm5fS0R0R25RUnZnRU15d1ZJcWU4RzBMSzlRRUduOVlIYUhheC1JdDNsSWdXZ1JhWWl0M05hVXczZVFaNmlfSC1FTkhLMWhreFpERWpCSzhPdXJjSlF0a011YXB4LUhKUDVLLUZWM3FFejFaaEdCMg?oc=5",
-        "freshness_window": "primary_14_day"
-      }
-    ],
-    "external_source_diagnostic": {
-      "source_type": "secondary_gaming_media",
-      "source_url": "https://news.google.com/rss/search?q=%22Steal%20An%20Egg%22%20Roblox%20when%3A30d&hl=en-US&gl=US&ceid=US:en",
-      "latest_published_at": "2026-08-26T06:24:00+00:00",
-      "status": "accepted",
-      "result_code": "FOUND_VERIFIED",
-      "reason": "Tier b публикация (2.9 дн.) с датой и игровым содержанием; окно primary_14_day.",
-      "available": true,
-      "article_found": true,
-      "date_found": true,
-      "content_found": true,
-      "extraction_success": true,
-      "verification_passed": true,
-      "source_tier": "B",
-      "official": false,
-      "selected": false,
-      "formatted": false,
-      "scheduled": false,
-      "latest_url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxNQ3FPNzgxV3NUZm5fS0R0R25RUnZnRU15d1ZJcWU4RzBMSzlRRUduOVlIYUhheC1JdDNsSWdXZ1JhWWl0M05hVXczZVFaNmlfSC1FTkhLMWhreFpERWpCSzhPdXJjSlF0a011YXB4LUhKUDVLLUZWM3FFejFaaEdCMg?oc=5",
-      "freshness_window": "primary_14_day"
-    },
-    "external_news_article": {
-      "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxNQ3FPNzgxV3NUZm5fS0R0R25RUnZnRU15d1ZJcWU4RzBMSzlRRUduOVlIYUhheC1JdDNsSWdXZ1JhWWl0M05hVXczZVFaNmlfSC1FTkhLMWhreFpERWpCSzhPdXJjSlF0a011YXB4LUhKUDVLLUZWM3FFejFaaEdCMg?oc=5",
-      "title": "All Pets in Steal An Egg: Rarity, income, and more",
-      "published_at": "2026-08-26T06:24:00+00:00",
-      "age_days": 2.859066515752315,
-      "source_tier": "B",
-      "publisher": "Sportskeeda",
-      "freshness_window": "primary_14_day"
-    },
-    "candidate_decision": {
-      "status": "accepted",
-      "reason": "Есть достойный свежий факт."
-    }
-  },
-  {
-    "game": "Murder Mystery 2",
-    "universe_id": 66654135,
-    "roblox_name": "Murder Mystery 2",
-    "description": "Can you solve the Mystery and survive each round?\r\n\r\nINNOCENTS: Run and hide from the Murderer. Use your detective skills to expose the Murderer.\r\nSHERIFF: Work with the Innocents; you are the only one with a weapon who can take down the Murderer. \r\nMURDERER: Eliminate EVERYONE. Don't get shot by the sheriff.\r\n\r\nCollect and trade hundreds of knives! \r\n\r\nCheck out my profile for quick links to my pages! \r\nLike, follow, and subscribe for exclusive update news, free knife codes, and more!",
-    "updated": "2026-08-14T22:10:37.954Z",
-    "created": "2014-01-18T10:07:51.557Z",
-    "creator": {
-      "id": 1848960,
-      "name": "Nikilis",
-      "type": "User",
-      "isRNVAccount": false,
-      "hasVerifiedBadge": true
-    },
-    "description_changed": false,
-    "added_lines": [],
-    "keywords": [
-      "CODES",
-      "UPDATE"
-    ],
-    "score": 6,
-    "confidence": "medium",
-    "facts": [
-      {
-        "text": "Roblox MM2 values list: Murder Mystery 2 weapon, knife & pet trade values",
-        "summary_ru": "По данным Dexerto, в Murder Mystery 2 вышел материал «Roblox MM2 values list: Murder Mystery 2 weapon, knife & pet trade values».",
-        "kind": "official_article",
-        "value": 6,
-        "specific": true,
-        "reason": "Факт из официальной новостной статьи",
-        "is_new_line": true,
-        "source_url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxOQXJhRzNyOHlLUGNJbUdPR3Nsc0xNdGtxNVdiZXhZNVN3bGVibXYtMmpiUUtIcEFXT2RLc2ZRaUFkaERyZjFYVTlFNnRFUGVjM2FJeTRYeTJHbVJVMWk5ZjFXNjkzdVVhQ2hwOWo5U2FnZFd5cmpJNlRfR0VRLXBycnJGeGZKS2xDRzFfRzBydXlDSVZFTVpmTTJsVFVhQ1NtM1VjWGVB?oc=5",
-        "title_is_concrete": true
-      }
-    ],
-    "description_facts": [
-      {
-        "text": "Like, follow, and subscribe for exclusive update news, free knife codes, and more!",
-        "kind": "code",
-        "value": 10,
-        "specific": true,
-        "reason": "Код или бесплатная награда",
-        "summary_ru": "Появился новый код на бесплатную награду.",
-        "is_new_line": false
-      },
-      {
-        "text": "SHERIFF: Work with the Innocents; you are the only one with a weapon who can take down the Murderer.",
-        "kind": "items",
-        "value": 7,
-        "specific": true,
-        "reason": "Строка называет конкретное игровое содержимое",
-        "summary_ru": "В игре появились новые инструменты и оружие.",
-        "is_new_line": false
-      }
-    ],
-    "pool": "active",
-    "checked_at": "2026-08-29T03:01:03.175954+00:00",
-    "sources": [
-      {
-        "type": "official_game_description",
-        "verified": true
-      },
-      {
-        "type": "secondary_gaming_media",
-        "verified": true,
-        "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxOQXJhRzNyOHlLUGNJbUdPR3Nsc0xNdGtxNVdiZXhZNVN3bGVibXYtMmpiUUtIcEFXT2RLc2ZRaUFkaERyZjFYVTlFNnRFUGVjM2FJeTRYeTJHbVJVMWk5ZjFXNjkzdVVhQ2hwOWo5U2FnZFd5cmpJNlRfR0VRLXBycnJGeGZKS2xDRzFfRzBydXlDSVZFTVpmTTJsVFVhQ1NtM1VjWGVB?oc=5"
-      }
-    ],
-    "cross_source_confirmations": [],
-    "source_diagnostics": [
-      {
-        "source_type": "secondary_gaming_media",
-        "source_url": "https://news.google.com/rss/search?q=%22Murder%20Mystery%202%22%20Roblox%20when%3A30d&hl=en-US&gl=US&ceid=US:en",
-        "latest_published_at": "2026-08-21T19:21:20+00:00",
-        "status": "accepted",
-        "result_code": "FOUND_VERIFIED",
-        "reason": "Tier b публикация (7.3 дн.) с датой и игровым содержанием; окно primary_14_day.",
-        "available": true,
-        "article_found": true,
-        "date_found": true,
-        "content_found": true,
-        "extraction_success": true,
-        "verification_passed": true,
-        "source_tier": "B",
-        "official": false,
-        "selected": false,
-        "formatted": false,
-        "scheduled": false,
-        "latest_url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxOQXJhRzNyOHlLUGNJbUdPR3Nsc0xNdGtxNVdiZXhZNVN3bGVibXYtMmpiUUtIcEFXT2RLc2ZRaUFkaERyZjFYVTlFNnRFUGVjM2FJeTRYeTJHbVJVMWk5ZjFXNjkzdVVhQ2hwOWo5U2FnZFd5cmpJNlRfR0VRLXBycnJGeGZKS2xDRzFfRzBydXlDSVZFTVpmTTJsVFVhQ1NtM1VjWGVB?oc=5",
-        "freshness_window": "primary_14_day"
-      },
-      {
-        "source_type": "official_game_description",
-        "source_url": "https://www.roblox.com/games/142823291/Murder-Mystery-2",
-        "latest_published_at": "2026-08-14T22:10:37.954Z",
-        "status": "rejected",
-        "result_code": "NO_NEW_CONTENT",
-        "available": true,
-        "article_found": false,
-        "date_found": true,
-        "content_found": true,
-        "extraction_success": false,
-        "verification_passed": false,
-        "reason": "Нет новой конкретной строки со времени прошлого снимка."
-      },
-      {
-        "source_type": "official_roblox_creator",
-        "source_url": "https://www.roblox.com/users/1848960/profile",
-        "latest_published_at": null,
-        "status": "checked",
-        "result_code": "NO_NEW_CONTENT",
-        "available": true,
-        "article_found": false,
-        "date_found": false,
-        "content_found": false,
-        "extraction_success": false,
-        "verification_passed": false,
-        "reason": "Официальный профиль автора подтверждён; датированной новости нет."
-      }
-    ],
-    "official_description_analysis": {
-      "keywords": [
-        "UPDATE",
-        "NEW",
-        "CODE",
-        "CODES"
-      ],
-      "news_lines": [
-        "Like, follow, and subscribe for exclusive update news, free knife codes, and more!"
-      ]
-    },
-    "source_registry": {
-      "pool": "active",
-      "universe_id": 66654135,
-      "root_place_id": 142823291,
-      "roblox_game_url": "https://www.roblox.com/games/142823291/Murder-Mystery-2",
-      "roblox_group_id": null,
-      "roblox_group_name": null,
-      "roblox_group_url": null,
-      "news_strategy": "roblox_game_description_and_group",
-      "website": "https://nikilisrbx.com/",
-      "news_url": null,
-      "discord": null,
-      "youtube": null,
-      "x": "https://x.com/NikilisRBX",
-      "roblox_creator_type": "user",
-      "roblox_creator_id": 1848960,
-      "roblox_creator_name": "Nikilis",
-      "roblox_creator_url": "https://www.roblox.com/users/1848960/profile"
-    },
-    "group_verification_note": "В реестре пока нет подтверждённого group_id.",
-    "external_source_diagnostics": [
-      {
-        "source_type": "secondary_gaming_media",
-        "source_url": "https://news.google.com/rss/search?q=%22Murder%20Mystery%202%22%20Roblox%20when%3A30d&hl=en-US&gl=US&ceid=US:en",
-        "latest_published_at": "2026-08-21T19:21:20+00:00",
-        "status": "accepted",
-        "result_code": "FOUND_VERIFIED",
-        "reason": "Tier b публикация (7.3 дн.) с датой и игровым содержанием; окно primary_14_day.",
-        "available": true,
-        "article_found": true,
-        "date_found": true,
-        "content_found": true,
-        "extraction_success": true,
-        "verification_passed": true,
-        "source_tier": "B",
-        "official": false,
-        "selected": false,
-        "formatted": false,
-        "scheduled": false,
-        "latest_url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxOQXJhRzNyOHlLUGNJbUdPR3Nsc0xNdGtxNVdiZXhZNVN3bGVibXYtMmpiUUtIcEFXT2RLc2ZRaUFkaERyZjFYVTlFNnRFUGVjM2FJeTRYeTJHbVJVMWk5ZjFXNjkzdVVhQ2hwOWo5U2FnZFd5cmpJNlRfR0VRLXBycnJGeGZKS2xDRzFfRzBydXlDSVZFTVpmTTJsVFVhQ1NtM1VjWGVB?oc=5",
-        "freshness_window": "primary_14_day"
-      }
-    ],
-    "external_source_diagnostic": {
-      "source_type": "secondary_gaming_media",
-      "source_url": "https://news.google.com/rss/search?q=%22Murder%20Mystery%202%22%20Roblox%20when%3A30d&hl=en-US&gl=US&ceid=US:en",
-      "latest_published_at": "2026-08-21T19:21:20+00:00",
-      "status": "accepted",
-      "result_code": "FOUND_VERIFIED",
-      "reason": "Tier b публикация (7.3 дн.) с датой и игровым содержанием; окно primary_14_day.",
-      "available": true,
-      "article_found": true,
-      "date_found": true,
-      "content_found": true,
-      "extraction_success": true,
-      "verification_passed": true,
-      "source_tier": "B",
-      "official": false,
-      "selected": false,
-      "formatted": false,
-      "scheduled": false,
-      "latest_url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxOQXJhRzNyOHlLUGNJbUdPR3Nsc0xNdGtxNVdiZXhZNVN3bGVibXYtMmpiUUtIcEFXT2RLc2ZRaUFkaERyZjFYVTlFNnRFUGVjM2FJeTRYeTJHbVJVMWk5ZjFXNjkzdVVhQ2hwOWo5U2FnZFd5cmpJNlRfR0VRLXBycnJGeGZKS2xDRzFfRzBydXlDSVZFTVpmTTJsVFVhQ1NtM1VjWGVB?oc=5",
-      "freshness_window": "primary_14_day"
-    },
-    "external_news_article": {
-      "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxOQXJhRzNyOHlLUGNJbUdPR3Nsc0xNdGtxNVdiZXhZNVN3bGVibXYtMmpiUUtIcEFXT2RLc2ZRaUFkaERyZjFYVTlFNnRFUGVjM2FJeTRYeTJHbVJVMWk5ZjFXNjkzdVVhQ2hwOWo5U2FnZFd5cmpJNlRfR0VRLXBycnJGeGZKS2xDRzFfRzBydXlDSVZFTVpmTTJsVFVhQ1NtM1VjWGVB?oc=5",
-      "title": "Roblox MM2 values list: Murder Mystery 2 weapon, knife & pet trade values",
-      "published_at": "2026-08-21T19:21:20+00:00",
-      "age_days": 7.3192517009375,
-      "source_tier": "B",
-      "publisher": "Dexerto",
       "freshness_window": "primary_14_day"
     },
     "candidate_decision": {
@@ -850,7 +362,7 @@
       }
     ],
     "pool": "active",
-    "checked_at": "2026-08-29T03:01:03.181057+00:00",
+    "checked_at": "2026-08-29T07:47:01.926936+00:00",
     "sources": [
       {
         "type": "official_game_description",
@@ -876,7 +388,7 @@
         "latest_published_at": "2026-08-06T22:02:43Z",
         "status": "accepted",
         "result_code": "FOUND_VERIFIED",
-        "reason": "Официальная публикация (22.2 дн.) с датой и игровым содержанием; окно emergency_30_day.",
+        "reason": "Официальная публикация (22.4 дн.) с датой и игровым содержанием; окно emergency_30_day.",
         "available": true,
         "article_found": true,
         "date_found": true,
@@ -894,23 +406,22 @@
       {
         "source_type": "secondary_gaming_media",
         "source_url": "https://news.google.com/rss/search?q=%22Blox%20Fruits%22%20Roblox%20when%3A30d&hl=en-US&gl=US&ceid=US:en",
-        "latest_published_at": "2026-08-19T07:00:00+00:00",
-        "status": "accepted",
-        "result_code": "FOUND_VERIFIED",
-        "reason": "Tier b публикация (9.8 дн.) с датой и игровым содержанием; окно primary_14_day.",
+        "latest_published_at": "2026-08-15T07:00:00+00:00",
+        "status": "rejected",
+        "result_code": "EXTRACTION_FAILED",
+        "reason": "В публикации не найдено достаточно конкретного содержания.",
         "available": true,
         "article_found": true,
         "date_found": true,
         "content_found": true,
-        "extraction_success": true,
-        "verification_passed": true,
+        "extraction_success": false,
+        "verification_passed": false,
         "source_tier": "B",
         "official": false,
         "selected": false,
         "formatted": false,
         "scheduled": false,
-        "latest_url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxQMmo0dFFqMHVzN1dMdG04UVA2Z2Q5TWx3UVp5S3BmODI2M2J6a3I0ZHNSOGp6Wk5helIyNERBMWR5X0t6dkNyZUxfWTdOZmpZN0pzeVNyWWJYLUdPdTN5cE5lUjJYN2djWHFWWnlZVDc2Ni04ZHdBRmRUaWRaWTVoYi1xdkFFWWdDUjhTZw?oc=5",
-        "freshness_window": "primary_14_day"
+        "latest_url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE1HM1JZWk9BV0U1Z3oxWFNtZTkzQ3NOYzV0a1pXUFFsSHN1MVFvLS1tXy12bWtVbEVLdC1zbFpwYndScDUyUS1KNW55TGFNV0hRWjhkbllLa1c1RGwx?oc=5"
       },
       {
         "source_type": "official_game_description",
@@ -986,7 +497,7 @@
         "latest_published_at": "2026-08-06T22:02:43Z",
         "status": "accepted",
         "result_code": "FOUND_VERIFIED",
-        "reason": "Официальная публикация (22.2 дн.) с датой и игровым содержанием; окно emergency_30_day.",
+        "reason": "Официальная публикация (22.4 дн.) с датой и игровым содержанием; окно emergency_30_day.",
         "available": true,
         "article_found": true,
         "date_found": true,
@@ -1004,51 +515,49 @@
       {
         "source_type": "secondary_gaming_media",
         "source_url": "https://news.google.com/rss/search?q=%22Blox%20Fruits%22%20Roblox%20when%3A30d&hl=en-US&gl=US&ceid=US:en",
-        "latest_published_at": "2026-08-19T07:00:00+00:00",
-        "status": "accepted",
-        "result_code": "FOUND_VERIFIED",
-        "reason": "Tier b публикация (9.8 дн.) с датой и игровым содержанием; окно primary_14_day.",
+        "latest_published_at": "2026-08-15T07:00:00+00:00",
+        "status": "rejected",
+        "result_code": "EXTRACTION_FAILED",
+        "reason": "В публикации не найдено достаточно конкретного содержания.",
         "available": true,
         "article_found": true,
         "date_found": true,
         "content_found": true,
-        "extraction_success": true,
-        "verification_passed": true,
+        "extraction_success": false,
+        "verification_passed": false,
         "source_tier": "B",
         "official": false,
         "selected": false,
         "formatted": false,
         "scheduled": false,
-        "latest_url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxQMmo0dFFqMHVzN1dMdG04UVA2Z2Q5TWx3UVp5S3BmODI2M2J6a3I0ZHNSOGp6Wk5helIyNERBMWR5X0t6dkNyZUxfWTdOZmpZN0pzeVNyWWJYLUdPdTN5cE5lUjJYN2djWHFWWnlZVDc2Ni04ZHdBRmRUaWRaWTVoYi1xdkFFWWdDUjhTZw?oc=5",
-        "freshness_window": "primary_14_day"
+        "latest_url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE1HM1JZWk9BV0U1Z3oxWFNtZTkzQ3NOYzV0a1pXUFFsSHN1MVFvLS1tXy12bWtVbEVLdC1zbFpwYndScDUyUS1KNW55TGFNV0hRWjhkbllLa1c1RGwx?oc=5"
       }
     ],
     "external_source_diagnostic": {
       "source_type": "secondary_gaming_media",
       "source_url": "https://news.google.com/rss/search?q=%22Blox%20Fruits%22%20Roblox%20when%3A30d&hl=en-US&gl=US&ceid=US:en",
-      "latest_published_at": "2026-08-19T07:00:00+00:00",
-      "status": "accepted",
-      "result_code": "FOUND_VERIFIED",
-      "reason": "Tier b публикация (9.8 дн.) с датой и игровым содержанием; окно primary_14_day.",
+      "latest_published_at": "2026-08-15T07:00:00+00:00",
+      "status": "rejected",
+      "result_code": "EXTRACTION_FAILED",
+      "reason": "В публикации не найдено достаточно конкретного содержания.",
       "available": true,
       "article_found": true,
       "date_found": true,
       "content_found": true,
-      "extraction_success": true,
-      "verification_passed": true,
+      "extraction_success": false,
+      "verification_passed": false,
       "source_tier": "B",
       "official": false,
       "selected": false,
       "formatted": false,
       "scheduled": false,
-      "latest_url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxQMmo0dFFqMHVzN1dMdG04UVA2Z2Q5TWx3UVp5S3BmODI2M2J6a3I0ZHNSOGp6Wk5helIyNERBMWR5X0t6dkNyZUxfWTdOZmpZN0pzeVNyWWJYLUdPdTN5cE5lUjJYN2djWHFWWnlZVDc2Ni04ZHdBRmRUaWRaWTVoYi1xdkFFWWdDUjhTZw?oc=5",
-      "freshness_window": "primary_14_day"
+      "latest_url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE1HM1JZWk9BV0U1Z3oxWFNtZTkzQ3NOYzV0a1pXUFFsSHN1MVFvLS1tXy12bWtVbEVLdC1zbFpwYndScDUyUS1KNW55TGFNV0hRWjhkbllLa1c1RGwx?oc=5"
     },
     "external_news_article": {
       "url": "https://gamerrobot.com/blogs/news/the-balance-log",
       "title": "The Balance Log",
       "published_at": "2026-08-06T22:02:43Z",
-      "age_days": 22.20717994167824,
+      "age_days": 22.40577606175926,
       "source_tier": "A",
       "publisher": null,
       "freshness_window": "emergency_30_day"
@@ -1056,6 +565,236 @@
     "candidate_decision": {
       "status": "accepted",
       "reason": "Есть достойный свежий факт."
+    }
+  },
+  {
+    "game": "Steal An Egg",
+    "universe_id": 10563114921,
+    "roblox_name": "Steal An Egg",
+    "description": "🥚 Welcome to Steal An Egg!\n\nHow to Play:\n🥚 Steal eggs from pets\n🐣 Hatch eggs to collect rare pets\n💰 Earn money from your pets\n⬆️ Upgrade your treadmill and base\n🏃 Train on the treadmill to gain Speed\n🥷 Steal eggs from other players\n✨ Discover rarer eggs, pets, sizes, and mutations!\n\n🎮 Supports Desktop, Console, Mobile, and Tablet players",
+    "updated": "2026-08-28T02:56:19.9167696Z",
+    "created": "2026-07-25T07:50:51.492Z",
+    "creator": {
+      "id": 825735094,
+      "name": "and Collect Rare Pets",
+      "type": "Group",
+      "isRNVAccount": false,
+      "hasVerifiedBadge": false
+    },
+    "description_changed": false,
+    "added_lines": [],
+    "keywords": [
+      "PETS"
+    ],
+    "score": 0,
+    "confidence": "low",
+    "facts": [],
+    "description_facts": [
+      {
+        "text": "🥚 Welcome to Steal An Egg!",
+        "kind": "pets",
+        "value": 8,
+        "specific": true,
+        "reason": "Строка называет конкретное игровое содержимое",
+        "summary_ru": "В игре появились новые питомцы.",
+        "is_new_line": false
+      },
+      {
+        "text": "🥚 Steal eggs from pets",
+        "kind": "pets",
+        "value": 8,
+        "specific": true,
+        "reason": "Строка называет конкретное игровое содержимое",
+        "summary_ru": "В игре появились новые питомцы.",
+        "is_new_line": false
+      },
+      {
+        "text": "🐣 Hatch eggs to collect rare pets",
+        "kind": "pets",
+        "value": 8,
+        "specific": true,
+        "reason": "Строка называет конкретное игровое содержимое",
+        "summary_ru": "В игре появились новые питомцы.",
+        "is_new_line": false
+      },
+      {
+        "text": "💰 Earn money from your pets",
+        "kind": "pets",
+        "value": 8,
+        "specific": true,
+        "reason": "Строка называет конкретное игровое содержимое",
+        "summary_ru": "В игре появились новые питомцы.",
+        "is_new_line": false
+      },
+      {
+        "text": "🥷 Steal eggs from other players",
+        "kind": "pets",
+        "value": 8,
+        "specific": true,
+        "reason": "Строка называет конкретное игровое содержимое",
+        "summary_ru": "В игре появились новые питомцы.",
+        "is_new_line": false
+      },
+      {
+        "text": "✨ Discover rarer eggs, pets, sizes, and mutations!",
+        "kind": "pets",
+        "value": 8,
+        "specific": true,
+        "reason": "Строка называет конкретное игровое содержимое",
+        "summary_ru": "В игре появились новые питомцы.",
+        "is_new_line": false
+      }
+    ],
+    "pool": "active",
+    "checked_at": "2026-08-29T07:47:01.918571+00:00",
+    "sources": [
+      {
+        "type": "official_game_description",
+        "verified": true
+      },
+      {
+        "type": "official_roblox_group",
+        "verified": true,
+        "group_id": 825735094,
+        "group_name": "and Collect Rare Pets"
+      }
+    ],
+    "cross_source_confirmations": [],
+    "source_diagnostics": [
+      {
+        "source_type": "secondary_gaming_media",
+        "source_url": "https://news.google.com/rss/search?q=%22Steal%20An%20Egg%22%20Roblox%20when%3A30d&hl=en-US&gl=US&ceid=US:en",
+        "latest_published_at": "2026-08-24T15:47:00+00:00",
+        "status": "rejected",
+        "result_code": "EXTRACTION_FAILED",
+        "reason": "В публикации не найдено достаточно конкретного содержания.",
+        "available": true,
+        "article_found": true,
+        "date_found": true,
+        "content_found": true,
+        "extraction_success": false,
+        "verification_passed": false,
+        "source_tier": "B",
+        "official": false,
+        "selected": false,
+        "formatted": false,
+        "scheduled": false,
+        "latest_url": "https://news.google.com/rss/articles/CBMieEFVX3lxTE1PZWt0eU84eUo2ZklMMndjYVEwNllMdGhFM0U5bTlqNTREb0M1bHlEdHN3QzYwaHQzeFRNR2MtNWpCRjNQcVh5Undfc2wycmlKeUVBS2JEN0E1UlJMVVkzZjlWU21Oam1fOVl4WWxWM19sRUM3Vk5kbw?oc=5"
+      },
+      {
+        "source_type": "official_game_description",
+        "source_url": "https://www.roblox.com/games/107778070777162/Steal-An-Egg",
+        "latest_published_at": "2026-08-28T02:56:19.9167696Z",
+        "status": "rejected",
+        "result_code": "NO_NEW_CONTENT",
+        "available": true,
+        "article_found": false,
+        "date_found": true,
+        "content_found": true,
+        "extraction_success": false,
+        "verification_passed": false,
+        "reason": "Нет новой конкретной строки со времени прошлого снимка."
+      },
+      {
+        "source_type": "official_roblox_group",
+        "source_url": "https://www.roblox.com/communities/825735094/and-Collect-Rare-Pets",
+        "latest_published_at": null,
+        "status": "checked",
+        "result_code": "NO_NEW_CONTENT",
+        "available": true,
+        "article_found": false,
+        "date_found": false,
+        "content_found": false,
+        "extraction_success": false,
+        "verification_passed": false,
+        "reason": "Официальная группа подтверждена; датированной новости нет."
+      }
+    ],
+    "official_description_analysis": {
+      "keywords": [
+        "PET",
+        "PETS"
+      ],
+      "news_lines": [
+        "🥚 Steal eggs from pets",
+        "🐣 Hatch eggs to collect rare pets",
+        "💰 Earn money from your pets",
+        "✨ Discover rarer eggs, pets, sizes, and mutations!"
+      ]
+    },
+    "source_registry": {
+      "pool": "active",
+      "universe_id": 10563114921,
+      "root_place_id": 107778070777162,
+      "roblox_game_url": "https://www.roblox.com/games/107778070777162/Steal-An-Egg",
+      "roblox_group_id": 825735094,
+      "roblox_group_name": "and Collect Rare Pets",
+      "roblox_group_url": "https://www.roblox.com/communities/825735094/and-Collect-Rare-Pets",
+      "news_strategy": "roblox_game_description_and_group",
+      "website": null,
+      "news_url": null,
+      "discord": null,
+      "youtube": null,
+      "x": null,
+      "roblox_creator_type": null,
+      "roblox_creator_id": null,
+      "roblox_creator_name": null,
+      "roblox_creator_url": null
+    },
+    "official_group": {
+      "id": 825735094,
+      "name": "and Collect Rare Pets",
+      "expected_name": "and Collect Rare Pets",
+      "name_matches_registry": true,
+      "description": "",
+      "has_verified_badge": false,
+      "news_lines": []
+    },
+    "external_source_diagnostics": [
+      {
+        "source_type": "secondary_gaming_media",
+        "source_url": "https://news.google.com/rss/search?q=%22Steal%20An%20Egg%22%20Roblox%20when%3A30d&hl=en-US&gl=US&ceid=US:en",
+        "latest_published_at": "2026-08-24T15:47:00+00:00",
+        "status": "rejected",
+        "result_code": "EXTRACTION_FAILED",
+        "reason": "В публикации не найдено достаточно конкретного содержания.",
+        "available": true,
+        "article_found": true,
+        "date_found": true,
+        "content_found": true,
+        "extraction_success": false,
+        "verification_passed": false,
+        "source_tier": "B",
+        "official": false,
+        "selected": false,
+        "formatted": false,
+        "scheduled": false,
+        "latest_url": "https://news.google.com/rss/articles/CBMieEFVX3lxTE1PZWt0eU84eUo2ZklMMndjYVEwNllMdGhFM0U5bTlqNTREb0M1bHlEdHN3QzYwaHQzeFRNR2MtNWpCRjNQcVh5Undfc2wycmlKeUVBS2JEN0E1UlJMVVkzZjlWU21Oam1fOVl4WWxWM19sRUM3Vk5kbw?oc=5"
+      }
+    ],
+    "external_source_diagnostic": {
+      "source_type": "secondary_gaming_media",
+      "source_url": "https://news.google.com/rss/search?q=%22Steal%20An%20Egg%22%20Roblox%20when%3A30d&hl=en-US&gl=US&ceid=US:en",
+      "latest_published_at": "2026-08-24T15:47:00+00:00",
+      "status": "rejected",
+      "result_code": "EXTRACTION_FAILED",
+      "reason": "В публикации не найдено достаточно конкретного содержания.",
+      "available": true,
+      "article_found": true,
+      "date_found": true,
+      "content_found": true,
+      "extraction_success": false,
+      "verification_passed": false,
+      "source_tier": "B",
+      "official": false,
+      "selected": false,
+      "formatted": false,
+      "scheduled": false,
+      "latest_url": "https://news.google.com/rss/articles/CBMieEFVX3lxTE1PZWt0eU84eUo2ZklMMndjYVEwNllMdGhFM0U5bTlqNTREb0M1bHlEdHN3QzYwaHQzeFRNR2MtNWpCRjNQcVh5Undfc2wycmlKeUVBS2JEN0E1UlJMVVkzZjlWU21Oam1fOVl4WWxWM19sRUM3Vk5kbw?oc=5"
+    },
+    "candidate_decision": {
+      "status": "rejected",
+      "reason": "Нет свежего факта с редакционным баллом 5 или выше."
     }
   },
   {
@@ -1090,7 +829,7 @@
       }
     ],
     "pool": "active",
-    "checked_at": "2026-08-29T03:01:03.172700+00:00",
+    "checked_at": "2026-08-29T07:47:01.919106+00:00",
     "sources": [
       {
         "type": "official_game_description",
@@ -1235,7 +974,7 @@
     "universe_id": 9831440772,
     "roblox_name": "[UPD] +1 Speed Keyboard Escape",
     "description": "🎀 Join the XSpeed Games group!\n\n👟 Welcome to +1 Speed Keyboard Escape 👟\n\n⚡ Every step = +1 Speed\n👟 Run, jump, and escape across a world made of keyboard keys\n💪 Train your speed and unlock powerful multipliers\n🌍 Become the FASTEST player in the world\n👥 Race against friends and other players\n🚀 Speed is everything… but one wrong step and you’re back at the start 😱\n\n🎧 ASMR vibes included\nSmooth movement, satisfying keyboard clicks, and relaxing, chill sounds! ✨\n\n🔑 Tags:\nSpeed, Keyboard, ASMR, Obby, Escape, Parkour, Multiplayer, Racing, Competitive, Satisfying, Relaxing, Physics, Ragdoll, Challenge, Speedrun",
-    "updated": "2026-08-28T20:21:53.6046393Z",
+    "updated": "2026-08-29T06:59:30.1503198Z",
     "created": "2026-03-04T03:51:10.46Z",
     "creator": {
       "id": 175742687,
@@ -1252,7 +991,7 @@
     "facts": [],
     "description_facts": [],
     "pool": "active",
-    "checked_at": "2026-08-29T03:01:03.174647+00:00",
+    "checked_at": "2026-08-29T07:47:01.920980+00:00",
     "sources": [
       {
         "type": "official_game_description",
@@ -1289,7 +1028,7 @@
       {
         "source_type": "official_game_description",
         "source_url": "https://www.roblox.com/games/81245647985532/1-Speed-Keyboard-Escape",
-        "latest_published_at": "2026-08-28T20:21:53.6046393Z",
+        "latest_published_at": "2026-08-29T06:59:30.1503198Z",
         "status": "rejected",
         "result_code": "NO_NEW_CONTENT",
         "available": true,
@@ -1397,11 +1136,188 @@
     }
   },
   {
+    "game": "Murder Mystery 2",
+    "universe_id": 66654135,
+    "roblox_name": "Murder Mystery 2",
+    "description": "Can you solve the Mystery and survive each round?\r\n\r\nINNOCENTS: Run and hide from the Murderer. Use your detective skills to expose the Murderer.\r\nSHERIFF: Work with the Innocents; you are the only one with a weapon who can take down the Murderer. \r\nMURDERER: Eliminate EVERYONE. Don't get shot by the sheriff.\r\n\r\nCollect and trade hundreds of knives! \r\n\r\nCheck out my profile for quick links to my pages! \r\nLike, follow, and subscribe for exclusive update news, free knife codes, and more!",
+    "updated": "2026-08-14T22:10:37.954Z",
+    "created": "2014-01-18T10:07:51.557Z",
+    "creator": {
+      "id": 1848960,
+      "name": "Nikilis",
+      "type": "User",
+      "isRNVAccount": false,
+      "hasVerifiedBadge": true
+    },
+    "description_changed": false,
+    "added_lines": [],
+    "keywords": [
+      "CODES",
+      "UPDATE"
+    ],
+    "score": 0,
+    "confidence": "low",
+    "facts": [],
+    "description_facts": [
+      {
+        "text": "Like, follow, and subscribe for exclusive update news, free knife codes, and more!",
+        "kind": "code",
+        "value": 10,
+        "specific": true,
+        "reason": "Код или бесплатная награда",
+        "summary_ru": "Появился новый код на бесплатную награду.",
+        "is_new_line": false
+      },
+      {
+        "text": "SHERIFF: Work with the Innocents; you are the only one with a weapon who can take down the Murderer.",
+        "kind": "items",
+        "value": 7,
+        "specific": true,
+        "reason": "Строка называет конкретное игровое содержимое",
+        "summary_ru": "В игре появились новые инструменты и оружие.",
+        "is_new_line": false
+      }
+    ],
+    "pool": "active",
+    "checked_at": "2026-08-29T07:47:01.922186+00:00",
+    "sources": [
+      {
+        "type": "official_game_description",
+        "verified": true
+      }
+    ],
+    "cross_source_confirmations": [],
+    "source_diagnostics": [
+      {
+        "source_type": "secondary_gaming_media",
+        "source_url": "https://news.google.com/rss/search?q=%22Murder%20Mystery%202%22%20Roblox%20when%3A30d&hl=en-US&gl=US&ceid=US:en",
+        "latest_published_at": null,
+        "status": "rejected",
+        "result_code": "NO_NEW_CONTENT",
+        "reason": "Нет пригодной Tier B новости.",
+        "available": true,
+        "article_found": false,
+        "date_found": false,
+        "content_found": false,
+        "extraction_success": false,
+        "verification_passed": false,
+        "source_tier": "B",
+        "official": false,
+        "selected": false,
+        "formatted": false,
+        "scheduled": false
+      },
+      {
+        "source_type": "official_game_description",
+        "source_url": "https://www.roblox.com/games/142823291/Murder-Mystery-2",
+        "latest_published_at": "2026-08-14T22:10:37.954Z",
+        "status": "rejected",
+        "result_code": "NO_NEW_CONTENT",
+        "available": true,
+        "article_found": false,
+        "date_found": true,
+        "content_found": true,
+        "extraction_success": false,
+        "verification_passed": false,
+        "reason": "Нет новой конкретной строки со времени прошлого снимка."
+      },
+      {
+        "source_type": "official_roblox_creator",
+        "source_url": "https://www.roblox.com/users/1848960/profile",
+        "latest_published_at": null,
+        "status": "checked",
+        "result_code": "NO_NEW_CONTENT",
+        "available": true,
+        "article_found": false,
+        "date_found": false,
+        "content_found": false,
+        "extraction_success": false,
+        "verification_passed": false,
+        "reason": "Официальный профиль автора подтверждён; датированной новости нет."
+      }
+    ],
+    "official_description_analysis": {
+      "keywords": [
+        "UPDATE",
+        "NEW",
+        "CODE",
+        "CODES"
+      ],
+      "news_lines": [
+        "Like, follow, and subscribe for exclusive update news, free knife codes, and more!"
+      ]
+    },
+    "source_registry": {
+      "pool": "active",
+      "universe_id": 66654135,
+      "root_place_id": 142823291,
+      "roblox_game_url": "https://www.roblox.com/games/142823291/Murder-Mystery-2",
+      "roblox_group_id": null,
+      "roblox_group_name": null,
+      "roblox_group_url": null,
+      "news_strategy": "roblox_game_description_and_group",
+      "website": "https://nikilisrbx.com/",
+      "news_url": null,
+      "discord": null,
+      "youtube": null,
+      "x": "https://x.com/NikilisRBX",
+      "roblox_creator_type": "user",
+      "roblox_creator_id": 1848960,
+      "roblox_creator_name": "Nikilis",
+      "roblox_creator_url": "https://www.roblox.com/users/1848960/profile"
+    },
+    "group_verification_note": "В реестре пока нет подтверждённого group_id.",
+    "external_source_diagnostics": [
+      {
+        "source_type": "secondary_gaming_media",
+        "source_url": "https://news.google.com/rss/search?q=%22Murder%20Mystery%202%22%20Roblox%20when%3A30d&hl=en-US&gl=US&ceid=US:en",
+        "latest_published_at": null,
+        "status": "rejected",
+        "result_code": "NO_NEW_CONTENT",
+        "reason": "Нет пригодной Tier B новости.",
+        "available": true,
+        "article_found": false,
+        "date_found": false,
+        "content_found": false,
+        "extraction_success": false,
+        "verification_passed": false,
+        "source_tier": "B",
+        "official": false,
+        "selected": false,
+        "formatted": false,
+        "scheduled": false
+      }
+    ],
+    "external_source_diagnostic": {
+      "source_type": "secondary_gaming_media",
+      "source_url": "https://news.google.com/rss/search?q=%22Murder%20Mystery%202%22%20Roblox%20when%3A30d&hl=en-US&gl=US&ceid=US:en",
+      "latest_published_at": null,
+      "status": "rejected",
+      "result_code": "NO_NEW_CONTENT",
+      "reason": "Нет пригодной Tier B новости.",
+      "available": true,
+      "article_found": false,
+      "date_found": false,
+      "content_found": false,
+      "extraction_success": false,
+      "verification_passed": false,
+      "source_tier": "B",
+      "official": false,
+      "selected": false,
+      "formatted": false,
+      "scheduled": false
+    },
+    "candidate_decision": {
+      "status": "rejected",
+      "reason": "Нет свежего факта с редакционным баллом 5 или выше."
+    }
+  },
+  {
     "game": "Adopt Me!",
     "universe_id": 383310974,
-    "roblox_name": "[24H⌛] Adopt Me!",
+    "roblox_name": "[12H⌛] Adopt Me!",
     "description": "Adopt and raise 🐶🦄👶, trade and collect legendary pets, build your dream home, and roleplay with friends!\n\n🎒 Backpack Storage & Releaser Refresh! 🎒\n🦴 Store unused items for smoother gameplay!\n🧸 Sort pets and items, trade directly from tabs!\n🍓 Kiwi Kiwi and Strawberry Tortle in Releaser Eggs!\n\nBe FIRST 🏆 To experience new updates by pressing 🔔NOTIFY.\n\nMeet the founders!\nNewFissy - Tech Director\nBethink - Creative Director\n\nFind out more about Uplift Games, our policies and creative attributions:\nhttps://devforum.roblox.com/t/credits/71812",
-    "updated": "2026-08-28T16:12:35.7363651Z",
+    "updated": "2026-08-29T04:00:02.6211869Z",
     "created": "2017-07-14T19:26:21.347Z",
     "creator": {
       "id": 295182,
@@ -1477,7 +1393,7 @@
       }
     ],
     "pool": "active",
-    "checked_at": "2026-08-29T03:01:03.182467+00:00",
+    "checked_at": "2026-08-29T07:47:01.928079+00:00",
     "sources": [
       {
         "type": "official_game_description",
@@ -1536,7 +1452,7 @@
       {
         "source_type": "official_game_description",
         "source_url": "https://www.roblox.com/games/920587237/Adopt-Me",
-        "latest_published_at": "2026-08-28T16:12:35.7363651Z",
+        "latest_published_at": "2026-08-29T04:00:02.6211869Z",
         "status": "rejected",
         "result_code": "NO_NEW_CONTENT",
         "available": true,
@@ -1741,7 +1657,7 @@
       }
     ],
     "pool": "active",
-    "checked_at": "2026-08-29T03:01:03.184298+00:00",
+    "checked_at": "2026-08-29T07:47:01.929600+00:00",
     "sources": [
       {
         "type": "official_game_description",
@@ -1916,7 +1832,7 @@
     "facts": [],
     "description_facts": [],
     "pool": "active",
-    "checked_at": "2026-08-29T03:01:03.184670+00:00",
+    "checked_at": "2026-08-29T07:47:01.929886+00:00",
     "sources": [
       {
         "type": "official_game_description",
@@ -2091,7 +2007,7 @@
       }
     ],
     "pool": "active",
-    "checked_at": "2026-08-29T03:01:03.185968+00:00",
+    "checked_at": "2026-08-29T07:47:01.930896+00:00",
     "sources": [
       {
         "type": "official_game_description",
@@ -2280,7 +2196,7 @@
       }
     ],
     "pool": "legacy",
-    "checked_at": "2026-08-29T03:01:03.190718+00:00",
+    "checked_at": "2026-08-29T07:47:01.934872+00:00",
     "sources": [
       {
         "type": "official_game_description",
@@ -2306,7 +2222,7 @@
         "latest_published_at": "2026-08-23T23:00:24+00:00",
         "status": "accepted",
         "result_code": "FOUND_VERIFIED",
-        "reason": "Официальная публикация (5.2 дн.) с датой и игровым содержанием; окно primary_14_day.",
+        "reason": "Официальная публикация (5.4 дн.) с датой и игровым содержанием; окно primary_14_day.",
         "available": true,
         "article_found": true,
         "date_found": true,
@@ -2327,7 +2243,7 @@
         "latest_published_at": "2024-03-23T18:51:42Z",
         "status": "rejected",
         "result_code": "SOURCE_STALE",
-        "reason": "Публикация устарела: 888.3 дн. (аварийный лимит 30).",
+        "reason": "Публикация устарела: 888.5 дн. (аварийный лимит 30).",
         "available": true,
         "article_found": true,
         "date_found": true,
@@ -2432,7 +2348,7 @@
         "latest_published_at": "2026-08-23T23:00:24+00:00",
         "status": "accepted",
         "result_code": "FOUND_VERIFIED",
-        "reason": "Официальная публикация (5.2 дн.) с датой и игровым содержанием; окно primary_14_day.",
+        "reason": "Официальная публикация (5.4 дн.) с датой и игровым содержанием; окно primary_14_day.",
         "available": true,
         "article_found": true,
         "date_found": true,
@@ -2453,7 +2369,7 @@
         "latest_published_at": "2024-03-23T18:51:42Z",
         "status": "rejected",
         "result_code": "SOURCE_STALE",
-        "reason": "Публикация устарела: 888.3 дн. (аварийный лимит 30).",
+        "reason": "Публикация устарела: 888.5 дн. (аварийный лимит 30).",
         "available": true,
         "article_found": true,
         "date_found": true,
@@ -2510,7 +2426,7 @@
       "url": "https://www.youtube.com/watch?v=5E4tYNtntFc",
       "title": "BEST SWORDS IN BLADE BALL! 🔥 - Blade Ball Update Showcase",
       "published_at": "2026-08-23T23:00:24+00:00",
-      "age_days": 5.167122071307871,
+      "age_days": 5.365718191388889,
       "source_tier": "A",
       "publisher": null,
       "freshness_window": "primary_14_day"
@@ -2542,7 +2458,7 @@
     "facts": [],
     "description_facts": [],
     "pool": "legacy",
-    "checked_at": "2026-08-29T03:01:03.187404+00:00",
+    "checked_at": "2026-08-29T07:47:01.932078+00:00",
     "sources": [
       {
         "type": "official_game_description",
@@ -2747,7 +2663,7 @@
       }
     ],
     "pool": "legacy",
-    "checked_at": "2026-08-29T03:01:03.188560+00:00",
+    "checked_at": "2026-08-29T07:47:01.933004+00:00",
     "sources": [
       {
         "type": "official_game_description",
@@ -2765,21 +2681,22 @@
       {
         "source_type": "official_youtube_feed",
         "source_url": "https://www.youtube.com/feeds/videos.xml?channel_id=UCCVWvf_e5oRb6RfXyluR7UA",
-        "latest_published_at": null,
+        "latest_published_at": "2026-07-02T15:00:06+00:00",
         "status": "rejected",
-        "result_code": "SOURCE_UNAVAILABLE",
-        "reason": "Источник недоступен: 404 Client Error: Not Found for url: https://www.youtube.com/feeds/videos.xml?channel_id=UCCVWvf_e5oRb6RfXyluR7UA",
-        "available": false,
-        "article_found": false,
-        "date_found": false,
-        "content_found": false,
+        "result_code": "SOURCE_STALE",
+        "reason": "Публикация устарела: 57.7 дн. (аварийный лимит 30).",
+        "available": true,
+        "article_found": true,
+        "date_found": true,
+        "content_found": true,
         "extraction_success": false,
         "verification_passed": false,
         "source_tier": "A",
         "official": true,
         "selected": false,
         "formatted": false,
-        "scheduled": false
+        "scheduled": false,
+        "latest_url": "https://www.youtube.com/watch?v=5Zfy9QW4s5A"
       },
       {
         "source_type": "secondary_gaming_media",
@@ -2873,21 +2790,22 @@
       {
         "source_type": "official_youtube_feed",
         "source_url": "https://www.youtube.com/feeds/videos.xml?channel_id=UCCVWvf_e5oRb6RfXyluR7UA",
-        "latest_published_at": null,
+        "latest_published_at": "2026-07-02T15:00:06+00:00",
         "status": "rejected",
-        "result_code": "SOURCE_UNAVAILABLE",
-        "reason": "Источник недоступен: 404 Client Error: Not Found for url: https://www.youtube.com/feeds/videos.xml?channel_id=UCCVWvf_e5oRb6RfXyluR7UA",
-        "available": false,
-        "article_found": false,
-        "date_found": false,
-        "content_found": false,
+        "result_code": "SOURCE_STALE",
+        "reason": "Публикация устарела: 57.7 дн. (аварийный лимит 30).",
+        "available": true,
+        "article_found": true,
+        "date_found": true,
+        "content_found": true,
         "extraction_success": false,
         "verification_passed": false,
         "source_tier": "A",
         "official": true,
         "selected": false,
         "formatted": false,
-        "scheduled": false
+        "scheduled": false,
+        "latest_url": "https://www.youtube.com/watch?v=5Zfy9QW4s5A"
       },
       {
         "source_type": "secondary_gaming_media",
@@ -2976,7 +2894,7 @@
       }
     ],
     "pool": "legacy",
-    "checked_at": "2026-08-29T03:01:03.188916+00:00",
+    "checked_at": "2026-08-29T07:47:01.933259+00:00",
     "sources": [
       {
         "type": "official_game_description",

@@ -1,5 +1,6 @@
 import unittest
 
+from external_news_facts import is_news_event
 from fetch_secondary_news import fetch_secondary_news, parse_feed
 
 
@@ -39,6 +40,89 @@ class SecondaryNewsTests(unittest.TestCase):
             description="A complete Roblox guide to the best pets and rewards.",
         )
         self.assertEqual(parse_feed("Brookhaven", feed), [])
+
+    def test_all_pets_reference_is_rejected(self):
+        feed = make_feed(
+            publisher="Sportskeeda",
+            title="All Pets in Steal An Egg: Rarity, income, and more",
+            description="All pets with their rarity and income values.",
+        )
+        self.assertEqual(parse_feed("Steal An Egg", feed), [])
+
+    def test_mm2_values_and_trading_list_is_rejected(self):
+        exact_title = (
+            "Roblox MM2 values list: Murder Mystery 2 weapon, "
+            "knife & pet trade values"
+        )
+        self.assertFalse(is_news_event({"title": exact_title, "text": exact_title}))
+        feed = make_feed(
+            publisher="Dexerto",
+            title=(
+                "Roblox MM2 values list: Murder Mystery 2 weapon, "
+                "knife &amp; pet trade values"
+            ),
+            description="A reference list for weapon and pet trading values.",
+        )
+        self.assertEqual(parse_feed("Murder Mystery 2", feed), [])
+
+    def test_codes_article_is_rejected(self):
+        feed = make_feed(
+            title="Brookhaven RP codes and redeem codes",
+            description="A fresh list of working reward codes.",
+        )
+        self.assertEqual(parse_feed("Brookhaven", feed), [])
+
+    def test_tier_list_is_rejected(self):
+        feed = make_feed(
+            title="Brookhaven RP vehicle tier list",
+            description="Every existing vehicle ranked from best to worst.",
+        )
+        self.assertEqual(parse_feed("Brookhaven", feed), [])
+
+    def test_how_to_article_is_rejected(self):
+        feed = make_feed(
+            title="How to get every item in Brookhaven RP",
+            description="A complete walkthrough for current items.",
+        )
+        self.assertEqual(parse_feed("Brookhaven", feed), [])
+
+    def test_fresh_article_without_news_event_is_rejected(self):
+        article = {
+            "title": "Brookhaven RP explained",
+            "text": "A reference overview of houses, vehicles, and roleplay systems.",
+        }
+        self.assertFalse(is_news_event(article))
+
+    def test_released_update_is_accepted(self):
+        feed = make_feed(
+            title="Brookhaven Prison Update is live",
+            description=(
+                "The update adds a new prison landmark, prisoner bus, "
+                "and warden tools."
+            ),
+        )
+        self.assertEqual(len(parse_feed("Brookhaven", feed)), 1)
+
+    def test_new_map_is_accepted(self):
+        feed = make_feed(
+            title="RIVALS launches new Harbor map",
+            description="The update adds the Harbor map to public matches.",
+        )
+        self.assertEqual(len(parse_feed("RIVALS", feed)), 1)
+
+    def test_new_event_is_accepted(self):
+        feed = make_feed(
+            title="Adopt Me launches new Moonlight event",
+            description="The Moonlight event is now live with new activities.",
+        )
+        self.assertEqual(len(parse_feed("Adopt Me!", feed)), 1)
+
+    def test_item_really_added_by_update_is_accepted(self):
+        feed = make_feed(
+            title="Brookhaven Bank Update adds security scanner",
+            description="The released update adds a new security scanner item.",
+        )
+        self.assertEqual(len(parse_feed("Brookhaven", feed)), 1)
 
     def test_failure_of_one_game_does_not_stop_other_games(self):
         class Response:

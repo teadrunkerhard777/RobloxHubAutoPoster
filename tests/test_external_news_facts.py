@@ -7,6 +7,7 @@ from external_news_facts import (
     contains_rumor_signal,
     extract_external_facts,
     is_fresh_article,
+    is_news_event,
 )
 
 NOW = datetime(2026, 8, 16, 12, 0, tzinfo=timezone.utc)
@@ -247,6 +248,50 @@ class ExternalNewsFactsTests(unittest.TestCase):
                 now=datetime(2026, 8, 27, 8, tzinfo=timezone.utc),
             ),
             [],
+        )
+
+    def test_brookhaven_tier_b_update_keeps_named_details(self):
+        article = {
+            "success": True,
+            "source_tier": "B",
+            "publisher": "PCGamesN",
+            "url": "https://example.com/brookhaven-prison-update",
+            "title": "Brookhaven Prison Update is live",
+            "published_at": "2026-08-15T12:00:00Z",
+            "text": (
+                "The update adds a new prison landmark.\n"
+                "Added prisoner bus.\n"
+                "New warden tear gas launcher and pistol."
+            ),
+        }
+
+        self.assertTrue(is_news_event(article))
+        facts = extract_external_facts("Brookhaven", article, now=NOW)
+        summaries = [fact["summary_ru"] for fact in facts]
+        self.assertTrue(any("тюрьм" in summary for summary in summaries))
+        self.assertTrue(any("тюремный автобус" in summary for summary in summaries))
+        self.assertTrue(any("слезоточивым газом" in summary for summary in summaries))
+
+    def test_brookhaven_official_update_keeps_convertible_details(self):
+        article = {
+            "success": True,
+            "url": "https://www.brookhavenrp.com/posts/lavender-luxury",
+            "title": "Brookhaven Update August 28, 2026: Lavender Luxury",
+            "published_at": "2026-08-28",
+            "text": "New vehicle pack convertible car with neon flower tail lights",
+        }
+
+        facts = extract_external_facts(
+            "Brookhaven RP",
+            article,
+            now=datetime(2026, 8, 29, 8, tzinfo=timezone.utc),
+        )
+        summaries = [fact["summary_ru"] for fact in facts]
+        self.assertTrue(
+            any(
+                "кабриолет" in summary and "неоновыми" in summary
+                for summary in summaries
+            )
         )
 
 

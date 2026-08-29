@@ -8,10 +8,10 @@
     "publisher": "Sportskeeda",
     "latest_article": {
       "success": true,
-      "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxNQ3FPNzgxV3NUZm5fS0R0R25RUnZnRU15d1ZJcWU4RzBMSzlRRUduOVlIYUhheC1JdDNsSWdXZ1JhWWl0M05hVXczZVFaNmlfSC1FTkhLMWhreFpERWpCSzhPdXJjSlF0a011YXB4LUhKUDVLLUZWM3FFejFaaEdCMg?oc=5",
-      "title": "All Pets in Steal An Egg: Rarity, income, and more",
-      "published_at": "2026-08-26T06:24:00+00:00",
-      "text": "All Pets in Steal An Egg: Rarity, income, and more. All Pets in Steal An Egg: Rarity, income, and more Sportskeeda",
+      "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTE1PZWt0eU84eUo2ZklMMndjYVEwNllMdGhFM0U5bTlqNTREb0M1bHlEdHN3QzYwaHQzeFRNR2MtNWpCRjNQcVh5Undfc2wycmlKeUVBS2JEN0E1UlJMVVkzZjlWU21Oam1fOVl4WWxWM19sRUM3Vk5kbw?oc=5",
+      "title": "When is the next update in Steal An Egg? (Monsters Are Coming)",
+      "published_at": "2026-08-24T15:47:00+00:00",
+      "text": "When is the next update in Steal An Egg? (Monsters Are Coming). When is the next update in Steal An Egg? (Monsters Are Coming) Sportskeeda",
       "source_tier": "B",
       "publisher": "Sportskeeda"
     },
@@ -43,17 +43,9 @@
     "source_tier": "B",
     "url": "https://news.google.com/rss/search?q=%22Murder%20Mystery%202%22%20Roblox%20when%3A30d&hl=en-US&gl=US&ceid=US:en",
     "success": true,
-    "publisher": "Dexerto",
-    "latest_article": {
-      "success": true,
-      "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxOQXJhRzNyOHlLUGNJbUdPR3Nsc0xNdGtxNVdiZXhZNVN3bGVibXYtMmpiUUtIcEFXT2RLc2ZRaUFkaERyZjFYVTlFNnRFUGVjM2FJeTRYeTJHbVJVMWk5ZjFXNjkzdVVhQ2hwOWo5U2FnZFd5cmpJNlRfR0VRLXBycnJGeGZKS2xDRzFfRzBydXlDSVZFTVpmTTJsVFVhQ1NtM1VjWGVB?oc=5",
-      "title": "Roblox MM2 values list: Murder Mystery 2 weapon, knife & pet trade values",
-      "published_at": "2026-08-21T07:00:00+00:00",
-      "text": "Roblox MM2 values list: Murder Mystery 2 weapon, knife & pet trade values. Roblox MM2 values list: Murder Mystery 2 weapon, knife & pet trade values Dexerto",
-      "source_tier": "B",
-      "publisher": "Dexerto"
-    },
-    "error": null
+    "publisher": null,
+    "latest_article": null,
+    "error": "Нет пригодной Tier B новости."
   },
   {
     "game": "Brookhaven RP",
@@ -71,15 +63,15 @@
     "source_tier": "B",
     "url": "https://news.google.com/rss/search?q=%22Blox%20Fruits%22%20Roblox%20when%3A30d&hl=en-US&gl=US&ceid=US:en",
     "success": true,
-    "publisher": "Dexerto",
+    "publisher": "Pocket Tactics",
     "latest_article": {
       "success": true,
-      "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxQMmo0dFFqMHVzN1dMdG04UVA2Z2Q5TWx3UVp5S3BmODI2M2J6a3I0ZHNSOGp6Wk5helIyNERBMWR5X0t6dkNyZUxfWTdOZmpZN0pzeVNyWWJYLUdPdTN5cE5lUjJYN2djWHFWWnlZVDc2Ni04ZHdBRmRUaWRaWTVoYi1xdkFFWWdDUjhTZw?oc=5",
-      "title": "Roblox Blox Fruits Map: Islands, Locations, Bosses & more",
-      "published_at": "2026-08-19T07:00:00+00:00",
-      "text": "Roblox Blox Fruits Map: Islands, Locations, Bosses & more. Roblox Blox Fruits Map: Islands, Locations, Bosses & more Dexerto",
+      "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE1HM1JZWk9BV0U1Z3oxWFNtZTkzQ3NOYzV0a1pXUFFsSHN1MVFvLS1tXy12bWtVbEVLdC1zbFpwYndScDUyUS1KNW55TGFNV0hRWjhkbllLa1c1RGwx?oc=5",
+      "title": "Blox Fruits update - current, next, and upcoming",
+      "published_at": "2026-08-15T07:00:00+00:00",
+      "text": "Blox Fruits update - current, next, and upcoming. Blox Fruits update - current, next, and upcoming Pocket Tactics",
       "source_tier": "B",
-      "publisher": "Dexerto"
+      "publisher": "Pocket Tactics"
     },
     "error": null
   },

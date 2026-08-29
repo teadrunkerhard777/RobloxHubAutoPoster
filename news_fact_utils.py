@@ -88,6 +88,10 @@ ITEM_NAMES_RU = (
 
 
 VEHICLE_NAMES_RU = (
+    (
+        "convertible car with neon flower tail lights",
+        "кабриолет с неоновыми задними фонарями в виде цветов",
+    ),
     ("prisoner bus", "тюремный автобус"),
     ("prison bus", "тюремный автобус"),
     ("armored bank truck", "бронированный банковский грузовик"),
