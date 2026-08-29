@@ -1,6 +1,7 @@
 import ast
 import json
 import os
+import re
 import unittest
 from datetime import date, datetime, timedelta, timezone
 from pathlib import Path
@@ -41,10 +42,12 @@ def load_members(file_name, function_names, constant_names):
     namespace = {
         "add_post_hashtags": add_post_hashtags,
         "BRAWL_NEWS_HEADING": BRAWL_NEWS_HEADING,
+        "date": date,
         "datetime": datetime,
         "timedelta": timedelta,
         "timezone": timezone,
         "os": os,
+        "re": re,
     }
     isolated_module = ast.Module(
         body=selected_nodes,
@@ -95,6 +98,13 @@ schedule_brawl_post = generate_namespace["schedule_brawl_post"]
 build_brawl_fallback = generate_namespace["build_brawl_fallback"]
 generate_brawl_fallback = generate_namespace["generate_brawl_fallback"]
 select_brawl_fallback_tip = generate_namespace["select_brawl_fallback_tip"]
+
+brawl_monitor_namespace = load_members(
+    "brawl_monitor.py",
+    {"carry_unscheduled_articles", "normalize_article_date"},
+    set(),
+)
+carry_unscheduled_articles = brawl_monitor_namespace["carry_unscheduled_articles"]
 
 app_namespace = load_members(
     "app.py",
@@ -703,6 +713,93 @@ class ImageScheduleTests(unittest.TestCase):
         self.assertEqual(posts[0]["source"], "brawl_pipeline")
         self.assertEqual(posts[0]["rubric"], "Brawl Stars")
         self.assertIn("Свежая официальная новость", posts[0]["text"])
+
+    def test_article_selected_after_slot_is_scheduled_next_day(self):
+        article = {
+            "url": "https://supercell.com/bsc-2027",
+            "title": "First Look at BSC 2027",
+            "date": "2026-08-24",
+            "category": "esports",
+            "priority": "medium",
+            "official": True,
+            "scheduled": False,
+            "ru_found": False,
+            "clean_content": [
+                "BSC 2027 introduces two connected competition levels.",
+                "Split 1 leads to Brawl Cup and Split 2 to World Finals.",
+            ],
+        }
+        posts = [
+            {
+                "id": "2026-08-27-brawl-12",
+                "publish_at": "2026-08-27T12:00:00+05:00",
+                "status": "published",
+                "source": "verified_brawl_fallback",
+                "game": "Brawl Stars",
+                "rubric": "Brawl Stars: совет дня",
+                "text": "Уже опубликованный fallback",
+            }
+        ]
+
+        added_today = schedule_brawl_post(
+            posts,
+            date(2026, 8, 27),
+            data_loader=lambda: {"medium_priority_articles": [article]},
+            final_post_builder=lambda data: "First Look at BSC 2027",
+            fallback_builder=lambda: self.fail("Опубликованный слот не меняем"),
+        )
+        carried = carry_unscheduled_articles(
+            [],
+            {"new_articles": [article]},
+            today=date(2026, 8, 28),
+        )
+        next_day_data = {
+            "new_articles": carried,
+            "high_priority_articles": [],
+            "medium_priority_articles": carried,
+        }
+        added_next_day = schedule_brawl_post(
+            posts,
+            date(2026, 8, 28),
+            data_loader=lambda: next_day_data,
+            fallback_builder=lambda: self.fail("Pending-новость должна победить"),
+        )
+
+        self.assertEqual(added_today, 0)
+        self.assertEqual(carried, [article])
+        self.assertEqual(added_next_day, 1)
+        self.assertEqual(posts[-1]["source"], "brawl_pipeline")
+        self.assertEqual(posts[-1]["status"], "pending")
+
+    def test_pending_real_news_has_priority_over_evergreen_fallback(self):
+        posts = []
+        fallback_calls = []
+        article = {
+            "url": "https://supercell.com/bsc-2027",
+            "title": "First Look at BSC 2027",
+            "date": "2026-08-24",
+            "category": "esports",
+            "priority": "medium",
+            "official": True,
+            "ru_found": False,
+            "clean_content": ["BSC 2027 introduces two connected competition levels."],
+        }
+
+        added = schedule_brawl_post(
+            posts,
+            date(2026, 8, 28),
+            data_loader=lambda: {
+                "new_articles": [article],
+                "high_priority_articles": [],
+                "medium_priority_articles": [article],
+            },
+            fallback_builder=lambda: fallback_calls.append(True) or "fallback",
+        )
+
+        self.assertEqual(added, 1)
+        self.assertEqual(fallback_calls, [])
+        self.assertEqual(posts[0]["source"], "brawl_pipeline")
+        self.assertIn("Первый взгляд на BSC 2027", posts[0]["text"])
 
     def test_recent_brawl_tip_is_not_selected_again(self):
         tips = [
