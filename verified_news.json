@@ -1,5 +1,341 @@
 [
   {
+    "game": "Brookhaven RP",
+    "universe_id": 1686885941,
+    "roblox_name": "Brookhaven 🏡RP",
+    "description": "A place to play with like minded people and roleplay. Own and live in amazing houses, drive cool vehicles and explore the city. Be whoever you want to be in Brookhaven RP.\n\nLatest Update:\n📚 Library House - New free home!\n💜 Lavender Luxury - New premium home and a convertible car!\n✨ Lavender Props - 7 new props to decorate with!\n\nThanks for playing! \n\nPrivate Server Benefits:\n· Prop Saving\n· Server-Wide Music\n· Server-Wide Announcements\n· Remove or Lock Props\n· Check Prop Owners\n· Set Players as Admins\n· Kick / Temp Ban Players\n· Set Day of the Week\n· Set Time by the Hour\n· Change Weather and Lighting\n· Speed up Time\n· Server Theme Controls\n· No Wait Time for Changing House \n· Spawn Up to Three Vehicles\n· Prop Limit Increased\n· Freecam for PC users (Shift+P)",
+    "updated": "2026-08-28T19:06:16.2670249Z",
+    "created": "2020-04-21T02:15:38.373Z",
+    "creator": {
+      "id": 3104358,
+      "name": "Brookhaven by Voldex",
+      "type": "Group",
+      "isRNVAccount": false,
+      "hasVerifiedBadge": false
+    },
+    "description_changed": true,
+    "added_lines": [
+      "📚 Library House - New free home!",
+      "💜 Lavender Luxury - New premium home and a convertible car!",
+      "✨ Lavender Props - 7 new props to decorate with!"
+    ],
+    "keywords": [
+      "NEW",
+      "UPDATE",
+      "VEHICLES"
+    ],
+    "score": 10,
+    "confidence": "high",
+    "facts": [
+      {
+        "text": "💜 Lavender Luxury - New premium home and a convertible car!",
+        "kind": "vehicle",
+        "value": 10,
+        "specific": true,
+        "reason": "Строка называет конкретное игровое содержимое",
+        "summary_ru": "В игру добавили новый транспорт.",
+        "is_new_line": true
+      },
+      {
+        "text": "✨ Lavender Props - 7 new props to decorate with!",
+        "kind": "items",
+        "value": 9,
+        "specific": true,
+        "reason": "Строка называет конкретное игровое содержимое",
+        "summary_ru": "Добавили новый реквизит для ролевых сцен.",
+        "is_new_line": true
+      },
+      {
+        "text": "New vehicle pack convertible car with neon flower tail lights",
+        "summary_ru": "В игру добавили новый транспорт.",
+        "kind": "vehicle",
+        "value": 8,
+        "specific": true,
+        "reason": "Факт из официальной новостной статьи",
+        "is_new_line": true,
+        "source_url": "https://www.brookhavenrp.com/posts/brookhaven-update-august-28-2026"
+      },
+      {
+        "text": "Brookhaven Update August 28, 2026: Lavender Luxury",
+        "summary_ru": "В Brookhaven RP вышло обновление «Brookhaven Update August 28, 2026: Lavender Luxury».",
+        "kind": "official_article",
+        "value": 6,
+        "specific": true,
+        "reason": "Факт из официальной новостной статьи",
+        "is_new_line": true,
+        "source_url": "https://www.brookhavenrp.com/posts/brookhaven-update-august-28-2026",
+        "title_is_concrete": false
+      }
+    ],
+    "description_facts": [
+      {
+        "text": "💜 Lavender Luxury - New premium home and a convertible car!",
+        "kind": "vehicle",
+        "value": 10,
+        "specific": true,
+        "reason": "Строка называет конкретное игровое содержимое",
+        "summary_ru": "В игру добавили новый транспорт.",
+        "is_new_line": true
+      },
+      {
+        "text": "✨ Lavender Props - 7 new props to decorate with!",
+        "kind": "items",
+        "value": 9,
+        "specific": true,
+        "reason": "Строка называет конкретное игровое содержимое",
+        "summary_ru": "Добавили новый реквизит для ролевых сцен.",
+        "is_new_line": true
+      },
+      {
+        "text": "· Prop Saving",
+        "kind": "items",
+        "value": 7,
+        "specific": true,
+        "reason": "Строка называет конкретное игровое содержимое",
+        "summary_ru": "Добавили новый реквизит для ролевых сцен.",
+        "is_new_line": false
+      },
+      {
+        "text": "· Remove or Lock Props",
+        "kind": "items",
+        "value": 7,
+        "specific": true,
+        "reason": "Строка называет конкретное игровое содержимое",
+        "summary_ru": "Добавили новый реквизит для ролевых сцен.",
+        "is_new_line": false
+      },
+      {
+        "text": "· Check Prop Owners",
+        "kind": "items",
+        "value": 7,
+        "specific": true,
+        "reason": "Строка называет конкретное игровое содержимое",
+        "summary_ru": "Добавили новый реквизит для ролевых сцен.",
+        "is_new_line": false
+      },
+      {
+        "text": "· Prop Limit Increased",
+        "kind": "items",
+        "value": 7,
+        "specific": true,
+        "reason": "Строка называет конкретное игровое содержимое",
+        "summary_ru": "Добавили новый реквизит для ролевых сцен.",
+        "is_new_line": false
+      },
+      {
+        "text": "Latest Update:",
+        "kind": "update",
+        "value": 2,
+        "specific": false,
+        "reason": "Упоминание обновления без конкретики",
+        "summary_ru": "В игре вышло новое обновление.",
+        "is_new_line": false
+      }
+    ],
+    "pool": "active",
+    "checked_at": "2026-08-29T03:01:03.178673+00:00",
+    "sources": [
+      {
+        "type": "official_game_description",
+        "verified": true
+      },
+      {
+        "type": "official_roblox_group",
+        "verified": true,
+        "group_id": 3104358,
+        "group_name": "Brookhaven by Voldex"
+      },
+      {
+        "type": "official_news_website",
+        "verified": true,
+        "url": "https://www.brookhavenrp.com/posts/brookhaven-update-august-28-2026"
+      }
+    ],
+    "cross_source_confirmations": [],
+    "source_diagnostics": [
+      {
+        "source_type": "official_news_website",
+        "source_url": "https://www.brookhavenrp.com/",
+        "latest_published_at": "2026-08-28",
+        "status": "accepted",
+        "result_code": "FOUND_VERIFIED",
+        "reason": "Официальная публикация (1.1 дн.) с датой и игровым содержанием; окно primary_14_day.",
+        "available": true,
+        "article_found": true,
+        "date_found": true,
+        "content_found": true,
+        "extraction_success": true,
+        "verification_passed": true,
+        "source_tier": "A",
+        "official": true,
+        "selected": false,
+        "formatted": false,
+        "scheduled": false,
+        "latest_url": "https://www.brookhavenrp.com/posts/brookhaven-update-august-28-2026",
+        "freshness_window": "primary_14_day"
+      },
+      {
+        "source_type": "secondary_gaming_media",
+        "source_url": "https://news.google.com/rss/search?q=%22Brookhaven%20RP%22%20Roblox%20when%3A30d&hl=en-US&gl=US&ceid=US:en",
+        "latest_published_at": null,
+        "status": "rejected",
+        "result_code": "NO_NEW_CONTENT",
+        "reason": "Нет пригодной Tier B новости.",
+        "available": true,
+        "article_found": false,
+        "date_found": false,
+        "content_found": false,
+        "extraction_success": false,
+        "verification_passed": false,
+        "source_tier": "B",
+        "official": false,
+        "selected": false,
+        "formatted": false,
+        "scheduled": false
+      },
+      {
+        "source_type": "official_game_description",
+        "source_url": "https://www.roblox.com/games/4924922222/Brookhaven-RP",
+        "latest_published_at": "2026-08-28T19:06:16.2670249Z",
+        "status": "accepted",
+        "result_code": "FOUND_VERIFIED",
+        "available": true,
+        "article_found": true,
+        "date_found": true,
+        "content_found": true,
+        "extraction_success": true,
+        "verification_passed": true,
+        "reason": "Найдена новая конкретная строка описания."
+      },
+      {
+        "source_type": "official_roblox_group",
+        "source_url": "https://www.roblox.com/communities/3104358/Brookhaven-by-Voldex",
+        "latest_published_at": null,
+        "status": "checked",
+        "result_code": "NO_NEW_CONTENT",
+        "available": true,
+        "article_found": false,
+        "date_found": false,
+        "content_found": true,
+        "extraction_success": false,
+        "verification_passed": false,
+        "reason": "Официальная группа подтверждена; датированной новости нет."
+      }
+    ],
+    "official_description_analysis": {
+      "keywords": [
+        "UPDATE",
+        "NEW"
+      ],
+      "news_lines": [
+        "💜 Lavender Luxury - New premium home and a convertible car!",
+        "✨ Lavender Props - 7 new props to decorate with!"
+      ]
+    },
+    "source_registry": {
+      "pool": "active",
+      "universe_id": 1686885941,
+      "root_place_id": 4924922222,
+      "roblox_game_url": "https://www.roblox.com/games/4924922222/Brookhaven-RP",
+      "roblox_group_id": 3104358,
+      "roblox_group_name": "Brookhaven by Voldex",
+      "roblox_group_url": "https://www.roblox.com/communities/3104358/Brookhaven-by-Voldex",
+      "news_strategy": "official_news_website",
+      "website": "https://www.brookhavenrp.com/",
+      "news_url": "https://www.brookhavenrp.com/",
+      "discord": null,
+      "youtube": null,
+      "x": null,
+      "roblox_creator_type": null,
+      "roblox_creator_id": null,
+      "roblox_creator_name": null,
+      "roblox_creator_url": null
+    },
+    "official_group": {
+      "id": 3104358,
+      "name": "Brookhaven by Voldex",
+      "expected_name": "Brookhaven by Voldex",
+      "name_matches_registry": true,
+      "description": "Brookhaven originally created by Wolfpaq, now developed by Voldex",
+      "has_verified_badge": false,
+      "news_lines": []
+    },
+    "external_source_diagnostics": [
+      {
+        "source_type": "official_news_website",
+        "source_url": "https://www.brookhavenrp.com/",
+        "latest_published_at": "2026-08-28",
+        "status": "accepted",
+        "result_code": "FOUND_VERIFIED",
+        "reason": "Официальная публикация (1.1 дн.) с датой и игровым содержанием; окно primary_14_day.",
+        "available": true,
+        "article_found": true,
+        "date_found": true,
+        "content_found": true,
+        "extraction_success": true,
+        "verification_passed": true,
+        "source_tier": "A",
+        "official": true,
+        "selected": false,
+        "formatted": false,
+        "scheduled": false,
+        "latest_url": "https://www.brookhavenrp.com/posts/brookhaven-update-august-28-2026",
+        "freshness_window": "primary_14_day"
+      },
+      {
+        "source_type": "secondary_gaming_media",
+        "source_url": "https://news.google.com/rss/search?q=%22Brookhaven%20RP%22%20Roblox%20when%3A30d&hl=en-US&gl=US&ceid=US:en",
+        "latest_published_at": null,
+        "status": "rejected",
+        "result_code": "NO_NEW_CONTENT",
+        "reason": "Нет пригодной Tier B новости.",
+        "available": true,
+        "article_found": false,
+        "date_found": false,
+        "content_found": false,
+        "extraction_success": false,
+        "verification_passed": false,
+        "source_tier": "B",
+        "official": false,
+        "selected": false,
+        "formatted": false,
+        "scheduled": false
+      }
+    ],
+    "external_source_diagnostic": {
+      "source_type": "secondary_gaming_media",
+      "source_url": "https://news.google.com/rss/search?q=%22Brookhaven%20RP%22%20Roblox%20when%3A30d&hl=en-US&gl=US&ceid=US:en",
+      "latest_published_at": null,
+      "status": "rejected",
+      "result_code": "NO_NEW_CONTENT",
+      "reason": "Нет пригодной Tier B новости.",
+      "available": true,
+      "article_found": false,
+      "date_found": false,
+      "content_found": false,
+      "extraction_success": false,
+      "verification_passed": false,
+      "source_tier": "B",
+      "official": false,
+      "selected": false,
+      "formatted": false,
+      "scheduled": false
+    },
+    "external_news_article": {
+      "url": "https://www.brookhavenrp.com/posts/brookhaven-update-august-28-2026",
+      "title": "Brookhaven Update August 28, 2026: Lavender Luxury",
+      "published_at": "2026-08-28",
+      "age_days": 1.1257331824189816,
+      "source_tier": "A",
+      "publisher": null,
+      "freshness_window": "primary_14_day"
+    },
+    "candidate_decision": {
+      "status": "accepted",
+      "reason": "Есть достойный свежий факт."
+    }
+  },
+  {
     "game": "Steal An Egg",
     "universe_id": 10563114921,
     "roblox_name": "Steal An Egg",
@@ -90,7 +426,7 @@
       }
     ],
     "pool": "active",
-    "checked_at": "2026-08-28T16:26:40.970008+00:00",
+    "checked_at": "2026-08-29T03:01:03.172234+00:00",
     "sources": [
       {
         "type": "official_game_description",
@@ -116,7 +452,7 @@
         "latest_published_at": "2026-08-26T06:24:00+00:00",
         "status": "accepted",
         "result_code": "FOUND_VERIFIED",
-        "reason": "Tier b публикация (2.4 дн.) с датой и игровым содержанием; окно primary_14_day.",
+        "reason": "Tier b публикация (2.9 дн.) с датой и игровым содержанием; окно primary_14_day.",
         "available": true,
         "article_found": true,
         "date_found": true,
@@ -207,7 +543,7 @@
         "latest_published_at": "2026-08-26T06:24:00+00:00",
         "status": "accepted",
         "result_code": "FOUND_VERIFIED",
-        "reason": "Tier b публикация (2.4 дн.) с датой и игровым содержанием; окно primary_14_day.",
+        "reason": "Tier b публикация (2.9 дн.) с датой и игровым содержанием; окно primary_14_day.",
         "available": true,
         "article_found": true,
         "date_found": true,
@@ -229,7 +565,7 @@
       "latest_published_at": "2026-08-26T06:24:00+00:00",
       "status": "accepted",
       "result_code": "FOUND_VERIFIED",
-      "reason": "Tier b публикация (2.4 дн.) с датой и игровым содержанием; окно primary_14_day.",
+      "reason": "Tier b публикация (2.9 дн.) с датой и игровым содержанием; окно primary_14_day.",
       "available": true,
       "article_found": true,
       "date_found": true,
@@ -248,7 +584,7 @@
       "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxNQ3FPNzgxV3NUZm5fS0R0R25RUnZnRU15d1ZJcWU4RzBMSzlRRUduOVlIYUhheC1JdDNsSWdXZ1JhWWl0M05hVXczZVFaNmlfSC1FTkhLMWhreFpERWpCSzhPdXJjSlF0a011YXB4LUhKUDVLLUZWM3FFejFaaEdCMg?oc=5",
       "title": "All Pets in Steal An Egg: Rarity, income, and more",
       "published_at": "2026-08-26T06:24:00+00:00",
-      "age_days": 2.4185313331250002,
+      "age_days": 2.859066515752315,
       "source_tier": "B",
       "publisher": "Sportskeeda",
       "freshness_window": "primary_14_day"
@@ -314,7 +650,7 @@
       }
     ],
     "pool": "active",
-    "checked_at": "2026-08-28T16:26:40.973308+00:00",
+    "checked_at": "2026-08-29T03:01:03.175954+00:00",
     "sources": [
       {
         "type": "official_game_description",
@@ -331,10 +667,10 @@
       {
         "source_type": "secondary_gaming_media",
         "source_url": "https://news.google.com/rss/search?q=%22Murder%20Mystery%202%22%20Roblox%20when%3A30d&hl=en-US&gl=US&ceid=US:en",
-        "latest_published_at": "2026-08-21T07:00:00+00:00",
+        "latest_published_at": "2026-08-21T19:21:20+00:00",
         "status": "accepted",
         "result_code": "FOUND_VERIFIED",
-        "reason": "Tier b публикация (7.4 дн.) с датой и игровым содержанием; окно primary_14_day.",
+        "reason": "Tier b публикация (7.3 дн.) с датой и игровым содержанием; окно primary_14_day.",
         "available": true,
         "article_found": true,
         "date_found": true,
@@ -413,10 +749,10 @@
       {
         "source_type": "secondary_gaming_media",
         "source_url": "https://news.google.com/rss/search?q=%22Murder%20Mystery%202%22%20Roblox%20when%3A30d&hl=en-US&gl=US&ceid=US:en",
-        "latest_published_at": "2026-08-21T07:00:00+00:00",
+        "latest_published_at": "2026-08-21T19:21:20+00:00",
         "status": "accepted",
         "result_code": "FOUND_VERIFIED",
-        "reason": "Tier b публикация (7.4 дн.) с датой и игровым содержанием; окно primary_14_day.",
+        "reason": "Tier b публикация (7.3 дн.) с датой и игровым содержанием; окно primary_14_day.",
         "available": true,
         "article_found": true,
         "date_found": true,
@@ -435,10 +771,10 @@
     "external_source_diagnostic": {
       "source_type": "secondary_gaming_media",
       "source_url": "https://news.google.com/rss/search?q=%22Murder%20Mystery%202%22%20Roblox%20when%3A30d&hl=en-US&gl=US&ceid=US:en",
-      "latest_published_at": "2026-08-21T07:00:00+00:00",
+      "latest_published_at": "2026-08-21T19:21:20+00:00",
       "status": "accepted",
       "result_code": "FOUND_VERIFIED",
-      "reason": "Tier b публикация (7.4 дн.) с датой и игровым содержанием; окно primary_14_day.",
+      "reason": "Tier b публикация (7.3 дн.) с датой и игровым содержанием; окно primary_14_day.",
       "available": true,
       "article_found": true,
       "date_found": true,
@@ -456,8 +792,8 @@
     "external_news_article": {
       "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxOQXJhRzNyOHlLUGNJbUdPR3Nsc0xNdGtxNVdiZXhZNVN3bGVibXYtMmpiUUtIcEFXT2RLc2ZRaUFkaERyZjFYVTlFNnRFUGVjM2FJeTRYeTJHbVJVMWk5ZjFXNjkzdVVhQ2hwOWo5U2FnZFd5cmpJNlRfR0VRLXBycnJGeGZKS2xDRzFfRzBydXlDSVZFTVpmTTJsVFVhQ1NtM1VjWGVB?oc=5",
       "title": "Roblox MM2 values list: Murder Mystery 2 weapon, knife & pet trade values",
-      "published_at": "2026-08-21T07:00:00+00:00",
-      "age_days": 7.393531333124999,
+      "published_at": "2026-08-21T19:21:20+00:00",
+      "age_days": 7.3192517009375,
       "source_tier": "B",
       "publisher": "Dexerto",
       "freshness_window": "primary_14_day"
@@ -514,7 +850,7 @@
       }
     ],
     "pool": "active",
-    "checked_at": "2026-08-28T16:26:40.977953+00:00",
+    "checked_at": "2026-08-29T03:01:03.181057+00:00",
     "sources": [
       {
         "type": "official_game_description",
@@ -540,7 +876,7 @@
         "latest_published_at": "2026-08-06T22:02:43Z",
         "status": "accepted",
         "result_code": "FOUND_VERIFIED",
-        "reason": "Официальная публикация (21.8 дн.) с датой и игровым содержанием; окно emergency_30_day.",
+        "reason": "Официальная публикация (22.2 дн.) с датой и игровым содержанием; окно emergency_30_day.",
         "available": true,
         "article_found": true,
         "date_found": true,
@@ -561,7 +897,7 @@
         "latest_published_at": "2026-08-19T07:00:00+00:00",
         "status": "accepted",
         "result_code": "FOUND_VERIFIED",
-        "reason": "Tier b публикация (9.4 дн.) с датой и игровым содержанием; окно primary_14_day.",
+        "reason": "Tier b публикация (9.8 дн.) с датой и игровым содержанием; окно primary_14_day.",
         "available": true,
         "article_found": true,
         "date_found": true,
@@ -650,7 +986,7 @@
         "latest_published_at": "2026-08-06T22:02:43Z",
         "status": "accepted",
         "result_code": "FOUND_VERIFIED",
-        "reason": "Официальная публикация (21.8 дн.) с датой и игровым содержанием; окно emergency_30_day.",
+        "reason": "Официальная публикация (22.2 дн.) с датой и игровым содержанием; окно emergency_30_day.",
         "available": true,
         "article_found": true,
         "date_found": true,
@@ -671,7 +1007,7 @@
         "latest_published_at": "2026-08-19T07:00:00+00:00",
         "status": "accepted",
         "result_code": "FOUND_VERIFIED",
-        "reason": "Tier b публикация (9.4 дн.) с датой и игровым содержанием; окно primary_14_day.",
+        "reason": "Tier b публикация (9.8 дн.) с датой и игровым содержанием; окно primary_14_day.",
         "available": true,
         "article_found": true,
         "date_found": true,
@@ -693,7 +1029,7 @@
       "latest_published_at": "2026-08-19T07:00:00+00:00",
       "status": "accepted",
       "result_code": "FOUND_VERIFIED",
-      "reason": "Tier b публикация (9.4 дн.) с датой и игровым содержанием; окно primary_14_day.",
+      "reason": "Tier b публикация (9.8 дн.) с датой и игровым содержанием; окно primary_14_day.",
       "available": true,
       "article_found": true,
       "date_found": true,
@@ -712,7 +1048,7 @@
       "url": "https://gamerrobot.com/blogs/news/the-balance-log",
       "title": "The Balance Log",
       "published_at": "2026-08-06T22:02:43Z",
-      "age_days": 21.766644759050926,
+      "age_days": 22.20717994167824,
       "source_tier": "A",
       "publisher": null,
       "freshness_window": "emergency_30_day"
@@ -754,7 +1090,7 @@
       }
     ],
     "pool": "active",
-    "checked_at": "2026-08-28T16:26:40.970400+00:00",
+    "checked_at": "2026-08-29T03:01:03.172700+00:00",
     "sources": [
       {
         "type": "official_game_description",
@@ -899,7 +1235,7 @@
     "universe_id": 9831440772,
     "roblox_name": "[UPD] +1 Speed Keyboard Escape",
     "description": "🎀 Join the XSpeed Games group!\n\n👟 Welcome to +1 Speed Keyboard Escape 👟\n\n⚡ Every step = +1 Speed\n👟 Run, jump, and escape across a world made of keyboard keys\n💪 Train your speed and unlock powerful multipliers\n🌍 Become the FASTEST player in the world\n👥 Race against friends and other players\n🚀 Speed is everything… but one wrong step and you’re back at the start 😱\n\n🎧 ASMR vibes included\nSmooth movement, satisfying keyboard clicks, and relaxing, chill sounds! ✨\n\n🔑 Tags:\nSpeed, Keyboard, ASMR, Obby, Escape, Parkour, Multiplayer, Racing, Competitive, Satisfying, Relaxing, Physics, Ragdoll, Challenge, Speedrun",
-    "updated": "2026-08-28T16:24:56.4877169Z",
+    "updated": "2026-08-28T20:21:53.6046393Z",
     "created": "2026-03-04T03:51:10.46Z",
     "creator": {
       "id": 175742687,
@@ -916,7 +1252,7 @@
     "facts": [],
     "description_facts": [],
     "pool": "active",
-    "checked_at": "2026-08-28T16:26:40.972129+00:00",
+    "checked_at": "2026-08-29T03:01:03.174647+00:00",
     "sources": [
       {
         "type": "official_game_description",
@@ -953,7 +1289,7 @@
       {
         "source_type": "official_game_description",
         "source_url": "https://www.roblox.com/games/81245647985532/1-Speed-Keyboard-Escape",
-        "latest_published_at": "2026-08-28T16:24:56.4877169Z",
+        "latest_published_at": "2026-08-28T20:21:53.6046393Z",
         "status": "rejected",
         "result_code": "NO_NEW_CONTENT",
         "available": true,
@@ -1061,293 +1397,6 @@
     }
   },
   {
-    "game": "Brookhaven RP",
-    "universe_id": 1686885941,
-    "roblox_name": "Brookhaven 🏡RP",
-    "description": "A place to play with like minded people and roleplay. Own and live in amazing houses, drive cool vehicles and explore the city. Be whoever you want to be in Brookhaven RP.\n\nLatest Update:\n🔐 Prison Landmark - New roleplay! Warden tear gas launcher and pistol, and prisoner bus.\n👮‍♂️ Prison Tools - New handcuffs, shank, and scanner wand!\n🚨 Prison Props - New alarm, spotlight, security scanner, yard props, and more!\n\nThanks for playing! \n\nPrivate Server Benefits:\n· Prop Saving\n· Server-Wide Music\n· Server-Wide Announcements\n· Remove or Lock Props\n· Check Prop Owners\n· Set Players as Admins\n· Kick / Temp Ban Players\n· Set Day of the Week\n· Set Time by the Hour\n· Change Weather and Lighting\n· Speed up Time\n· Server Theme Controls\n· No Wait Time for Changing House \n· Spawn Up to Three Vehicles\n· Prop Limit Increased\n· Freecam for PC users (Shift+P)",
-    "updated": "2026-08-28T13:31:14.4429782Z",
-    "created": "2020-04-21T02:15:38.373Z",
-    "creator": {
-      "id": 3104358,
-      "name": "Brookhaven by Voldex",
-      "type": "Group",
-      "isRNVAccount": false,
-      "hasVerifiedBadge": false
-    },
-    "description_changed": false,
-    "added_lines": [],
-    "keywords": [
-      "NEW",
-      "UPDATE",
-      "VEHICLES"
-    ],
-    "score": 0,
-    "confidence": "low",
-    "facts": [],
-    "description_facts": [
-      {
-        "text": "🔐 Prison Landmark - New roleplay! Warden tear gas launcher and pistol, and prisoner bus.",
-        "kind": "locations",
-        "value": 8,
-        "specific": true,
-        "reason": "Строка называет конкретное игровое содержимое",
-        "summary_ru": "В игре появилась новая локация — тюрьма. Для ролевых сцен добавили пусковую установку со слезоточивым газом, пистолет и тюремный автобус.",
-        "is_new_line": false
-      },
-      {
-        "text": "👮‍♂️ Prison Tools - New handcuffs, shank, and scanner wand!",
-        "kind": "items",
-        "value": 7,
-        "specific": true,
-        "reason": "Строка называет конкретное игровое содержимое",
-        "summary_ru": "В игру добавили сканирующую палочку, наручники и заточку.",
-        "is_new_line": false
-      },
-      {
-        "text": "🚨 Prison Props - New alarm, spotlight, security scanner, yard props, and more!",
-        "kind": "items",
-        "value": 7,
-        "specific": true,
-        "reason": "Строка называет конкретное игровое содержимое",
-        "summary_ru": "В игру добавили сканер безопасности, прожектор, сигнализацию, реквизит для тюремного двора и тюремный реквизит.",
-        "is_new_line": false
-      },
-      {
-        "text": "· Prop Saving",
-        "kind": "items",
-        "value": 7,
-        "specific": true,
-        "reason": "Строка называет конкретное игровое содержимое",
-        "summary_ru": "Добавили новый реквизит для ролевых сцен.",
-        "is_new_line": false
-      },
-      {
-        "text": "· Remove or Lock Props",
-        "kind": "items",
-        "value": 7,
-        "specific": true,
-        "reason": "Строка называет конкретное игровое содержимое",
-        "summary_ru": "Добавили новый реквизит для ролевых сцен.",
-        "is_new_line": false
-      },
-      {
-        "text": "· Check Prop Owners",
-        "kind": "items",
-        "value": 7,
-        "specific": true,
-        "reason": "Строка называет конкретное игровое содержимое",
-        "summary_ru": "Добавили новый реквизит для ролевых сцен.",
-        "is_new_line": false
-      },
-      {
-        "text": "· Prop Limit Increased",
-        "kind": "items",
-        "value": 7,
-        "specific": true,
-        "reason": "Строка называет конкретное игровое содержимое",
-        "summary_ru": "Добавили новый реквизит для ролевых сцен.",
-        "is_new_line": false
-      },
-      {
-        "text": "Latest Update:",
-        "kind": "update",
-        "value": 2,
-        "specific": false,
-        "reason": "Упоминание обновления без конкретики",
-        "summary_ru": "В игре вышло новое обновление.",
-        "is_new_line": false
-      }
-    ],
-    "pool": "active",
-    "checked_at": "2026-08-28T16:26:40.975809+00:00",
-    "sources": [
-      {
-        "type": "official_game_description",
-        "verified": true
-      },
-      {
-        "type": "official_roblox_group",
-        "verified": true,
-        "group_id": 3104358,
-        "group_name": "Brookhaven by Voldex"
-      }
-    ],
-    "cross_source_confirmations": [],
-    "source_diagnostics": [
-      {
-        "source_type": "official_news_website",
-        "source_url": "https://www.brookhavenrp.com/",
-        "latest_published_at": "2026-08-21",
-        "status": "rejected",
-        "result_code": "ALREADY_USED",
-        "reason": "Публикация уже использовалась в выпуске другого дня.",
-        "available": true,
-        "article_found": true,
-        "date_found": true,
-        "content_found": true,
-        "extraction_success": false,
-        "verification_passed": false,
-        "source_tier": "A",
-        "official": true,
-        "selected": false,
-        "formatted": false,
-        "scheduled": false,
-        "latest_url": "https://www.brookhavenrp.com/posts/brookhaven-update-august-21-2026"
-      },
-      {
-        "source_type": "secondary_gaming_media",
-        "source_url": "https://news.google.com/rss/search?q=%22Brookhaven%20RP%22%20Roblox%20when%3A30d&hl=en-US&gl=US&ceid=US:en",
-        "latest_published_at": null,
-        "status": "rejected",
-        "result_code": "NO_NEW_CONTENT",
-        "reason": "Нет пригодной Tier B новости.",
-        "available": true,
-        "article_found": false,
-        "date_found": false,
-        "content_found": false,
-        "extraction_success": false,
-        "verification_passed": false,
-        "source_tier": "B",
-        "official": false,
-        "selected": false,
-        "formatted": false,
-        "scheduled": false
-      },
-      {
-        "source_type": "official_game_description",
-        "source_url": "https://www.roblox.com/games/4924922222/Brookhaven-RP",
-        "latest_published_at": "2026-08-28T13:31:14.4429782Z",
-        "status": "rejected",
-        "result_code": "NO_NEW_CONTENT",
-        "available": true,
-        "article_found": false,
-        "date_found": true,
-        "content_found": true,
-        "extraction_success": false,
-        "verification_passed": false,
-        "reason": "Нет новой конкретной строки со времени прошлого снимка."
-      },
-      {
-        "source_type": "official_roblox_group",
-        "source_url": "https://www.roblox.com/communities/3104358/Brookhaven-by-Voldex",
-        "latest_published_at": null,
-        "status": "checked",
-        "result_code": "NO_NEW_CONTENT",
-        "available": true,
-        "article_found": false,
-        "date_found": false,
-        "content_found": true,
-        "extraction_success": false,
-        "verification_passed": false,
-        "reason": "Официальная группа подтверждена; датированной новости нет."
-      }
-    ],
-    "official_description_analysis": {
-      "keywords": [
-        "UPDATE",
-        "NEW"
-      ],
-      "news_lines": [
-        "Latest Update:",
-        "🔐 Prison Landmark - New roleplay! Warden tear gas launcher and pistol, and prisoner bus.",
-        "👮‍♂️ Prison Tools - New handcuffs, shank, and scanner wand!",
-        "🚨 Prison Props - New alarm, spotlight, security scanner, yard props, and more!"
-      ]
-    },
-    "source_registry": {
-      "pool": "active",
-      "universe_id": 1686885941,
-      "root_place_id": 4924922222,
-      "roblox_game_url": "https://www.roblox.com/games/4924922222/Brookhaven-RP",
-      "roblox_group_id": 3104358,
-      "roblox_group_name": "Brookhaven by Voldex",
-      "roblox_group_url": "https://www.roblox.com/communities/3104358/Brookhaven-by-Voldex",
-      "news_strategy": "official_news_website",
-      "website": "https://www.brookhavenrp.com/",
-      "news_url": "https://www.brookhavenrp.com/",
-      "discord": null,
-      "youtube": null,
-      "x": null,
-      "roblox_creator_type": null,
-      "roblox_creator_id": null,
-      "roblox_creator_name": null,
-      "roblox_creator_url": null
-    },
-    "official_group": {
-      "id": 3104358,
-      "name": "Brookhaven by Voldex",
-      "expected_name": "Brookhaven by Voldex",
-      "name_matches_registry": true,
-      "description": "Brookhaven originally created by Wolfpaq, now developed by Voldex",
-      "has_verified_badge": false,
-      "news_lines": []
-    },
-    "external_source_diagnostics": [
-      {
-        "source_type": "official_news_website",
-        "source_url": "https://www.brookhavenrp.com/",
-        "latest_published_at": "2026-08-21",
-        "status": "rejected",
-        "result_code": "ALREADY_USED",
-        "reason": "Публикация уже использовалась в выпуске другого дня.",
-        "available": true,
-        "article_found": true,
-        "date_found": true,
-        "content_found": true,
-        "extraction_success": false,
-        "verification_passed": false,
-        "source_tier": "A",
-        "official": true,
-        "selected": false,
-        "formatted": false,
-        "scheduled": false,
-        "latest_url": "https://www.brookhavenrp.com/posts/brookhaven-update-august-21-2026"
-      },
-      {
-        "source_type": "secondary_gaming_media",
-        "source_url": "https://news.google.com/rss/search?q=%22Brookhaven%20RP%22%20Roblox%20when%3A30d&hl=en-US&gl=US&ceid=US:en",
-        "latest_published_at": null,
-        "status": "rejected",
-        "result_code": "NO_NEW_CONTENT",
-        "reason": "Нет пригодной Tier B новости.",
-        "available": true,
-        "article_found": false,
-        "date_found": false,
-        "content_found": false,
-        "extraction_success": false,
-        "verification_passed": false,
-        "source_tier": "B",
-        "official": false,
-        "selected": false,
-        "formatted": false,
-        "scheduled": false
-      }
-    ],
-    "external_source_diagnostic": {
-      "source_type": "secondary_gaming_media",
-      "source_url": "https://news.google.com/rss/search?q=%22Brookhaven%20RP%22%20Roblox%20when%3A30d&hl=en-US&gl=US&ceid=US:en",
-      "latest_published_at": null,
-      "status": "rejected",
-      "result_code": "NO_NEW_CONTENT",
-      "reason": "Нет пригодной Tier B новости.",
-      "available": true,
-      "article_found": false,
-      "date_found": false,
-      "content_found": false,
-      "extraction_success": false,
-      "verification_passed": false,
-      "source_tier": "B",
-      "official": false,
-      "selected": false,
-      "formatted": false,
-      "scheduled": false
-    },
-    "candidate_decision": {
-      "status": "rejected",
-      "reason": "Нет свежего факта с редакционным баллом 5 или выше."
-    }
-  },
-  {
     "game": "Adopt Me!",
     "universe_id": 383310974,
     "roblox_name": "[24H⌛] Adopt Me!",
@@ -1428,7 +1477,7 @@
       }
     ],
     "pool": "active",
-    "checked_at": "2026-08-28T16:26:40.979186+00:00",
+    "checked_at": "2026-08-29T03:01:03.182467+00:00",
     "sources": [
       {
         "type": "official_game_description",
@@ -1692,7 +1741,7 @@
       }
     ],
     "pool": "active",
-    "checked_at": "2026-08-28T16:26:40.980848+00:00",
+    "checked_at": "2026-08-29T03:01:03.184298+00:00",
     "sources": [
       {
         "type": "official_game_description",
@@ -1850,7 +1899,7 @@
     "universe_id": 7326934954,
     "roblox_name": "[🪶] 99 Nights in the Forest 🔦",
     "description": "Build a camp with friends. \n\nSomething is watching you.\n\n99 Nights in the Forest",
-    "updated": "2026-08-22T18:12:19.445Z",
+    "updated": "2026-08-28T23:51:12.2381711Z",
     "created": "2025-03-04T04:46:49.73Z",
     "creator": {
       "id": 6042520,
@@ -1867,7 +1916,7 @@
     "facts": [],
     "description_facts": [],
     "pool": "active",
-    "checked_at": "2026-08-28T16:26:40.981179+00:00",
+    "checked_at": "2026-08-29T03:01:03.184670+00:00",
     "sources": [
       {
         "type": "official_game_description",
@@ -1905,7 +1954,7 @@
       {
         "source_type": "official_game_description",
         "source_url": "https://www.roblox.com/games/79546208627805/99-Nights-in-the-Forest",
-        "latest_published_at": "2026-08-22T18:12:19.445Z",
+        "latest_published_at": "2026-08-28T23:51:12.2381711Z",
         "status": "rejected",
         "result_code": "NO_NEW_CONTENT",
         "available": true,
@@ -2042,7 +2091,7 @@
       }
     ],
     "pool": "active",
-    "checked_at": "2026-08-28T16:26:40.982325+00:00",
+    "checked_at": "2026-08-29T03:01:03.185968+00:00",
     "sources": [
       {
         "type": "official_game_description",
@@ -2190,7 +2239,7 @@
     "universe_id": 4777817887,
     "roblox_name": "Blade Ball",
     "description": "⚡  In this game of focus, timing, and strategy, your skill is tested as a deflectable homing ball hunts players with increasing speed. But there's more than what meets the eye.\n\n🔥  Gain new abilities and upgrade them to compliment your playstyle. Rise through the ranks by mastering your skill, and stand out with a variety of iconic weapon skins and finisher effects.\n\n🏆 Shoot for the leaderboard or play casually! The choice is yours.\n \nCONTROLS:\nBLOCK - F/R1/Tap Screen/Tap UI Button/Left Click\nABILITY - Q/ButtonX/Tap UI Button/Right Click\nSHIFTLOCK - Shift/Button-Y/Tap UI Button\nEMOTE - R/L1/Tap UI Button\n\ntags: minigame, battle game, pvp, multiplayer, abilities, dodgeball, sports, mobile, console, xbox, pc",
-    "updated": "2026-08-23T21:39:04.487Z",
+    "updated": "2026-08-29T01:33:30.777619Z",
     "created": "2023-06-17T00:05:26.103Z",
     "creator": {
       "id": 12836673,
@@ -2231,7 +2280,7 @@
       }
     ],
     "pool": "legacy",
-    "checked_at": "2026-08-28T16:26:40.986456+00:00",
+    "checked_at": "2026-08-29T03:01:03.190718+00:00",
     "sources": [
       {
         "type": "official_game_description",
@@ -2257,7 +2306,7 @@
         "latest_published_at": "2026-08-23T23:00:24+00:00",
         "status": "accepted",
         "result_code": "FOUND_VERIFIED",
-        "reason": "Официальная публикация (4.7 дн.) с датой и игровым содержанием; окно primary_14_day.",
+        "reason": "Официальная публикация (5.2 дн.) с датой и игровым содержанием; окно primary_14_day.",
         "available": true,
         "article_found": true,
         "date_found": true,
@@ -2278,7 +2327,7 @@
         "latest_published_at": "2024-03-23T18:51:42Z",
         "status": "rejected",
         "result_code": "SOURCE_STALE",
-        "reason": "Публикация устарела: 887.9 дн. (аварийный лимит 30).",
+        "reason": "Публикация устарела: 888.3 дн. (аварийный лимит 30).",
         "available": true,
         "article_found": true,
         "date_found": true,
@@ -2314,7 +2363,7 @@
       {
         "source_type": "official_game_description",
         "source_url": "https://www.roblox.com/games/13772394625/Blade-Ball",
-        "latest_published_at": "2026-08-23T21:39:04.487Z",
+        "latest_published_at": "2026-08-29T01:33:30.777619Z",
         "status": "rejected",
         "result_code": "NO_NEW_CONTENT",
         "available": true,
@@ -2383,7 +2432,7 @@
         "latest_published_at": "2026-08-23T23:00:24+00:00",
         "status": "accepted",
         "result_code": "FOUND_VERIFIED",
-        "reason": "Официальная публикация (4.7 дн.) с датой и игровым содержанием; окно primary_14_day.",
+        "reason": "Официальная публикация (5.2 дн.) с датой и игровым содержанием; окно primary_14_day.",
         "available": true,
         "article_found": true,
         "date_found": true,
@@ -2404,7 +2453,7 @@
         "latest_published_at": "2024-03-23T18:51:42Z",
         "status": "rejected",
         "result_code": "SOURCE_STALE",
-        "reason": "Публикация устарела: 887.9 дн. (аварийный лимит 30).",
+        "reason": "Публикация устарела: 888.3 дн. (аварийный лимит 30).",
         "available": true,
         "article_found": true,
         "date_found": true,
@@ -2461,7 +2510,7 @@
       "url": "https://www.youtube.com/watch?v=5E4tYNtntFc",
       "title": "BEST SWORDS IN BLADE BALL! 🔥 - Blade Ball Update Showcase",
       "published_at": "2026-08-23T23:00:24+00:00",
-      "age_days": 4.726586888680556,
+      "age_days": 5.167122071307871,
       "source_tier": "A",
       "publisher": null,
       "freshness_window": "primary_14_day"
@@ -2493,7 +2542,7 @@
     "facts": [],
     "description_facts": [],
     "pool": "legacy",
-    "checked_at": "2026-08-28T16:26:40.983585+00:00",
+    "checked_at": "2026-08-29T03:01:03.187404+00:00",
     "sources": [
       {
         "type": "official_game_description",
@@ -2641,7 +2690,7 @@
     "universe_id": 5203828273,
     "roblox_name": "[🌴] Dress To Impress",
     "description": "Create stunning outfits 👗💖⭐, and strut the runway to show off your unique style. Collaborate, compete, and explore a world of glamour with friends!\n\n⭐ Are you ready to be the TOP MODEL?\n👗 NEW ITEMS! Check them out.\n🍿 Vote for your favorite outfits!\n💃 Use poses on the runway to show off your outfit!\n\nFind more about Dress To Impress by joining our community.\nhttps://www.roblox.com/communities/17264167/Dress-To-Impress-Group#!/about",
-    "updated": "2026-08-28T01:53:18.176556Z",
+    "updated": "2026-08-29T02:16:07.3013431Z",
     "created": "2023-10-18T09:11:36.563Z",
     "creator": {
       "id": 17264167,
@@ -2698,7 +2747,7 @@
       }
     ],
     "pool": "legacy",
-    "checked_at": "2026-08-28T16:26:40.984589+00:00",
+    "checked_at": "2026-08-29T03:01:03.188560+00:00",
     "sources": [
       {
         "type": "official_game_description",
@@ -2716,22 +2765,21 @@
       {
         "source_type": "official_youtube_feed",
         "source_url": "https://www.youtube.com/feeds/videos.xml?channel_id=UCCVWvf_e5oRb6RfXyluR7UA",
-        "latest_published_at": "2026-07-02T15:00:06+00:00",
+        "latest_published_at": null,
         "status": "rejected",
-        "result_code": "SOURCE_STALE",
-        "reason": "Публикация устарела: 57.1 дн. (аварийный лимит 30).",
-        "available": true,
-        "article_found": true,
-        "date_found": true,
-        "content_found": true,
+        "result_code": "SOURCE_UNAVAILABLE",
+        "reason": "Источник недоступен: 404 Client Error: Not Found for url: https://www.youtube.com/feeds/videos.xml?channel_id=UCCVWvf_e5oRb6RfXyluR7UA",
+        "available": false,
+        "article_found": false,
+        "date_found": false,
+        "content_found": false,
         "extraction_success": false,
         "verification_passed": false,
         "source_tier": "A",
         "official": true,
         "selected": false,
         "formatted": false,
-        "scheduled": false,
-        "latest_url": "https://www.youtube.com/watch?v=5Zfy9QW4s5A"
+        "scheduled": false
       },
       {
         "source_type": "secondary_gaming_media",
@@ -2755,7 +2803,7 @@
       {
         "source_type": "official_game_description",
         "source_url": "https://www.roblox.com/games/15101393044/Dress-To-Impress",
-        "latest_published_at": "2026-08-28T01:53:18.176556Z",
+        "latest_published_at": "2026-08-29T02:16:07.3013431Z",
         "status": "rejected",
         "result_code": "NO_NEW_CONTENT",
         "available": true,
@@ -2825,22 +2873,21 @@
       {
         "source_type": "official_youtube_feed",
         "source_url": "https://www.youtube.com/feeds/videos.xml?channel_id=UCCVWvf_e5oRb6RfXyluR7UA",
-        "latest_published_at": "2026-07-02T15:00:06+00:00",
+        "latest_published_at": null,
         "status": "rejected",
-        "result_code": "SOURCE_STALE",
-        "reason": "Публикация устарела: 57.1 дн. (аварийный лимит 30).",
-        "available": true,
-        "article_found": true,
-        "date_found": true,
-        "content_found": true,
+        "result_code": "SOURCE_UNAVAILABLE",
+        "reason": "Источник недоступен: 404 Client Error: Not Found for url: https://www.youtube.com/feeds/videos.xml?channel_id=UCCVWvf_e5oRb6RfXyluR7UA",
+        "available": false,
+        "article_found": false,
+        "date_found": false,
+        "content_found": false,
         "extraction_success": false,
         "verification_passed": false,
         "source_tier": "A",
         "official": true,
         "selected": false,
         "formatted": false,
-        "scheduled": false,
-        "latest_url": "https://www.youtube.com/watch?v=5Zfy9QW4s5A"
+        "scheduled": false
       },
       {
         "source_type": "secondary_gaming_media",
@@ -2929,7 +2976,7 @@
       }
     ],
     "pool": "legacy",
-    "checked_at": "2026-08-28T16:26:40.984877+00:00",
+    "checked_at": "2026-08-29T03:01:03.188916+00:00",
     "sources": [
       {
         "type": "official_game_description",

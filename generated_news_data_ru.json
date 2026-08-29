@@ -1,6 +1,13 @@
 {
   "items": [
     {
+      "game": "Brookhaven RP",
+      "emoji": "🏡",
+      "score": 10,
+      "text": "🚗 В игру добавили новый транспорт.\n\n🧰 Добавили новый реквизит для ролевых сцен.",
+      "external_article_url": "https://www.brookhavenrp.com/posts/brookhaven-update-august-28-2026"
+    },
+    {
       "game": "Steal An Egg",
       "emoji": "🥚",
       "score": 6,
@@ -13,23 +20,25 @@
       "score": 6,
       "text": "По данным Dexerto, в Murder Mystery 2 вышел материал «Roblox MM2 values list: Murder Mystery 2 weapon, knife & pet trade values».",
       "external_article_url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxOQXJhRzNyOHlLUGNJbUdPR3Nsc0xNdGtxNVdiZXhZNVN3bGVibXYtMmpiUUtIcEFXT2RLc2ZRaUFkaERyZjFYVTlFNnRFUGVjM2FJeTRYeTJHbVJVMWk5ZjFXNjkzdVVhQ2hwOWo5U2FnZFd5cmpJNlRfR0VRLXBycnJGeGZKS2xDRzFfRzBydXlDSVZFTVpmTTJsVFVhQ1NtM1VjWGVB?oc=5"
-    },
-    {
-      "game": "Blade Ball",
-      "emoji": "⚔️",
-      "score": 6,
-      "text": "В Blade Ball вышло обновление «BEST SWORDS IN BLADE BALL! 🔥 - Blade Ball Update Showcase».",
-      "external_article_url": "https://www.youtube.com/watch?v=5E4tYNtntFc"
     }
   ],
   "pipeline": [
+    {
+      "game": "Brookhaven RP",
+      "candidate": true,
+      "verified": true,
+      "selected": true,
+      "formatted_ru": true,
+      "scheduled": true,
+      "reason": "вошёл в утренний выпуск"
+    },
     {
       "game": "Steal An Egg",
       "candidate": true,
       "verified": true,
       "selected": true,
       "formatted_ru": true,
-      "scheduled": false,
+      "scheduled": true,
       "reason": "вошёл в утренний выпуск"
     },
     {
@@ -38,7 +47,7 @@
       "verified": true,
       "selected": true,
       "formatted_ru": true,
-      "scheduled": false,
+      "scheduled": true,
       "reason": "вошёл в утренний выпуск"
     },
     {
@@ -67,15 +76,6 @@
       "formatted_ru": false,
       "scheduled": false,
       "reason": "Нет пригодной Tier B новости; Нет новой конкретной строки со времени прошлого снимка"
-    },
-    {
-      "game": "Brookhaven RP",
-      "candidate": true,
-      "verified": false,
-      "selected": false,
-      "formatted_ru": false,
-      "scheduled": false,
-      "reason": "Публикация уже использовалась в выпуске другого дня; Нет пригодной Tier B новости; Нет новой конкретной строки со времени прошлого снимка"
     },
     {
       "game": "Adopt Me!",
@@ -117,10 +117,10 @@
       "game": "Blade Ball",
       "candidate": true,
       "verified": true,
-      "selected": true,
+      "selected": false,
       "formatted_ru": true,
       "scheduled": false,
-      "reason": "вошёл в утренний выпуск"
+      "reason": "ниже трёх более сильных разных новостей"
     },
     {
       "game": "Grow a Garden",
@@ -138,7 +138,7 @@
       "selected": false,
       "formatted_ru": false,
       "scheduled": false,
-      "reason": "Публикация устарела: 57.1 дн. (аварийный лимит 30); Нет пригодной Tier B новости; Нет новой конкретной строки со времени прошлого снимка"
+      "reason": "Источник недоступен: 404 Client Error: Not Found for url: https://www.youtube.com/feeds/videos.xml?channel_id=UCCVWvf_e5oRb6RfXyluR7UA; Нет пригодной Tier B новости; Нет новой конкретной строки со времени прошлого снимка"
     },
     {
       "game": "Pet Simulator 99",
@@ -152,9 +152,9 @@
   ],
   "summary": {
     "found": 14,
-    "verified": 4,
+    "verified": 5,
     "selected": 3,
-    "formatted": 4,
-    "scheduled": 0
+    "formatted": 5,
+    "scheduled": 3
   }
 }

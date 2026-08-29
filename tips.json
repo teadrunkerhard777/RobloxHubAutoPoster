@@ -516,7 +516,7 @@
     "text": "Дом можно использовать не только для красоты: продуманная планировка делает ролевые сцены удобнее.",
     "source": "verified_core_mechanic",
     "reviewed_at": "2026-08-14",
-    "used": false,
+    "used": true,
     "category": "building"
   },
   {
@@ -666,7 +666,7 @@
     "text": "В командных матчах 2v2–5v5 держись достаточно близко к союзникам, чтобы вы могли помогать друг другу.",
     "source": "verified_core_mechanic",
     "reviewed_at": "2026-08-14",
-    "used": false,
+    "used": true,
     "category": "social"
   },
   {
@@ -936,7 +936,7 @@
     "text": "Слишком много аксессуаров иногда мешает идее — убирай детали, которые не помогают теме.",
     "source": "verified_core_mechanic",
     "reviewed_at": "2026-08-14",
-    "used": false,
+    "used": true,
     "category": "strategy"
   },
   {
@@ -1563,7 +1563,7 @@
     "text": "На старте выбирай яйцо, которое реально можешь безопасно унести, а не самое редкое из видимых.",
     "source": "agreed_editorial_list",
     "reviewed_at": "2026-08-28",
-    "used": false
+    "used": true
   },
   {
     "id": 157,
@@ -1706,7 +1706,7 @@
     "text": "Запоминай расположение основных помещений — это экономит время во время срочных событий.",
     "source": "agreed_editorial_list",
     "reviewed_at": "2026-08-28",
-    "used": false
+    "used": true
   },
   {
     "id": 170,
@@ -1717,7 +1717,7 @@
     "text": "Придерживайся одного порядка проверки: внешний вид → фото → CCTV.",
     "source": "agreed_editorial_list",
     "reviewed_at": "2026-08-28",
-    "used": false
+    "used": true
   },
   {
     "id": 171,
@@ -1761,7 +1761,7 @@
     "text": "Не спеши во время тревоги: одна неправильная проверка может создать больше проблем, чем несколько лишних секунд.",
     "source": "agreed_editorial_list",
     "reviewed_at": "2026-08-28",
-    "used": false
+    "used": true
   },
   {
     "id": 175,
@@ -1871,7 +1871,7 @@
     "text": "Перед Rebirth проверь, что готов потерять текущий прогресс ради постоянного множителя.",
     "source": "agreed_editorial_list",
     "reviewed_at": "2026-08-28",
-    "used": false
+    "used": true
   },
   {
     "id": 185,
