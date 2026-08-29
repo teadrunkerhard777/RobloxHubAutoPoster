@@ -904,9 +904,9 @@
     "rubric": "Brawl Stars: совет дня",
     "source": "verified_brawl_fallback",
     "text": "💥💥💥 НОВОСТИ BRAWL STARS 💥💥💥\n\n🎯 СОВЕТ ДНЯ\n\nНе стой слишком близко к союзникам против бойцов с уроном по области. Разнесённая позиция усложняет сопернику попадание по всей команде и оставляет больше пространства для ответной атаки.\n\n⭐ Roblox Hub\n\n#BrawlStars #ПолезноЗнать #RobloxHub",
-    "status": "pending",
-    "published_at": null,
-    "attempts": 0,
+    "status": "published",
+    "published_at": "2026-08-29T12:00:41.867506+05:00",
+    "attempts": 1,
     "last_error": null,
     "image_path": "assets/news_headers/brawl_news_header.png"
   },
