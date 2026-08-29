@@ -111,7 +111,7 @@
       }
     ],
     "pool": "active",
-    "checked_at": "2026-08-29T07:47:01.924571+00:00",
+    "checked_at": "2026-08-29T10:55:33.384594+00:00",
     "sources": [
       {
         "type": "official_game_description",
@@ -137,7 +137,7 @@
         "latest_published_at": "2026-08-28",
         "status": "accepted",
         "result_code": "FOUND_VERIFIED",
-        "reason": "Официальная публикация (1.3 дн.) с датой и игровым содержанием; окно primary_14_day.",
+        "reason": "Официальная публикация (1.5 дн.) с датой и игровым содержанием; окно primary_14_day.",
         "available": true,
         "article_found": true,
         "date_found": true,
@@ -247,7 +247,7 @@
         "latest_published_at": "2026-08-28",
         "status": "accepted",
         "result_code": "FOUND_VERIFIED",
-        "reason": "Официальная публикация (1.3 дн.) с датой и игровым содержанием; окно primary_14_day.",
+        "reason": "Официальная публикация (1.5 дн.) с датой и игровым содержанием; окно primary_14_day.",
         "available": true,
         "article_found": true,
         "date_found": true,
@@ -305,7 +305,7 @@
       "url": "https://www.brookhavenrp.com/posts/brookhaven-update-august-28-2026",
       "title": "Brookhaven Update August 28, 2026: Lavender Luxury",
       "published_at": "2026-08-28",
-      "age_days": 1.3243293025,
+      "age_days": 1.4552494403703702,
       "source_tier": "A",
       "publisher": null,
       "freshness_window": "primary_14_day"
@@ -362,7 +362,7 @@
       }
     ],
     "pool": "active",
-    "checked_at": "2026-08-29T07:47:01.926936+00:00",
+    "checked_at": "2026-08-29T10:55:33.387477+00:00",
     "sources": [
       {
         "type": "official_game_description",
@@ -388,7 +388,7 @@
         "latest_published_at": "2026-08-06T22:02:43Z",
         "status": "accepted",
         "result_code": "FOUND_VERIFIED",
-        "reason": "Официальная публикация (22.4 дн.) с датой и игровым содержанием; окно emergency_30_day.",
+        "reason": "Официальная публикация (22.5 дн.) с датой и игровым содержанием; окно emergency_30_day.",
         "available": true,
         "article_found": true,
         "date_found": true,
@@ -497,7 +497,7 @@
         "latest_published_at": "2026-08-06T22:02:43Z",
         "status": "accepted",
         "result_code": "FOUND_VERIFIED",
-        "reason": "Официальная публикация (22.4 дн.) с датой и игровым содержанием; окно emergency_30_day.",
+        "reason": "Официальная публикация (22.5 дн.) с датой и игровым содержанием; окно emergency_30_day.",
         "available": true,
         "article_found": true,
         "date_found": true,
@@ -557,7 +557,7 @@
       "url": "https://gamerrobot.com/blogs/news/the-balance-log",
       "title": "The Balance Log",
       "published_at": "2026-08-06T22:02:43Z",
-      "age_days": 22.40577606175926,
+      "age_days": 22.53669619962963,
       "source_tier": "A",
       "publisher": null,
       "freshness_window": "emergency_30_day"
@@ -646,7 +646,7 @@
       }
     ],
     "pool": "active",
-    "checked_at": "2026-08-29T07:47:01.918571+00:00",
+    "checked_at": "2026-08-29T10:55:33.376838+00:00",
     "sources": [
       {
         "type": "official_game_description",
@@ -829,7 +829,7 @@
       }
     ],
     "pool": "active",
-    "checked_at": "2026-08-29T07:47:01.919106+00:00",
+    "checked_at": "2026-08-29T10:55:33.377373+00:00",
     "sources": [
       {
         "type": "official_game_description",
@@ -974,7 +974,7 @@
     "universe_id": 9831440772,
     "roblox_name": "[UPD] +1 Speed Keyboard Escape",
     "description": "🎀 Join the XSpeed Games group!\n\n👟 Welcome to +1 Speed Keyboard Escape 👟\n\n⚡ Every step = +1 Speed\n👟 Run, jump, and escape across a world made of keyboard keys\n💪 Train your speed and unlock powerful multipliers\n🌍 Become the FASTEST player in the world\n👥 Race against friends and other players\n🚀 Speed is everything… but one wrong step and you’re back at the start 😱\n\n🎧 ASMR vibes included\nSmooth movement, satisfying keyboard clicks, and relaxing, chill sounds! ✨\n\n🔑 Tags:\nSpeed, Keyboard, ASMR, Obby, Escape, Parkour, Multiplayer, Racing, Competitive, Satisfying, Relaxing, Physics, Ragdoll, Challenge, Speedrun",
-    "updated": "2026-08-29T06:59:30.1503198Z",
+    "updated": "2026-08-29T08:03:42.6126871Z",
     "created": "2026-03-04T03:51:10.46Z",
     "creator": {
       "id": 175742687,
@@ -991,7 +991,7 @@
     "facts": [],
     "description_facts": [],
     "pool": "active",
-    "checked_at": "2026-08-29T07:47:01.920980+00:00",
+    "checked_at": "2026-08-29T10:55:33.379729+00:00",
     "sources": [
       {
         "type": "official_game_description",
@@ -1028,7 +1028,7 @@
       {
         "source_type": "official_game_description",
         "source_url": "https://www.roblox.com/games/81245647985532/1-Speed-Keyboard-Escape",
-        "latest_published_at": "2026-08-29T06:59:30.1503198Z",
+        "latest_published_at": "2026-08-29T08:03:42.6126871Z",
         "status": "rejected",
         "result_code": "NO_NEW_CONTENT",
         "available": true,
@@ -1179,7 +1179,7 @@
       }
     ],
     "pool": "active",
-    "checked_at": "2026-08-29T07:47:01.922186+00:00",
+    "checked_at": "2026-08-29T10:55:33.381310+00:00",
     "sources": [
       {
         "type": "official_game_description",
@@ -1315,9 +1315,9 @@
   {
     "game": "Adopt Me!",
     "universe_id": 383310974,
-    "roblox_name": "[12H⌛] Adopt Me!",
+    "roblox_name": "[6H⌛] Adopt Me!",
     "description": "Adopt and raise 🐶🦄👶, trade and collect legendary pets, build your dream home, and roleplay with friends!\n\n🎒 Backpack Storage & Releaser Refresh! 🎒\n🦴 Store unused items for smoother gameplay!\n🧸 Sort pets and items, trade directly from tabs!\n🍓 Kiwi Kiwi and Strawberry Tortle in Releaser Eggs!\n\nBe FIRST 🏆 To experience new updates by pressing 🔔NOTIFY.\n\nMeet the founders!\nNewFissy - Tech Director\nBethink - Creative Director\n\nFind out more about Uplift Games, our policies and creative attributions:\nhttps://devforum.roblox.com/t/credits/71812",
-    "updated": "2026-08-29T04:00:02.6211869Z",
+    "updated": "2026-08-29T10:00:08.2821918Z",
     "created": "2017-07-14T19:26:21.347Z",
     "creator": {
       "id": 295182,
@@ -1393,7 +1393,7 @@
       }
     ],
     "pool": "active",
-    "checked_at": "2026-08-29T07:47:01.928079+00:00",
+    "checked_at": "2026-08-29T10:55:33.389171+00:00",
     "sources": [
       {
         "type": "official_game_description",
@@ -1452,7 +1452,7 @@
       {
         "source_type": "official_game_description",
         "source_url": "https://www.roblox.com/games/920587237/Adopt-Me",
-        "latest_published_at": "2026-08-29T04:00:02.6211869Z",
+        "latest_published_at": "2026-08-29T10:00:08.2821918Z",
         "status": "rejected",
         "result_code": "NO_NEW_CONTENT",
         "available": true,
@@ -1657,7 +1657,7 @@
       }
     ],
     "pool": "active",
-    "checked_at": "2026-08-29T07:47:01.929600+00:00",
+    "checked_at": "2026-08-29T10:55:33.391278+00:00",
     "sources": [
       {
         "type": "official_game_description",
@@ -1832,7 +1832,7 @@
     "facts": [],
     "description_facts": [],
     "pool": "active",
-    "checked_at": "2026-08-29T07:47:01.929886+00:00",
+    "checked_at": "2026-08-29T10:55:33.391711+00:00",
     "sources": [
       {
         "type": "official_game_description",
@@ -2007,7 +2007,7 @@
       }
     ],
     "pool": "active",
-    "checked_at": "2026-08-29T07:47:01.930896+00:00",
+    "checked_at": "2026-08-29T10:55:33.393241+00:00",
     "sources": [
       {
         "type": "official_game_description",
@@ -2196,7 +2196,7 @@
       }
     ],
     "pool": "legacy",
-    "checked_at": "2026-08-29T07:47:01.934872+00:00",
+    "checked_at": "2026-08-29T10:55:33.398709+00:00",
     "sources": [
       {
         "type": "official_game_description",
@@ -2222,7 +2222,7 @@
         "latest_published_at": "2026-08-23T23:00:24+00:00",
         "status": "accepted",
         "result_code": "FOUND_VERIFIED",
-        "reason": "Официальная публикация (5.4 дн.) с датой и игровым содержанием; окно primary_14_day.",
+        "reason": "Официальная публикация (5.5 дн.) с датой и игровым содержанием; окно primary_14_day.",
         "available": true,
         "article_found": true,
         "date_found": true,
@@ -2243,7 +2243,7 @@
         "latest_published_at": "2024-03-23T18:51:42Z",
         "status": "rejected",
         "result_code": "SOURCE_STALE",
-        "reason": "Публикация устарела: 888.5 дн. (аварийный лимит 30).",
+        "reason": "Публикация устарела: 888.7 дн. (аварийный лимит 30).",
         "available": true,
         "article_found": true,
         "date_found": true,
@@ -2348,7 +2348,7 @@
         "latest_published_at": "2026-08-23T23:00:24+00:00",
         "status": "accepted",
         "result_code": "FOUND_VERIFIED",
-        "reason": "Официальная публикация (5.4 дн.) с датой и игровым содержанием; окно primary_14_day.",
+        "reason": "Официальная публикация (5.5 дн.) с датой и игровым содержанием; окно primary_14_day.",
         "available": true,
         "article_found": true,
         "date_found": true,
@@ -2369,7 +2369,7 @@
         "latest_published_at": "2024-03-23T18:51:42Z",
         "status": "rejected",
         "result_code": "SOURCE_STALE",
-        "reason": "Публикация устарела: 888.5 дн. (аварийный лимит 30).",
+        "reason": "Публикация устарела: 888.7 дн. (аварийный лимит 30).",
         "available": true,
         "article_found": true,
         "date_found": true,
@@ -2426,7 +2426,7 @@
       "url": "https://www.youtube.com/watch?v=5E4tYNtntFc",
       "title": "BEST SWORDS IN BLADE BALL! 🔥 - Blade Ball Update Showcase",
       "published_at": "2026-08-23T23:00:24+00:00",
-      "age_days": 5.365718191388889,
+      "age_days": 5.49663832925926,
       "source_tier": "A",
       "publisher": null,
       "freshness_window": "primary_14_day"
@@ -2439,9 +2439,9 @@
   {
     "game": "Grow a Garden",
     "universe_id": 7436755782,
-    "roblox_name": "[📜] Grow a Garden 🌶️",
+    "roblox_name": "[🌱] Grow a Garden 🌶️",
     "description": "🍅Welcome to Grow a Garden🍅\n\nAre you ready to grow your very own garden? Buy seeds from the shop when they restock, plant them, wait for them to grow, and collect the profits! Flex fruits and finds on friends, and have fun!\n\n[How To Plant]\n• Equip your seed you want to plant!\n• Click in your farm on the brown plots to plant!\n• Wait to see it start growing!\n• After its fully grown, it is time to harvest the goods!\n\nRemember, your garden literally grows while you are offline⭐",
-    "updated": "2026-08-27T01:57:32.055Z",
+    "updated": "2026-08-29T09:22:25.9768233Z",
     "created": "2025-03-25T22:32:09.437Z",
     "creator": {
       "id": 35789249,
@@ -2458,7 +2458,7 @@
     "facts": [],
     "description_facts": [],
     "pool": "legacy",
-    "checked_at": "2026-08-29T07:47:01.932078+00:00",
+    "checked_at": "2026-08-29T10:55:33.394891+00:00",
     "sources": [
       {
         "type": "official_game_description",
@@ -2496,7 +2496,7 @@
       {
         "source_type": "official_game_description",
         "source_url": "https://www.roblox.com/games/126884695634066/Grow-a-Garden",
-        "latest_published_at": "2026-08-27T01:57:32.055Z",
+        "latest_published_at": "2026-08-29T09:22:25.9768233Z",
         "status": "rejected",
         "result_code": "NO_NEW_CONTENT",
         "available": true,
@@ -2606,7 +2606,7 @@
     "universe_id": 5203828273,
     "roblox_name": "[🌴] Dress To Impress",
     "description": "Create stunning outfits 👗💖⭐, and strut the runway to show off your unique style. Collaborate, compete, and explore a world of glamour with friends!\n\n⭐ Are you ready to be the TOP MODEL?\n👗 NEW ITEMS! Check them out.\n🍿 Vote for your favorite outfits!\n💃 Use poses on the runway to show off your outfit!\n\nFind more about Dress To Impress by joining our community.\nhttps://www.roblox.com/communities/17264167/Dress-To-Impress-Group#!/about",
-    "updated": "2026-08-29T02:16:07.3013431Z",
+    "updated": "2026-08-29T09:52:34.2296956Z",
     "created": "2023-10-18T09:11:36.563Z",
     "creator": {
       "id": 17264167,
@@ -2663,7 +2663,7 @@
       }
     ],
     "pool": "legacy",
-    "checked_at": "2026-08-29T07:47:01.933004+00:00",
+    "checked_at": "2026-08-29T10:55:33.396232+00:00",
     "sources": [
       {
         "type": "official_game_description",
@@ -2684,7 +2684,7 @@
         "latest_published_at": "2026-07-02T15:00:06+00:00",
         "status": "rejected",
         "result_code": "SOURCE_STALE",
-        "reason": "Публикация устарела: 57.7 дн. (аварийный лимит 30).",
+        "reason": "Публикация устарела: 57.8 дн. (аварийный лимит 30).",
         "available": true,
         "article_found": true,
         "date_found": true,
@@ -2720,7 +2720,7 @@
       {
         "source_type": "official_game_description",
         "source_url": "https://www.roblox.com/games/15101393044/Dress-To-Impress",
-        "latest_published_at": "2026-08-29T02:16:07.3013431Z",
+        "latest_published_at": "2026-08-29T09:52:34.2296956Z",
         "status": "rejected",
         "result_code": "NO_NEW_CONTENT",
         "available": true,
@@ -2793,7 +2793,7 @@
         "latest_published_at": "2026-07-02T15:00:06+00:00",
         "status": "rejected",
         "result_code": "SOURCE_STALE",
-        "reason": "Публикация устарела: 57.7 дн. (аварийный лимит 30).",
+        "reason": "Публикация устарела: 57.8 дн. (аварийный лимит 30).",
         "available": true,
         "article_found": true,
         "date_found": true,
@@ -2894,7 +2894,7 @@
       }
     ],
     "pool": "legacy",
-    "checked_at": "2026-08-29T07:47:01.933259+00:00",
+    "checked_at": "2026-08-29T10:55:33.396622+00:00",
     "sources": [
       {
         "type": "official_game_description",
