@@ -1,148 +1,5 @@
 [
   {
-    "game": "Adopt Me!",
-    "universe_id": 383310974,
-    "roblox_name": "[🥚] Adopt Me!",
-    "description": "Adopt and raise 🐶🦄👶, trade and collect legendary pets, build your dream home, and roleplay with friends!\n\n🥚 Fairytale Egg! 🥚\n🔮 Hatch 10 new fantastical pets!\n🐁 3in1, Legendary Three Blind Mice!\n🐺 Crimson Cape vs Granny Wolf?!\n\nBe FIRST 🏆 To experience new updates by pressing 🔔NOTIFY.\n\nMeet the founders!\nNewFissy - Tech Director\nBethink - Creative Director\n\nFind out more about Uplift Games, our policies and creative attributions:\nhttps://devforum.roblox.com/t/credits/71812",
-    "updated": "2026-08-29T17:00:02.6423497Z",
-    "created": "2017-07-14T19:26:21.347Z",
-    "creator": {
-      "id": 295182,
-      "name": "Uplift Games",
-      "type": "Group",
-      "isRNVAccount": false,
-      "hasVerifiedBadge": true
-    },
-    "description_changed": true,
-    "added_lines": [
-      "🥚 Fairytale Egg! 🥚",
-      "🔮 Hatch 10 new fantastical pets!",
-      "🐁 3in1, Legendary Three Blind Mice!",
-      "🐺 Crimson Cape vs Granny Wolf?!"
-    ],
-    "keywords": [
-      "NEW",
-      "PETS"
-    ],
-    "score": 10,
-    "confidence": "high",
-    "facts": [
-      {
-        "text": "🥚 Fairytale Egg! 🥚",
-        "kind": "pets",
-        "value": 10,
-        "specific": true,
-        "reason": "Строка называет конкретное игровое содержимое",
-        "summary_ru": "В игре появились новые питомцы.",
-        "is_new_line": true
-      },
-      {
-        "text": "🔮 Hatch 10 new fantastical pets!",
-        "kind": "pets",
-        "value": 10,
-        "specific": true,
-        "reason": "Строка называет конкретное игровое содержимое",
-        "summary_ru": "В игре появились новые питомцы.",
-        "is_new_line": true
-      },
-      {
-        "text": "🐁 3in1, Legendary Three Blind Mice!",
-        "kind": "pets",
-        "value": 10,
-        "specific": true,
-        "reason": "Строка называет конкретное игровое содержимое",
-        "summary_ru": "В игре появились новые питомцы.",
-        "is_new_line": true
-      }
-    ],
-    "description_facts": [
-      {
-        "text": "🥚 Fairytale Egg! 🥚",
-        "kind": "pets",
-        "value": 10,
-        "specific": true,
-        "reason": "Строка называет конкретное игровое содержимое",
-        "summary_ru": "В игре появились новые питомцы.",
-        "is_new_line": true
-      },
-      {
-        "text": "🔮 Hatch 10 new fantastical pets!",
-        "kind": "pets",
-        "value": 10,
-        "specific": true,
-        "reason": "Строка называет конкретное игровое содержимое",
-        "summary_ru": "В игре появились новые питомцы.",
-        "is_new_line": true
-      },
-      {
-        "text": "🐁 3in1, Legendary Three Blind Mice!",
-        "kind": "pets",
-        "value": 10,
-        "specific": true,
-        "reason": "Строка называет конкретное игровое содержимое",
-        "summary_ru": "В игре появились новые питомцы.",
-        "is_new_line": true
-      },
-      {
-        "text": "Adopt and raise 🐶🦄👶, trade and collect legendary pets, build your dream home, and roleplay with friends!",
-        "kind": "pets",
-        "value": 8,
-        "specific": true,
-        "reason": "Строка называет конкретное игровое содержимое",
-        "summary_ru": "В игре появились новые питомцы.",
-        "is_new_line": false
-      },
-      {
-        "text": "Be FIRST 🏆 To experience new updates by pressing 🔔NOTIFY.",
-        "kind": "update",
-        "value": 2,
-        "specific": false,
-        "reason": "Упоминание обновления без конкретики",
-        "summary_ru": "В игре вышло новое обновление.",
-        "is_new_line": false
-      }
-    ],
-    "pool": "active",
-    "checked_at": "2026-08-30T03:01:03.929529+00:00"
-  },
-  {
-    "game": "Blox Fruits",
-    "universe_id": 994732206,
-    "roblox_name": "Blox Fruits",
-    "description": "Welcome to Blox Fruits! Become a master swordsman or a powerful blox fruit user as you train to become the strongest player to ever live. You can choose to fight against tough enemies or have powerful boss battles while sailing across the ocean to find hidden secrets. \n\nCurrent level cap: 2800\nCurrent fruits in the game:\nRocket, Spin, Blade, Spring, Bomb, Smoke, Spike, Flame, Ice, Sand, Dark, Eagle, Diamond, Light, Rubber, Ghost, Magma, Quake, Buddha, Love, Creation, Spider, Sound, Phoenix, Portal, Lightning, Pain, Blizzard, Gravity, Mammoth, T-Rex, Dough, Shadow, Venom, Gas, Spirit, Tiger, Yeti, Kitsune, Control, and Dragon\n\nFAQ:\n-Fruits spawn in the map every hour / despawn after 20 mins\n-You can buy fruits from the Blox Fruits Dealer. He restocks random fruits every 4 hours\n-More info in the group description\n\nDo not exploit, our auto-detection will catch you and we do not appeal our bans.",
-    "updated": "2026-08-29T22:29:25.1333687Z",
-    "created": "2019-01-16T03:29:19.433Z",
-    "creator": {
-      "id": 4372130,
-      "name": "Gamer Robot Inc",
-      "type": "Group",
-      "isRNVAccount": false,
-      "hasVerifiedBadge": true
-    },
-    "description_changed": true,
-    "added_lines": [],
-    "keywords": [
-      "BOSS",
-      "MAP"
-    ],
-    "score": 1,
-    "confidence": "low",
-    "facts": [],
-    "description_facts": [
-      {
-        "text": "-Fruits spawn in the map every hour / despawn after 20 mins",
-        "kind": "locations",
-        "value": 8,
-        "specific": true,
-        "reason": "Строка называет конкретное игровое содержимое",
-        "summary_ru": "В игре появилась новая локация.",
-        "is_new_line": false
-      }
-    ],
-    "pool": "active",
-    "checked_at": "2026-08-30T03:01:03.927850+00:00"
-  },
-  {
     "game": "Steal An Egg",
     "universe_id": 10563114921,
     "roblox_name": "Steal An Egg",
@@ -221,7 +78,7 @@
       }
     ],
     "pool": "active",
-    "checked_at": "2026-08-30T03:01:03.917598+00:00"
+    "checked_at": "2026-08-30T09:50:09.059846+00:00"
   },
   {
     "game": "Animal Hospital (Anomaly)",
@@ -255,7 +112,7 @@
       }
     ],
     "pool": "active",
-    "checked_at": "2026-08-30T03:01:03.918131+00:00"
+    "checked_at": "2026-08-30T09:50:09.060383+00:00"
   },
   {
     "game": "+1 Speed Keyboard Escape",
@@ -279,7 +136,7 @@
     "facts": [],
     "description_facts": [],
     "pool": "active",
-    "checked_at": "2026-08-30T03:01:03.920425+00:00"
+    "checked_at": "2026-08-30T09:50:09.062719+00:00"
   },
   {
     "game": "Murder Mystery 2",
@@ -325,14 +182,14 @@
       }
     ],
     "pool": "active",
-    "checked_at": "2026-08-30T03:01:03.921985+00:00"
+    "checked_at": "2026-08-30T09:50:09.064296+00:00"
   },
   {
     "game": "Brookhaven RP",
     "universe_id": 1686885941,
     "roblox_name": "Brookhaven 🏡RP",
     "description": "A place to play with like minded people and roleplay. Own and live in amazing houses, drive cool vehicles and explore the city. Be whoever you want to be in Brookhaven RP.\n\nLatest Update:\n📚 Library House - New free home!\n💜 Lavender Luxury - New premium home and a convertible car!\n✨ Lavender Props - 7 new props to decorate with!\n\nThanks for playing! \n\nPrivate Server Benefits:\n· Prop Saving\n· Server-Wide Music\n· Server-Wide Announcements\n· Remove or Lock Props\n· Check Prop Owners\n· Set Players as Admins\n· Kick / Temp Ban Players\n· Set Day of the Week\n· Set Time by the Hour\n· Change Weather and Lighting\n· Speed up Time\n· Server Theme Controls\n· No Wait Time for Changing House \n· Spawn Up to Three Vehicles\n· Prop Limit Increased\n· Freecam for PC users (Shift+P)",
-    "updated": "2026-08-28T19:06:16.2670249Z",
+    "updated": "2026-08-28T19:06:16.267Z",
     "created": "2020-04-21T02:15:38.373Z",
     "creator": {
       "id": 3104358,
@@ -417,7 +274,117 @@
       }
     ],
     "pool": "active",
-    "checked_at": "2026-08-30T03:01:03.925184+00:00"
+    "checked_at": "2026-08-30T09:50:09.068384+00:00"
+  },
+  {
+    "game": "Blox Fruits",
+    "universe_id": 994732206,
+    "roblox_name": "Blox Fruits",
+    "description": "Welcome to Blox Fruits! Become a master swordsman or a powerful blox fruit user as you train to become the strongest player to ever live. You can choose to fight against tough enemies or have powerful boss battles while sailing across the ocean to find hidden secrets. \n\nCurrent level cap: 2800\nCurrent fruits in the game:\nRocket, Spin, Blade, Spring, Bomb, Smoke, Spike, Flame, Ice, Sand, Dark, Eagle, Diamond, Light, Rubber, Ghost, Magma, Quake, Buddha, Love, Creation, Spider, Sound, Phoenix, Portal, Lightning, Pain, Blizzard, Gravity, Mammoth, T-Rex, Dough, Shadow, Venom, Gas, Spirit, Tiger, Yeti, Kitsune, Control, and Dragon\n\nFAQ:\n-Fruits spawn in the map every hour / despawn after 20 mins\n-You can buy fruits from the Blox Fruits Dealer. He restocks random fruits every 4 hours\n-More info in the group description\n\nDo not exploit, our auto-detection will catch you and we do not appeal our bans.",
+    "updated": "2026-08-29T22:29:25.1333687Z",
+    "created": "2019-01-16T03:29:19.433Z",
+    "creator": {
+      "id": 4372130,
+      "name": "Gamer Robot Inc",
+      "type": "Group",
+      "isRNVAccount": false,
+      "hasVerifiedBadge": true
+    },
+    "description_changed": false,
+    "added_lines": [],
+    "keywords": [
+      "BOSS",
+      "MAP"
+    ],
+    "score": 0,
+    "confidence": "low",
+    "facts": [],
+    "description_facts": [
+      {
+        "text": "-Fruits spawn in the map every hour / despawn after 20 mins",
+        "kind": "locations",
+        "value": 8,
+        "specific": true,
+        "reason": "Строка называет конкретное игровое содержимое",
+        "summary_ru": "В игре появилась новая локация.",
+        "is_new_line": false
+      }
+    ],
+    "pool": "active",
+    "checked_at": "2026-08-30T09:50:09.071157+00:00"
+  },
+  {
+    "game": "Adopt Me!",
+    "universe_id": 383310974,
+    "roblox_name": "[🥚] Adopt Me!",
+    "description": "Adopt and raise 🐶🦄👶, trade and collect legendary pets, build your dream home, and roleplay with friends!\n\n🥚 Fairytale Egg! 🥚\n🔮 Hatch 10 new fantastical pets!\n🐁 3in1, Legendary Three Blind Mice!\n🐺 Crimson Cape vs Granny Wolf?!\n\nBe FIRST 🏆 To experience new updates by pressing 🔔NOTIFY.\n\nMeet the founders!\nNewFissy - Tech Director\nBethink - Creative Director\n\nFind out more about Uplift Games, our policies and creative attributions:\nhttps://devforum.roblox.com/t/credits/71812",
+    "updated": "2026-08-29T17:00:02.6423497Z",
+    "created": "2017-07-14T19:26:21.347Z",
+    "creator": {
+      "id": 295182,
+      "name": "Uplift Games",
+      "type": "Group",
+      "isRNVAccount": false,
+      "hasVerifiedBadge": true
+    },
+    "description_changed": false,
+    "added_lines": [],
+    "keywords": [
+      "NEW",
+      "PETS"
+    ],
+    "score": 0,
+    "confidence": "low",
+    "facts": [],
+    "description_facts": [
+      {
+        "text": "Adopt and raise 🐶🦄👶, trade and collect legendary pets, build your dream home, and roleplay with friends!",
+        "kind": "pets",
+        "value": 8,
+        "specific": true,
+        "reason": "Строка называет конкретное игровое содержимое",
+        "summary_ru": "В игре появились новые питомцы.",
+        "is_new_line": false
+      },
+      {
+        "text": "🥚 Fairytale Egg! 🥚",
+        "kind": "pets",
+        "value": 8,
+        "specific": true,
+        "reason": "Строка называет конкретное игровое содержимое",
+        "summary_ru": "В игре появились новые питомцы.",
+        "is_new_line": false
+      },
+      {
+        "text": "🔮 Hatch 10 new fantastical pets!",
+        "kind": "pets",
+        "value": 8,
+        "specific": true,
+        "reason": "Строка называет конкретное игровое содержимое",
+        "summary_ru": "В игре появились новые питомцы.",
+        "is_new_line": false
+      },
+      {
+        "text": "🐁 3in1, Legendary Three Blind Mice!",
+        "kind": "pets",
+        "value": 8,
+        "specific": true,
+        "reason": "Строка называет конкретное игровое содержимое",
+        "summary_ru": "В игре появились новые питомцы.",
+        "is_new_line": false
+      },
+      {
+        "text": "Be FIRST 🏆 To experience new updates by pressing 🔔NOTIFY.",
+        "kind": "update",
+        "value": 2,
+        "specific": false,
+        "reason": "Упоминание обновления без конкретики",
+        "summary_ru": "В игре вышло новое обновление.",
+        "is_new_line": false
+      }
+    ],
+    "pool": "active",
+    "checked_at": "2026-08-30T09:50:09.072835+00:00"
   },
   {
     "game": "RIVALS",
@@ -484,7 +451,7 @@
       }
     ],
     "pool": "active",
-    "checked_at": "2026-08-30T03:01:03.931717+00:00"
+    "checked_at": "2026-08-30T09:50:09.075114+00:00"
   },
   {
     "game": "99 Nights in the Forest",
@@ -508,7 +475,7 @@
     "facts": [],
     "description_facts": [],
     "pool": "active",
-    "checked_at": "2026-08-30T03:01:03.932156+00:00"
+    "checked_at": "2026-08-30T09:50:09.075556+00:00"
   },
   {
     "game": "Steal a Brainrot",
@@ -542,71 +509,14 @@
       }
     ],
     "pool": "active",
-    "checked_at": "2026-08-30T03:01:03.933729+00:00"
-  },
-  {
-    "game": "Pet Simulator 99",
-    "universe_id": 3317771874,
-    "roblox_name": "🍀 [LUCKY BLOCK] Pet Simulator 99! 🎯",
-    "description": "Create an army of the coolest pets! They will help you get RICH!\n\n✨ Currently 3,000+ pets to collect! 🐾\n\n🧡 Thanks for playing!",
-    "updated": "2026-08-29T21:25:14.0749178Z",
-    "created": "2022-02-05T13:30:02.357Z",
-    "creator": {
-      "id": 3959677,
-      "name": "BIG Games Pets",
-      "type": "Group",
-      "isRNVAccount": false,
-      "hasVerifiedBadge": true
-    },
-    "description_changed": true,
-    "added_lines": [
-      "✨ Currently 3,000+ pets to collect! 🐾"
-    ],
-    "keywords": [
-      "PETS"
-    ],
-    "score": 10,
-    "confidence": "high",
-    "facts": [
-      {
-        "text": "✨ Currently 3,000+ pets to collect! 🐾",
-        "kind": "pets",
-        "value": 10,
-        "specific": true,
-        "reason": "Строка называет конкретное игровое содержимое",
-        "summary_ru": "В игре появились новые питомцы.",
-        "is_new_line": true
-      }
-    ],
-    "description_facts": [
-      {
-        "text": "✨ Currently 3,000+ pets to collect! 🐾",
-        "kind": "pets",
-        "value": 10,
-        "specific": true,
-        "reason": "Строка называет конкретное игровое содержимое",
-        "summary_ru": "В игре появились новые питомцы.",
-        "is_new_line": true
-      },
-      {
-        "text": "Create an army of the coolest pets! They will help you get RICH!",
-        "kind": "pets",
-        "value": 8,
-        "specific": true,
-        "reason": "Строка называет конкретное игровое содержимое",
-        "summary_ru": "В игре появились новые питомцы.",
-        "is_new_line": false
-      }
-    ],
-    "pool": "legacy",
-    "checked_at": "2026-08-30T03:01:03.937180+00:00"
+    "checked_at": "2026-08-30T09:50:09.077115+00:00"
   },
   {
     "game": "Grow a Garden",
     "universe_id": 7436755782,
     "roblox_name": "[🌱] Grow a Garden 🌶️",
     "description": "🍅Welcome to Grow a Garden🍅\n\nAre you ready to grow your very own garden? Buy seeds from the shop when they restock, plant them, wait for them to grow, and collect the profits! Flex fruits and finds on friends, and have fun!\n\n[How To Plant]\n• Equip your seed you want to plant!\n• Click in your farm on the brown plots to plant!\n• Wait to see it start growing!\n• After its fully grown, it is time to harvest the goods!\n\nRemember, your garden literally grows while you are offline⭐",
-    "updated": "2026-08-30T00:59:45.07427Z",
+    "updated": "2026-08-30T03:01:09.0692642Z",
     "created": "2025-03-25T22:32:09.437Z",
     "creator": {
       "id": 35789249,
@@ -623,7 +533,7 @@
     "facts": [],
     "description_facts": [],
     "pool": "legacy",
-    "checked_at": "2026-08-30T03:01:03.935418+00:00"
+    "checked_at": "2026-08-30T09:50:09.078816+00:00"
   },
   {
     "game": "Dress To Impress",
@@ -687,7 +597,52 @@
       }
     ],
     "pool": "legacy",
-    "checked_at": "2026-08-30T03:01:03.936780+00:00"
+    "checked_at": "2026-08-30T09:50:09.080181+00:00"
+  },
+  {
+    "game": "Pet Simulator 99",
+    "universe_id": 3317771874,
+    "roblox_name": "🍀 [LUCKY BLOCK] Pet Simulator 99! 🎯",
+    "description": "Create an army of the coolest pets! They will help you get RICH!\n\n✨ Currently 3,000+ pets to collect! 🐾\n\n🧡 Thanks for playing!",
+    "updated": "2026-08-29T21:25:14.0749178Z",
+    "created": "2022-02-05T13:30:02.357Z",
+    "creator": {
+      "id": 3959677,
+      "name": "BIG Games Pets",
+      "type": "Group",
+      "isRNVAccount": false,
+      "hasVerifiedBadge": true
+    },
+    "description_changed": false,
+    "added_lines": [],
+    "keywords": [
+      "PETS"
+    ],
+    "score": 0,
+    "confidence": "low",
+    "facts": [],
+    "description_facts": [
+      {
+        "text": "Create an army of the coolest pets! They will help you get RICH!",
+        "kind": "pets",
+        "value": 8,
+        "specific": true,
+        "reason": "Строка называет конкретное игровое содержимое",
+        "summary_ru": "В игре появились новые питомцы.",
+        "is_new_line": false
+      },
+      {
+        "text": "✨ Currently 3,000+ pets to collect! 🐾",
+        "kind": "pets",
+        "value": 8,
+        "specific": true,
+        "reason": "Строка называет конкретное игровое содержимое",
+        "summary_ru": "В игре появились новые питомцы.",
+        "is_new_line": false
+      }
+    ],
+    "pool": "legacy",
+    "checked_at": "2026-08-30T09:50:09.080566+00:00"
   },
   {
     "game": "Blade Ball",
@@ -723,6 +678,6 @@
       }
     ],
     "pool": "legacy",
-    "checked_at": "2026-08-30T03:01:03.939297+00:00"
+    "checked_at": "2026-08-30T09:50:09.082733+00:00"
   }
 ]
