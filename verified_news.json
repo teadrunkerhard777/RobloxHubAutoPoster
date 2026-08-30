@@ -1,107 +1,120 @@
 [
   {
-    "game": "Brookhaven RP",
-    "universe_id": 1686885941,
-    "roblox_name": "Brookhaven 🏡RP",
-    "description": "A place to play with like minded people and roleplay. Own and live in amazing houses, drive cool vehicles and explore the city. Be whoever you want to be in Brookhaven RP.\n\nLatest Update:\n📚 Library House - New free home!\n💜 Lavender Luxury - New premium home and a convertible car!\n✨ Lavender Props - 7 new props to decorate with!\n\nThanks for playing! \n\nPrivate Server Benefits:\n· Prop Saving\n· Server-Wide Music\n· Server-Wide Announcements\n· Remove or Lock Props\n· Check Prop Owners\n· Set Players as Admins\n· Kick / Temp Ban Players\n· Set Day of the Week\n· Set Time by the Hour\n· Change Weather and Lighting\n· Speed up Time\n· Server Theme Controls\n· No Wait Time for Changing House \n· Spawn Up to Three Vehicles\n· Prop Limit Increased\n· Freecam for PC users (Shift+P)",
-    "updated": "2026-08-28T19:06:16.2670249Z",
-    "created": "2020-04-21T02:15:38.373Z",
+    "game": "Adopt Me!",
+    "universe_id": 383310974,
+    "roblox_name": "[🥚] Adopt Me!",
+    "description": "Adopt and raise 🐶🦄👶, trade and collect legendary pets, build your dream home, and roleplay with friends!\n\n🥚 Fairytale Egg! 🥚\n🔮 Hatch 10 new fantastical pets!\n🐁 3in1, Legendary Three Blind Mice!\n🐺 Crimson Cape vs Granny Wolf?!\n\nBe FIRST 🏆 To experience new updates by pressing 🔔NOTIFY.\n\nMeet the founders!\nNewFissy - Tech Director\nBethink - Creative Director\n\nFind out more about Uplift Games, our policies and creative attributions:\nhttps://devforum.roblox.com/t/credits/71812",
+    "updated": "2026-08-29T17:00:02.6423497Z",
+    "created": "2017-07-14T19:26:21.347Z",
     "creator": {
-      "id": 3104358,
-      "name": "Brookhaven by Voldex",
+      "id": 295182,
+      "name": "Uplift Games",
       "type": "Group",
       "isRNVAccount": false,
-      "hasVerifiedBadge": false
+      "hasVerifiedBadge": true
     },
-    "description_changed": false,
-    "added_lines": [],
+    "description_changed": true,
+    "added_lines": [
+      "🥚 Fairytale Egg! 🥚",
+      "🔮 Hatch 10 new fantastical pets!",
+      "🐁 3in1, Legendary Three Blind Mice!",
+      "🐺 Crimson Cape vs Granny Wolf?!"
+    ],
     "keywords": [
       "NEW",
-      "UPDATE",
-      "VEHICLES"
+      "PETS"
     ],
-    "score": 8,
+    "score": 10,
     "confidence": "high",
     "facts": [
       {
-        "text": "New vehicle pack convertible car with neon flower tail lights",
-        "summary_ru": "В игру добавили кабриолет с неоновыми задними фонарями в виде цветов.",
-        "kind": "vehicle",
-        "value": 8,
+        "text": "🥚 Fairytale Egg! 🥚",
+        "kind": "pets",
+        "value": 10,
+        "specific": true,
+        "reason": "Строка называет конкретное игровое содержимое",
+        "summary_ru": "В игре появились новые питомцы.",
+        "is_new_line": true
+      },
+      {
+        "text": "🔮 Hatch 10 new fantastical pets!",
+        "kind": "pets",
+        "value": 10,
+        "specific": true,
+        "reason": "Строка называет конкретное игровое содержимое",
+        "summary_ru": "В игре появились новые питомцы.",
+        "is_new_line": true
+      },
+      {
+        "text": "🐁 3in1, Legendary Three Blind Mice!",
+        "kind": "pets",
+        "value": 10,
+        "specific": true,
+        "reason": "Строка называет конкретное игровое содержимое",
+        "summary_ru": "В игре появились новые питомцы.",
+        "is_new_line": true
+      },
+      {
+        "text": "A new egg has appeared in the Gumball machine. Hatch ten new pets to complete your collection. You can also pick up a bundle of 4 Fairytale Eggs for",
+        "summary_ru": "В игре появились новые питомцы.",
+        "kind": "pets",
+        "value": 9,
         "specific": true,
         "reason": "Факт из официальной новостной статьи",
         "is_new_line": true,
-        "source_url": "https://www.brookhavenrp.com/posts/brookhaven-update-august-28-2026"
+        "source_url": "https://www.playadopt.me/news/fairytale-egg"
       },
       {
-        "text": "Brookhaven Update August 28, 2026: Lavender Luxury",
-        "summary_ru": "В Brookhaven RP вышло обновление «Brookhaven Update August 28, 2026: Lavender Luxury».",
+        "text": "Fairytale Egg!",
+        "summary_ru": "В Adopt Me! вышло обновление «Fairytale Egg!».",
         "kind": "official_article",
         "value": 6,
         "specific": true,
         "reason": "Факт из официальной новостной статьи",
         "is_new_line": true,
-        "source_url": "https://www.brookhavenrp.com/posts/brookhaven-update-august-28-2026",
-        "title_is_concrete": false
+        "source_url": "https://www.playadopt.me/news/fairytale-egg",
+        "title_is_concrete": true
       }
     ],
     "description_facts": [
       {
-        "text": "💜 Lavender Luxury - New premium home and a convertible car!",
-        "kind": "vehicle",
+        "text": "🥚 Fairytale Egg! 🥚",
+        "kind": "pets",
+        "value": 10,
+        "specific": true,
+        "reason": "Строка называет конкретное игровое содержимое",
+        "summary_ru": "В игре появились новые питомцы.",
+        "is_new_line": true
+      },
+      {
+        "text": "🔮 Hatch 10 new fantastical pets!",
+        "kind": "pets",
+        "value": 10,
+        "specific": true,
+        "reason": "Строка называет конкретное игровое содержимое",
+        "summary_ru": "В игре появились новые питомцы.",
+        "is_new_line": true
+      },
+      {
+        "text": "🐁 3in1, Legendary Three Blind Mice!",
+        "kind": "pets",
+        "value": 10,
+        "specific": true,
+        "reason": "Строка называет конкретное игровое содержимое",
+        "summary_ru": "В игре появились новые питомцы.",
+        "is_new_line": true
+      },
+      {
+        "text": "Adopt and raise 🐶🦄👶, trade and collect legendary pets, build your dream home, and roleplay with friends!",
+        "kind": "pets",
         "value": 8,
         "specific": true,
         "reason": "Строка называет конкретное игровое содержимое",
-        "summary_ru": "В игру добавили новый транспорт.",
+        "summary_ru": "В игре появились новые питомцы.",
         "is_new_line": false
       },
       {
-        "text": "✨ Lavender Props - 7 new props to decorate with!",
-        "kind": "items",
-        "value": 7,
-        "specific": true,
-        "reason": "Строка называет конкретное игровое содержимое",
-        "summary_ru": "Добавили новый реквизит для ролевых сцен.",
-        "is_new_line": false
-      },
-      {
-        "text": "· Prop Saving",
-        "kind": "items",
-        "value": 7,
-        "specific": true,
-        "reason": "Строка называет конкретное игровое содержимое",
-        "summary_ru": "Добавили новый реквизит для ролевых сцен.",
-        "is_new_line": false
-      },
-      {
-        "text": "· Remove or Lock Props",
-        "kind": "items",
-        "value": 7,
-        "specific": true,
-        "reason": "Строка называет конкретное игровое содержимое",
-        "summary_ru": "Добавили новый реквизит для ролевых сцен.",
-        "is_new_line": false
-      },
-      {
-        "text": "· Check Prop Owners",
-        "kind": "items",
-        "value": 7,
-        "specific": true,
-        "reason": "Строка называет конкретное игровое содержимое",
-        "summary_ru": "Добавили новый реквизит для ролевых сцен.",
-        "is_new_line": false
-      },
-      {
-        "text": "· Prop Limit Increased",
-        "kind": "items",
-        "value": 7,
-        "specific": true,
-        "reason": "Строка называет конкретное игровое содержимое",
-        "summary_ru": "Добавили новый реквизит для ролевых сцен.",
-        "is_new_line": false
-      },
-      {
-        "text": "Latest Update:",
+        "text": "Be FIRST 🏆 To experience new updates by pressing 🔔NOTIFY.",
         "kind": "update",
         "value": 2,
         "specific": false,
@@ -111,7 +124,7 @@
       }
     ],
     "pool": "active",
-    "checked_at": "2026-08-29T10:55:33.384594+00:00",
+    "checked_at": "2026-08-30T03:01:03.929529+00:00",
     "sources": [
       {
         "type": "official_game_description",
@@ -120,24 +133,24 @@
       {
         "type": "official_roblox_group",
         "verified": true,
-        "group_id": 3104358,
-        "group_name": "Brookhaven by Voldex"
+        "group_id": 295182,
+        "group_name": "Uplift Games"
       },
       {
         "type": "official_news_website",
         "verified": true,
-        "url": "https://www.brookhavenrp.com/posts/brookhaven-update-august-28-2026"
+        "url": "https://www.playadopt.me/news/fairytale-egg"
       }
     ],
     "cross_source_confirmations": [],
     "source_diagnostics": [
       {
         "source_type": "official_news_website",
-        "source_url": "https://www.brookhavenrp.com/",
-        "latest_published_at": "2026-08-28",
+        "source_url": "https://www.playadopt.me/news",
+        "latest_published_at": "2026-08-29T16:10:00.000Z",
         "status": "accepted",
         "result_code": "FOUND_VERIFIED",
-        "reason": "Официальная публикация (1.5 дн.) с датой и игровым содержанием; окно primary_14_day.",
+        "reason": "Официальная публикация (0.5 дн.) с датой и игровым содержанием; окно primary_14_day.",
         "available": true,
         "article_found": true,
         "date_found": true,
@@ -149,45 +162,47 @@
         "selected": false,
         "formatted": false,
         "scheduled": false,
-        "latest_url": "https://www.brookhavenrp.com/posts/brookhaven-update-august-28-2026",
+        "latest_url": "https://www.playadopt.me/news/fairytale-egg",
         "freshness_window": "primary_14_day"
       },
       {
         "source_type": "secondary_gaming_media",
-        "source_url": "https://news.google.com/rss/search?q=%22Brookhaven%20RP%22%20Roblox%20when%3A30d&hl=en-US&gl=US&ceid=US:en",
-        "latest_published_at": null,
-        "status": "rejected",
-        "result_code": "NO_NEW_CONTENT",
-        "reason": "Нет пригодной Tier B новости.",
+        "source_url": "https://news.google.com/rss/search?q=%22Adopt%20Me%21%22%20Roblox%20when%3A30d&hl=en-US&gl=US&ceid=US:en",
+        "latest_published_at": "2026-08-21T15:30:00+00:00",
+        "status": "accepted",
+        "result_code": "FOUND_VERIFIED",
+        "reason": "Tier b публикация (8.5 дн.) с датой и игровым содержанием; окно primary_14_day.",
         "available": true,
-        "article_found": false,
-        "date_found": false,
-        "content_found": false,
-        "extraction_success": false,
-        "verification_passed": false,
+        "article_found": true,
+        "date_found": true,
+        "content_found": true,
+        "extraction_success": true,
+        "verification_passed": true,
         "source_tier": "B",
         "official": false,
         "selected": false,
         "formatted": false,
-        "scheduled": false
+        "scheduled": false,
+        "latest_url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxQSGs1V3ZkWDZ2N1dIR05Ta3BFY2NScEk1cXgtdWs2ZUFGMmlUb3AyUWtfQ3Nsa3VvQjVDSm1mYUxlOHBObVJYQWhJZ0k3X2M0dkhuNF9IS3F1cmdVOFkyc2RFTXF0TVdNV1R4dHBOTjJlNXBJaGtKMmRSYW9seWhsYnJybG5qSlQ2UW4tVzVoUk1wUmIzM3IyN0UtaG1VTkFhXzU4?oc=5",
+        "freshness_window": "primary_14_day"
       },
       {
         "source_type": "official_game_description",
-        "source_url": "https://www.roblox.com/games/4924922222/Brookhaven-RP",
-        "latest_published_at": "2026-08-28T19:06:16.2670249Z",
-        "status": "rejected",
-        "result_code": "NO_NEW_CONTENT",
+        "source_url": "https://www.roblox.com/games/920587237/Adopt-Me",
+        "latest_published_at": "2026-08-29T17:00:02.6423497Z",
+        "status": "accepted",
+        "result_code": "FOUND_VERIFIED",
         "available": true,
-        "article_found": false,
+        "article_found": true,
         "date_found": true,
         "content_found": true,
-        "extraction_success": false,
-        "verification_passed": false,
-        "reason": "Нет новой конкретной строки со времени прошлого снимка."
+        "extraction_success": true,
+        "verification_passed": true,
+        "reason": "Найдена новая конкретная строка описания."
       },
       {
         "source_type": "official_roblox_group",
-        "source_url": "https://www.roblox.com/communities/3104358/Brookhaven-by-Voldex",
+        "source_url": "https://www.roblox.com/communities/295182/Uplift-Games",
         "latest_published_at": null,
         "status": "checked",
         "result_code": "NO_NEW_CONTENT",
@@ -203,51 +218,52 @@
     "official_description_analysis": {
       "keywords": [
         "UPDATE",
-        "NEW"
+        "NEW",
+        "PET",
+        "PETS"
       ],
       "news_lines": [
-        "Latest Update:",
-        "📚 Library House - New free home!",
-        "💜 Lavender Luxury - New premium home and a convertible car!",
-        "✨ Lavender Props - 7 new props to decorate with!"
+        "🥚 Fairytale Egg! 🥚",
+        "🔮 Hatch 10 new fantastical pets!",
+        "🐁 3in1, Legendary Three Blind Mice!"
       ]
     },
     "source_registry": {
       "pool": "active",
-      "universe_id": 1686885941,
-      "root_place_id": 4924922222,
-      "roblox_game_url": "https://www.roblox.com/games/4924922222/Brookhaven-RP",
-      "roblox_group_id": 3104358,
-      "roblox_group_name": "Brookhaven by Voldex",
-      "roblox_group_url": "https://www.roblox.com/communities/3104358/Brookhaven-by-Voldex",
+      "universe_id": 383310974,
+      "root_place_id": 920587237,
+      "roblox_game_url": "https://www.roblox.com/games/920587237/Adopt-Me",
+      "roblox_group_id": 295182,
+      "roblox_group_name": "Uplift Games",
+      "roblox_group_url": "https://www.roblox.com/communities/295182/Uplift-Games",
       "news_strategy": "official_news_website",
-      "website": "https://www.brookhavenrp.com/",
-      "news_url": "https://www.brookhavenrp.com/",
-      "discord": null,
-      "youtube": null,
-      "x": null,
+      "website": "https://www.playadopt.me/",
+      "news_url": "https://www.playadopt.me/news",
+      "discord": "https://discord.com/invite/adoptme",
+      "youtube": "https://www.youtube.com/PlayAdoptMe",
+      "x": "https://x.com/PlayAdoptMe",
       "roblox_creator_type": null,
       "roblox_creator_id": null,
       "roblox_creator_name": null,
       "roblox_creator_url": null
     },
     "official_group": {
-      "id": 3104358,
-      "name": "Brookhaven by Voldex",
-      "expected_name": "Brookhaven by Voldex",
+      "id": 295182,
+      "name": "Uplift Games",
+      "expected_name": "Uplift Games",
       "name_matches_registry": true,
-      "description": "Brookhaven originally created by Wolfpaq, now developed by Voldex",
-      "has_verified_badge": false,
+      "description": "Welcome to Uplift Games, the studio behind Adopt Me!",
+      "has_verified_badge": true,
       "news_lines": []
     },
     "external_source_diagnostics": [
       {
         "source_type": "official_news_website",
-        "source_url": "https://www.brookhavenrp.com/",
-        "latest_published_at": "2026-08-28",
+        "source_url": "https://www.playadopt.me/news",
+        "latest_published_at": "2026-08-29T16:10:00.000Z",
         "status": "accepted",
         "result_code": "FOUND_VERIFIED",
-        "reason": "Официальная публикация (1.5 дн.) с датой и игровым содержанием; окно primary_14_day.",
+        "reason": "Официальная публикация (0.5 дн.) с датой и игровым содержанием; окно primary_14_day.",
         "available": true,
         "article_found": true,
         "date_found": true,
@@ -259,53 +275,57 @@
         "selected": false,
         "formatted": false,
         "scheduled": false,
-        "latest_url": "https://www.brookhavenrp.com/posts/brookhaven-update-august-28-2026",
+        "latest_url": "https://www.playadopt.me/news/fairytale-egg",
         "freshness_window": "primary_14_day"
       },
       {
         "source_type": "secondary_gaming_media",
-        "source_url": "https://news.google.com/rss/search?q=%22Brookhaven%20RP%22%20Roblox%20when%3A30d&hl=en-US&gl=US&ceid=US:en",
-        "latest_published_at": null,
-        "status": "rejected",
-        "result_code": "NO_NEW_CONTENT",
-        "reason": "Нет пригодной Tier B новости.",
+        "source_url": "https://news.google.com/rss/search?q=%22Adopt%20Me%21%22%20Roblox%20when%3A30d&hl=en-US&gl=US&ceid=US:en",
+        "latest_published_at": "2026-08-21T15:30:00+00:00",
+        "status": "accepted",
+        "result_code": "FOUND_VERIFIED",
+        "reason": "Tier b публикация (8.5 дн.) с датой и игровым содержанием; окно primary_14_day.",
         "available": true,
-        "article_found": false,
-        "date_found": false,
-        "content_found": false,
-        "extraction_success": false,
-        "verification_passed": false,
+        "article_found": true,
+        "date_found": true,
+        "content_found": true,
+        "extraction_success": true,
+        "verification_passed": true,
         "source_tier": "B",
         "official": false,
         "selected": false,
         "formatted": false,
-        "scheduled": false
+        "scheduled": false,
+        "latest_url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxQSGs1V3ZkWDZ2N1dIR05Ta3BFY2NScEk1cXgtdWs2ZUFGMmlUb3AyUWtfQ3Nsa3VvQjVDSm1mYUxlOHBObVJYQWhJZ0k3X2M0dkhuNF9IS3F1cmdVOFkyc2RFTXF0TVdNV1R4dHBOTjJlNXBJaGtKMmRSYW9seWhsYnJybG5qSlQ2UW4tVzVoUk1wUmIzM3IyN0UtaG1VTkFhXzU4?oc=5",
+        "freshness_window": "primary_14_day"
       }
     ],
     "external_source_diagnostic": {
       "source_type": "secondary_gaming_media",
-      "source_url": "https://news.google.com/rss/search?q=%22Brookhaven%20RP%22%20Roblox%20when%3A30d&hl=en-US&gl=US&ceid=US:en",
-      "latest_published_at": null,
-      "status": "rejected",
-      "result_code": "NO_NEW_CONTENT",
-      "reason": "Нет пригодной Tier B новости.",
+      "source_url": "https://news.google.com/rss/search?q=%22Adopt%20Me%21%22%20Roblox%20when%3A30d&hl=en-US&gl=US&ceid=US:en",
+      "latest_published_at": "2026-08-21T15:30:00+00:00",
+      "status": "accepted",
+      "result_code": "FOUND_VERIFIED",
+      "reason": "Tier b публикация (8.5 дн.) с датой и игровым содержанием; окно primary_14_day.",
       "available": true,
-      "article_found": false,
-      "date_found": false,
-      "content_found": false,
-      "extraction_success": false,
-      "verification_passed": false,
+      "article_found": true,
+      "date_found": true,
+      "content_found": true,
+      "extraction_success": true,
+      "verification_passed": true,
       "source_tier": "B",
       "official": false,
       "selected": false,
       "formatted": false,
-      "scheduled": false
+      "scheduled": false,
+      "latest_url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxQSGs1V3ZkWDZ2N1dIR05Ta3BFY2NScEk1cXgtdWs2ZUFGMmlUb3AyUWtfQ3Nsa3VvQjVDSm1mYUxlOHBObVJYQWhJZ0k3X2M0dkhuNF9IS3F1cmdVOFkyc2RFTXF0TVdNV1R4dHBOTjJlNXBJaGtKMmRSYW9seWhsYnJybG5qSlQ2UW4tVzVoUk1wUmIzM3IyN0UtaG1VTkFhXzU4?oc=5",
+      "freshness_window": "primary_14_day"
     },
     "external_news_article": {
-      "url": "https://www.brookhavenrp.com/posts/brookhaven-update-august-28-2026",
-      "title": "Brookhaven Update August 28, 2026: Lavender Luxury",
-      "published_at": "2026-08-28",
-      "age_days": 1.4552494403703702,
+      "url": "https://www.playadopt.me/news/fairytale-egg",
+      "title": "Fairytale Egg! - Adopt Me!",
+      "published_at": "2026-08-29T16:10:00.000Z",
+      "age_days": 0.4521307604861111,
       "source_tier": "A",
       "publisher": null,
       "freshness_window": "primary_14_day"
@@ -318,9 +338,9 @@
   {
     "game": "Blox Fruits",
     "universe_id": 994732206,
-    "roblox_name": "⚔️ Blox Fruits",
-    "description": "⚔️ PvP Balance out now! \nWelcome to Blox Fruits! Become a master swordsman or a powerful blox fruit user as you train to become the strongest player to ever live. You can choose to fight against tough enemies or have powerful boss battles while sailing across the ocean to find hidden secrets. \n\nCurrent level cap: 2800\nCurrent fruits in the game:\nRocket, Spin, Blade, Spring, Bomb, Smoke, Spike, Flame, Ice, Sand, Dark, Eagle, Diamond, Light, Rubber, Ghost, Magma, Quake, Buddha, Love, Creation, Spider, Sound, Phoenix, Portal, Lightning, Pain, Blizzard, Gravity, Mammoth, T-Rex, Dough, Shadow, Venom, Gas, Spirit, Tiger, Yeti, Kitsune, Control, and Dragon\n\nFAQ:\n-Fruits spawn in the map every hour / despawn after 20 mins\n-You can buy fruits from the Blox Fruits Dealer. He restocks random fruits every 4 hours\n-More info in the group description\n\nDo not exploit, our auto-detection will catch you and we do not appeal our bans.",
-    "updated": "2026-08-08T15:12:32.925Z",
+    "roblox_name": "Blox Fruits",
+    "description": "Welcome to Blox Fruits! Become a master swordsman or a powerful blox fruit user as you train to become the strongest player to ever live. You can choose to fight against tough enemies or have powerful boss battles while sailing across the ocean to find hidden secrets. \n\nCurrent level cap: 2800\nCurrent fruits in the game:\nRocket, Spin, Blade, Spring, Bomb, Smoke, Spike, Flame, Ice, Sand, Dark, Eagle, Diamond, Light, Rubber, Ghost, Magma, Quake, Buddha, Love, Creation, Spider, Sound, Phoenix, Portal, Lightning, Pain, Blizzard, Gravity, Mammoth, T-Rex, Dough, Shadow, Venom, Gas, Spirit, Tiger, Yeti, Kitsune, Control, and Dragon\n\nFAQ:\n-Fruits spawn in the map every hour / despawn after 20 mins\n-You can buy fruits from the Blox Fruits Dealer. He restocks random fruits every 4 hours\n-More info in the group description\n\nDo not exploit, our auto-detection will catch you and we do not appeal our bans.",
+    "updated": "2026-08-29T22:29:25.1333687Z",
     "created": "2019-01-16T03:29:19.433Z",
     "creator": {
       "id": 4372130,
@@ -329,7 +349,7 @@
       "isRNVAccount": false,
       "hasVerifiedBadge": true
     },
-    "description_changed": false,
+    "description_changed": true,
     "added_lines": [],
     "keywords": [
       "BOSS",
@@ -362,7 +382,7 @@
       }
     ],
     "pool": "active",
-    "checked_at": "2026-08-29T10:55:33.387477+00:00",
+    "checked_at": "2026-08-30T03:01:03.927850+00:00",
     "sources": [
       {
         "type": "official_game_description",
@@ -388,7 +408,7 @@
         "latest_published_at": "2026-08-06T22:02:43Z",
         "status": "accepted",
         "result_code": "FOUND_VERIFIED",
-        "reason": "Официальная публикация (22.5 дн.) с датой и игровым содержанием; окно emergency_30_day.",
+        "reason": "Официальная публикация (23.2 дн.) с датой и игровым содержанием; окно emergency_30_day.",
         "available": true,
         "article_found": true,
         "date_found": true,
@@ -426,7 +446,7 @@
       {
         "source_type": "official_game_description",
         "source_url": "https://www.roblox.com/games/2753915549/Blox-Fruits",
-        "latest_published_at": "2026-08-08T15:12:32.925Z",
+        "latest_published_at": "2026-08-29T22:29:25.1333687Z",
         "status": "rejected",
         "result_code": "NO_NEW_CONTENT",
         "available": true,
@@ -497,7 +517,7 @@
         "latest_published_at": "2026-08-06T22:02:43Z",
         "status": "accepted",
         "result_code": "FOUND_VERIFIED",
-        "reason": "Официальная публикация (22.5 дн.) с датой и игровым содержанием; окно emergency_30_day.",
+        "reason": "Официальная публикация (23.2 дн.) с датой и игровым содержанием; окно emergency_30_day.",
         "available": true,
         "article_found": true,
         "date_found": true,
@@ -557,7 +577,7 @@
       "url": "https://gamerrobot.com/blogs/news/the-balance-log",
       "title": "The Balance Log",
       "published_at": "2026-08-06T22:02:43Z",
-      "age_days": 22.53669619962963,
+      "age_days": 23.207188630856482,
       "source_tier": "A",
       "publisher": null,
       "freshness_window": "emergency_30_day"
@@ -572,7 +592,7 @@
     "universe_id": 10563114921,
     "roblox_name": "Steal An Egg",
     "description": "🥚 Welcome to Steal An Egg!\n\nHow to Play:\n🥚 Steal eggs from pets\n🐣 Hatch eggs to collect rare pets\n💰 Earn money from your pets\n⬆️ Upgrade your treadmill and base\n🏃 Train on the treadmill to gain Speed\n🥷 Steal eggs from other players\n✨ Discover rarer eggs, pets, sizes, and mutations!\n\n🎮 Supports Desktop, Console, Mobile, and Tablet players",
-    "updated": "2026-08-28T02:56:19.9167696Z",
+    "updated": "2026-08-29T18:33:21.8283756Z",
     "created": "2026-07-25T07:50:51.492Z",
     "creator": {
       "id": 825735094,
@@ -646,7 +666,7 @@
       }
     ],
     "pool": "active",
-    "checked_at": "2026-08-29T10:55:33.376838+00:00",
+    "checked_at": "2026-08-30T03:01:03.917598+00:00",
     "sources": [
       {
         "type": "official_game_description",
@@ -684,7 +704,7 @@
       {
         "source_type": "official_game_description",
         "source_url": "https://www.roblox.com/games/107778070777162/Steal-An-Egg",
-        "latest_published_at": "2026-08-28T02:56:19.9167696Z",
+        "latest_published_at": "2026-08-29T18:33:21.8283756Z",
         "status": "rejected",
         "result_code": "NO_NEW_CONTENT",
         "available": true,
@@ -829,7 +849,7 @@
       }
     ],
     "pool": "active",
-    "checked_at": "2026-08-29T10:55:33.377373+00:00",
+    "checked_at": "2026-08-30T03:01:03.918131+00:00",
     "sources": [
       {
         "type": "official_game_description",
@@ -974,7 +994,7 @@
     "universe_id": 9831440772,
     "roblox_name": "[UPD] +1 Speed Keyboard Escape",
     "description": "🎀 Join the XSpeed Games group!\n\n👟 Welcome to +1 Speed Keyboard Escape 👟\n\n⚡ Every step = +1 Speed\n👟 Run, jump, and escape across a world made of keyboard keys\n💪 Train your speed and unlock powerful multipliers\n🌍 Become the FASTEST player in the world\n👥 Race against friends and other players\n🚀 Speed is everything… but one wrong step and you’re back at the start 😱\n\n🎧 ASMR vibes included\nSmooth movement, satisfying keyboard clicks, and relaxing, chill sounds! ✨\n\n🔑 Tags:\nSpeed, Keyboard, ASMR, Obby, Escape, Parkour, Multiplayer, Racing, Competitive, Satisfying, Relaxing, Physics, Ragdoll, Challenge, Speedrun",
-    "updated": "2026-08-29T08:03:42.6126871Z",
+    "updated": "2026-08-29T19:57:37.8433939Z",
     "created": "2026-03-04T03:51:10.46Z",
     "creator": {
       "id": 175742687,
@@ -991,7 +1011,7 @@
     "facts": [],
     "description_facts": [],
     "pool": "active",
-    "checked_at": "2026-08-29T10:55:33.379729+00:00",
+    "checked_at": "2026-08-30T03:01:03.920425+00:00",
     "sources": [
       {
         "type": "official_game_description",
@@ -1028,7 +1048,7 @@
       {
         "source_type": "official_game_description",
         "source_url": "https://www.roblox.com/games/81245647985532/1-Speed-Keyboard-Escape",
-        "latest_published_at": "2026-08-29T08:03:42.6126871Z",
+        "latest_published_at": "2026-08-29T19:57:37.8433939Z",
         "status": "rejected",
         "result_code": "NO_NEW_CONTENT",
         "available": true,
@@ -1179,7 +1199,7 @@
       }
     ],
     "pool": "active",
-    "checked_at": "2026-08-29T10:55:33.381310+00:00",
+    "checked_at": "2026-08-30T03:01:03.921985+00:00",
     "sources": [
       {
         "type": "official_game_description",
@@ -1313,77 +1333,86 @@
     }
   },
   {
-    "game": "Adopt Me!",
-    "universe_id": 383310974,
-    "roblox_name": "[6H⌛] Adopt Me!",
-    "description": "Adopt and raise 🐶🦄👶, trade and collect legendary pets, build your dream home, and roleplay with friends!\n\n🎒 Backpack Storage & Releaser Refresh! 🎒\n🦴 Store unused items for smoother gameplay!\n🧸 Sort pets and items, trade directly from tabs!\n🍓 Kiwi Kiwi and Strawberry Tortle in Releaser Eggs!\n\nBe FIRST 🏆 To experience new updates by pressing 🔔NOTIFY.\n\nMeet the founders!\nNewFissy - Tech Director\nBethink - Creative Director\n\nFind out more about Uplift Games, our policies and creative attributions:\nhttps://devforum.roblox.com/t/credits/71812",
-    "updated": "2026-08-29T10:00:08.2821918Z",
-    "created": "2017-07-14T19:26:21.347Z",
+    "game": "Brookhaven RP",
+    "universe_id": 1686885941,
+    "roblox_name": "Brookhaven 🏡RP",
+    "description": "A place to play with like minded people and roleplay. Own and live in amazing houses, drive cool vehicles and explore the city. Be whoever you want to be in Brookhaven RP.\n\nLatest Update:\n📚 Library House - New free home!\n💜 Lavender Luxury - New premium home and a convertible car!\n✨ Lavender Props - 7 new props to decorate with!\n\nThanks for playing! \n\nPrivate Server Benefits:\n· Prop Saving\n· Server-Wide Music\n· Server-Wide Announcements\n· Remove or Lock Props\n· Check Prop Owners\n· Set Players as Admins\n· Kick / Temp Ban Players\n· Set Day of the Week\n· Set Time by the Hour\n· Change Weather and Lighting\n· Speed up Time\n· Server Theme Controls\n· No Wait Time for Changing House \n· Spawn Up to Three Vehicles\n· Prop Limit Increased\n· Freecam for PC users (Shift+P)",
+    "updated": "2026-08-28T19:06:16.2670249Z",
+    "created": "2020-04-21T02:15:38.373Z",
     "creator": {
-      "id": 295182,
-      "name": "Uplift Games",
+      "id": 3104358,
+      "name": "Brookhaven by Voldex",
       "type": "Group",
       "isRNVAccount": false,
-      "hasVerifiedBadge": true
+      "hasVerifiedBadge": false
     },
     "description_changed": false,
     "added_lines": [],
     "keywords": [
-      "ITEMS",
       "NEW",
-      "PETS"
+      "UPDATE",
+      "VEHICLES"
     ],
     "score": 0,
     "confidence": "low",
     "facts": [],
     "description_facts": [
       {
-        "text": "Adopt and raise 🐶🦄👶, trade and collect legendary pets, build your dream home, and roleplay with friends!",
-        "kind": "pets",
+        "text": "💜 Lavender Luxury - New premium home and a convertible car!",
+        "kind": "vehicle",
         "value": 8,
         "specific": true,
         "reason": "Строка называет конкретное игровое содержимое",
-        "summary_ru": "В игре появились новые питомцы.",
+        "summary_ru": "В игру добавили новый транспорт.",
         "is_new_line": false
       },
       {
-        "text": "🎒 Backpack Storage & Releaser Refresh! 🎒",
-        "kind": "mechanics_storage",
-        "value": 8,
-        "specific": true,
-        "reason": "Строка называет конкретное игровое содержимое",
-        "summary_ru": "Появилось отдельное хранилище для предметов из рюкзака.",
-        "is_new_line": false
-      },
-      {
-        "text": "🧸 Sort pets and items, trade directly from tabs!",
-        "kind": "mechanics_storage",
-        "value": 8,
-        "specific": true,
-        "reason": "Строка называет конкретное игровое содержимое",
-        "summary_ru": "В игре появилась новая полезная механика.",
-        "is_new_line": false
-      },
-      {
-        "text": "🍓 Kiwi Kiwi and Strawberry Tortle in Releaser Eggs!",
-        "kind": "pets",
-        "value": 8,
-        "specific": true,
-        "reason": "Строка называет конкретное игровое содержимое",
-        "summary_ru": "В игре появились новые питомцы.",
-        "is_new_line": false
-      },
-      {
-        "text": "🦴 Store unused items for smoother gameplay!",
+        "text": "✨ Lavender Props - 7 new props to decorate with!",
         "kind": "items",
         "value": 7,
         "specific": true,
         "reason": "Строка называет конкретное игровое содержимое",
-        "summary_ru": "В игре появились новые предметы.",
+        "summary_ru": "Добавили новый реквизит для ролевых сцен.",
         "is_new_line": false
       },
       {
-        "text": "Be FIRST 🏆 To experience new updates by pressing 🔔NOTIFY.",
+        "text": "· Prop Saving",
+        "kind": "items",
+        "value": 7,
+        "specific": true,
+        "reason": "Строка называет конкретное игровое содержимое",
+        "summary_ru": "Добавили новый реквизит для ролевых сцен.",
+        "is_new_line": false
+      },
+      {
+        "text": "· Remove or Lock Props",
+        "kind": "items",
+        "value": 7,
+        "specific": true,
+        "reason": "Строка называет конкретное игровое содержимое",
+        "summary_ru": "Добавили новый реквизит для ролевых сцен.",
+        "is_new_line": false
+      },
+      {
+        "text": "· Check Prop Owners",
+        "kind": "items",
+        "value": 7,
+        "specific": true,
+        "reason": "Строка называет конкретное игровое содержимое",
+        "summary_ru": "Добавили новый реквизит для ролевых сцен.",
+        "is_new_line": false
+      },
+      {
+        "text": "· Prop Limit Increased",
+        "kind": "items",
+        "value": 7,
+        "specific": true,
+        "reason": "Строка называет конкретное игровое содержимое",
+        "summary_ru": "Добавили новый реквизит для ролевых сцен.",
+        "is_new_line": false
+      },
+      {
+        "text": "Latest Update:",
         "kind": "update",
         "value": 2,
         "specific": false,
@@ -1393,7 +1422,7 @@
       }
     ],
     "pool": "active",
-    "checked_at": "2026-08-29T10:55:33.389171+00:00",
+    "checked_at": "2026-08-30T03:01:03.925184+00:00",
     "sources": [
       {
         "type": "official_game_description",
@@ -1402,16 +1431,16 @@
       {
         "type": "official_roblox_group",
         "verified": true,
-        "group_id": 295182,
-        "group_name": "Uplift Games"
+        "group_id": 3104358,
+        "group_name": "Brookhaven by Voldex"
       }
     ],
     "cross_source_confirmations": [],
     "source_diagnostics": [
       {
         "source_type": "official_news_website",
-        "source_url": "https://www.playadopt.me/news",
-        "latest_published_at": "2026-08-21T15:05:00.000Z",
+        "source_url": "https://www.brookhavenrp.com/",
+        "latest_published_at": "2026-08-28",
         "status": "rejected",
         "result_code": "ALREADY_USED",
         "reason": "Публикация уже использовалась в выпуске другого дня.",
@@ -1426,33 +1455,31 @@
         "selected": false,
         "formatted": false,
         "scheduled": false,
-        "latest_url": "https://www.playadopt.me/news/backpack-storage-and-releaser-refresh"
+        "latest_url": "https://www.brookhavenrp.com/posts/brookhaven-update-august-28-2026"
       },
       {
         "source_type": "secondary_gaming_media",
-        "source_url": "https://news.google.com/rss/search?q=%22Adopt%20Me%21%22%20Roblox%20when%3A30d&hl=en-US&gl=US&ceid=US:en",
-        "latest_published_at": "2026-08-21T15:30:00+00:00",
+        "source_url": "https://news.google.com/rss/search?q=%22Brookhaven%20RP%22%20Roblox%20when%3A30d&hl=en-US&gl=US&ceid=US:en",
+        "latest_published_at": null,
         "status": "rejected",
-        "result_code": "ALREADY_USED",
-        "reason": "Tier B повторяет уже использованную официальную новость.",
+        "result_code": "NO_NEW_CONTENT",
+        "reason": "Нет пригодной Tier B новости.",
         "available": true,
-        "article_found": true,
-        "date_found": true,
-        "content_found": true,
-        "extraction_success": true,
+        "article_found": false,
+        "date_found": false,
+        "content_found": false,
+        "extraction_success": false,
         "verification_passed": false,
         "source_tier": "B",
         "official": false,
         "selected": false,
         "formatted": false,
-        "scheduled": false,
-        "latest_url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxQSGs1V3ZkWDZ2N1dIR05Ta3BFY2NScEk1cXgtdWs2ZUFGMmlUb3AyUWtfQ3Nsa3VvQjVDSm1mYUxlOHBObVJYQWhJZ0k3X2M0dkhuNF9IS3F1cmdVOFkyc2RFTXF0TVdNV1R4dHBOTjJlNXBJaGtKMmRSYW9seWhsYnJybG5qSlQ2UW4tVzVoUk1wUmIzM3IyN0UtaG1VTkFhXzU4?oc=5",
-        "freshness_window": "primary_14_day"
+        "scheduled": false
       },
       {
         "source_type": "official_game_description",
-        "source_url": "https://www.roblox.com/games/920587237/Adopt-Me",
-        "latest_published_at": "2026-08-29T10:00:08.2821918Z",
+        "source_url": "https://www.roblox.com/games/4924922222/Brookhaven-RP",
+        "latest_published_at": "2026-08-28T19:06:16.2670249Z",
         "status": "rejected",
         "result_code": "NO_NEW_CONTENT",
         "available": true,
@@ -1465,7 +1492,7 @@
       },
       {
         "source_type": "official_roblox_group",
-        "source_url": "https://www.roblox.com/communities/295182/Uplift-Games",
+        "source_url": "https://www.roblox.com/communities/3104358/Brookhaven-by-Voldex",
         "latest_published_at": null,
         "status": "checked",
         "result_code": "NO_NEW_CONTENT",
@@ -1481,53 +1508,48 @@
     "official_description_analysis": {
       "keywords": [
         "UPDATE",
-        "NEW",
-        "ITEM",
-        "ITEMS",
-        "PET",
-        "PETS"
+        "NEW"
       ],
       "news_lines": [
-        "Adopt and raise 🐶🦄👶, trade and collect legendary pets, build your dream home, and roleplay with friends!",
-        "🦴 Store unused items for smoother gameplay!",
-        "🧸 Sort pets and items, trade directly from tabs!",
-        "Be FIRST 🏆 To experience new updates by pressing 🔔NOTIFY.",
-        "NewFissy - Tech Director"
+        "Latest Update:",
+        "📚 Library House - New free home!",
+        "💜 Lavender Luxury - New premium home and a convertible car!",
+        "✨ Lavender Props - 7 new props to decorate with!"
       ]
     },
     "source_registry": {
       "pool": "active",
-      "universe_id": 383310974,
-      "root_place_id": 920587237,
-      "roblox_game_url": "https://www.roblox.com/games/920587237/Adopt-Me",
-      "roblox_group_id": 295182,
-      "roblox_group_name": "Uplift Games",
-      "roblox_group_url": "https://www.roblox.com/communities/295182/Uplift-Games",
+      "universe_id": 1686885941,
+      "root_place_id": 4924922222,
+      "roblox_game_url": "https://www.roblox.com/games/4924922222/Brookhaven-RP",
+      "roblox_group_id": 3104358,
+      "roblox_group_name": "Brookhaven by Voldex",
+      "roblox_group_url": "https://www.roblox.com/communities/3104358/Brookhaven-by-Voldex",
       "news_strategy": "official_news_website",
-      "website": "https://www.playadopt.me/",
-      "news_url": "https://www.playadopt.me/news",
-      "discord": "https://discord.com/invite/adoptme",
-      "youtube": "https://www.youtube.com/PlayAdoptMe",
-      "x": "https://x.com/PlayAdoptMe",
+      "website": "https://www.brookhavenrp.com/",
+      "news_url": "https://www.brookhavenrp.com/",
+      "discord": null,
+      "youtube": null,
+      "x": null,
       "roblox_creator_type": null,
       "roblox_creator_id": null,
       "roblox_creator_name": null,
       "roblox_creator_url": null
     },
     "official_group": {
-      "id": 295182,
-      "name": "Uplift Games",
-      "expected_name": "Uplift Games",
+      "id": 3104358,
+      "name": "Brookhaven by Voldex",
+      "expected_name": "Brookhaven by Voldex",
       "name_matches_registry": true,
-      "description": "Welcome to Uplift Games, the studio behind Adopt Me!",
-      "has_verified_badge": true,
+      "description": "Brookhaven originally created by Wolfpaq, now developed by Voldex",
+      "has_verified_badge": false,
       "news_lines": []
     },
     "external_source_diagnostics": [
       {
         "source_type": "official_news_website",
-        "source_url": "https://www.playadopt.me/news",
-        "latest_published_at": "2026-08-21T15:05:00.000Z",
+        "source_url": "https://www.brookhavenrp.com/",
+        "latest_published_at": "2026-08-28",
         "status": "rejected",
         "result_code": "ALREADY_USED",
         "reason": "Публикация уже использовалась в выпуске другого дня.",
@@ -1542,50 +1564,46 @@
         "selected": false,
         "formatted": false,
         "scheduled": false,
-        "latest_url": "https://www.playadopt.me/news/backpack-storage-and-releaser-refresh"
+        "latest_url": "https://www.brookhavenrp.com/posts/brookhaven-update-august-28-2026"
       },
       {
         "source_type": "secondary_gaming_media",
-        "source_url": "https://news.google.com/rss/search?q=%22Adopt%20Me%21%22%20Roblox%20when%3A30d&hl=en-US&gl=US&ceid=US:en",
-        "latest_published_at": "2026-08-21T15:30:00+00:00",
+        "source_url": "https://news.google.com/rss/search?q=%22Brookhaven%20RP%22%20Roblox%20when%3A30d&hl=en-US&gl=US&ceid=US:en",
+        "latest_published_at": null,
         "status": "rejected",
-        "result_code": "ALREADY_USED",
-        "reason": "Tier B повторяет уже использованную официальную новость.",
+        "result_code": "NO_NEW_CONTENT",
+        "reason": "Нет пригодной Tier B новости.",
         "available": true,
-        "article_found": true,
-        "date_found": true,
-        "content_found": true,
-        "extraction_success": true,
+        "article_found": false,
+        "date_found": false,
+        "content_found": false,
+        "extraction_success": false,
         "verification_passed": false,
         "source_tier": "B",
         "official": false,
         "selected": false,
         "formatted": false,
-        "scheduled": false,
-        "latest_url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxQSGs1V3ZkWDZ2N1dIR05Ta3BFY2NScEk1cXgtdWs2ZUFGMmlUb3AyUWtfQ3Nsa3VvQjVDSm1mYUxlOHBObVJYQWhJZ0k3X2M0dkhuNF9IS3F1cmdVOFkyc2RFTXF0TVdNV1R4dHBOTjJlNXBJaGtKMmRSYW9seWhsYnJybG5qSlQ2UW4tVzVoUk1wUmIzM3IyN0UtaG1VTkFhXzU4?oc=5",
-        "freshness_window": "primary_14_day"
+        "scheduled": false
       }
     ],
     "external_source_diagnostic": {
       "source_type": "secondary_gaming_media",
-      "source_url": "https://news.google.com/rss/search?q=%22Adopt%20Me%21%22%20Roblox%20when%3A30d&hl=en-US&gl=US&ceid=US:en",
-      "latest_published_at": "2026-08-21T15:30:00+00:00",
+      "source_url": "https://news.google.com/rss/search?q=%22Brookhaven%20RP%22%20Roblox%20when%3A30d&hl=en-US&gl=US&ceid=US:en",
+      "latest_published_at": null,
       "status": "rejected",
-      "result_code": "ALREADY_USED",
-      "reason": "Tier B повторяет уже использованную официальную новость.",
+      "result_code": "NO_NEW_CONTENT",
+      "reason": "Нет пригодной Tier B новости.",
       "available": true,
-      "article_found": true,
-      "date_found": true,
-      "content_found": true,
-      "extraction_success": true,
+      "article_found": false,
+      "date_found": false,
+      "content_found": false,
+      "extraction_success": false,
       "verification_passed": false,
       "source_tier": "B",
       "official": false,
       "selected": false,
       "formatted": false,
-      "scheduled": false,
-      "latest_url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxQSGs1V3ZkWDZ2N1dIR05Ta3BFY2NScEk1cXgtdWs2ZUFGMmlUb3AyUWtfQ3Nsa3VvQjVDSm1mYUxlOHBObVJYQWhJZ0k3X2M0dkhuNF9IS3F1cmdVOFkyc2RFTXF0TVdNV1R4dHBOTjJlNXBJaGtKMmRSYW9seWhsYnJybG5qSlQ2UW4tVzVoUk1wUmIzM3IyN0UtaG1VTkFhXzU4?oc=5",
-      "freshness_window": "primary_14_day"
+      "scheduled": false
     },
     "candidate_decision": {
       "status": "rejected",
@@ -1657,7 +1675,7 @@
       }
     ],
     "pool": "active",
-    "checked_at": "2026-08-29T10:55:33.391278+00:00",
+    "checked_at": "2026-08-30T03:01:03.931717+00:00",
     "sources": [
       {
         "type": "official_game_description",
@@ -1832,7 +1850,7 @@
     "facts": [],
     "description_facts": [],
     "pool": "active",
-    "checked_at": "2026-08-29T10:55:33.391711+00:00",
+    "checked_at": "2026-08-30T03:01:03.932156+00:00",
     "sources": [
       {
         "type": "official_game_description",
@@ -1980,7 +1998,7 @@
     "universe_id": 7709344486,
     "roblox_name": "[🐝] Steal a Brainrot",
     "description": "🗣️ Welcome to Steal a Brainrot!\n\n👍 Like the game and join the group\n\nHow to Play:\n👽 Buy a Brainrot\n🥷 Steal Brainrots from other players\n💸 Generate money\n🐦‍🔥 Rebirth\n✋ Buy slaps and troll gear to troll other players!\n\n💻 Supports Desktop, Mobile and Tablet players\n\n🙏 Credit to Chris for letting us use the Nyan Cat!\n🙏 Credit to @WinnersTakesAll for the backpack system!",
-    "updated": "2026-08-28T03:43:23.093287Z",
+    "updated": "2026-08-29T17:39:22.3357193Z",
     "created": "2025-05-16T00:49:12.563Z",
     "creator": {
       "id": 35815907,
@@ -2007,7 +2025,7 @@
       }
     ],
     "pool": "active",
-    "checked_at": "2026-08-29T10:55:33.393241+00:00",
+    "checked_at": "2026-08-30T03:01:03.933729+00:00",
     "sources": [
       {
         "type": "official_game_description",
@@ -2045,7 +2063,7 @@
       {
         "source_type": "official_game_description",
         "source_url": "https://www.roblox.com/games/109983668079237/Steal-a-Brainrot",
-        "latest_published_at": "2026-08-28T03:43:23.093287Z",
+        "latest_published_at": "2026-08-29T17:39:22.3357193Z",
         "status": "rejected",
         "result_code": "NO_NEW_CONTENT",
         "available": true,
@@ -2151,52 +2169,91 @@
     }
   },
   {
-    "game": "Blade Ball",
-    "universe_id": 4777817887,
-    "roblox_name": "Blade Ball",
-    "description": "⚡  In this game of focus, timing, and strategy, your skill is tested as a deflectable homing ball hunts players with increasing speed. But there's more than what meets the eye.\n\n🔥  Gain new abilities and upgrade them to compliment your playstyle. Rise through the ranks by mastering your skill, and stand out with a variety of iconic weapon skins and finisher effects.\n\n🏆 Shoot for the leaderboard or play casually! The choice is yours.\n \nCONTROLS:\nBLOCK - F/R1/Tap Screen/Tap UI Button/Left Click\nABILITY - Q/ButtonX/Tap UI Button/Right Click\nSHIFTLOCK - Shift/Button-Y/Tap UI Button\nEMOTE - R/L1/Tap UI Button\n\ntags: minigame, battle game, pvp, multiplayer, abilities, dodgeball, sports, mobile, console, xbox, pc",
-    "updated": "2026-08-29T01:33:30.777619Z",
-    "created": "2023-06-17T00:05:26.103Z",
+    "game": "Pet Simulator 99",
+    "universe_id": 3317771874,
+    "roblox_name": "🍀 [LUCKY BLOCK] Pet Simulator 99! 🎯",
+    "description": "Create an army of the coolest pets! They will help you get RICH!\n\n✨ Currently 3,000+ pets to collect! 🐾\n\n🧡 Thanks for playing!",
+    "updated": "2026-08-29T21:25:14.0749178Z",
+    "created": "2022-02-05T13:30:02.357Z",
     "creator": {
-      "id": 12836673,
-      "name": "Wiggity.",
+      "id": 3959677,
+      "name": "BIG Games Pets",
       "type": "Group",
       "isRNVAccount": false,
       "hasVerifiedBadge": true
     },
-    "description_changed": false,
-    "added_lines": [],
-    "keywords": [
-      "NEW"
+    "description_changed": true,
+    "added_lines": [
+      "✨ Currently 3,000+ pets to collect! 🐾"
     ],
-    "score": 6,
-    "confidence": "medium",
+    "keywords": [
+      "PETS"
+    ],
+    "score": 10,
+    "confidence": "high",
     "facts": [
       {
-        "text": "BEST SWORDS IN BLADE BALL! 🔥 - Blade Ball Update Showcase",
-        "summary_ru": "В Blade Ball вышло обновление «BEST SWORDS IN BLADE BALL! 🔥 - Blade Ball Update Showcase».",
-        "kind": "official_article",
-        "value": 6,
+        "text": "✨ Currently 3,000+ pets to collect! 🐾",
+        "kind": "pets",
+        "value": 10,
         "specific": true,
-        "reason": "Свежий игровой анонс из официального источника",
+        "reason": "Строка называет конкретное игровое содержимое",
+        "summary_ru": "В игре появились новые питомцы.",
+        "is_new_line": true
+      },
+      {
+        "text": "Lucky Block Blitz!",
+        "summary_ru": "В Pet Simulator 99 стартовало событие «Lucky Block Blitz!».",
+        "kind": "event",
+        "value": 10,
+        "specific": true,
+        "reason": "Факт из официальной новостной статьи",
         "is_new_line": true,
-        "source_url": "https://www.youtube.com/watch?v=5E4tYNtntFc",
-        "title_is_concrete": true
+        "source_url": "https://www.biggames.io/post/pet-simulator-99-update-91"
+      },
+      {
+        "text": "pet now has its own pets now bounce in full color! Every new egg holds a to unlock every new egg.",
+        "summary_ru": "В игре появились новые питомцы.",
+        "kind": "pets",
+        "value": 9,
+        "specific": true,
+        "reason": "Факт из официальной новостной статьи",
+        "is_new_line": true,
+        "source_url": "https://www.biggames.io/post/pet-simulator-99-update-91"
+      },
+      {
+        "text": "Set your best run to top the Time Trial Leaderboard!",
+        "summary_ru": "Открыт Set your best run to top the Time Trial Leaderboard с наградами за места.",
+        "kind": "leaderboard",
+        "value": 8,
+        "specific": true,
+        "reason": "Факт из официальной новостной статьи",
+        "is_new_line": true,
+        "source_url": "https://www.biggames.io/post/pet-simulator-99-update-91"
       }
     ],
     "description_facts": [
       {
-        "text": "🔥 Gain new abilities and upgrade them to compliment your playstyle. Rise through the ranks by mastering your skill, and stand out with a variety of iconic weapon skins and finisher effects.",
-        "kind": "items",
-        "value": 7,
+        "text": "✨ Currently 3,000+ pets to collect! 🐾",
+        "kind": "pets",
+        "value": 10,
         "specific": true,
         "reason": "Строка называет конкретное игровое содержимое",
-        "summary_ru": "В игре появились новые инструменты и оружие.",
+        "summary_ru": "В игре появились новые питомцы.",
+        "is_new_line": true
+      },
+      {
+        "text": "Create an army of the coolest pets! They will help you get RICH!",
+        "kind": "pets",
+        "value": 8,
+        "specific": true,
+        "reason": "Строка называет конкретное игровое содержимое",
+        "summary_ru": "В игре появились новые питомцы.",
         "is_new_line": false
       }
     ],
     "pool": "legacy",
-    "checked_at": "2026-08-29T10:55:33.398709+00:00",
+    "checked_at": "2026-08-30T03:01:03.937180+00:00",
     "sources": [
       {
         "type": "official_game_description",
@@ -2205,24 +2262,24 @@
       {
         "type": "official_roblox_group",
         "verified": true,
-        "group_id": 12836673,
-        "group_name": "Wiggity."
+        "group_id": 3959677,
+        "group_name": "BIG Games Pets"
       },
       {
-        "type": "official_youtube_feed",
+        "type": "official_news_website",
         "verified": true,
-        "url": "https://www.youtube.com/watch?v=5E4tYNtntFc"
+        "url": "https://www.biggames.io/post/pet-simulator-99-update-91"
       }
     ],
     "cross_source_confirmations": [],
     "source_diagnostics": [
       {
-        "source_type": "official_youtube_feed",
-        "source_url": "https://www.youtube.com/feeds/videos.xml?channel_id=UCPttFx0zI4Zv9M4i3Q2ylsw",
-        "latest_published_at": "2026-08-23T23:00:24+00:00",
+        "source_type": "official_news_website",
+        "source_url": "https://www.biggames.io/post",
+        "latest_published_at": "2026-08-29",
         "status": "accepted",
         "result_code": "FOUND_VERIFIED",
-        "reason": "Официальная публикация (5.5 дн.) с датой и игровым содержанием; окно primary_14_day.",
+        "reason": "Официальная публикация (1.1 дн.) с датой и игровым содержанием; окно primary_14_day.",
         "available": true,
         "article_found": true,
         "date_found": true,
@@ -2234,65 +2291,47 @@
         "selected": false,
         "formatted": false,
         "scheduled": false,
-        "latest_url": "https://www.youtube.com/watch?v=5E4tYNtntFc",
+        "latest_url": "https://www.biggames.io/post/pet-simulator-99-update-91",
         "freshness_window": "primary_14_day"
       },
       {
-        "source_type": "official_news_website",
-        "source_url": "https://bladeball.com/blogs/news",
-        "latest_published_at": "2024-03-23T18:51:42Z",
-        "status": "rejected",
-        "result_code": "SOURCE_STALE",
-        "reason": "Публикация устарела: 888.7 дн. (аварийный лимит 30).",
+        "source_type": "secondary_gaming_media",
+        "source_url": "https://news.google.com/rss/search?q=%22Pet%20Simulator%2099%22%20Roblox%20when%3A30d&hl=en-US&gl=US&ceid=US:en",
+        "latest_published_at": "2026-08-23T22:53:00+00:00",
+        "status": "accepted",
+        "result_code": "FOUND_VERIFIED",
+        "reason": "Tier b публикация (6.2 дн.) с датой и игровым содержанием; окно primary_14_day.",
         "available": true,
         "article_found": true,
         "date_found": true,
         "content_found": true,
-        "extraction_success": false,
-        "verification_passed": false,
-        "source_tier": "A",
-        "official": true,
-        "selected": false,
-        "formatted": false,
-        "scheduled": false,
-        "latest_url": "https://bladeball.com/blogs/news/comptetetive-leaderboards"
-      },
-      {
-        "source_type": "secondary_gaming_media",
-        "source_url": "https://news.google.com/rss/search?q=%22Blade%20Ball%22%20Roblox%20when%3A30d&hl=en-US&gl=US&ceid=US:en",
-        "latest_published_at": null,
-        "status": "rejected",
-        "result_code": "NO_NEW_CONTENT",
-        "reason": "Нет пригодной Tier B новости.",
-        "available": true,
-        "article_found": false,
-        "date_found": false,
-        "content_found": false,
-        "extraction_success": false,
-        "verification_passed": false,
+        "extraction_success": true,
+        "verification_passed": true,
         "source_tier": "B",
         "official": false,
         "selected": false,
         "formatted": false,
-        "scheduled": false
+        "scheduled": false,
+        "latest_url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxQS01ZMllCSXA3Mk83N19sWVFoT3lEUFY5NFpEdVpMMG0xa0NiR19Vd2FvQ1FnWGY4NFNLd29MNElUT3JWN3RRcWlCeXZxalFRSEFDZzJrNFhUUHRZNXU5QzlsOHRFbndkY1g1TVU5MEdIcjVZbXdFb0RuVVByemk1R1N2bGhWVTVUYmtMby0xbW9GbmM0RTYzb1FZLTRtSjNwTUxReFhqZC1qSXFDVWNFMHZJVTlybmRVaFFZWGdfMzg?oc=5",
+        "freshness_window": "primary_14_day"
       },
       {
         "source_type": "official_game_description",
-        "source_url": "https://www.roblox.com/games/13772394625/Blade-Ball",
-        "latest_published_at": "2026-08-29T01:33:30.777619Z",
-        "status": "rejected",
-        "result_code": "NO_NEW_CONTENT",
+        "source_url": "https://www.roblox.com/games/8737899170/Pet-Simulator-99",
+        "latest_published_at": "2026-08-29T21:25:14.0749178Z",
+        "status": "accepted",
+        "result_code": "FOUND_VERIFIED",
         "available": true,
-        "article_found": false,
+        "article_found": true,
         "date_found": true,
         "content_found": true,
-        "extraction_success": false,
-        "verification_passed": false,
-        "reason": "Нет новой конкретной строки со времени прошлого снимка."
+        "extraction_success": true,
+        "verification_passed": true,
+        "reason": "Найдена новая конкретная строка описания."
       },
       {
         "source_type": "official_roblox_group",
-        "source_url": "https://www.roblox.com/communities/12836673/Wiggity",
+        "source_url": "https://www.roblox.com/communities/3959677/BIG-Games-Pets",
         "latest_published_at": null,
         "status": "checked",
         "result_code": "NO_NEW_CONTENT",
@@ -2307,48 +2346,49 @@
     ],
     "official_description_analysis": {
       "keywords": [
-        "NEW"
+        "PET",
+        "PETS"
       ],
       "news_lines": [
-        "🔥  Gain new abilities and upgrade them to compliment your playstyle. Rise through the ranks by mastering your skill, and stand out with a variety of iconic weapon skins and finisher effects."
+        "✨ Currently 3,000+ pets to collect! 🐾"
       ]
     },
     "source_registry": {
       "pool": "legacy",
-      "universe_id": 4777817887,
-      "root_place_id": 13772394625,
-      "roblox_game_url": "https://www.roblox.com/games/13772394625/Blade-Ball",
-      "roblox_group_id": 12836673,
-      "roblox_group_name": "Wiggity.",
-      "roblox_group_url": "https://www.roblox.com/communities/12836673/Wiggity",
+      "universe_id": 3317771874,
+      "root_place_id": 8737899170,
+      "roblox_game_url": "https://www.roblox.com/games/8737899170/Pet-Simulator-99",
+      "roblox_group_id": 3959677,
+      "roblox_group_name": "BIG Games Pets",
+      "roblox_group_url": "https://www.roblox.com/communities/3959677/BIG-Games-Pets",
       "news_strategy": "official_news_website",
-      "website": "https://bladeball.com/",
-      "news_url": "https://bladeball.com/blogs/news",
-      "discord": "https://discord.com/servers/1141515589924429869",
-      "youtube": "https://www.youtube.com/@Blade-Ball",
-      "x": null,
+      "website": "https://www.biggames.io/",
+      "news_url": "https://www.biggames.io/post",
+      "discord": "https://discord.biggames.io/",
+      "youtube": "https://www.youtube.com/c/BuildIntoGames",
+      "x": "https://x.com/BuildIntoGames",
       "roblox_creator_type": null,
       "roblox_creator_id": null,
       "roblox_creator_name": null,
       "roblox_creator_url": null
     },
     "official_group": {
-      "id": 12836673,
-      "name": "Wiggity.",
-      "expected_name": "Wiggity.",
+      "id": 3959677,
+      "name": "BIG Games Pets",
+      "expected_name": "BIG Games Pets",
       "name_matches_registry": true,
-      "description": "Creators of Blade Ball",
+      "description": "Meow 🐾\n\nExperience Studio!",
       "has_verified_badge": true,
       "news_lines": []
     },
     "external_source_diagnostics": [
       {
-        "source_type": "official_youtube_feed",
-        "source_url": "https://www.youtube.com/feeds/videos.xml?channel_id=UCPttFx0zI4Zv9M4i3Q2ylsw",
-        "latest_published_at": "2026-08-23T23:00:24+00:00",
+        "source_type": "official_news_website",
+        "source_url": "https://www.biggames.io/post",
+        "latest_published_at": "2026-08-29",
         "status": "accepted",
         "result_code": "FOUND_VERIFIED",
-        "reason": "Официальная публикация (5.5 дн.) с датой и игровым содержанием; окно primary_14_day.",
+        "reason": "Официальная публикация (1.1 дн.) с датой и игровым содержанием; окно primary_14_day.",
         "available": true,
         "article_found": true,
         "date_found": true,
@@ -2360,73 +2400,57 @@
         "selected": false,
         "formatted": false,
         "scheduled": false,
-        "latest_url": "https://www.youtube.com/watch?v=5E4tYNtntFc",
+        "latest_url": "https://www.biggames.io/post/pet-simulator-99-update-91",
         "freshness_window": "primary_14_day"
       },
       {
-        "source_type": "official_news_website",
-        "source_url": "https://bladeball.com/blogs/news",
-        "latest_published_at": "2024-03-23T18:51:42Z",
-        "status": "rejected",
-        "result_code": "SOURCE_STALE",
-        "reason": "Публикация устарела: 888.7 дн. (аварийный лимит 30).",
+        "source_type": "secondary_gaming_media",
+        "source_url": "https://news.google.com/rss/search?q=%22Pet%20Simulator%2099%22%20Roblox%20when%3A30d&hl=en-US&gl=US&ceid=US:en",
+        "latest_published_at": "2026-08-23T22:53:00+00:00",
+        "status": "accepted",
+        "result_code": "FOUND_VERIFIED",
+        "reason": "Tier b публикация (6.2 дн.) с датой и игровым содержанием; окно primary_14_day.",
         "available": true,
         "article_found": true,
         "date_found": true,
         "content_found": true,
-        "extraction_success": false,
-        "verification_passed": false,
-        "source_tier": "A",
-        "official": true,
-        "selected": false,
-        "formatted": false,
-        "scheduled": false,
-        "latest_url": "https://bladeball.com/blogs/news/comptetetive-leaderboards"
-      },
-      {
-        "source_type": "secondary_gaming_media",
-        "source_url": "https://news.google.com/rss/search?q=%22Blade%20Ball%22%20Roblox%20when%3A30d&hl=en-US&gl=US&ceid=US:en",
-        "latest_published_at": null,
-        "status": "rejected",
-        "result_code": "NO_NEW_CONTENT",
-        "reason": "Нет пригодной Tier B новости.",
-        "available": true,
-        "article_found": false,
-        "date_found": false,
-        "content_found": false,
-        "extraction_success": false,
-        "verification_passed": false,
+        "extraction_success": true,
+        "verification_passed": true,
         "source_tier": "B",
         "official": false,
         "selected": false,
         "formatted": false,
-        "scheduled": false
+        "scheduled": false,
+        "latest_url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxQS01ZMllCSXA3Mk83N19sWVFoT3lEUFY5NFpEdVpMMG0xa0NiR19Vd2FvQ1FnWGY4NFNLd29MNElUT3JWN3RRcWlCeXZxalFRSEFDZzJrNFhUUHRZNXU5QzlsOHRFbndkY1g1TVU5MEdIcjVZbXdFb0RuVVByemk1R1N2bGhWVTVUYmtMby0xbW9GbmM0RTYzb1FZLTRtSjNwTUxReFhqZC1qSXFDVWNFMHZJVTlybmRVaFFZWGdfMzg?oc=5",
+        "freshness_window": "primary_14_day"
       }
     ],
     "external_source_diagnostic": {
       "source_type": "secondary_gaming_media",
-      "source_url": "https://news.google.com/rss/search?q=%22Blade%20Ball%22%20Roblox%20when%3A30d&hl=en-US&gl=US&ceid=US:en",
-      "latest_published_at": null,
-      "status": "rejected",
-      "result_code": "NO_NEW_CONTENT",
-      "reason": "Нет пригодной Tier B новости.",
+      "source_url": "https://news.google.com/rss/search?q=%22Pet%20Simulator%2099%22%20Roblox%20when%3A30d&hl=en-US&gl=US&ceid=US:en",
+      "latest_published_at": "2026-08-23T22:53:00+00:00",
+      "status": "accepted",
+      "result_code": "FOUND_VERIFIED",
+      "reason": "Tier b публикация (6.2 дн.) с датой и игровым содержанием; окно primary_14_day.",
       "available": true,
-      "article_found": false,
-      "date_found": false,
-      "content_found": false,
-      "extraction_success": false,
-      "verification_passed": false,
+      "article_found": true,
+      "date_found": true,
+      "content_found": true,
+      "extraction_success": true,
+      "verification_passed": true,
       "source_tier": "B",
       "official": false,
       "selected": false,
       "formatted": false,
-      "scheduled": false
+      "scheduled": false,
+      "latest_url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxQS01ZMllCSXA3Mk83N19sWVFoT3lEUFY5NFpEdVpMMG0xa0NiR19Vd2FvQ1FnWGY4NFNLd29MNElUT3JWN3RRcWlCeXZxalFRSEFDZzJrNFhUUHRZNXU5QzlsOHRFbndkY1g1TVU5MEdIcjVZbXdFb0RuVVByemk1R1N2bGhWVTVUYmtMby0xbW9GbmM0RTYzb1FZLTRtSjNwTUxReFhqZC1qSXFDVWNFMHZJVTlybmRVaFFZWGdfMzg?oc=5",
+      "freshness_window": "primary_14_day"
     },
     "external_news_article": {
-      "url": "https://www.youtube.com/watch?v=5E4tYNtntFc",
-      "title": "BEST SWORDS IN BLADE BALL! 🔥 - Blade Ball Update Showcase",
-      "published_at": "2026-08-23T23:00:24+00:00",
-      "age_days": 5.49663832925926,
+      "url": "https://www.biggames.io/post/pet-simulator-99-update-91",
+      "title": "Lucky Block Blitz!",
+      "published_at": "2026-08-29",
+      "age_days": 1.1257418715972223,
       "source_tier": "A",
       "publisher": null,
       "freshness_window": "primary_14_day"
@@ -2441,7 +2465,7 @@
     "universe_id": 7436755782,
     "roblox_name": "[🌱] Grow a Garden 🌶️",
     "description": "🍅Welcome to Grow a Garden🍅\n\nAre you ready to grow your very own garden? Buy seeds from the shop when they restock, plant them, wait for them to grow, and collect the profits! Flex fruits and finds on friends, and have fun!\n\n[How To Plant]\n• Equip your seed you want to plant!\n• Click in your farm on the brown plots to plant!\n• Wait to see it start growing!\n• After its fully grown, it is time to harvest the goods!\n\nRemember, your garden literally grows while you are offline⭐",
-    "updated": "2026-08-29T09:22:25.9768233Z",
+    "updated": "2026-08-30T00:59:45.07427Z",
     "created": "2025-03-25T22:32:09.437Z",
     "creator": {
       "id": 35789249,
@@ -2458,7 +2482,7 @@
     "facts": [],
     "description_facts": [],
     "pool": "legacy",
-    "checked_at": "2026-08-29T10:55:33.394891+00:00",
+    "checked_at": "2026-08-30T03:01:03.935418+00:00",
     "sources": [
       {
         "type": "official_game_description",
@@ -2496,7 +2520,7 @@
       {
         "source_type": "official_game_description",
         "source_url": "https://www.roblox.com/games/126884695634066/Grow-a-Garden",
-        "latest_published_at": "2026-08-29T09:22:25.9768233Z",
+        "latest_published_at": "2026-08-30T00:59:45.07427Z",
         "status": "rejected",
         "result_code": "NO_NEW_CONTENT",
         "available": true,
@@ -2606,7 +2630,7 @@
     "universe_id": 5203828273,
     "roblox_name": "[🌴] Dress To Impress",
     "description": "Create stunning outfits 👗💖⭐, and strut the runway to show off your unique style. Collaborate, compete, and explore a world of glamour with friends!\n\n⭐ Are you ready to be the TOP MODEL?\n👗 NEW ITEMS! Check them out.\n🍿 Vote for your favorite outfits!\n💃 Use poses on the runway to show off your outfit!\n\nFind more about Dress To Impress by joining our community.\nhttps://www.roblox.com/communities/17264167/Dress-To-Impress-Group#!/about",
-    "updated": "2026-08-29T09:52:34.2296956Z",
+    "updated": "2026-08-29T22:48:13.8702997Z",
     "created": "2023-10-18T09:11:36.563Z",
     "creator": {
       "id": 17264167,
@@ -2663,7 +2687,7 @@
       }
     ],
     "pool": "legacy",
-    "checked_at": "2026-08-29T10:55:33.396232+00:00",
+    "checked_at": "2026-08-30T03:01:03.936780+00:00",
     "sources": [
       {
         "type": "official_game_description",
@@ -2684,7 +2708,7 @@
         "latest_published_at": "2026-07-02T15:00:06+00:00",
         "status": "rejected",
         "result_code": "SOURCE_STALE",
-        "reason": "Публикация устарела: 57.8 дн. (аварийный лимит 30).",
+        "reason": "Публикация устарела: 58.5 дн. (аварийный лимит 30).",
         "available": true,
         "article_found": true,
         "date_found": true,
@@ -2720,7 +2744,7 @@
       {
         "source_type": "official_game_description",
         "source_url": "https://www.roblox.com/games/15101393044/Dress-To-Impress",
-        "latest_published_at": "2026-08-29T09:52:34.2296956Z",
+        "latest_published_at": "2026-08-29T22:48:13.8702997Z",
         "status": "rejected",
         "result_code": "NO_NEW_CONTENT",
         "available": true,
@@ -2793,7 +2817,7 @@
         "latest_published_at": "2026-07-02T15:00:06+00:00",
         "status": "rejected",
         "result_code": "SOURCE_STALE",
-        "reason": "Публикация устарела: 57.8 дн. (аварийный лимит 30).",
+        "reason": "Публикация устарела: 58.5 дн. (аварийный лимит 30).",
         "available": true,
         "article_found": true,
         "date_found": true,
@@ -2852,15 +2876,15 @@
     }
   },
   {
-    "game": "Pet Simulator 99",
-    "universe_id": 3317771874,
-    "roblox_name": "🍀 [LUCKY BLOCK] Pet Simulator 99! 🧱",
-    "description": "Create an army of the coolest pets! They will help you get RICH!\n\n✨ Currently 2,000+ pets to collect! 🐾\n\n🧡 Thanks for playing!",
-    "updated": "2026-08-28T08:38:07.6264095Z",
-    "created": "2022-02-05T13:30:02.357Z",
+    "game": "Blade Ball",
+    "universe_id": 4777817887,
+    "roblox_name": "Blade Ball",
+    "description": "⚡  In this game of focus, timing, and strategy, your skill is tested as a deflectable homing ball hunts players with increasing speed. But there's more than what meets the eye.\n\n🔥  Gain new abilities and upgrade them to compliment your playstyle. Rise through the ranks by mastering your skill, and stand out with a variety of iconic weapon skins and finisher effects.\n\n🏆 Shoot for the leaderboard or play casually! The choice is yours.\n \nCONTROLS:\nBLOCK - F/R1/Tap Screen/Tap UI Button/Left Click\nABILITY - Q/ButtonX/Tap UI Button/Right Click\nSHIFTLOCK - Shift/Button-Y/Tap UI Button\nEMOTE - R/L1/Tap UI Button\n\ntags: minigame, battle game, pvp, multiplayer, abilities, dodgeball, sports, mobile, console, xbox, pc",
+    "updated": "2026-08-29T22:36:03.6299948Z",
+    "created": "2023-06-17T00:05:26.103Z",
     "creator": {
-      "id": 3959677,
-      "name": "BIG Games Pets",
+      "id": 12836673,
+      "name": "Wiggity.",
       "type": "Group",
       "isRNVAccount": false,
       "hasVerifiedBadge": true
@@ -2868,33 +2892,24 @@
     "description_changed": false,
     "added_lines": [],
     "keywords": [
-      "PETS"
+      "NEW"
     ],
     "score": 0,
     "confidence": "low",
     "facts": [],
     "description_facts": [
       {
-        "text": "Create an army of the coolest pets! They will help you get RICH!",
-        "kind": "pets",
-        "value": 8,
+        "text": "🔥 Gain new abilities and upgrade them to compliment your playstyle. Rise through the ranks by mastering your skill, and stand out with a variety of iconic weapon skins and finisher effects.",
+        "kind": "items",
+        "value": 7,
         "specific": true,
         "reason": "Строка называет конкретное игровое содержимое",
-        "summary_ru": "В игре появились новые питомцы.",
-        "is_new_line": false
-      },
-      {
-        "text": "✨ Currently 2,000+ pets to collect! 🐾",
-        "kind": "pets",
-        "value": 8,
-        "specific": true,
-        "reason": "Строка называет конкретное игровое содержимое",
-        "summary_ru": "В игре появились новые питомцы.",
+        "summary_ru": "В игре появились новые инструменты и оружие.",
         "is_new_line": false
       }
     ],
     "pool": "legacy",
-    "checked_at": "2026-08-29T10:55:33.396622+00:00",
+    "checked_at": "2026-08-30T03:01:03.939297+00:00",
     "sources": [
       {
         "type": "official_game_description",
@@ -2903,16 +2918,16 @@
       {
         "type": "official_roblox_group",
         "verified": true,
-        "group_id": 3959677,
-        "group_name": "BIG Games Pets"
+        "group_id": 12836673,
+        "group_name": "Wiggity."
       }
     ],
     "cross_source_confirmations": [],
     "source_diagnostics": [
       {
-        "source_type": "official_news_website",
-        "source_url": "https://www.biggames.io/post",
-        "latest_published_at": "2026-08-22",
+        "source_type": "official_youtube_feed",
+        "source_url": "https://www.youtube.com/feeds/videos.xml?channel_id=UCPttFx0zI4Zv9M4i3Q2ylsw",
+        "latest_published_at": "2026-08-23T23:00:24+00:00",
         "status": "rejected",
         "result_code": "ALREADY_USED",
         "reason": "Публикация уже использовалась в выпуске другого дня.",
@@ -2927,33 +2942,51 @@
         "selected": false,
         "formatted": false,
         "scheduled": false,
-        "latest_url": "https://www.biggames.io/post/pet-simulator-99-update-90"
+        "latest_url": "https://www.youtube.com/watch?v=5E4tYNtntFc"
       },
       {
-        "source_type": "secondary_gaming_media",
-        "source_url": "https://news.google.com/rss/search?q=%22Pet%20Simulator%2099%22%20Roblox%20when%3A30d&hl=en-US&gl=US&ceid=US:en",
-        "latest_published_at": "2026-08-23T22:53:00+00:00",
+        "source_type": "official_news_website",
+        "source_url": "https://bladeball.com/blogs/news",
+        "latest_published_at": "2024-03-23T18:51:42Z",
         "status": "rejected",
-        "result_code": "ALREADY_USED",
-        "reason": "Tier B повторяет уже использованную официальную новость.",
+        "result_code": "SOURCE_STALE",
+        "reason": "Публикация устарела: 889.3 дн. (аварийный лимит 30).",
         "available": true,
         "article_found": true,
         "date_found": true,
         "content_found": true,
-        "extraction_success": true,
+        "extraction_success": false,
+        "verification_passed": false,
+        "source_tier": "A",
+        "official": true,
+        "selected": false,
+        "formatted": false,
+        "scheduled": false,
+        "latest_url": "https://bladeball.com/blogs/news/comptetetive-leaderboards"
+      },
+      {
+        "source_type": "secondary_gaming_media",
+        "source_url": "https://news.google.com/rss/search?q=%22Blade%20Ball%22%20Roblox%20when%3A30d&hl=en-US&gl=US&ceid=US:en",
+        "latest_published_at": null,
+        "status": "rejected",
+        "result_code": "NO_NEW_CONTENT",
+        "reason": "Нет пригодной Tier B новости.",
+        "available": true,
+        "article_found": false,
+        "date_found": false,
+        "content_found": false,
+        "extraction_success": false,
         "verification_passed": false,
         "source_tier": "B",
         "official": false,
         "selected": false,
         "formatted": false,
-        "scheduled": false,
-        "latest_url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxQS01ZMllCSXA3Mk83N19sWVFoT3lEUFY5NFpEdVpMMG0xa0NiR19Vd2FvQ1FnWGY4NFNLd29MNElUT3JWN3RRcWlCeXZxalFRSEFDZzJrNFhUUHRZNXU5QzlsOHRFbndkY1g1TVU5MEdIcjVZbXdFb0RuVVByemk1R1N2bGhWVTVUYmtMby0xbW9GbmM0RTYzb1FZLTRtSjNwTUxReFhqZC1qSXFDVWNFMHZJVTlybmRVaFFZWGdfMzg?oc=5",
-        "freshness_window": "primary_14_day"
+        "scheduled": false
       },
       {
         "source_type": "official_game_description",
-        "source_url": "https://www.roblox.com/games/8737899170/Pet-Simulator-99",
-        "latest_published_at": "2026-08-28T08:38:07.6264095Z",
+        "source_url": "https://www.roblox.com/games/13772394625/Blade-Ball",
+        "latest_published_at": "2026-08-29T22:36:03.6299948Z",
         "status": "rejected",
         "result_code": "NO_NEW_CONTENT",
         "available": true,
@@ -2966,7 +2999,7 @@
       },
       {
         "source_type": "official_roblox_group",
-        "source_url": "https://www.roblox.com/communities/3959677/BIG-Games-Pets",
+        "source_url": "https://www.roblox.com/communities/12836673/Wiggity",
         "latest_published_at": null,
         "status": "checked",
         "result_code": "NO_NEW_CONTENT",
@@ -2981,47 +3014,45 @@
     ],
     "official_description_analysis": {
       "keywords": [
-        "PET",
-        "PETS"
+        "NEW"
       ],
       "news_lines": [
-        "Create an army of the coolest pets! They will help you get RICH!",
-        "✨ Currently 2,000+ pets to collect! 🐾"
+        "🔥  Gain new abilities and upgrade them to compliment your playstyle. Rise through the ranks by mastering your skill, and stand out with a variety of iconic weapon skins and finisher effects."
       ]
     },
     "source_registry": {
       "pool": "legacy",
-      "universe_id": 3317771874,
-      "root_place_id": 8737899170,
-      "roblox_game_url": "https://www.roblox.com/games/8737899170/Pet-Simulator-99",
-      "roblox_group_id": 3959677,
-      "roblox_group_name": "BIG Games Pets",
-      "roblox_group_url": "https://www.roblox.com/communities/3959677/BIG-Games-Pets",
+      "universe_id": 4777817887,
+      "root_place_id": 13772394625,
+      "roblox_game_url": "https://www.roblox.com/games/13772394625/Blade-Ball",
+      "roblox_group_id": 12836673,
+      "roblox_group_name": "Wiggity.",
+      "roblox_group_url": "https://www.roblox.com/communities/12836673/Wiggity",
       "news_strategy": "official_news_website",
-      "website": "https://www.biggames.io/",
-      "news_url": "https://www.biggames.io/post",
-      "discord": "https://discord.biggames.io/",
-      "youtube": "https://www.youtube.com/c/BuildIntoGames",
-      "x": "https://x.com/BuildIntoGames",
+      "website": "https://bladeball.com/",
+      "news_url": "https://bladeball.com/blogs/news",
+      "discord": "https://discord.com/servers/1141515589924429869",
+      "youtube": "https://www.youtube.com/@Blade-Ball",
+      "x": null,
       "roblox_creator_type": null,
       "roblox_creator_id": null,
       "roblox_creator_name": null,
       "roblox_creator_url": null
     },
     "official_group": {
-      "id": 3959677,
-      "name": "BIG Games Pets",
-      "expected_name": "BIG Games Pets",
+      "id": 12836673,
+      "name": "Wiggity.",
+      "expected_name": "Wiggity.",
       "name_matches_registry": true,
-      "description": "Meow 🐾\n\nExperience Studio!",
+      "description": "Creators of Blade Ball",
       "has_verified_badge": true,
       "news_lines": []
     },
     "external_source_diagnostics": [
       {
-        "source_type": "official_news_website",
-        "source_url": "https://www.biggames.io/post",
-        "latest_published_at": "2026-08-22",
+        "source_type": "official_youtube_feed",
+        "source_url": "https://www.youtube.com/feeds/videos.xml?channel_id=UCPttFx0zI4Zv9M4i3Q2ylsw",
+        "latest_published_at": "2026-08-23T23:00:24+00:00",
         "status": "rejected",
         "result_code": "ALREADY_USED",
         "reason": "Публикация уже использовалась в выпуске другого дня.",
@@ -3036,50 +3067,66 @@
         "selected": false,
         "formatted": false,
         "scheduled": false,
-        "latest_url": "https://www.biggames.io/post/pet-simulator-99-update-90"
+        "latest_url": "https://www.youtube.com/watch?v=5E4tYNtntFc"
       },
       {
-        "source_type": "secondary_gaming_media",
-        "source_url": "https://news.google.com/rss/search?q=%22Pet%20Simulator%2099%22%20Roblox%20when%3A30d&hl=en-US&gl=US&ceid=US:en",
-        "latest_published_at": "2026-08-23T22:53:00+00:00",
+        "source_type": "official_news_website",
+        "source_url": "https://bladeball.com/blogs/news",
+        "latest_published_at": "2024-03-23T18:51:42Z",
         "status": "rejected",
-        "result_code": "ALREADY_USED",
-        "reason": "Tier B повторяет уже использованную официальную новость.",
+        "result_code": "SOURCE_STALE",
+        "reason": "Публикация устарела: 889.3 дн. (аварийный лимит 30).",
         "available": true,
         "article_found": true,
         "date_found": true,
         "content_found": true,
-        "extraction_success": true,
+        "extraction_success": false,
+        "verification_passed": false,
+        "source_tier": "A",
+        "official": true,
+        "selected": false,
+        "formatted": false,
+        "scheduled": false,
+        "latest_url": "https://bladeball.com/blogs/news/comptetetive-leaderboards"
+      },
+      {
+        "source_type": "secondary_gaming_media",
+        "source_url": "https://news.google.com/rss/search?q=%22Blade%20Ball%22%20Roblox%20when%3A30d&hl=en-US&gl=US&ceid=US:en",
+        "latest_published_at": null,
+        "status": "rejected",
+        "result_code": "NO_NEW_CONTENT",
+        "reason": "Нет пригодной Tier B новости.",
+        "available": true,
+        "article_found": false,
+        "date_found": false,
+        "content_found": false,
+        "extraction_success": false,
         "verification_passed": false,
         "source_tier": "B",
         "official": false,
         "selected": false,
         "formatted": false,
-        "scheduled": false,
-        "latest_url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxQS01ZMllCSXA3Mk83N19sWVFoT3lEUFY5NFpEdVpMMG0xa0NiR19Vd2FvQ1FnWGY4NFNLd29MNElUT3JWN3RRcWlCeXZxalFRSEFDZzJrNFhUUHRZNXU5QzlsOHRFbndkY1g1TVU5MEdIcjVZbXdFb0RuVVByemk1R1N2bGhWVTVUYmtMby0xbW9GbmM0RTYzb1FZLTRtSjNwTUxReFhqZC1qSXFDVWNFMHZJVTlybmRVaFFZWGdfMzg?oc=5",
-        "freshness_window": "primary_14_day"
+        "scheduled": false
       }
     ],
     "external_source_diagnostic": {
       "source_type": "secondary_gaming_media",
-      "source_url": "https://news.google.com/rss/search?q=%22Pet%20Simulator%2099%22%20Roblox%20when%3A30d&hl=en-US&gl=US&ceid=US:en",
-      "latest_published_at": "2026-08-23T22:53:00+00:00",
+      "source_url": "https://news.google.com/rss/search?q=%22Blade%20Ball%22%20Roblox%20when%3A30d&hl=en-US&gl=US&ceid=US:en",
+      "latest_published_at": null,
       "status": "rejected",
-      "result_code": "ALREADY_USED",
-      "reason": "Tier B повторяет уже использованную официальную новость.",
+      "result_code": "NO_NEW_CONTENT",
+      "reason": "Нет пригодной Tier B новости.",
       "available": true,
-      "article_found": true,
-      "date_found": true,
-      "content_found": true,
-      "extraction_success": true,
+      "article_found": false,
+      "date_found": false,
+      "content_found": false,
+      "extraction_success": false,
       "verification_passed": false,
       "source_tier": "B",
       "official": false,
       "selected": false,
       "formatted": false,
-      "scheduled": false,
-      "latest_url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxQS01ZMllCSXA3Mk83N19sWVFoT3lEUFY5NFpEdVpMMG0xa0NiR19Vd2FvQ1FnWGY4NFNLd29MNElUT3JWN3RRcWlCeXZxalFRSEFDZzJrNFhUUHRZNXU5QzlsOHRFbndkY1g1TVU5MEdIcjVZbXdFb0RuVVByemk1R1N2bGhWVTVUYmtMby0xbW9GbmM0RTYzb1FZLTRtSjNwTUxReFhqZC1qSXFDVWNFMHZJVTlybmRVaFFZWGdfMzg?oc=5",
-      "freshness_window": "primary_14_day"
+      "scheduled": false
     },
     "candidate_decision": {
       "status": "rejected",

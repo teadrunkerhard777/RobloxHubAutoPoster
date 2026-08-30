@@ -106,7 +106,16 @@
       "ru_title": null,
       "ru_url": null,
       "ru_content": [],
-      "ru_clean_content": []
+      "ru_clean_content": [],
+      "source_language": "en",
+      "translated": true,
+      "translated_title": "Первый взгляд на BSC 2027",
+      "translated_content": [
+        "В BSC 2027 появятся два связанных уровня соревнований: основная лига и Challengers.",
+        "Первый сплит будет вести к Brawl Cup, а второй — к Brawl Stars World Finals.",
+        "Между уровнями введут повышение и выбывание команд по результатам соревнований."
+      ],
+      "scheduled": true
     }
   ],
   "high_priority_articles": [],
@@ -213,7 +222,16 @@
       "ru_title": null,
       "ru_url": null,
       "ru_content": [],
-      "ru_clean_content": []
+      "ru_clean_content": [],
+      "source_language": "en",
+      "translated": true,
+      "translated_title": "Первый взгляд на BSC 2027",
+      "translated_content": [
+        "В BSC 2027 появятся два связанных уровня соревнований: основная лига и Challengers.",
+        "Первый сплит будет вести к Brawl Cup, а второй — к Brawl Stars World Finals.",
+        "Между уровнями введут повышение и выбывание команд по результатам соревнований."
+      ],
+      "scheduled": true
     }
   ]
 }

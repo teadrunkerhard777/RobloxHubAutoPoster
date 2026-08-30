@@ -426,7 +426,7 @@
     "text": "Если создаёшь длинную ролевую игру, придумай простую цель: расследование, поездка, переезд или спасательная операция.",
     "source": "verified_core_mechanic",
     "reviewed_at": "2026-08-14",
-    "used": false,
+    "used": true,
     "category": "strategy"
   },
   {
@@ -1036,7 +1036,7 @@
     "text": "Событийные режимы могут менять выгодные цели, поэтому перед фармом посмотри, какая активность сейчас даёт нужную тебе награду.",
     "source": "verified_core_mechanic",
     "reviewed_at": "2026-08-14",
-    "used": false,
+    "used": true,
     "category": "strategy"
   },
   {
@@ -1237,7 +1237,7 @@
     "text": "Следи за защитой базы: перед её отключением лучше вернуться и проверить входы.",
     "source": "verified_core_mechanic",
     "reviewed_at": "2026-08-24",
-    "used": false
+    "used": true
   },
   {
     "id": 125,
@@ -1651,7 +1651,7 @@
     "text": "Если внешний вид кажется нормальным, проверь фотографию: некоторые аномалии заметны именно там.",
     "source": "agreed_editorial_list",
     "reviewed_at": "2026-08-28",
-    "used": false
+    "used": true
   },
   {
     "id": 165,
@@ -1673,7 +1673,7 @@
     "text": "Если видишь явную аномалию, не пропускай пациента внутрь.",
     "source": "agreed_editorial_list",
     "reviewed_at": "2026-08-28",
-    "used": false
+    "used": true
   },
   {
     "id": 167,
@@ -1750,7 +1750,7 @@
     "text": "После принятия нормального пациента не забывай про лечение: проверка у окна — только первая часть работы.",
     "source": "agreed_editorial_list",
     "reviewed_at": "2026-08-28",
-    "used": false
+    "used": true
   },
   {
     "id": 174,
@@ -1805,7 +1805,7 @@
     "text": "Используй Rebirth ради постоянных бонусов, когда текущая прокачка начинает сильно замедляться.",
     "source": "agreed_editorial_list",
     "reviewed_at": "2026-08-28",
-    "used": false
+    "used": true
   },
   {
     "id": 179,
@@ -2003,7 +2003,7 @@
     "text": "Не стой вплотную к большой группе: Murderer может быстро атаковать нескольких игроков рядом.",
     "source": "agreed_editorial_list",
     "reviewed_at": "2026-08-28",
-    "used": false
+    "used": true
   },
   {
     "id": 197,

@@ -1,23 +1,23 @@
 {
   "items": [
     {
-      "game": "Brookhaven RP",
-      "emoji": "🏡",
-      "score": 8,
-      "text": "🚗 В игру добавили кабриолет с неоновыми задними фонарями в виде цветов.\n\nВ Brookhaven RP вышло обновление «Brookhaven Update August 28, 2026: Lavender Luxury».",
-      "external_article_url": "https://www.brookhavenrp.com/posts/brookhaven-update-august-28-2026"
+      "game": "Adopt Me!",
+      "emoji": "🐾",
+      "score": 10,
+      "text": "В игре появились новые питомцы.\n\nВ Adopt Me! вышло обновление «Fairytale Egg!».",
+      "external_article_url": "https://www.playadopt.me/news/fairytale-egg"
     },
     {
-      "game": "Blade Ball",
-      "emoji": "⚔️",
-      "score": 6,
-      "text": "В Blade Ball вышло обновление «BEST SWORDS IN BLADE BALL! 🔥 - Blade Ball Update Showcase».",
-      "external_article_url": "https://www.youtube.com/watch?v=5E4tYNtntFc"
+      "game": "Pet Simulator 99",
+      "emoji": "🐶",
+      "score": 10,
+      "text": "🎉 В Pet Simulator 99 стартовало событие «Lucky Block Blitz!».\n\nВ игре появились новые питомцы.\n\nОткрыт Set your best run to top the Time Trial Leaderboard с наградами за места.",
+      "external_article_url": "https://www.biggames.io/post/pet-simulator-99-update-91"
     }
   ],
   "pipeline": [
     {
-      "game": "Brookhaven RP",
+      "game": "Adopt Me!",
       "candidate": true,
       "verified": true,
       "selected": true,
@@ -71,13 +71,13 @@
       "reason": "Нет пригодной Tier B новости; Нет новой конкретной строки со времени прошлого снимка"
     },
     {
-      "game": "Adopt Me!",
+      "game": "Brookhaven RP",
       "candidate": true,
       "verified": false,
       "selected": false,
       "formatted_ru": false,
       "scheduled": false,
-      "reason": "Публикация уже использовалась в выпуске другого дня; Tier B повторяет уже использованную официальную новость; Нет новой конкретной строки со времени прошлого снимка"
+      "reason": "Публикация уже использовалась в выпуске другого дня; Нет пригодной Tier B новости; Нет новой конкретной строки со времени прошлого снимка"
     },
     {
       "game": "RIVALS",
@@ -107,7 +107,7 @@
       "reason": "В публикации не найдено достаточно конкретного содержания; Нет новой конкретной строки со времени прошлого снимка"
     },
     {
-      "game": "Blade Ball",
+      "game": "Pet Simulator 99",
       "candidate": true,
       "verified": true,
       "selected": true,
@@ -131,16 +131,16 @@
       "selected": false,
       "formatted_ru": false,
       "scheduled": false,
-      "reason": "Публикация устарела: 57.8 дн. (аварийный лимит 30); Нет пригодной Tier B новости; Нет новой конкретной строки со времени прошлого снимка"
+      "reason": "Публикация устарела: 58.5 дн. (аварийный лимит 30); Нет пригодной Tier B новости; Нет новой конкретной строки со времени прошлого снимка"
     },
     {
-      "game": "Pet Simulator 99",
+      "game": "Blade Ball",
       "candidate": true,
       "verified": false,
       "selected": false,
       "formatted_ru": false,
       "scheduled": false,
-      "reason": "Публикация уже использовалась в выпуске другого дня; Tier B повторяет уже использованную официальную новость; Нет новой конкретной строки со времени прошлого снимка"
+      "reason": "Публикация уже использовалась в выпуске другого дня; Публикация устарела: 889.3 дн. (аварийный лимит 30); Нет пригодной Tier B новости; Нет новой конкретной строки со времени прошлого снимка"
     }
   ],
   "summary": {
