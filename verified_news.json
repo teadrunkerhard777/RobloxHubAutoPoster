@@ -19,28 +19,28 @@
       "NEW",
       "PETS"
     ],
-    "score": 9,
-    "confidence": "high",
+    "score": 7,
+    "confidence": "medium",
     "facts": [
       {
-        "text": "A new egg has appeared in the Gumball machine. Hatch ten new pets to complete your collection. You can also pick up a bundle of 4 Fairytale Eggs for",
-        "summary_ru": "В игре появились новые питомцы.",
-        "kind": "pets",
-        "value": 9,
+        "text": "Adopt Me Backpack Storage & Releaser Refresh update patch notes. Adopt Me Backpack Storage & Releaser Refresh update patch notes Sportskeeda",
+        "summary_ru": "Появилось отдельное хранилище для предметов из рюкзака.",
+        "kind": "mechanics_storage",
+        "value": 7,
         "specific": true,
         "reason": "Факт из официальной новостной статьи",
         "is_new_line": true,
-        "source_url": "https://www.playadopt.me/news/fairytale-egg"
+        "source_url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxQSGs1V3ZkWDZ2N1dIR05Ta3BFY2NScEk1cXgtdWs2ZUFGMmlUb3AyUWtfQ3Nsa3VvQjVDSm1mYUxlOHBObVJYQWhJZ0k3X2M0dkhuNF9IS3F1cmdVOFkyc2RFTXF0TVdNV1R4dHBOTjJlNXBJaGtKMmRSYW9seWhsYnJybG5qSlQ2UW4tVzVoUk1wUmIzM3IyN0UtaG1VTkFhXzU4?oc=5"
       },
       {
-        "text": "Fairytale Egg!",
-        "summary_ru": "В Adopt Me! вышло обновление «Fairytale Egg!».",
+        "text": "Adopt Me Backpack Storage & Releaser Refresh update patch",
+        "summary_ru": "По данным Sportskeeda, Появилось отдельное хранилище для предметов из рюкзака.",
         "kind": "official_article",
         "value": 6,
         "specific": true,
         "reason": "Факт из официальной новостной статьи",
         "is_new_line": true,
-        "source_url": "https://www.playadopt.me/news/fairytale-egg",
+        "source_url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxQSGs1V3ZkWDZ2N1dIR05Ta3BFY2NScEk1cXgtdWs2ZUFGMmlUb3AyUWtfQ3Nsa3VvQjVDSm1mYUxlOHBObVJYQWhJZ0k3X2M0dkhuNF9IS3F1cmdVOFkyc2RFTXF0TVdNV1R4dHBOTjJlNXBJaGtKMmRSYW9seWhsYnJybG5qSlQ2UW4tVzVoUk1wUmIzM3IyN0UtaG1VTkFhXzU4?oc=5",
         "title_is_concrete": true
       }
     ],
@@ -92,7 +92,7 @@
       }
     ],
     "pool": "active",
-    "checked_at": "2026-08-30T09:50:09.072835+00:00",
+    "checked_at": "2026-08-31T03:01:02.705094+00:00",
     "sources": [
       {
         "type": "official_game_description",
@@ -105,9 +105,9 @@
         "group_name": "Uplift Games"
       },
       {
-        "type": "official_news_website",
+        "type": "secondary_gaming_media",
         "verified": true,
-        "url": "https://www.playadopt.me/news/fairytale-egg"
+        "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxQSGs1V3ZkWDZ2N1dIR05Ta3BFY2NScEk1cXgtdWs2ZUFGMmlUb3AyUWtfQ3Nsa3VvQjVDSm1mYUxlOHBObVJYQWhJZ0k3X2M0dkhuNF9IS3F1cmdVOFkyc2RFTXF0TVdNV1R4dHBOTjJlNXBJaGtKMmRSYW9seWhsYnJybG5qSlQ2UW4tVzVoUk1wUmIzM3IyN0UtaG1VTkFhXzU4?oc=5"
       }
     ],
     "cross_source_confirmations": [],
@@ -116,22 +116,21 @@
         "source_type": "official_news_website",
         "source_url": "https://www.playadopt.me/news",
         "latest_published_at": "2026-08-29T16:10:00.000Z",
-        "status": "accepted",
-        "result_code": "FOUND_VERIFIED",
-        "reason": "Официальная публикация (0.7 дн.) с датой и игровым содержанием; окно primary_14_day.",
+        "status": "rejected",
+        "result_code": "ALREADY_USED",
+        "reason": "Публикация уже использовалась в выпуске другого дня.",
         "available": true,
         "article_found": true,
         "date_found": true,
         "content_found": true,
-        "extraction_success": true,
-        "verification_passed": true,
+        "extraction_success": false,
+        "verification_passed": false,
         "source_tier": "A",
         "official": true,
         "selected": false,
         "formatted": false,
         "scheduled": false,
-        "latest_url": "https://www.playadopt.me/news/fairytale-egg",
-        "freshness_window": "primary_14_day"
+        "latest_url": "https://www.playadopt.me/news/fairytale-egg"
       },
       {
         "source_type": "secondary_gaming_media",
@@ -139,7 +138,7 @@
         "latest_published_at": "2026-08-21T15:30:00+00:00",
         "status": "accepted",
         "result_code": "FOUND_VERIFIED",
-        "reason": "Tier b публикация (8.8 дн.) с датой и игровым содержанием; окно primary_14_day.",
+        "reason": "Tier b публикация (9.5 дн.) с датой и игровым содержанием; окно primary_14_day.",
         "available": true,
         "article_found": true,
         "date_found": true,
@@ -230,22 +229,21 @@
         "source_type": "official_news_website",
         "source_url": "https://www.playadopt.me/news",
         "latest_published_at": "2026-08-29T16:10:00.000Z",
-        "status": "accepted",
-        "result_code": "FOUND_VERIFIED",
-        "reason": "Официальная публикация (0.7 дн.) с датой и игровым содержанием; окно primary_14_day.",
+        "status": "rejected",
+        "result_code": "ALREADY_USED",
+        "reason": "Публикация уже использовалась в выпуске другого дня.",
         "available": true,
         "article_found": true,
         "date_found": true,
         "content_found": true,
-        "extraction_success": true,
-        "verification_passed": true,
+        "extraction_success": false,
+        "verification_passed": false,
         "source_tier": "A",
         "official": true,
         "selected": false,
         "formatted": false,
         "scheduled": false,
-        "latest_url": "https://www.playadopt.me/news/fairytale-egg",
-        "freshness_window": "primary_14_day"
+        "latest_url": "https://www.playadopt.me/news/fairytale-egg"
       },
       {
         "source_type": "secondary_gaming_media",
@@ -253,7 +251,7 @@
         "latest_published_at": "2026-08-21T15:30:00+00:00",
         "status": "accepted",
         "result_code": "FOUND_VERIFIED",
-        "reason": "Tier b публикация (8.8 дн.) с датой и игровым содержанием; окно primary_14_day.",
+        "reason": "Tier b публикация (9.5 дн.) с датой и игровым содержанием; окно primary_14_day.",
         "available": true,
         "article_found": true,
         "date_found": true,
@@ -275,7 +273,7 @@
       "latest_published_at": "2026-08-21T15:30:00+00:00",
       "status": "accepted",
       "result_code": "FOUND_VERIFIED",
-      "reason": "Tier b публикация (8.8 дн.) с датой и игровым содержанием; окно primary_14_day.",
+      "reason": "Tier b публикация (9.5 дн.) с датой и игровым содержанием; окно primary_14_day.",
       "available": true,
       "article_found": true,
       "date_found": true,
@@ -291,12 +289,12 @@
       "freshness_window": "primary_14_day"
     },
     "external_news_article": {
-      "url": "https://www.playadopt.me/news/fairytale-egg",
-      "title": "Fairytale Egg! - Adopt Me!",
-      "published_at": "2026-08-29T16:10:00.000Z",
-      "age_days": 0.7362179920486112,
-      "source_tier": "A",
-      "publisher": null,
+      "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxQSGs1V3ZkWDZ2N1dIR05Ta3BFY2NScEk1cXgtdWs2ZUFGMmlUb3AyUWtfQ3Nsa3VvQjVDSm1mYUxlOHBObVJYQWhJZ0k3X2M0dkhuNF9IS3F1cmdVOFkyc2RFTXF0TVdNV1R4dHBOTjJlNXBJaGtKMmRSYW9seWhsYnJybG5qSlQ2UW4tVzVoUk1wUmIzM3IyN0UtaG1VTkFhXzU4?oc=5",
+      "title": "Adopt Me Backpack Storage & Releaser Refresh update patch notes",
+      "published_at": "2026-08-21T15:30:00+00:00",
+      "age_days": 9.479894377604166,
+      "source_tier": "B",
+      "publisher": "Sportskeeda",
       "freshness_window": "primary_14_day"
     },
     "candidate_decision": {
@@ -351,7 +349,7 @@
       }
     ],
     "pool": "active",
-    "checked_at": "2026-08-30T09:50:09.071157+00:00",
+    "checked_at": "2026-08-31T03:01:02.703426+00:00",
     "sources": [
       {
         "type": "official_game_description",
@@ -377,7 +375,7 @@
         "latest_published_at": "2026-08-06T22:02:43Z",
         "status": "accepted",
         "result_code": "FOUND_VERIFIED",
-        "reason": "Официальная публикация (23.5 дн.) с датой и игровым содержанием; окно emergency_30_day.",
+        "reason": "Официальная публикация (24.2 дн.) с датой и игровым содержанием; окно emergency_30_day.",
         "available": true,
         "article_found": true,
         "date_found": true,
@@ -486,7 +484,7 @@
         "latest_published_at": "2026-08-06T22:02:43Z",
         "status": "accepted",
         "result_code": "FOUND_VERIFIED",
-        "reason": "Официальная публикация (23.5 дн.) с датой и игровым содержанием; окно emergency_30_day.",
+        "reason": "Официальная публикация (24.2 дн.) с датой и игровым содержанием; окно emergency_30_day.",
         "available": true,
         "article_found": true,
         "date_found": true,
@@ -546,7 +544,7 @@
       "url": "https://gamerrobot.com/blogs/news/the-balance-log",
       "title": "The Balance Log",
       "published_at": "2026-08-06T22:02:43Z",
-      "age_days": 23.49127586241898,
+      "age_days": 24.207174470196758,
       "source_tier": "A",
       "publisher": null,
       "freshness_window": "emergency_30_day"
@@ -561,7 +559,7 @@
     "universe_id": 10563114921,
     "roblox_name": "Steal An Egg",
     "description": "🥚 Welcome to Steal An Egg!\n\nHow to Play:\n🥚 Steal eggs from pets\n🐣 Hatch eggs to collect rare pets\n💰 Earn money from your pets\n⬆️ Upgrade your treadmill and base\n🏃 Train on the treadmill to gain Speed\n🥷 Steal eggs from other players\n✨ Discover rarer eggs, pets, sizes, and mutations!\n\n🎮 Supports Desktop, Console, Mobile, and Tablet players",
-    "updated": "2026-08-29T18:33:21.8283756Z",
+    "updated": "2026-08-30T23:39:38.9942374Z",
     "created": "2026-07-25T07:50:51.492Z",
     "creator": {
       "id": 825735094,
@@ -635,7 +633,7 @@
       }
     ],
     "pool": "active",
-    "checked_at": "2026-08-30T09:50:09.059846+00:00",
+    "checked_at": "2026-08-31T03:01:02.692984+00:00",
     "sources": [
       {
         "type": "official_game_description",
@@ -673,7 +671,7 @@
       {
         "source_type": "official_game_description",
         "source_url": "https://www.roblox.com/games/107778070777162/Steal-An-Egg",
-        "latest_published_at": "2026-08-29T18:33:21.8283756Z",
+        "latest_published_at": "2026-08-30T23:39:38.9942374Z",
         "status": "rejected",
         "result_code": "NO_NEW_CONTENT",
         "available": true,
@@ -818,7 +816,7 @@
       }
     ],
     "pool": "active",
-    "checked_at": "2026-08-30T09:50:09.060383+00:00",
+    "checked_at": "2026-08-31T03:01:02.693520+00:00",
     "sources": [
       {
         "type": "official_game_description",
@@ -963,7 +961,7 @@
     "universe_id": 9831440772,
     "roblox_name": "[UPD] +1 Speed Keyboard Escape",
     "description": "🎀 Join the XSpeed Games group!\n\n👟 Welcome to +1 Speed Keyboard Escape 👟\n\n⚡ Every step = +1 Speed\n👟 Run, jump, and escape across a world made of keyboard keys\n💪 Train your speed and unlock powerful multipliers\n🌍 Become the FASTEST player in the world\n👥 Race against friends and other players\n🚀 Speed is everything… but one wrong step and you’re back at the start 😱\n\n🎧 ASMR vibes included\nSmooth movement, satisfying keyboard clicks, and relaxing, chill sounds! ✨\n\n🔑 Tags:\nSpeed, Keyboard, ASMR, Obby, Escape, Parkour, Multiplayer, Racing, Competitive, Satisfying, Relaxing, Physics, Ragdoll, Challenge, Speedrun",
-    "updated": "2026-08-29T19:57:37.8433939Z",
+    "updated": "2026-08-30T19:20:41.5188574Z",
     "created": "2026-03-04T03:51:10.46Z",
     "creator": {
       "id": 175742687,
@@ -980,7 +978,7 @@
     "facts": [],
     "description_facts": [],
     "pool": "active",
-    "checked_at": "2026-08-30T09:50:09.062719+00:00",
+    "checked_at": "2026-08-31T03:01:02.695839+00:00",
     "sources": [
       {
         "type": "official_game_description",
@@ -1017,7 +1015,7 @@
       {
         "source_type": "official_game_description",
         "source_url": "https://www.roblox.com/games/81245647985532/1-Speed-Keyboard-Escape",
-        "latest_published_at": "2026-08-29T19:57:37.8433939Z",
+        "latest_published_at": "2026-08-30T19:20:41.5188574Z",
         "status": "rejected",
         "result_code": "NO_NEW_CONTENT",
         "available": true,
@@ -1168,7 +1166,7 @@
       }
     ],
     "pool": "active",
-    "checked_at": "2026-08-30T09:50:09.064296+00:00",
+    "checked_at": "2026-08-31T03:01:02.697509+00:00",
     "sources": [
       {
         "type": "official_game_description",
@@ -1391,7 +1389,7 @@
       }
     ],
     "pool": "active",
-    "checked_at": "2026-08-30T09:50:09.068384+00:00",
+    "checked_at": "2026-08-31T03:01:02.700751+00:00",
     "sources": [
       {
         "type": "official_game_description",
@@ -1644,7 +1642,7 @@
       }
     ],
     "pool": "active",
-    "checked_at": "2026-08-30T09:50:09.075114+00:00",
+    "checked_at": "2026-08-31T03:01:02.707291+00:00",
     "sources": [
       {
         "type": "official_game_description",
@@ -1802,7 +1800,7 @@
     "universe_id": 7326934954,
     "roblox_name": "[🪶] 99 Nights in the Forest 🔦",
     "description": "Build a camp with friends. \n\nSomething is watching you.\n\n99 Nights in the Forest",
-    "updated": "2026-08-28T23:51:12.2381711Z",
+    "updated": "2026-08-28T23:51:12.238Z",
     "created": "2025-03-04T04:46:49.73Z",
     "creator": {
       "id": 6042520,
@@ -1819,7 +1817,7 @@
     "facts": [],
     "description_facts": [],
     "pool": "active",
-    "checked_at": "2026-08-30T09:50:09.075556+00:00",
+    "checked_at": "2026-08-31T03:01:02.707728+00:00",
     "sources": [
       {
         "type": "official_game_description",
@@ -1857,7 +1855,7 @@
       {
         "source_type": "official_game_description",
         "source_url": "https://www.roblox.com/games/79546208627805/99-Nights-in-the-Forest",
-        "latest_published_at": "2026-08-28T23:51:12.2381711Z",
+        "latest_published_at": "2026-08-28T23:51:12.238Z",
         "status": "rejected",
         "result_code": "NO_NEW_CONTENT",
         "available": true,
@@ -1967,7 +1965,7 @@
     "universe_id": 7709344486,
     "roblox_name": "[🐝] Steal a Brainrot",
     "description": "🗣️ Welcome to Steal a Brainrot!\n\n👍 Like the game and join the group\n\nHow to Play:\n👽 Buy a Brainrot\n🥷 Steal Brainrots from other players\n💸 Generate money\n🐦‍🔥 Rebirth\n✋ Buy slaps and troll gear to troll other players!\n\n💻 Supports Desktop, Mobile and Tablet players\n\n🙏 Credit to Chris for letting us use the Nyan Cat!\n🙏 Credit to @WinnersTakesAll for the backpack system!",
-    "updated": "2026-08-29T17:39:22.3357193Z",
+    "updated": "2026-08-30T16:57:30.5519159Z",
     "created": "2025-05-16T00:49:12.563Z",
     "creator": {
       "id": 35815907,
@@ -1994,7 +1992,7 @@
       }
     ],
     "pool": "active",
-    "checked_at": "2026-08-30T09:50:09.077115+00:00",
+    "checked_at": "2026-08-31T03:01:02.709394+00:00",
     "sources": [
       {
         "type": "official_game_description",
@@ -2032,7 +2030,7 @@
       {
         "source_type": "official_game_description",
         "source_url": "https://www.roblox.com/games/109983668079237/Steal-a-Brainrot",
-        "latest_published_at": "2026-08-29T17:39:22.3357193Z",
+        "latest_published_at": "2026-08-30T16:57:30.5519159Z",
         "status": "rejected",
         "result_code": "NO_NEW_CONTENT",
         "available": true,
@@ -2138,288 +2136,6 @@
     }
   },
   {
-    "game": "Pet Simulator 99",
-    "universe_id": 3317771874,
-    "roblox_name": "🍀 [LUCKY BLOCK] Pet Simulator 99! 🎯",
-    "description": "Create an army of the coolest pets! They will help you get RICH!\n\n✨ Currently 3,000+ pets to collect! 🐾\n\n🧡 Thanks for playing!",
-    "updated": "2026-08-29T21:25:14.0749178Z",
-    "created": "2022-02-05T13:30:02.357Z",
-    "creator": {
-      "id": 3959677,
-      "name": "BIG Games Pets",
-      "type": "Group",
-      "isRNVAccount": false,
-      "hasVerifiedBadge": true
-    },
-    "description_changed": false,
-    "added_lines": [],
-    "keywords": [
-      "PETS"
-    ],
-    "score": 10,
-    "confidence": "high",
-    "facts": [
-      {
-        "text": "Lucky Block Blitz!",
-        "summary_ru": "В Pet Simulator 99 стартовало событие «Lucky Block Blitz!».",
-        "kind": "event",
-        "value": 10,
-        "specific": true,
-        "reason": "Факт из официальной новостной статьи",
-        "is_new_line": true,
-        "source_url": "https://www.biggames.io/post/pet-simulator-99-update-91"
-      },
-      {
-        "text": "pet now has its own pets now bounce in full color! Every new egg holds a to unlock every new egg.",
-        "summary_ru": "В игре появились новые питомцы.",
-        "kind": "pets",
-        "value": 9,
-        "specific": true,
-        "reason": "Факт из официальной новостной статьи",
-        "is_new_line": true,
-        "source_url": "https://www.biggames.io/post/pet-simulator-99-update-91"
-      },
-      {
-        "text": "Set your best run to top the Time Trial Leaderboard!",
-        "summary_ru": "Открыт Set your best run to top the Time Trial Leaderboard с наградами за места.",
-        "kind": "leaderboard",
-        "value": 8,
-        "specific": true,
-        "reason": "Факт из официальной новостной статьи",
-        "is_new_line": true,
-        "source_url": "https://www.biggames.io/post/pet-simulator-99-update-91"
-      }
-    ],
-    "description_facts": [
-      {
-        "text": "Create an army of the coolest pets! They will help you get RICH!",
-        "kind": "pets",
-        "value": 8,
-        "specific": true,
-        "reason": "Строка называет конкретное игровое содержимое",
-        "summary_ru": "В игре появились новые питомцы.",
-        "is_new_line": false
-      },
-      {
-        "text": "✨ Currently 3,000+ pets to collect! 🐾",
-        "kind": "pets",
-        "value": 8,
-        "specific": true,
-        "reason": "Строка называет конкретное игровое содержимое",
-        "summary_ru": "В игре появились новые питомцы.",
-        "is_new_line": false
-      }
-    ],
-    "pool": "legacy",
-    "checked_at": "2026-08-30T09:50:09.080566+00:00",
-    "sources": [
-      {
-        "type": "official_game_description",
-        "verified": true
-      },
-      {
-        "type": "official_roblox_group",
-        "verified": true,
-        "group_id": 3959677,
-        "group_name": "BIG Games Pets"
-      },
-      {
-        "type": "official_news_website",
-        "verified": true,
-        "url": "https://www.biggames.io/post/pet-simulator-99-update-91"
-      }
-    ],
-    "cross_source_confirmations": [],
-    "source_diagnostics": [
-      {
-        "source_type": "official_news_website",
-        "source_url": "https://www.biggames.io/post",
-        "latest_published_at": "2026-08-29",
-        "status": "accepted",
-        "result_code": "FOUND_VERIFIED",
-        "reason": "Официальная публикация (1.4 дн.) с датой и игровым содержанием; окно primary_14_day.",
-        "available": true,
-        "article_found": true,
-        "date_found": true,
-        "content_found": true,
-        "extraction_success": true,
-        "verification_passed": true,
-        "source_tier": "A",
-        "official": true,
-        "selected": false,
-        "formatted": false,
-        "scheduled": false,
-        "latest_url": "https://www.biggames.io/post/pet-simulator-99-update-91",
-        "freshness_window": "primary_14_day"
-      },
-      {
-        "source_type": "secondary_gaming_media",
-        "source_url": "https://news.google.com/rss/search?q=%22Pet%20Simulator%2099%22%20Roblox%20when%3A30d&hl=en-US&gl=US&ceid=US:en",
-        "latest_published_at": "2026-08-23T22:53:00+00:00",
-        "status": "accepted",
-        "result_code": "FOUND_VERIFIED",
-        "reason": "Tier b публикация (6.5 дн.) с датой и игровым содержанием; окно primary_14_day.",
-        "available": true,
-        "article_found": true,
-        "date_found": true,
-        "content_found": true,
-        "extraction_success": true,
-        "verification_passed": true,
-        "source_tier": "B",
-        "official": false,
-        "selected": false,
-        "formatted": false,
-        "scheduled": false,
-        "latest_url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxQS01ZMllCSXA3Mk83N19sWVFoT3lEUFY5NFpEdVpMMG0xa0NiR19Vd2FvQ1FnWGY4NFNLd29MNElUT3JWN3RRcWlCeXZxalFRSEFDZzJrNFhUUHRZNXU5QzlsOHRFbndkY1g1TVU5MEdIcjVZbXdFb0RuVVByemk1R1N2bGhWVTVUYmtMby0xbW9GbmM0RTYzb1FZLTRtSjNwTUxReFhqZC1qSXFDVWNFMHZJVTlybmRVaFFZWGdfMzg?oc=5",
-        "freshness_window": "primary_14_day"
-      },
-      {
-        "source_type": "official_game_description",
-        "source_url": "https://www.roblox.com/games/8737899170/Pet-Simulator-99",
-        "latest_published_at": "2026-08-29T21:25:14.0749178Z",
-        "status": "rejected",
-        "result_code": "NO_NEW_CONTENT",
-        "available": true,
-        "article_found": false,
-        "date_found": true,
-        "content_found": true,
-        "extraction_success": false,
-        "verification_passed": false,
-        "reason": "Нет новой конкретной строки со времени прошлого снимка."
-      },
-      {
-        "source_type": "official_roblox_group",
-        "source_url": "https://www.roblox.com/communities/3959677/BIG-Games-Pets",
-        "latest_published_at": null,
-        "status": "checked",
-        "result_code": "NO_NEW_CONTENT",
-        "available": true,
-        "article_found": false,
-        "date_found": false,
-        "content_found": true,
-        "extraction_success": false,
-        "verification_passed": false,
-        "reason": "Официальная группа подтверждена; датированной новости нет."
-      }
-    ],
-    "official_description_analysis": {
-      "keywords": [
-        "PET",
-        "PETS"
-      ],
-      "news_lines": [
-        "Create an army of the coolest pets! They will help you get RICH!",
-        "✨ Currently 3,000+ pets to collect! 🐾"
-      ]
-    },
-    "source_registry": {
-      "pool": "legacy",
-      "universe_id": 3317771874,
-      "root_place_id": 8737899170,
-      "roblox_game_url": "https://www.roblox.com/games/8737899170/Pet-Simulator-99",
-      "roblox_group_id": 3959677,
-      "roblox_group_name": "BIG Games Pets",
-      "roblox_group_url": "https://www.roblox.com/communities/3959677/BIG-Games-Pets",
-      "news_strategy": "official_news_website",
-      "website": "https://www.biggames.io/",
-      "news_url": "https://www.biggames.io/post",
-      "discord": "https://discord.biggames.io/",
-      "youtube": "https://www.youtube.com/c/BuildIntoGames",
-      "x": "https://x.com/BuildIntoGames",
-      "roblox_creator_type": null,
-      "roblox_creator_id": null,
-      "roblox_creator_name": null,
-      "roblox_creator_url": null
-    },
-    "official_group": {
-      "id": 3959677,
-      "name": "BIG Games Pets",
-      "expected_name": "BIG Games Pets",
-      "name_matches_registry": true,
-      "description": "Meow 🐾\n\nExperience Studio!",
-      "has_verified_badge": true,
-      "news_lines": []
-    },
-    "external_source_diagnostics": [
-      {
-        "source_type": "official_news_website",
-        "source_url": "https://www.biggames.io/post",
-        "latest_published_at": "2026-08-29",
-        "status": "accepted",
-        "result_code": "FOUND_VERIFIED",
-        "reason": "Официальная публикация (1.4 дн.) с датой и игровым содержанием; окно primary_14_day.",
-        "available": true,
-        "article_found": true,
-        "date_found": true,
-        "content_found": true,
-        "extraction_success": true,
-        "verification_passed": true,
-        "source_tier": "A",
-        "official": true,
-        "selected": false,
-        "formatted": false,
-        "scheduled": false,
-        "latest_url": "https://www.biggames.io/post/pet-simulator-99-update-91",
-        "freshness_window": "primary_14_day"
-      },
-      {
-        "source_type": "secondary_gaming_media",
-        "source_url": "https://news.google.com/rss/search?q=%22Pet%20Simulator%2099%22%20Roblox%20when%3A30d&hl=en-US&gl=US&ceid=US:en",
-        "latest_published_at": "2026-08-23T22:53:00+00:00",
-        "status": "accepted",
-        "result_code": "FOUND_VERIFIED",
-        "reason": "Tier b публикация (6.5 дн.) с датой и игровым содержанием; окно primary_14_day.",
-        "available": true,
-        "article_found": true,
-        "date_found": true,
-        "content_found": true,
-        "extraction_success": true,
-        "verification_passed": true,
-        "source_tier": "B",
-        "official": false,
-        "selected": false,
-        "formatted": false,
-        "scheduled": false,
-        "latest_url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxQS01ZMllCSXA3Mk83N19sWVFoT3lEUFY5NFpEdVpMMG0xa0NiR19Vd2FvQ1FnWGY4NFNLd29MNElUT3JWN3RRcWlCeXZxalFRSEFDZzJrNFhUUHRZNXU5QzlsOHRFbndkY1g1TVU5MEdIcjVZbXdFb0RuVVByemk1R1N2bGhWVTVUYmtMby0xbW9GbmM0RTYzb1FZLTRtSjNwTUxReFhqZC1qSXFDVWNFMHZJVTlybmRVaFFZWGdfMzg?oc=5",
-        "freshness_window": "primary_14_day"
-      }
-    ],
-    "external_source_diagnostic": {
-      "source_type": "secondary_gaming_media",
-      "source_url": "https://news.google.com/rss/search?q=%22Pet%20Simulator%2099%22%20Roblox%20when%3A30d&hl=en-US&gl=US&ceid=US:en",
-      "latest_published_at": "2026-08-23T22:53:00+00:00",
-      "status": "accepted",
-      "result_code": "FOUND_VERIFIED",
-      "reason": "Tier b публикация (6.5 дн.) с датой и игровым содержанием; окно primary_14_day.",
-      "available": true,
-      "article_found": true,
-      "date_found": true,
-      "content_found": true,
-      "extraction_success": true,
-      "verification_passed": true,
-      "source_tier": "B",
-      "official": false,
-      "selected": false,
-      "formatted": false,
-      "scheduled": false,
-      "latest_url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxQS01ZMllCSXA3Mk83N19sWVFoT3lEUFY5NFpEdVpMMG0xa0NiR19Vd2FvQ1FnWGY4NFNLd29MNElUT3JWN3RRcWlCeXZxalFRSEFDZzJrNFhUUHRZNXU5QzlsOHRFbndkY1g1TVU5MEdIcjVZbXdFb0RuVVByemk1R1N2bGhWVTVUYmtMby0xbW9GbmM0RTYzb1FZLTRtSjNwTUxReFhqZC1qSXFDVWNFMHZJVTlybmRVaFFZWGdfMzg?oc=5",
-      "freshness_window": "primary_14_day"
-    },
-    "external_news_article": {
-      "url": "https://www.biggames.io/post/pet-simulator-99-update-91",
-      "title": "Lucky Block Blitz!",
-      "published_at": "2026-08-29",
-      "age_days": 1.4098291031597223,
-      "source_tier": "A",
-      "publisher": null,
-      "freshness_window": "primary_14_day"
-    },
-    "candidate_decision": {
-      "status": "accepted",
-      "reason": "Есть достойный свежий факт."
-    }
-  },
-  {
     "game": "Blade Ball",
     "universe_id": 4777817887,
     "roblox_name": "Blade Ball",
@@ -2442,14 +2158,14 @@
     "confidence": "medium",
     "facts": [
       {
-        "text": "INSANE NEW LIMITEDS! 🤩 - Blade Ball Update Showcase",
-        "summary_ru": "В Blade Ball вышло обновление «INSANE NEW LIMITEDS! 🤩 - Blade Ball Update Showcase».",
+        "text": "NEW Kraken Spins in Blade Ball! 🐙🔥",
+        "summary_ru": "В Blade Ball вышло обновление «NEW Kraken Spins in Blade Ball! 🐙🔥».",
         "kind": "official_article",
         "value": 6,
         "specific": true,
         "reason": "Свежий игровой анонс из официального источника",
         "is_new_line": true,
-        "source_url": "https://www.youtube.com/watch?v=DpoyuStCGPg",
+        "source_url": "https://www.youtube.com/watch?v=lNN7KhMl3sw",
         "title_is_concrete": true
       }
     ],
@@ -2465,7 +2181,7 @@
       }
     ],
     "pool": "legacy",
-    "checked_at": "2026-08-30T09:50:09.082733+00:00",
+    "checked_at": "2026-08-31T03:01:02.714987+00:00",
     "sources": [
       {
         "type": "official_game_description",
@@ -2480,7 +2196,7 @@
       {
         "type": "official_youtube_feed",
         "verified": true,
-        "url": "https://www.youtube.com/watch?v=DpoyuStCGPg"
+        "url": "https://www.youtube.com/watch?v=lNN7KhMl3sw"
       }
     ],
     "cross_source_confirmations": [],
@@ -2488,10 +2204,10 @@
       {
         "source_type": "official_youtube_feed",
         "source_url": "https://www.youtube.com/feeds/videos.xml?channel_id=UCPttFx0zI4Zv9M4i3Q2ylsw",
-        "latest_published_at": "2026-08-30T06:05:54+00:00",
+        "latest_published_at": "2026-08-30T17:20:45+00:00",
         "status": "accepted",
         "result_code": "FOUND_VERIFIED",
-        "reason": "Официальная публикация (0.2 дн.) с датой и игровым содержанием; окно primary_14_day.",
+        "reason": "Официальная публикация (0.4 дн.) с датой и игровым содержанием; окно primary_14_day.",
         "available": true,
         "article_found": true,
         "date_found": true,
@@ -2503,7 +2219,7 @@
         "selected": false,
         "formatted": false,
         "scheduled": false,
-        "latest_url": "https://www.youtube.com/watch?v=DpoyuStCGPg",
+        "latest_url": "https://www.youtube.com/watch?v=lNN7KhMl3sw",
         "freshness_window": "primary_14_day"
       },
       {
@@ -2512,7 +2228,7 @@
         "latest_published_at": "2024-03-23T18:51:42Z",
         "status": "rejected",
         "result_code": "SOURCE_STALE",
-        "reason": "Публикация устарела: 889.6 дн. (аварийный лимит 30).",
+        "reason": "Публикация устарела: 890.3 дн. (аварийный лимит 30).",
         "available": true,
         "article_found": true,
         "date_found": true,
@@ -2614,10 +2330,10 @@
       {
         "source_type": "official_youtube_feed",
         "source_url": "https://www.youtube.com/feeds/videos.xml?channel_id=UCPttFx0zI4Zv9M4i3Q2ylsw",
-        "latest_published_at": "2026-08-30T06:05:54+00:00",
+        "latest_published_at": "2026-08-30T17:20:45+00:00",
         "status": "accepted",
         "result_code": "FOUND_VERIFIED",
-        "reason": "Официальная публикация (0.2 дн.) с датой и игровым содержанием; окно primary_14_day.",
+        "reason": "Официальная публикация (0.4 дн.) с датой и игровым содержанием; окно primary_14_day.",
         "available": true,
         "article_found": true,
         "date_found": true,
@@ -2629,7 +2345,7 @@
         "selected": false,
         "formatted": false,
         "scheduled": false,
-        "latest_url": "https://www.youtube.com/watch?v=DpoyuStCGPg",
+        "latest_url": "https://www.youtube.com/watch?v=lNN7KhMl3sw",
         "freshness_window": "primary_14_day"
       },
       {
@@ -2638,7 +2354,7 @@
         "latest_published_at": "2024-03-23T18:51:42Z",
         "status": "rejected",
         "result_code": "SOURCE_STALE",
-        "reason": "Публикация устарела: 889.6 дн. (аварийный лимит 30).",
+        "reason": "Публикация устарела: 890.3 дн. (аварийный лимит 30).",
         "available": true,
         "article_found": true,
         "date_found": true,
@@ -2692,10 +2408,10 @@
       "scheduled": false
     },
     "external_news_article": {
-      "url": "https://www.youtube.com/watch?v=DpoyuStCGPg",
-      "title": "INSANE NEW LIMITEDS! 🤩 - Blade Ball Update Showcase",
-      "published_at": "2026-08-30T06:05:54+00:00",
-      "age_days": 0.15573188093749998,
+      "url": "https://www.youtube.com/watch?v=lNN7KhMl3sw",
+      "title": "NEW Kraken Spins in Blade Ball! 🐙🔥",
+      "published_at": "2026-08-30T17:20:45+00:00",
+      "age_days": 0.40298465538194445,
       "source_tier": "A",
       "publisher": null,
       "freshness_window": "primary_14_day"
@@ -2710,7 +2426,7 @@
     "universe_id": 7436755782,
     "roblox_name": "[🌱] Grow a Garden 🌶️",
     "description": "🍅Welcome to Grow a Garden🍅\n\nAre you ready to grow your very own garden? Buy seeds from the shop when they restock, plant them, wait for them to grow, and collect the profits! Flex fruits and finds on friends, and have fun!\n\n[How To Plant]\n• Equip your seed you want to plant!\n• Click in your farm on the brown plots to plant!\n• Wait to see it start growing!\n• After its fully grown, it is time to harvest the goods!\n\nRemember, your garden literally grows while you are offline⭐",
-    "updated": "2026-08-30T03:01:09.0692642Z",
+    "updated": "2026-08-31T00:35:41.9091222Z",
     "created": "2025-03-25T22:32:09.437Z",
     "creator": {
       "id": 35789249,
@@ -2727,7 +2443,7 @@
     "facts": [],
     "description_facts": [],
     "pool": "legacy",
-    "checked_at": "2026-08-30T09:50:09.078816+00:00",
+    "checked_at": "2026-08-31T03:01:02.711090+00:00",
     "sources": [
       {
         "type": "official_game_description",
@@ -2745,7 +2461,7 @@
       {
         "source_type": "secondary_gaming_media",
         "source_url": "https://news.google.com/rss/search?q=%22Grow%20a%20Garden%22%20Roblox%20when%3A30d&hl=en-US&gl=US&ceid=US:en",
-        "latest_published_at": "2026-08-22T22:25:00+00:00",
+        "latest_published_at": "2026-08-30T12:23:00+00:00",
         "status": "rejected",
         "result_code": "EXTRACTION_FAILED",
         "reason": "В публикации не найдено достаточно конкретного содержания.",
@@ -2760,12 +2476,12 @@
         "selected": false,
         "formatted": false,
         "scheduled": false,
-        "latest_url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxQSmFvb3lMcWNlaV84S3ZvamgtZENXOHFCTTBGeERibzRNTHpfUUM0RU9JOU83QjhKSnN3Tjc2RFY3dEVGZW1wMGZSSG9pbXM1bmI5X1MyUnhVMGNpNUg2XzBSNUxabmJJbTZtNlkyNE1VNVp1VkhTN0lDZHdfNzZUOHNGenNhdW9HTzZGRw?oc=5"
+        "latest_url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxOcG9JUmd6VUR0WGRUZDJyeUl0d1BzczBNLU0tTW9Ga3p2RmlmZTVyUmhJWTZBRlRaOUltV1hCMGdxNlFmOG1IblU3ZmNxaXJjNlBCeVJFUmN4MmRtZzJiazNScmpRU3ZoWEhxVUlPZFc3ck5nNUJwbkhyYm1PX2VRaGlFX2ZoQmx2Z09KUFh3?oc=5"
       },
       {
         "source_type": "official_game_description",
         "source_url": "https://www.roblox.com/games/126884695634066/Grow-a-Garden",
-        "latest_published_at": "2026-08-30T03:01:09.0692642Z",
+        "latest_published_at": "2026-08-31T00:35:41.9091222Z",
         "status": "rejected",
         "result_code": "NO_NEW_CONTENT",
         "available": true,
@@ -2827,7 +2543,7 @@
       {
         "source_type": "secondary_gaming_media",
         "source_url": "https://news.google.com/rss/search?q=%22Grow%20a%20Garden%22%20Roblox%20when%3A30d&hl=en-US&gl=US&ceid=US:en",
-        "latest_published_at": "2026-08-22T22:25:00+00:00",
+        "latest_published_at": "2026-08-30T12:23:00+00:00",
         "status": "rejected",
         "result_code": "EXTRACTION_FAILED",
         "reason": "В публикации не найдено достаточно конкретного содержания.",
@@ -2842,13 +2558,13 @@
         "selected": false,
         "formatted": false,
         "scheduled": false,
-        "latest_url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxQSmFvb3lMcWNlaV84S3ZvamgtZENXOHFCTTBGeERibzRNTHpfUUM0RU9JOU83QjhKSnN3Tjc2RFY3dEVGZW1wMGZSSG9pbXM1bmI5X1MyUnhVMGNpNUg2XzBSNUxabmJJbTZtNlkyNE1VNVp1VkhTN0lDZHdfNzZUOHNGenNhdW9HTzZGRw?oc=5"
+        "latest_url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxOcG9JUmd6VUR0WGRUZDJyeUl0d1BzczBNLU0tTW9Ga3p2RmlmZTVyUmhJWTZBRlRaOUltV1hCMGdxNlFmOG1IblU3ZmNxaXJjNlBCeVJFUmN4MmRtZzJiazNScmpRU3ZoWEhxVUlPZFc3ck5nNUJwbkhyYm1PX2VRaGlFX2ZoQmx2Z09KUFh3?oc=5"
       }
     ],
     "external_source_diagnostic": {
       "source_type": "secondary_gaming_media",
       "source_url": "https://news.google.com/rss/search?q=%22Grow%20a%20Garden%22%20Roblox%20when%3A30d&hl=en-US&gl=US&ceid=US:en",
-      "latest_published_at": "2026-08-22T22:25:00+00:00",
+      "latest_published_at": "2026-08-30T12:23:00+00:00",
       "status": "rejected",
       "result_code": "EXTRACTION_FAILED",
       "reason": "В публикации не найдено достаточно конкретного содержания.",
@@ -2863,7 +2579,7 @@
       "selected": false,
       "formatted": false,
       "scheduled": false,
-      "latest_url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxQSmFvb3lMcWNlaV84S3ZvamgtZENXOHFCTTBGeERibzRNTHpfUUM0RU9JOU83QjhKSnN3Tjc2RFY3dEVGZW1wMGZSSG9pbXM1bmI5X1MyUnhVMGNpNUg2XzBSNUxabmJJbTZtNlkyNE1VNVp1VkhTN0lDZHdfNzZUOHNGenNhdW9HTzZGRw?oc=5"
+      "latest_url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxOcG9JUmd6VUR0WGRUZDJyeUl0d1BzczBNLU0tTW9Ga3p2RmlmZTVyUmhJWTZBRlRaOUltV1hCMGdxNlFmOG1IblU3ZmNxaXJjNlBCeVJFUmN4MmRtZzJiazNScmpRU3ZoWEhxVUlPZFc3ck5nNUJwbkhyYm1PX2VRaGlFX2ZoQmx2Z09KUFh3?oc=5"
     },
     "candidate_decision": {
       "status": "rejected",
@@ -2875,7 +2591,7 @@
     "universe_id": 5203828273,
     "roblox_name": "[🌴] Dress To Impress",
     "description": "Create stunning outfits 👗💖⭐, and strut the runway to show off your unique style. Collaborate, compete, and explore a world of glamour with friends!\n\n⭐ Are you ready to be the TOP MODEL?\n👗 NEW ITEMS! Check them out.\n🍿 Vote for your favorite outfits!\n💃 Use poses on the runway to show off your outfit!\n\nFind more about Dress To Impress by joining our community.\nhttps://www.roblox.com/communities/17264167/Dress-To-Impress-Group#!/about",
-    "updated": "2026-08-29T22:48:13.8702997Z",
+    "updated": "2026-08-30T18:09:34.4003164Z",
     "created": "2023-10-18T09:11:36.563Z",
     "creator": {
       "id": 17264167,
@@ -2932,7 +2648,7 @@
       }
     ],
     "pool": "legacy",
-    "checked_at": "2026-08-30T09:50:09.080181+00:00",
+    "checked_at": "2026-08-31T03:01:02.712440+00:00",
     "sources": [
       {
         "type": "official_game_description",
@@ -2953,7 +2669,7 @@
         "latest_published_at": "2026-07-02T15:00:06+00:00",
         "status": "rejected",
         "result_code": "SOURCE_STALE",
-        "reason": "Публикация устарела: 58.8 дн. (аварийный лимит 30).",
+        "reason": "Публикация устарела: 59.5 дн. (аварийный лимит 30).",
         "available": true,
         "article_found": true,
         "date_found": true,
@@ -2989,7 +2705,7 @@
       {
         "source_type": "official_game_description",
         "source_url": "https://www.roblox.com/games/15101393044/Dress-To-Impress",
-        "latest_published_at": "2026-08-29T22:48:13.8702997Z",
+        "latest_published_at": "2026-08-30T18:09:34.4003164Z",
         "status": "rejected",
         "result_code": "NO_NEW_CONTENT",
         "available": true,
@@ -3062,7 +2778,7 @@
         "latest_published_at": "2026-07-02T15:00:06+00:00",
         "status": "rejected",
         "result_code": "SOURCE_STALE",
-        "reason": "Публикация устарела: 58.8 дн. (аварийный лимит 30).",
+        "reason": "Публикация устарела: 59.5 дн. (аварийный лимит 30).",
         "available": true,
         "article_found": true,
         "date_found": true,
@@ -3114,6 +2830,238 @@
       "selected": false,
       "formatted": false,
       "scheduled": false
+    },
+    "candidate_decision": {
+      "status": "rejected",
+      "reason": "Нет свежего факта с редакционным баллом 5 или выше."
+    }
+  },
+  {
+    "game": "Pet Simulator 99",
+    "universe_id": 3317771874,
+    "roblox_name": "🍀 [LUCKY BLOCK] Pet Simulator 99! 🎯",
+    "description": "Create an army of the coolest pets! They will help you get RICH!\n\n✨ Currently 3,000+ pets to collect! 🐾\n\n🧡 Thanks for playing!",
+    "updated": "2026-08-29T21:25:14.0749178Z",
+    "created": "2022-02-05T13:30:02.357Z",
+    "creator": {
+      "id": 3959677,
+      "name": "BIG Games Pets",
+      "type": "Group",
+      "isRNVAccount": false,
+      "hasVerifiedBadge": true
+    },
+    "description_changed": false,
+    "added_lines": [],
+    "keywords": [
+      "PETS"
+    ],
+    "score": 0,
+    "confidence": "low",
+    "facts": [],
+    "description_facts": [
+      {
+        "text": "Create an army of the coolest pets! They will help you get RICH!",
+        "kind": "pets",
+        "value": 8,
+        "specific": true,
+        "reason": "Строка называет конкретное игровое содержимое",
+        "summary_ru": "В игре появились новые питомцы.",
+        "is_new_line": false
+      },
+      {
+        "text": "✨ Currently 3,000+ pets to collect! 🐾",
+        "kind": "pets",
+        "value": 8,
+        "specific": true,
+        "reason": "Строка называет конкретное игровое содержимое",
+        "summary_ru": "В игре появились новые питомцы.",
+        "is_new_line": false
+      }
+    ],
+    "pool": "legacy",
+    "checked_at": "2026-08-31T03:01:02.712855+00:00",
+    "sources": [
+      {
+        "type": "official_game_description",
+        "verified": true
+      },
+      {
+        "type": "official_roblox_group",
+        "verified": true,
+        "group_id": 3959677,
+        "group_name": "BIG Games Pets"
+      }
+    ],
+    "cross_source_confirmations": [],
+    "source_diagnostics": [
+      {
+        "source_type": "official_news_website",
+        "source_url": "https://www.biggames.io/post",
+        "latest_published_at": "2026-08-29",
+        "status": "rejected",
+        "result_code": "ALREADY_USED",
+        "reason": "Публикация уже использовалась в выпуске другого дня.",
+        "available": true,
+        "article_found": true,
+        "date_found": true,
+        "content_found": true,
+        "extraction_success": false,
+        "verification_passed": false,
+        "source_tier": "A",
+        "official": true,
+        "selected": false,
+        "formatted": false,
+        "scheduled": false,
+        "latest_url": "https://www.biggames.io/post/pet-simulator-99-update-91"
+      },
+      {
+        "source_type": "secondary_gaming_media",
+        "source_url": "https://news.google.com/rss/search?q=%22Pet%20Simulator%2099%22%20Roblox%20when%3A30d&hl=en-US&gl=US&ceid=US:en",
+        "latest_published_at": "2026-08-30T23:13:00+00:00",
+        "status": "rejected",
+        "result_code": "EXTRACTION_FAILED",
+        "reason": "В публикации не найдено достаточно конкретного содержания.",
+        "available": true,
+        "article_found": true,
+        "date_found": true,
+        "content_found": true,
+        "extraction_success": false,
+        "verification_passed": false,
+        "source_tier": "B",
+        "official": false,
+        "selected": false,
+        "formatted": false,
+        "scheduled": false,
+        "latest_url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxNZjc5UGNaSEt3YWVTVHZUYUdrYW93V0RFMm1RaUs4MnRjclExeWR1N0c5dThRaV9vWnM1b0NXQ3VZY1JySTQyZllrRkF6dFJTd05oQ0FJQlF0VUNtdE1BZmxTMmZZNlA3aWFqOWJyNUsxUmtuSXJOa1VGUUpPbmlPNm1vZDQyaFVlQ2xzS0tVSDY4Y1ZvYkpyVjA0ekVGbGgyWkkxRmw2WVBiSWlheVlYWXBWMzl1VWc?oc=5"
+      },
+      {
+        "source_type": "official_game_description",
+        "source_url": "https://www.roblox.com/games/8737899170/Pet-Simulator-99",
+        "latest_published_at": "2026-08-29T21:25:14.0749178Z",
+        "status": "rejected",
+        "result_code": "NO_NEW_CONTENT",
+        "available": true,
+        "article_found": false,
+        "date_found": true,
+        "content_found": true,
+        "extraction_success": false,
+        "verification_passed": false,
+        "reason": "Нет новой конкретной строки со времени прошлого снимка."
+      },
+      {
+        "source_type": "official_roblox_group",
+        "source_url": "https://www.roblox.com/communities/3959677/BIG-Games-Pets",
+        "latest_published_at": null,
+        "status": "checked",
+        "result_code": "NO_NEW_CONTENT",
+        "available": true,
+        "article_found": false,
+        "date_found": false,
+        "content_found": true,
+        "extraction_success": false,
+        "verification_passed": false,
+        "reason": "Официальная группа подтверждена; датированной новости нет."
+      }
+    ],
+    "official_description_analysis": {
+      "keywords": [
+        "PET",
+        "PETS"
+      ],
+      "news_lines": [
+        "Create an army of the coolest pets! They will help you get RICH!",
+        "✨ Currently 3,000+ pets to collect! 🐾"
+      ]
+    },
+    "source_registry": {
+      "pool": "legacy",
+      "universe_id": 3317771874,
+      "root_place_id": 8737899170,
+      "roblox_game_url": "https://www.roblox.com/games/8737899170/Pet-Simulator-99",
+      "roblox_group_id": 3959677,
+      "roblox_group_name": "BIG Games Pets",
+      "roblox_group_url": "https://www.roblox.com/communities/3959677/BIG-Games-Pets",
+      "news_strategy": "official_news_website",
+      "website": "https://www.biggames.io/",
+      "news_url": "https://www.biggames.io/post",
+      "discord": "https://discord.biggames.io/",
+      "youtube": "https://www.youtube.com/c/BuildIntoGames",
+      "x": "https://x.com/BuildIntoGames",
+      "roblox_creator_type": null,
+      "roblox_creator_id": null,
+      "roblox_creator_name": null,
+      "roblox_creator_url": null
+    },
+    "official_group": {
+      "id": 3959677,
+      "name": "BIG Games Pets",
+      "expected_name": "BIG Games Pets",
+      "name_matches_registry": true,
+      "description": "Meow 🐾\n\nExperience Studio!",
+      "has_verified_badge": true,
+      "news_lines": []
+    },
+    "external_source_diagnostics": [
+      {
+        "source_type": "official_news_website",
+        "source_url": "https://www.biggames.io/post",
+        "latest_published_at": "2026-08-29",
+        "status": "rejected",
+        "result_code": "ALREADY_USED",
+        "reason": "Публикация уже использовалась в выпуске другого дня.",
+        "available": true,
+        "article_found": true,
+        "date_found": true,
+        "content_found": true,
+        "extraction_success": false,
+        "verification_passed": false,
+        "source_tier": "A",
+        "official": true,
+        "selected": false,
+        "formatted": false,
+        "scheduled": false,
+        "latest_url": "https://www.biggames.io/post/pet-simulator-99-update-91"
+      },
+      {
+        "source_type": "secondary_gaming_media",
+        "source_url": "https://news.google.com/rss/search?q=%22Pet%20Simulator%2099%22%20Roblox%20when%3A30d&hl=en-US&gl=US&ceid=US:en",
+        "latest_published_at": "2026-08-30T23:13:00+00:00",
+        "status": "rejected",
+        "result_code": "EXTRACTION_FAILED",
+        "reason": "В публикации не найдено достаточно конкретного содержания.",
+        "available": true,
+        "article_found": true,
+        "date_found": true,
+        "content_found": true,
+        "extraction_success": false,
+        "verification_passed": false,
+        "source_tier": "B",
+        "official": false,
+        "selected": false,
+        "formatted": false,
+        "scheduled": false,
+        "latest_url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxNZjc5UGNaSEt3YWVTVHZUYUdrYW93V0RFMm1RaUs4MnRjclExeWR1N0c5dThRaV9vWnM1b0NXQ3VZY1JySTQyZllrRkF6dFJTd05oQ0FJQlF0VUNtdE1BZmxTMmZZNlA3aWFqOWJyNUsxUmtuSXJOa1VGUUpPbmlPNm1vZDQyaFVlQ2xzS0tVSDY4Y1ZvYkpyVjA0ekVGbGgyWkkxRmw2WVBiSWlheVlYWXBWMzl1VWc?oc=5"
+      }
+    ],
+    "external_source_diagnostic": {
+      "source_type": "secondary_gaming_media",
+      "source_url": "https://news.google.com/rss/search?q=%22Pet%20Simulator%2099%22%20Roblox%20when%3A30d&hl=en-US&gl=US&ceid=US:en",
+      "latest_published_at": "2026-08-30T23:13:00+00:00",
+      "status": "rejected",
+      "result_code": "EXTRACTION_FAILED",
+      "reason": "В публикации не найдено достаточно конкретного содержания.",
+      "available": true,
+      "article_found": true,
+      "date_found": true,
+      "content_found": true,
+      "extraction_success": false,
+      "verification_passed": false,
+      "source_tier": "B",
+      "official": false,
+      "selected": false,
+      "formatted": false,
+      "scheduled": false,
+      "latest_url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxNZjc5UGNaSEt3YWVTVHZUYUdrYW93V0RFMm1RaUs4MnRjclExeWR1N0c5dThRaV9vWnM1b0NXQ3VZY1JySTQyZllrRkF6dFJTd05oQ0FJQlF0VUNtdE1BZmxTMmZZNlA3aWFqOWJyNUsxUmtuSXJOa1VGUUpPbmlPNm1vZDQyaFVlQ2xzS0tVSDY4Y1ZvYkpyVjA0ekVGbGgyWkkxRmw2WVBiSWlheVlYWXBWMzl1VWc?oc=5"
     },
     "candidate_decision": {
       "status": "rejected",

@@ -596,7 +596,7 @@
     "text": "Хорошая коллекция строится постепенно: безопасные обмены важнее одной рискованной попытки получить редкого питомца.",
     "source": "verified_core_mechanic",
     "reviewed_at": "2026-08-14",
-    "used": false,
+    "used": true,
     "category": "collection"
   },
   {
@@ -1287,7 +1287,7 @@
     "text": "Перед новым островом проверь уровень заданий, чтобы не тратить время на слишком сильных врагов.",
     "source": "verified_core_mechanic",
     "reviewed_at": "2026-08-24",
-    "used": false
+    "used": true
   },
   {
     "id": 130,
@@ -1519,7 +1519,7 @@
     "text": "Не останавливайся после кражи рассматривать добычу — сначала донеси яйцо в безопасное место.",
     "source": "agreed_editorial_list",
     "reviewed_at": "2026-08-28",
-    "used": false
+    "used": true
   },
   {
     "id": 153,
@@ -1640,7 +1640,7 @@
     "text": "Сначала внимательно осмотри пациента у окна, только потом принимай решение.",
     "source": "agreed_editorial_list",
     "reviewed_at": "2026-08-28",
-    "used": false
+    "used": true
   },
   {
     "id": 164,
@@ -1926,7 +1926,7 @@
     "text": "Услышав нападение рядом, запомни направление и игроков, которые находились там.",
     "source": "agreed_editorial_list",
     "reviewed_at": "2026-08-28",
-    "used": false
+    "used": true
   },
   {
     "id": 190,
@@ -1937,7 +1937,7 @@
     "text": "Собирай монеты, но не рискуй жизнью ради одной монеты.",
     "source": "agreed_editorial_list",
     "reviewed_at": "2026-08-28",
-    "used": false
+    "used": true
   },
   {
     "id": 191,
@@ -2014,7 +2014,7 @@
     "text": "За Murderer выгоднее сначала вести себя как обычный игрок и не раскрывать роль мгновенно.",
     "source": "agreed_editorial_list",
     "reviewed_at": "2026-08-28",
-    "used": false
+    "used": true
   },
   {
     "id": 198,
@@ -2025,6 +2025,6 @@
     "text": "Не определяй Murderer по тому, кто давно не получал эту роль: роли назначаются случайно.",
     "source": "agreed_editorial_list",
     "reviewed_at": "2026-08-28",
-    "used": false
+    "used": true
   }
 ]

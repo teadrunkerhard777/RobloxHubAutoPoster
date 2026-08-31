@@ -3,23 +3,16 @@
     {
       "game": "Adopt Me!",
       "emoji": "🐾",
-      "score": 9,
-      "text": "В игре появились новые питомцы.\n\nВ Adopt Me! вышло обновление «Fairytale Egg!».",
-      "external_article_url": "https://www.playadopt.me/news/fairytale-egg"
-    },
-    {
-      "game": "Pet Simulator 99",
-      "emoji": "🐶",
-      "score": 10,
-      "text": "🎉 В Pet Simulator 99 стартовало событие «Lucky Block Blitz!».\n\nВ игре появились новые питомцы.\n\nОткрыт Set your best run to top the Time Trial Leaderboard с наградами за места.",
-      "external_article_url": "https://www.biggames.io/post/pet-simulator-99-update-91"
+      "score": 7,
+      "text": "🎒 Появилось отдельное хранилище для предметов из рюкзака.\n\nПо данным Sportskeeda, Появилось отдельное хранилище для предметов из рюкзака.",
+      "external_article_url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxQSGs1V3ZkWDZ2N1dIR05Ta3BFY2NScEk1cXgtdWs2ZUFGMmlUb3AyUWtfQ3Nsa3VvQjVDSm1mYUxlOHBObVJYQWhJZ0k3X2M0dkhuNF9IS3F1cmdVOFkyc2RFTXF0TVdNV1R4dHBOTjJlNXBJaGtKMmRSYW9seWhsYnJybG5qSlQ2UW4tVzVoUk1wUmIzM3IyN0UtaG1VTkFhXzU4?oc=5"
     },
     {
       "game": "Blade Ball",
       "emoji": "⚔️",
       "score": 6,
-      "text": "В Blade Ball вышло обновление «INSANE NEW LIMITEDS! 🤩 - Blade Ball Update Showcase».",
-      "external_article_url": "https://www.youtube.com/watch?v=DpoyuStCGPg"
+      "text": "В Blade Ball вышло обновление «NEW Kraken Spins in Blade Ball! 🐙🔥».",
+      "external_article_url": "https://www.youtube.com/watch?v=lNN7KhMl3sw"
     }
   ],
   "pipeline": [
@@ -114,15 +107,6 @@
       "reason": "В публикации не найдено достаточно конкретного содержания; Нет новой конкретной строки со времени прошлого снимка"
     },
     {
-      "game": "Pet Simulator 99",
-      "candidate": true,
-      "verified": true,
-      "selected": true,
-      "formatted_ru": true,
-      "scheduled": true,
-      "reason": "вошёл в утренний выпуск"
-    },
-    {
       "game": "Blade Ball",
       "candidate": true,
       "verified": true,
@@ -147,14 +131,23 @@
       "selected": false,
       "formatted_ru": false,
       "scheduled": false,
-      "reason": "Публикация устарела: 58.8 дн. (аварийный лимит 30); Нет пригодной Tier B новости; Нет новой конкретной строки со времени прошлого снимка"
+      "reason": "Публикация устарела: 59.5 дн. (аварийный лимит 30); Нет пригодной Tier B новости; Нет новой конкретной строки со времени прошлого снимка"
+    },
+    {
+      "game": "Pet Simulator 99",
+      "candidate": true,
+      "verified": false,
+      "selected": false,
+      "formatted_ru": false,
+      "scheduled": false,
+      "reason": "Публикация уже использовалась в выпуске другого дня; В публикации не найдено достаточно конкретного содержания; Нет новой конкретной строки со времени прошлого снимка"
     }
   ],
   "summary": {
     "found": 14,
-    "verified": 4,
-    "selected": 3,
-    "formatted": 4,
-    "scheduled": 3
+    "verified": 3,
+    "selected": 2,
+    "formatted": 3,
+    "scheduled": 2
   }
 }
