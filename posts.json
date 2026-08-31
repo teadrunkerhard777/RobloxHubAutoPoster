@@ -1121,9 +1121,9 @@
     "rubric": "Картинка дня",
     "source": "image_library",
     "text": "#Roblox #BrawlStars #StealABrainrot #99Nights",
-    "status": "pending",
-    "published_at": null,
-    "attempts": 0,
+    "status": "published",
+    "published_at": "2026-08-31T14:00:51.764926+05:00",
+    "attempts": 1,
     "last_error": null,
     "image_path": "images/16-00/05113948-5008-4d32-a205-8faf0ba69e91.jpeg"
   },
