@@ -3,6 +3,11 @@ import os
 import random
 from datetime import datetime, timedelta, timezone
 
+from brawl_article_state import (
+    load_brawl_article_state,
+    mark_brawl_articles_scheduled,
+    save_brawl_article_state,
+)
 from image_library import select_daily_image
 from post_hashtags import add_post_hashtags, update_pending_post_hashtags
 from post_headings import (
@@ -40,9 +45,10 @@ HITS_POST_HOUR = 19
 MORNING_FALLBACK_MAX_TIPS = 3
 MORNING_FALLBACK_MIN_TIPS = 2
 
-# Brawl monitor сохраняет сюда подготовленные данные.
-# generate_posts.py только читает файл и не меняет state.
+# Brawl monitor сохраняет сюда подготовленные данные. Генератор читает их,
+# а durable lifecycle обновляет только после реальной вставки поста в очередь.
 BRAWL_LATEST_CHANGES_FILE = "data/brawl_latest_changes.json"
+BRAWL_ARTICLE_STATE_FILE = "data/brawl_article_state.json"
 BRAWL_SKIP_ENVIRONMENT_VARIABLE = "ROBLOX_HUB_SKIP_BRAWL"
 
 # Локальная база содержит только заранее проверенные evergreen-советы.
@@ -217,18 +223,29 @@ def load_brawl_latest_changes():
     return load_json(BRAWL_LATEST_CHANGES_FILE)
 
 
-def mark_brawl_news_scheduled(data, scheduled):
-    """Marks the selected article consumed only after it reaches the queue."""
+def get_selected_brawl_article_url(data):
+    """Returns the URL selected by the same formatter diagnostics."""
 
-    if not scheduled or not isinstance(data, dict):
-        return
+    if not isinstance(data, dict):
+        return None
 
     from brawl_post import build_brawl_pipeline_diagnostics
 
     diagnostics = build_brawl_pipeline_diagnostics(data, scheduled=True)
-    selected_urls = {
-        row.get("url") for row in diagnostics["rows"] if row.get("scheduled")
-    }
+    return next(
+        (row.get("url") for row in diagnostics["rows"] if row.get("scheduled")),
+        None,
+    )
+
+
+def mark_brawl_news_scheduled(data, scheduled, post_id=None):
+    """Marks the selected article scheduled only after queue insertion."""
+
+    if not scheduled or not isinstance(data, dict):
+        return
+
+    selected_url = get_selected_brawl_article_url(data)
+    selected_urls = {selected_url} if selected_url else set()
     if not selected_urls:
         return
 
@@ -242,6 +259,10 @@ def mark_brawl_news_scheduled(data, scheduled):
                 article["scheduled"] = True
 
     save_json(BRAWL_LATEST_CHANGES_FILE, data)
+
+    article_state = load_brawl_article_state(BRAWL_ARTICLE_STATE_FILE)
+    mark_brawl_articles_scheduled(article_state, selected_urls, post_id)
+    save_brawl_article_state(BRAWL_ARTICLE_STATE_FILE, article_state)
 
 
 def load_brawl_tips():
@@ -598,6 +619,9 @@ def schedule_brawl_post(
                 existing_post["text"] = upgraded_text
                 existing_post["rubric"] = "Brawl Stars"
                 existing_post["source"] = "brawl_pipeline"
+                selected_url = get_selected_brawl_article_url(brawl_data)
+                if selected_url:
+                    existing_post["brawl_article_url"] = selected_url
 
         existing_post["text"] = fit_telegram_caption(
             add_post_hashtags(
@@ -706,24 +730,27 @@ def schedule_brawl_post(
         path_checker=header_checker,
     )
 
-    existing_posts.append(
-        build_post(
-            post_id=post_id,
-            publish_at=datetime(
-                target_date.year,
-                target_date.month,
-                target_date.day,
-                BRAWL_POST_HOUR,
-                0,
-                tzinfo=LOCAL_TIMEZONE,
-            ),
-            game="Brawl Stars",
-            rubric=rubric,
-            source=source,
-            text=final_text,
-            image_path=header_path,
-        )
+    queue_post = build_post(
+        post_id=post_id,
+        publish_at=datetime(
+            target_date.year,
+            target_date.month,
+            target_date.day,
+            BRAWL_POST_HOUR,
+            0,
+            tzinfo=LOCAL_TIMEZONE,
+        ),
+        game="Brawl Stars",
+        rubric=rubric,
+        source=source,
+        text=final_text,
+        image_path=header_path,
     )
+    if source == "brawl_pipeline":
+        selected_url = get_selected_brawl_article_url(brawl_data)
+        if selected_url:
+            queue_post["brawl_article_url"] = selected_url
+    existing_posts.append(queue_post)
 
     print(status_message)
 
@@ -1366,6 +1393,7 @@ if os.getenv(BRAWL_SKIP_ENVIRONMENT_VARIABLE) != "1":
     mark_brawl_news_scheduled(
         latest_brawl_data,
         bool(brawl_queue_post and brawl_queue_post.get("source") == "brawl_pipeline"),
+        post_id=brawl_queue_post.get("id") if brawl_queue_post else None,
     )
 
 

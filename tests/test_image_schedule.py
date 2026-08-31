@@ -72,6 +72,7 @@ generate_namespace = load_members(
         "fit_telegram_caption",
         "find_post",
         "generate_brawl_fallback",
+        "get_selected_brawl_article_url",
         "is_verified_brawl_tip",
         "resolve_news_header",
         "select_brawl_fallback_tip",
@@ -770,6 +771,7 @@ class ImageScheduleTests(unittest.TestCase):
         self.assertEqual(added_next_day, 1)
         self.assertEqual(posts[-1]["source"], "brawl_pipeline")
         self.assertEqual(posts[-1]["status"], "pending")
+        self.assertEqual(posts[-1]["brawl_article_url"], article["url"])
 
     def test_pending_real_news_has_priority_over_evergreen_fallback(self):
         posts = []

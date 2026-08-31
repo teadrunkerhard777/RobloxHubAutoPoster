@@ -9,6 +9,14 @@ import requests
 from bs4 import BeautifulSoup
 from colorama import Fore, Style, init
 
+from brawl_article_state import (
+    get_pending_brawl_articles,
+    get_untracked_recent_articles,
+    load_brawl_article_state,
+    reconcile_brawl_article_state,
+    register_brawl_articles,
+    save_brawl_article_state,
+)
 from brawl_news_formatter import (
     build_deterministic_translation,
     contains_rumor_signal,
@@ -118,6 +126,11 @@ STATE_FILE = "data/brawl_monitor_state.json"
 # Здесь хранятся только свежие изменения
 # последнего запуска.
 LATEST_CHANGES_FILE = "data/brawl_latest_changes.json"
+
+# В отличие от monitor state этот файл хранит публикационный lifecycle.
+# Наличие URL в discovery history больше не означает использование статьи.
+ARTICLE_STATE_FILE = "data/brawl_article_state.json"
+POSTS_FILE = "posts.json"
 
 
 # ---------------------------------------------------------
@@ -279,6 +292,56 @@ def load_state():
     return state
 
 
+def load_posts_for_article_state():
+    """Loads the real queue used to reconcile scheduled/published articles."""
+
+    try:
+        with open(POSTS_FILE, encoding="utf-8") as file:
+            posts = json.load(file)
+    except (OSError, ValueError, TypeError):
+        return []
+
+    return posts if isinstance(posts, list) else []
+
+
+def print_article_lifecycle_diagnostics(
+    archive_articles,
+    previously_discovered_articles,
+    article_state,
+):
+    """Prints discovery and publication states as separate transitions."""
+
+    previously_discovered_urls = {
+        article.get("url") for article in previously_discovered_articles
+    }
+    records = article_state.get("articles", {})
+
+    print_section("BRAWL ARTICLE LIFECYCLE")
+    for article in archive_articles:
+        url = article.get("url")
+        entry = records.get(url)
+        if entry is None:
+            continue
+
+        status = entry.get("status")
+        print(article.get("title", "?"))
+        print("  FOUND ✓")
+        print(
+            "  ALREADY DISCOVERED "
+            f"{'✓' if url in previously_discovered_urls else '✗'}"
+        )
+        print(f"  NOT PUBLISHED {'✓' if status != 'published' else '✗'}")
+        print(f"  PENDING {'✓' if status == 'pending' else '✗'}")
+        print(f"  ELIGIBLE {'✓' if status == 'pending' else '✗'}")
+        print(f"  SELECTED {'✓' if entry.get('selected') else '✗'}")
+        print(
+            "  SCHEDULED "
+            f"{'✓' if entry.get('scheduled_post_id') or status == 'scheduled' else '✗'}"
+        )
+        print(f"  PUBLISHED {'✓' if status == 'published' else '✗'}")
+        print(f"  STATUS {status}")
+
+
 def save_state(
     release_url,
     buffs,
@@ -334,15 +397,8 @@ def save_latest_changes(
     генератором утреннего поста.
     """
 
-    previous_data = {}
-    if os.path.exists(LATEST_CHANGES_FILE):
-        try:
-            with open(LATEST_CHANGES_FILE, "r", encoding="utf-8") as file:
-                previous_data = json.load(file)
-        except (OSError, ValueError, TypeError):
-            previous_data = {}
-
-    new_articles = carry_unscheduled_articles(new_articles, previous_data)
+    # Вход генератора строится из durable lifecycle, а не из одноразового diff.
+    # Поэтому пустой discovery текущего запуска не может стереть pending-кандидат.
     high_priority_articles, medium_priority_articles = split_articles_by_priority(
         new_articles
     )
@@ -1757,6 +1813,13 @@ for nerf in parsed_nerfs:
 print_section("СРАВНЕНИЕ С ПРОШЛЫМ ЗАПУСКОМ")
 
 old_state = load_state()
+article_state = load_brawl_article_state(ARTICLE_STATE_FILE)
+queue_posts = load_posts_for_article_state()
+article_state = reconcile_brawl_article_state(
+    article_state,
+    queue_posts,
+    max_age_days=BRAWL_NEWS_MAX_AGE_DAYS,
+)
 
 
 # ---------------------------------------------------------
@@ -1784,13 +1847,29 @@ new_articles = find_new_articles(
     old_state["articles"],
 )
 
+# Discovery history отвечает только на вопрос «видели ли URL раньше».
+# Любая свежая статья без lifecycle-записи должна пройти enrichment даже
+# при наличии в monitor state — так восстанавливаются потерянные pending.
+untracked_recent_articles = get_untracked_recent_articles(
+    articles,
+    article_state,
+    max_age_days=BRAWL_NEWS_MAX_AGE_DAYS,
+)
+articles_to_enrich = []
+article_urls_to_enrich = set()
+for article in new_articles + untracked_recent_articles:
+    if article.get("url") in article_urls_to_enrich:
+        continue
+    articles_to_enrich.append(article)
+    article_urls_to_enrich.add(article.get("url"))
+
 # ---------------------------------------------------------
 # ЗАГРУЖАЕМ СОДЕРЖИМОЕ НОВЫХ СТАТЕЙ
 # ---------------------------------------------------------
 
-# Полный текст загружаем только для новых статей.
-# Старые статьи повторно открывать нет смысла.
-enriched_new_articles = enrich_new_articles(new_articles)
+# Полный текст загружаем для новых discovery и для свежих URL, которые
+# monitor уже видел, но durable publication lifecycle ещё не зарегистрировал.
+enriched_new_articles = enrich_new_articles(articles_to_enrich)
 
 # Готовим отдельные списки кандидатов для генератора поста.
 # Полный список enriched_new_articles при этом сохраняется:
@@ -1808,6 +1887,30 @@ if high_priority_articles or medium_priority_articles:
         enriched_new_articles,
         russian_articles,
     )
+
+# Полный enriched payload сохраняется отдельно от discovery history.
+# Published/scheduled определяются по реальной очереди posts.json.
+article_state = register_brawl_articles(
+    article_state,
+    enriched_new_articles,
+    queue_posts,
+    max_age_days=BRAWL_NEWS_MAX_AGE_DAYS,
+)
+save_brawl_article_state(ARTICLE_STATE_FILE, article_state)
+
+print_article_lifecycle_diagnostics(
+    articles,
+    old_state["articles"],
+    article_state,
+)
+
+pending_articles = get_pending_brawl_articles(
+    article_state,
+    max_age_days=BRAWL_NEWS_MAX_AGE_DAYS,
+)
+high_priority_articles, medium_priority_articles = split_articles_by_priority(
+    pending_articles
+)
 
 
 print_brawl_source_health(
@@ -1930,7 +2033,7 @@ save_latest_changes(
     latest_release_url,
     new_buffs,
     new_nerfs,
-    enriched_new_articles,
+    pending_articles,
     high_priority_articles,
     medium_priority_articles,
 )
