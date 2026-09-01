@@ -1,38 +1,22 @@
 {
   "items": [
     {
-      "game": "Adopt Me!",
-      "emoji": "🐾",
-      "score": 7,
-      "text": "🎒 Появилось отдельное хранилище для предметов из рюкзака.\n\nПо данным Sportskeeda, Появилось отдельное хранилище для предметов из рюкзака.",
-      "external_article_url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxQSGs1V3ZkWDZ2N1dIR05Ta3BFY2NScEk1cXgtdWs2ZUFGMmlUb3AyUWtfQ3Nsa3VvQjVDSm1mYUxlOHBObVJYQWhJZ0k3X2M0dkhuNF9IS3F1cmdVOFkyc2RFTXF0TVdNV1R4dHBOTjJlNXBJaGtKMmRSYW9seWhsYnJybG5qSlQ2UW4tVzVoUk1wUmIzM3IyN0UtaG1VTkFhXzU4?oc=5"
-    },
-    {
-      "game": "Blade Ball",
-      "emoji": "⚔️",
+      "game": "Blox Fruits",
+      "emoji": "🍈",
       "score": 6,
-      "text": "В Blade Ball вышло обновление «NEW Kraken Spins in Blade Ball! 🐙🔥».",
-      "external_article_url": "https://www.youtube.com/watch?v=lNN7KhMl3sw"
+      "text": "В Blox Fruits вышел балансный патч The Summer PvP #001.",
+      "external_article_url": "https://gamerrobot.com/blogs/news/the-balance-log"
     }
   ],
   "pipeline": [
     {
-      "game": "Adopt Me!",
+      "game": "Blox Fruits",
       "candidate": true,
       "verified": true,
       "selected": true,
       "formatted_ru": true,
       "scheduled": true,
       "reason": "вошёл в утренний выпуск"
-    },
-    {
-      "game": "Blox Fruits",
-      "candidate": true,
-      "verified": true,
-      "selected": false,
-      "formatted_ru": true,
-      "scheduled": false,
-      "reason": "ниже трёх более сильных разных новостей"
     },
     {
       "game": "Steal An Egg",
@@ -80,6 +64,15 @@
       "reason": "Публикация уже использовалась в выпуске другого дня; Нет пригодной Tier B новости; Нет новой конкретной строки со времени прошлого снимка"
     },
     {
+      "game": "Adopt Me!",
+      "candidate": true,
+      "verified": false,
+      "selected": false,
+      "formatted_ru": false,
+      "scheduled": false,
+      "reason": "Публикация уже использовалась в выпуске другого дня; Публикация уже использовалась в выпуске другого дня; Нет новой конкретной строки со времени прошлого снимка"
+    },
+    {
       "game": "RIVALS",
       "candidate": true,
       "verified": false,
@@ -107,15 +100,6 @@
       "reason": "В публикации не найдено достаточно конкретного содержания; Нет новой конкретной строки со времени прошлого снимка"
     },
     {
-      "game": "Blade Ball",
-      "candidate": true,
-      "verified": true,
-      "selected": true,
-      "formatted_ru": true,
-      "scheduled": true,
-      "reason": "вошёл в утренний выпуск"
-    },
-    {
       "game": "Grow a Garden",
       "candidate": true,
       "verified": false,
@@ -131,7 +115,7 @@
       "selected": false,
       "formatted_ru": false,
       "scheduled": false,
-      "reason": "Публикация устарела: 59.8 дн. (аварийный лимит 30); Нет пригодной Tier B новости; Нет новой конкретной строки со времени прошлого снимка"
+      "reason": "Источник недоступен: 404 Client Error: Not Found for url: https://www.youtube.com/feeds/videos.xml?channel_id=UCCVWvf_e5oRb6RfXyluR7UA; Нет пригодной Tier B новости; Нет новой конкретной строки со времени прошлого снимка"
     },
     {
       "game": "Pet Simulator 99",
@@ -141,13 +125,22 @@
       "formatted_ru": false,
       "scheduled": false,
       "reason": "Публикация уже использовалась в выпуске другого дня; В публикации не найдено достаточно конкретного содержания; Нет новой конкретной строки со времени прошлого снимка"
+    },
+    {
+      "game": "Blade Ball",
+      "candidate": true,
+      "verified": false,
+      "selected": false,
+      "formatted_ru": false,
+      "scheduled": false,
+      "reason": "Источник недоступен: 404 Client Error: Not Found for url: https://www.youtube.com/feeds/videos.xml?channel_id=UCPttFx0zI4Zv9M4i3Q2ylsw; Публикация устарела: 891.3 дн. (аварийный лимит 30); Нет пригодной Tier B новости; Нет новой конкретной строки со времени прошлого снимка"
     }
   ],
   "summary": {
     "found": 14,
-    "verified": 3,
-    "selected": 2,
-    "formatted": 3,
-    "scheduled": 2
+    "verified": 1,
+    "selected": 1,
+    "formatted": 1,
+    "scheduled": 1
   }
 }

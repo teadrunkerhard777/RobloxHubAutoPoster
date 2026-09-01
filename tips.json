@@ -6,7 +6,7 @@
     "text": "В начале забега сначала подкинь топливо в костёр, а уже потом уходи далеко за ресурсами.",
     "source": "verified_core_mechanic",
     "reviewed_at": "2026-08-14",
-    "used": false,
+    "used": true,
     "category": "survival"
   },
   {
@@ -196,7 +196,7 @@
     "text": "Хорошая защита базы важна не меньше высокого дохода: редкий Brainrot бесполезен, если его сразу украдут.",
     "source": "verified_core_mechanic",
     "reviewed_at": "2026-08-14",
-    "used": false,
+    "used": true,
     "category": "building"
   },
   {
@@ -366,7 +366,7 @@
     "text": "Перед ролевой сценой договоритесь, кто кем играет — так история не развалится через пару минут.",
     "source": "verified_core_mechanic",
     "reviewed_at": "2026-08-14",
-    "used": false,
+    "used": true,
     "category": "social"
   },
   {
@@ -776,7 +776,7 @@
     "text": "Если у тебя несколько видов растений, оставляй достаточно свободного места для новых посадок.",
     "source": "verified_core_mechanic",
     "reviewed_at": "2026-08-14",
-    "used": false,
+    "used": true,
     "category": "building"
   },
   {
@@ -1508,7 +1508,7 @@
     "text": "Перед кражей яйца заранее посмотри самый короткий путь обратно на базу.",
     "source": "agreed_editorial_list",
     "reviewed_at": "2026-08-28",
-    "used": false
+    "used": true
   },
   {
     "id": 152,
@@ -1552,7 +1552,7 @@
     "text": "Помни, что ценность яйца раскрывается после вылупления питомца: сама кража — только начало.",
     "source": "agreed_editorial_list",
     "reviewed_at": "2026-08-28",
-    "used": false
+    "used": true
   },
   {
     "id": 156,
@@ -1618,7 +1618,7 @@
     "text": "Стабильный доход нескольких питомцев полезнее постоянных рискованных попыток украсть одно яйцо.",
     "source": "agreed_editorial_list",
     "reviewed_at": "2026-08-28",
-    "used": false
+    "used": true
   },
   {
     "id": 162,
@@ -1629,7 +1629,7 @@
     "text": "Запоминай удобные маршруты между базой и местами, где обычно берёшь яйца.",
     "source": "agreed_editorial_list",
     "reviewed_at": "2026-08-28",
-    "used": false
+    "used": true
   },
   {
     "id": 163,
