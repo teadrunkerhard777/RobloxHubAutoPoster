@@ -25,6 +25,26 @@ def make_article(article_date="2026-08-24"):
 
 
 class BrawlArticleStateTests(unittest.TestCase):
+    def test_release_notes_cannot_disappear_between_monitor_and_generator(self):
+        article = {
+            **make_article("2026-09-01"),
+            "url": "https://supercell.com/release-notes-august-2026",
+            "title": "Release Notes August 2026",
+            "category": "release-notes",
+            "priority": "high",
+            "clean_content": ["Brawler Blast", "NEW Brawlers Cosmo and Vince"],
+        }
+        state = register_brawl_articles(
+            {"articles": {}}, [article], [], today=date(2026, 9, 1)
+        )
+
+        state = register_brawl_articles(state, [], [], today=date(2026, 9, 2))
+
+        self.assertEqual(
+            get_pending_brawl_articles(state, today=date(2026, 9, 2)),
+            [article],
+        )
+
     def test_discovered_but_unscheduled_remains_eligible_next_monitor_run(self):
         state = register_brawl_articles(
             {"articles": {}},

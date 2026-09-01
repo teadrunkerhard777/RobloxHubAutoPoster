@@ -504,6 +504,66 @@ class ImageScheduleTests(unittest.TestCase):
         self.assertEqual(added, 1)
         self.assertEqual(posts[0]["source"], "brawl_pipeline")
 
+    def test_fresh_official_release_notes_always_beats_fallback(self):
+        article = {
+            "url": "https://supercell.com/release-notes-august-2026",
+            "title": "Release Notes August 2026",
+            "date": "2026-09-01",
+            "category": "release-notes",
+            "priority": "high",
+            "official": True,
+            "fresh": True,
+            "is_relevant": True,
+            "ru_found": False,
+            "clean_content": [
+                "Starr Road has been reworked into Brawler Blast.",
+                "NEW Brawlers",
+                "Cosmo - Mythic - Controller",
+                "Vince - Mythic - Damage Dealer",
+                "Nori and Wendy are getting brand-new Hypercharges!",
+                "Duolingo Event has a brand-new Boss Fight and daily rewards.",
+                "Brawl-O-Ween Event is a month-long event in phases.",
+            ],
+        }
+        fallback_calls = []
+        posts = []
+
+        added = schedule_brawl_post(
+            posts,
+            date(2026, 9, 2),
+            data_loader=lambda: {
+                "new_articles": [article],
+                "high_priority_articles": [article],
+                "medium_priority_articles": [],
+                "new_buffs": [],
+                "new_nerfs": [],
+            },
+            fallback_builder=lambda: fallback_calls.append(True) or "fallback",
+        )
+
+        self.assertEqual(added, 1)
+        self.assertEqual(fallback_calls, [])
+        self.assertEqual(posts[0]["source"], "brawl_pipeline")
+        self.assertIn("Release Notes August 2026", posts[0]["text"])
+
+    def test_brawl_fallback_is_used_only_with_zero_eligible_news(self):
+        posts = []
+
+        schedule_brawl_post(
+            posts,
+            date(2026, 9, 2),
+            data_loader=lambda: {
+                "new_articles": [],
+                "high_priority_articles": [],
+                "medium_priority_articles": [],
+                "new_buffs": [],
+                "new_nerfs": [],
+            },
+            fallback_builder=lambda: "Проверенный fallback",
+        )
+
+        self.assertEqual(posts[0]["source"], "verified_brawl_fallback")
+
     def test_balance_material_uses_news_pipeline(self):
         posts = []
 

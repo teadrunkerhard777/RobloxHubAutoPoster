@@ -2,7 +2,11 @@ import ast
 import unittest
 from pathlib import Path
 
-from brawl_news_formatter import contains_rumor_signal, has_concrete_brawl_news
+from brawl_news_formatter import (
+    contains_rumor_signal,
+    has_concrete_brawl_news,
+    is_substantive_official_release_notes,
+)
 
 BRAWL_MONITOR_PATH = Path(__file__).parents[1] / "brawl_monitor.py"
 
@@ -33,6 +37,9 @@ def load_evaluate_article():
     namespace = {
         "contains_rumor_signal": contains_rumor_signal,
         "has_concrete_brawl_news": has_concrete_brawl_news,
+        "is_substantive_official_release_notes": (
+            is_substantive_official_release_notes
+        ),
     }
 
     # Выполняется только один узел функции из локального файла проекта.

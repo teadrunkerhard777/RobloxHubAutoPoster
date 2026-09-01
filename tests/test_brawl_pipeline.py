@@ -15,6 +15,7 @@ from brawl_news_formatter import (
     build_deterministic_translation,
     contains_rumor_signal,
     has_concrete_brawl_news,
+    is_substantive_official_release_notes,
 )
 from post_headings import BRAWL_NEWS_HEADING
 
@@ -57,6 +58,9 @@ def load_members(file_name, function_names, constant_names=()):
         "contains_rumor_signal": contains_rumor_signal,
         "Fore": Fore,
         "has_concrete_brawl_news": has_concrete_brawl_news,
+        "is_substantive_official_release_notes": (
+            is_substantive_official_release_notes
+        ),
         "date": date,
         "re": re,
         "SequenceMatcher": SequenceMatcher,
@@ -91,6 +95,11 @@ def load_function(file_name, function_name):
 split_articles_by_priority = load_function(
     "brawl_monitor.py",
     "split_articles_by_priority",
+)
+
+evaluate_article = load_function(
+    "brawl_monitor.py",
+    "evaluate_article",
 )
 
 carry_namespace = load_members(
@@ -187,6 +196,7 @@ final_post_namespace = load_members(
         "select_balance_changes",
         "build_balance_section",
         "build_final_post",
+        "build_brawl_pipeline_diagnostics",
     },
     {
         "NEWS_MAX_BLOCKS",
@@ -202,16 +212,121 @@ final_post_namespace = load_members(
         "FINAL_HIGH_NEWS_MAX_BLOCKS",
         "FINAL_MEDIUM_NEWS_MAX_BLOCKS",
         "FINAL_NEWS_WITH_BALANCE_MAX_BLOCKS",
+        "FINAL_RELEASE_NOTES_MAX_BLOCKS",
         "NEWS_TITLE_CASE_EXCEPTIONS",
         "NEWS_TITLE_SAFE_LATIN_WORDS",
     },
 )
 
 build_final_post = final_post_namespace["build_final_post"]
+build_brawl_pipeline_diagnostics = final_post_namespace[
+    "build_brawl_pipeline_diagnostics"
+]
 normalize_news_title = final_post_namespace["normalize_news_title"]
 
 
 class BrawlPipelineTests(unittest.TestCase):
+    def make_august_release_notes(self):
+        return {
+            "url": "https://supercell.com/release-notes-august-2026",
+            "title": "Release Notes August 2026",
+            "date": "2026-09-01",
+            "category": "release-notes",
+            "priority": "high",
+            "official": True,
+            "fresh": True,
+            "is_relevant": True,
+            "ru_found": False,
+            "clean_content": [
+                "Brawler Blast",
+                (
+                    "Starr Road has been reworked into Brawler Blast, a new "
+                    "shooting gallery-style unlocking experience where Credits "
+                    "progress you toward your next new Brawler."
+                ),
+                "Duolingo Event",
+                (
+                    "Duo takes over Brawl Stars through a brand-new Boss Fight, "
+                    "Community Event, themed PSIs, daily rewards, and a full event hub."
+                ),
+                "Brawl-O-Ween Event",
+                "This year's Brawl-O-Ween will have a month-long event in phases.",
+                "NEW Brawlers",
+                "Cosmo - Mythic - Controller",
+                "Vince - Mythic - Damage Dealer",
+                "NEW Hypercharges",
+                "Nori and Wendy are getting brand-new Hypercharges!",
+                "NEW Buffies",
+                "Balance Changes",
+            ],
+        }
+
+    def test_large_official_release_notes_is_high_priority(self):
+        evaluation = evaluate_article(self.make_august_release_notes())
+
+        self.assertEqual(evaluation["priority"], "high")
+        self.assertTrue(evaluation["is_relevant"])
+        self.assertIn(
+            "Свежие содержательные официальные Release Notes",
+            evaluation["reasons"],
+        )
+
+    def test_large_release_notes_produces_three_to_five_concrete_facts(self):
+        translation = build_deterministic_translation(self.make_august_release_notes())
+
+        self.assertGreaterEqual(len(translation["translated_content"]), 3)
+        self.assertLessEqual(len(translation["translated_content"]), 5)
+        text = " ".join(translation["translated_content"])
+        for expected in (
+            "Brawler Blast",
+            "Cosmo",
+            "Vince",
+            "Nori",
+            "Wendy",
+            "Duolingo",
+        ):
+            self.assertIn(expected, text)
+
+    def test_release_notes_diagnostics_show_pending_until_scheduled(self):
+        article = self.make_august_release_notes()
+        data = {
+            "new_articles": [article],
+            "high_priority_articles": [article],
+            "medium_priority_articles": [],
+        }
+
+        row = build_brawl_pipeline_diagnostics(data)["rows"][0]
+
+        for field in (
+            "found",
+            "official",
+            "fresh",
+            "relevant",
+            "selected",
+            "formatted",
+            "pending",
+        ):
+            self.assertTrue(row[field])
+        self.assertFalse(row["scheduled"])
+        self.assertIsNone(row["rejection_reason"])
+
+    def test_release_notes_final_post_contains_five_facts(self):
+        article = self.make_august_release_notes()
+        final_post = build_final_post(
+            {
+                "high_priority_articles": [article],
+                "medium_priority_articles": [],
+                "new_buffs": [],
+                "new_nerfs": [],
+            }
+        )
+
+        self.assertIn("🔥 БОЛЬШОЕ ОБНОВЛЕНИЕ", final_post)
+        self.assertEqual(final_post.count("🔹"), 5)
+        self.assertLessEqual(
+            len(final_post), final_post_namespace["FINAL_POST_TARGET_CHARS"]
+        )
+
     def test_unscheduled_fresh_article_survives_next_monitor_run(self):
         article = {
             "url": "https://supercell.com/bsc-2027",

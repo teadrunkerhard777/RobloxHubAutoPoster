@@ -99,6 +99,7 @@ FINAL_POST_TARGET_CHARS = 900
 FINAL_HIGH_NEWS_MAX_BLOCKS = 2
 FINAL_MEDIUM_NEWS_MAX_BLOCKS = 1
 FINAL_NEWS_WITH_BALANCE_MAX_BLOCKS = 1
+FINAL_RELEASE_NOTES_MAX_BLOCKS = 5
 
 # Сохраняем уже принятую для Balance Changes квоту:
 # максимум три бойца с баффами и четыре с нерфами.
@@ -254,7 +255,7 @@ def print_russian_article_status(article):
         print(Fore.YELLOW + "⚠ Русская версия пока не найдена")
 
 
-def select_news_content(article):
+def select_news_content(article, max_blocks=NEWS_MAX_BLOCKS):
     """
     Выбирает короткий набор содержательных русских блоков.
 
@@ -284,7 +285,7 @@ def select_news_content(article):
     selected_chars = 0
 
     for raw_block in ru_content:
-        if len(selected_blocks) >= NEWS_MAX_BLOCKS:
+        if len(selected_blocks) >= max_blocks:
             break
 
         # Неожиданные значения в старом JSON пропускаем,
@@ -1167,17 +1168,27 @@ def build_news_section(article: dict, max_blocks: int = NEWS_MAX_BLOCKS) -> str 
     if not isinstance(ru_title, str) or not ru_title.strip():
         return None
 
-    selected_blocks = select_news_content(article)[:max_blocks]
+    selected_blocks = select_news_content(article, max_blocks=max_blocks)
 
     if not selected_blocks:
         return None
 
-    section_parts = [
-        "🔥 ГЛАВНОЕ",
-        normalize_news_title(ru_title.strip()),
-        *selected_blocks,
-        "Источник: Supercell",
-    ]
+    if article.get("category") == "release-notes":
+        source_title = " ".join(str(article.get("title", "")).split())
+        main_sentence = f"🎯 В Brawl Stars вышли {source_title}."
+        section_parts = [
+            "🔥 БОЛЬШОЕ ОБНОВЛЕНИЕ",
+            main_sentence,
+            *selected_blocks,
+            "Источник: Supercell",
+        ]
+    else:
+        section_parts = [
+            "🔥 ГЛАВНОЕ",
+            normalize_news_title(ru_title.strip()),
+            *selected_blocks,
+            "Источник: Supercell",
+        ]
 
     return "\n\n".join(section_parts)
 
@@ -1225,7 +1236,17 @@ def build_brawl_pipeline_diagnostics(data: dict, scheduled=False, blocked_reason
         if url in seen_urls:
             continue
         seen_urls.add(url)
-        formatted = build_news_section(article) is not None
+        formatted = (
+            build_news_section(
+                article,
+                max_blocks=(
+                    FINAL_RELEASE_NOTES_MAX_BLOCKS
+                    if article.get("category") == "release-notes"
+                    else NEWS_MAX_BLOCKS
+                ),
+            )
+            is not None
+        )
         selected = bool(
             selected_article
             and (
@@ -1237,6 +1258,23 @@ def build_brawl_pipeline_diagnostics(data: dict, scheduled=False, blocked_reason
                 )
             )
         )
+        scheduled_row = bool(scheduled and selected)
+        relevant = article.get(
+            "is_relevant",
+            article.get("priority") in {"high", "medium"}
+            or has_concrete_brawl_news(article),
+        )
+        pending = bool(
+            selected and not scheduled_row and article.get("scheduled") is not True
+        )
+        rejection_reason = (
+            None
+            if selected
+            else (
+                article.get("rejection_reason")
+                or "другой пригодный материал получил приоритет"
+            )
+        )
         rows.append(
             {
                 "url": url,
@@ -1244,12 +1282,15 @@ def build_brawl_pipeline_diagnostics(data: dict, scheduled=False, blocked_reason
                 "found": True,
                 "official": article.get("official", True),
                 "fresh": article.get("fresh", True),
+                "relevant": relevant,
                 "priority": article.get("priority", "low"),
                 "ru_version": article.get("ru_found") is True,
                 "translation": article.get("translated") is True,
                 "selected": selected,
                 "formatted": formatted,
-                "scheduled": bool(scheduled and selected),
+                "pending": pending,
+                "scheduled": scheduled_row,
+                "rejection_reason": rejection_reason,
                 "reason": (
                     blocked_reason
                     if selected and blocked_reason
@@ -1286,12 +1327,15 @@ def print_brawl_pipeline_diagnostics(data: dict, scheduled=False, blocked_reason
         print(f"  FOUND {'✓' if row['found'] else '✗'}")
         print(f"  OFFICIAL {'✓' if row['official'] else '✗'}")
         print(f"  FRESH {'✓' if row['fresh'] else '✗'}")
+        print(f"  RELEVANT {'✓' if row['relevant'] else '✗'}")
         print(f"  PRIORITY {row['priority']}")
         print(f"  RU VERSION {'✓' if row['ru_version'] else '✗'}")
         print(f"  TRANSLATION {'✓' if row['translation'] else '✗'}")
         print(f"  SELECTED {'✓' if row['selected'] else '✗'}")
         print(f"  FORMATTED {'✓' if row['formatted'] else '✗'}")
+        print(f"  PENDING {'✓' if row['pending'] else '✗'}")
         print(f"  SCHEDULED {'✓' if row['scheduled'] else '✗'}")
+        print(f"  REJECTION_REASON {row['rejection_reason'] or '—'}")
         print(f"  REASON {row['reason']}")
 
     summary = diagnostics["summary"]
@@ -1442,6 +1486,8 @@ def build_final_post(data: dict) -> str | None:
         # изменениям, а не просто по полям исходного JSON.
         if balance_change_count > 0:
             news_block_limit = FINAL_NEWS_WITH_BALANCE_MAX_BLOCKS
+        elif news_article.get("category") == "release-notes":
+            news_block_limit = FINAL_RELEASE_NOTES_MAX_BLOCKS
         elif news_article.get("priority") in {"medium", "low"}:
             news_block_limit = FINAL_MEDIUM_NEWS_MAX_BLOCKS
         else:
@@ -1449,7 +1495,7 @@ def build_final_post(data: dict) -> str | None:
 
         news_block_count = min(
             news_block_limit,
-            len(select_news_content(news_article)),
+            len(select_news_content(news_article, max_blocks=news_block_limit)),
         )
 
     while True:

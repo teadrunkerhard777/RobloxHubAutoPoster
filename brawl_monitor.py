@@ -21,6 +21,7 @@ from brawl_news_formatter import (
     build_deterministic_translation,
     contains_rumor_signal,
     has_concrete_brawl_news,
+    is_substantive_official_release_notes,
 )
 
 # ---------------------------------------------------------
@@ -1304,12 +1305,16 @@ def evaluate_article(article):
     # RELEASE NOTES
     # -----------------------------------------------------
 
-    # Release Notes почти всегда потенциально полезны,
-    # потому что содержат реальные изменения игры.
+    # Release Notes потенциально полезны сами по себе. Если официальный свежий
+    # материал содержит несколько конкретных игровых секций, он сразу получает
+    # HIGH-базу и не зависит от слова update в каждом отдельном абзаце.
     if category == "release-notes":
-        score += 3
-
-        reasons.append("Официальные Release Notes")
+        if is_substantive_official_release_notes(article):
+            score += 6
+            reasons.append("Свежие содержательные официальные Release Notes")
+        else:
+            score += 3
+            reasons.append("Официальные Release Notes")
 
     # -----------------------------------------------------
     # БАЛАНС
