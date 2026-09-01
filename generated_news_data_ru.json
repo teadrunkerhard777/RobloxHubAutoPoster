@@ -3,8 +3,14 @@
     {
       "game": "Blox Fruits",
       "emoji": "🍈",
-      "score": 6,
-      "text": "В Blox Fruits вышел балансный патч The Summer PvP #001.",
+      "score": 10,
+      "headline": "⚔️ Вышел балансный патч The Summer PvP #001.",
+      "facts": [
+        "🔹 Control — Dagger Mode (X): задержка после атаки: +0.25 секунд; дальность: −10%; размер хитбокса: −10%.",
+        "🔹 Instinct — Core Mechanic (DODGES): время восстановления уклонений: 40 секунд → 30 секунд.",
+        "🔹 Death Step — Abilities (C): периодический урон: +20%; задержка после атаки: 0.25 секунд → 0.1 секунд; размер хитбокса: +15%."
+      ],
+      "text": "⚔️ Вышел балансный патч The Summer PvP #001.\n\n🔹 Control — Dagger Mode (X): задержка после атаки: +0.25 секунд; дальность: −10%; размер хитбокса: −10%.\n\n🔹 Instinct — Core Mechanic (DODGES): время восстановления уклонений: 40 секунд → 30 секунд.\n\n🔹 Death Step — Abilities (C): периодический урон: +20%; задержка после атаки: 0.25 секунд → 0.1 секунд; размер хитбокса: +15%.",
       "external_article_url": "https://gamerrobot.com/blogs/news/the-balance-log"
     }
   ],
@@ -115,7 +121,7 @@
       "selected": false,
       "formatted_ru": false,
       "scheduled": false,
-      "reason": "Источник недоступен: 404 Client Error: Not Found for url: https://www.youtube.com/feeds/videos.xml?channel_id=UCCVWvf_e5oRb6RfXyluR7UA; Нет пригодной Tier B новости; Нет новой конкретной строки со времени прошлого снимка"
+      "reason": "Публикация устарела: 60.8 дн. (аварийный лимит 30); Нет пригодной Tier B новости; Нет новой конкретной строки со времени прошлого снимка"
     },
     {
       "game": "Pet Simulator 99",
@@ -133,7 +139,7 @@
       "selected": false,
       "formatted_ru": false,
       "scheduled": false,
-      "reason": "Источник недоступен: 404 Client Error: Not Found for url: https://www.youtube.com/feeds/videos.xml?channel_id=UCPttFx0zI4Zv9M4i3Q2ylsw; Публикация устарела: 891.3 дн. (аварийный лимит 30); Нет пригодной Tier B новости; Нет новой конкретной строки со времени прошлого снимка"
+      "reason": "Публикация уже использовалась в выпуске другого дня; Публикация устарела: 891.6 дн. (аварийный лимит 30); Нет пригодной Tier B новости; Нет новой конкретной строки со времени прошлого снимка"
     }
   ],
   "summary": {

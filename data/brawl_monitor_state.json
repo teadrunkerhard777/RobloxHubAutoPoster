@@ -1,104 +1,23 @@
 {
-  "release_url": "https://supercell.com/en/games/brawlstars/blog/release-notes/release-notes-june-2026/",
-  "buffs": [
-    {
-      "brawler": "JACKY",
-      "change": "Health increased from 5000 ➡️ 5200",
-      "changes": [
-        "Health increased from 5000 ➡️ 5200"
-      ]
-    },
-    {
-      "brawler": "BONNIE",
-      "change": "Main attack damage increased from 1120 ➡️ 1220",
-      "changes": [
-        "Main attack damage increased from 1120 ➡️ 1220"
-      ]
-    },
-    {
-      "brawler": "JESSIE",
-      "change": "Main attack projectile speed increased from 2870 ➡️ 3050",
-      "changes": [
-        "Main attack projectile speed increased from 2870 ➡️ 3050"
-      ]
-    }
-  ],
-  "nerfs": [
-    {
-      "brawler": "8-BIT",
-      "change": "Buffied \"Extra Credits\" Gadget bouncing projectile damage reduced from 75% ➡️ 60% - Buffied \"Boosted Booster\" Star Power ammo spawn time increased from 3s ➡️ 5s - Hypercharge rate reduced by 15%",
-      "changes": [
-        "Buffied \"Extra Credits\" Gadget bouncing projectile damage reduced from 75% ➡️ 60%",
-        "Buffied \"Boosted Booster\" Star Power ammo spawn time increased from 3s ➡️ 5s",
-        "Hypercharge rate reduced by 15%"
-      ]
-    },
-    {
-      "brawler": "SURGE",
-      "change": "\"Power Shield\" Gadget cooldown increased from 18s ➡️ 22s - Hypercharge range reduced from 20 ➡️ 16 - Buffied Hypercharge main attack's second shot damage was reduced from 70% ➡️ 50% - Hypercharge projectile damage reduced from 1000 ➡️ 800",
-      "changes": [
-        "\"Power Shield\" Gadget cooldown increased from 18s ➡️ 22s",
-        "Hypercharge range reduced from 20 ➡️ 16",
-        "Buffied Hypercharge main attack's second shot damage was reduced from 70% ➡️ 50%",
-        "Hypercharge projectile damage reduced from 1000 ➡️ 800"
-      ]
-    },
-    {
-      "brawler": "BROCK",
-      "change": "Buffie'd \"Rocket No. 4\" Star Power time for extra range increased from 4s ➡️ 6s - \"Rocket Barrage\" Gadget knockback removed",
-      "changes": [
-        "Buffie'd \"Rocket No. 4\" Star Power time for extra range increased from 4s ➡️ 6s",
-        "\"Rocket Barrage\" Gadget knockback removed"
-      ]
-    },
-    {
-      "brawler": "MEG",
-      "change": "\"Toolbox\" Gadget Super charge duration increased from 4s ➡️ 6s - Buffied \"Jolting Volts\" Gadget extra duration reduced from 2s ➡️ 1s - Mecha's main attack Super charge rate reduced by 60% - Buffied Hypercharge main attack Super charge rate reduced by 60%",
-      "changes": [
-        "\"Toolbox\" Gadget Super charge duration increased from 4s ➡️ 6s",
-        "Buffied \"Jolting Volts\" Gadget extra duration reduced from 2s ➡️ 1s",
-        "Mecha's main attack Super charge rate reduced by 60%",
-        "Buffied Hypercharge main attack Super charge rate reduced by 60%"
-      ]
-    },
-    {
-      "brawler": "CROW",
-      "change": "Main attack damage reduced from 420 ➡️ 380",
-      "changes": [
-        "Main attack damage reduced from 420 ➡️ 380"
-      ]
-    },
-    {
-      "brawler": "COLETTE",
-      "change": "\"Gotcha!\" Gadget duration of charm reduced from 1s ➡️ 0.5s",
-      "changes": [
-        "\"Gotcha!\" Gadget duration of charm reduced from 1s ➡️ 0.5s"
-      ]
-    },
-    {
-      "brawler": "STARR NOVA",
-      "change": "Main attack damage reduced from 540 ➡️ 480 - Super charge rate increased by 11% Note: This change keeps the number of attacks to charge Super the same as before the main attack damage nerf (10 hits to charge Super)",
-      "changes": [
-        "Main attack damage reduced from 540 ➡️ 480",
-        "Super charge rate increased by 11% Note: This change keeps the number of attacks to charge Super the same as before the main attack damage nerf (10 hits to charge Super)"
-      ]
-    },
-    {
-      "brawler": "MAX",
-      "change": "Hypercharge main attack Super charge rate reduced from 8% ➡️ 7%",
-      "changes": [
-        "Hypercharge main attack Super charge rate reduced from 8% ➡️ 7%"
-      ]
-    }
-  ],
+  "release_url": "https://supercell.com/en/games/brawlstars/blog/release-notes/release-notes-august-2026/",
+  "buffs": [],
+  "nerfs": [],
   "articles": [
+    {
+      "title": "Release Notes August 2026",
+      "url": "https://supercell.com/en/games/brawlstars/blog/release-notes/release-notes-august-2026/",
+      "category": "release-notes",
+      "date": "2026-09-01",
+      "archive_page": "https://supercell.com/en/games/brawlstars/blog/",
+      "archive_index": 0
+    },
     {
       "title": "First Look at BSC 2027",
       "url": "https://supercell.com/en/games/brawlstars/blog/esports/first-look-at-bsc-2027/",
       "category": "esports",
       "date": "2026-08-24",
       "archive_page": "https://supercell.com/en/games/brawlstars/blog/",
-      "archive_index": 0
+      "archive_index": 1
     },
     {
       "title": "Brawl Stars Challengers Finals Format",
@@ -106,7 +25,7 @@
       "category": "esports",
       "date": "2026-08-10",
       "archive_page": "https://supercell.com/en/games/brawlstars/blog/",
-      "archive_index": 1
+      "archive_index": 2
     },
     {
       "title": "Release Notes June 2026",
@@ -114,7 +33,7 @@
       "category": "release-notes",
       "date": "2026-08-03",
       "archive_page": "https://supercell.com/en/games/brawlstars/blog/",
-      "archive_index": 2
+      "archive_index": 3
     },
     {
       "title": "2026 Brawl Stars World Finals Ticketing Guide",
@@ -122,7 +41,7 @@
       "category": "esports",
       "date": "2026-08-01",
       "archive_page": "https://supercell.com/en/games/brawlstars/blog/",
-      "archive_index": 3
+      "archive_index": 4
     },
     {
       "title": "Brawl Stars World Finals Format",
@@ -130,15 +49,15 @@
       "category": "esports",
       "date": "2026-07-29",
       "archive_page": "https://supercell.com/en/games/brawlstars/blog/",
-      "archive_index": 4
+      "archive_index": 5
     },
     {
       "title": "Last Chance Qualifier Format",
       "url": "https://supercell.com/en/games/brawlstars/blog/esports/last-chance-qualifier-format-2/",
       "category": "esports",
       "date": "2026-07-23",
-      "archive_page": "https://supercell.com/en/games/brawlstars/blog/",
-      "archive_index": 5
+      "archive_page": "https://supercell.com/en/games/brawlstars/blog/page/2/",
+      "archive_index": 6
     },
     {
       "title": "THE ADIDAS STARR CUP IS ON!",
@@ -146,7 +65,7 @@
       "category": "community",
       "date": "2026-06-17",
       "archive_page": "https://supercell.com/en/games/brawlstars/blog/page/2/",
-      "archive_index": 6
+      "archive_index": 7
     },
     {
       "title": "Brawl Stars Challengers Finals: Tickets Available Now!",
@@ -154,7 +73,7 @@
       "category": "esports",
       "date": "2026-06-15",
       "archive_page": "https://supercell.com/en/games/brawlstars/blog/page/2/",
-      "archive_index": 7
+      "archive_index": 8
     },
     {
       "title": "THE FORMULA BRAWL EVENT IS HERE!",
@@ -162,7 +81,7 @@
       "category": "other",
       "date": "2026-06-05",
       "archive_page": "https://supercell.com/en/games/brawlstars/blog/page/2/",
-      "archive_index": 8
+      "archive_index": 9
     },
     {
       "title": "Brawl Cup Event Guide",
@@ -170,21 +89,13 @@
       "category": "esports",
       "date": "2026-05-15",
       "archive_page": "https://supercell.com/en/games/brawlstars/blog/page/2/",
-      "archive_index": 9
+      "archive_index": 10
     },
     {
       "title": "Release Notes April 2026",
       "url": "https://supercell.com/en/games/brawlstars/blog/release-notes/release-notes-april-2026/",
       "category": "release-notes",
       "date": "2026-05-12",
-      "archive_page": "https://supercell.com/en/games/brawlstars/blog/page/2/",
-      "archive_index": 10
-    },
-    {
-      "title": "Changes to Bling, Shop, and Cosmetics!",
-      "url": "https://supercell.com/en/games/brawlstars/blog/news/changes-to-bling-shop-and-cosmetics/",
-      "category": "other",
-      "date": "2026-04-01",
       "archive_page": "https://supercell.com/en/games/brawlstars/blog/page/2/",
       "archive_index": 11
     }
