@@ -819,6 +819,9 @@ def build_news_action(item):
 
     upper = text.upper()
 
+    if "PVP" in upper and ("БАЛАНСНЫЙ ПАТЧ" in upper or "BALANCE PATCH" in upper):
+        return "🎯 Главное: патч направлен на баланс PvP."
+
     if "CONTRACT" in upper:
         return "🎯 Что сделать: зайди в игру " "и проверь доступные контракты."
 

@@ -51,6 +51,51 @@ class FetchExternalNewsTests(unittest.TestCase):
             ["https://example.com/news", "https://example.com/news/fresh-update"],
         )
 
+    def test_extracts_structured_patch_rows_before_removing_scripts(self):
+        html = """
+        <html><body>
+          <nav>Home Shop Account</nav>
+          <script>
+            const data = [{
+              "category": "Fruits",
+              "entries": [{
+                "name": "Control",
+                "status": "NERF",
+                "groups": [{
+                  "title": "Outside Domain",
+                  "changes": [[
+                    "X",
+                    "Cooldown increased by 4 seconds; hitbox size decreased by 10%."
+                  ]]
+                }]
+              }]
+            }];
+          </script>
+        </body></html>
+        """
+
+        result = fetch_external_news.extract_page_data(
+            html, "https://gamerrobot.com/blogs/news/the-balance-log"
+        )
+
+        self.assertEqual(
+            result["structured_content"],
+            [
+                {
+                    "category": "Fruits",
+                    "name": "Control",
+                    "status": "NERF",
+                    "group": "Outside Domain",
+                    "ability": "X",
+                    "change": (
+                        "Cooldown increased by 4 seconds; "
+                        "hitbox size decreased by 10%."
+                    ),
+                }
+            ],
+        )
+        self.assertNotIn("Cooldown increased", result["text"])
+
     def test_finds_latest_blox_fruits_article(self):
         result = fetch_external_news.find_latest_article_url(
             "Blox Fruits",

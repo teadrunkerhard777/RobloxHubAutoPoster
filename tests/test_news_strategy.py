@@ -77,7 +77,12 @@ def load_format_functions():
         "build_item",
         "select_news_items",
     }
-    constants = {"GAME_NAMES", "GAME_EMOJIS", "MAX_NEWS_ITEMS"}
+    constants = {
+        "GAME_NAMES",
+        "GAME_EMOJIS",
+        "MAX_NEWS_ITEM_CHARS",
+        "MAX_NEWS_ITEMS",
+    }
     nodes = []
     for node in tree.body:
         if isinstance(node, ast.FunctionDef) and node.name in names:
@@ -206,6 +211,43 @@ class RobloxNewsStrategyTests(unittest.TestCase):
         item = FORMAT["build_item"](candidate)
         self.assertIsNotNone(item)
         self.assertTrue(item["text"].strip())
+
+    def test_formatter_keeps_headline_and_structured_details(self):
+        candidate = {
+            "game": "Blox Fruits",
+            "score": 10,
+            "facts": [
+                {
+                    "kind": "official_article",
+                    "value": 6,
+                    "summary_ru": "⚔️ Вышел балансный патч The Summer PvP #001.",
+                    "text": "The Balance Log",
+                    "source_url": "https://gamerrobot.com/news",
+                },
+                {
+                    "kind": "balance_change",
+                    "value": 10,
+                    "summary_ru": "🔹 Control (X): кулдаун увеличен на 4 секунд.",
+                    "text": "Control X",
+                    "source_url": "https://gamerrobot.com/news",
+                },
+                {
+                    "kind": "balance_change",
+                    "value": 10,
+                    "summary_ru": "🔹 Instinct (DODGES): время уменьшено с 40 до 30 секунд.",
+                    "text": "Instinct DODGES",
+                    "source_url": "https://gamerrobot.com/news",
+                },
+            ],
+        }
+
+        item = FORMAT["build_item"](candidate)
+
+        self.assertEqual(item["headline"], candidate["facts"][0]["summary_ru"])
+        self.assertEqual(len(item["facts"]), 2)
+        self.assertIn("Control (X)", item["text"])
+        self.assertIn("40", item["text"])
+        self.assertLessEqual(len(item["text"]), 500)
 
     def test_morning_selection_returns_one_when_only_one_is_worthy(self):
         formatted = [({}, {"game": "Brookhaven", "text": "Новость"}, False)]

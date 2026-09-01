@@ -299,11 +299,7 @@ def build_title_fact(game, article):
             patch_name = patch_match.group(1).strip()
             patch_number = patch_match.group(2)
 
-            summary = (
-                "В Blox Fruits вышел "
-                f"балансный патч {patch_name} "
-                f"#{patch_number}."
-            )
+            summary = f"⚔️ Вышел балансный патч {patch_name} " f"#{patch_number}."
         else:
             summary = "Blox Fruits опубликовала " f"новость «{title}»."
 
@@ -488,6 +484,137 @@ def extract_adopt_me_facts(article):
         )
 
     return facts
+
+
+BALANCE_METRICS_RU = (
+    ("dodge regeneration time", "время восстановления уклонений"),
+    ("damage over time", "периодический урон"),
+    ("all damage", "весь урон"),
+    ("hitbox size", "размер хитбокса"),
+    ("travel speed", "скорость полёта атаки"),
+    ("flight speed", "скорость полёта"),
+    ("stun duration", "длительность оглушения"),
+    ("energy cost", "затраты энергии"),
+    ("cast time", "время применения"),
+    ("wind-up", "подготовка атаки"),
+    ("end-lag", "задержка после атаки"),
+    ("lifesteal", "вампиризм"),
+    ("cooldown", "кулдаун"),
+    ("duration", "длительность"),
+    ("damage", "урон"),
+    ("range", "дальность"),
+)
+
+
+def translate_balance_clause(clause):
+    """Translates one numeric balance clause without changing names/numbers."""
+
+    clean = clause.strip().rstrip(".")
+    lower = clean.casefold()
+
+    metric_ru = None
+    metric_en = None
+    for english, russian in BALANCE_METRICS_RU:
+        if lower.startswith(english):
+            metric_en = english
+            metric_ru = russian
+            break
+
+    if metric_ru is None:
+        return None
+
+    remainder = clean[len(metric_en) :].strip()
+    quantity = r"\d+(?:\.\d+)?(?:%|\s+seconds?)"
+    change_match = re.fullmatch(
+        rf"(increased|decreased|reduced)\s+"
+        rf"(?:(by|to)\s+({quantity})|from\s+({quantity})\s+to\s+({quantity}))"
+        r"(?:,.*)?",
+        remainder,
+        flags=re.IGNORECASE,
+    )
+    if not change_match:
+        return None
+
+    direction = change_match.group(1).casefold()
+
+    def translate_units(value):
+        return re.sub(r"\bseconds?\b", "секунд", value, flags=re.IGNORECASE)
+
+    relation = change_match.group(2)
+    if relation == "by":
+        value = translate_units(change_match.group(3))
+        sign = "+" if direction == "increased" else "−"
+        return f"{metric_ru}: {sign}{value}"
+    if relation == "to":
+        value = translate_units(change_match.group(3))
+        return f"{metric_ru}: теперь {value}"
+
+    old_value = translate_units(change_match.group(4))
+    new_value = translate_units(change_match.group(5))
+    return f"{metric_ru}: {old_value} → {new_value}"
+
+
+def extract_structured_balance_facts(article):
+    """Selects up to three concrete changes from embedded official patch JSON."""
+
+    rows = article.get("structured_content", [])
+    if not isinstance(rows, list):
+        return []
+
+    candidates_by_category = {}
+    for index, row in enumerate(rows):
+        if not isinstance(row, dict):
+            continue
+
+        translated_clauses = [
+            translated
+            for clause in str(row.get("change", "")).split(";")
+            if (translated := translate_balance_clause(clause))
+        ]
+        if not translated_clauses:
+            continue
+
+        category = str(row.get("category", "")).strip()
+        name = str(row.get("name", "")).strip()
+        group = str(row.get("group", "")).strip()
+        ability = str(row.get("ability", "")).strip()
+        if not category or not name or not ability:
+            continue
+
+        subject = f"{name} — {group}" if group else name
+        summary = f"🔹 {subject} ({ability}): " + "; ".join(translated_clauses) + "."
+        candidate = (
+            len(translated_clauses),
+            len(re.findall(r"\d+(?:\.\d+)?%?", row.get("change", ""))),
+            -index,
+            make_external_fact(
+                article=article,
+                text=(f"{category} | {name} | {ability} | " f"{row.get('change', '')}"),
+                summary_ru=summary,
+                kind="balance_change",
+                value=10,
+            ),
+        )
+        current = candidates_by_category.get(category)
+        if current is None or candidate[:3] > current[:3]:
+            candidates_by_category[category] = candidate
+
+    # Берём разные части патча, чтобы один фрукт с десятком строк не вытеснил
+    # системную механику или боевой стиль. Порядок стабилен и бесплатен.
+    preferred_categories = (
+        "Fruits",
+        "Systems",
+        "Fighting Styles",
+        "Swords",
+        "Guns",
+        "Races",
+    )
+    selected = [
+        candidates_by_category[category][3]
+        for category in preferred_categories
+        if category in candidates_by_category
+    ]
+    return selected[:3]
 
 
 def extract_pet_simulator_facts(article):
@@ -773,6 +900,11 @@ def extract_external_facts(
         facts.extend(pet_simulator_facts)
         excluded_kinds.update(fact["kind"] for fact in pet_simulator_facts)
 
+    structured_balance_facts = extract_structured_balance_facts(article)
+    facts.extend(structured_balance_facts)
+    if structured_balance_facts:
+        excluded_kinds.add("balance_change")
+
     facts.extend(extract_generic_article_facts(article, excluded_kinds=excluded_kinds))
 
     facts.sort(key=lambda item: item["value"], reverse=True)
@@ -788,6 +920,9 @@ def extract_external_facts(
         else:
             return []
 
-    # Одна статья даёт компактный набор: не более трёх ключевых изменений.
-    # Заголовок остаётся допустимым запасным фактом, но детали выше него.
-    return facts[:3]
+    # Главная новость и до трёх деталей образуют компактный блок. Заголовок
+    # не вытесняет конкретные факты, но всегда объясняет, к чему они относятся.
+    selected_facts = detail_facts[:3]
+    if title_fact:
+        selected_facts.insert(0, title_fact)
+    return selected_facts[:4]

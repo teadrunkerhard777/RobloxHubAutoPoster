@@ -96,6 +96,111 @@ class ExternalNewsFactsTests(unittest.TestCase):
 
         self.assertTrue(extract_external_facts("Blox Fruits", article, now=NOW))
 
+    def test_balance_patch_keeps_exact_names_numbers_and_multiple_changes(self):
+        article = {
+            "success": True,
+            "url": "https://gamerrobot.com/blogs/news/the-balance-log",
+            "title": "The Balance Log",
+            "published_at": "2026-08-06T22:02:43Z",
+            "text": "The Summer PvP Patch Notes - Balance Patch 001",
+            "structured_content": [
+                {
+                    "category": "Fruits",
+                    "name": "Control",
+                    "ability": "X",
+                    "change": (
+                        "Cooldown increased by 4 seconds; "
+                        "hitbox size decreased by 10%."
+                    ),
+                },
+                {
+                    "category": "Systems",
+                    "name": "Instinct",
+                    "ability": "DODGES",
+                    "change": (
+                        "Dodge regeneration time decreased from 40 seconds "
+                        "to 30 seconds, allowing Instinct dodges to replenish "
+                        "25% faster."
+                    ),
+                },
+                {
+                    "category": "Fighting Styles",
+                    "name": "Death Step",
+                    "ability": "C",
+                    "change": (
+                        "Damage over time increased by 20%; "
+                        "end-lag decreased from 0.25 seconds to 0.1 seconds."
+                    ),
+                },
+            ],
+        }
+
+        facts = extract_external_facts("Blox Fruits", article, now=NOW)
+        summaries = [fact["summary_ru"] for fact in facts]
+
+        self.assertEqual(len(facts), 4)
+        self.assertTrue(any("Control (X)" in value for value in summaries))
+        self.assertTrue(
+            any("4 секунд" in value and "10%" in value for value in summaries)
+        )
+        self.assertTrue(
+            any("40 секунд" in value and "30 секунд" in value for value in summaries)
+        )
+        self.assertTrue(
+            any("Death Step (C)" in value and "0.25" in value for value in summaries)
+        )
+
+    def test_structured_patch_deduplicates_and_limits_long_articles(self):
+        categories = ["Fruits", "Systems", "Fighting Styles", "Swords", "Guns"]
+        rows = [
+            {
+                "category": category,
+                "name": f"Exact {category}",
+                "ability": "Z",
+                "change": "Damage increased by 10%.",
+            }
+            for category in categories
+        ]
+        rows.append(dict(rows[0]))
+        article = {
+            "success": True,
+            "url": "https://gamerrobot.com/blogs/news/the-balance-log",
+            "title": "The Balance Log",
+            "published_at": "2026-08-06T22:02:43Z",
+            "text": "The Summer PvP Patch Notes - Balance Patch 001",
+            "structured_content": rows,
+        }
+
+        facts = extract_external_facts("Blox Fruits", article, now=NOW)
+        details = [fact for fact in facts if fact["kind"] == "balance_change"]
+
+        self.assertEqual(len(details), 3)
+        self.assertEqual(len({fact["summary_ru"] for fact in details}), 3)
+
+    def test_structured_patch_with_one_fact_does_not_invent_more(self):
+        article = {
+            "success": True,
+            "url": "https://gamerrobot.com/blogs/news/the-balance-log",
+            "title": "The Balance Log",
+            "published_at": "2026-08-06T22:02:43Z",
+            "text": "The Summer PvP Patch Notes - Balance Patch 001",
+            "structured_content": [
+                {
+                    "category": "Fruits",
+                    "name": "Control",
+                    "ability": "X",
+                    "change": "Cooldown increased by 4 seconds.",
+                }
+            ],
+        }
+
+        facts = extract_external_facts("Blox Fruits", article, now=NOW)
+
+        self.assertEqual(len(facts), 2)
+        self.assertEqual(
+            len([fact for fact in facts if fact["kind"] == "balance_change"]), 1
+        )
+
     def test_secondary_window_can_reach_thirty_days_explicitly(self):
         self.assertEqual(SECONDARY_NEWS_MAX_AGE_DAYS, 30)
         article = {
@@ -168,7 +273,7 @@ class ExternalNewsFactsTests(unittest.TestCase):
             )
         )
         self.assertLessEqual(len(facts), 5)
-        self.assertGreater(facts[0]["value"], 6)
+        self.assertTrue(any(fact["value"] > 6 for fact in facts))
 
     def test_rejects_pet_simulator_title_only_article(self):
         article = {
@@ -227,7 +332,7 @@ class ExternalNewsFactsTests(unittest.TestCase):
         )
         summaries = [fact["summary_ru"] for fact in facts]
 
-        self.assertEqual(len(facts), 3)
+        self.assertEqual(len(facts), 4)
         self.assertTrue(any("Lucky Block Breakout" in value for value in summaries))
         self.assertTrue(any("Breakout Board" in value for value in summaries))
         self.assertTrue(any("13" in value and "питом" in value for value in summaries))

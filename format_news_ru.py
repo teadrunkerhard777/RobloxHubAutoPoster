@@ -6,6 +6,7 @@ from news_post_formatting import format_fact_paragraph, join_fact_paragraphs
 
 MIN_SCORE = 5
 MAX_NEWS_ITEMS = 3
+MAX_NEWS_ITEM_CHARS = 500
 
 GAME_NAMES = {
     "STEAL A BRAINROT": "Steal a Brainrot",
@@ -372,17 +373,6 @@ def build_item(candidate):
         reverse=True,
     )
 
-    external_details = [
-        fact
-        for fact in ordered_facts
-        if fact.get("source_url") and fact.get("kind") != "official_article"
-    ]
-
-    # Если официальная статья уже дала минимум две конкретные детали,
-    # не дополняем их более общими пересказами тех же строк description.
-    if len(external_details) >= 2:
-        ordered_facts = external_details
-
     for fact in ordered_facts:
         text = translate_fact(fact)
 
@@ -400,23 +390,38 @@ def build_item(candidate):
         if text not in target:
             target.append(text)
 
-    # Заголовок полезен как запасной факт, но при наличии двух деталей
-    # не занимает место более конкретного изменения из тела статьи.
-    translated.extend(detail_translated)
+    # Главная строка объясняет событие, а следующие строки раскрывают его.
+    # Держим структуру отдельно от готового текста: это не даёт форматтеру
+    # снова потерять факты и позволяет будущим каналам использовать те же данные.
+    headline = title_translated[0] if title_translated else None
+    details = [text for text in detail_translated if text != headline][:3]
 
-    if len(detail_translated) < 2:
-        translated.extend(title_translated)
+    if headline:
+        translated.append(headline)
+    translated.extend(details)
 
     if not translated:
         return None
 
-    # Не раздуваем один блок: максимум три сильных конкретных факта.
-    translated = translated[:3]
+    # Если источник объективно содержит только одну строку, публикуем одну.
+    # Для подробной статьи оставляем не более четырёх подтверждённых строк и
+    # сокращаем только удалением последнего факта, без обрыва имён или чисел.
+    translated = translated[:4]
+    while (
+        len(translated) > 1
+        and len(join_fact_paragraphs(translated)) > MAX_NEWS_ITEM_CHARS
+    ):
+        translated.pop()
+
+    headline = translated[0]
+    details = translated[1:]
 
     item = {
         "game": game,
         "emoji": GAME_EMOJIS.get(game, "🎮"),
         "score": candidate.get("score", 0),
+        "headline": headline,
+        "facts": details,
         "text": join_fact_paragraphs(translated),
     }
 

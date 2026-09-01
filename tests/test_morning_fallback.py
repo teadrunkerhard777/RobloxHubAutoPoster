@@ -237,6 +237,40 @@ class MorningFallbackTests(unittest.TestCase):
         self.assertTrue(caption.endswith("🎮 Roblox Hub"))
         self.assertNotIn("важ…", caption)
 
+    def test_detailed_three_game_news_caption_respects_telegram_limit(self):
+        morning_namespace["load_json"] = lambda filename, default=None: {
+            "items": [
+                {
+                    "emoji": emoji,
+                    "game": game,
+                    "text": "\n\n".join(
+                        [
+                            f"В {game} вышло подтверждённое обновление.",
+                            "🔹 Добавлена конкретная игровая механика.",
+                            "🔹 Изменены условия получения награды.",
+                            "🔹 Исправлена важная игровая ошибка.",
+                        ]
+                    ),
+                }
+                for emoji, game in [
+                    ("🏡", "Brookhaven RP"),
+                    ("🐾", "Adopt Me!"),
+                    ("🔫", "RIVALS"),
+                ]
+            ]
+        }
+        posts = []
+
+        schedule_morning_post(
+            posts,
+            date(2026, 8, 25),
+            news_text=generate_morning_post(),
+            header_checker=lambda path: True,
+        )
+
+        self.assertLessEqual(len(posts[0]["text"]), 1024)
+        self.assertTrue(posts[0]["text"].endswith("🎮 Roblox Hub"))
+
     def test_fallback_contains_at_least_two_different_games(self):
         tips = [
             self.make_tip(1, "99 Nights in the Forest", "Проверенный совет один."),

@@ -32,8 +32,82 @@ def fetch_page(url):
     return response.text
 
 
+def extract_embedded_patch_data(soup):
+    """Extracts deterministic patch rows rendered by client-side JavaScript.
+
+    Some official sites keep the actual article body in a JSON array inside a
+    script and render it only in the browser. BeautifulSoup text extraction
+    cannot see those changes, so we decode only the explicit patch schema and
+    ignore all other scripts, analytics and navigation data.
+    """
+
+    decoder = json.JSONDecoder()
+    rows = []
+
+    for script in soup.find_all("script"):
+        script_text = script.string or script.get_text(" ", strip=False)
+        marker = re.search(r"\b(?:const|let|var)\s+data\s*=\s*", script_text)
+        if not marker:
+            continue
+
+        try:
+            payload, _ = decoder.raw_decode(script_text[marker.end() :].lstrip())
+        except (TypeError, ValueError):
+            continue
+
+        if not isinstance(payload, list):
+            continue
+
+        for category in payload:
+            if not isinstance(category, dict) or not isinstance(
+                category.get("entries"), list
+            ):
+                continue
+
+            category_name = str(category.get("category", "")).strip()
+            for entry in category["entries"]:
+                if not isinstance(entry, dict):
+                    continue
+
+                for group in entry.get("groups", []):
+                    if not isinstance(group, dict):
+                        continue
+
+                    for change in group.get("changes", []):
+                        if not isinstance(change, list) or len(change) != 2:
+                            continue
+
+                        rows.append(
+                            {
+                                "category": category_name,
+                                "name": str(entry.get("name", "")).strip(),
+                                "status": str(entry.get("status", "")).strip(),
+                                "group": str(group.get("title", "")).strip(),
+                                "ability": str(change[0]).strip(),
+                                "change": str(change[1]).strip(),
+                            }
+                        )
+
+            for bug_fix in category.get("bugFixes", []):
+                if isinstance(bug_fix, list) and len(bug_fix) == 2:
+                    rows.append(
+                        {
+                            "category": category_name,
+                            "name": str(bug_fix[0]).strip(),
+                            "status": "bugfix",
+                            "group": "Bug Fixes",
+                            "ability": "FIX",
+                            "change": str(bug_fix[1]).strip(),
+                        }
+                    )
+
+    return rows[:500]
+
+
 def extract_page_data(html, base_url):
     soup = BeautifulSoup(html, "html.parser")
+
+    structured_content = extract_embedded_patch_data(soup)
 
     # Убираем технический мусор.
     for element in soup(["script", "style", "noscript"]):
@@ -104,6 +178,7 @@ def extract_page_data(html, base_url):
         "published_at": published_at,
         "text": text[:20000],
         "links": links[:200],
+        "structured_content": structured_content,
     }
 
 
@@ -122,6 +197,7 @@ def collect_source(game, url):
             "published_at": page_data["published_at"],
             "text": page_data["text"],
             "links": page_data["links"],
+            "structured_content": page_data["structured_content"],
             "error": None,
         }
 
@@ -135,6 +211,7 @@ def collect_source(game, url):
             "published_at": None,
             "text": "",
             "links": [],
+            "structured_content": [],
             "error": str(error),
         }
 
@@ -189,6 +266,7 @@ def fetch_article(url):
             "title": page_data["title"],
             "published_at": page_data["published_at"],
             "text": page_data["text"],
+            "structured_content": page_data["structured_content"],
             "error": None,
         }
 
@@ -199,6 +277,7 @@ def fetch_article(url):
             "title": "",
             "published_at": None,
             "text": "",
+            "structured_content": [],
             "error": str(error),
         }
 
