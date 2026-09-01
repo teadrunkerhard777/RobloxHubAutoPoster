@@ -1210,9 +1210,9 @@
     "rubric": "Brawl Stars: совет дня",
     "source": "verified_brawl_fallback",
     "text": "💥💥💥 НОВОСТИ BRAWL STARS 💥💥💥\n\n🎯 СОВЕТ ДНЯ\n\nЕсли здоровье заканчивается, отойди из-под огня и дай ему восстановиться. Возвращение в бой с полным запасом здоровья обычно полезнее для команды, чем рискованная атака без ресурсов.\n\n⭐ Roblox Hub\n\n#BrawlStars #ПолезноЗнать #RobloxHub",
-    "status": "pending",
-    "published_at": null,
-    "attempts": 0,
+    "status": "published",
+    "published_at": "2026-09-01T12:00:45.101907+05:00",
+    "attempts": 1,
     "last_error": null,
     "image_path": "assets/news_headers/brawl_news_header.png"
   },
