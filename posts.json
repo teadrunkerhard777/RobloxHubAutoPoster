@@ -1184,9 +1184,9 @@
     "rubric": "Выпуск дня",
     "source": "auto_verified",
     "text": "🎮🎮🎮 ROBLOX HUB — СЕГОДНЯ 🎮🎮🎮\n\n🍈 Blox Fruits\n\nВ Blox Fruits вышел балансный патч The Summer PvP #001.\n\n🎮 Roblox Hub",
-    "status": "pending",
-    "published_at": null,
-    "attempts": 0,
+    "status": "published",
+    "published_at": "2026-09-01T10:02:18.825911+05:00",
+    "attempts": 1,
     "last_error": null,
     "image_path": "assets/news_headers/roblox_news_header.png"
   },
