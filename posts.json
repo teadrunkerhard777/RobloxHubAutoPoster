@@ -1312,9 +1312,9 @@
     "rubric": "Brawl Stars",
     "source": "brawl_pipeline",
     "text": "💥💥💥 НОВОСТИ BRAWL STARS 💥💥💥\n\n🔥 БОЛЬШОЕ ОБНОВЛЕНИЕ\n\n🎯 В Brawl Stars вышли Release Notes August 2026.\n\n🔹 Starr Road переработана в Brawler Blast: Credits открывают следующего бойца через тир с мишенями.\n\n🔹 Появятся новые бойцы Cosmo и Vince.\n\n🔹 Nori и Wendy получают новые Hypercharge.\n\n🔹 В коллаборации с Duolingo появятся Boss Fight, общее событие и ежедневные награды.\n\n🔹 Brawl-O-Ween продлится месяц: будут этапы, загадки, выбор сообщества и возвращение боссов.\n\nИсточник: Supercell\n\n🎮 Roblox Hub\n\n#BrawlStars #ПолезноЗнать #RobloxHub",
-    "status": "pending",
-    "published_at": null,
-    "attempts": 0,
+    "status": "published",
+    "published_at": "2026-09-02T12:00:47.267022+05:00",
+    "attempts": 1,
     "last_error": null,
     "image_path": "assets/news_headers/brawl_news_header.png",
     "brawl_article_url": "https://supercell.com/en/games/brawlstars/blog/release-notes/release-notes-august-2026/"
