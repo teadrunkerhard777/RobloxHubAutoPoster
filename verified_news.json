@@ -1,299 +1,17 @@
 [
   {
-    "game": "Blox Fruits",
-    "universe_id": 994732206,
-    "roblox_name": "Blox Fruits",
-    "description": "Welcome to Blox Fruits! Become a master swordsman or a powerful blox fruit user as you train to become the strongest player to ever live. You can choose to fight against tough enemies or have powerful boss battles while sailing across the ocean to find hidden secrets. \n\nCurrent level cap: 2800\nCurrent fruits in the game:\nRocket, Spin, Blade, Spring, Bomb, Smoke, Spike, Flame, Ice, Sand, Dark, Eagle, Diamond, Light, Rubber, Ghost, Magma, Quake, Buddha, Love, Creation, Spider, Sound, Phoenix, Portal, Lightning, Pain, Blizzard, Gravity, Mammoth, T-Rex, Dough, Shadow, Venom, Gas, Spirit, Tiger, Yeti, Kitsune, Control, and Dragon\n\nFAQ:\n-Fruits spawn in the map every hour / despawn after 20 mins\n-You can buy fruits from the Blox Fruits Dealer. He restocks random fruits every 4 hours\n-More info in the group description\n\nDo not exploit, our auto-detection will catch you and we do not appeal our bans.",
-    "updated": "2026-08-29T22:29:25.133Z",
-    "created": "2019-01-16T03:29:19.433Z",
-    "creator": {
-      "id": 4372130,
-      "name": "Gamer Robot Inc",
-      "type": "Group",
-      "isRNVAccount": false,
-      "hasVerifiedBadge": true
-    },
-    "description_changed": false,
-    "added_lines": [],
-    "keywords": [
-      "BOSS",
-      "MAP"
-    ],
-    "score": 10,
-    "confidence": "high",
-    "facts": [
-      {
-        "text": "Fruits | Control | X | End-lag increased by 0.25 seconds; range decreased by 10%; hitbox size decreased by 10%.",
-        "summary_ru": "🔹 Control — Dagger Mode (X): задержка после атаки: +0.25 секунд; дальность: −10%; размер хитбокса: −10%.",
-        "kind": "balance_change",
-        "value": 10,
-        "specific": true,
-        "reason": "Факт из официальной новостной статьи",
-        "is_new_line": true,
-        "source_url": "https://gamerrobot.com/blogs/news/the-balance-log"
-      },
-      {
-        "text": "Systems | Instinct | DODGES | Dodge regeneration time decreased from 40 seconds to 30 seconds, allowing Instinct dodges to replenish 25% faster.",
-        "summary_ru": "🔹 Instinct — Core Mechanic (DODGES): время восстановления уклонений: 40 секунд → 30 секунд.",
-        "kind": "balance_change",
-        "value": 10,
-        "specific": true,
-        "reason": "Факт из официальной новостной статьи",
-        "is_new_line": true,
-        "source_url": "https://gamerrobot.com/blogs/news/the-balance-log"
-      },
-      {
-        "text": "Fighting Styles | Death Step | C | Damage over time increased by 20%; end-lag decreased from 0.25 seconds to 0.1 seconds; hitbox size increased by 15%.",
-        "summary_ru": "🔹 Death Step — Abilities (C): периодический урон: +20%; задержка после атаки: 0.25 секунд → 0.1 секунд; размер хитбокса: +15%.",
-        "kind": "balance_change",
-        "value": 10,
-        "specific": true,
-        "reason": "Факт из официальной новостной статьи",
-        "is_new_line": true,
-        "source_url": "https://gamerrobot.com/blogs/news/the-balance-log"
-      },
-      {
-        "text": "The Balance Log",
-        "summary_ru": "⚔️ Вышел балансный патч The Summer PvP #001.",
-        "kind": "official_article",
-        "value": 6,
-        "specific": true,
-        "reason": "Факт из официальной новостной статьи",
-        "is_new_line": true,
-        "source_url": "https://gamerrobot.com/blogs/news/the-balance-log",
-        "title_is_concrete": true
-      }
-    ],
-    "description_facts": [
-      {
-        "text": "-Fruits spawn in the map every hour / despawn after 20 mins",
-        "kind": "locations",
-        "value": 8,
-        "specific": true,
-        "reason": "Строка называет конкретное игровое содержимое",
-        "summary_ru": "В игре появилась новая локация.",
-        "is_new_line": false
-      }
-    ],
-    "pool": "active",
-    "checked_at": "2026-09-01T09:17:09.046628+00:00",
-    "sources": [
-      {
-        "type": "official_game_description",
-        "verified": true
-      },
-      {
-        "type": "official_roblox_group",
-        "verified": true,
-        "group_id": 4372130,
-        "group_name": "Gamer Robot Inc"
-      },
-      {
-        "type": "official_news_website",
-        "verified": true,
-        "url": "https://gamerrobot.com/blogs/news/the-balance-log"
-      }
-    ],
-    "cross_source_confirmations": [],
-    "source_diagnostics": [
-      {
-        "source_type": "official_news_website",
-        "source_url": "https://gamerrobot.com/blogs/news",
-        "latest_published_at": "2026-08-06T22:02:43Z",
-        "status": "accepted",
-        "result_code": "FOUND_VERIFIED",
-        "reason": "Официальная публикация (25.5 дн.) с датой и игровым содержанием; окно emergency_30_day.",
-        "available": true,
-        "article_found": true,
-        "date_found": true,
-        "content_found": true,
-        "extraction_success": true,
-        "verification_passed": true,
-        "source_tier": "A",
-        "official": true,
-        "selected": false,
-        "formatted": false,
-        "scheduled": false,
-        "latest_url": "https://gamerrobot.com/blogs/news/the-balance-log",
-        "freshness_window": "emergency_30_day"
-      },
-      {
-        "source_type": "secondary_gaming_media",
-        "source_url": "https://news.google.com/rss/search?q=%22Blox%20Fruits%22%20Roblox%20when%3A30d&hl=en-US&gl=US&ceid=US:en",
-        "latest_published_at": "2026-08-15T07:00:00+00:00",
-        "status": "rejected",
-        "result_code": "EXTRACTION_FAILED",
-        "reason": "В публикации не найдено достаточно конкретного содержания.",
-        "available": true,
-        "article_found": true,
-        "date_found": true,
-        "content_found": true,
-        "extraction_success": false,
-        "verification_passed": false,
-        "source_tier": "B",
-        "official": false,
-        "selected": false,
-        "formatted": false,
-        "scheduled": false,
-        "latest_url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE1HM1JZWk9BV0U1Z3oxWFNtZTkzQ3NOYzV0a1pXUFFsSHN1MVFvLS1tXy12bWtVbEVLdC1zbFpwYndScDUyUS1KNW55TGFNV0hRWjhkbllLa1c1RGwx?oc=5"
-      },
-      {
-        "source_type": "official_game_description",
-        "source_url": "https://www.roblox.com/games/2753915549/Blox-Fruits",
-        "latest_published_at": "2026-08-29T22:29:25.133Z",
-        "status": "rejected",
-        "result_code": "NO_NEW_CONTENT",
-        "available": true,
-        "article_found": false,
-        "date_found": true,
-        "content_found": true,
-        "extraction_success": false,
-        "verification_passed": false,
-        "reason": "Нет новой конкретной строки со времени прошлого снимка."
-      },
-      {
-        "source_type": "official_roblox_group",
-        "source_url": "https://www.roblox.com/communities/4372130/Gamer-Robot-Inc",
-        "latest_published_at": null,
-        "status": "checked",
-        "result_code": "NO_NEW_CONTENT",
-        "available": true,
-        "article_found": false,
-        "date_found": false,
-        "content_found": true,
-        "extraction_success": false,
-        "verification_passed": false,
-        "reason": "Официальная группа подтверждена; датированной новости нет."
-      }
-    ],
-    "official_description_analysis": {
-      "keywords": [
-        "BOSS",
-        "MAP"
-      ],
-      "news_lines": [
-        "Welcome to Blox Fruits! Become a master swordsman or a powerful blox fruit user as you train to become the strongest player to ever live. You can choose to fight against tough enemies or have powerful boss battles while sailing across the ocean to find hidden secrets.",
-        "-Fruits spawn in the map every hour / despawn after 20 mins"
-      ]
-    },
-    "source_registry": {
-      "pool": "active",
-      "universe_id": 994732206,
-      "root_place_id": 2753915549,
-      "roblox_game_url": "https://www.roblox.com/games/2753915549/Blox-Fruits",
-      "roblox_group_id": 4372130,
-      "roblox_group_name": "Gamer Robot Inc",
-      "roblox_group_url": "https://www.roblox.com/communities/4372130/Gamer-Robot-Inc",
-      "news_strategy": "official_news_website",
-      "website": "https://gamerrobot.com/",
-      "news_url": "https://gamerrobot.com/blogs/news",
-      "discord": "https://discord.com/invite/bloxfruits",
-      "youtube": "https://www.youtube.com/c/GamerRobot",
-      "x": "https://x.com/BloxFruits",
-      "roblox_creator_type": null,
-      "roblox_creator_id": null,
-      "roblox_creator_name": null,
-      "roblox_creator_url": null
-    },
-    "official_group": {
-      "id": 4372130,
-      "name": "Gamer Robot Inc",
-      "expected_name": "Gamer Robot Inc",
-      "name_matches_registry": true,
-      "description": "BLOX FRUITS FAQ:\n\n- Fruits spawn once every hour and despawn after 20 minutes. \n- You can also buy fruits from the Blox Fruits Dealer. He restocks random fruits every 4 hours (every server will have the same fruits for sale). \n- The number of skills a fruit has and mastery necessary to use them depends on their rarity. This can vary from 2 to 4 skills. \n- Bosses can drop special items such as accessories or swords.\n- Accessories are rare items that can boost your stats. \n- Mastery boosts your stats by 1 point every 3 levels and also unlock new skills. You gain mastery by finishing off enemies with the weapon you want to level up. \n- Mastery doesn't reset when you switch out items. If you acquire a new item it will start at 1 mastery, but if you decide to switch back to your previous item, the mastery you had on that item will return. \n-2 Blox Fruits can spawn in each vip server until it is restarted.",
-      "has_verified_badge": true,
-      "news_lines": []
-    },
-    "external_source_diagnostics": [
-      {
-        "source_type": "official_news_website",
-        "source_url": "https://gamerrobot.com/blogs/news",
-        "latest_published_at": "2026-08-06T22:02:43Z",
-        "status": "accepted",
-        "result_code": "FOUND_VERIFIED",
-        "reason": "Официальная публикация (25.5 дн.) с датой и игровым содержанием; окно emergency_30_day.",
-        "available": true,
-        "article_found": true,
-        "date_found": true,
-        "content_found": true,
-        "extraction_success": true,
-        "verification_passed": true,
-        "source_tier": "A",
-        "official": true,
-        "selected": false,
-        "formatted": false,
-        "scheduled": false,
-        "latest_url": "https://gamerrobot.com/blogs/news/the-balance-log",
-        "freshness_window": "emergency_30_day"
-      },
-      {
-        "source_type": "secondary_gaming_media",
-        "source_url": "https://news.google.com/rss/search?q=%22Blox%20Fruits%22%20Roblox%20when%3A30d&hl=en-US&gl=US&ceid=US:en",
-        "latest_published_at": "2026-08-15T07:00:00+00:00",
-        "status": "rejected",
-        "result_code": "EXTRACTION_FAILED",
-        "reason": "В публикации не найдено достаточно конкретного содержания.",
-        "available": true,
-        "article_found": true,
-        "date_found": true,
-        "content_found": true,
-        "extraction_success": false,
-        "verification_passed": false,
-        "source_tier": "B",
-        "official": false,
-        "selected": false,
-        "formatted": false,
-        "scheduled": false,
-        "latest_url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE1HM1JZWk9BV0U1Z3oxWFNtZTkzQ3NOYzV0a1pXUFFsSHN1MVFvLS1tXy12bWtVbEVLdC1zbFpwYndScDUyUS1KNW55TGFNV0hRWjhkbllLa1c1RGwx?oc=5"
-      }
-    ],
-    "external_source_diagnostic": {
-      "source_type": "secondary_gaming_media",
-      "source_url": "https://news.google.com/rss/search?q=%22Blox%20Fruits%22%20Roblox%20when%3A30d&hl=en-US&gl=US&ceid=US:en",
-      "latest_published_at": "2026-08-15T07:00:00+00:00",
-      "status": "rejected",
-      "result_code": "EXTRACTION_FAILED",
-      "reason": "В публикации не найдено достаточно конкретного содержания.",
-      "available": true,
-      "article_found": true,
-      "date_found": true,
-      "content_found": true,
-      "extraction_success": false,
-      "verification_passed": false,
-      "source_tier": "B",
-      "official": false,
-      "selected": false,
-      "formatted": false,
-      "scheduled": false,
-      "latest_url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE1HM1JZWk9BV0U1Z3oxWFNtZTkzQ3NOYzV0a1pXUFFsSHN1MVFvLS1tXy12bWtVbEVLdC1zbFpwYndScDUyUS1KNW55TGFNV0hRWjhkbllLa1c1RGwx?oc=5"
-    },
-    "external_news_article": {
-      "url": "https://gamerrobot.com/blogs/news/the-balance-log",
-      "title": "The Balance Log",
-      "published_at": "2026-08-06T22:02:43Z",
-      "age_days": 25.46835868121528,
-      "source_tier": "A",
-      "publisher": null,
-      "freshness_window": "emergency_30_day"
-    },
-    "candidate_decision": {
-      "status": "accepted",
-      "reason": "Есть достойный свежий факт."
-    }
-  },
-  {
     "game": "Steal An Egg",
     "universe_id": 10563114921,
     "roblox_name": "Steal An Egg",
     "description": "🥚 Welcome to Steal An Egg!\n\nHow to Play:\n🥚 Steal eggs from pets\n🐣 Hatch eggs to collect rare pets\n💰 Earn money from your pets\n⬆️ Upgrade your treadmill and base\n🏃 Train on the treadmill to gain Speed\n🥷 Steal eggs from other players\n✨ Discover rarer eggs, pets, sizes, and mutations!\n\n🎮 Supports Desktop, Console, Mobile, and Tablet players",
-    "updated": "2026-09-01T06:05:36.7041812Z",
+    "updated": "2026-09-01T21:52:13.7475418Z",
     "created": "2026-07-25T07:50:51.492Z",
     "creator": {
       "id": 825735094,
       "name": "and Collect Rare Pets",
       "type": "Group",
       "isRNVAccount": false,
-      "hasVerifiedBadge": false
+      "hasVerifiedBadge": true
     },
     "description_changed": false,
     "added_lines": [],
@@ -360,7 +78,7 @@
       }
     ],
     "pool": "active",
-    "checked_at": "2026-09-01T09:17:09.037969+00:00",
+    "checked_at": "2026-09-02T03:01:06.514006+00:00",
     "sources": [
       {
         "type": "official_game_description",
@@ -398,7 +116,7 @@
       {
         "source_type": "official_game_description",
         "source_url": "https://www.roblox.com/games/107778070777162/Steal-An-Egg",
-        "latest_published_at": "2026-09-01T06:05:36.7041812Z",
+        "latest_published_at": "2026-09-01T21:52:13.7475418Z",
         "status": "rejected",
         "result_code": "NO_NEW_CONTENT",
         "available": true,
@@ -461,7 +179,7 @@
       "expected_name": "and Collect Rare Pets",
       "name_matches_registry": true,
       "description": "",
-      "has_verified_badge": false,
+      "has_verified_badge": true,
       "news_lines": []
     },
     "external_source_diagnostics": [
@@ -543,7 +261,7 @@
       }
     ],
     "pool": "active",
-    "checked_at": "2026-09-01T09:17:09.038428+00:00",
+    "checked_at": "2026-09-02T03:01:06.514461+00:00",
     "sources": [
       {
         "type": "official_game_description",
@@ -688,7 +406,7 @@
     "universe_id": 9831440772,
     "roblox_name": "[UPD] +1 Speed Keyboard Escape",
     "description": "🎀 Join the XSpeed Games group!\n\n👟 Welcome to +1 Speed Keyboard Escape 👟\n\n⚡ Every step = +1 Speed\n👟 Run, jump, and escape across a world made of keyboard keys\n💪 Train your speed and unlock powerful multipliers\n🌍 Become the FASTEST player in the world\n👥 Race against friends and other players\n🚀 Speed is everything… but one wrong step and you’re back at the start 😱\n\n🎧 ASMR vibes included\nSmooth movement, satisfying keyboard clicks, and relaxing, chill sounds! ✨\n\n🔑 Tags:\nSpeed, Keyboard, ASMR, Obby, Escape, Parkour, Multiplayer, Racing, Competitive, Satisfying, Relaxing, Physics, Ragdoll, Challenge, Speedrun",
-    "updated": "2026-08-30T19:20:41.518Z",
+    "updated": "2026-09-01T11:13:25.369541Z",
     "created": "2026-03-04T03:51:10.46Z",
     "creator": {
       "id": 175742687,
@@ -705,7 +423,7 @@
     "facts": [],
     "description_facts": [],
     "pool": "active",
-    "checked_at": "2026-09-01T09:17:09.040366+00:00",
+    "checked_at": "2026-09-02T03:01:06.516386+00:00",
     "sources": [
       {
         "type": "official_game_description",
@@ -742,7 +460,7 @@
       {
         "source_type": "official_game_description",
         "source_url": "https://www.roblox.com/games/81245647985532/1-Speed-Keyboard-Escape",
-        "latest_published_at": "2026-08-30T19:20:41.518Z",
+        "latest_published_at": "2026-09-01T11:13:25.369541Z",
         "status": "rejected",
         "result_code": "NO_NEW_CONTENT",
         "available": true,
@@ -854,7 +572,7 @@
     "universe_id": 66654135,
     "roblox_name": "Murder Mystery 2",
     "description": "Can you solve the Mystery and survive each round?\r\n\r\nINNOCENTS: Run and hide from the Murderer. Use your detective skills to expose the Murderer.\r\nSHERIFF: Work with the Innocents; you are the only one with a weapon who can take down the Murderer. \r\nMURDERER: Eliminate EVERYONE. Don't get shot by the sheriff.\r\n\r\nCollect and trade hundreds of knives! \r\n\r\nCheck out my profile for quick links to my pages! \r\nLike, follow, and subscribe for exclusive update news, free knife codes, and more!",
-    "updated": "2026-08-14T22:10:37.954Z",
+    "updated": "2026-09-01T17:43:04.7826935Z",
     "created": "2014-01-18T10:07:51.557Z",
     "creator": {
       "id": 1848960,
@@ -893,7 +611,7 @@
       }
     ],
     "pool": "active",
-    "checked_at": "2026-09-01T09:17:09.041675+00:00",
+    "checked_at": "2026-09-02T03:01:06.517700+00:00",
     "sources": [
       {
         "type": "official_game_description",
@@ -924,7 +642,7 @@
       {
         "source_type": "official_game_description",
         "source_url": "https://www.roblox.com/games/142823291/Murder-Mystery-2",
-        "latest_published_at": "2026-08-14T22:10:37.954Z",
+        "latest_published_at": "2026-09-01T17:43:04.7826935Z",
         "status": "rejected",
         "result_code": "NO_NEW_CONTENT",
         "available": true,
@@ -1116,7 +834,7 @@
       }
     ],
     "pool": "active",
-    "checked_at": "2026-09-01T09:17:09.044387+00:00",
+    "checked_at": "2026-09-02T03:01:06.520420+00:00",
     "sources": [
       {
         "type": "official_game_description",
@@ -1305,11 +1023,235 @@
     }
   },
   {
+    "game": "Blox Fruits",
+    "universe_id": 994732206,
+    "roblox_name": "Blox Fruits",
+    "description": "Welcome to Blox Fruits! Become a master swordsman or a powerful blox fruit user as you train to become the strongest player to ever live. You can choose to fight against tough enemies or have powerful boss battles while sailing across the ocean to find hidden secrets. \n\nCurrent level cap: 2800\nCurrent fruits in the game:\nRocket, Spin, Blade, Spring, Bomb, Smoke, Spike, Flame, Ice, Sand, Dark, Eagle, Diamond, Light, Rubber, Ghost, Magma, Quake, Buddha, Love, Creation, Spider, Sound, Phoenix, Portal, Lightning, Pain, Blizzard, Gravity, Mammoth, T-Rex, Dough, Shadow, Venom, Gas, Spirit, Tiger, Yeti, Kitsune, Control, and Dragon\n\nFAQ:\n-Fruits spawn in the map every hour / despawn after 20 mins\n-You can buy fruits from the Blox Fruits Dealer. He restocks random fruits every 4 hours\n-More info in the group description\n\nDo not exploit, our auto-detection will catch you and we do not appeal our bans.",
+    "updated": "2026-08-29T22:29:25.133Z",
+    "created": "2019-01-16T03:29:19.433Z",
+    "creator": {
+      "id": 4372130,
+      "name": "Gamer Robot Inc",
+      "type": "Group",
+      "isRNVAccount": false,
+      "hasVerifiedBadge": true
+    },
+    "description_changed": false,
+    "added_lines": [],
+    "keywords": [
+      "BOSS",
+      "MAP"
+    ],
+    "score": 0,
+    "confidence": "low",
+    "facts": [],
+    "description_facts": [
+      {
+        "text": "-Fruits spawn in the map every hour / despawn after 20 mins",
+        "kind": "locations",
+        "value": 8,
+        "specific": true,
+        "reason": "Строка называет конкретное игровое содержимое",
+        "summary_ru": "В игре появилась новая локация.",
+        "is_new_line": false
+      }
+    ],
+    "pool": "active",
+    "checked_at": "2026-09-02T03:01:06.522663+00:00",
+    "sources": [
+      {
+        "type": "official_game_description",
+        "verified": true
+      },
+      {
+        "type": "official_roblox_group",
+        "verified": true,
+        "group_id": 4372130,
+        "group_name": "Gamer Robot Inc"
+      }
+    ],
+    "cross_source_confirmations": [],
+    "source_diagnostics": [
+      {
+        "source_type": "official_news_website",
+        "source_url": "https://gamerrobot.com/blogs/news",
+        "latest_published_at": "2026-08-06T22:02:43Z",
+        "status": "rejected",
+        "result_code": "ALREADY_USED",
+        "reason": "Публикация уже использовалась в выпуске другого дня.",
+        "available": true,
+        "article_found": true,
+        "date_found": true,
+        "content_found": true,
+        "extraction_success": false,
+        "verification_passed": false,
+        "source_tier": "A",
+        "official": true,
+        "selected": false,
+        "formatted": false,
+        "scheduled": false,
+        "latest_url": "https://gamerrobot.com/blogs/news/the-balance-log"
+      },
+      {
+        "source_type": "secondary_gaming_media",
+        "source_url": "https://news.google.com/rss/search?q=%22Blox%20Fruits%22%20Roblox%20when%3A30d&hl=en-US&gl=US&ceid=US:en",
+        "latest_published_at": "2026-08-15T07:00:00+00:00",
+        "status": "rejected",
+        "result_code": "EXTRACTION_FAILED",
+        "reason": "В публикации не найдено достаточно конкретного содержания.",
+        "available": true,
+        "article_found": true,
+        "date_found": true,
+        "content_found": true,
+        "extraction_success": false,
+        "verification_passed": false,
+        "source_tier": "B",
+        "official": false,
+        "selected": false,
+        "formatted": false,
+        "scheduled": false,
+        "latest_url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE1HM1JZWk9BV0U1Z3oxWFNtZTkzQ3NOYzV0a1pXUFFsSHN1MVFvLS1tXy12bWtVbEVLdC1zbFpwYndScDUyUS1KNW55TGFNV0hRWjhkbllLa1c1RGwx?oc=5"
+      },
+      {
+        "source_type": "official_game_description",
+        "source_url": "https://www.roblox.com/games/2753915549/Blox-Fruits",
+        "latest_published_at": "2026-08-29T22:29:25.133Z",
+        "status": "rejected",
+        "result_code": "NO_NEW_CONTENT",
+        "available": true,
+        "article_found": false,
+        "date_found": true,
+        "content_found": true,
+        "extraction_success": false,
+        "verification_passed": false,
+        "reason": "Нет новой конкретной строки со времени прошлого снимка."
+      },
+      {
+        "source_type": "official_roblox_group",
+        "source_url": "https://www.roblox.com/communities/4372130/Gamer-Robot-Inc",
+        "latest_published_at": null,
+        "status": "checked",
+        "result_code": "NO_NEW_CONTENT",
+        "available": true,
+        "article_found": false,
+        "date_found": false,
+        "content_found": true,
+        "extraction_success": false,
+        "verification_passed": false,
+        "reason": "Официальная группа подтверждена; датированной новости нет."
+      }
+    ],
+    "official_description_analysis": {
+      "keywords": [
+        "BOSS",
+        "MAP"
+      ],
+      "news_lines": [
+        "Welcome to Blox Fruits! Become a master swordsman or a powerful blox fruit user as you train to become the strongest player to ever live. You can choose to fight against tough enemies or have powerful boss battles while sailing across the ocean to find hidden secrets.",
+        "-Fruits spawn in the map every hour / despawn after 20 mins"
+      ]
+    },
+    "source_registry": {
+      "pool": "active",
+      "universe_id": 994732206,
+      "root_place_id": 2753915549,
+      "roblox_game_url": "https://www.roblox.com/games/2753915549/Blox-Fruits",
+      "roblox_group_id": 4372130,
+      "roblox_group_name": "Gamer Robot Inc",
+      "roblox_group_url": "https://www.roblox.com/communities/4372130/Gamer-Robot-Inc",
+      "news_strategy": "official_news_website",
+      "website": "https://gamerrobot.com/",
+      "news_url": "https://gamerrobot.com/blogs/news",
+      "discord": "https://discord.com/invite/bloxfruits",
+      "youtube": "https://www.youtube.com/c/GamerRobot",
+      "x": "https://x.com/BloxFruits",
+      "roblox_creator_type": null,
+      "roblox_creator_id": null,
+      "roblox_creator_name": null,
+      "roblox_creator_url": null
+    },
+    "official_group": {
+      "id": 4372130,
+      "name": "Gamer Robot Inc",
+      "expected_name": "Gamer Robot Inc",
+      "name_matches_registry": true,
+      "description": "BLOX FRUITS FAQ:\n\n- Fruits spawn once every hour and despawn after 20 minutes. \n- You can also buy fruits from the Blox Fruits Dealer. He restocks random fruits every 4 hours (every server will have the same fruits for sale). \n- The number of skills a fruit has and mastery necessary to use them depends on their rarity. This can vary from 2 to 4 skills. \n- Bosses can drop special items such as accessories or swords.\n- Accessories are rare items that can boost your stats. \n- Mastery boosts your stats by 1 point every 3 levels and also unlock new skills. You gain mastery by finishing off enemies with the weapon you want to level up. \n- Mastery doesn't reset when you switch out items. If you acquire a new item it will start at 1 mastery, but if you decide to switch back to your previous item, the mastery you had on that item will return. \n-2 Blox Fruits can spawn in each vip server until it is restarted.",
+      "has_verified_badge": true,
+      "news_lines": []
+    },
+    "external_source_diagnostics": [
+      {
+        "source_type": "official_news_website",
+        "source_url": "https://gamerrobot.com/blogs/news",
+        "latest_published_at": "2026-08-06T22:02:43Z",
+        "status": "rejected",
+        "result_code": "ALREADY_USED",
+        "reason": "Публикация уже использовалась в выпуске другого дня.",
+        "available": true,
+        "article_found": true,
+        "date_found": true,
+        "content_found": true,
+        "extraction_success": false,
+        "verification_passed": false,
+        "source_tier": "A",
+        "official": true,
+        "selected": false,
+        "formatted": false,
+        "scheduled": false,
+        "latest_url": "https://gamerrobot.com/blogs/news/the-balance-log"
+      },
+      {
+        "source_type": "secondary_gaming_media",
+        "source_url": "https://news.google.com/rss/search?q=%22Blox%20Fruits%22%20Roblox%20when%3A30d&hl=en-US&gl=US&ceid=US:en",
+        "latest_published_at": "2026-08-15T07:00:00+00:00",
+        "status": "rejected",
+        "result_code": "EXTRACTION_FAILED",
+        "reason": "В публикации не найдено достаточно конкретного содержания.",
+        "available": true,
+        "article_found": true,
+        "date_found": true,
+        "content_found": true,
+        "extraction_success": false,
+        "verification_passed": false,
+        "source_tier": "B",
+        "official": false,
+        "selected": false,
+        "formatted": false,
+        "scheduled": false,
+        "latest_url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE1HM1JZWk9BV0U1Z3oxWFNtZTkzQ3NOYzV0a1pXUFFsSHN1MVFvLS1tXy12bWtVbEVLdC1zbFpwYndScDUyUS1KNW55TGFNV0hRWjhkbllLa1c1RGwx?oc=5"
+      }
+    ],
+    "external_source_diagnostic": {
+      "source_type": "secondary_gaming_media",
+      "source_url": "https://news.google.com/rss/search?q=%22Blox%20Fruits%22%20Roblox%20when%3A30d&hl=en-US&gl=US&ceid=US:en",
+      "latest_published_at": "2026-08-15T07:00:00+00:00",
+      "status": "rejected",
+      "result_code": "EXTRACTION_FAILED",
+      "reason": "В публикации не найдено достаточно конкретного содержания.",
+      "available": true,
+      "article_found": true,
+      "date_found": true,
+      "content_found": true,
+      "extraction_success": false,
+      "verification_passed": false,
+      "source_tier": "B",
+      "official": false,
+      "selected": false,
+      "formatted": false,
+      "scheduled": false,
+      "latest_url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE1HM1JZWk9BV0U1Z3oxWFNtZTkzQ3NOYzV0a1pXUFFsSHN1MVFvLS1tXy12bWtVbEVLdC1zbFpwYndScDUyUS1KNW55TGFNV0hRWjhkbllLa1c1RGwx?oc=5"
+    },
+    "candidate_decision": {
+      "status": "rejected",
+      "reason": "Нет свежего факта с редакционным баллом 5 или выше."
+    }
+  },
+  {
     "game": "Adopt Me!",
     "universe_id": 383310974,
     "roblox_name": "[🥚] Adopt Me!",
     "description": "Adopt and raise 🐶🦄👶, trade and collect legendary pets, build your dream home, and roleplay with friends!\n\n🥚 Fairytale Egg! 🥚\n🔮 Hatch 10 new fantastical pets!\n🐁 3in1, Legendary Three Blind Mice!\n🐺 Crimson Cape vs Granny Wolf?!\n\nBe FIRST 🏆 To experience new updates by pressing 🔔NOTIFY.\n\nMeet the founders!\nNewFissy - Tech Director\nBethink - Creative Director\n\nFind out more about Uplift Games, our policies and creative attributions:\nhttps://devforum.roblox.com/t/credits/71812",
-    "updated": "2026-09-01T08:00:04.2219007Z",
+    "updated": "2026-09-02T00:00:08.5125076Z",
     "created": "2017-07-14T19:26:21.347Z",
     "creator": {
       "id": 295182,
@@ -1375,7 +1317,7 @@
       }
     ],
     "pool": "active",
-    "checked_at": "2026-09-01T09:17:09.048030+00:00",
+    "checked_at": "2026-09-02T03:01:06.524076+00:00",
     "sources": [
       {
         "type": "official_game_description",
@@ -1433,7 +1375,7 @@
       {
         "source_type": "official_game_description",
         "source_url": "https://www.roblox.com/games/920587237/Adopt-Me",
-        "latest_published_at": "2026-09-01T08:00:04.2219007Z",
+        "latest_published_at": "2026-09-02T00:00:08.5125076Z",
         "status": "rejected",
         "result_code": "NO_NEW_CONTENT",
         "available": true,
@@ -1633,7 +1575,7 @@
       }
     ],
     "pool": "active",
-    "checked_at": "2026-09-01T09:17:09.049879+00:00",
+    "checked_at": "2026-09-02T03:01:06.525975+00:00",
     "sources": [
       {
         "type": "official_game_description",
@@ -1808,7 +1750,7 @@
     "facts": [],
     "description_facts": [],
     "pool": "active",
-    "checked_at": "2026-09-01T09:17:09.050252+00:00",
+    "checked_at": "2026-09-02T03:01:06.526394+00:00",
     "sources": [
       {
         "type": "official_game_description",
@@ -1956,7 +1898,7 @@
     "universe_id": 7709344486,
     "roblox_name": "[🐝] Steal a Brainrot",
     "description": "🗣️ Welcome to Steal a Brainrot!\n\n👍 Like the game and join the group\n\nHow to Play:\n👽 Buy a Brainrot\n🥷 Steal Brainrots from other players\n💸 Generate money\n🐦‍🔥 Rebirth\n✋ Buy slaps and troll gear to troll other players!\n\n💻 Supports Desktop, Mobile and Tablet players\n\n🙏 Credit to Chris for letting us use the Nyan Cat!\n🙏 Credit to @WinnersTakesAll for the backpack system!",
-    "updated": "2026-08-30T16:57:30.551Z",
+    "updated": "2026-09-01T18:05:26.7507248Z",
     "created": "2025-05-16T00:49:12.563Z",
     "creator": {
       "id": 35815907,
@@ -1983,7 +1925,7 @@
       }
     ],
     "pool": "active",
-    "checked_at": "2026-09-01T09:17:09.051600+00:00",
+    "checked_at": "2026-09-02T03:01:06.527686+00:00",
     "sources": [
       {
         "type": "official_game_description",
@@ -2001,27 +1943,26 @@
       {
         "source_type": "secondary_gaming_media",
         "source_url": "https://news.google.com/rss/search?q=%22Steal%20a%20Brainrot%22%20Roblox%20when%3A30d&hl=en-US&gl=US&ceid=US:en",
-        "latest_published_at": "2026-08-15T07:00:00+00:00",
+        "latest_published_at": null,
         "status": "rejected",
-        "result_code": "EXTRACTION_FAILED",
-        "reason": "В публикации не найдено достаточно конкретного содержания.",
+        "result_code": "NO_NEW_CONTENT",
+        "reason": "Нет пригодной Tier B новости.",
         "available": true,
-        "article_found": true,
-        "date_found": true,
-        "content_found": true,
+        "article_found": false,
+        "date_found": false,
+        "content_found": false,
         "extraction_success": false,
         "verification_passed": false,
         "source_tier": "B",
         "official": false,
         "selected": false,
         "formatted": false,
-        "scheduled": false,
-        "latest_url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxNSmltLXVqQnJibTN4TWF1WGNUOUd4TmdWNFFxLVUyQWpadzJueDdhUkRsT2lqUmhVTWk2ZGxydTVoZEd1ZWxUMEU4cEk5UjR4c05hNDEtM2UzUVRlWVRDdHoxTVJjOUVMOWlGVmdDX0swaFZQN3VKX05XZ1J1TXBqTFE4M2Iyblk?oc=5"
+        "scheduled": false
       },
       {
         "source_type": "official_game_description",
         "source_url": "https://www.roblox.com/games/109983668079237/Steal-a-Brainrot",
-        "latest_published_at": "2026-08-30T16:57:30.551Z",
+        "latest_published_at": "2026-09-01T18:05:26.7507248Z",
         "status": "rejected",
         "result_code": "NO_NEW_CONTENT",
         "available": true,
@@ -2083,43 +2024,41 @@
       {
         "source_type": "secondary_gaming_media",
         "source_url": "https://news.google.com/rss/search?q=%22Steal%20a%20Brainrot%22%20Roblox%20when%3A30d&hl=en-US&gl=US&ceid=US:en",
-        "latest_published_at": "2026-08-15T07:00:00+00:00",
+        "latest_published_at": null,
         "status": "rejected",
-        "result_code": "EXTRACTION_FAILED",
-        "reason": "В публикации не найдено достаточно конкретного содержания.",
+        "result_code": "NO_NEW_CONTENT",
+        "reason": "Нет пригодной Tier B новости.",
         "available": true,
-        "article_found": true,
-        "date_found": true,
-        "content_found": true,
+        "article_found": false,
+        "date_found": false,
+        "content_found": false,
         "extraction_success": false,
         "verification_passed": false,
         "source_tier": "B",
         "official": false,
         "selected": false,
         "formatted": false,
-        "scheduled": false,
-        "latest_url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxNSmltLXVqQnJibTN4TWF1WGNUOUd4TmdWNFFxLVUyQWpadzJueDdhUkRsT2lqUmhVTWk2ZGxydTVoZEd1ZWxUMEU4cEk5UjR4c05hNDEtM2UzUVRlWVRDdHoxTVJjOUVMOWlGVmdDX0swaFZQN3VKX05XZ1J1TXBqTFE4M2Iyblk?oc=5"
+        "scheduled": false
       }
     ],
     "external_source_diagnostic": {
       "source_type": "secondary_gaming_media",
       "source_url": "https://news.google.com/rss/search?q=%22Steal%20a%20Brainrot%22%20Roblox%20when%3A30d&hl=en-US&gl=US&ceid=US:en",
-      "latest_published_at": "2026-08-15T07:00:00+00:00",
+      "latest_published_at": null,
       "status": "rejected",
-      "result_code": "EXTRACTION_FAILED",
-      "reason": "В публикации не найдено достаточно конкретного содержания.",
+      "result_code": "NO_NEW_CONTENT",
+      "reason": "Нет пригодной Tier B новости.",
       "available": true,
-      "article_found": true,
-      "date_found": true,
-      "content_found": true,
+      "article_found": false,
+      "date_found": false,
+      "content_found": false,
       "extraction_success": false,
       "verification_passed": false,
       "source_tier": "B",
       "official": false,
       "selected": false,
       "formatted": false,
-      "scheduled": false,
-      "latest_url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxNSmltLXVqQnJibTN4TWF1WGNUOUd4TmdWNFFxLVUyQWpadzJueDdhUkRsT2lqUmhVTWk2ZGxydTVoZEd1ZWxUMEU4cEk5UjR4c05hNDEtM2UzUVRlWVRDdHoxTVJjOUVMOWlGVmdDX0swaFZQN3VKX05XZ1J1TXBqTFE4M2Iyblk?oc=5"
+      "scheduled": false
     },
     "candidate_decision": {
       "status": "rejected",
@@ -2131,7 +2070,7 @@
     "universe_id": 7436755782,
     "roblox_name": "[🌱] Grow a Garden 🌶️",
     "description": "🍅Welcome to Grow a Garden🍅\n\nAre you ready to grow your very own garden? Buy seeds from the shop when they restock, plant them, wait for them to grow, and collect the profits! Flex fruits and finds on friends, and have fun!\n\n[How To Plant]\n• Equip your seed you want to plant!\n• Click in your farm on the brown plots to plant!\n• Wait to see it start growing!\n• After its fully grown, it is time to harvest the goods!\n\nRemember, your garden literally grows while you are offline⭐",
-    "updated": "2026-09-01T08:45:09.9738817Z",
+    "updated": "2026-09-01T21:36:49.4392274Z",
     "created": "2025-03-25T22:32:09.437Z",
     "creator": {
       "id": 35789249,
@@ -2148,7 +2087,7 @@
     "facts": [],
     "description_facts": [],
     "pool": "legacy",
-    "checked_at": "2026-09-01T09:17:09.052992+00:00",
+    "checked_at": "2026-09-02T03:01:06.529134+00:00",
     "sources": [
       {
         "type": "official_game_description",
@@ -2166,7 +2105,7 @@
       {
         "source_type": "secondary_gaming_media",
         "source_url": "https://news.google.com/rss/search?q=%22Grow%20a%20Garden%22%20Roblox%20when%3A30d&hl=en-US&gl=US&ceid=US:en",
-        "latest_published_at": "2026-08-30T12:23:00+00:00",
+        "latest_published_at": "2026-08-22T21:44:00+00:00",
         "status": "rejected",
         "result_code": "EXTRACTION_FAILED",
         "reason": "В публикации не найдено достаточно конкретного содержания.",
@@ -2181,12 +2120,12 @@
         "selected": false,
         "formatted": false,
         "scheduled": false,
-        "latest_url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxOcG9JUmd6VUR0WGRUZDJyeUl0d1BzczBNLU0tTW9Ga3p2RmlmZTVyUmhJWTZBRlRaOUltV1hCMGdxNlFmOG1IblU3ZmNxaXJjNlBCeVJFUmN4MmRtZzJiazNScmpRU3ZoWEhxVUlPZFc3ck5nNUJwbkhyYm1PX2VRaGlFX2ZoQmx2Z09KUFh3?oc=5"
+        "latest_url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxQQ09TVXpjSTlmVUItQ0JlVWlFUkZZRGVLb3NtUDFBc0QwbFBabmNaa1BDTDJYZmxMUFAwYXlYNmZUX2VmNXFjdzRhQ2dubTBSWE5GeFJUWG9yZ0RodDFGZ1ZYQnlYSkVXRHpGYy1hb1ZmR3lMMVpLNVB3VW5tem9Qb29JSkhreW9UaGFETTBEd21qcE1u?oc=5"
       },
       {
         "source_type": "official_game_description",
         "source_url": "https://www.roblox.com/games/126884695634066/Grow-a-Garden",
-        "latest_published_at": "2026-09-01T08:45:09.9738817Z",
+        "latest_published_at": "2026-09-01T21:36:49.4392274Z",
         "status": "rejected",
         "result_code": "NO_NEW_CONTENT",
         "available": true,
@@ -2248,7 +2187,7 @@
       {
         "source_type": "secondary_gaming_media",
         "source_url": "https://news.google.com/rss/search?q=%22Grow%20a%20Garden%22%20Roblox%20when%3A30d&hl=en-US&gl=US&ceid=US:en",
-        "latest_published_at": "2026-08-30T12:23:00+00:00",
+        "latest_published_at": "2026-08-22T21:44:00+00:00",
         "status": "rejected",
         "result_code": "EXTRACTION_FAILED",
         "reason": "В публикации не найдено достаточно конкретного содержания.",
@@ -2263,13 +2202,13 @@
         "selected": false,
         "formatted": false,
         "scheduled": false,
-        "latest_url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxOcG9JUmd6VUR0WGRUZDJyeUl0d1BzczBNLU0tTW9Ga3p2RmlmZTVyUmhJWTZBRlRaOUltV1hCMGdxNlFmOG1IblU3ZmNxaXJjNlBCeVJFUmN4MmRtZzJiazNScmpRU3ZoWEhxVUlPZFc3ck5nNUJwbkhyYm1PX2VRaGlFX2ZoQmx2Z09KUFh3?oc=5"
+        "latest_url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxQQ09TVXpjSTlmVUItQ0JlVWlFUkZZRGVLb3NtUDFBc0QwbFBabmNaa1BDTDJYZmxMUFAwYXlYNmZUX2VmNXFjdzRhQ2dubTBSWE5GeFJUWG9yZ0RodDFGZ1ZYQnlYSkVXRHpGYy1hb1ZmR3lMMVpLNVB3VW5tem9Qb29JSkhreW9UaGFETTBEd21qcE1u?oc=5"
       }
     ],
     "external_source_diagnostic": {
       "source_type": "secondary_gaming_media",
       "source_url": "https://news.google.com/rss/search?q=%22Grow%20a%20Garden%22%20Roblox%20when%3A30d&hl=en-US&gl=US&ceid=US:en",
-      "latest_published_at": "2026-08-30T12:23:00+00:00",
+      "latest_published_at": "2026-08-22T21:44:00+00:00",
       "status": "rejected",
       "result_code": "EXTRACTION_FAILED",
       "reason": "В публикации не найдено достаточно конкретного содержания.",
@@ -2284,7 +2223,7 @@
       "selected": false,
       "formatted": false,
       "scheduled": false,
-      "latest_url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxOcG9JUmd6VUR0WGRUZDJyeUl0d1BzczBNLU0tTW9Ga3p2RmlmZTVyUmhJWTZBRlRaOUltV1hCMGdxNlFmOG1IblU3ZmNxaXJjNlBCeVJFUmN4MmRtZzJiazNScmpRU3ZoWEhxVUlPZFc3ck5nNUJwbkhyYm1PX2VRaGlFX2ZoQmx2Z09KUFh3?oc=5"
+      "latest_url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxQQ09TVXpjSTlmVUItQ0JlVWlFUkZZRGVLb3NtUDFBc0QwbFBabmNaa1BDTDJYZmxMUFAwYXlYNmZUX2VmNXFjdzRhQ2dubTBSWE5GeFJUWG9yZ0RodDFGZ1ZYQnlYSkVXRHpGYy1hb1ZmR3lMMVpLNVB3VW5tem9Qb29JSkhreW9UaGFETTBEd21qcE1u?oc=5"
     },
     "candidate_decision": {
       "status": "rejected",
@@ -2296,7 +2235,7 @@
     "universe_id": 5203828273,
     "roblox_name": "[🌴] Dress To Impress",
     "description": "Create stunning outfits 👗💖⭐, and strut the runway to show off your unique style. Collaborate, compete, and explore a world of glamour with friends!\n\n⭐ Are you ready to be the TOP MODEL?\n👗 NEW ITEMS! Check them out.\n🍿 Vote for your favorite outfits!\n💃 Use poses on the runway to show off your outfit!\n\nFind more about Dress To Impress by joining our community.\nhttps://www.roblox.com/communities/17264167/Dress-To-Impress-Group#!/about",
-    "updated": "2026-08-31T23:55:11.8367673Z",
+    "updated": "2026-09-01T20:27:44.3400734Z",
     "created": "2023-10-18T09:11:36.563Z",
     "creator": {
       "id": 17264167,
@@ -2353,7 +2292,7 @@
       }
     ],
     "pool": "legacy",
-    "checked_at": "2026-09-01T09:17:09.054077+00:00",
+    "checked_at": "2026-09-02T03:01:06.530294+00:00",
     "sources": [
       {
         "type": "official_game_description",
@@ -2374,7 +2313,7 @@
         "latest_published_at": "2026-07-02T15:00:06+00:00",
         "status": "rejected",
         "result_code": "SOURCE_STALE",
-        "reason": "Публикация устарела: 60.8 дн. (аварийный лимит 30).",
+        "reason": "Публикация устарела: 61.5 дн. (аварийный лимит 30).",
         "available": true,
         "article_found": true,
         "date_found": true,
@@ -2410,7 +2349,7 @@
       {
         "source_type": "official_game_description",
         "source_url": "https://www.roblox.com/games/15101393044/Dress-To-Impress",
-        "latest_published_at": "2026-08-31T23:55:11.8367673Z",
+        "latest_published_at": "2026-09-01T20:27:44.3400734Z",
         "status": "rejected",
         "result_code": "NO_NEW_CONTENT",
         "available": true,
@@ -2483,7 +2422,7 @@
         "latest_published_at": "2026-07-02T15:00:06+00:00",
         "status": "rejected",
         "result_code": "SOURCE_STALE",
-        "reason": "Публикация устарела: 60.8 дн. (аварийный лимит 30).",
+        "reason": "Публикация устарела: 61.5 дн. (аварийный лимит 30).",
         "available": true,
         "article_found": true,
         "date_found": true,
@@ -2546,7 +2485,7 @@
     "universe_id": 3317771874,
     "roblox_name": "🍀 [LUCKY BLOCK] Pet Simulator 99! 🎯",
     "description": "Create an army of the coolest pets! They will help you get RICH!\n\n✨ Currently 3,000+ pets to collect! 🐾\n\n🧡 Thanks for playing!",
-    "updated": "2026-08-31T13:14:18.5752563Z",
+    "updated": "2026-09-01T17:14:08.8900576Z",
     "created": "2022-02-05T13:30:02.357Z",
     "creator": {
       "id": 3959677,
@@ -2584,7 +2523,7 @@
       }
     ],
     "pool": "legacy",
-    "checked_at": "2026-09-01T09:17:09.054401+00:00",
+    "checked_at": "2026-09-02T03:01:06.530631+00:00",
     "sources": [
       {
         "type": "official_game_description",
@@ -2642,7 +2581,7 @@
       {
         "source_type": "official_game_description",
         "source_url": "https://www.roblox.com/games/8737899170/Pet-Simulator-99",
-        "latest_published_at": "2026-08-31T13:14:18.5752563Z",
+        "latest_published_at": "2026-09-01T17:14:08.8900576Z",
         "status": "rejected",
         "result_code": "NO_NEW_CONTENT",
         "available": true,
@@ -2807,7 +2746,7 @@
       }
     ],
     "pool": "legacy",
-    "checked_at": "2026-09-01T09:17:09.056082+00:00",
+    "checked_at": "2026-09-02T03:01:06.532458+00:00",
     "sources": [
       {
         "type": "official_game_description",
@@ -2825,22 +2764,21 @@
       {
         "source_type": "official_youtube_feed",
         "source_url": "https://www.youtube.com/feeds/videos.xml?channel_id=UCPttFx0zI4Zv9M4i3Q2ylsw",
-        "latest_published_at": "2026-08-30T17:20:45+00:00",
+        "latest_published_at": null,
         "status": "rejected",
-        "result_code": "ALREADY_USED",
-        "reason": "Публикация уже использовалась в выпуске другого дня.",
-        "available": true,
-        "article_found": true,
-        "date_found": true,
-        "content_found": true,
+        "result_code": "SOURCE_UNAVAILABLE",
+        "reason": "Источник недоступен: 404 Client Error: Not Found for url: https://www.youtube.com/feeds/videos.xml?channel_id=UCPttFx0zI4Zv9M4i3Q2ylsw",
+        "available": false,
+        "article_found": false,
+        "date_found": false,
+        "content_found": false,
         "extraction_success": false,
         "verification_passed": false,
         "source_tier": "A",
         "official": true,
         "selected": false,
         "formatted": false,
-        "scheduled": false,
-        "latest_url": "https://www.youtube.com/watch?v=lNN7KhMl3sw"
+        "scheduled": false
       },
       {
         "source_type": "official_news_website",
@@ -2848,7 +2786,7 @@
         "latest_published_at": "2024-03-23T18:51:42Z",
         "status": "rejected",
         "result_code": "SOURCE_STALE",
-        "reason": "Публикация устарела: 891.6 дн. (аварийный лимит 30).",
+        "reason": "Публикация устарела: 892.3 дн. (аварийный лимит 30).",
         "available": true,
         "article_found": true,
         "date_found": true,
@@ -2950,22 +2888,21 @@
       {
         "source_type": "official_youtube_feed",
         "source_url": "https://www.youtube.com/feeds/videos.xml?channel_id=UCPttFx0zI4Zv9M4i3Q2ylsw",
-        "latest_published_at": "2026-08-30T17:20:45+00:00",
+        "latest_published_at": null,
         "status": "rejected",
-        "result_code": "ALREADY_USED",
-        "reason": "Публикация уже использовалась в выпуске другого дня.",
-        "available": true,
-        "article_found": true,
-        "date_found": true,
-        "content_found": true,
+        "result_code": "SOURCE_UNAVAILABLE",
+        "reason": "Источник недоступен: 404 Client Error: Not Found for url: https://www.youtube.com/feeds/videos.xml?channel_id=UCPttFx0zI4Zv9M4i3Q2ylsw",
+        "available": false,
+        "article_found": false,
+        "date_found": false,
+        "content_found": false,
         "extraction_success": false,
         "verification_passed": false,
         "source_tier": "A",
         "official": true,
         "selected": false,
         "formatted": false,
-        "scheduled": false,
-        "latest_url": "https://www.youtube.com/watch?v=lNN7KhMl3sw"
+        "scheduled": false
       },
       {
         "source_type": "official_news_website",
@@ -2973,7 +2910,7 @@
         "latest_published_at": "2024-03-23T18:51:42Z",
         "status": "rejected",
         "result_code": "SOURCE_STALE",
-        "reason": "Публикация устарела: 891.6 дн. (аварийный лимит 30).",
+        "reason": "Публикация устарела: 892.3 дн. (аварийный лимит 30).",
         "available": true,
         "article_found": true,
         "date_found": true,

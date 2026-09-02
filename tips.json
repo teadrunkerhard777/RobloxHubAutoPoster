@@ -126,7 +126,7 @@
     "text": "Закрывай базу вовремя: открытая база — самый простой шанс для соперника унести Brainrot.",
     "source": "verified_core_mechanic",
     "reviewed_at": "2026-08-14",
-    "used": false,
+    "used": true,
     "category": "strategy"
   },
   {
@@ -576,7 +576,7 @@
     "text": "Не соглашайся на обмен только потому, что другой игрок пишет «быстро» или «последний шанс».",
     "source": "verified_core_mechanic",
     "reviewed_at": "2026-08-14",
-    "used": false,
+    "used": true,
     "category": "social"
   },
   {
@@ -1267,7 +1267,7 @@
     "text": "Распределяй характеристики под основной источник урона и не забывай про защиту.",
     "source": "verified_core_mechanic",
     "reviewed_at": "2026-08-24",
-    "used": false
+    "used": true
   },
   {
     "id": 128,
@@ -1317,7 +1317,7 @@
     "text": "На приватном сервере настрой время и погоду под сцену до начала ролевой игры.",
     "source": "verified_core_mechanic",
     "reviewed_at": "2026-08-24",
-    "used": false
+    "used": true
   },
   {
     "id": 133,
@@ -1530,7 +1530,7 @@
     "text": "Используй доход питомцев для дальнейшей прокачки, а не оставляй деньги без дела.",
     "source": "agreed_editorial_list",
     "reviewed_at": "2026-08-28",
-    "used": false
+    "used": true
   },
   {
     "id": 154,
@@ -1662,7 +1662,7 @@
     "text": "При сомнениях используй CCTV вместо случайного решения.",
     "source": "agreed_editorial_list",
     "reviewed_at": "2026-08-28",
-    "used": false
+    "used": true
   },
   {
     "id": 166,
@@ -1816,7 +1816,7 @@
     "text": "Не пытайся пройти сложный прыжок на минимальной скорости: небольшой запас делает прохождение стабильнее.",
     "source": "agreed_editorial_list",
     "reviewed_at": "2026-08-28",
-    "used": false
+    "used": true
   },
   {
     "id": 180,
@@ -1860,7 +1860,7 @@
     "text": "Чем выше скорость, тем сильнее меняется движение персонажа: привыкни к управлению перед сложными прыжками.",
     "source": "agreed_editorial_list",
     "reviewed_at": "2026-08-28",
-    "used": false
+    "used": true
   },
   {
     "id": 184,
@@ -1893,7 +1893,7 @@
     "text": "Не покупай всё подряд: сначала вкладывайся в то, что ускоряет цикл Speed → этап → Wins → улучшение.",
     "source": "agreed_editorial_list",
     "reviewed_at": "2026-08-28",
-    "used": false
+    "used": true
   },
   {
     "id": 187,
@@ -1970,7 +1970,7 @@
     "text": "Sheriff не стоит сразу показывать пистолет, иначе Murderer может начать охотиться именно за ним.",
     "source": "agreed_editorial_list",
     "reviewed_at": "2026-08-28",
-    "used": false
+    "used": true
   },
   {
     "id": 194,
@@ -1992,7 +1992,7 @@
     "text": "Во время погони меняй направление и используй комнаты и повороты карты.",
     "source": "agreed_editorial_list",
     "reviewed_at": "2026-08-28",
-    "used": false
+    "used": true
   },
   {
     "id": 196,

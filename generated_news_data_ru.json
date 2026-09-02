@@ -1,29 +1,6 @@
 {
-  "items": [
-    {
-      "game": "Blox Fruits",
-      "emoji": "🍈",
-      "score": 10,
-      "headline": "⚔️ Вышел балансный патч The Summer PvP #001.",
-      "facts": [
-        "🔹 Control — Dagger Mode (X): задержка после атаки: +0.25 секунд; дальность: −10%; размер хитбокса: −10%.",
-        "🔹 Instinct — Core Mechanic (DODGES): время восстановления уклонений: 40 секунд → 30 секунд.",
-        "🔹 Death Step — Abilities (C): периодический урон: +20%; задержка после атаки: 0.25 секунд → 0.1 секунд; размер хитбокса: +15%."
-      ],
-      "text": "⚔️ Вышел балансный патч The Summer PvP #001.\n\n🔹 Control — Dagger Mode (X): задержка после атаки: +0.25 секунд; дальность: −10%; размер хитбокса: −10%.\n\n🔹 Instinct — Core Mechanic (DODGES): время восстановления уклонений: 40 секунд → 30 секунд.\n\n🔹 Death Step — Abilities (C): периодический урон: +20%; задержка после атаки: 0.25 секунд → 0.1 секунд; размер хитбокса: +15%.",
-      "external_article_url": "https://gamerrobot.com/blogs/news/the-balance-log"
-    }
-  ],
+  "items": [],
   "pipeline": [
-    {
-      "game": "Blox Fruits",
-      "candidate": true,
-      "verified": true,
-      "selected": true,
-      "formatted_ru": true,
-      "scheduled": true,
-      "reason": "вошёл в утренний выпуск"
-    },
     {
       "game": "Steal An Egg",
       "candidate": true,
@@ -70,6 +47,15 @@
       "reason": "Публикация уже использовалась в выпуске другого дня; Нет пригодной Tier B новости; Нет новой конкретной строки со времени прошлого снимка"
     },
     {
+      "game": "Blox Fruits",
+      "candidate": true,
+      "verified": false,
+      "selected": false,
+      "formatted_ru": false,
+      "scheduled": false,
+      "reason": "Публикация уже использовалась в выпуске другого дня; В публикации не найдено достаточно конкретного содержания; Нет новой конкретной строки со времени прошлого снимка"
+    },
+    {
       "game": "Adopt Me!",
       "candidate": true,
       "verified": false,
@@ -103,7 +89,7 @@
       "selected": false,
       "formatted_ru": false,
       "scheduled": false,
-      "reason": "В публикации не найдено достаточно конкретного содержания; Нет новой конкретной строки со времени прошлого снимка"
+      "reason": "Нет пригодной Tier B новости; Нет новой конкретной строки со времени прошлого снимка"
     },
     {
       "game": "Grow a Garden",
@@ -121,7 +107,7 @@
       "selected": false,
       "formatted_ru": false,
       "scheduled": false,
-      "reason": "Публикация устарела: 60.8 дн. (аварийный лимит 30); Нет пригодной Tier B новости; Нет новой конкретной строки со времени прошлого снимка"
+      "reason": "Публикация устарела: 61.5 дн. (аварийный лимит 30); Нет пригодной Tier B новости; Нет новой конкретной строки со времени прошлого снимка"
     },
     {
       "game": "Pet Simulator 99",
@@ -139,14 +125,14 @@
       "selected": false,
       "formatted_ru": false,
       "scheduled": false,
-      "reason": "Публикация уже использовалась в выпуске другого дня; Публикация устарела: 891.6 дн. (аварийный лимит 30); Нет пригодной Tier B новости; Нет новой конкретной строки со времени прошлого снимка"
+      "reason": "Источник недоступен: 404 Client Error: Not Found for url: https://www.youtube.com/feeds/videos.xml?channel_id=UCPttFx0zI4Zv9M4i3Q2ylsw; Публикация устарела: 892.3 дн. (аварийный лимит 30); Нет пригодной Tier B новости; Нет новой конкретной строки со времени прошлого снимка"
     }
   ],
   "summary": {
     "found": 14,
-    "verified": 1,
-    "selected": 1,
-    "formatted": 1,
-    "scheduled": 1
+    "verified": 0,
+    "selected": 0,
+    "formatted": 0,
+    "scheduled": 0
   }
 }
