@@ -1298,8 +1298,9 @@
         "ru_content": [],
         "ru_clean_content": []
       },
-      "status": "scheduled",
-      "scheduled_post_id": "2026-09-02-brawl-12"
+      "status": "published",
+      "scheduled_post_id": "2026-09-02-brawl-12",
+      "published_at": "2026-09-02T12:00:47.267022+05:00"
     },
     "https://supercell.com/en/games/brawlstars/blog/esports/matcherino-just-levelled-up/": {
       "discovered": true,
@@ -1403,7 +1404,8 @@
         "ru_content": [],
         "ru_clean_content": []
       },
-      "status": "pending"
+      "status": "scheduled",
+      "scheduled_post_id": "2026-09-02-brawl-12"
     }
   }
 }

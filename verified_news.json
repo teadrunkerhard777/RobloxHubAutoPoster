@@ -78,7 +78,7 @@
       }
     ],
     "pool": "active",
-    "checked_at": "2026-09-02T03:01:06.514006+00:00",
+    "checked_at": "2026-09-02T08:36:21.099018+00:00",
     "sources": [
       {
         "type": "official_game_description",
@@ -96,7 +96,7 @@
       {
         "source_type": "secondary_gaming_media",
         "source_url": "https://news.google.com/rss/search?q=%22Steal%20An%20Egg%22%20Roblox%20when%3A30d&hl=en-US&gl=US&ceid=US:en",
-        "latest_published_at": "2026-08-31T09:03:00+00:00",
+        "latest_published_at": "2026-08-24T15:47:00+00:00",
         "status": "rejected",
         "result_code": "EXTRACTION_FAILED",
         "reason": "В публикации не найдено достаточно конкретного содержания.",
@@ -111,7 +111,7 @@
         "selected": false,
         "formatted": false,
         "scheduled": false,
-        "latest_url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE8wRWFUQkhLY2pqQ1Yxa3dQZE5DM1NWa1hreUM3MGdjWW1OZ3hMbl9fRktmSXhQajZJdFliRHVOWG1WV0RObVVIRERGM0lSNFZDRGZoZ25YWXNUSThKcFNxM3B5ZHU1RXk5NUxCaXVjY19yVkx0M01CeFZHUVl2Zw?oc=5"
+        "latest_url": "https://news.google.com/rss/articles/CBMieEFVX3lxTE1PZWt0eU84eUo2ZklMMndjYVEwNllMdGhFM0U5bTlqNTREb0M1bHlEdHN3QzYwaHQzeFRNR2MtNWpCRjNQcVh5Undfc2wycmlKeUVBS2JEN0E1UlJMVVkzZjlWU21Oam1fOVl4WWxWM19sRUM3Vk5kbw?oc=5"
       },
       {
         "source_type": "official_game_description",
@@ -186,7 +186,7 @@
       {
         "source_type": "secondary_gaming_media",
         "source_url": "https://news.google.com/rss/search?q=%22Steal%20An%20Egg%22%20Roblox%20when%3A30d&hl=en-US&gl=US&ceid=US:en",
-        "latest_published_at": "2026-08-31T09:03:00+00:00",
+        "latest_published_at": "2026-08-24T15:47:00+00:00",
         "status": "rejected",
         "result_code": "EXTRACTION_FAILED",
         "reason": "В публикации не найдено достаточно конкретного содержания.",
@@ -201,13 +201,13 @@
         "selected": false,
         "formatted": false,
         "scheduled": false,
-        "latest_url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE8wRWFUQkhLY2pqQ1Yxa3dQZE5DM1NWa1hreUM3MGdjWW1OZ3hMbl9fRktmSXhQajZJdFliRHVOWG1WV0RObVVIRERGM0lSNFZDRGZoZ25YWXNUSThKcFNxM3B5ZHU1RXk5NUxCaXVjY19yVkx0M01CeFZHUVl2Zw?oc=5"
+        "latest_url": "https://news.google.com/rss/articles/CBMieEFVX3lxTE1PZWt0eU84eUo2ZklMMndjYVEwNllMdGhFM0U5bTlqNTREb0M1bHlEdHN3QzYwaHQzeFRNR2MtNWpCRjNQcVh5Undfc2wycmlKeUVBS2JEN0E1UlJMVVkzZjlWU21Oam1fOVl4WWxWM19sRUM3Vk5kbw?oc=5"
       }
     ],
     "external_source_diagnostic": {
       "source_type": "secondary_gaming_media",
       "source_url": "https://news.google.com/rss/search?q=%22Steal%20An%20Egg%22%20Roblox%20when%3A30d&hl=en-US&gl=US&ceid=US:en",
-      "latest_published_at": "2026-08-31T09:03:00+00:00",
+      "latest_published_at": "2026-08-24T15:47:00+00:00",
       "status": "rejected",
       "result_code": "EXTRACTION_FAILED",
       "reason": "В публикации не найдено достаточно конкретного содержания.",
@@ -222,7 +222,7 @@
       "selected": false,
       "formatted": false,
       "scheduled": false,
-      "latest_url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE8wRWFUQkhLY2pqQ1Yxa3dQZE5DM1NWa1hreUM3MGdjWW1OZ3hMbl9fRktmSXhQajZJdFliRHVOWG1WV0RObVVIRERGM0lSNFZDRGZoZ25YWXNUSThKcFNxM3B5ZHU1RXk5NUxCaXVjY19yVkx0M01CeFZHUVl2Zw?oc=5"
+      "latest_url": "https://news.google.com/rss/articles/CBMieEFVX3lxTE1PZWt0eU84eUo2ZklMMndjYVEwNllMdGhFM0U5bTlqNTREb0M1bHlEdHN3QzYwaHQzeFRNR2MtNWpCRjNQcVh5Undfc2wycmlKeUVBS2JEN0E1UlJMVVkzZjlWU21Oam1fOVl4WWxWM19sRUM3Vk5kbw?oc=5"
     },
     "candidate_decision": {
       "status": "rejected",
@@ -261,7 +261,7 @@
       }
     ],
     "pool": "active",
-    "checked_at": "2026-09-02T03:01:06.514461+00:00",
+    "checked_at": "2026-09-02T08:36:21.099444+00:00",
     "sources": [
       {
         "type": "official_game_description",
@@ -423,7 +423,7 @@
     "facts": [],
     "description_facts": [],
     "pool": "active",
-    "checked_at": "2026-09-02T03:01:06.516386+00:00",
+    "checked_at": "2026-09-02T08:36:21.101165+00:00",
     "sources": [
       {
         "type": "official_game_description",
@@ -611,7 +611,7 @@
       }
     ],
     "pool": "active",
-    "checked_at": "2026-09-02T03:01:06.517700+00:00",
+    "checked_at": "2026-09-02T08:36:21.102342+00:00",
     "sources": [
       {
         "type": "official_game_description",
@@ -834,7 +834,7 @@
       }
     ],
     "pool": "active",
-    "checked_at": "2026-09-02T03:01:06.520420+00:00",
+    "checked_at": "2026-09-02T08:36:21.104755+00:00",
     "sources": [
       {
         "type": "official_game_description",
@@ -1057,7 +1057,7 @@
       }
     ],
     "pool": "active",
-    "checked_at": "2026-09-02T03:01:06.522663+00:00",
+    "checked_at": "2026-09-02T08:36:21.106850+00:00",
     "sources": [
       {
         "type": "official_game_description",
@@ -1317,7 +1317,7 @@
       }
     ],
     "pool": "active",
-    "checked_at": "2026-09-02T03:01:06.524076+00:00",
+    "checked_at": "2026-09-02T08:36:21.108100+00:00",
     "sources": [
       {
         "type": "official_game_description",
@@ -1575,7 +1575,7 @@
       }
     ],
     "pool": "active",
-    "checked_at": "2026-09-02T03:01:06.525975+00:00",
+    "checked_at": "2026-09-02T08:36:21.109755+00:00",
     "sources": [
       {
         "type": "official_game_description",
@@ -1750,7 +1750,7 @@
     "facts": [],
     "description_facts": [],
     "pool": "active",
-    "checked_at": "2026-09-02T03:01:06.526394+00:00",
+    "checked_at": "2026-09-02T08:36:21.110090+00:00",
     "sources": [
       {
         "type": "official_game_description",
@@ -1925,7 +1925,7 @@
       }
     ],
     "pool": "active",
-    "checked_at": "2026-09-02T03:01:06.527686+00:00",
+    "checked_at": "2026-09-02T08:36:21.111258+00:00",
     "sources": [
       {
         "type": "official_game_description",
@@ -2087,7 +2087,7 @@
     "facts": [],
     "description_facts": [],
     "pool": "legacy",
-    "checked_at": "2026-09-02T03:01:06.529134+00:00",
+    "checked_at": "2026-09-02T08:36:21.112546+00:00",
     "sources": [
       {
         "type": "official_game_description",
@@ -2235,7 +2235,7 @@
     "universe_id": 5203828273,
     "roblox_name": "[🌴] Dress To Impress",
     "description": "Create stunning outfits 👗💖⭐, and strut the runway to show off your unique style. Collaborate, compete, and explore a world of glamour with friends!\n\n⭐ Are you ready to be the TOP MODEL?\n👗 NEW ITEMS! Check them out.\n🍿 Vote for your favorite outfits!\n💃 Use poses on the runway to show off your outfit!\n\nFind more about Dress To Impress by joining our community.\nhttps://www.roblox.com/communities/17264167/Dress-To-Impress-Group#!/about",
-    "updated": "2026-09-01T20:27:44.3400734Z",
+    "updated": "2026-09-02T05:01:12.8481978Z",
     "created": "2023-10-18T09:11:36.563Z",
     "creator": {
       "id": 17264167,
@@ -2292,7 +2292,7 @@
       }
     ],
     "pool": "legacy",
-    "checked_at": "2026-09-02T03:01:06.530294+00:00",
+    "checked_at": "2026-09-02T08:36:21.113567+00:00",
     "sources": [
       {
         "type": "official_game_description",
@@ -2313,7 +2313,7 @@
         "latest_published_at": "2026-07-02T15:00:06+00:00",
         "status": "rejected",
         "result_code": "SOURCE_STALE",
-        "reason": "Публикация устарела: 61.5 дн. (аварийный лимит 30).",
+        "reason": "Публикация устарела: 61.7 дн. (аварийный лимит 30).",
         "available": true,
         "article_found": true,
         "date_found": true,
@@ -2349,7 +2349,7 @@
       {
         "source_type": "official_game_description",
         "source_url": "https://www.roblox.com/games/15101393044/Dress-To-Impress",
-        "latest_published_at": "2026-09-01T20:27:44.3400734Z",
+        "latest_published_at": "2026-09-02T05:01:12.8481978Z",
         "status": "rejected",
         "result_code": "NO_NEW_CONTENT",
         "available": true,
@@ -2422,7 +2422,7 @@
         "latest_published_at": "2026-07-02T15:00:06+00:00",
         "status": "rejected",
         "result_code": "SOURCE_STALE",
-        "reason": "Публикация устарела: 61.5 дн. (аварийный лимит 30).",
+        "reason": "Публикация устарела: 61.7 дн. (аварийный лимит 30).",
         "available": true,
         "article_found": true,
         "date_found": true,
@@ -2523,7 +2523,7 @@
       }
     ],
     "pool": "legacy",
-    "checked_at": "2026-09-02T03:01:06.530631+00:00",
+    "checked_at": "2026-09-02T08:36:21.113858+00:00",
     "sources": [
       {
         "type": "official_game_description",
@@ -2561,22 +2561,23 @@
       {
         "source_type": "secondary_gaming_media",
         "source_url": "https://news.google.com/rss/search?q=%22Pet%20Simulator%2099%22%20Roblox%20when%3A30d&hl=en-US&gl=US&ceid=US:en",
-        "latest_published_at": "2026-08-30T23:13:00+00:00",
+        "latest_published_at": "2026-08-23T22:53:00+00:00",
         "status": "rejected",
-        "result_code": "EXTRACTION_FAILED",
-        "reason": "В публикации не найдено достаточно конкретного содержания.",
+        "result_code": "ALREADY_USED",
+        "reason": "Tier B повторяет уже использованную официальную новость.",
         "available": true,
         "article_found": true,
         "date_found": true,
         "content_found": true,
-        "extraction_success": false,
+        "extraction_success": true,
         "verification_passed": false,
         "source_tier": "B",
         "official": false,
         "selected": false,
         "formatted": false,
         "scheduled": false,
-        "latest_url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxNZjc5UGNaSEt3YWVTVHZUYUdrYW93V0RFMm1RaUs4MnRjclExeWR1N0c5dThRaV9vWnM1b0NXQ3VZY1JySTQyZllrRkF6dFJTd05oQ0FJQlF0VUNtdE1BZmxTMmZZNlA3aWFqOWJyNUsxUmtuSXJOa1VGUUpPbmlPNm1vZDQyaFVlQ2xzS0tVSDY4Y1ZvYkpyVjA0ekVGbGgyWkkxRmw2WVBiSWlheVlYWXBWMzl1VWc?oc=5"
+        "latest_url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxQS01ZMllCSXA3Mk83N19sWVFoT3lEUFY5NFpEdVpMMG0xa0NiR19Vd2FvQ1FnWGY4NFNLd29MNElUT3JWN3RRcWlCeXZxalFRSEFDZzJrNFhUUHRZNXU5QzlsOHRFbndkY1g1TVU5MEdIcjVZbXdFb0RuVVByemk1R1N2bGhWVTVUYmtMby0xbW9GbmM0RTYzb1FZLTRtSjNwTUxReFhqZC1qSXFDVWNFMHZJVTlybmRVaFFZWGdfMzg?oc=5",
+        "freshness_window": "primary_14_day"
       },
       {
         "source_type": "official_game_description",
@@ -2669,43 +2670,45 @@
       {
         "source_type": "secondary_gaming_media",
         "source_url": "https://news.google.com/rss/search?q=%22Pet%20Simulator%2099%22%20Roblox%20when%3A30d&hl=en-US&gl=US&ceid=US:en",
-        "latest_published_at": "2026-08-30T23:13:00+00:00",
+        "latest_published_at": "2026-08-23T22:53:00+00:00",
         "status": "rejected",
-        "result_code": "EXTRACTION_FAILED",
-        "reason": "В публикации не найдено достаточно конкретного содержания.",
+        "result_code": "ALREADY_USED",
+        "reason": "Tier B повторяет уже использованную официальную новость.",
         "available": true,
         "article_found": true,
         "date_found": true,
         "content_found": true,
-        "extraction_success": false,
+        "extraction_success": true,
         "verification_passed": false,
         "source_tier": "B",
         "official": false,
         "selected": false,
         "formatted": false,
         "scheduled": false,
-        "latest_url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxNZjc5UGNaSEt3YWVTVHZUYUdrYW93V0RFMm1RaUs4MnRjclExeWR1N0c5dThRaV9vWnM1b0NXQ3VZY1JySTQyZllrRkF6dFJTd05oQ0FJQlF0VUNtdE1BZmxTMmZZNlA3aWFqOWJyNUsxUmtuSXJOa1VGUUpPbmlPNm1vZDQyaFVlQ2xzS0tVSDY4Y1ZvYkpyVjA0ekVGbGgyWkkxRmw2WVBiSWlheVlYWXBWMzl1VWc?oc=5"
+        "latest_url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxQS01ZMllCSXA3Mk83N19sWVFoT3lEUFY5NFpEdVpMMG0xa0NiR19Vd2FvQ1FnWGY4NFNLd29MNElUT3JWN3RRcWlCeXZxalFRSEFDZzJrNFhUUHRZNXU5QzlsOHRFbndkY1g1TVU5MEdIcjVZbXdFb0RuVVByemk1R1N2bGhWVTVUYmtMby0xbW9GbmM0RTYzb1FZLTRtSjNwTUxReFhqZC1qSXFDVWNFMHZJVTlybmRVaFFZWGdfMzg?oc=5",
+        "freshness_window": "primary_14_day"
       }
     ],
     "external_source_diagnostic": {
       "source_type": "secondary_gaming_media",
       "source_url": "https://news.google.com/rss/search?q=%22Pet%20Simulator%2099%22%20Roblox%20when%3A30d&hl=en-US&gl=US&ceid=US:en",
-      "latest_published_at": "2026-08-30T23:13:00+00:00",
+      "latest_published_at": "2026-08-23T22:53:00+00:00",
       "status": "rejected",
-      "result_code": "EXTRACTION_FAILED",
-      "reason": "В публикации не найдено достаточно конкретного содержания.",
+      "result_code": "ALREADY_USED",
+      "reason": "Tier B повторяет уже использованную официальную новость.",
       "available": true,
       "article_found": true,
       "date_found": true,
       "content_found": true,
-      "extraction_success": false,
+      "extraction_success": true,
       "verification_passed": false,
       "source_tier": "B",
       "official": false,
       "selected": false,
       "formatted": false,
       "scheduled": false,
-      "latest_url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxNZjc5UGNaSEt3YWVTVHZUYUdrYW93V0RFMm1RaUs4MnRjclExeWR1N0c5dThRaV9vWnM1b0NXQ3VZY1JySTQyZllrRkF6dFJTd05oQ0FJQlF0VUNtdE1BZmxTMmZZNlA3aWFqOWJyNUsxUmtuSXJOa1VGUUpPbmlPNm1vZDQyaFVlQ2xzS0tVSDY4Y1ZvYkpyVjA0ekVGbGgyWkkxRmw2WVBiSWlheVlYWXBWMzl1VWc?oc=5"
+      "latest_url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxQS01ZMllCSXA3Mk83N19sWVFoT3lEUFY5NFpEdVpMMG0xa0NiR19Vd2FvQ1FnWGY4NFNLd29MNElUT3JWN3RRcWlCeXZxalFRSEFDZzJrNFhUUHRZNXU5QzlsOHRFbndkY1g1TVU5MEdIcjVZbXdFb0RuVVByemk1R1N2bGhWVTVUYmtMby0xbW9GbmM0RTYzb1FZLTRtSjNwTUxReFhqZC1qSXFDVWNFMHZJVTlybmRVaFFZWGdfMzg?oc=5",
+      "freshness_window": "primary_14_day"
     },
     "candidate_decision": {
       "status": "rejected",
@@ -2746,7 +2749,7 @@
       }
     ],
     "pool": "legacy",
-    "checked_at": "2026-09-02T03:01:06.532458+00:00",
+    "checked_at": "2026-09-02T08:36:21.115497+00:00",
     "sources": [
       {
         "type": "official_game_description",
@@ -2764,21 +2767,22 @@
       {
         "source_type": "official_youtube_feed",
         "source_url": "https://www.youtube.com/feeds/videos.xml?channel_id=UCPttFx0zI4Zv9M4i3Q2ylsw",
-        "latest_published_at": null,
+        "latest_published_at": "2026-08-30T17:20:45+00:00",
         "status": "rejected",
-        "result_code": "SOURCE_UNAVAILABLE",
-        "reason": "Источник недоступен: 404 Client Error: Not Found for url: https://www.youtube.com/feeds/videos.xml?channel_id=UCPttFx0zI4Zv9M4i3Q2ylsw",
-        "available": false,
-        "article_found": false,
-        "date_found": false,
-        "content_found": false,
+        "result_code": "ALREADY_USED",
+        "reason": "Публикация уже использовалась в выпуске другого дня.",
+        "available": true,
+        "article_found": true,
+        "date_found": true,
+        "content_found": true,
         "extraction_success": false,
         "verification_passed": false,
         "source_tier": "A",
         "official": true,
         "selected": false,
         "formatted": false,
-        "scheduled": false
+        "scheduled": false,
+        "latest_url": "https://www.youtube.com/watch?v=lNN7KhMl3sw"
       },
       {
         "source_type": "official_news_website",
@@ -2786,7 +2790,7 @@
         "latest_published_at": "2024-03-23T18:51:42Z",
         "status": "rejected",
         "result_code": "SOURCE_STALE",
-        "reason": "Публикация устарела: 892.3 дн. (аварийный лимит 30).",
+        "reason": "Публикация устарела: 892.6 дн. (аварийный лимит 30).",
         "available": true,
         "article_found": true,
         "date_found": true,
@@ -2888,21 +2892,22 @@
       {
         "source_type": "official_youtube_feed",
         "source_url": "https://www.youtube.com/feeds/videos.xml?channel_id=UCPttFx0zI4Zv9M4i3Q2ylsw",
-        "latest_published_at": null,
+        "latest_published_at": "2026-08-30T17:20:45+00:00",
         "status": "rejected",
-        "result_code": "SOURCE_UNAVAILABLE",
-        "reason": "Источник недоступен: 404 Client Error: Not Found for url: https://www.youtube.com/feeds/videos.xml?channel_id=UCPttFx0zI4Zv9M4i3Q2ylsw",
-        "available": false,
-        "article_found": false,
-        "date_found": false,
-        "content_found": false,
+        "result_code": "ALREADY_USED",
+        "reason": "Публикация уже использовалась в выпуске другого дня.",
+        "available": true,
+        "article_found": true,
+        "date_found": true,
+        "content_found": true,
         "extraction_success": false,
         "verification_passed": false,
         "source_tier": "A",
         "official": true,
         "selected": false,
         "formatted": false,
-        "scheduled": false
+        "scheduled": false,
+        "latest_url": "https://www.youtube.com/watch?v=lNN7KhMl3sw"
       },
       {
         "source_type": "official_news_website",
@@ -2910,7 +2915,7 @@
         "latest_published_at": "2024-03-23T18:51:42Z",
         "status": "rejected",
         "result_code": "SOURCE_STALE",
-        "reason": "Публикация устарела: 892.3 дн. (аварийный лимит 30).",
+        "reason": "Публикация устарела: 892.6 дн. (аварийный лимит 30).",
         "available": true,
         "article_found": true,
         "date_found": true,
