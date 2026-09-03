@@ -1389,9 +1389,9 @@
     "rubric": "Утренний выпуск",
     "source": "verified_fallback",
     "text": "🎮🎮🎮 ROBLOX HUB — УТРО 🎮🎮🎮\n\nСегодня без крупных подтверждённых обновлений, поэтому держи полезное 👇\n\n🌱 Grow a Garden\nРегулярно возвращайся к саду после перерыва — офлайн-рост может подготовить большой урожай.\n\n🏡 Brookhaven\nСначала выбери локацию, а уже потом придумывай детали истории — окружение часто само подсказывает сюжет.\n\n🎮 Roblox Hub",
-    "status": "pending",
-    "published_at": null,
-    "attempts": 0,
+    "status": "published",
+    "published_at": "2026-09-03T10:00:38.619734+05:00",
+    "attempts": 1,
     "last_error": null,
     "image_path": "assets/news_headers/roblox_news_header.png"
   },
