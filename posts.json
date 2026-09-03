@@ -1415,9 +1415,9 @@
     "rubric": "Brawl Stars",
     "source": "brawl_pipeline",
     "text": "💥💥💥 НОВОСТИ BRAWL STARS 💥💥💥\n\n🔥 ГЛАВНОЕ\n\nMatcherino just levelled UP\n\nSupercell опубликовала новые подробности о соревнованиях Brawl Stars.\n\nИсточник: Supercell\n\n🎮 Roblox Hub\n\n#BrawlStars #ПолезноЗнать #RobloxHub",
-    "status": "pending",
-    "published_at": null,
-    "attempts": 0,
+    "status": "published",
+    "published_at": "2026-09-03T12:00:44.134238+05:00",
+    "attempts": 1,
     "last_error": null,
     "image_path": "assets/news_headers/brawl_news_header.png",
     "brawl_article_url": "https://supercell.com/en/games/brawlstars/blog/esports/matcherino-just-levelled-up/"
