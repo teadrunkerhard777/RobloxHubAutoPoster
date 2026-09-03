@@ -1404,8 +1404,9 @@
         "ru_content": [],
         "ru_clean_content": []
       },
-      "status": "scheduled",
-      "scheduled_post_id": "2026-09-03-brawl-12"
+      "status": "published",
+      "scheduled_post_id": "2026-09-03-brawl-12",
+      "published_at": "2026-09-03T12:00:44.134238+05:00"
     }
   }
 }
