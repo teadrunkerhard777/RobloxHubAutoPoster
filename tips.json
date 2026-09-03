@@ -136,7 +136,7 @@
     "text": "Не уходи далеко от базы сразу после снятия защиты — сначала проверь, кто находится рядом.",
     "source": "verified_core_mechanic",
     "reviewed_at": "2026-08-14",
-    "used": false,
+    "used": true,
     "category": "strategy"
   },
   {
@@ -466,7 +466,7 @@
     "text": "Сначала выбери локацию, а уже потом придумывай детали истории — окружение часто само подсказывает сюжет.",
     "source": "verified_core_mechanic",
     "reviewed_at": "2026-08-14",
-    "used": false,
+    "used": true,
     "category": "exploration"
   },
   {
@@ -806,7 +806,7 @@
     "text": "Регулярно возвращайся к саду после перерыва — офлайн-рост может подготовить большой урожай.",
     "source": "verified_core_mechanic",
     "reviewed_at": "2026-08-14",
-    "used": false,
+    "used": true,
     "category": "mechanics"
   },
   {
@@ -1016,7 +1016,7 @@
     "text": "Если открываешь много яиц, периодически проверяй команду — среди новых питомцев могут быть более сильные.",
     "source": "verified_core_mechanic",
     "reviewed_at": "2026-08-14",
-    "used": false,
+    "used": true,
     "category": "collection"
   },
   {
@@ -1607,7 +1607,7 @@
     "text": "Если постоянно теряешь яйца по дороге, сначала увеличь Speed, а потом пробуй более дальние цели.",
     "source": "agreed_editorial_list",
     "reviewed_at": "2026-08-28",
-    "used": false
+    "used": true
   },
   {
     "id": 161,
@@ -1728,7 +1728,7 @@
     "text": "Не считай один странный признак достаточным доказательством, если пациента можно проверить вторым способом.",
     "source": "agreed_editorial_list",
     "reviewed_at": "2026-08-28",
-    "used": false
+    "used": true
   },
   {
     "id": 172,
@@ -1783,7 +1783,7 @@
     "text": "Собирай Wins на специальных площадках после прохождения этапов.",
     "source": "agreed_editorial_list",
     "reviewed_at": "2026-08-28",
-    "used": false
+    "used": true
   },
   {
     "id": 177,
@@ -1794,7 +1794,7 @@
     "text": "Если следующий участок слишком сложный, сначала накопи больше Speed.",
     "source": "agreed_editorial_list",
     "reviewed_at": "2026-08-28",
-    "used": false
+    "used": true
   },
   {
     "id": 178,
@@ -1838,7 +1838,7 @@
     "text": "Не забывай забирать Wins после успешного прохождения: они нужны для дальнейшего развития.",
     "source": "agreed_editorial_list",
     "reviewed_at": "2026-08-28",
-    "used": false
+    "used": true
   },
   {
     "id": 182,
@@ -1882,7 +1882,7 @@
     "text": "Используй более простые этапы для стабильного набора ресурсов, если новый пока проходится слишком нестабильно.",
     "source": "agreed_editorial_list",
     "reviewed_at": "2026-08-28",
-    "used": false
+    "used": true
   },
   {
     "id": 186,
@@ -1948,7 +1948,7 @@
     "text": "Если Sheriff погиб, Innocent может подобрать пистолет и стать Hero.",
     "source": "agreed_editorial_list",
     "reviewed_at": "2026-08-28",
-    "used": false
+    "used": true
   },
   {
     "id": 192,
