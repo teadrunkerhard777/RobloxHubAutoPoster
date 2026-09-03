@@ -41,10 +41,9 @@ DEBUG = False
 # ОГРАНИЧЕНИЯ РУССКОГО NEWS PREVIEW
 # ---------------------------------------------------------
 
-# Берём не больше двух официальных текстовых блоков.
-# Этого достаточно для короткого редакторского preview,
-# который удобно просматривать перед Telegram-выпуском.
-NEWS_MAX_BLOCKS = 2
+# Для обычной статьи берём до четырёх коротких конкретных фактов.
+# Release notes используют тот же верхний предел отдельно от своего шаблона.
+NEWS_MAX_BLOCKS = 4
 
 # Общий объём выбранного текста ограничиваем,
 # чтобы терминальный preview оставался коротким.
@@ -92,12 +91,10 @@ FINAL_POST_MAX_CHARS = 1400
 # официальный факт или последнее важное Balance Change.
 FINAL_POST_TARGET_CHARS = 900
 
-# HIGH без Balance может раскрывать новость двумя блоками.
-# MEDIUM всегда остаётся запасным коротким материалом.
-# При совместном выпуске с Balance любая новость получает
-# только один официальный содержательный блок.
-FINAL_HIGH_NEWS_MAX_BLOCKS = 2
-FINAL_MEDIUM_NEWS_MAX_BLOCKS = 1
+# Обычная HIGH/MEDIUM-новость без Balance может раскрывать до четырёх фактов.
+# При совместном выпуске с Balance новость остаётся одним коротким блоком.
+FINAL_HIGH_NEWS_MAX_BLOCKS = 4
+FINAL_MEDIUM_NEWS_MAX_BLOCKS = 4
 FINAL_NEWS_WITH_BALANCE_MAX_BLOCKS = 1
 FINAL_RELEASE_NOTES_MAX_BLOCKS = 5
 
@@ -1187,8 +1184,15 @@ def build_news_section(article: dict, max_blocks: int = NEWS_MAX_BLOCKS) -> str 
             "🔥 ГЛАВНОЕ",
             normalize_news_title(ru_title.strip()),
             *selected_blocks,
-            "Источник: Supercell",
         ]
+        importance = (
+            article.get("translated_importance")
+            if not article.get("ru_found")
+            else None
+        )
+        if importance:
+            section_parts.append(importance)
+        section_parts.append("Источник: Supercell")
 
     return "\n\n".join(section_parts)
 

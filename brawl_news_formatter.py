@@ -92,8 +92,18 @@ def is_substantive_official_release_notes(article):
     return len(matched_markers) >= 2
 
 
-def translate_title(title):
+def translate_title(title, category=None):
+    """Builds a readable Russian title while preserving proper names."""
+
     normalized = " ".join((title or "").split())
+    matcherino_match = re.fullmatch(
+        r"(Matcherino)\s+just\s+levelled\s+UP",
+        normalized,
+        flags=re.IGNORECASE,
+    )
+    if matcherino_match:
+        return f"🏆 {matcherino_match.group(1)} выходит на новый уровень"
+
     replacements = (
         (r"^First Look at\s+", "Первый взгляд на "),
         (r"^Introducing\s+", "Представляем: "),
@@ -102,10 +112,75 @@ def translate_title(title):
         (r"World Finals", "World Finals"),
     )
 
+    translated = normalized
     for pattern, replacement in replacements:
-        normalized = re.sub(pattern, replacement, normalized, flags=re.IGNORECASE)
+        translated = re.sub(pattern, replacement, translated, flags=re.IGNORECASE)
 
-    return normalized
+    if translated != normalized or re.search(r"[А-Яа-яЁё]", translated):
+        return translated
+
+    # Незнакомый английский слоган не должен попадать в русский Telegram-пост.
+    # Категория даёт безопасный понятный fallback без попытки угадать перевод.
+    if category == "esports":
+        return "🏆 Новости соревнований Brawl Stars"
+
+    return "Новости Brawl Stars"
+
+
+def build_matcherino_facts(article, max_facts=4):
+    """Extracts only statements explicitly present in the Matcherino article."""
+
+    text = article_text(article)
+    lower = text.casefold()
+    if "matcherino" not in lower or "tournament platform" not in lower:
+        return []
+
+    facts = []
+    if "prize pools are funded by the community" in lower:
+        facts.append(
+            "🔹 Matcherino — турнирная платформа Brawl Stars: игроки "
+            "соревнуются, а сообщество финансирует призовые фонды."
+        )
+
+    if (
+        "claw machine pin for $5" in lower
+        and "bundle with the original pins for $6" in lower
+    ):
+        facts.append(
+            "🔹 Новый Claw Machine Contributor Pin стоит $5; комплект с "
+            "прежними пинами — $6 вместо $7.50."
+        )
+
+    if "more tournaments are coming across all regions" in lower:
+        facts.append(
+            "🔹 Во всех регионах станет больше турниров, включая Gold, с "
+            "наградами и Mandy Winner’s Pin."
+        )
+
+    if "bracket pausing" in lower and "draft api & broadcast enhancements" in lower:
+        facts.append(
+            "🔹 Турниры можно ставить на паузу, а Draft API передаёт "
+            "статистику и пики в трансляции в реальном времени."
+        )
+
+    return facts[:max_facts]
+
+
+def build_article_importance(article):
+    """Explains player impact only for source patterns that prove the claim."""
+
+    text = article_text(article).casefold()
+    if (
+        "matcherino" in text
+        and "more tournaments are coming across all regions" in text
+        and "bracket pausing" in text
+    ):
+        return (
+            "🎯 Это даёт игрокам больше турниров и наград, а организаторам — "
+            "больше возможностей для проведения и трансляции матчей."
+        )
+
+    return None
 
 
 def build_release_notes_facts(article, max_facts=5):
@@ -189,6 +264,10 @@ def build_translated_facts(article, max_facts=5):
     if release_notes_facts:
         return release_notes_facts
 
+    matcherino_facts = build_matcherino_facts(article, max_facts=min(max_facts, 4))
+    if matcherino_facts:
+        return matcherino_facts
+
     text = article_text(article).casefold()
     facts = []
 
@@ -245,9 +324,16 @@ def build_deterministic_translation(article):
     if not facts:
         return None
 
-    return {
+    translation = {
         "source_language": "en",
         "translated": True,
-        "translated_title": translate_title(article.get("title", "")),
+        "translated_title": translate_title(
+            article.get("title", ""),
+            category=article.get("category"),
+        ),
         "translated_content": facts,
     }
+    importance = build_article_importance(article)
+    if importance:
+        translation["translated_importance"] = importance
+    return translation

@@ -261,6 +261,102 @@ class BrawlPipelineTests(unittest.TestCase):
             ],
         }
 
+    def make_matcherino_article(self):
+        return {
+            "url": "https://supercell.com/matcherino-just-levelled-up",
+            "title": "Matcherino just levelled UP",
+            "date": "2026-09-01",
+            "category": "esports",
+            "priority": "medium",
+            "official": True,
+            "fresh": True,
+            "is_relevant": True,
+            "ru_found": False,
+            "clean_content": [
+                (
+                    "Matcherino is a tournament platform. Players sign up to "
+                    "compete and prize pools are funded by the community."
+                ),
+                "Introducing the Claw Machine Contributor Pin!",
+                (
+                    "You'll be able to buy the Claw Machine Pin for $5 or bundle "
+                    "with the original pins for $6 instead of $7.50."
+                ),
+                (
+                    "More tournaments are coming across ALL regions. Matcherino "
+                    "is increasing the number of Gold tournaments with rewards "
+                    "like the Mandy Winner's Pin."
+                ),
+                (
+                    "Bracket pausing lets tournaments pause mid-bracket. Draft API "
+                    "& broadcast enhancements add real-time stats and live pick tracking."
+                ),
+                "This update is just the beginning. Stay tuned!",
+                "Tournament Page",
+                "X (Twitter)",
+                "Discord",
+            ],
+        }
+
+    def test_english_official_title_becomes_readable_russian_title(self):
+        translation = build_deterministic_translation(self.make_matcherino_article())
+
+        self.assertEqual(
+            translation["translated_title"],
+            "🏆 Matcherino выходит на новый уровень",
+        )
+        self.assertIn("Matcherino", translation["translated_title"])
+        self.assertNotIn("just levelled", translation["translated_title"])
+
+    def test_concrete_matcherino_article_produces_four_facts_without_generic(self):
+        translation = build_deterministic_translation(self.make_matcherino_article())
+        facts = translation["translated_content"]
+        text = " ".join(facts)
+
+        self.assertEqual(len(facts), 4)
+        self.assertNotIn("опубликовала новые подробности", text)
+        self.assertIn("$5", text)
+        self.assertIn("Gold", text)
+        self.assertIn("Draft API", text)
+        self.assertIn("Mandy Winner’s Pin", text)
+
+    def test_matcherino_service_and_promotional_text_is_excluded(self):
+        translation = build_deterministic_translation(self.make_matcherino_article())
+        text = " ".join(translation["translated_content"])
+
+        for excluded in ("Stay tuned", "Tournament Page", "Twitter", "Discord"):
+            self.assertNotIn(excluded, text)
+
+    def test_one_usable_fact_does_not_create_fabricated_facts(self):
+        article = {
+            "title": "Mode announcement",
+            "category": "community",
+            "official": True,
+            "fresh": True,
+            "clean_content": ["A new game mode is coming to Brawl Stars."],
+        }
+
+        translation = build_deterministic_translation(article)
+
+        self.assertEqual(
+            translation["translated_content"],
+            ["Supercell анонсировала новый игровой режим Brawl Stars."],
+        )
+
+    def test_matcherino_final_post_contains_facts_and_player_importance(self):
+        final_post = build_final_post(
+            {
+                "high_priority_articles": [],
+                "medium_priority_articles": [self.make_matcherino_article()],
+                "new_buffs": [],
+                "new_nerfs": [],
+            }
+        )
+
+        self.assertEqual(final_post.count("🔹"), 4)
+        self.assertIn("🎯 Это даёт игрокам больше турниров", final_post)
+        self.assertNotIn("Matcherino just levelled UP", final_post)
+
     def test_large_official_release_notes_is_high_priority(self):
         evaluation = evaluate_article(self.make_august_release_notes())
 
@@ -837,7 +933,7 @@ class BrawlPipelineTests(unittest.TestCase):
             len(selected),
             russian_preview_namespace["NEWS_MAX_BLOCKS"],
         )
-        self.assertEqual(selected, blocks[:2])
+        self.assertEqual(selected, blocks[:4])
 
     def test_news_content_respects_total_character_limit(self):
         blocks = [
@@ -1159,7 +1255,7 @@ class BrawlPipelineTests(unittest.TestCase):
         self.assertIn("🔥 ГЛАВНОЕ", final_post)
         self.assertNotIn("⚖️", final_post)
 
-    def test_medium_news_without_balance_keeps_only_one_block(self):
+    def test_medium_news_without_balance_keeps_concrete_blocks(self):
         content_blocks = self.make_two_news_blocks()
         data = {
             "high_priority_articles": [],
@@ -1173,7 +1269,7 @@ class BrawlPipelineTests(unittest.TestCase):
         final_post = build_final_post(data)
 
         self.assertIn(content_blocks[0], final_post)
-        self.assertNotIn(content_blocks[1], final_post)
+        self.assertIn(content_blocks[1], final_post)
 
     def test_final_post_prefers_first_usable_high_news(self):
         high_article = self.make_final_news_article("high")
