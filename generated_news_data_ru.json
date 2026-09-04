@@ -1,6 +1,25 @@
 {
-  "items": [],
+  "items": [
+    {
+      "game": "Adopt Me!",
+      "emoji": "🐾",
+      "score": 6,
+      "headline": "По данным Sportskeeda, В игре началось новое событие.",
+      "facts": [],
+      "text": "По данным Sportskeeda, В игре началось новое событие.",
+      "external_article_url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxOUlc3cGVDNzBJdWpNUm5rd2xIWERZQ2NmbHBUVUY0RE1WZVYzQVY5c0RZaWpEbmsxSHNqU1FGTFVFUUhQUnVFZ3kyelBNZWw3ZmlOY2FlNDJYSDFrSmkxdlJ5clZVQnc3V2FZZ0QzbWc0Q3Vqb05ZcGN0OWhSTVRIVTNpUUg2TXA2TlBmVUVac2N1X0V6dHc?oc=5"
+    }
+  ],
   "pipeline": [
+    {
+      "game": "Adopt Me!",
+      "candidate": true,
+      "verified": true,
+      "selected": true,
+      "formatted_ru": true,
+      "scheduled": true,
+      "reason": "вошёл в утренний выпуск"
+    },
     {
       "game": "Steal An Egg",
       "candidate": true,
@@ -8,7 +27,7 @@
       "selected": false,
       "formatted_ru": false,
       "scheduled": false,
-      "reason": "Нет пригодной Tier B новости; Нет новой конкретной строки со времени прошлого снимка"
+      "reason": "В публикации не найдено достаточно конкретного содержания; Нет новой конкретной строки со времени прошлого снимка"
     },
     {
       "game": "Animal Hospital (Anomaly)",
@@ -53,16 +72,7 @@
       "selected": false,
       "formatted_ru": false,
       "scheduled": false,
-      "reason": "Публикация уже использовалась в выпуске другого дня; Нет пригодной Tier B новости; Нет новой конкретной строки со времени прошлого снимка"
-    },
-    {
-      "game": "Adopt Me!",
-      "candidate": true,
-      "verified": false,
-      "selected": false,
-      "formatted_ru": false,
-      "scheduled": false,
-      "reason": "Публикация уже использовалась в выпуске другого дня; Нет пригодной Tier B новости; Нет новой конкретной строки со времени прошлого снимка"
+      "reason": "Публикация уже использовалась в выпуске другого дня; В публикации не найдено достаточно конкретного содержания; Нет новой конкретной строки со времени прошлого снимка"
     },
     {
       "game": "RIVALS",
@@ -80,7 +90,7 @@
       "selected": false,
       "formatted_ru": false,
       "scheduled": false,
-      "reason": "Нет пригодной Tier B новости; Нет новой конкретной строки со времени прошлого снимка"
+      "reason": "В публикации не найдено достаточно конкретного содержания; Нет новой конкретной строки со времени прошлого снимка"
     },
     {
       "game": "Steal a Brainrot",
@@ -98,7 +108,7 @@
       "selected": false,
       "formatted_ru": false,
       "scheduled": false,
-      "reason": "Нет пригодной Tier B новости; Нет новой конкретной строки со времени прошлого снимка"
+      "reason": "В публикации не найдено достаточно конкретного содержания; Нет новой конкретной строки со времени прошлого снимка"
     },
     {
       "game": "Dress To Impress",
@@ -107,7 +117,7 @@
       "selected": false,
       "formatted_ru": false,
       "scheduled": false,
-      "reason": "Публикация устарела: 62.7 дн. (аварийный лимит 30); Нет пригодной Tier B новости; Нет новой конкретной строки со времени прошлого снимка"
+      "reason": "Источник недоступен: 404 Client Error: Not Found for url: https://www.youtube.com/feeds/videos.xml?channel_id=UCCVWvf_e5oRb6RfXyluR7UA; Нет пригодной Tier B новости; Нет новой конкретной строки со времени прошлого снимка"
     },
     {
       "game": "Pet Simulator 99",
@@ -116,7 +126,7 @@
       "selected": false,
       "formatted_ru": false,
       "scheduled": false,
-      "reason": "Публикация уже использовалась в выпуске другого дня; Нет пригодной Tier B новости; Нет новой конкретной строки со времени прошлого снимка"
+      "reason": "Публикация уже использовалась в выпуске другого дня; В публикации не найдено достаточно конкретного содержания; Нет новой конкретной строки со времени прошлого снимка"
     },
     {
       "game": "Blade Ball",
@@ -125,14 +135,14 @@
       "selected": false,
       "formatted_ru": false,
       "scheduled": false,
-      "reason": "Публикация уже использовалась в выпуске другого дня; Публикация устарела: 893.6 дн. (аварийный лимит 30); Нет пригодной Tier B новости; Нет новой конкретной строки со времени прошлого снимка"
+      "reason": "Источник недоступен: 404 Client Error: Not Found for url: https://www.youtube.com/feeds/videos.xml?channel_id=UCPttFx0zI4Zv9M4i3Q2ylsw; Публикация устарела: 894.3 дн. (аварийный лимит 30); Нет пригодной Tier B новости; Нет новой конкретной строки со времени прошлого снимка"
     }
   ],
   "summary": {
     "found": 14,
-    "verified": 0,
-    "selected": 0,
-    "formatted": 0,
-    "scheduled": 0
+    "verified": 1,
+    "selected": 1,
+    "formatted": 1,
+    "scheduled": 1
   }
 }

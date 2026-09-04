@@ -116,7 +116,7 @@
     "text": "Перед длинной вылазкой проверь три вещи: еда, источник света и свободное место для добычи.",
     "source": "verified_core_mechanic",
     "reviewed_at": "2026-08-14",
-    "used": false,
+    "used": true,
     "category": "strategy"
   },
   {
@@ -416,7 +416,7 @@
     "text": "Не обязательно постоянно искать секреты — Brookhaven хорошо работает как конструктор собственных историй.",
     "source": "verified_core_mechanic",
     "reviewed_at": "2026-08-14",
-    "used": false,
+    "used": true,
     "category": "strategy"
   },
   {
@@ -1247,7 +1247,7 @@
     "text": "В начале игры выбирай Brainrot, который быстрее увеличит доход для следующих покупок.",
     "source": "verified_core_mechanic",
     "reviewed_at": "2026-08-24",
-    "used": false
+    "used": true
   },
   {
     "id": 126,
@@ -1541,7 +1541,7 @@
     "text": "Прокачивай Speed, если новые зоны становятся слишком трудными для быстрых побегов.",
     "source": "agreed_editorial_list",
     "reviewed_at": "2026-08-28",
-    "used": false
+    "used": true
   },
   {
     "id": 155,
@@ -1772,7 +1772,7 @@
     "text": "Двигайся и тренируйся: Speed является главным ресурсом для прохождения препятствий.",
     "source": "agreed_editorial_list",
     "reviewed_at": "2026-08-28",
-    "used": false
+    "used": true
   },
   {
     "id": 176,
@@ -1915,7 +1915,7 @@
     "text": "Избегай тупиков: если начнётся погоня, тебе понадобится путь отхода.",
     "source": "agreed_editorial_list",
     "reviewed_at": "2026-08-28",
-    "used": true
+    "used": false
   },
   {
     "id": 189,
@@ -1926,7 +1926,7 @@
     "text": "Услышав нападение рядом, запомни направление и игроков, которые находились там.",
     "source": "agreed_editorial_list",
     "reviewed_at": "2026-08-28",
-    "used": true
+    "used": false
   },
   {
     "id": 190,
@@ -1937,7 +1937,7 @@
     "text": "Собирай монеты, но не рискуй жизнью ради одной монеты.",
     "source": "agreed_editorial_list",
     "reviewed_at": "2026-08-28",
-    "used": true
+    "used": false
   },
   {
     "id": 191,
@@ -1948,7 +1948,7 @@
     "text": "Если Sheriff погиб, Innocent может подобрать пистолет и стать Hero.",
     "source": "agreed_editorial_list",
     "reviewed_at": "2026-08-28",
-    "used": true
+    "used": false
   },
   {
     "id": 192,
@@ -1970,7 +1970,7 @@
     "text": "Sheriff не стоит сразу показывать пистолет, иначе Murderer может начать охотиться именно за ним.",
     "source": "agreed_editorial_list",
     "reviewed_at": "2026-08-28",
-    "used": true
+    "used": false
   },
   {
     "id": 194,
@@ -1981,7 +1981,7 @@
     "text": "За Sheriff стреляй только когда уверен в цели: попадание в Innocent наказывается.",
     "source": "agreed_editorial_list",
     "reviewed_at": "2026-08-28",
-    "used": true
+    "used": false
   },
   {
     "id": 195,
@@ -1992,7 +1992,7 @@
     "text": "Во время погони меняй направление и используй комнаты и повороты карты.",
     "source": "agreed_editorial_list",
     "reviewed_at": "2026-08-28",
-    "used": true
+    "used": false
   },
   {
     "id": 196,
@@ -2014,7 +2014,7 @@
     "text": "За Murderer выгоднее сначала вести себя как обычный игрок и не раскрывать роль мгновенно.",
     "source": "agreed_editorial_list",
     "reviewed_at": "2026-08-28",
-    "used": true
+    "used": false
   },
   {
     "id": 198,
@@ -2025,6 +2025,6 @@
     "text": "Не определяй Murderer по тому, кто давно не получал эту роль: роли назначаются случайно.",
     "source": "agreed_editorial_list",
     "reviewed_at": "2026-08-28",
-    "used": true
+    "used": false
   }
 ]

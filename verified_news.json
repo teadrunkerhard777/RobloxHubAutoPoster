@@ -1,10 +1,303 @@
 [
   {
+    "game": "Adopt Me!",
+    "universe_id": 383310974,
+    "roblox_name": "[☀️] Adopt Me!",
+    "description": "Adopt and raise 🐶🦄👶, trade and collect legendary pets, build your dream home, and roleplay with friends!\n\n🥚 Fairytale Egg! 🥚\n🔮 Hatch 10 new fantastical pets!\n🐁 3in1, Legendary Three Blind Mice!\n🐺 Crimson Cape vs Granny Wolf?!\n\nBe FIRST 🏆 To experience new updates by pressing 🔔NOTIFY.\n\nMeet the founders!\nNewFissy - Tech Director\nBethink - Creative Director\n\nFind out more about Uplift Games, our policies and creative attributions:\nhttps://devforum.roblox.com/t/credits/71812",
+    "updated": "2026-09-04T03:00:07.0326969Z",
+    "created": "2017-07-14T19:26:21.347Z",
+    "creator": {
+      "id": 295182,
+      "name": "Uplift Games",
+      "type": "Group",
+      "isRNVAccount": false,
+      "hasVerifiedBadge": true
+    },
+    "description_changed": false,
+    "added_lines": [],
+    "keywords": [
+      "NEW",
+      "PETS"
+    ],
+    "score": 6,
+    "confidence": "medium",
+    "facts": [
+      {
+        "text": "Adopt Me Tux & Shepherd on the Stray Case update patch",
+        "summary_ru": "По данным Sportskeeda, В игре началось новое событие.",
+        "kind": "official_article",
+        "value": 6,
+        "specific": true,
+        "reason": "Факт из официальной новостной статьи",
+        "is_new_line": true,
+        "source_url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxOUlc3cGVDNzBJdWpNUm5rd2xIWERZQ2NmbHBUVUY0RE1WZVYzQVY5c0RZaWpEbmsxSHNqU1FGTFVFUUhQUnVFZ3kyelBNZWw3ZmlOY2FlNDJYSDFrSmkxdlJ5clZVQnc3V2FZZ0QzbWc0Q3Vqb05ZcGN0OWhSTVRIVTNpUUg2TXA2TlBmVUVac2N1X0V6dHc?oc=5",
+        "title_is_concrete": true
+      }
+    ],
+    "description_facts": [
+      {
+        "text": "Adopt and raise 🐶🦄👶, trade and collect legendary pets, build your dream home, and roleplay with friends!",
+        "kind": "pets",
+        "value": 8,
+        "specific": true,
+        "reason": "Строка называет конкретное игровое содержимое",
+        "summary_ru": "В игре появились новые питомцы.",
+        "is_new_line": false
+      },
+      {
+        "text": "🥚 Fairytale Egg! 🥚",
+        "kind": "pets",
+        "value": 8,
+        "specific": true,
+        "reason": "Строка называет конкретное игровое содержимое",
+        "summary_ru": "В игре появились новые питомцы.",
+        "is_new_line": false
+      },
+      {
+        "text": "🔮 Hatch 10 new fantastical pets!",
+        "kind": "pets",
+        "value": 8,
+        "specific": true,
+        "reason": "Строка называет конкретное игровое содержимое",
+        "summary_ru": "В игре появились новые питомцы.",
+        "is_new_line": false
+      },
+      {
+        "text": "🐁 3in1, Legendary Three Blind Mice!",
+        "kind": "pets",
+        "value": 8,
+        "specific": true,
+        "reason": "Строка называет конкретное игровое содержимое",
+        "summary_ru": "В игре появились новые питомцы.",
+        "is_new_line": false
+      },
+      {
+        "text": "Be FIRST 🏆 To experience new updates by pressing 🔔NOTIFY.",
+        "kind": "update",
+        "value": 2,
+        "specific": false,
+        "reason": "Упоминание обновления без конкретики",
+        "summary_ru": "В игре вышло новое обновление.",
+        "is_new_line": false
+      }
+    ],
+    "pool": "active",
+    "checked_at": "2026-09-04T03:01:03.896227+00:00",
+    "sources": [
+      {
+        "type": "official_game_description",
+        "verified": true
+      },
+      {
+        "type": "official_roblox_group",
+        "verified": true,
+        "group_id": 295182,
+        "group_name": "Uplift Games"
+      },
+      {
+        "type": "secondary_gaming_media",
+        "verified": true,
+        "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxOUlc3cGVDNzBJdWpNUm5rd2xIWERZQ2NmbHBUVUY0RE1WZVYzQVY5c0RZaWpEbmsxSHNqU1FGTFVFUUhQUnVFZ3kyelBNZWw3ZmlOY2FlNDJYSDFrSmkxdlJ5clZVQnc3V2FZZ0QzbWc0Q3Vqb05ZcGN0OWhSTVRIVTNpUUg2TXA2TlBmVUVac2N1X0V6dHc?oc=5"
+      }
+    ],
+    "cross_source_confirmations": [],
+    "source_diagnostics": [
+      {
+        "source_type": "official_news_website",
+        "source_url": "https://www.playadopt.me/news",
+        "latest_published_at": "2026-08-29T16:10:00.000Z",
+        "status": "rejected",
+        "result_code": "ALREADY_USED",
+        "reason": "Публикация уже использовалась в выпуске другого дня.",
+        "available": true,
+        "article_found": true,
+        "date_found": true,
+        "content_found": true,
+        "extraction_success": false,
+        "verification_passed": false,
+        "source_tier": "A",
+        "official": true,
+        "selected": false,
+        "formatted": false,
+        "scheduled": false,
+        "latest_url": "https://www.playadopt.me/news/fairytale-egg"
+      },
+      {
+        "source_type": "secondary_gaming_media",
+        "source_url": "https://news.google.com/rss/search?q=%22Adopt%20Me%21%22%20Roblox%20when%3A30d&hl=en-US&gl=US&ceid=US:en",
+        "latest_published_at": "2026-08-14T07:00:00+00:00",
+        "status": "accepted",
+        "result_code": "FOUND_VERIFIED",
+        "reason": "Tier b публикация (20.8 дн.) с датой и игровым содержанием; окно emergency_30_day.",
+        "available": true,
+        "article_found": true,
+        "date_found": true,
+        "content_found": true,
+        "extraction_success": true,
+        "verification_passed": true,
+        "source_tier": "B",
+        "official": false,
+        "selected": false,
+        "formatted": false,
+        "scheduled": false,
+        "latest_url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxOUlc3cGVDNzBJdWpNUm5rd2xIWERZQ2NmbHBUVUY0RE1WZVYzQVY5c0RZaWpEbmsxSHNqU1FGTFVFUUhQUnVFZ3kyelBNZWw3ZmlOY2FlNDJYSDFrSmkxdlJ5clZVQnc3V2FZZ0QzbWc0Q3Vqb05ZcGN0OWhSTVRIVTNpUUg2TXA2TlBmVUVac2N1X0V6dHc?oc=5",
+        "freshness_window": "emergency_30_day"
+      },
+      {
+        "source_type": "official_game_description",
+        "source_url": "https://www.roblox.com/games/920587237/Adopt-Me",
+        "latest_published_at": "2026-09-04T03:00:07.0326969Z",
+        "status": "rejected",
+        "result_code": "NO_NEW_CONTENT",
+        "available": true,
+        "article_found": false,
+        "date_found": true,
+        "content_found": true,
+        "extraction_success": false,
+        "verification_passed": false,
+        "reason": "Нет новой конкретной строки со времени прошлого снимка."
+      },
+      {
+        "source_type": "official_roblox_group",
+        "source_url": "https://www.roblox.com/communities/295182/Uplift-Games",
+        "latest_published_at": null,
+        "status": "checked",
+        "result_code": "NO_NEW_CONTENT",
+        "available": true,
+        "article_found": false,
+        "date_found": false,
+        "content_found": true,
+        "extraction_success": false,
+        "verification_passed": false,
+        "reason": "Официальная группа подтверждена; датированной новости нет."
+      }
+    ],
+    "official_description_analysis": {
+      "keywords": [
+        "UPDATE",
+        "NEW",
+        "PET",
+        "PETS"
+      ],
+      "news_lines": [
+        "Adopt and raise 🐶🦄👶, trade and collect legendary pets, build your dream home, and roleplay with friends!",
+        "🔮 Hatch 10 new fantastical pets!",
+        "Be FIRST 🏆 To experience new updates by pressing 🔔NOTIFY.",
+        "NewFissy - Tech Director"
+      ]
+    },
+    "source_registry": {
+      "pool": "active",
+      "universe_id": 383310974,
+      "root_place_id": 920587237,
+      "roblox_game_url": "https://www.roblox.com/games/920587237/Adopt-Me",
+      "roblox_group_id": 295182,
+      "roblox_group_name": "Uplift Games",
+      "roblox_group_url": "https://www.roblox.com/communities/295182/Uplift-Games",
+      "news_strategy": "official_news_website",
+      "website": "https://www.playadopt.me/",
+      "news_url": "https://www.playadopt.me/news",
+      "discord": "https://discord.com/invite/adoptme",
+      "youtube": "https://www.youtube.com/PlayAdoptMe",
+      "x": "https://x.com/PlayAdoptMe",
+      "roblox_creator_type": null,
+      "roblox_creator_id": null,
+      "roblox_creator_name": null,
+      "roblox_creator_url": null
+    },
+    "official_group": {
+      "id": 295182,
+      "name": "Uplift Games",
+      "expected_name": "Uplift Games",
+      "name_matches_registry": true,
+      "description": "Welcome to Uplift Games, the studio behind Adopt Me!",
+      "has_verified_badge": true,
+      "news_lines": []
+    },
+    "external_source_diagnostics": [
+      {
+        "source_type": "official_news_website",
+        "source_url": "https://www.playadopt.me/news",
+        "latest_published_at": "2026-08-29T16:10:00.000Z",
+        "status": "rejected",
+        "result_code": "ALREADY_USED",
+        "reason": "Публикация уже использовалась в выпуске другого дня.",
+        "available": true,
+        "article_found": true,
+        "date_found": true,
+        "content_found": true,
+        "extraction_success": false,
+        "verification_passed": false,
+        "source_tier": "A",
+        "official": true,
+        "selected": false,
+        "formatted": false,
+        "scheduled": false,
+        "latest_url": "https://www.playadopt.me/news/fairytale-egg"
+      },
+      {
+        "source_type": "secondary_gaming_media",
+        "source_url": "https://news.google.com/rss/search?q=%22Adopt%20Me%21%22%20Roblox%20when%3A30d&hl=en-US&gl=US&ceid=US:en",
+        "latest_published_at": "2026-08-14T07:00:00+00:00",
+        "status": "accepted",
+        "result_code": "FOUND_VERIFIED",
+        "reason": "Tier b публикация (20.8 дн.) с датой и игровым содержанием; окно emergency_30_day.",
+        "available": true,
+        "article_found": true,
+        "date_found": true,
+        "content_found": true,
+        "extraction_success": true,
+        "verification_passed": true,
+        "source_tier": "B",
+        "official": false,
+        "selected": false,
+        "formatted": false,
+        "scheduled": false,
+        "latest_url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxOUlc3cGVDNzBJdWpNUm5rd2xIWERZQ2NmbHBUVUY0RE1WZVYzQVY5c0RZaWpEbmsxSHNqU1FGTFVFUUhQUnVFZ3kyelBNZWw3ZmlOY2FlNDJYSDFrSmkxdlJ5clZVQnc3V2FZZ0QzbWc0Q3Vqb05ZcGN0OWhSTVRIVTNpUUg2TXA2TlBmVUVac2N1X0V6dHc?oc=5",
+        "freshness_window": "emergency_30_day"
+      }
+    ],
+    "external_source_diagnostic": {
+      "source_type": "secondary_gaming_media",
+      "source_url": "https://news.google.com/rss/search?q=%22Adopt%20Me%21%22%20Roblox%20when%3A30d&hl=en-US&gl=US&ceid=US:en",
+      "latest_published_at": "2026-08-14T07:00:00+00:00",
+      "status": "accepted",
+      "result_code": "FOUND_VERIFIED",
+      "reason": "Tier b публикация (20.8 дн.) с датой и игровым содержанием; окно emergency_30_day.",
+      "available": true,
+      "article_found": true,
+      "date_found": true,
+      "content_found": true,
+      "extraction_success": true,
+      "verification_passed": true,
+      "source_tier": "B",
+      "official": false,
+      "selected": false,
+      "formatted": false,
+      "scheduled": false,
+      "latest_url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxOUlc3cGVDNzBJdWpNUm5rd2xIWERZQ2NmbHBUVUY0RE1WZVYzQVY5c0RZaWpEbmsxSHNqU1FGTFVFUUhQUnVFZ3kyelBNZWw3ZmlOY2FlNDJYSDFrSmkxdlJ5clZVQnc3V2FZZ0QzbWc0Q3Vqb05ZcGN0OWhSTVRIVTNpUUg2TXA2TlBmVUVac2N1X0V6dHc?oc=5",
+      "freshness_window": "emergency_30_day"
+    },
+    "external_news_article": {
+      "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxOUlc3cGVDNzBJdWpNUm5rd2xIWERZQ2NmbHBUVUY0RE1WZVYzQVY5c0RZaWpEbmsxSHNqU1FGTFVFUUhQUnVFZ3kyelBNZWw3ZmlOY2FlNDJYSDFrSmkxdlJ5clZVQnc3V2FZZ0QzbWc0Q3Vqb05ZcGN0OWhSTVRIVTNpUUg2TXA2TlBmVUVac2N1X0V6dHc?oc=5",
+      "title": "Adopt Me Tux & Shepherd on the Stray Case update patch notes",
+      "published_at": "2026-08-14T07:00:00+00:00",
+      "age_days": 20.83407438324074,
+      "source_tier": "B",
+      "publisher": "Sportskeeda",
+      "freshness_window": "emergency_30_day"
+    },
+    "candidate_decision": {
+      "status": "accepted",
+      "reason": "Есть достойный свежий факт."
+    }
+  },
+  {
     "game": "Steal An Egg",
     "universe_id": 10563114921,
     "roblox_name": "Steal An Egg",
     "description": "🥚 Welcome to Steal An Egg!\n\nHow to Play:\n🥚 Steal eggs from pets\n🐣 Hatch eggs to collect rare pets\n💰 Earn money from your pets\n⬆️ Upgrade your treadmill and base\n🏃 Train on the treadmill to gain Speed\n🥷 Steal eggs from other players\n✨ Discover rarer eggs, pets, sizes, and mutations!\n\n🎮 Supports Desktop, Console, Mobile, and Tablet players",
-    "updated": "2026-09-02T21:00:36.5007388Z",
+    "updated": "2026-09-04T00:19:57.1001605Z",
     "created": "2026-07-25T07:50:51.492Z",
     "creator": {
       "id": 825735094,
@@ -78,7 +371,7 @@
       }
     ],
     "pool": "active",
-    "checked_at": "2026-09-03T08:44:41.079089+00:00",
+    "checked_at": "2026-09-04T03:01:03.887065+00:00",
     "sources": [
       {
         "type": "official_game_description",
@@ -96,26 +389,27 @@
       {
         "source_type": "secondary_gaming_media",
         "source_url": "https://news.google.com/rss/search?q=%22Steal%20An%20Egg%22%20Roblox%20when%3A30d&hl=en-US&gl=US&ceid=US:en",
-        "latest_published_at": null,
+        "latest_published_at": "2026-08-31T09:03:00+00:00",
         "status": "rejected",
-        "result_code": "NO_NEW_CONTENT",
-        "reason": "Нет пригодной Tier B новости.",
+        "result_code": "EXTRACTION_FAILED",
+        "reason": "В публикации не найдено достаточно конкретного содержания.",
         "available": true,
-        "article_found": false,
-        "date_found": false,
-        "content_found": false,
+        "article_found": true,
+        "date_found": true,
+        "content_found": true,
         "extraction_success": false,
         "verification_passed": false,
         "source_tier": "B",
         "official": false,
         "selected": false,
         "formatted": false,
-        "scheduled": false
+        "scheduled": false,
+        "latest_url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE8wRWFUQkhLY2pqQ1Yxa3dQZE5DM1NWa1hreUM3MGdjWW1OZ3hMbl9fRktmSXhQajZJdFliRHVOWG1WV0RObVVIRERGM0lSNFZDRGZoZ25YWXNUSThKcFNxM3B5ZHU1RXk5NUxCaXVjY19yVkx0M01CeFZHUVl2Zw?oc=5"
       },
       {
         "source_type": "official_game_description",
         "source_url": "https://www.roblox.com/games/107778070777162/Steal-An-Egg",
-        "latest_published_at": "2026-09-02T21:00:36.5007388Z",
+        "latest_published_at": "2026-09-04T00:19:57.1001605Z",
         "status": "rejected",
         "result_code": "NO_NEW_CONTENT",
         "available": true,
@@ -185,41 +479,43 @@
       {
         "source_type": "secondary_gaming_media",
         "source_url": "https://news.google.com/rss/search?q=%22Steal%20An%20Egg%22%20Roblox%20when%3A30d&hl=en-US&gl=US&ceid=US:en",
-        "latest_published_at": null,
+        "latest_published_at": "2026-08-31T09:03:00+00:00",
         "status": "rejected",
-        "result_code": "NO_NEW_CONTENT",
-        "reason": "Нет пригодной Tier B новости.",
+        "result_code": "EXTRACTION_FAILED",
+        "reason": "В публикации не найдено достаточно конкретного содержания.",
         "available": true,
-        "article_found": false,
-        "date_found": false,
-        "content_found": false,
+        "article_found": true,
+        "date_found": true,
+        "content_found": true,
         "extraction_success": false,
         "verification_passed": false,
         "source_tier": "B",
         "official": false,
         "selected": false,
         "formatted": false,
-        "scheduled": false
+        "scheduled": false,
+        "latest_url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE8wRWFUQkhLY2pqQ1Yxa3dQZE5DM1NWa1hreUM3MGdjWW1OZ3hMbl9fRktmSXhQajZJdFliRHVOWG1WV0RObVVIRERGM0lSNFZDRGZoZ25YWXNUSThKcFNxM3B5ZHU1RXk5NUxCaXVjY19yVkx0M01CeFZHUVl2Zw?oc=5"
       }
     ],
     "external_source_diagnostic": {
       "source_type": "secondary_gaming_media",
       "source_url": "https://news.google.com/rss/search?q=%22Steal%20An%20Egg%22%20Roblox%20when%3A30d&hl=en-US&gl=US&ceid=US:en",
-      "latest_published_at": null,
+      "latest_published_at": "2026-08-31T09:03:00+00:00",
       "status": "rejected",
-      "result_code": "NO_NEW_CONTENT",
-      "reason": "Нет пригодной Tier B новости.",
+      "result_code": "EXTRACTION_FAILED",
+      "reason": "В публикации не найдено достаточно конкретного содержания.",
       "available": true,
-      "article_found": false,
-      "date_found": false,
-      "content_found": false,
+      "article_found": true,
+      "date_found": true,
+      "content_found": true,
       "extraction_success": false,
       "verification_passed": false,
       "source_tier": "B",
       "official": false,
       "selected": false,
       "formatted": false,
-      "scheduled": false
+      "scheduled": false,
+      "latest_url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE8wRWFUQkhLY2pqQ1Yxa3dQZE5DM1NWa1hreUM3MGdjWW1OZ3hMbl9fRktmSXhQajZJdFliRHVOWG1WV0RObVVIRERGM0lSNFZDRGZoZ25YWXNUSThKcFNxM3B5ZHU1RXk5NUxCaXVjY19yVkx0M01CeFZHUVl2Zw?oc=5"
     },
     "candidate_decision": {
       "status": "rejected",
@@ -258,7 +554,7 @@
       }
     ],
     "pool": "active",
-    "checked_at": "2026-09-03T08:44:41.079620+00:00",
+    "checked_at": "2026-09-04T03:01:03.887464+00:00",
     "sources": [
       {
         "type": "official_game_description",
@@ -420,7 +716,7 @@
     "facts": [],
     "description_facts": [],
     "pool": "active",
-    "checked_at": "2026-09-03T08:44:41.081849+00:00",
+    "checked_at": "2026-09-04T03:01:03.889197+00:00",
     "sources": [
       {
         "type": "official_game_description",
@@ -608,7 +904,7 @@
       }
     ],
     "pool": "active",
-    "checked_at": "2026-09-03T08:44:41.083397+00:00",
+    "checked_at": "2026-09-04T03:01:03.890387+00:00",
     "sources": [
       {
         "type": "official_game_description",
@@ -746,7 +1042,7 @@
     "universe_id": 1686885941,
     "roblox_name": "Brookhaven 🏡RP",
     "description": "A place to play with like minded people and roleplay. Own and live in amazing houses, drive cool vehicles and explore the city. Be whoever you want to be in Brookhaven RP.\n\nLatest Update:\n📚 Library House - New free home!\n💜 Lavender Luxury - New premium home and a convertible car!\n✨ Lavender Props - 7 new props to decorate with!\n\nThanks for playing! \n\nPrivate Server Benefits:\n· Prop Saving\n· Server-Wide Music\n· Server-Wide Announcements\n· Remove or Lock Props\n· Check Prop Owners\n· Set Players as Admins\n· Kick / Temp Ban Players\n· Set Day of the Week\n· Set Time by the Hour\n· Change Weather and Lighting\n· Speed up Time\n· Server Theme Controls\n· No Wait Time for Changing House \n· Spawn Up to Three Vehicles\n· Prop Limit Increased\n· Freecam for PC users (Shift+P)",
-    "updated": "2026-09-02T19:41:01.4751463Z",
+    "updated": "2026-09-03T15:40:44.7100992Z",
     "created": "2020-04-21T02:15:38.373Z",
     "creator": {
       "id": 3104358,
@@ -831,7 +1127,7 @@
       }
     ],
     "pool": "active",
-    "checked_at": "2026-09-03T08:44:41.086506+00:00",
+    "checked_at": "2026-09-04T03:01:03.892869+00:00",
     "sources": [
       {
         "type": "official_game_description",
@@ -888,7 +1184,7 @@
       {
         "source_type": "official_game_description",
         "source_url": "https://www.roblox.com/games/4924922222/Brookhaven-RP",
-        "latest_published_at": "2026-09-02T19:41:01.4751463Z",
+        "latest_published_at": "2026-09-03T15:40:44.7100992Z",
         "status": "rejected",
         "result_code": "NO_NEW_CONTENT",
         "available": true,
@@ -1054,7 +1350,7 @@
       }
     ],
     "pool": "active",
-    "checked_at": "2026-09-03T08:44:41.089158+00:00",
+    "checked_at": "2026-09-04T03:01:03.894961+00:00",
     "sources": [
       {
         "type": "official_game_description",
@@ -1092,21 +1388,22 @@
       {
         "source_type": "secondary_gaming_media",
         "source_url": "https://news.google.com/rss/search?q=%22Blox%20Fruits%22%20Roblox%20when%3A30d&hl=en-US&gl=US&ceid=US:en",
-        "latest_published_at": null,
+        "latest_published_at": "2026-09-02T17:12:00+00:00",
         "status": "rejected",
-        "result_code": "NO_NEW_CONTENT",
-        "reason": "Нет пригодной Tier B новости.",
+        "result_code": "EXTRACTION_FAILED",
+        "reason": "В публикации не найдено достаточно конкретного содержания.",
         "available": true,
-        "article_found": false,
-        "date_found": false,
-        "content_found": false,
+        "article_found": true,
+        "date_found": true,
+        "content_found": true,
         "extraction_success": false,
         "verification_passed": false,
         "source_tier": "B",
         "official": false,
         "selected": false,
         "formatted": false,
-        "scheduled": false
+        "scheduled": false,
+        "latest_url": "https://news.google.com/rss/articles/CBMid0FVX3lxTE5tY0V6VGxVaGVoRmRmVXFhTnNtYU5fZUNKcDgySVpZVzltQ0FzdDZNYTF0N293SVMwQ0pFV1J5aVBtRjAwSTl6LWxEd3AtY3lqWC1VVzF4dXBvM0VEQkhFX09LNzZKWngxalpLcTV5c19iZERrM05F?oc=5"
       },
       {
         "source_type": "official_game_description",
@@ -1199,302 +1496,43 @@
       {
         "source_type": "secondary_gaming_media",
         "source_url": "https://news.google.com/rss/search?q=%22Blox%20Fruits%22%20Roblox%20when%3A30d&hl=en-US&gl=US&ceid=US:en",
-        "latest_published_at": null,
+        "latest_published_at": "2026-09-02T17:12:00+00:00",
         "status": "rejected",
-        "result_code": "NO_NEW_CONTENT",
-        "reason": "Нет пригодной Tier B новости.",
+        "result_code": "EXTRACTION_FAILED",
+        "reason": "В публикации не найдено достаточно конкретного содержания.",
         "available": true,
-        "article_found": false,
-        "date_found": false,
-        "content_found": false,
+        "article_found": true,
+        "date_found": true,
+        "content_found": true,
         "extraction_success": false,
         "verification_passed": false,
         "source_tier": "B",
         "official": false,
         "selected": false,
         "formatted": false,
-        "scheduled": false
+        "scheduled": false,
+        "latest_url": "https://news.google.com/rss/articles/CBMid0FVX3lxTE5tY0V6VGxVaGVoRmRmVXFhTnNtYU5fZUNKcDgySVpZVzltQ0FzdDZNYTF0N293SVMwQ0pFV1J5aVBtRjAwSTl6LWxEd3AtY3lqWC1VVzF4dXBvM0VEQkhFX09LNzZKWngxalpLcTV5c19iZERrM05F?oc=5"
       }
     ],
     "external_source_diagnostic": {
       "source_type": "secondary_gaming_media",
       "source_url": "https://news.google.com/rss/search?q=%22Blox%20Fruits%22%20Roblox%20when%3A30d&hl=en-US&gl=US&ceid=US:en",
-      "latest_published_at": null,
+      "latest_published_at": "2026-09-02T17:12:00+00:00",
       "status": "rejected",
-      "result_code": "NO_NEW_CONTENT",
-      "reason": "Нет пригодной Tier B новости.",
+      "result_code": "EXTRACTION_FAILED",
+      "reason": "В публикации не найдено достаточно конкретного содержания.",
       "available": true,
-      "article_found": false,
-      "date_found": false,
-      "content_found": false,
+      "article_found": true,
+      "date_found": true,
+      "content_found": true,
       "extraction_success": false,
       "verification_passed": false,
       "source_tier": "B",
       "official": false,
       "selected": false,
       "formatted": false,
-      "scheduled": false
-    },
-    "candidate_decision": {
-      "status": "rejected",
-      "reason": "Нет свежего факта с редакционным баллом 5 или выше."
-    }
-  },
-  {
-    "game": "Adopt Me!",
-    "universe_id": 383310974,
-    "roblox_name": "[☀️] Adopt Me!",
-    "description": "Adopt and raise 🐶🦄👶, trade and collect legendary pets, build your dream home, and roleplay with friends!\n\n🥚 Fairytale Egg! 🥚\n🔮 Hatch 10 new fantastical pets!\n🐁 3in1, Legendary Three Blind Mice!\n🐺 Crimson Cape vs Granny Wolf?!\n\nBe FIRST 🏆 To experience new updates by pressing 🔔NOTIFY.\n\nMeet the founders!\nNewFissy - Tech Director\nBethink - Creative Director\n\nFind out more about Uplift Games, our policies and creative attributions:\nhttps://devforum.roblox.com/t/credits/71812",
-    "updated": "2026-09-02T15:54:00.6406831Z",
-    "created": "2017-07-14T19:26:21.347Z",
-    "creator": {
-      "id": 295182,
-      "name": "Uplift Games",
-      "type": "Group",
-      "isRNVAccount": false,
-      "hasVerifiedBadge": true
-    },
-    "description_changed": false,
-    "added_lines": [],
-    "keywords": [
-      "NEW",
-      "PETS"
-    ],
-    "score": 0,
-    "confidence": "low",
-    "facts": [],
-    "description_facts": [
-      {
-        "text": "Adopt and raise 🐶🦄👶, trade and collect legendary pets, build your dream home, and roleplay with friends!",
-        "kind": "pets",
-        "value": 8,
-        "specific": true,
-        "reason": "Строка называет конкретное игровое содержимое",
-        "summary_ru": "В игре появились новые питомцы.",
-        "is_new_line": false
-      },
-      {
-        "text": "🥚 Fairytale Egg! 🥚",
-        "kind": "pets",
-        "value": 8,
-        "specific": true,
-        "reason": "Строка называет конкретное игровое содержимое",
-        "summary_ru": "В игре появились новые питомцы.",
-        "is_new_line": false
-      },
-      {
-        "text": "🔮 Hatch 10 new fantastical pets!",
-        "kind": "pets",
-        "value": 8,
-        "specific": true,
-        "reason": "Строка называет конкретное игровое содержимое",
-        "summary_ru": "В игре появились новые питомцы.",
-        "is_new_line": false
-      },
-      {
-        "text": "🐁 3in1, Legendary Three Blind Mice!",
-        "kind": "pets",
-        "value": 8,
-        "specific": true,
-        "reason": "Строка называет конкретное игровое содержимое",
-        "summary_ru": "В игре появились новые питомцы.",
-        "is_new_line": false
-      },
-      {
-        "text": "Be FIRST 🏆 To experience new updates by pressing 🔔NOTIFY.",
-        "kind": "update",
-        "value": 2,
-        "specific": false,
-        "reason": "Упоминание обновления без конкретики",
-        "summary_ru": "В игре вышло новое обновление.",
-        "is_new_line": false
-      }
-    ],
-    "pool": "active",
-    "checked_at": "2026-09-03T08:44:41.090861+00:00",
-    "sources": [
-      {
-        "type": "official_game_description",
-        "verified": true
-      },
-      {
-        "type": "official_roblox_group",
-        "verified": true,
-        "group_id": 295182,
-        "group_name": "Uplift Games"
-      }
-    ],
-    "cross_source_confirmations": [],
-    "source_diagnostics": [
-      {
-        "source_type": "official_news_website",
-        "source_url": "https://www.playadopt.me/news",
-        "latest_published_at": "2026-08-29T16:10:00.000Z",
-        "status": "rejected",
-        "result_code": "ALREADY_USED",
-        "reason": "Публикация уже использовалась в выпуске другого дня.",
-        "available": true,
-        "article_found": true,
-        "date_found": true,
-        "content_found": true,
-        "extraction_success": false,
-        "verification_passed": false,
-        "source_tier": "A",
-        "official": true,
-        "selected": false,
-        "formatted": false,
-        "scheduled": false,
-        "latest_url": "https://www.playadopt.me/news/fairytale-egg"
-      },
-      {
-        "source_type": "secondary_gaming_media",
-        "source_url": "https://news.google.com/rss/search?q=%22Adopt%20Me%21%22%20Roblox%20when%3A30d&hl=en-US&gl=US&ceid=US:en",
-        "latest_published_at": null,
-        "status": "rejected",
-        "result_code": "NO_NEW_CONTENT",
-        "reason": "Нет пригодной Tier B новости.",
-        "available": true,
-        "article_found": false,
-        "date_found": false,
-        "content_found": false,
-        "extraction_success": false,
-        "verification_passed": false,
-        "source_tier": "B",
-        "official": false,
-        "selected": false,
-        "formatted": false,
-        "scheduled": false
-      },
-      {
-        "source_type": "official_game_description",
-        "source_url": "https://www.roblox.com/games/920587237/Adopt-Me",
-        "latest_published_at": "2026-09-02T15:54:00.6406831Z",
-        "status": "rejected",
-        "result_code": "NO_NEW_CONTENT",
-        "available": true,
-        "article_found": false,
-        "date_found": true,
-        "content_found": true,
-        "extraction_success": false,
-        "verification_passed": false,
-        "reason": "Нет новой конкретной строки со времени прошлого снимка."
-      },
-      {
-        "source_type": "official_roblox_group",
-        "source_url": "https://www.roblox.com/communities/295182/Uplift-Games",
-        "latest_published_at": null,
-        "status": "checked",
-        "result_code": "NO_NEW_CONTENT",
-        "available": true,
-        "article_found": false,
-        "date_found": false,
-        "content_found": true,
-        "extraction_success": false,
-        "verification_passed": false,
-        "reason": "Официальная группа подтверждена; датированной новости нет."
-      }
-    ],
-    "official_description_analysis": {
-      "keywords": [
-        "UPDATE",
-        "NEW",
-        "PET",
-        "PETS"
-      ],
-      "news_lines": [
-        "Adopt and raise 🐶🦄👶, trade and collect legendary pets, build your dream home, and roleplay with friends!",
-        "🔮 Hatch 10 new fantastical pets!",
-        "Be FIRST 🏆 To experience new updates by pressing 🔔NOTIFY.",
-        "NewFissy - Tech Director"
-      ]
-    },
-    "source_registry": {
-      "pool": "active",
-      "universe_id": 383310974,
-      "root_place_id": 920587237,
-      "roblox_game_url": "https://www.roblox.com/games/920587237/Adopt-Me",
-      "roblox_group_id": 295182,
-      "roblox_group_name": "Uplift Games",
-      "roblox_group_url": "https://www.roblox.com/communities/295182/Uplift-Games",
-      "news_strategy": "official_news_website",
-      "website": "https://www.playadopt.me/",
-      "news_url": "https://www.playadopt.me/news",
-      "discord": "https://discord.com/invite/adoptme",
-      "youtube": "https://www.youtube.com/PlayAdoptMe",
-      "x": "https://x.com/PlayAdoptMe",
-      "roblox_creator_type": null,
-      "roblox_creator_id": null,
-      "roblox_creator_name": null,
-      "roblox_creator_url": null
-    },
-    "official_group": {
-      "id": 295182,
-      "name": "Uplift Games",
-      "expected_name": "Uplift Games",
-      "name_matches_registry": true,
-      "description": "Welcome to Uplift Games, the studio behind Adopt Me!",
-      "has_verified_badge": true,
-      "news_lines": []
-    },
-    "external_source_diagnostics": [
-      {
-        "source_type": "official_news_website",
-        "source_url": "https://www.playadopt.me/news",
-        "latest_published_at": "2026-08-29T16:10:00.000Z",
-        "status": "rejected",
-        "result_code": "ALREADY_USED",
-        "reason": "Публикация уже использовалась в выпуске другого дня.",
-        "available": true,
-        "article_found": true,
-        "date_found": true,
-        "content_found": true,
-        "extraction_success": false,
-        "verification_passed": false,
-        "source_tier": "A",
-        "official": true,
-        "selected": false,
-        "formatted": false,
-        "scheduled": false,
-        "latest_url": "https://www.playadopt.me/news/fairytale-egg"
-      },
-      {
-        "source_type": "secondary_gaming_media",
-        "source_url": "https://news.google.com/rss/search?q=%22Adopt%20Me%21%22%20Roblox%20when%3A30d&hl=en-US&gl=US&ceid=US:en",
-        "latest_published_at": null,
-        "status": "rejected",
-        "result_code": "NO_NEW_CONTENT",
-        "reason": "Нет пригодной Tier B новости.",
-        "available": true,
-        "article_found": false,
-        "date_found": false,
-        "content_found": false,
-        "extraction_success": false,
-        "verification_passed": false,
-        "source_tier": "B",
-        "official": false,
-        "selected": false,
-        "formatted": false,
-        "scheduled": false
-      }
-    ],
-    "external_source_diagnostic": {
-      "source_type": "secondary_gaming_media",
-      "source_url": "https://news.google.com/rss/search?q=%22Adopt%20Me%21%22%20Roblox%20when%3A30d&hl=en-US&gl=US&ceid=US:en",
-      "latest_published_at": null,
-      "status": "rejected",
-      "result_code": "NO_NEW_CONTENT",
-      "reason": "Нет пригодной Tier B новости.",
-      "available": true,
-      "article_found": false,
-      "date_found": false,
-      "content_found": false,
-      "extraction_success": false,
-      "verification_passed": false,
-      "source_tier": "B",
-      "official": false,
-      "selected": false,
-      "formatted": false,
-      "scheduled": false
+      "scheduled": false,
+      "latest_url": "https://news.google.com/rss/articles/CBMid0FVX3lxTE5tY0V6VGxVaGVoRmRmVXFhTnNtYU5fZUNKcDgySVpZVzltQ0FzdDZNYTF0N293SVMwQ0pFV1J5aVBtRjAwSTl6LWxEd3AtY3lqWC1VVzF4dXBvM0VEQkhFX09LNzZKWngxalpLcTV5c19iZERrM05F?oc=5"
     },
     "candidate_decision": {
       "status": "rejected",
@@ -1566,7 +1604,7 @@
       }
     ],
     "pool": "active",
-    "checked_at": "2026-09-03T08:44:41.093018+00:00",
+    "checked_at": "2026-09-04T03:01:03.897880+00:00",
     "sources": [
       {
         "type": "official_game_description",
@@ -1741,7 +1779,7 @@
     "facts": [],
     "description_facts": [],
     "pool": "active",
-    "checked_at": "2026-09-03T08:44:41.093453+00:00",
+    "checked_at": "2026-09-04T03:01:03.898206+00:00",
     "sources": [
       {
         "type": "official_game_description",
@@ -1759,21 +1797,22 @@
       {
         "source_type": "secondary_gaming_media",
         "source_url": "https://news.google.com/rss/search?q=%2299%20Nights%20in%20the%20Forest%22%20Roblox%20when%3A30d&hl=en-US&gl=US&ceid=US:en",
-        "latest_published_at": null,
+        "latest_published_at": "2026-08-22T05:49:00+00:00",
         "status": "rejected",
-        "result_code": "NO_NEW_CONTENT",
-        "reason": "Нет пригодной Tier B новости.",
+        "result_code": "EXTRACTION_FAILED",
+        "reason": "В публикации не найдено достаточно конкретного содержания.",
         "available": true,
-        "article_found": false,
-        "date_found": false,
-        "content_found": false,
+        "article_found": true,
+        "date_found": true,
+        "content_found": true,
         "extraction_success": false,
         "verification_passed": false,
         "source_tier": "B",
         "official": false,
         "selected": false,
         "formatted": false,
-        "scheduled": false
+        "scheduled": false,
+        "latest_url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxORkJ1QVNNWWdldFZrVFByU0hBRjdnNXAwa2dxc3dsOW00ZGV4ZzJHNk0zV2I5MGdOXzAxWE9kYjZjSTJnd2s3RFhGSVlLNlNrbkcxWmJuNFQzTVhpeG9FcGtYNXpSYkpfQ3laWmFlM09SNUZfcnYyd3IwRGJXM25UU3h4bEM4SlVPUXBN?oc=5"
       },
       {
         "source_type": "official_game_description",
@@ -1840,41 +1879,43 @@
       {
         "source_type": "secondary_gaming_media",
         "source_url": "https://news.google.com/rss/search?q=%2299%20Nights%20in%20the%20Forest%22%20Roblox%20when%3A30d&hl=en-US&gl=US&ceid=US:en",
-        "latest_published_at": null,
+        "latest_published_at": "2026-08-22T05:49:00+00:00",
         "status": "rejected",
-        "result_code": "NO_NEW_CONTENT",
-        "reason": "Нет пригодной Tier B новости.",
+        "result_code": "EXTRACTION_FAILED",
+        "reason": "В публикации не найдено достаточно конкретного содержания.",
         "available": true,
-        "article_found": false,
-        "date_found": false,
-        "content_found": false,
+        "article_found": true,
+        "date_found": true,
+        "content_found": true,
         "extraction_success": false,
         "verification_passed": false,
         "source_tier": "B",
         "official": false,
         "selected": false,
         "formatted": false,
-        "scheduled": false
+        "scheduled": false,
+        "latest_url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxORkJ1QVNNWWdldFZrVFByU0hBRjdnNXAwa2dxc3dsOW00ZGV4ZzJHNk0zV2I5MGdOXzAxWE9kYjZjSTJnd2s3RFhGSVlLNlNrbkcxWmJuNFQzTVhpeG9FcGtYNXpSYkpfQ3laWmFlM09SNUZfcnYyd3IwRGJXM25UU3h4bEM4SlVPUXBN?oc=5"
       }
     ],
     "external_source_diagnostic": {
       "source_type": "secondary_gaming_media",
       "source_url": "https://news.google.com/rss/search?q=%2299%20Nights%20in%20the%20Forest%22%20Roblox%20when%3A30d&hl=en-US&gl=US&ceid=US:en",
-      "latest_published_at": null,
+      "latest_published_at": "2026-08-22T05:49:00+00:00",
       "status": "rejected",
-      "result_code": "NO_NEW_CONTENT",
-      "reason": "Нет пригодной Tier B новости.",
+      "result_code": "EXTRACTION_FAILED",
+      "reason": "В публикации не найдено достаточно конкретного содержания.",
       "available": true,
-      "article_found": false,
-      "date_found": false,
-      "content_found": false,
+      "article_found": true,
+      "date_found": true,
+      "content_found": true,
       "extraction_success": false,
       "verification_passed": false,
       "source_tier": "B",
       "official": false,
       "selected": false,
       "formatted": false,
-      "scheduled": false
+      "scheduled": false,
+      "latest_url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxORkJ1QVNNWWdldFZrVFByU0hBRjdnNXAwa2dxc3dsOW00ZGV4ZzJHNk0zV2I5MGdOXzAxWE9kYjZjSTJnd2s3RFhGSVlLNlNrbkcxWmJuNFQzTVhpeG9FcGtYNXpSYkpfQ3laWmFlM09SNUZfcnYyd3IwRGJXM25UU3h4bEM4SlVPUXBN?oc=5"
     },
     "candidate_decision": {
       "status": "rejected",
@@ -1913,7 +1954,7 @@
       }
     ],
     "pool": "active",
-    "checked_at": "2026-09-03T08:44:41.094971+00:00",
+    "checked_at": "2026-09-04T03:01:03.899371+00:00",
     "sources": [
       {
         "type": "official_game_description",
@@ -2058,7 +2099,7 @@
     "universe_id": 7436755782,
     "roblox_name": "[🌱] Grow a Garden 🌶️",
     "description": "🍅Welcome to Grow a Garden🍅\n\nAre you ready to grow your very own garden? Buy seeds from the shop when they restock, plant them, wait for them to grow, and collect the profits! Flex fruits and finds on friends, and have fun!\n\n[How To Plant]\n• Equip your seed you want to plant!\n• Click in your farm on the brown plots to plant!\n• Wait to see it start growing!\n• After its fully grown, it is time to harvest the goods!\n\nRemember, your garden literally grows while you are offline⭐",
-    "updated": "2026-09-03T07:01:13.6576541Z",
+    "updated": "2026-09-03T21:26:10.7050756Z",
     "created": "2025-03-25T22:32:09.437Z",
     "creator": {
       "id": 35789249,
@@ -2075,7 +2116,7 @@
     "facts": [],
     "description_facts": [],
     "pool": "legacy",
-    "checked_at": "2026-09-03T08:44:41.096639+00:00",
+    "checked_at": "2026-09-04T03:01:03.900642+00:00",
     "sources": [
       {
         "type": "official_game_description",
@@ -2093,26 +2134,27 @@
       {
         "source_type": "secondary_gaming_media",
         "source_url": "https://news.google.com/rss/search?q=%22Grow%20a%20Garden%22%20Roblox%20when%3A30d&hl=en-US&gl=US&ceid=US:en",
-        "latest_published_at": null,
+        "latest_published_at": "2026-08-15T07:00:00+00:00",
         "status": "rejected",
-        "result_code": "NO_NEW_CONTENT",
-        "reason": "Нет пригодной Tier B новости.",
+        "result_code": "EXTRACTION_FAILED",
+        "reason": "В публикации не найдено достаточно конкретного содержания.",
         "available": true,
-        "article_found": false,
-        "date_found": false,
-        "content_found": false,
+        "article_found": true,
+        "date_found": true,
+        "content_found": true,
         "extraction_success": false,
         "verification_passed": false,
         "source_tier": "B",
         "official": false,
         "selected": false,
         "formatted": false,
-        "scheduled": false
+        "scheduled": false,
+        "latest_url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxPZ2FEb0dEdjZtbkROXzNRZlU0V0xWSHFJdUdYQ1p5VThwdjhJODExRHJVSzdsNlpnenNKTjVmQkZ2U1JBd2NYd2J5VVN2ZVhXcDZFRXZod2tROGFILUJsREVxbHpfTWV1cDc5bl85cm5WMVJ2eDFHSGpVY1VlRERLbER3QjIzajBYZUMyTXZzeU1CMGda?oc=5"
       },
       {
         "source_type": "official_game_description",
         "source_url": "https://www.roblox.com/games/126884695634066/Grow-a-Garden",
-        "latest_published_at": "2026-09-03T07:01:13.6576541Z",
+        "latest_published_at": "2026-09-03T21:26:10.7050756Z",
         "status": "rejected",
         "result_code": "NO_NEW_CONTENT",
         "available": true,
@@ -2174,41 +2216,43 @@
       {
         "source_type": "secondary_gaming_media",
         "source_url": "https://news.google.com/rss/search?q=%22Grow%20a%20Garden%22%20Roblox%20when%3A30d&hl=en-US&gl=US&ceid=US:en",
-        "latest_published_at": null,
+        "latest_published_at": "2026-08-15T07:00:00+00:00",
         "status": "rejected",
-        "result_code": "NO_NEW_CONTENT",
-        "reason": "Нет пригодной Tier B новости.",
+        "result_code": "EXTRACTION_FAILED",
+        "reason": "В публикации не найдено достаточно конкретного содержания.",
         "available": true,
-        "article_found": false,
-        "date_found": false,
-        "content_found": false,
+        "article_found": true,
+        "date_found": true,
+        "content_found": true,
         "extraction_success": false,
         "verification_passed": false,
         "source_tier": "B",
         "official": false,
         "selected": false,
         "formatted": false,
-        "scheduled": false
+        "scheduled": false,
+        "latest_url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxPZ2FEb0dEdjZtbkROXzNRZlU0V0xWSHFJdUdYQ1p5VThwdjhJODExRHJVSzdsNlpnenNKTjVmQkZ2U1JBd2NYd2J5VVN2ZVhXcDZFRXZod2tROGFILUJsREVxbHpfTWV1cDc5bl85cm5WMVJ2eDFHSGpVY1VlRERLbER3QjIzajBYZUMyTXZzeU1CMGda?oc=5"
       }
     ],
     "external_source_diagnostic": {
       "source_type": "secondary_gaming_media",
       "source_url": "https://news.google.com/rss/search?q=%22Grow%20a%20Garden%22%20Roblox%20when%3A30d&hl=en-US&gl=US&ceid=US:en",
-      "latest_published_at": null,
+      "latest_published_at": "2026-08-15T07:00:00+00:00",
       "status": "rejected",
-      "result_code": "NO_NEW_CONTENT",
-      "reason": "Нет пригодной Tier B новости.",
+      "result_code": "EXTRACTION_FAILED",
+      "reason": "В публикации не найдено достаточно конкретного содержания.",
       "available": true,
-      "article_found": false,
-      "date_found": false,
-      "content_found": false,
+      "article_found": true,
+      "date_found": true,
+      "content_found": true,
       "extraction_success": false,
       "verification_passed": false,
       "source_tier": "B",
       "official": false,
       "selected": false,
       "formatted": false,
-      "scheduled": false
+      "scheduled": false,
+      "latest_url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxPZ2FEb0dEdjZtbkROXzNRZlU0V0xWSHFJdUdYQ1p5VThwdjhJODExRHJVSzdsNlpnenNKTjVmQkZ2U1JBd2NYd2J5VVN2ZVhXcDZFRXZod2tROGFILUJsREVxbHpfTWV1cDc5bl85cm5WMVJ2eDFHSGpVY1VlRERLbER3QjIzajBYZUMyTXZzeU1CMGda?oc=5"
     },
     "candidate_decision": {
       "status": "rejected",
@@ -2220,7 +2264,7 @@
     "universe_id": 5203828273,
     "roblox_name": "[🌴] Dress To Impress",
     "description": "Create stunning outfits 👗💖⭐, and strut the runway to show off your unique style. Collaborate, compete, and explore a world of glamour with friends!\n\n⭐ Are you ready to be the TOP MODEL?\n👗 NEW ITEMS! Check them out.\n🍿 Vote for your favorite outfits!\n💃 Use poses on the runway to show off your outfit!\n\nFind more about Dress To Impress by joining our community.\nhttps://www.roblox.com/communities/17264167/Dress-To-Impress-Group#!/about",
-    "updated": "2026-09-02T23:33:09.5427532Z",
+    "updated": "2026-09-03T22:05:40.8231099Z",
     "created": "2023-10-18T09:11:36.563Z",
     "creator": {
       "id": 17264167,
@@ -2277,7 +2321,7 @@
       }
     ],
     "pool": "legacy",
-    "checked_at": "2026-09-03T08:44:41.097959+00:00",
+    "checked_at": "2026-09-04T03:01:03.901651+00:00",
     "sources": [
       {
         "type": "official_game_description",
@@ -2295,22 +2339,21 @@
       {
         "source_type": "official_youtube_feed",
         "source_url": "https://www.youtube.com/feeds/videos.xml?channel_id=UCCVWvf_e5oRb6RfXyluR7UA",
-        "latest_published_at": "2026-07-02T15:00:06+00:00",
+        "latest_published_at": null,
         "status": "rejected",
-        "result_code": "SOURCE_STALE",
-        "reason": "Публикация устарела: 62.7 дн. (аварийный лимит 30).",
-        "available": true,
-        "article_found": true,
-        "date_found": true,
-        "content_found": true,
+        "result_code": "SOURCE_UNAVAILABLE",
+        "reason": "Источник недоступен: 404 Client Error: Not Found for url: https://www.youtube.com/feeds/videos.xml?channel_id=UCCVWvf_e5oRb6RfXyluR7UA",
+        "available": false,
+        "article_found": false,
+        "date_found": false,
+        "content_found": false,
         "extraction_success": false,
         "verification_passed": false,
         "source_tier": "A",
         "official": true,
         "selected": false,
         "formatted": false,
-        "scheduled": false,
-        "latest_url": "https://www.youtube.com/watch?v=5Zfy9QW4s5A"
+        "scheduled": false
       },
       {
         "source_type": "secondary_gaming_media",
@@ -2334,7 +2377,7 @@
       {
         "source_type": "official_game_description",
         "source_url": "https://www.roblox.com/games/15101393044/Dress-To-Impress",
-        "latest_published_at": "2026-09-02T23:33:09.5427532Z",
+        "latest_published_at": "2026-09-03T22:05:40.8231099Z",
         "status": "rejected",
         "result_code": "NO_NEW_CONTENT",
         "available": true,
@@ -2404,22 +2447,21 @@
       {
         "source_type": "official_youtube_feed",
         "source_url": "https://www.youtube.com/feeds/videos.xml?channel_id=UCCVWvf_e5oRb6RfXyluR7UA",
-        "latest_published_at": "2026-07-02T15:00:06+00:00",
+        "latest_published_at": null,
         "status": "rejected",
-        "result_code": "SOURCE_STALE",
-        "reason": "Публикация устарела: 62.7 дн. (аварийный лимит 30).",
-        "available": true,
-        "article_found": true,
-        "date_found": true,
-        "content_found": true,
+        "result_code": "SOURCE_UNAVAILABLE",
+        "reason": "Источник недоступен: 404 Client Error: Not Found for url: https://www.youtube.com/feeds/videos.xml?channel_id=UCCVWvf_e5oRb6RfXyluR7UA",
+        "available": false,
+        "article_found": false,
+        "date_found": false,
+        "content_found": false,
         "extraction_success": false,
         "verification_passed": false,
         "source_tier": "A",
         "official": true,
         "selected": false,
         "formatted": false,
-        "scheduled": false,
-        "latest_url": "https://www.youtube.com/watch?v=5Zfy9QW4s5A"
+        "scheduled": false
       },
       {
         "source_type": "secondary_gaming_media",
@@ -2508,7 +2550,7 @@
       }
     ],
     "pool": "legacy",
-    "checked_at": "2026-09-03T08:44:41.098344+00:00",
+    "checked_at": "2026-09-04T03:01:03.901950+00:00",
     "sources": [
       {
         "type": "official_game_description",
@@ -2546,21 +2588,22 @@
       {
         "source_type": "secondary_gaming_media",
         "source_url": "https://news.google.com/rss/search?q=%22Pet%20Simulator%2099%22%20Roblox%20when%3A30d&hl=en-US&gl=US&ceid=US:en",
-        "latest_published_at": null,
+        "latest_published_at": "2026-08-30T23:13:00+00:00",
         "status": "rejected",
-        "result_code": "NO_NEW_CONTENT",
-        "reason": "Нет пригодной Tier B новости.",
+        "result_code": "EXTRACTION_FAILED",
+        "reason": "В публикации не найдено достаточно конкретного содержания.",
         "available": true,
-        "article_found": false,
-        "date_found": false,
-        "content_found": false,
+        "article_found": true,
+        "date_found": true,
+        "content_found": true,
         "extraction_success": false,
         "verification_passed": false,
         "source_tier": "B",
         "official": false,
         "selected": false,
         "formatted": false,
-        "scheduled": false
+        "scheduled": false,
+        "latest_url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxNZjc5UGNaSEt3YWVTVHZUYUdrYW93V0RFMm1RaUs4MnRjclExeWR1N0c5dThRaV9vWnM1b0NXQ3VZY1JySTQyZllrRkF6dFJTd05oQ0FJQlF0VUNtdE1BZmxTMmZZNlA3aWFqOWJyNUsxUmtuSXJOa1VGUUpPbmlPNm1vZDQyaFVlQ2xzS0tVSDY4Y1ZvYkpyVjA0ekVGbGgyWkkxRmw2WVBiSWlheVlYWXBWMzl1VWc?oc=5"
       },
       {
         "source_type": "official_game_description",
@@ -2653,41 +2696,43 @@
       {
         "source_type": "secondary_gaming_media",
         "source_url": "https://news.google.com/rss/search?q=%22Pet%20Simulator%2099%22%20Roblox%20when%3A30d&hl=en-US&gl=US&ceid=US:en",
-        "latest_published_at": null,
+        "latest_published_at": "2026-08-30T23:13:00+00:00",
         "status": "rejected",
-        "result_code": "NO_NEW_CONTENT",
-        "reason": "Нет пригодной Tier B новости.",
+        "result_code": "EXTRACTION_FAILED",
+        "reason": "В публикации не найдено достаточно конкретного содержания.",
         "available": true,
-        "article_found": false,
-        "date_found": false,
-        "content_found": false,
+        "article_found": true,
+        "date_found": true,
+        "content_found": true,
         "extraction_success": false,
         "verification_passed": false,
         "source_tier": "B",
         "official": false,
         "selected": false,
         "formatted": false,
-        "scheduled": false
+        "scheduled": false,
+        "latest_url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxNZjc5UGNaSEt3YWVTVHZUYUdrYW93V0RFMm1RaUs4MnRjclExeWR1N0c5dThRaV9vWnM1b0NXQ3VZY1JySTQyZllrRkF6dFJTd05oQ0FJQlF0VUNtdE1BZmxTMmZZNlA3aWFqOWJyNUsxUmtuSXJOa1VGUUpPbmlPNm1vZDQyaFVlQ2xzS0tVSDY4Y1ZvYkpyVjA0ekVGbGgyWkkxRmw2WVBiSWlheVlYWXBWMzl1VWc?oc=5"
       }
     ],
     "external_source_diagnostic": {
       "source_type": "secondary_gaming_media",
       "source_url": "https://news.google.com/rss/search?q=%22Pet%20Simulator%2099%22%20Roblox%20when%3A30d&hl=en-US&gl=US&ceid=US:en",
-      "latest_published_at": null,
+      "latest_published_at": "2026-08-30T23:13:00+00:00",
       "status": "rejected",
-      "result_code": "NO_NEW_CONTENT",
-      "reason": "Нет пригодной Tier B новости.",
+      "result_code": "EXTRACTION_FAILED",
+      "reason": "В публикации не найдено достаточно конкретного содержания.",
       "available": true,
-      "article_found": false,
-      "date_found": false,
-      "content_found": false,
+      "article_found": true,
+      "date_found": true,
+      "content_found": true,
       "extraction_success": false,
       "verification_passed": false,
       "source_tier": "B",
       "official": false,
       "selected": false,
       "formatted": false,
-      "scheduled": false
+      "scheduled": false,
+      "latest_url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxNZjc5UGNaSEt3YWVTVHZUYUdrYW93V0RFMm1RaUs4MnRjclExeWR1N0c5dThRaV9vWnM1b0NXQ3VZY1JySTQyZllrRkF6dFJTd05oQ0FJQlF0VUNtdE1BZmxTMmZZNlA3aWFqOWJyNUsxUmtuSXJOa1VGUUpPbmlPNm1vZDQyaFVlQ2xzS0tVSDY4Y1ZvYkpyVjA0ekVGbGgyWkkxRmw2WVBiSWlheVlYWXBWMzl1VWc?oc=5"
     },
     "candidate_decision": {
       "status": "rejected",
@@ -2728,7 +2773,7 @@
       }
     ],
     "pool": "legacy",
-    "checked_at": "2026-09-03T08:44:41.100438+00:00",
+    "checked_at": "2026-09-04T03:01:03.903535+00:00",
     "sources": [
       {
         "type": "official_game_description",
@@ -2746,22 +2791,21 @@
       {
         "source_type": "official_youtube_feed",
         "source_url": "https://www.youtube.com/feeds/videos.xml?channel_id=UCPttFx0zI4Zv9M4i3Q2ylsw",
-        "latest_published_at": "2026-08-30T17:20:45+00:00",
+        "latest_published_at": null,
         "status": "rejected",
-        "result_code": "ALREADY_USED",
-        "reason": "Публикация уже использовалась в выпуске другого дня.",
-        "available": true,
-        "article_found": true,
-        "date_found": true,
-        "content_found": true,
+        "result_code": "SOURCE_UNAVAILABLE",
+        "reason": "Источник недоступен: 404 Client Error: Not Found for url: https://www.youtube.com/feeds/videos.xml?channel_id=UCPttFx0zI4Zv9M4i3Q2ylsw",
+        "available": false,
+        "article_found": false,
+        "date_found": false,
+        "content_found": false,
         "extraction_success": false,
         "verification_passed": false,
         "source_tier": "A",
         "official": true,
         "selected": false,
         "formatted": false,
-        "scheduled": false,
-        "latest_url": "https://www.youtube.com/watch?v=lNN7KhMl3sw"
+        "scheduled": false
       },
       {
         "source_type": "official_news_website",
@@ -2769,7 +2813,7 @@
         "latest_published_at": "2024-03-23T18:51:42Z",
         "status": "rejected",
         "result_code": "SOURCE_STALE",
-        "reason": "Публикация устарела: 893.6 дн. (аварийный лимит 30).",
+        "reason": "Публикация устарела: 894.3 дн. (аварийный лимит 30).",
         "available": true,
         "article_found": true,
         "date_found": true,
@@ -2871,22 +2915,21 @@
       {
         "source_type": "official_youtube_feed",
         "source_url": "https://www.youtube.com/feeds/videos.xml?channel_id=UCPttFx0zI4Zv9M4i3Q2ylsw",
-        "latest_published_at": "2026-08-30T17:20:45+00:00",
+        "latest_published_at": null,
         "status": "rejected",
-        "result_code": "ALREADY_USED",
-        "reason": "Публикация уже использовалась в выпуске другого дня.",
-        "available": true,
-        "article_found": true,
-        "date_found": true,
-        "content_found": true,
+        "result_code": "SOURCE_UNAVAILABLE",
+        "reason": "Источник недоступен: 404 Client Error: Not Found for url: https://www.youtube.com/feeds/videos.xml?channel_id=UCPttFx0zI4Zv9M4i3Q2ylsw",
+        "available": false,
+        "article_found": false,
+        "date_found": false,
+        "content_found": false,
         "extraction_success": false,
         "verification_passed": false,
         "source_tier": "A",
         "official": true,
         "selected": false,
         "formatted": false,
-        "scheduled": false,
-        "latest_url": "https://www.youtube.com/watch?v=lNN7KhMl3sw"
+        "scheduled": false
       },
       {
         "source_type": "official_news_website",
@@ -2894,7 +2937,7 @@
         "latest_published_at": "2024-03-23T18:51:42Z",
         "status": "rejected",
         "result_code": "SOURCE_STALE",
-        "reason": "Публикация устарела: 893.6 дн. (аварийный лимит 30).",
+        "reason": "Публикация устарела: 894.3 дн. (аварийный лимит 30).",
         "available": true,
         "article_found": true,
         "date_found": true,
