@@ -1,10 +1,272 @@
 [
   {
+    "game": "Brookhaven RP",
+    "universe_id": 1686885941,
+    "roblox_name": "Brookhaven 🏡RP",
+    "description": "A place to play with like minded people and roleplay. Own and live in amazing houses, drive cool vehicles and explore the city. Be whoever you want to be in Brookhaven RP.\n\nLatest Update:\n🍪 House Update - New baking, new doorbells, and more house interactions!\n🌄 Mountain View - New Land Unlocked location on the mountain by the beach!\n\nThanks for playing! \n\nPrivate Server Benefits:\n· Prop Saving\n· Server-Wide Music\n· Server-Wide Announcements\n· Remove or Lock Props\n· Check Prop Owners\n· Set Players as Admins\n· Kick / Temp Ban Players\n· Set Day of the Week\n· Set Time by the Hour\n· Change Weather and Lighting\n· Speed up Time\n· Server Theme Controls\n· No Wait Time for Changing House \n· Spawn Up to Three Vehicles\n· Prop Limit Increased\n· Freecam for PC users (Shift+P)",
+    "updated": "2026-09-04T18:18:27.7192105Z",
+    "created": "2020-04-21T02:15:38.373Z",
+    "creator": {
+      "id": 3104358,
+      "name": "Brookhaven by Voldex",
+      "type": "Group",
+      "isRNVAccount": false,
+      "hasVerifiedBadge": false
+    },
+    "description_changed": true,
+    "added_lines": [
+      "🍪 House Update - New baking, new doorbells, and more house interactions!",
+      "🌄 Mountain View - New Land Unlocked location on the mountain by the beach!"
+    ],
+    "keywords": [
+      "NEW",
+      "UPDATE",
+      "VEHICLES"
+    ],
+    "score": 10,
+    "confidence": "high",
+    "facts": [
+      {
+        "text": "🌄 Mountain View - New Land Unlocked location on the mountain by the beach!",
+        "kind": "locations",
+        "value": 10,
+        "specific": true,
+        "reason": "Строка называет конкретное игровое содержимое",
+        "summary_ru": "В игре появилась новая локация.",
+        "is_new_line": true
+      },
+      {
+        "text": "🍪 House Update - New baking, new doorbells, and more house interactions!",
+        "kind": "update",
+        "value": 9,
+        "specific": true,
+        "reason": "Обновление с названной темой и подробностью",
+        "summary_ru": "В игре вышло новое обновление.",
+        "is_new_line": true
+      }
+    ],
+    "description_facts": [
+      {
+        "text": "🌄 Mountain View - New Land Unlocked location on the mountain by the beach!",
+        "kind": "locations",
+        "value": 10,
+        "specific": true,
+        "reason": "Строка называет конкретное игровое содержимое",
+        "summary_ru": "В игре появилась новая локация.",
+        "is_new_line": true
+      },
+      {
+        "text": "🍪 House Update - New baking, new doorbells, and more house interactions!",
+        "kind": "update",
+        "value": 9,
+        "specific": true,
+        "reason": "Обновление с названной темой и подробностью",
+        "summary_ru": "В игре вышло новое обновление.",
+        "is_new_line": true
+      },
+      {
+        "text": "· Prop Saving",
+        "kind": "items",
+        "value": 7,
+        "specific": true,
+        "reason": "Строка называет конкретное игровое содержимое",
+        "summary_ru": "Добавили новый реквизит для ролевых сцен.",
+        "is_new_line": false
+      },
+      {
+        "text": "· Remove or Lock Props",
+        "kind": "items",
+        "value": 7,
+        "specific": true,
+        "reason": "Строка называет конкретное игровое содержимое",
+        "summary_ru": "Добавили новый реквизит для ролевых сцен.",
+        "is_new_line": false
+      },
+      {
+        "text": "· Check Prop Owners",
+        "kind": "items",
+        "value": 7,
+        "specific": true,
+        "reason": "Строка называет конкретное игровое содержимое",
+        "summary_ru": "Добавили новый реквизит для ролевых сцен.",
+        "is_new_line": false
+      },
+      {
+        "text": "· Prop Limit Increased",
+        "kind": "items",
+        "value": 7,
+        "specific": true,
+        "reason": "Строка называет конкретное игровое содержимое",
+        "summary_ru": "Добавили новый реквизит для ролевых сцен.",
+        "is_new_line": false
+      },
+      {
+        "text": "Latest Update:",
+        "kind": "update",
+        "value": 2,
+        "specific": false,
+        "reason": "Упоминание обновления без конкретики",
+        "summary_ru": "В игре вышло новое обновление.",
+        "is_new_line": false
+      }
+    ],
+    "pool": "active",
+    "checked_at": "2026-09-05T03:01:04.359069+00:00"
+  },
+  {
+    "game": "Adopt Me!",
+    "universe_id": 383310974,
+    "roblox_name": "[🏰] Adopt Me!",
+    "description": "Adopt and raise 🐶🦄👶, trade and collect legendary pets, build your dream home, and roleplay with friends!\n\n🏰 Fairytale Castle! 🏰\n✨ Live your life in the Fairytale Castle!\n🔮 Make magic with fairytale furniture!\n🥚 Hatch 10 new fantastical pets!\n\nBe FIRST 🏆 To experience new updates by pressing 🔔NOTIFY.\n\nMeet the founders!\nNewFissy - Tech Director\nBethink - Creative Director\n\nFind out more about Uplift Games, our policies and creative attributions:\nhttps://devforum.roblox.com/t/credits/71812",
+    "updated": "2026-09-05T02:38:43.8028378Z",
+    "created": "2017-07-14T19:26:21.347Z",
+    "creator": {
+      "id": 295182,
+      "name": "Uplift Games",
+      "type": "Group",
+      "isRNVAccount": false,
+      "hasVerifiedBadge": true
+    },
+    "description_changed": true,
+    "added_lines": [
+      "🏰 Fairytale Castle! 🏰",
+      "✨ Live your life in the Fairytale Castle!",
+      "🔮 Make magic with fairytale furniture!",
+      "🥚 Hatch 10 new fantastical pets!"
+    ],
+    "keywords": [
+      "NEW",
+      "PETS"
+    ],
+    "score": 10,
+    "confidence": "high",
+    "facts": [
+      {
+        "text": "🥚 Hatch 10 new fantastical pets!",
+        "kind": "pets",
+        "value": 10,
+        "specific": true,
+        "reason": "Строка называет конкретное игровое содержимое",
+        "summary_ru": "В игре появились новые питомцы.",
+        "is_new_line": true
+      }
+    ],
+    "description_facts": [
+      {
+        "text": "🥚 Hatch 10 new fantastical pets!",
+        "kind": "pets",
+        "value": 10,
+        "specific": true,
+        "reason": "Строка называет конкретное игровое содержимое",
+        "summary_ru": "В игре появились новые питомцы.",
+        "is_new_line": true
+      },
+      {
+        "text": "Adopt and raise 🐶🦄👶, trade and collect legendary pets, build your dream home, and roleplay with friends!",
+        "kind": "pets",
+        "value": 8,
+        "specific": true,
+        "reason": "Строка называет конкретное игровое содержимое",
+        "summary_ru": "В игре появились новые питомцы.",
+        "is_new_line": false
+      },
+      {
+        "text": "Be FIRST 🏆 To experience new updates by pressing 🔔NOTIFY.",
+        "kind": "update",
+        "value": 2,
+        "specific": false,
+        "reason": "Упоминание обновления без конкретики",
+        "summary_ru": "В игре вышло новое обновление.",
+        "is_new_line": false
+      }
+    ],
+    "pool": "active",
+    "checked_at": "2026-09-05T03:01:04.363575+00:00"
+  },
+  {
+    "game": "RIVALS",
+    "universe_id": 6035872082,
+    "roblox_name": "[😾] RIVALS",
+    "description": "Welcome to RIVALS, the most intense first person shooter game on Roblox! Challenge other players in 1v1 to 5v5 FPS duels where the first to 5 wins!\n\n😾 UPDATE 22 - A brand new weapon has arrived! Check out the patch notes in-game to see everything new! 🎉 \n\n🔫 Challenge someone by stepping on a duel pad!\n🔑 Earn keys to unlock new weapons & skins!\n📜 Complete contracts to unlock exclusive rewards!\n🏆 Show off your win streak and climb the leaderboards! \n\n🎮 Available on Desktop, Phones, Tablets, XBOX, & PlayStation 5!\n💜 Like and join the group for exclusive rewards!\n\n⚠️ WARNING: Cheaters will be permanently banned with no second chances, our anticheat & moderators will catch you. Abusing glitches & using sketchy farming methods are also not allowed!\n\n🏆 RIA25 Best Shooter Experience!",
+    "updated": "2026-09-05T02:31:50.0130055Z",
+    "created": "2024-05-26T16:47:48.617Z",
+    "creator": {
+      "id": 3461453,
+      "name": "Nosniy Games",
+      "type": "Group",
+      "isRNVAccount": false,
+      "hasVerifiedBadge": true
+    },
+    "description_changed": true,
+    "added_lines": [
+      "😾 UPDATE 22 - A brand new weapon has arrived! Check out the patch notes in-game to see everything new! 🎉"
+    ],
+    "keywords": [
+      "CONTRACTS",
+      "NEW",
+      "REWARDS",
+      "UPDATE"
+    ],
+    "score": 10,
+    "confidence": "high",
+    "facts": [
+      {
+        "text": "😾 UPDATE 22 - A brand new weapon has arrived! Check out the patch notes in-game to see everything new! 🎉",
+        "kind": "items",
+        "value": 9,
+        "specific": true,
+        "reason": "Строка называет конкретное игровое содержимое",
+        "summary_ru": "В игре появились новые инструменты и оружие.",
+        "is_new_line": true
+      }
+    ],
+    "description_facts": [
+      {
+        "text": "😾 UPDATE 22 - A brand new weapon has arrived! Check out the patch notes in-game to see everything new! 🎉",
+        "kind": "items",
+        "value": 9,
+        "specific": true,
+        "reason": "Строка называет конкретное игровое содержимое",
+        "summary_ru": "В игре появились новые инструменты и оружие.",
+        "is_new_line": true
+      },
+      {
+        "text": "🔑 Earn keys to unlock new weapons & skins!",
+        "kind": "items",
+        "value": 7,
+        "specific": true,
+        "reason": "Строка называет конкретное игровое содержимое",
+        "summary_ru": "В игре появились новые инструменты и оружие.",
+        "is_new_line": false
+      },
+      {
+        "text": "📜 Complete contracts to unlock exclusive rewards!",
+        "kind": "quests",
+        "value": 7,
+        "specific": true,
+        "reason": "Строка называет конкретное игровое содержимое",
+        "summary_ru": "Появились новые задания с наградами.",
+        "is_new_line": false
+      },
+      {
+        "text": "💜 Like and join the group for exclusive rewards!",
+        "kind": "quests",
+        "value": 7,
+        "specific": true,
+        "reason": "Строка называет конкретное игровое содержимое",
+        "summary_ru": "Появились новые задания с наградами.",
+        "is_new_line": false
+      }
+    ],
+    "pool": "active",
+    "checked_at": "2026-09-05T03:01:04.365834+00:00"
+  },
+  {
     "game": "Steal An Egg",
     "universe_id": 10563114921,
     "roblox_name": "Steal An Egg",
     "description": "🥚 Welcome to Steal An Egg!\n\nHow to Play:\n🥚 Steal eggs from pets\n🐣 Hatch eggs to collect rare pets\n💰 Earn money from your pets\n⬆️ Upgrade your treadmill and base\n🏃 Train on the treadmill to gain Speed\n🥷 Steal eggs from other players\n✨ Discover rarer eggs, pets, sizes, and mutations!\n\n🎮 Supports Desktop, Console, Mobile, and Tablet players",
-    "updated": "2026-09-04T00:19:57.1001605Z",
+    "updated": "2026-09-04T21:19:19.2870773Z",
     "created": "2026-07-25T07:50:51.492Z",
     "creator": {
       "id": 825735094,
@@ -78,14 +340,14 @@
       }
     ],
     "pool": "active",
-    "checked_at": "2026-09-04T08:40:03.634519+00:00"
+    "checked_at": "2026-09-05T03:01:04.351619+00:00"
   },
   {
     "game": "Animal Hospital (Anomaly)",
     "universe_id": 10148749921,
     "roblox_name": "Animal Hospital (Anomaly) 🧪",
     "description": "You got hired to work the night shift at Animal Hospital, its now your job to treat the patients.\n\n\nbut some patients are acting weird...\n\n🏥 🩺 🚑  🧪",
-    "updated": "2026-08-23T17:01:23.668Z",
+    "updated": "2026-09-04T20:00:11.0096161Z",
     "created": "2026-05-10T15:38:25.274Z",
     "creator": {
       "id": 344908697,
@@ -112,7 +374,7 @@
       }
     ],
     "pool": "active",
-    "checked_at": "2026-09-04T08:40:03.634965+00:00"
+    "checked_at": "2026-09-05T03:01:04.352133+00:00"
   },
   {
     "game": "+1 Speed Keyboard Escape",
@@ -136,7 +398,7 @@
     "facts": [],
     "description_facts": [],
     "pool": "active",
-    "checked_at": "2026-09-04T08:40:03.636883+00:00"
+    "checked_at": "2026-09-05T03:01:04.354461+00:00"
   },
   {
     "game": "Murder Mystery 2",
@@ -182,106 +444,14 @@
       }
     ],
     "pool": "active",
-    "checked_at": "2026-09-04T08:40:03.638205+00:00"
-  },
-  {
-    "game": "Brookhaven RP",
-    "universe_id": 1686885941,
-    "roblox_name": "Brookhaven 🏡RP",
-    "description": "A place to play with like minded people and roleplay. Own and live in amazing houses, drive cool vehicles and explore the city. Be whoever you want to be in Brookhaven RP.\n\nLatest Update:\n📚 Library House - New free home!\n💜 Lavender Luxury - New premium home and a convertible car!\n✨ Lavender Props - 7 new props to decorate with!\n\nThanks for playing! \n\nPrivate Server Benefits:\n· Prop Saving\n· Server-Wide Music\n· Server-Wide Announcements\n· Remove or Lock Props\n· Check Prop Owners\n· Set Players as Admins\n· Kick / Temp Ban Players\n· Set Day of the Week\n· Set Time by the Hour\n· Change Weather and Lighting\n· Speed up Time\n· Server Theme Controls\n· No Wait Time for Changing House \n· Spawn Up to Three Vehicles\n· Prop Limit Increased\n· Freecam for PC users (Shift+P)",
-    "updated": "2026-09-03T15:40:44.7100992Z",
-    "created": "2020-04-21T02:15:38.373Z",
-    "creator": {
-      "id": 3104358,
-      "name": "Brookhaven by Voldex",
-      "type": "Group",
-      "isRNVAccount": false,
-      "hasVerifiedBadge": false
-    },
-    "description_changed": false,
-    "added_lines": [],
-    "keywords": [
-      "NEW",
-      "UPDATE",
-      "VEHICLES"
-    ],
-    "score": 0,
-    "confidence": "low",
-    "facts": [],
-    "description_facts": [
-      {
-        "text": "💜 Lavender Luxury - New premium home and a convertible car!",
-        "kind": "vehicle",
-        "value": 8,
-        "specific": true,
-        "reason": "Строка называет конкретное игровое содержимое",
-        "summary_ru": "В игру добавили новый транспорт.",
-        "is_new_line": false
-      },
-      {
-        "text": "✨ Lavender Props - 7 new props to decorate with!",
-        "kind": "items",
-        "value": 7,
-        "specific": true,
-        "reason": "Строка называет конкретное игровое содержимое",
-        "summary_ru": "Добавили новый реквизит для ролевых сцен.",
-        "is_new_line": false
-      },
-      {
-        "text": "· Prop Saving",
-        "kind": "items",
-        "value": 7,
-        "specific": true,
-        "reason": "Строка называет конкретное игровое содержимое",
-        "summary_ru": "Добавили новый реквизит для ролевых сцен.",
-        "is_new_line": false
-      },
-      {
-        "text": "· Remove or Lock Props",
-        "kind": "items",
-        "value": 7,
-        "specific": true,
-        "reason": "Строка называет конкретное игровое содержимое",
-        "summary_ru": "Добавили новый реквизит для ролевых сцен.",
-        "is_new_line": false
-      },
-      {
-        "text": "· Check Prop Owners",
-        "kind": "items",
-        "value": 7,
-        "specific": true,
-        "reason": "Строка называет конкретное игровое содержимое",
-        "summary_ru": "Добавили новый реквизит для ролевых сцен.",
-        "is_new_line": false
-      },
-      {
-        "text": "· Prop Limit Increased",
-        "kind": "items",
-        "value": 7,
-        "specific": true,
-        "reason": "Строка называет конкретное игровое содержимое",
-        "summary_ru": "Добавили новый реквизит для ролевых сцен.",
-        "is_new_line": false
-      },
-      {
-        "text": "Latest Update:",
-        "kind": "update",
-        "value": 2,
-        "specific": false,
-        "reason": "Упоминание обновления без конкретики",
-        "summary_ru": "В игре вышло новое обновление.",
-        "is_new_line": false
-      }
-    ],
-    "pool": "active",
-    "checked_at": "2026-09-04T08:40:03.640881+00:00"
+    "checked_at": "2026-09-05T03:01:04.356004+00:00"
   },
   {
     "game": "Blox Fruits",
     "universe_id": 994732206,
     "roblox_name": "Blox Fruits",
     "description": "Welcome to Blox Fruits! Become a master swordsman or a powerful blox fruit user as you train to become the strongest player to ever live. You can choose to fight against tough enemies or have powerful boss battles while sailing across the ocean to find hidden secrets. \n\nCurrent level cap: 2800\nCurrent fruits in the game:\nRocket, Spin, Blade, Spring, Bomb, Smoke, Spike, Flame, Ice, Sand, Dark, Eagle, Diamond, Light, Rubber, Ghost, Magma, Quake, Buddha, Love, Creation, Spider, Sound, Phoenix, Portal, Lightning, Pain, Blizzard, Gravity, Mammoth, T-Rex, Dough, Shadow, Venom, Gas, Spirit, Tiger, Yeti, Kitsune, Control, and Dragon\n\nFAQ:\n-Fruits spawn in the map every hour / despawn after 20 mins\n-You can buy fruits from the Blox Fruits Dealer. He restocks random fruits every 4 hours\n-More info in the group description\n\nDo not exploit, our auto-detection will catch you and we do not appeal our bans.",
-    "updated": "2026-09-03T03:51:15.5896855Z",
+    "updated": "2026-09-03T03:51:15.589Z",
     "created": "2019-01-16T03:29:19.433Z",
     "creator": {
       "id": 4372130,
@@ -311,147 +481,7 @@
       }
     ],
     "pool": "active",
-    "checked_at": "2026-09-04T08:40:03.643052+00:00"
-  },
-  {
-    "game": "Adopt Me!",
-    "universe_id": 383310974,
-    "roblox_name": "[8H⌛] Adopt Me!",
-    "description": "Adopt and raise 🐶🦄👶, trade and collect legendary pets, build your dream home, and roleplay with friends!\n\n🥚 Fairytale Egg! 🥚\n🔮 Hatch 10 new fantastical pets!\n🐁 3in1, Legendary Three Blind Mice!\n🐺 Crimson Cape vs Granny Wolf?!\n\nBe FIRST 🏆 To experience new updates by pressing 🔔NOTIFY.\n\nMeet the founders!\nNewFissy - Tech Director\nBethink - Creative Director\n\nFind out more about Uplift Games, our policies and creative attributions:\nhttps://devforum.roblox.com/t/credits/71812",
-    "updated": "2026-09-04T07:00:26.1482788Z",
-    "created": "2017-07-14T19:26:21.347Z",
-    "creator": {
-      "id": 295182,
-      "name": "Uplift Games",
-      "type": "Group",
-      "isRNVAccount": false,
-      "hasVerifiedBadge": true
-    },
-    "description_changed": false,
-    "added_lines": [],
-    "keywords": [
-      "NEW",
-      "PETS"
-    ],
-    "score": 0,
-    "confidence": "low",
-    "facts": [],
-    "description_facts": [
-      {
-        "text": "Adopt and raise 🐶🦄👶, trade and collect legendary pets, build your dream home, and roleplay with friends!",
-        "kind": "pets",
-        "value": 8,
-        "specific": true,
-        "reason": "Строка называет конкретное игровое содержимое",
-        "summary_ru": "В игре появились новые питомцы.",
-        "is_new_line": false
-      },
-      {
-        "text": "🥚 Fairytale Egg! 🥚",
-        "kind": "pets",
-        "value": 8,
-        "specific": true,
-        "reason": "Строка называет конкретное игровое содержимое",
-        "summary_ru": "В игре появились новые питомцы.",
-        "is_new_line": false
-      },
-      {
-        "text": "🔮 Hatch 10 new fantastical pets!",
-        "kind": "pets",
-        "value": 8,
-        "specific": true,
-        "reason": "Строка называет конкретное игровое содержимое",
-        "summary_ru": "В игре появились новые питомцы.",
-        "is_new_line": false
-      },
-      {
-        "text": "🐁 3in1, Legendary Three Blind Mice!",
-        "kind": "pets",
-        "value": 8,
-        "specific": true,
-        "reason": "Строка называет конкретное игровое содержимое",
-        "summary_ru": "В игре появились новые питомцы.",
-        "is_new_line": false
-      },
-      {
-        "text": "Be FIRST 🏆 To experience new updates by pressing 🔔NOTIFY.",
-        "kind": "update",
-        "value": 2,
-        "specific": false,
-        "reason": "Упоминание обновления без конкретики",
-        "summary_ru": "В игре вышло новое обновление.",
-        "is_new_line": false
-      }
-    ],
-    "pool": "active",
-    "checked_at": "2026-09-04T08:40:03.644428+00:00"
-  },
-  {
-    "game": "RIVALS",
-    "universe_id": 6035872082,
-    "roblox_name": "RIVALS",
-    "description": "Welcome to RIVALS, the most intense first person shooter game on Roblox! Challenge other players in 1v1 to 5v5 FPS duels where the first to 5 wins!\n\n🏖️ UPDATE 21 - The first ever RIVALS Summer Event is here! Check out the patch notes in-game to see all the details! 🎉 \n\n🔫 Challenge someone by stepping on a duel pad!\n🔑 Earn keys to unlock new weapons & skins!\n📜 Complete contracts to unlock exclusive rewards!\n🏆 Show off your win streak and climb the leaderboards! \n\n🎮 Available on Desktop, Phones, Tablets, XBOX, & PlayStation 5!\n💜 Like and join the group for exclusive rewards!\n\n⚠️ WARNING: Cheaters will be permanently banned with no second chances, our anticheat & moderators will catch you. Abusing glitches & using sketchy farming methods are also not allowed!\n\n🏆 RIA25 Best Shooter Experience!",
-    "updated": "2026-08-10T21:07:11.179Z",
-    "created": "2024-05-26T16:47:48.617Z",
-    "creator": {
-      "id": 3461453,
-      "name": "Nosniy Games",
-      "type": "Group",
-      "isRNVAccount": false,
-      "hasVerifiedBadge": true
-    },
-    "description_changed": false,
-    "added_lines": [],
-    "keywords": [
-      "CONTRACTS",
-      "EVENT",
-      "NEW",
-      "REWARDS",
-      "UPDATE"
-    ],
-    "score": 0,
-    "confidence": "low",
-    "facts": [],
-    "description_facts": [
-      {
-        "text": "🏖️ UPDATE 21 - The first ever RIVALS Summer Event is here! Check out the patch notes in-game to see all the details! 🎉",
-        "kind": "event",
-        "value": 7,
-        "specific": true,
-        "reason": "Строка называет конкретное игровое содержимое",
-        "summary_ru": "В игре началось новое событие.",
-        "is_new_line": false
-      },
-      {
-        "text": "🔑 Earn keys to unlock new weapons & skins!",
-        "kind": "items",
-        "value": 7,
-        "specific": true,
-        "reason": "Строка называет конкретное игровое содержимое",
-        "summary_ru": "В игре появились новые инструменты и оружие.",
-        "is_new_line": false
-      },
-      {
-        "text": "📜 Complete contracts to unlock exclusive rewards!",
-        "kind": "quests",
-        "value": 7,
-        "specific": true,
-        "reason": "Строка называет конкретное игровое содержимое",
-        "summary_ru": "Появились новые задания с наградами.",
-        "is_new_line": false
-      },
-      {
-        "text": "💜 Like and join the group for exclusive rewards!",
-        "kind": "quests",
-        "value": 7,
-        "specific": true,
-        "reason": "Строка называет конкретное игровое содержимое",
-        "summary_ru": "Появились новые задания с наградами.",
-        "is_new_line": false
-      }
-    ],
-    "pool": "active",
-    "checked_at": "2026-09-04T08:40:03.646206+00:00"
+    "checked_at": "2026-09-05T03:01:04.361697+00:00"
   },
   {
     "game": "99 Nights in the Forest",
@@ -475,7 +505,7 @@
     "facts": [],
     "description_facts": [],
     "pool": "active",
-    "checked_at": "2026-09-04T08:40:03.646569+00:00"
+    "checked_at": "2026-09-05T03:01:04.366274+00:00"
   },
   {
     "game": "Steal a Brainrot",
@@ -509,14 +539,14 @@
       }
     ],
     "pool": "active",
-    "checked_at": "2026-09-04T08:40:03.647891+00:00"
+    "checked_at": "2026-09-05T03:01:04.367830+00:00"
   },
   {
     "game": "Grow a Garden",
     "universe_id": 7436755782,
     "roblox_name": "[🌱] Grow a Garden 🌶️",
     "description": "🍅Welcome to Grow a Garden🍅\n\nAre you ready to grow your very own garden? Buy seeds from the shop when they restock, plant them, wait for them to grow, and collect the profits! Flex fruits and finds on friends, and have fun!\n\n[How To Plant]\n• Equip your seed you want to plant!\n• Click in your farm on the brown plots to plant!\n• Wait to see it start growing!\n• After its fully grown, it is time to harvest the goods!\n\nRemember, your garden literally grows while you are offline⭐",
-    "updated": "2026-09-03T21:26:10.7050756Z",
+    "updated": "2026-09-04T22:17:49.0582893Z",
     "created": "2025-03-25T22:32:09.437Z",
     "creator": {
       "id": 35789249,
@@ -533,14 +563,14 @@
     "facts": [],
     "description_facts": [],
     "pool": "legacy",
-    "checked_at": "2026-09-04T08:40:03.649368+00:00"
+    "checked_at": "2026-09-05T03:01:04.369528+00:00"
   },
   {
     "game": "Dress To Impress",
     "universe_id": 5203828273,
     "roblox_name": "[🌴] Dress To Impress",
     "description": "Create stunning outfits 👗💖⭐, and strut the runway to show off your unique style. Collaborate, compete, and explore a world of glamour with friends!\n\n⭐ Are you ready to be the TOP MODEL?\n👗 NEW ITEMS! Check them out.\n🍿 Vote for your favorite outfits!\n💃 Use poses on the runway to show off your outfit!\n\nFind more about Dress To Impress by joining our community.\nhttps://www.roblox.com/communities/17264167/Dress-To-Impress-Group#!/about",
-    "updated": "2026-09-04T06:16:32.2932868Z",
+    "updated": "2026-09-04T18:53:16.50852Z",
     "created": "2023-10-18T09:11:36.563Z",
     "creator": {
       "id": 17264167,
@@ -597,14 +627,14 @@
       }
     ],
     "pool": "legacy",
-    "checked_at": "2026-09-04T08:40:03.650562+00:00"
+    "checked_at": "2026-09-05T03:01:04.370871+00:00"
   },
   {
     "game": "Pet Simulator 99",
     "universe_id": 3317771874,
     "roblox_name": "🍀 [LUCKY BLOCK] Pet Simulator 99! 🎯",
     "description": "Create an army of the coolest pets! They will help you get RICH!\n\n✨ Currently 3,000+ pets to collect! 🐾\n\n🧡 Thanks for playing!",
-    "updated": "2026-09-03T02:42:38.1430026Z",
+    "updated": "2026-09-03T02:42:38.143Z",
     "created": "2022-02-05T13:30:02.357Z",
     "creator": {
       "id": 3959677,
@@ -642,14 +672,14 @@
       }
     ],
     "pool": "legacy",
-    "checked_at": "2026-09-04T08:40:03.650916+00:00"
+    "checked_at": "2026-09-05T03:01:04.371263+00:00"
   },
   {
     "game": "Blade Ball",
     "universe_id": 4777817887,
     "roblox_name": "Blade Ball",
     "description": "⚡  In this game of focus, timing, and strategy, your skill is tested as a deflectable homing ball hunts players with increasing speed. But there's more than what meets the eye.\n\n🔥  Gain new abilities and upgrade them to compliment your playstyle. Rise through the ranks by mastering your skill, and stand out with a variety of iconic weapon skins and finisher effects.\n\n🏆 Shoot for the leaderboard or play casually! The choice is yours.\n \nCONTROLS:\nBLOCK - F/R1/Tap Screen/Tap UI Button/Left Click\nABILITY - Q/ButtonX/Tap UI Button/Right Click\nSHIFTLOCK - Shift/Button-Y/Tap UI Button\nEMOTE - R/L1/Tap UI Button\n\ntags: minigame, battle game, pvp, multiplayer, abilities, dodgeball, sports, mobile, console, xbox, pc",
-    "updated": "2026-09-02T20:35:10.903Z",
+    "updated": "2026-09-04T14:19:35.8254497Z",
     "created": "2023-06-17T00:05:26.103Z",
     "creator": {
       "id": 12836673,
@@ -678,6 +708,6 @@
       }
     ],
     "pool": "legacy",
-    "checked_at": "2026-09-04T08:40:03.652739+00:00"
+    "checked_at": "2026-09-05T03:01:04.373393+00:00"
   }
 ]

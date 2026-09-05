@@ -316,7 +316,7 @@
     "text": "Боссов удобнее атаковать подготовленным: сначала восстанови здоровье и проверь откаты способностей.",
     "source": "verified_core_mechanic",
     "reviewed_at": "2026-08-14",
-    "used": false,
+    "used": true,
     "category": "combat"
   },
   {
@@ -956,7 +956,7 @@
     "text": "Во время подиума используй несколько подходящих поз, но не переключай их так быстро, чтобы зрители не успевали увидеть образ.",
     "source": "verified_core_mechanic",
     "reviewed_at": "2026-08-14",
-    "used": false,
+    "used": true,
     "category": "mechanics"
   },
   {
@@ -1585,7 +1585,7 @@
     "text": "Улучшай базу вместе со скоростью, не вкладывай всё только в одну систему.",
     "source": "agreed_editorial_list",
     "reviewed_at": "2026-08-28",
-    "used": false
+    "used": true
   },
   {
     "id": 159,
@@ -1739,7 +1739,7 @@
     "text": "В команде заранее разделите задачи, чтобы все не бежали одновременно к одной проблеме.",
     "source": "agreed_editorial_list",
     "reviewed_at": "2026-08-28",
-    "used": false
+    "used": true
   },
   {
     "id": 173,
@@ -1926,7 +1926,7 @@
     "text": "Услышав нападение рядом, запомни направление и игроков, которые находились там.",
     "source": "agreed_editorial_list",
     "reviewed_at": "2026-08-28",
-    "used": false
+    "used": true
   },
   {
     "id": 190,
@@ -1948,7 +1948,7 @@
     "text": "Если Sheriff погиб, Innocent может подобрать пистолет и стать Hero.",
     "source": "agreed_editorial_list",
     "reviewed_at": "2026-08-28",
-    "used": false
+    "used": true
   },
   {
     "id": 192,
@@ -1981,7 +1981,7 @@
     "text": "За Sheriff стреляй только когда уверен в цели: попадание в Innocent наказывается.",
     "source": "agreed_editorial_list",
     "reviewed_at": "2026-08-28",
-    "used": false
+    "used": true
   },
   {
     "id": 195,
@@ -2025,6 +2025,6 @@
     "text": "Не определяй Murderer по тому, кто давно не получал эту роль: роли назначаются случайно.",
     "source": "agreed_editorial_list",
     "reviewed_at": "2026-08-28",
-    "used": false
+    "used": true
   }
 ]
