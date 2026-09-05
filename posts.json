@@ -1620,9 +1620,9 @@
     "rubric": "Brawl Stars: совет дня",
     "source": "verified_brawl_fallback",
     "text": "💥💥💥 НОВОСТИ BRAWL STARS 💥💥💥\n\n🎯 СОВЕТ ДНЯ\n\nВыбирай бойца с учётом открытости карты и количества укрытий. Дальняя атака полезнее на свободных линиях, а стены и кусты дают больше возможностей бойцам, которым важно сблизиться.\n\n⭐ Roblox Hub\n\n#BrawlStars #ПолезноЗнать #RobloxHub",
-    "status": "pending",
-    "published_at": null,
-    "attempts": 0,
+    "status": "published",
+    "published_at": "2026-09-05T12:00:39.681846+05:00",
+    "attempts": 1,
     "last_error": null,
     "image_path": "assets/news_headers/brawl_news_header.png"
   },
