@@ -878,10 +878,15 @@ def generate_morning_post():
 
         block = f"{emoji} {game}\n\n" f"{text}"
 
-        action = build_news_action(item)
+        action = item.get("player_action") or build_news_action(item)
 
         if action:
             block += f"\n\n{action}"
+
+        source_attribution = item.get("source_attribution")
+
+        if source_attribution:
+            block += f"\n\n{source_attribution}"
 
         blocks.append(block)
 

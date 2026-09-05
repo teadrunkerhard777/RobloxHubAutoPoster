@@ -8,6 +8,7 @@ from urllib.parse import quote
 from xml.etree import ElementTree
 
 import requests
+from bs4 import BeautifulSoup
 
 from external_news_facts import (
     contains_rumor_signal,
@@ -119,6 +120,82 @@ def build_feed_url(game):
     return "https://news.google.com/rss/search?" f"q={query}&hl=en-US&gl=US&ceid=US:en"
 
 
+def build_publisher_article_url(article):
+    """Builds a stable public article URL when Google RSS hides the target.
+
+    Google News currently returns opaque redirect URLs. Sportskeeda uses a
+    predictable public Roblox-news slug, so the article body can be retrieved
+    without changing discovery or accepting a new publisher.
+    """
+
+    if article.get("publisher", "").casefold() != "sportskeeda":
+        return None
+
+    slug = re.sub(r"[^a-z0-9]+", "-", article.get("title", "").casefold())
+    slug = slug.strip("-")
+    if not slug:
+        return None
+
+    # Публичное зеркало Sportskeeda отдаёт тот же материал обычному HTTP-
+    # клиенту; основной домен отвечает 405 без браузерного JavaScript.
+    return f"https://hindi3.sportskeeda.com/roblox-news/{slug}"
+
+
+def extract_article_body(page_html):
+    """Extracts article paragraphs/list items while excluding site chrome."""
+
+    soup = BeautifulSoup(page_html, "html.parser")
+    for element in soup(["script", "style", "noscript", "nav", "footer"]):
+        element.decompose()
+
+    container = soup.find("article")
+    if container is None:
+        container = soup.select_one(
+            "[class*='article-content'], [class*='article_body'], "
+            "[class*='story-content']"
+        )
+    if container is None:
+        return ""
+
+    lines = []
+    for element in container.find_all(["h2", "h3", "p", "li"]):
+        line = clean_html(element.get_text(" ", strip=True))
+        if line and line not in lines:
+            lines.append(line)
+
+    return "\n".join(lines)[:20000]
+
+
+def enrich_article_content(article, requester):
+    """Adds the Tier B article body without making body fetch a requirement.
+
+    Discovery still relies on the dated RSS entry. If a publisher page is
+    unavailable, verification sees the original RSS text and makes the same
+    conservative decision as before.
+    """
+
+    content_url = build_publisher_article_url(article)
+    if not content_url:
+        return article
+
+    try:
+        response = requester(
+            content_url,
+            timeout=REQUEST_TIMEOUT,
+            headers={"User-Agent": "Mozilla/5.0 RobloxHubAutoPoster/1.0"},
+        )
+        response.raise_for_status()
+        body = extract_article_body(response.text)
+    except requests.RequestException:
+        return article
+
+    if body:
+        article["text"] = f"{article['title']}\n{body}"
+        article["content_url"] = content_url
+
+    return article
+
+
 def fetch_secondary_news(games=None, requester=None):
     if games is None:
         games = load_games()
@@ -139,6 +216,10 @@ def fetch_secondary_news(games=None, requester=None):
             )
             response.raise_for_status()
             candidates = parse_feed(game, response.text)
+            if candidates:
+                # В pipeline всё равно передаётся только самый свежий кандидат;
+                # не загружаем тела более старых статей без необходимости.
+                candidates[0] = enrich_article_content(candidates[0], requester)
             results.append(
                 {
                     "game": game,

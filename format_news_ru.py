@@ -425,10 +425,27 @@ def build_item(candidate):
         "text": join_fact_paragraphs(translated),
     }
 
+    player_action = next(
+        (
+            fact.get("player_action_ru")
+            for fact in ordered_facts
+            if fact.get("player_action_ru")
+        ),
+        None,
+    )
+    if player_action:
+        item["player_action"] = player_action
+
     external_article = candidate.get("external_news_article")
 
     if external_article:
         item["external_article_url"] = external_article.get("url")
+        if external_article.get("source_tier") == "B" and external_article.get(
+            "publisher"
+        ):
+            # Tier B всегда остаётся явно атрибутированным, но источник не
+            # встраивается в заголовок и не ломает русскую пунктуацию.
+            item["source_attribution"] = f"Источник: {external_article['publisher']}"
 
     return item
 

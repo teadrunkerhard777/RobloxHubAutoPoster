@@ -180,12 +180,30 @@ class RobloxNewsStrategyTests(unittest.TestCase):
         self.assertEqual(diagnostic["result_code"], FOUND_REJECTED)
         self.assertEqual(facts, [])
 
-    def test_tier_b_fact_is_attributed(self):
+    def test_tier_b_fact_keeps_source_metadata_without_bad_inline_prefix(self):
         _, _, facts = self.evaluate(self.make_result(tier="B"))
         self.assertTrue(facts)
-        self.assertTrue(
-            any("По данным PCGamesN" in fact["summary_ru"] for fact in facts)
-        )
+        self.assertTrue(all(fact.get("publisher") == "PCGamesN" for fact in facts))
+        self.assertFalse(any("По данным" in fact["summary_ru"] for fact in facts))
+        self.assertFalse(any(", В игре" in fact["summary_ru"] for fact in facts))
+
+    def test_tier_b_formatter_outputs_source_on_its_own_line(self):
+        _, article, facts = self.evaluate(self.make_result(tier="B"))
+        candidate = {
+            "game": "Brookhaven",
+            "score": 8,
+            "facts": facts,
+            "external_news_article": {
+                "url": article["url"],
+                "source_tier": "B",
+                "publisher": "PCGamesN",
+            },
+        }
+
+        item = FORMAT["build_item"](candidate)
+
+        self.assertEqual(item["source_attribution"], "Источник: PCGamesN")
+        self.assertNotIn("Источник:", item["text"])
 
     def test_persisted_tier_b_reference_is_rejected_during_verification(self):
         result = self.make_result(

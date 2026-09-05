@@ -51,6 +51,11 @@ def format_fact_paragraph(fact, text):
     kind = fact.get("kind", "")
     lower = text.lower()
 
+    # Специализированный extractor уже выбрал нейтральный маркер списка.
+    # Не ставим перед ним второй emoji из общей таблицы категорий.
+    if text.startswith("🔹"):
+        return text
+
     if kind == "locations":
         text = text.replace("новая локация — тюрьма", "новая локация, тюрьма")
 

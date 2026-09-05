@@ -134,6 +134,27 @@ class MorningFallbackTests(unittest.TestCase):
             "assets/news_headers/roblox_news_header.png",
         )
 
+    def test_tier_b_source_is_printed_after_facts_and_action(self):
+        morning_namespace["load_json"] = lambda filename, default=None: {
+            "items": [
+                {
+                    "emoji": "🐾",
+                    "game": "Adopt Me!",
+                    "text": "🎉 Вышло обновление.\n\n🔹 Добавлен новый дом.",
+                    "player_action": "🎯 Что проверить: посмотри новый дом.",
+                    "source_attribution": "Источник: Sportskeeda",
+                }
+            ]
+        }
+
+        post = generate_morning_post()
+
+        self.assertIn(
+            "🎯 Что проверить: посмотри новый дом.\n\nИсточник: Sportskeeda",
+            post,
+        )
+        self.assertNotIn("По данным Sportskeeda, В", post)
+
     def test_url_history_is_consumed_only_after_real_scheduling(self):
         article_url = "https://example.com/fresh-news"
         generated = {

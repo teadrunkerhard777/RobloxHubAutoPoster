@@ -18,6 +18,41 @@ def make_feed(publisher="PCGamesN", title="Brookhaven Bank Update", description=
 
 
 class SecondaryNewsTests(unittest.TestCase):
+    def test_sportskeeda_article_body_is_added_after_rss_discovery(self):
+        feed = make_feed(
+            publisher="Sportskeeda",
+            title="Adopt Me launches new Moonlight event",
+            description="The Moonlight event is now live with new activities.",
+        )
+        page = """<html><article>
+        <h2>Moonlight event details</h2>
+        <p>Players can collect Moon Tokens by completing nightly tasks.</p>
+        <li>New Luna Fox pet - 500 Moon Tokens</li>
+        </article></html>"""
+
+        class Response:
+            def __init__(self, text):
+                self.text = text
+
+            def raise_for_status(self):
+                return None
+
+        def requester(url, **kwargs):
+            return Response(feed if "news.google.com" in url else page)
+
+        results = fetch_secondary_news(
+            games=[{"name": "Adopt Me!"}], requester=requester
+        )
+        article = results[0]["latest_article"]
+
+        self.assertIn("Moon Tokens", article["text"])
+        self.assertIn("Luna Fox", article["text"])
+        self.assertEqual(
+            article["content_url"],
+            "https://hindi3.sportskeeda.com/roblox-news/"
+            "adopt-me-launches-new-moonlight-event",
+        )
+
     def test_major_gaming_media_with_concrete_content_is_discovered(self):
         articles = parse_feed("Brookhaven", make_feed())
         self.assertEqual(len(articles), 1)

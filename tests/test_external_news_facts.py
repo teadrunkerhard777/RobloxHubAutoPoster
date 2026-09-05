@@ -14,6 +14,92 @@ NOW = datetime(2026, 8, 16, 12, 0, tzinfo=timezone.utc)
 
 
 class ExternalNewsFactsTests(unittest.TestCase):
+    def test_tier_b_event_article_extracts_two_to_four_concrete_facts(self):
+        article = {
+            "success": True,
+            "source_tier": "B",
+            "publisher": "Sportskeeda",
+            "url": "https://example.com/adopt-me-moonlight-event",
+            "title": "Adopt Me launches new Moonlight event",
+            "published_at": "2026-09-04T18:27:00Z",
+            "text": (
+                "The Moonlight event is now live.\n"
+                "Players can collect Moon Tokens by completing nightly tasks.\n"
+                "New Luna Fox pet can be unlocked for 500 Moon Tokens.\n"
+                "The event ends on September 12, 2026."
+            ),
+        }
+
+        facts = extract_external_facts(
+            "Adopt Me!",
+            article,
+            now=datetime(2026, 9, 5, 8, tzinfo=timezone.utc),
+        )
+        summaries = [fact["summary_ru"] for fact in facts]
+
+        self.assertEqual(len(facts), 4)
+        self.assertIn("🎉 В Adopt Me! началось событие Moonlight.", summaries)
+        self.assertTrue(any("Moon Tokens" in value for value in summaries))
+        self.assertTrue(any("Luna Fox" in value for value in summaries))
+        self.assertTrue(any("September 12, 2026" in value for value in summaries))
+        self.assertFalse(any("новое событие" in value.lower() for value in summaries))
+
+    def test_tier_b_adopt_me_event_keeps_current_article_details(self):
+        article = {
+            "success": True,
+            "source_tier": "B",
+            "publisher": "Sportskeeda",
+            "url": "https://www.sportskeeda.com/roblox-news/"
+            "adopt-me-fairytale-castle-update-patch-notes",
+            "title": "Adopt Me Fairytale Castle update patch notes",
+            "published_at": "2026-09-04T18:27:00Z",
+            "text": (
+                "Adopt Me Fairytale Castle update patch notes\n"
+                "Fairytale Castle - 8,000 Bucks\n"
+                "Ballet Swan - 600 Robux - Legendary\n"
+                "Added an offer button to allow players to suggest items "
+                "on listings in the Trading Hub."
+            ),
+        }
+
+        facts = extract_external_facts(
+            "Adopt Me!",
+            article,
+            now=datetime(2026, 9, 5, 8, tzinfo=timezone.utc),
+        )
+        summaries = [fact["summary_ru"] for fact in facts]
+
+        self.assertEqual(len(facts), 4)
+        self.assertIn("🎉 В Adopt Me! вышло обновление Fairytale Castle.", summaries)
+        self.assertTrue(any("8,000 Bucks" in value for value in summaries))
+        self.assertTrue(any("Ballet Swan" in value for value in summaries))
+        self.assertTrue(any("Trading Hub" in value for value in summaries))
+        self.assertFalse(any("новое событие" in value.lower() for value in summaries))
+
+    def test_tier_b_article_with_one_detail_does_not_invent_more(self):
+        article = {
+            "success": True,
+            "source_tier": "B",
+            "publisher": "Sportskeeda",
+            "url": "https://example.com/adopt-me-castle",
+            "title": "Adopt Me Fairytale Castle update patch notes",
+            "published_at": "2026-09-04T18:27:00Z",
+            "text": "Fairytale Castle - 8,000 Bucks",
+        }
+
+        facts = extract_external_facts(
+            "Adopt Me!",
+            article,
+            now=datetime(2026, 9, 5, 8, tzinfo=timezone.utc),
+        )
+        combined = " ".join(fact["summary_ru"] for fact in facts)
+
+        self.assertEqual(len(facts), 2)
+        self.assertIn("8,000 Bucks", combined)
+        self.assertNotIn("Ballet Swan", combined)
+        self.assertNotIn("награ", combined.lower())
+        self.assertNotIn("сентябр", combined.lower())
+
     def test_freshness_window_is_fourteen_days(self):
         self.assertEqual(NEWS_MAX_AGE_DAYS, 14)
 

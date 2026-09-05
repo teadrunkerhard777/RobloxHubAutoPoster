@@ -241,6 +241,8 @@ def make_external_fact(article, text, summary_ru, kind, value):
         "reason": ("Факт из официальной новостной статьи"),
         "is_new_line": True,
         "source_url": article["url"],
+        "source_tier": article.get("source_tier", "A"),
+        "publisher": article.get("publisher"),
     }
 
 
@@ -279,6 +281,45 @@ def is_concrete_article_title(game, title):
     return generic_title is None
 
 
+def build_tier_b_title_summary(game, title):
+    """Turns common English Tier B titles into a specific Russian headline."""
+
+    cleaned = clean_article_title(game, title)
+    without_game = re.sub(
+        rf"^(?:roblox\s+)?{re.escape(game.rstrip('!'))}!?:?\s*",
+        "",
+        cleaned,
+        flags=re.IGNORECASE,
+    ).strip(" -–—:!?")
+
+    event_match = re.search(
+        r"(?:launch(?:es|ed)?|starts?|begins?|opens?)\s+"
+        r"(?:a\s+|the\s+)?(?:new\s+)?(.+?\bevent)\b",
+        without_game,
+        flags=re.IGNORECASE,
+    )
+    if event_match:
+        event_name = re.sub(
+            r"\s+event$", "", event_match.group(1).strip(), flags=re.IGNORECASE
+        )
+        return f"🎉 В {game} началось событие {event_name}."
+
+    update_name = re.sub(
+        r"\s+update(?:\s+patch(?:\s+notes?)?)?\s*$",
+        "",
+        without_game,
+        flags=re.IGNORECASE,
+    ).strip(" -–—:!?")
+    if update_name and update_name.casefold() not in {"new", "latest", "weekly"}:
+        return f"🎉 В {game} вышло обновление {update_name}."
+
+    title_kind = classify_content_line(title)
+    concrete_summary = (
+        summarize_content_line_ru(title, title_kind) if title_kind else None
+    )
+    return concrete_summary or f"В {game} вышло обновление."
+
+
 def build_title_fact(game, article):
     title = clean_article_title(game, article.get("title", ""))
 
@@ -304,16 +345,9 @@ def build_title_fact(game, article):
             summary = "Blox Fruits опубликовала " f"новость «{title}»."
 
     elif article.get("source_tier") == "B":
-        publisher = article.get("publisher") or "игрового издания"
-        title_kind = classify_content_line(title)
-        concrete_summary = (
-            summarize_content_line_ru(title, title_kind) if title_kind else None
-        )
-        summary = (
-            f"По данным {publisher}, {concrete_summary}"
-            if concrete_summary
-            else f"По данным {publisher}, в {game} вышло обновление «{title}»."
-        )
+        # Атрибуция выводится отдельной строкой на этапе сборки поста. Так
+        # заголовок остаётся читаемым и не появляется ошибочное «..., В игре».
+        summary = build_tier_b_title_summary(game, title)
 
     elif game == "Adopt Me!":
         summary = "В Adopt Me! вышло обновление " f"«{title}»."
@@ -350,7 +384,12 @@ def extract_pet_entries(text):
         name = match.group(1).strip()
         rarity = match.group(2).title()
 
-        if name.lower().startswith(("hatch from", "collecting the")):
+        if name.lower().startswith(
+            ("hatch from", "collecting the")
+        ) or name.lower() in {
+            "bucks",
+            "robux",
+        }:
             continue
 
         entry = (name, rarity)
@@ -364,6 +403,141 @@ def extract_adopt_me_facts(article):
     text = article.get("text", "")
 
     facts = []
+
+    event_currency_match = re.search(
+        r"Players can collect\s+([A-Z][A-Za-z0-9' ]+?)\s+by completing\s+"
+        r"(nightly tasks|event tasks|daily tasks|minigames)\.?",
+        text,
+        flags=re.IGNORECASE,
+    )
+    if event_currency_match:
+        currency = event_currency_match.group(1).strip()
+        activity = {
+            "nightly tasks": "ночные задания",
+            "event tasks": "задания события",
+            "daily tasks": "ежедневные задания",
+            "minigames": "мини-игры",
+        }[event_currency_match.group(2).casefold()]
+        facts.append(
+            make_external_fact(
+                article=article,
+                text=event_currency_match.group(0),
+                summary_ru=f"🔹 За {activity} можно получать {currency}.",
+                kind="quests",
+                value=10,
+            )
+        )
+
+    event_pet_match = re.search(
+        r"(?:new\s+)?([A-Z][A-Za-z0-9' ]+?)\s+pet\s+"
+        r"(?:can be unlocked for|costs)\s+([\d,]+)\s+"
+        r"([A-Z][A-Za-z0-9' ]+)",
+        text,
+        flags=re.IGNORECASE,
+    )
+    if event_pet_match:
+        pet_name = event_pet_match.group(1).strip()
+        price = event_pet_match.group(2)
+        currency = event_pet_match.group(3).strip().rstrip(".")
+        facts.append(
+            make_external_fact(
+                article=article,
+                text=event_pet_match.group(0),
+                summary_ru=(
+                    f"🔹 Питомца {pet_name} можно открыть за {price} {currency}."
+                ),
+                kind="pets",
+                value=10,
+            )
+        )
+
+    event_end_match = re.search(
+        r"(?:The\s+)?event ends on\s+([A-Z][A-Za-z]+\s+\d{1,2},?\s+20\d{2})\.?,?",
+        text,
+        flags=re.IGNORECASE,
+    )
+    if event_end_match:
+        end_date = event_end_match.group(1).strip()
+        facts.append(
+            make_external_fact(
+                article=article,
+                text=event_end_match.group(0),
+                summary_ru=f"🔹 Событие завершится {end_date}.",
+                kind="event",
+                value=8,
+            )
+        )
+
+    house_match = re.search(
+        r"(?:^|\n)\s*([A-Z][A-Za-z0-9' ]+(?:Castle|House))\s*-\s*"
+        r"([\d,]+)\s+Bucks\b",
+        text,
+        flags=re.IGNORECASE,
+    )
+    if house_match:
+        house_name = house_match.group(1).strip()
+        price = house_match.group(2)
+        house_fact = make_external_fact(
+            article=article,
+            text=house_match.group(0).strip(),
+            summary_ru=f"🔹 Новый дом {house_name} стоит {price} Bucks.",
+            kind="items",
+            value=10,
+        )
+        house_fact["player_action_ru"] = (
+            f"🎯 Что проверить: зайди в редактор дома и посмотри {house_name}."
+        )
+        facts.append(house_fact)
+
+    priced_pet_match = re.search(
+        r"(?:^|\n)\s*([A-Z][A-Za-z0-9' ]+?)\s*-\s*"
+        r"([\d,]+)\s+Robux\s*-\s*"
+        r"(Legendary|Ultra Rare|Rare|Uncommon|Common)\b",
+        text,
+        flags=re.IGNORECASE,
+    )
+    if priced_pet_match:
+        pet_name = priced_pet_match.group(1).strip()
+        price = priced_pet_match.group(2)
+        rarity = priced_pet_match.group(3).strip()
+        rarity_ru = {
+            "legendary": "легендарный",
+            "ultra rare": "ультраредкий",
+            "rare": "редкий",
+            "uncommon": "необычный",
+            "common": "обычный",
+        }[rarity.casefold()]
+        facts.append(
+            make_external_fact(
+                article=article,
+                text=priced_pet_match.group(0).strip(),
+                summary_ru=(
+                    f"🔹 Добавлен {rarity_ru} питомец {pet_name} за {price} Robux."
+                ),
+                kind="pets",
+                value=10,
+            )
+        )
+
+    offer_button_match = re.search(
+        r"Added an offer button to allow players to suggest items "
+        r"on listings in the Trading Hub\.?",
+        text,
+        flags=re.IGNORECASE,
+    )
+    if offer_button_match:
+        facts.append(
+            make_external_fact(
+                article=article,
+                text=offer_button_match.group(0),
+                summary_ru=(
+                    "🔹 В Trading Hub появилась кнопка: теперь можно предложить "
+                    "свой предмет для объявления."
+                ),
+                kind="mechanics",
+                value=9,
+            )
+        )
 
     pet_match = re.search(
         r"(?:🐶\s*)?"
