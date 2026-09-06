@@ -1722,9 +1722,9 @@
     "rubric": "Brawl Stars: совет дня",
     "source": "verified_brawl_fallback",
     "text": "💥💥💥 НОВОСТИ BRAWL STARS 💥💥💥\n\n🎯 СОВЕТ ДНЯ\n\nКонтроль центра часто открывает команде удобные линии для атаки и отхода. Занимай пространство постепенно и не отдавай хорошую позицию ради погони за соперником с малым запасом здоровья.\n\n⭐ Roblox Hub\n\n#BrawlStars #ПолезноЗнать #RobloxHub",
-    "status": "pending",
-    "published_at": null,
-    "attempts": 0,
+    "status": "published",
+    "published_at": "2026-09-06T12:00:36.579042+05:00",
+    "attempts": 1,
     "last_error": null,
     "image_path": "assets/news_headers/brawl_news_header.png"
   },
