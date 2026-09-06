@@ -36,7 +36,7 @@
     "text": "Перед наступлением ночи лучше заранее вернуться ближе к лагерю, если у тебя мало света и лечения.",
     "source": "verified_core_mechanic",
     "reviewed_at": "2026-08-14",
-    "used": false,
+    "used": true,
     "category": "survival"
   },
   {
@@ -676,7 +676,7 @@
     "text": "Контракты дают дополнительную цель на матч — проверяй их, чтобы прогрессировать параллельно с обычной игрой.",
     "source": "verified_core_mechanic",
     "reviewed_at": "2026-08-14",
-    "used": false,
+    "used": true,
     "category": "strategy"
   },
   {
@@ -1477,7 +1477,7 @@
     "text": "Жди, пока мяч действительно нацелится на тебя, и только потом готовь блок.",
     "source": "verified_core_mechanic",
     "reviewed_at": "2026-08-24",
-    "used": false
+    "used": true
   },
   {
     "id": 149,
@@ -1596,7 +1596,7 @@
     "text": "Следи не только за редкостью питомцев: в игре также есть размеры и мутации.",
     "source": "agreed_editorial_list",
     "reviewed_at": "2026-08-28",
-    "used": false
+    "used": true
   },
   {
     "id": 160,
@@ -1640,7 +1640,7 @@
     "text": "Сначала внимательно осмотри пациента у окна, только потом принимай решение.",
     "source": "agreed_editorial_list",
     "reviewed_at": "2026-08-28",
-    "used": true
+    "used": false
   },
   {
     "id": 164,
@@ -1662,7 +1662,7 @@
     "text": "При сомнениях используй CCTV вместо случайного решения.",
     "source": "agreed_editorial_list",
     "reviewed_at": "2026-08-28",
-    "used": true
+    "used": false
   },
   {
     "id": 166,
@@ -1673,7 +1673,7 @@
     "text": "Если видишь явную аномалию, не пропускай пациента внутрь.",
     "source": "agreed_editorial_list",
     "reviewed_at": "2026-08-28",
-    "used": true
+    "used": false
   },
   {
     "id": 167,
@@ -1684,7 +1684,7 @@
     "text": "Следи за Sanity, не жди, пока показатель станет критически низким.",
     "source": "agreed_editorial_list",
     "reviewed_at": "2026-08-28",
-    "used": true
+    "used": false
   },
   {
     "id": 168,
@@ -1706,7 +1706,7 @@
     "text": "Запоминай расположение основных помещений — это экономит время во время срочных событий.",
     "source": "agreed_editorial_list",
     "reviewed_at": "2026-08-28",
-    "used": true
+    "used": false
   },
   {
     "id": 170,
@@ -1717,7 +1717,7 @@
     "text": "Придерживайся одного порядка проверки: внешний вид → фото → CCTV.",
     "source": "agreed_editorial_list",
     "reviewed_at": "2026-08-28",
-    "used": true
+    "used": false
   },
   {
     "id": 171,
@@ -1739,7 +1739,7 @@
     "text": "В команде заранее разделите задачи, чтобы все не бежали одновременно к одной проблеме.",
     "source": "agreed_editorial_list",
     "reviewed_at": "2026-08-28",
-    "used": true
+    "used": false
   },
   {
     "id": 173,
@@ -1750,7 +1750,7 @@
     "text": "После принятия нормального пациента не забывай про лечение: проверка у окна — только первая часть работы.",
     "source": "agreed_editorial_list",
     "reviewed_at": "2026-08-28",
-    "used": true
+    "used": false
   },
   {
     "id": 174,
