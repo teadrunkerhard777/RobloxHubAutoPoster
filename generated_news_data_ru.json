@@ -1,39 +1,16 @@
 {
   "items": [
     {
-      "game": "Brookhaven RP",
-      "emoji": "🏡",
-      "score": 8,
-      "headline": "В Brookhaven RP вышло обновление «Brookhaven Update September 4, 2026: House Update and Mountain View».",
-      "facts": [
-        "🚗 В игру добавили новый транспорт."
-      ],
-      "text": "В Brookhaven RP вышло обновление «Brookhaven Update September 4, 2026: House Update and Mountain View».\n\n🚗 В игру добавили новый транспорт.",
-      "external_article_url": "https://www.brookhavenrp.com/posts/brookhaven-update-september-4-2026"
-    },
-    {
-      "game": "Pet Simulator 99",
-      "emoji": "🐶",
-      "score": 10,
-      "headline": "В Pet Simulator 99 вышло обновление «Coin Arcade!».",
-      "facts": [
-        "В игре появились новые питомцы.",
-        "Открыт Can you top the leaderboard с наградами за места."
-      ],
-      "text": "В Pet Simulator 99 вышло обновление «Coin Arcade!».\n\nВ игре появились новые питомцы.\n\nОткрыт Can you top the leaderboard с наградами за места.",
-      "external_article_url": "https://www.biggames.io/post/pet-simulator-99-update-92"
+      "game": "Blade Ball",
+      "emoji": "⚔️",
+      "score": 6,
+      "headline": "В Blade Ball вышло обновление «EVERYTHING in the NEW Blade Ball Update!!».",
+      "facts": [],
+      "text": "В Blade Ball вышло обновление «EVERYTHING in the NEW Blade Ball Update!!».",
+      "external_article_url": "https://www.youtube.com/watch?v=ginSdbnk-Qc"
     }
   ],
   "pipeline": [
-    {
-      "game": "Brookhaven RP",
-      "candidate": true,
-      "verified": true,
-      "selected": true,
-      "formatted_ru": true,
-      "scheduled": true,
-      "reason": "вошёл в утренний выпуск"
-    },
     {
       "game": "Steal An Egg",
       "candidate": true,
@@ -41,7 +18,7 @@
       "selected": false,
       "formatted_ru": false,
       "scheduled": false,
-      "reason": "В публикации не найдено достаточно конкретного содержания; Нет новой конкретной строки со времени прошлого снимка"
+      "reason": "Нет пригодной Tier B новости; Нет новой конкретной строки со времени прошлого снимка"
     },
     {
       "game": "Animal Hospital (Anomaly)",
@@ -71,13 +48,22 @@
       "reason": "Нет пригодной Tier B новости; Нет новой конкретной строки со времени прошлого снимка"
     },
     {
+      "game": "Brookhaven RP",
+      "candidate": true,
+      "verified": false,
+      "selected": false,
+      "formatted_ru": false,
+      "scheduled": false,
+      "reason": "Публикация уже использовалась в выпуске другого дня; Нет пригодной Tier B новости; Нет новой конкретной строки со времени прошлого снимка"
+    },
+    {
       "game": "Blox Fruits",
       "candidate": true,
       "verified": false,
       "selected": false,
       "formatted_ru": false,
       "scheduled": false,
-      "reason": "Публикация устарела: 30.4 дн. (аварийный лимит 30); В публикации не найдено достаточно конкретного содержания; Нет новой конкретной строки со времени прошлого снимка"
+      "reason": "Публикация устарела: 31.2 дн. (аварийный лимит 30); В публикации не найдено достаточно конкретного содержания; Нет новой конкретной строки со времени прошлого снимка"
     },
     {
       "game": "Adopt Me!",
@@ -86,7 +72,7 @@
       "selected": false,
       "formatted_ru": false,
       "scheduled": false,
-      "reason": "Публикация уже использовалась в выпуске другого дня; Tier B повторяет уже использованную официальную новость; Нет новой конкретной строки со времени прошлого снимка"
+      "reason": "Публикация уже использовалась в выпуске другого дня; Нет пригодной Tier B новости; Нет новой конкретной строки со времени прошлого снимка"
     },
     {
       "game": "RIVALS",
@@ -104,7 +90,7 @@
       "selected": false,
       "formatted_ru": false,
       "scheduled": false,
-      "reason": "В публикации не найдено достаточно конкретного содержания; Нет новой конкретной строки со времени прошлого снимка"
+      "reason": "Нет пригодной Tier B новости; Нет новой конкретной строки со времени прошлого снимка"
     },
     {
       "game": "Steal a Brainrot",
@@ -113,10 +99,10 @@
       "selected": false,
       "formatted_ru": false,
       "scheduled": false,
-      "reason": "В публикации не найдено достаточно конкретного содержания; Нет новой конкретной строки со времени прошлого снимка"
+      "reason": "Нет пригодной Tier B новости; Нет новой конкретной строки со времени прошлого снимка"
     },
     {
-      "game": "Pet Simulator 99",
+      "game": "Blade Ball",
       "candidate": true,
       "verified": true,
       "selected": true,
@@ -131,7 +117,7 @@
       "selected": false,
       "formatted_ru": false,
       "scheduled": false,
-      "reason": "В публикации не найдено достаточно конкретного содержания; Нет новой конкретной строки со времени прошлого снимка"
+      "reason": "Нет пригодной Tier B новости; Нет новой конкретной строки со времени прошлого снимка"
     },
     {
       "game": "Dress To Impress",
@@ -140,23 +126,23 @@
       "selected": false,
       "formatted_ru": false,
       "scheduled": false,
-      "reason": "Публикация устарела: 65.7 дн. (аварийный лимит 30); Нет пригодной Tier B новости; Нет новой конкретной строки со времени прошлого снимка"
+      "reason": "Публикация устарела: 66.5 дн. (аварийный лимит 30); Нет пригодной Tier B новости; Нет новой конкретной строки со времени прошлого снимка"
     },
     {
-      "game": "Blade Ball",
+      "game": "Pet Simulator 99",
       "candidate": true,
       "verified": false,
       "selected": false,
       "formatted_ru": false,
       "scheduled": false,
-      "reason": "Публикация уже использовалась в выпуске другого дня; Публикация устарела: 896.6 дн. (аварийный лимит 30); Нет пригодной Tier B новости; Нет новой конкретной строки со времени прошлого снимка"
+      "reason": "Публикация уже использовалась в выпуске другого дня; Нет пригодной Tier B новости; Нет новой конкретной строки со времени прошлого снимка"
     }
   ],
   "summary": {
     "found": 14,
-    "verified": 2,
-    "selected": 2,
-    "formatted": 2,
-    "scheduled": 2
+    "verified": 1,
+    "selected": 1,
+    "formatted": 1,
+    "scheduled": 1
   }
 }
