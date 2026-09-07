@@ -1,24 +1,38 @@
 {
   "items": [
     {
+      "game": "Steal An Egg",
+      "emoji": "🥚",
+      "score": 9,
+      "headline": "🎉 В Steal An Egg вышло обновление Update 3 patch.",
+      "facts": [
+        "В игре появились новые питомцы.",
+        "🎯 Появились новые задания с наградами.",
+        "🎉 В игре началось новое событие."
+      ],
+      "text": "🎉 В Steal An Egg вышло обновление Update 3 patch.\n\nВ игре появились новые питомцы.\n\n🎯 Появились новые задания с наградами.\n\n🎉 В игре началось новое событие.",
+      "external_article_url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE9LLXczRFMyVVdGZW9uR0lkVXN5MjhZMFd6V2FLa0dOLTRlU1I4OUhSXzJHcGJGVEZPdlRiMzVqdDVXMUQ5X3ZJQUFIV0xjaVhBdnBXazA5Y09OWENhWi1VTS1MM3VZdVZ1RUdqVHJ1NEQzZHg3R1NQYS1lVTA5QQ?oc=5",
+      "source_attribution": "Источник: Sportskeeda"
+    },
+    {
       "game": "Blade Ball",
       "emoji": "⚔️",
       "score": 6,
-      "headline": "В Blade Ball вышло обновление «EVERYTHING in the NEW Blade Ball Update!!».",
+      "headline": "В Blade Ball вышло обновление «NEW No Batidão Emote in Blade Ball! 💥».",
       "facts": [],
-      "text": "В Blade Ball вышло обновление «EVERYTHING in the NEW Blade Ball Update!!».",
-      "external_article_url": "https://www.youtube.com/watch?v=ginSdbnk-Qc"
+      "text": "В Blade Ball вышло обновление «NEW No Batidão Emote in Blade Ball! 💥».",
+      "external_article_url": "https://www.youtube.com/watch?v=wdg5NPKCM20"
     }
   ],
   "pipeline": [
     {
       "game": "Steal An Egg",
       "candidate": true,
-      "verified": false,
-      "selected": false,
-      "formatted_ru": false,
-      "scheduled": false,
-      "reason": "Нет пригодной Tier B новости; Нет новой конкретной строки со времени прошлого снимка"
+      "verified": true,
+      "selected": true,
+      "formatted_ru": true,
+      "scheduled": true,
+      "reason": "вошёл в утренний выпуск"
     },
     {
       "game": "Animal Hospital (Anomaly)",
@@ -63,7 +77,7 @@
       "selected": false,
       "formatted_ru": false,
       "scheduled": false,
-      "reason": "Публикация устарела: 31.2 дн. (аварийный лимит 30); В публикации не найдено достаточно конкретного содержания; Нет новой конкретной строки со времени прошлого снимка"
+      "reason": "Публикация устарела: 31.5 дн. (аварийный лимит 30); В публикации не найдено достаточно конкретного содержания; Нет новой конкретной строки со времени прошлого снимка"
     },
     {
       "game": "Adopt Me!",
@@ -72,7 +86,7 @@
       "selected": false,
       "formatted_ru": false,
       "scheduled": false,
-      "reason": "Публикация уже использовалась в выпуске другого дня; Нет пригодной Tier B новости; Нет новой конкретной строки со времени прошлого снимка"
+      "reason": "Публикация уже использовалась в выпуске другого дня; Tier B повторяет уже использованную официальную новость; Нет новой конкретной строки со времени прошлого снимка"
     },
     {
       "game": "RIVALS",
@@ -90,7 +104,7 @@
       "selected": false,
       "formatted_ru": false,
       "scheduled": false,
-      "reason": "Нет пригодной Tier B новости; Нет новой конкретной строки со времени прошлого снимка"
+      "reason": "В публикации не найдено достаточно конкретного содержания; Нет новой конкретной строки со времени прошлого снимка"
     },
     {
       "game": "Steal a Brainrot",
@@ -99,7 +113,7 @@
       "selected": false,
       "formatted_ru": false,
       "scheduled": false,
-      "reason": "Нет пригодной Tier B новости; Нет новой конкретной строки со времени прошлого снимка"
+      "reason": "В публикации не найдено достаточно конкретного содержания; Нет новой конкретной строки со времени прошлого снимка"
     },
     {
       "game": "Blade Ball",
@@ -117,7 +131,7 @@
       "selected": false,
       "formatted_ru": false,
       "scheduled": false,
-      "reason": "Нет пригодной Tier B новости; Нет новой конкретной строки со времени прошлого снимка"
+      "reason": "В публикации не найдено достаточно конкретного содержания; Нет новой конкретной строки со времени прошлого снимка"
     },
     {
       "game": "Dress To Impress",
@@ -126,7 +140,7 @@
       "selected": false,
       "formatted_ru": false,
       "scheduled": false,
-      "reason": "Публикация устарела: 66.5 дн. (аварийный лимит 30); Нет пригодной Tier B новости; Нет новой конкретной строки со времени прошлого снимка"
+      "reason": "Публикация устарела: 66.8 дн. (аварийный лимит 30); Нет пригодной Tier B новости; Нет новой конкретной строки со времени прошлого снимка"
     },
     {
       "game": "Pet Simulator 99",
@@ -135,14 +149,14 @@
       "selected": false,
       "formatted_ru": false,
       "scheduled": false,
-      "reason": "Публикация уже использовалась в выпуске другого дня; Нет пригодной Tier B новости; Нет новой конкретной строки со времени прошлого снимка"
+      "reason": "Публикация уже использовалась в выпуске другого дня; В публикации не найдено достаточно конкретного содержания; Нет новой конкретной строки со времени прошлого снимка"
     }
   ],
   "summary": {
     "found": 14,
-    "verified": 1,
-    "selected": 1,
-    "formatted": 1,
-    "scheduled": 1
+    "verified": 2,
+    "selected": 2,
+    "formatted": 2,
+    "scheduled": 2
   }
 }
