@@ -1926,9 +1926,9 @@
     "rubric": "Brawl Stars: совет дня",
     "source": "verified_brawl_fallback",
     "text": "💥💥💥 НОВОСТИ BRAWL STARS 💥💥💥\n\n🎯 СОВЕТ ДНЯ\n\nПеред входом в кусты проверь их атакой, если поблизости может скрываться соперник. Такая проверка помогает не отдавать преимущество внезапной атаке и безопаснее занимать важную часть карты.\n\n⭐ Roblox Hub\n\n#BrawlStars #ПолезноЗнать #RobloxHub",
-    "status": "pending",
-    "published_at": null,
-    "attempts": 0,
+    "status": "published",
+    "published_at": "2026-09-08T12:00:44.563598+05:00",
+    "attempts": 1,
     "last_error": null,
     "image_path": "assets/news_headers/brawl_news_header.png"
   },
