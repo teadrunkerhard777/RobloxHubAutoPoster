@@ -546,10 +546,11 @@ class ImageScheduleTests(unittest.TestCase):
         self.assertEqual(posts[0]["source"], "brawl_pipeline")
         self.assertIn("Release Notes August 2026", posts[0]["text"])
 
-    def test_brawl_fallback_is_used_only_with_zero_eligible_news(self):
+    def test_zero_eligible_brawl_news_creates_no_post_or_tip_fallback(self):
         posts = []
+        fallback_calls = []
 
-        schedule_brawl_post(
+        added = schedule_brawl_post(
             posts,
             date(2026, 9, 2),
             data_loader=lambda: {
@@ -559,10 +560,37 @@ class ImageScheduleTests(unittest.TestCase):
                 "new_buffs": [],
                 "new_nerfs": [],
             },
-            fallback_builder=lambda: "Проверенный fallback",
+            fallback_builder=lambda: fallback_calls.append(True) or "fallback",
         )
 
-        self.assertEqual(posts[0]["source"], "verified_brawl_fallback")
+        self.assertEqual(added, 0)
+        self.assertEqual(posts, [])
+        self.assertEqual(fallback_calls, [])
+
+    def test_published_article_without_other_eligible_news_creates_no_post(self):
+        published_article = {
+            "url": "https://supercell.com/already-published",
+            "title": "Already published article",
+            "lifecycle_status": "published",
+            "published": True,
+        }
+        posts = []
+
+        added = schedule_brawl_post(
+            posts,
+            date(2026, 9, 3),
+            data_loader=lambda: {
+                "new_articles": [],
+                "high_priority_articles": [],
+                "medium_priority_articles": [],
+                "published_articles": [published_article],
+            },
+            final_post_builder=lambda data: None,
+            fallback_builder=lambda: self.fail("Совет не должен создаваться"),
+        )
+
+        self.assertEqual(added, 0)
+        self.assertEqual(posts, [])
 
     def test_balance_material_uses_news_pipeline(self):
         posts = []
@@ -588,29 +616,23 @@ class ImageScheduleTests(unittest.TestCase):
         self.assertEqual(posts[0]["source"], "brawl_pipeline")
         self.assertIn("ИЗМЕНЕНИЯ БАЛАНСА", posts[0]["text"])
 
-    def test_brawl_none_creates_mandatory_fallback_slot(self):
+    def test_brawl_none_leaves_twelve_oclock_slot_empty(self):
         posts = []
+        fallback_calls = []
 
         added = schedule_brawl_post(
             posts,
             date(2026, 8, 24),
             data_loader=dict,
             final_post_builder=lambda data: None,
-            fallback_builder=lambda: "Проверенный Brawl fallback",
+            fallback_builder=lambda: fallback_calls.append(True) or "fallback",
         )
 
-        self.assertEqual(added, 1)
-        self.assertEqual(posts[0]["source"], "verified_brawl_fallback")
-        self.assertEqual(
-            posts[0]["text"],
-            "Проверенный Brawl fallback\n\n" "#BrawlStars #ПолезноЗнать #RobloxHub",
-        )
-        self.assertEqual(
-            posts[0]["image_path"],
-            "assets/news_headers/brawl_news_header.png",
-        )
+        self.assertEqual(added, 0)
+        self.assertEqual(posts, [])
+        self.assertEqual(fallback_calls, [])
 
-    def test_missing_brawl_header_keeps_text_only_slot(self):
+    def test_missing_brawl_header_does_not_create_empty_slot(self):
         posts = []
 
         added = schedule_brawl_post(
@@ -622,12 +644,8 @@ class ImageScheduleTests(unittest.TestCase):
             header_checker=lambda path: False,
         )
 
-        self.assertEqual(added, 1)
-        self.assertNotIn("image_path", posts[0])
-        self.assertEqual(
-            posts[0]["text"],
-            "Проверенный Brawl fallback\n\n" "#BrawlStars #ПолезноЗнать #RobloxHub",
-        )
+        self.assertEqual(added, 0)
+        self.assertEqual(posts, [])
 
     def test_news_header_text_is_sent_as_photo_caption(self):
         post = {
@@ -727,7 +745,7 @@ class ImageScheduleTests(unittest.TestCase):
         self.assertEqual(added, 0)
         self.assertEqual(len(posts), 1)
 
-    def test_repeated_fallback_does_not_consume_next_tip(self):
+    def test_repeated_empty_run_never_calls_tip_fallback(self):
         posts = []
         fallback_calls = []
 
@@ -744,8 +762,8 @@ class ImageScheduleTests(unittest.TestCase):
                 fallback_builder=fallback_builder,
             )
 
-        self.assertEqual(fallback_calls, ["used"])
-        self.assertEqual(len(posts), 1)
+        self.assertEqual(fallback_calls, [])
+        self.assertEqual(posts, [])
 
     def test_pending_fallback_is_upgraded_when_official_news_appears(self):
         posts = [
@@ -774,6 +792,30 @@ class ImageScheduleTests(unittest.TestCase):
         self.assertEqual(posts[0]["source"], "brawl_pipeline")
         self.assertEqual(posts[0]["rubric"], "Brawl Stars")
         self.assertIn("Свежая официальная новость", posts[0]["text"])
+
+    def test_pending_fallback_is_removed_when_no_real_news_exists(self):
+        posts = [
+            {
+                "id": "2026-08-24-brawl-12",
+                "publish_at": "2026-08-24T12:00:00+05:00",
+                "status": "pending",
+                "game": "Brawl Stars",
+                "rubric": "Brawl Stars: совет дня",
+                "source": "verified_brawl_fallback",
+                "text": "Старый fallback",
+            }
+        ]
+
+        added = schedule_brawl_post(
+            posts,
+            date(2026, 8, 24),
+            data_loader=dict,
+            final_post_builder=lambda data: None,
+            fallback_builder=lambda: self.fail("Совет не должен пересоздаваться"),
+        )
+
+        self.assertEqual(added, 0)
+        self.assertEqual(posts, [])
 
     def test_article_selected_after_slot_is_scheduled_next_day(self):
         article = {
@@ -931,7 +973,7 @@ class ImageScheduleTests(unittest.TestCase):
         self.assertNotIn("🔥 ГЛАВНОЕ", fallback)
         self.assertNotIn("свежая новость", fallback.lower())
 
-    def test_supercell_failure_uses_fallback_without_loading_old_json(self):
+    def test_supercell_failure_leaves_slot_empty(self):
         posts = []
 
         added = schedule_brawl_post(
@@ -942,8 +984,8 @@ class ImageScheduleTests(unittest.TestCase):
             skip_fresh_material=True,
         )
 
-        self.assertEqual(added, 1)
-        self.assertEqual(posts[0]["source"], "verified_brawl_fallback")
+        self.assertEqual(added, 0)
+        self.assertEqual(posts, [])
 
     def test_missing_brawl_tip_database_uses_emergency_post(self):
         saved_history = []
@@ -1015,7 +1057,7 @@ class ImageScheduleTests(unittest.TestCase):
         self.assertEqual(added, 0)
         self.assertEqual(posts, [legacy_post])
 
-    def test_brawl_failure_preserves_other_posts_and_adds_fallback(self):
+    def test_brawl_failure_preserves_other_posts_without_fallback(self):
         existing_post = {
             "id": "2026-08-24-10",
             "publish_at": "2026-08-24T10:00:00+05:00",
@@ -1035,9 +1077,8 @@ class ImageScheduleTests(unittest.TestCase):
             fallback_builder=lambda: "Аварийный Brawl fallback",
         )
 
-        self.assertEqual(added, 1)
-        self.assertEqual(posts[0], existing_post)
-        self.assertEqual(posts[1]["source"], "verified_brawl_fallback")
+        self.assertEqual(added, 0)
+        self.assertEqual(posts, [existing_post])
 
     def test_workflows_run_preparation_and_all_publish_slots(self):
         autopost_workflow = (PROJECT_ROOT / ".github/workflows/autopost.yml").read_text(

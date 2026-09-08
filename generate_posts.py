@@ -580,15 +580,17 @@ def schedule_brawl_post(
     header_checker=None,
 ):
     """
-    Добавляет готовый Brawl Stars пост в слот 12:00.
+    Добавляет в слот 12:00 только готовую Brawl Stars новость.
 
     Сначала функция читает подготовленный monitor JSON и вызывает
-    существующий build_final_post(). Если свежего материала нет,
-    обязательный слот заполняется локальным проверенным fallback.
-    Зависимости можно заменить в тестах без рабочих файлов.
+    существующий build_final_post(). Если пригодного материала нет,
+    слот остаётся пустым: советы и нейтральные заглушки не используются.
+    Зависимости можно заменить в тестах без рабочих файлов. Параметр
+    fallback_builder сохранён только для совместимости старых вызовов
+    и намеренно никогда не вызывается.
 
-    Проверка стабильного ID выполняется до выбора fallback-совета.
-    Поэтому повторный запуск не создаёт дубль и не сдвигает ротацию.
+    Проверка стабильного ID выполняется до анализа monitor JSON,
+    поэтому повторный запуск не создаёт дубль.
     """
 
     post_id = f"{target_date}-brawl-{BRAWL_POST_HOUR}"
@@ -646,6 +648,23 @@ def schedule_brawl_post(
                 if selected_url:
                     existing_post["brawl_article_url"] = selected_url
 
+            else:
+                # Старый неопубликованный совет больше не должен занимать
+                # новостной слот. Published-архив защищён проверкой выше.
+                existing_posts.remove(existing_post)
+                print("12:00 — удалён старый неопубликованный Brawl fallback.")
+
+                if isinstance(brawl_data, dict):
+                    from brawl_post import print_brawl_pipeline_diagnostics
+
+                    print_brawl_pipeline_diagnostics(
+                        brawl_data,
+                        scheduled=False,
+                        blocked_reason="нет пригодной подтверждённой Brawl news",
+                    )
+
+                return 0
+
         existing_post["text"] = fit_telegram_caption(
             add_post_hashtags(
                 existing_post.get("text", ""),
@@ -702,9 +721,6 @@ def schedule_brawl_post(
             print("12:00 — слот уже занят существующим текстовым постом.")
             return 0
 
-    if fallback_builder is None:
-        fallback_builder = generate_brawl_fallback
-
     if data_loader is None:
         data_loader = load_brawl_latest_changes
 
@@ -726,26 +742,26 @@ def schedule_brawl_post(
         except (OSError, ValueError, TypeError, KeyError, AttributeError) as error:
             print(f"12:00 — Brawl pipeline недоступен: {error}")
 
-    if final_text is not None:
-        rubric = "Brawl Stars"
-        source = "brawl_pipeline"
-        status_message = "12:00 — создан Brawl Stars новостной выпуск."
-    else:
-        try:
-            final_text = fallback_builder()
-        except (OSError, ValueError, TypeError, KeyError, AttributeError):
-            # Даже пользовательская тестовая зависимость или ошибка
-            # записи истории не может отменить обязательный слот.
-            final_text = build_brawl_fallback()
+    if final_text is None:
+        print("12:00 — подтверждённых Brawl Stars новостей нет; пост не создаём.")
 
-        rubric = "Brawl Stars: совет дня"
-        source = "verified_brawl_fallback"
-        status_message = (
-            "12:00 — свежих Brawl Stars материалов нет; " "создан fallback-пост."
-        )
+        if isinstance(brawl_data, dict):
+            from brawl_post import print_brawl_pipeline_diagnostics
 
-    # И новостной выпуск, и локальный fallback используют одну
-    # постоянную Brawl-шапку. Текст остаётся в поле text — app.py
+            print_brawl_pipeline_diagnostics(
+                brawl_data,
+                scheduled=False,
+                blocked_reason="нет пригодной подтверждённой Brawl news",
+            )
+
+        return 0
+
+    rubric = "Brawl Stars"
+    source = "brawl_pipeline"
+    status_message = "12:00 — создан Brawl Stars новостной выпуск."
+
+    # Реальный новостной выпуск использует постоянную Brawl-шапку.
+    # Текст остаётся в поле text — app.py
     # уже передаёт его Telegram как caption для image_path.
     final_text = fit_telegram_caption(final_text)
     header_path = resolve_news_header(
@@ -1274,9 +1290,8 @@ mark_roblox_news_scheduled(
 # --------------------------------------------------
 # 12:00 — Brawl Stars
 #
-# Свежие HIGH/MEDIUM статьи и Balance Changes имеют приоритет.
-# Если monitor недоступен или готового выпуска нет, тот же
-# стабильный слот получает локальный проверенный fallback.
+# Свежие HIGH/MEDIUM статьи и Balance Changes формируют пост.
+# Если monitor недоступен или готового выпуска нет, слот отсутствует.
 # --------------------------------------------------
 
 brawl_added = schedule_brawl_post(
