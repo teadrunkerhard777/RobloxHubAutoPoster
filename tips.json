@@ -16,7 +16,7 @@
     "text": "Не трать всё дерево на костёр: часть древесины пригодится для крафта и развития лагеря.",
     "source": "verified_core_mechanic",
     "reviewed_at": "2026-08-14",
-    "used": false,
+    "used": true,
     "category": "items"
   },
   {
@@ -706,7 +706,7 @@
     "text": "Не стреляй без необходимости, если противник ещё не заметил тебя — неожиданная атака может дать преимущество.",
     "source": "verified_core_mechanic",
     "reviewed_at": "2026-08-14",
-    "used": false,
+    "used": true,
     "category": "combat"
   },
   {
@@ -816,7 +816,7 @@
     "text": "Не заполняй участок случайными семенами только потому, что они есть в магазине — оставляй место под более желанные.",
     "source": "verified_core_mechanic",
     "reviewed_at": "2026-08-14",
-    "used": false,
+    "used": true,
     "category": "building"
   },
   {
@@ -1257,7 +1257,7 @@
     "text": "Не начинай кражу без пути отхода и готового предмета для защиты от погони.",
     "source": "verified_core_mechanic",
     "reviewed_at": "2026-08-24",
-    "used": false
+    "used": true
   },
   {
     "id": 127,
@@ -1347,7 +1347,7 @@
     "text": "Для поездки с друзьями выбирай транспорт, в котором хватит места всей компании.",
     "source": "verified_core_mechanic",
     "reviewed_at": "2026-08-24",
-    "used": false
+    "used": true
   },
   {
     "id": 136,
@@ -1585,7 +1585,7 @@
     "text": "Улучшай базу вместе со скоростью, не вкладывай всё только в одну систему.",
     "source": "agreed_editorial_list",
     "reviewed_at": "2026-08-28",
-    "used": false
+    "used": true
   },
   {
     "id": 159,
@@ -1794,7 +1794,7 @@
     "text": "Если следующий участок слишком сложный, сначала накопи больше Speed.",
     "source": "agreed_editorial_list",
     "reviewed_at": "2026-08-28",
-    "used": false
+    "used": true
   },
   {
     "id": 178,
@@ -1816,7 +1816,7 @@
     "text": "Не пытайся пройти сложный прыжок на минимальной скорости: небольшой запас делает прохождение стабильнее.",
     "source": "agreed_editorial_list",
     "reviewed_at": "2026-08-28",
-    "used": false
+    "used": true
   },
   {
     "id": 180,
@@ -1849,7 +1849,7 @@
     "text": "Сравнивай улучшения по тому, насколько они ускоряют получение Speed, а не только по внешнему виду.",
     "source": "agreed_editorial_list",
     "reviewed_at": "2026-08-28",
-    "used": false
+    "used": true
   },
   {
     "id": 183,
@@ -1882,7 +1882,7 @@
     "text": "Используй более простые этапы для стабильного набора ресурсов, если новый пока проходится слишком нестабильно.",
     "source": "agreed_editorial_list",
     "reviewed_at": "2026-08-28",
-    "used": false
+    "used": true
   },
   {
     "id": 186,
@@ -1970,7 +1970,7 @@
     "text": "Sheriff не стоит сразу показывать пистолет, иначе Murderer может начать охотиться именно за ним.",
     "source": "agreed_editorial_list",
     "reviewed_at": "2026-08-28",
-    "used": false
+    "used": true
   },
   {
     "id": 194,
