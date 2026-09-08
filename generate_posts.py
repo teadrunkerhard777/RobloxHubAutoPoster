@@ -12,7 +12,6 @@ from image_library import select_daily_image
 from post_hashtags import add_post_hashtags, update_pending_post_hashtags
 from post_headings import (
     BRAWL_NEWS_HEADING,
-    ROBLOX_FALLBACK_HEADING,
     ROBLOX_NEWS_HEADING,
 )
 from tips_rotation import (
@@ -38,12 +37,6 @@ ROBLOX_NEWS_HOUR = 10
 BRAWL_POST_HOUR = 12
 TIPS_POST_HOUR = 15
 HITS_POST_HOUR = 19
-
-# Утренний fallback старается показать три разные игры,
-# но два проверенных совета уже считаются достаточным
-# содержательным выпуском для обязательного слота 10:00.
-MORNING_FALLBACK_MAX_TIPS = 3
-MORNING_FALLBACK_MIN_TIPS = 2
 
 # Brawl monitor сохраняет сюда подготовленные данные. Генератор читает их,
 # а durable lifecycle обновляет только после реальной вставки поста в очередь.
@@ -951,126 +944,18 @@ def mark_roblox_news_scheduled(scheduled):
     )
 
 
-def is_verified_fallback_tip(tip):
-    """
-    Проверяет, можно ли использовать локальный совет утром.
-
-    Fallback допускает только записи с заполненными игрой и
-    текстом, источник которых явно относится к проверенной
-    базе проекта. Это не позволяет случайной или неполной
-    записи из JSON попасть в обязательный выпуск.
-    """
-
-    if not isinstance(tip, dict):
-        return False
-
-    source = tip.get("source", "")
-
-    return bool(
-        tip.get("game")
-        and tip.get("text")
-        and isinstance(source, str)
-        and source.startswith("verified_")
-    )
-
-
-def build_morning_fallback(selected_tips):
-    """
-    Формирует утренний пост из уже выбранных локальных советов.
-
-    Текст каждого факта переносится без пересказа. Вступление
-    прямо сообщает, что подтверждённых обновлений сегодня нет,
-    поэтому советы нельзя принять за свежие новости.
-    """
-
-    if not isinstance(selected_tips, (list, tuple)):
-        selected_tips = []
-
-    verified_tips = []
-    selected_games = set()
-
-    # Даже если нестандартный selector вернул несколько советов
-    # одной игры, утром показываем каждую игру только один раз.
-    for tip in selected_tips:
-        if not is_verified_fallback_tip(tip):
-            continue
-
-        if tip["game"] in selected_games:
-            continue
-
-        verified_tips.append(tip)
-        selected_games.add(tip["game"])
-
-        if len(verified_tips) == MORNING_FALLBACK_MAX_TIPS:
-            break
-
-    if len(verified_tips) < MORNING_FALLBACK_MIN_TIPS:
-        return (
-            f"{ROBLOX_FALLBACK_HEADING}\n\n"
-            "Сегодня без подтверждённых игровых новостей.\n\n"
-            "Следим за обновлениями и вернёмся, "
-            "когда будет что рассказать 👀\n\n"
-            "🎮 Roblox Hub"
-        )
-
-    blocks = [
-        ROBLOX_FALLBACK_HEADING,
-        ("Сегодня без крупных подтверждённых обновлений, " "поэтому держи полезное 👇"),
-    ]
-
-    for tip in verified_tips:
-        emoji = GAME_EMOJIS.get(tip["game"], "🎮")
-        blocks.append(f"{emoji} {tip['game']}\n{tip['text']}")
-
-    blocks.append("🎮 Roblox Hub")
-
-    return "\n\n".join(blocks)
-
-
-def generate_morning_fallback(tip_selector=None):
-    """
-    Выбирает проверенные советы для обязательного слота 10:00.
-
-    Используем существующую select_tips(), которая сохраняет
-    used-флаги, историю игр и историю категорий. Если выбрать
-    три разные игры невозможно, безопасно пробуем две. Ошибка
-    локального JSON не отменяет слот: build_morning_fallback()
-    создаст нейтральный выпуск без конкретных фактов.
-    """
-
-    if tip_selector is None:
-        tip_selector = select_tips
-
-    selected_tips = []
-
-    for count in (
-        MORNING_FALLBACK_MAX_TIPS,
-        MORNING_FALLBACK_MIN_TIPS,
-    ):
-        try:
-            selected_tips = tip_selector(count=count)
-        except (OSError, ValueError, TypeError, KeyError, RuntimeError):
-            continue
-
-        break
-
-    return build_morning_fallback(selected_tips)
-
-
 def schedule_morning_post(
     existing_posts,
     target_date,
     news_text,
-    fallback_builder=None,
     header_checker=None,
 ):
     """
-    Создаёт или обновляет обязательный photo-слот 10:00.
+    Создаёт или обновляет photo-пост 10:00 только для свежей новости.
 
-    Свежий news-текст всегда имеет приоритет. Если его нет,
-    используем только локальный fallback. Stable ID остаётся
-    общим для обоих вариантов, поэтому повторный запуск не
-    создаёт дубль, а published-запись никогда не меняется.
+    При отсутствии подтверждённых новостей слот не резервируется:
+    советы, заглушки и пустые записи в очередь не добавляются.
+    Published-запись никогда не меняется.
 
     Возвращаем отдельно количество добавленных и обновлённых
     записей, чтобы сохранить текущую итоговую статистику.
@@ -1083,55 +968,27 @@ def schedule_morning_post(
         print("10:00 — пост уже опубликован, не изменяем.")
         return 0, 0
 
-    if news_text is not None:
-        final_text = news_text
-        rubric = "Выпуск дня"
-        source = "auto_verified"
-        status_message = "10:00 — создан новостной выпуск."
-    else:
-        # Уже подготовленный fallback не пересобираем при каждом
-        # повторном запуске: иначе ротация зря потратит новые
-        # советы, хотя запись с тем же ID уже находится в очереди.
+    if not news_text:
+        # Pending/failed fallback старого формата больше не должен занимать
+        # утренний слот. Published-архив защищён проверкой выше.
         if (
             existing_post is not None
             and existing_post.get("source") == "verified_fallback"
         ):
-            # Старую pending/failed запись можно безопасно
-            # перевести на новый photo-формат без повторного
-            # выбора советов и изменения стабильного ID.
-            final_text = fit_telegram_caption(existing_post.get("text", ""))
-            header_path = resolve_news_header(
-                ROBLOX_NEWS_HEADER_PATH,
-                path_checker=header_checker,
-            )
-            changed = existing_post.get("text") != final_text
-            existing_post["text"] = final_text
+            existing_posts.remove(existing_post)
+            print("10:00 — удалён старый неопубликованный fallback-пост.")
+            return 0, 1
 
-            if header_path is None:
-                changed = existing_post.pop("image_path", None) is not None or changed
-            else:
-                changed = existing_post.get("image_path") != header_path or changed
-                existing_post["image_path"] = header_path
+        print("10:00 — подтверждённых новостей нет; пост не создаём.")
+        return 0, 0
 
-            print("10:00 — полезный fallback-выпуск уже существует.")
+    final_text = news_text
+    rubric = "Выпуск дня"
+    source = "auto_verified"
+    status_message = "10:00 — создан новостной выпуск."
 
-            if header_path is not None:
-                print("10:00 — создан Roblox news post с шапкой.")
-
-            return 0, int(changed)
-
-        if fallback_builder is None:
-            fallback_builder = generate_morning_fallback
-
-        final_text = fallback_builder()
-        rubric = "Утренний выпуск"
-        source = "verified_fallback"
-        status_message = (
-            "10:00 — свежих новостей нет; " "создан полезный fallback-выпуск."
-        )
-
-    # Утренний news и fallback получают одинаковую Roblox-шапку.
-    # При отсутствии файла resolve_news_header() вернёт None,
+    # Утренний news получает Roblox-шапку. При отсутствии файла
+    # resolve_news_header() вернёт None,
     # и build_post() сохранит рабочую text-only запись.
     final_text = fit_telegram_caption(final_text)
     header_path = resolve_news_header(
@@ -1352,9 +1209,8 @@ posts_updated = 0
 # --------------------------------------------------
 # 10:00
 #
-# Слот обязателен каждый день. Свежие проверенные новости
-# имеют приоритет; при их отсутствии используем локальные
-# проверенные советы или последний нейтральный fallback.
+# Слот создаётся только при наличии свежей проверенной новости.
+# Если подтверждённых материалов нет, запись 10:00 отсутствует.
 # --------------------------------------------------
 
 morning_news_text = generate_morning_post()
