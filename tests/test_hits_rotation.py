@@ -9,6 +9,7 @@ from post_hashtags import add_post_hashtags
 from post_headings import HITS_HEADING
 from tips_rotation import (
     CURRENT_HIT_GAMES,
+    HITS_WATCHLIST,
     build_hits_post,
     choose_hit_game,
     choose_tips_for_game,
@@ -26,7 +27,12 @@ def load_schedule_members():
         "remove_pending_legacy_myth",
         "schedule_hits_post",
     }
-    constant_names = {"LOCAL_TIMEZONE", "HITS_POST_HOUR"}
+    constant_names = {
+        "LOCAL_TIMEZONE",
+        "HITS_POST_HOUR",
+        "GAME_EMOJIS",
+        "HITS_GAME_DESCRIPTIONS",
+    }
     nodes = []
 
     for node in tree.body:
@@ -60,6 +66,59 @@ class HitsRotationTests(unittest.TestCase):
     def setUpClass(cls):
         cls.tips = json.loads((PROJECT_ROOT / "tips.json").read_text(encoding="utf-8"))
 
+    def test_requested_games_are_in_pool_and_existing_games_remain(self):
+        requested_games = {
+            "Steal An Egg",
+            "Forsaken",
+            "Dungeon Quest Reborn",
+            "Cheating During Testing [BETA]",
+            "Grand Blue [Early Access]",
+            "Carve Wood!",
+        }
+        existing_games = {
+            "Steal An Egg",
+            "Animal Hospital (Anomaly)",
+            "+1 Speed Keyboard Escape",
+            "Murder Mystery 2",
+        }
+
+        self.assertTrue(requested_games.issubset(CURRENT_HIT_GAMES))
+        self.assertTrue(existing_games.issubset(CURRENT_HIT_GAMES))
+
+    def test_each_requested_game_has_description_and_three_editorial_blocks(self):
+        requested_games = {
+            "Steal An Egg",
+            "Forsaken",
+            "Dungeon Quest Reborn",
+            "Cheating During Testing [BETA]",
+            "Grand Blue [Early Access]",
+            "Carve Wood!",
+        }
+
+        for game in requested_games:
+            selected = choose_tips_for_game(
+                json.loads(json.dumps(self.tips, ensure_ascii=False)),
+                game,
+                count=3,
+                rng=random.Random(1),
+            )
+            self.assertEqual(len(selected), 3)
+            self.assertTrue(all(tip.get("hits_featured") for tip in selected))
+            _, text = build_hits_post(
+                game,
+                SCHEDULE["HITS_GAME_DESCRIPTIONS"][game],
+                selected,
+                SCHEDULE["GAME_EMOJIS"],
+            )
+            self.assertIn("🎮 Что за игра?", text)
+            self.assertTrue(text.startswith(f"{HITS_HEADING}\n\n"))
+            for tip in selected:
+                self.assertEqual(text.count(tip["text"]), 1)
+
+    def test_watchlist_is_not_part_of_publication_pool(self):
+        self.assertTrue(HITS_WATCHLIST)
+        self.assertTrue(set(HITS_WATCHLIST).isdisjoint(CURRENT_HIT_GAMES))
+
     def test_myth_generator_is_no_longer_scheduled(self):
         source = (PROJECT_ROOT / "generate_posts.py").read_text(encoding="utf-8")
         self.assertNotIn("def generate_myth_post", source)
@@ -67,13 +126,29 @@ class HitsRotationTests(unittest.TestCase):
 
     def test_games_rotate_without_adjacent_repeat(self):
         history = []
-        for _ in range(20):
+        first_cycle = []
+        for _ in CURRENT_HIT_GAMES:
             game = choose_hit_game(
                 recent_games=history, rng=random.Random(len(history))
             )
-            if history:
-                self.assertNotEqual(game, history[-1])
+            self.assertNotIn(game, history)
+            first_cycle.append(game)
             history.append(game)
+
+        self.assertEqual(set(first_cycle), set(CURRENT_HIT_GAMES))
+        next_game = choose_hit_game(recent_games=history)
+        self.assertNotEqual(next_game, history[-1])
+
+    def test_current_post_history_selects_forsaken_next(self):
+        posts = json.loads((PROJECT_ROOT / "posts.json").read_text(encoding="utf-8"))
+        history = [
+            post["game"]
+            for post in sorted(posts, key=lambda post: post.get("publish_at", ""))
+            if post.get("rubric") == "Новинки и хиты Roblox"
+            and post.get("game") in CURRENT_HIT_GAMES
+        ][-8:]
+
+        self.assertEqual(choose_hit_game(recent_games=history), "Forsaken")
 
     def test_post_contains_three_distinct_tips_from_selected_game(self):
         tips = json.loads(json.dumps(self.tips, ensure_ascii=False))

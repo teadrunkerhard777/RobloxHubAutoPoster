@@ -7,6 +7,8 @@ IMAGE_RUBRIC = "Картинка дня"
 GAME_HASHTAG_OVERRIDES = {
     "Animal Hospital (Anomaly)": "AnimalHospital",
     "+1 Speed Keyboard Escape": "SpeedKeyboardEscape",
+    "Cheating During Testing [BETA]": "CheatingDuringTesting",
+    "Grand Blue [Early Access]": "GrandBlue",
 }
 
 IMAGE_HASHTAGS = (

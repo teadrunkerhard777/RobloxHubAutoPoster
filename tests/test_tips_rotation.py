@@ -122,6 +122,16 @@ class TipsRotationTests(unittest.TestCase):
         self.assertIn("🎯 ", text)
         self.assertTrue(text.endswith("🎮 Roblox Hub"))
 
+    def test_hits_only_editorial_blocks_do_not_enter_useful_tips(self):
+        import json
+
+        with open("tips.json", "r", encoding="utf-8") as file:
+            tips = json.load(file)
+
+        selected = choose_tips(tips, 5, rng=random.Random(12))
+
+        self.assertTrue(all(not tip.get("hits_only", False) for tip in selected))
+
     def test_project_catalog_has_fifteen_valid_tips_per_game(self):
         import json
 
@@ -133,12 +143,15 @@ class TipsRotationTests(unittest.TestCase):
                 tips,
                 set(GAMES) | set(CURRENT_HIT_GAMES),
                 minimum_per_game=15,
-                minimum_by_game={game: 12 for game in CURRENT_HIT_GAMES},
+                minimum_by_game={
+                    game: 12 if game in PRIORITY_TIP_GAMES else 3
+                    for game in CURRENT_HIT_GAMES
+                },
             ),
             [],
         )
 
-    def test_new_games_have_twelve_tips_and_unique_ids(self):
+    def test_hit_games_have_enough_tips_and_unique_ids(self):
         import json
 
         with open("tips.json", "r", encoding="utf-8") as file:
@@ -149,7 +162,8 @@ class TipsRotationTests(unittest.TestCase):
 
         for game in CURRENT_HIT_GAMES:
             game_tips = [tip for tip in tips if tip["game"] == game]
-            self.assertGreaterEqual(len(game_tips), 12)
+            required = 12 if game in PRIORITY_TIP_GAMES else 3
+            self.assertGreaterEqual(len(game_tips), required)
             self.assertTrue(all(tip.get("emoji") for tip in game_tips))
 
 

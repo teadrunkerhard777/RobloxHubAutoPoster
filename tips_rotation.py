@@ -7,11 +7,31 @@ CURRENT_HIT_GAMES = (
     "Animal Hospital (Anomaly)",
     "+1 Speed Keyboard Escape",
     "Murder Mystery 2",
+    "Forsaken",
+    "Dungeon Quest Reborn",
+    "Cheating During Testing [BETA]",
+    "Grand Blue [Early Access]",
+    "Carve Wood!",
+)
+
+# Анонсированных игр недостаточно для готового обзора. Watchlist хранится
+# рядом с пулом рубрики, но намеренно не участвует в CURRENT_HIT_GAMES.
+HITS_WATCHLIST = (
+    "Monster in the Mansion",
+    "GOAT Football League",
+    "Nemesis",
+    "Fossil Force",
+    "Caramel",
 )
 
 # Временный редакционный приоритет: новые игры должны заметно появляться
 # в ближайших выпусках 15:00, а не теряться среди старой истории.
-PRIORITY_TIP_GAMES = set(CURRENT_HIT_GAMES)
+PRIORITY_TIP_GAMES = {
+    "Steal An Egg",
+    "Animal Hospital (Anomaly)",
+    "+1 Speed Keyboard Escape",
+    "Murder Mystery 2",
+}
 
 ALLOWED_TIP_CATEGORIES = {
     "survival",
@@ -152,7 +172,13 @@ def choose_tips(
 
     validate_tip_categories(tips)
 
-    games = sorted({tip["game"] for tip in tips if tip["game"] not in excluded_games})
+    games = sorted(
+        {
+            tip["game"]
+            for tip in tips
+            if tip["game"] not in excluded_games and not tip.get("hits_only", False)
+        }
+    )
 
     if len(games) < count:
         raise RuntimeError(f"Не удалось выбрать {count} советов по разным играм.")
@@ -197,21 +223,25 @@ def choose_tips(
 
 
 def choose_hit_game(games=CURRENT_HIT_GAMES, recent_games=None, rng=None):
-    """Выбирает игру для 19:00 без повтора соседнего выпуска."""
+    """Выбирает первую давно не выходившую игру для полного прохода пула."""
 
     if recent_games is None:
         recent_games = []
-    if rng is None:
-        rng = random
-
     candidates = list(games)
-    if recent_games and len(candidates) > 1:
-        candidates = [game for game in candidates if game != recent_games[-1]]
-
     if not candidates:
         raise RuntimeError("Нет игр для рубрики Новинки и хиты Roblox.")
 
-    return rng.choice(candidates)
+    recent_set = set(recent_games)
+    unused = [game for game in candidates if game not in recent_set]
+    if unused:
+        return unused[0]
+
+    # Полный пул пройден. Новый цикл начинается с первой игры, которая не
+    # совпадает с соседним выпуском; порядок остаётся воспроизводимым.
+    if recent_games and len(candidates) > 1:
+        candidates = [game for game in candidates if game != recent_games[-1]]
+
+    return candidates[0]
 
 
 def choose_tips_for_game(tips, game, count=3, rng=None):
@@ -222,6 +252,12 @@ def choose_tips_for_game(tips, game, count=3, rng=None):
 
     validate_tip_categories(tips)
     game_tips = [tip for tip in tips if tip.get("game") == game]
+    featured_tips = [tip for tip in game_tips if tip.get("hits_featured", False)]
+    use_editorial_order = len(featured_tips) >= count
+    if len(featured_tips) >= count:
+        # Для переданного редакцией готового материала используем именно его
+        # три блока. Обычные советы игры остаются в общей базе без удаления.
+        game_tips = featured_tips
 
     if len(game_tips) < count:
         raise RuntimeError(f"Для {game} недостаточно советов: {len(game_tips)}.")
@@ -246,7 +282,7 @@ def choose_tips_for_game(tips, game, count=3, rng=None):
                 if tip.get("id") not in {item.get("id") for item in selected}
             ]
 
-        tip = rng.choice(unused)
+        tip = unused[0] if use_editorial_order else rng.choice(unused)
         tip["used"] = True
         selected.append(tip)
 

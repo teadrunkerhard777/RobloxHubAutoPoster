@@ -2,7 +2,11 @@ import json
 from pathlib import Path
 from urllib.parse import urlparse
 
-from tips_rotation import CURRENT_HIT_GAMES, validate_tip_catalog
+from tips_rotation import (
+    CURRENT_HIT_GAMES,
+    PRIORITY_TIP_GAMES,
+    validate_tip_catalog,
+)
 
 GAMES_FILE = Path("games.json")
 SOURCES_FILE = Path("official_sources.json")
@@ -225,7 +229,13 @@ def validate_content_files(canonical_names):
             normalized_tips,
             all_tip_games,
             minimum_per_game=15,
-            minimum_by_game={game: 12 for game in CURRENT_HIT_GAMES},
+            # Старые четыре игры остаются частью общей tips-ротации и имеют
+            # расширенный каталог. Новые готовые обзоры используют ровно три
+            # редакционных блока, изолированных от рубрики 15:00.
+            minimum_by_game={
+                game: 12 if game in PRIORITY_TIP_GAMES else 3
+                for game in CURRENT_HIT_GAMES
+            },
         )
     )
 

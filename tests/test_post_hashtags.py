@@ -28,6 +28,18 @@ class PostHashtagTests(unittest.TestCase):
         self.assertEqual(game_hashtag("Murder Mystery 2"), "#MurderMystery2")
         self.assertEqual(game_hashtag("Animal Hospital (Anomaly)"), "#AnimalHospital")
 
+    def test_hits_hashtags_remove_status_suffixes(self):
+        self.assertEqual(
+            hashtags_for_post(
+                "Новинки и хиты Roblox", "Cheating During Testing [BETA]"
+            ),
+            ("#Roblox", "#CheatingDuringTesting", "#НовинкиRoblox"),
+        )
+        self.assertEqual(
+            hashtags_for_post("Новинки и хиты Roblox", "Grand Blue [Early Access]"),
+            ("#Roblox", "#GrandBlue", "#НовинкиRoblox"),
+        )
+
     def test_useful_tips_use_three_rubric_tags(self):
         result = add_post_hashtags(
             "💡 ПОЛЕЗНО ЗНАТЬ\n\nСоветы",

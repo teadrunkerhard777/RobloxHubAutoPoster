@@ -82,12 +82,18 @@ GAME_EMOJIS = {
     "Animal Hospital (Anomaly)": "🏥",
     "+1 Speed Keyboard Escape": "⌨️",
     "Murder Mystery 2": "🔪",
+    "Forsaken": "😈",
+    "Dungeon Quest Reborn": "⚔️",
+    "Cheating During Testing [BETA]": "😂",
+    "Grand Blue [Early Access]": "🏴‍☠️",
+    "Carve Wood!": "🪓",
 }
 
 HITS_GAME_DESCRIPTIONS = {
     "Steal An Egg": (
-        "Кради яйца, возвращай их на базу и вылупляй питомцев. "
-        "Доход от питомцев помогает улучшать скорость и базу."
+        "Кради яйца у питомцев, высиживай редких питомцев и зарабатывай на них "
+        "деньги. Можно улучшать базу и беговую дорожку, тренировать Speed и "
+        "охотиться за редкими размерами и мутациями."
     ),
     "Animal Hospital (Anomaly)": (
         "Проверяй пациентов на аномалии по внешности, фото и CCTV. "
@@ -100,6 +106,30 @@ HITS_GAME_DESCRIPTIONS = {
     "Murder Mystery 2": (
         "В каждом раунде Innocent выживают, Sheriff ищет убийцу, "
         "а Murderer старается не раскрыть себя раньше времени."
+    ),
+    "Forsaken": (
+        "Это survival-игра «один против всех». Выжившие выполняют задания, "
+        "помогают друг другу и стараются продержаться до конца таймера. Killer "
+        "должен остановить всю команду."
+    ),
+    "Dungeon Quest Reborn": (
+        "Возвращение классической Dungeon Quest: проходи подземелья, побеждай "
+        "боссов и собирай редкий лут. Играть можно как одному, так и вместе с "
+        "друзьями."
+    ),
+    "Cheating During Testing [BETA]": (
+        "Ты не подготовился к контрольной и пытаешься закончить тест до конца "
+        "таймера так, чтобы учитель не заметил списывание. Это шуточная игровая "
+        "механика, а не совет для настоящей школы 😄"
+    ),
+    "Grand Blue [Early Access]": (
+        "Пиратское приключение с островами, боссами, редким оружием, крафтом, "
+        "боевыми стилями и Cursed Fruits. Игра пока в Early Access, поэтому "
+        "разработчики предупреждают о возможных багах и лагах."
+    ),
+    "Carve Wood!": (
+        "Выращивай редкие деревья, руби их, вырезай изделия из брёвен и продавай "
+        "покупателям. Потом можно нанимать работников и развивать свою лесопилку."
     ),
 }
 
@@ -1100,7 +1130,17 @@ def generate_hits_post(rng=None):
         rng = random
 
     tips = load_json("tips.json")
-    history = load_json(HITS_GAME_HISTORY_FILE, [])
+    stored_history = load_json(HITS_GAME_HISTORY_FILE, [])
+    queued_posts = load_json("posts.json", [])
+    post_history = [
+        post.get("game")
+        for post in sorted(queued_posts, key=lambda post: post.get("publish_at", ""))
+        if post.get("rubric") == "Новинки и хиты Roblox"
+        and post.get("game") in CURRENT_HIT_GAMES
+    ]
+    # posts.json — фактическая durable-история публикаций. Локальный файл
+    # дополняет её выбором текущего запуска до сохранения очереди.
+    history = (post_history or stored_history)[-HITS_GAME_HISTORY_LIMIT:]
     game = choose_hit_game(CURRENT_HIT_GAMES, recent_games=history, rng=rng)
     selected_tips = choose_tips_for_game(tips, game, count=3, rng=rng)
 
