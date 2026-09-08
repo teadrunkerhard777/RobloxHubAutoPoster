@@ -1,5 +1,15 @@
 {
-  "items": [],
+  "items": [
+    {
+      "game": "Blade Ball",
+      "emoji": "⚔️",
+      "score": 6,
+      "headline": "В Blade Ball вышло обновление «NEW Duckling Pack in Blade Ball! 🐥».",
+      "facts": [],
+      "text": "В Blade Ball вышло обновление «NEW Duckling Pack in Blade Ball! 🐥».",
+      "external_article_url": "https://www.youtube.com/watch?v=aXOFdd4ZwA8"
+    }
+  ],
   "pipeline": [
     {
       "game": "Steal An Egg",
@@ -53,7 +63,7 @@
       "selected": false,
       "formatted_ru": false,
       "scheduled": false,
-      "reason": "Публикация устарела: 32.2 дн. (аварийный лимит 30); В публикации не найдено достаточно конкретного содержания; Нет новой конкретной строки со времени прошлого снимка"
+      "reason": "Публикация устарела: 32.4 дн. (аварийный лимит 30); В публикации не найдено достаточно конкретного содержания; Нет новой конкретной строки со времени прошлого снимка"
     },
     {
       "game": "Adopt Me!",
@@ -92,6 +102,15 @@
       "reason": "В публикации не найдено достаточно конкретного содержания; Нет новой конкретной строки со времени прошлого снимка"
     },
     {
+      "game": "Blade Ball",
+      "candidate": true,
+      "verified": true,
+      "selected": true,
+      "formatted_ru": true,
+      "scheduled": false,
+      "reason": "вошёл в утренний выпуск"
+    },
+    {
       "game": "Grow a Garden",
       "candidate": true,
       "verified": false,
@@ -107,7 +126,7 @@
       "selected": false,
       "formatted_ru": false,
       "scheduled": false,
-      "reason": "Источник недоступен: 404 Client Error: Not Found for url: https://www.youtube.com/feeds/videos.xml?channel_id=UCCVWvf_e5oRb6RfXyluR7UA; Нет пригодной Tier B новости; Нет новой конкретной строки со времени прошлого снимка"
+      "reason": "Публикация устарела: 67.7 дн. (аварийный лимит 30); Нет пригодной Tier B новости; Нет новой конкретной строки со времени прошлого снимка"
     },
     {
       "game": "Pet Simulator 99",
@@ -117,22 +136,13 @@
       "formatted_ru": false,
       "scheduled": false,
       "reason": "Публикация уже использовалась в выпуске другого дня; Tier B повторяет уже использованную официальную новость; Нет новой конкретной строки со времени прошлого снимка"
-    },
-    {
-      "game": "Blade Ball",
-      "candidate": true,
-      "verified": false,
-      "selected": false,
-      "formatted_ru": false,
-      "scheduled": false,
-      "reason": "Источник недоступен: 404 Client Error: Not Found for url: https://www.youtube.com/feeds/videos.xml?channel_id=UCPttFx0zI4Zv9M4i3Q2ylsw; Публикация устарела: 898.3 дн. (аварийный лимит 30); Нет пригодной Tier B новости; Нет новой конкретной строки со времени прошлого снимка"
     }
   ],
   "summary": {
     "found": 14,
-    "verified": 0,
-    "selected": 0,
-    "formatted": 0,
+    "verified": 1,
+    "selected": 1,
+    "formatted": 1,
     "scheduled": 0
   }
 }
