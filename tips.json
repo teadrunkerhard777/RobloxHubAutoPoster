@@ -446,7 +446,7 @@
     "text": "В приватном сервере удобнее проводить сложные сценки, потому что хозяин может лучше контролировать окружение.",
     "source": "verified_core_mechanic",
     "reviewed_at": "2026-08-14",
-    "used": false,
+    "used": true,
     "category": "social"
   },
   {
@@ -916,7 +916,7 @@
     "text": "Пробуй сочетать разные категории одежды, а не повторять один и тот же готовый комплект.",
     "source": "verified_core_mechanic",
     "reviewed_at": "2026-08-14",
-    "used": false,
+    "used": true,
     "category": "items"
   },
   {
@@ -1327,7 +1327,7 @@
     "text": "Разложи питомцев и предметы по вкладкам Storage, чтобы быстрее находить нужное.",
     "source": "verified_core_mechanic",
     "reviewed_at": "2026-08-24",
-    "used": false
+    "used": true
   },
   {
     "id": 134,
@@ -1541,7 +1541,7 @@
     "text": "Прокачивай Speed, если новые зоны становятся слишком трудными для быстрых побегов.",
     "source": "agreed_editorial_list",
     "reviewed_at": "2026-08-28",
-    "used": false
+    "used": true
   },
   {
     "id": 155,
@@ -1937,7 +1937,7 @@
     "text": "Собирай монеты, но не рискуй жизнью ради одной монеты.",
     "source": "agreed_editorial_list",
     "reviewed_at": "2026-08-28",
-    "used": false
+    "used": true
   },
   {
     "id": 191,
@@ -2075,7 +2075,7 @@
     "text": "Если играешь за Survivor, не забывай про главную цель: нужно не просто убегать, а выполнять задания и дожить до конца раунда.",
     "source": "agreed_editorial_list",
     "reviewed_at": "2026-09-08",
-    "used": false,
+    "used": true,
     "hits_featured": true,
     "hits_only": true
   },
@@ -2088,7 +2088,7 @@
     "text": "Помогай другим выжившим. Команде проще справляться с Killer, когда игроки действуют вместе, а не разбегаются кто куда.",
     "source": "agreed_editorial_list",
     "reviewed_at": "2026-09-08",
-    "used": false,
+    "used": true,
     "hits_featured": true,
     "hits_only": true
   },
@@ -2101,7 +2101,7 @@
     "text": "Следи за режимами и событиями: разработчики добавляют новые игровые режимы, системы событий и балансные изменения.",
     "source": "agreed_editorial_list",
     "reviewed_at": "2026-09-08",
-    "used": false,
+    "used": true,
     "hits_featured": true,
     "hits_only": true
   },
