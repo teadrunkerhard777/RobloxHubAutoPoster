@@ -2083,5 +2083,81 @@
     "attempts": 1,
     "last_error": null,
     "image_path": "images/16-00/watermarked_img_16569636225211429481.jpg"
+  },
+  {
+    "id": "2026-09-10-image-11",
+    "publish_at": "2026-09-10T11:00:00+05:00",
+    "game": "Roblox",
+    "rubric": "Картинка дня",
+    "source": "image_library",
+    "text": "#Roblox #BrawlStars #StealABrainrot #99Nights",
+    "status": "pending",
+    "published_at": null,
+    "attempts": 0,
+    "last_error": null,
+    "image_path": "images/16-00/f478ab45-ac4a-4f83-b233-f755b4c354ce.jpeg"
+  },
+  {
+    "id": "2026-09-10-image-14",
+    "publish_at": "2026-09-10T14:00:00+05:00",
+    "game": "Roblox",
+    "rubric": "Картинка дня",
+    "source": "image_library",
+    "text": "#Roblox #BrawlStars #StealABrainrot #99Nights",
+    "status": "pending",
+    "published_at": null,
+    "attempts": 0,
+    "last_error": null,
+    "image_path": "images/16-00/3a6f5577-a171-4462-91cf-b742aaf0fe10.jpeg"
+  },
+  {
+    "id": "2026-09-10-15",
+    "publish_at": "2026-09-10T15:00:00+05:00",
+    "game": "+1 Speed Keyboard Escape + Blox Fruits + Grow a Garden + 99 Nights in the Forest + Steal An Egg",
+    "rubric": "Полезно знать",
+    "source": "verified_db",
+    "text": "💡💡💡 ПОЛЕЗНО ЗНАТЬ 💡💡💡\n\n⌨️ +1 Speed Keyboard Escape\n🦘 Чем выше скорость, тем сильнее меняется движение персонажа: привыкни к управлению перед сложными прыжками.\n\n🍈 Blox Fruits\n💰 Не трать всё время на случайный поиск фруктов: Blox Fruits Dealer регулярно обновляет ассортимент.\n\n🌱 Grow a Garden\n💰 Планируй покупки семян по бюджету: дорогая покупка не всегда выгодна, если после неё нечего будет сажать.\n\n🌲 99 Nights in the Forest\n🔍 Обыскивай здания днём: там можно найти полезные предметы и топливо, не тратя время ночью.\n\n🥚 Steal An Egg\n✨ Следи не только за редкостью питомцев: в игре также есть размеры и мутации.\n\n🎮 Roblox Hub\n\n#Roblox #ПолезноЗнать #RobloxHub",
+    "status": "pending",
+    "published_at": null,
+    "attempts": 0,
+    "last_error": null
+  },
+  {
+    "id": "2026-09-10-image-17",
+    "publish_at": "2026-09-10T17:00:00+05:00",
+    "game": "Roblox",
+    "rubric": "Картинка дня",
+    "source": "image_library",
+    "text": "#Roblox #BrawlStars #StealABrainrot #99Nights",
+    "status": "pending",
+    "published_at": null,
+    "attempts": 0,
+    "last_error": null,
+    "image_path": "images/16-00/9af90252-4a94-441c-a94a-ac47e12609b3.jpeg"
+  },
+  {
+    "id": "2026-09-10-19",
+    "publish_at": "2026-09-10T19:00:00+05:00",
+    "game": "Steal An Egg",
+    "rubric": "Новинки и хиты Roblox",
+    "source": "verified_db",
+    "text": "🔥🔥🔥 НОВИНКИ И ХИТЫ ROBLOX 🔥🔥🔥\n\n🥚 Steal An Egg\n\n🎮 Что за игра?\nКради яйца у питомцев, высиживай редких питомцев и зарабатывай на них деньги. Можно улучшать базу и беговую дорожку, тренировать Speed и охотиться за редкими размерами и мутациями.\n\n🐣 Не спеши оценивать яйцо только по внешнему виду: в игре есть разные питомцы, размеры и мутации.\n\n🏃 Прокачивай дорожку и Speed: скорость пригодится, когда нужно быстро добраться до чужих яиц и вернуться на свою базу.\n\n🥷 Следи не только за чужими базами. Пока ты занят кражей, другие игроки тоже могут добраться до твоих яиц.\n\n🎮 Roblox Hub\n\n#Roblox #StealAnEgg #НовинкиRoblox",
+    "status": "pending",
+    "published_at": null,
+    "attempts": 0,
+    "last_error": null
+  },
+  {
+    "id": "2026-09-10-image-21",
+    "publish_at": "2026-09-10T21:00:00+05:00",
+    "game": "Roblox",
+    "rubric": "Картинка дня",
+    "source": "image_library",
+    "text": "#Roblox #BrawlStars #StealABrainrot #99Nights",
+    "status": "pending",
+    "published_at": null,
+    "attempts": 0,
+    "last_error": null,
+    "image_path": "images/16-00/a323bd69-826a-4ec1-b994-8df7b4d1923e.jpeg"
   }
 ]

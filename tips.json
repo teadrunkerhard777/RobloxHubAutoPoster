@@ -46,7 +46,7 @@
     "text": "Обыскивай здания днём: там можно найти полезные предметы и топливо, не тратя время ночью.",
     "source": "verified_core_mechanic",
     "reviewed_at": "2026-08-14",
-    "used": false,
+    "used": true,
     "category": "exploration"
   },
   {
@@ -246,7 +246,7 @@
     "text": "Не трать всё время на случайный поиск фруктов: Blox Fruits Dealer регулярно обновляет ассортимент.",
     "source": "verified_core_mechanic",
     "reviewed_at": "2026-08-14",
-    "used": false,
+    "used": true,
     "category": "economy"
   },
   {
@@ -796,7 +796,7 @@
     "text": "Планируй покупки семян по бюджету: дорогая покупка не всегда выгодна, если после неё нечего будет сажать.",
     "source": "verified_core_mechanic",
     "reviewed_at": "2026-08-14",
-    "used": false,
+    "used": true,
     "category": "economy"
   },
   {
@@ -1596,7 +1596,7 @@
     "text": "Следи не только за редкостью питомцев: в игре также есть размеры и мутации.",
     "source": "agreed_editorial_list",
     "reviewed_at": "2026-08-28",
-    "used": false
+    "used": true
   },
   {
     "id": 160,
@@ -1860,7 +1860,7 @@
     "text": "Чем выше скорость, тем сильнее меняется движение персонажа: привыкни к управлению перед сложными прыжками.",
     "source": "agreed_editorial_list",
     "reviewed_at": "2026-08-28",
-    "used": false
+    "used": true
   },
   {
     "id": 184,
@@ -2036,7 +2036,7 @@
     "text": "Не спеши оценивать яйцо только по внешнему виду: в игре есть разные питомцы, размеры и мутации.",
     "source": "agreed_editorial_list",
     "reviewed_at": "2026-09-08",
-    "used": false,
+    "used": true,
     "hits_featured": true,
     "hits_only": true
   },
@@ -2049,7 +2049,7 @@
     "text": "Прокачивай дорожку и Speed: скорость пригодится, когда нужно быстро добраться до чужих яиц и вернуться на свою базу.",
     "source": "agreed_editorial_list",
     "reviewed_at": "2026-09-08",
-    "used": false,
+    "used": true,
     "hits_featured": true,
     "hits_only": true
   },
@@ -2062,7 +2062,7 @@
     "text": "Следи не только за чужими базами. Пока ты занят кражей, другие игроки тоже могут добраться до твоих яиц.",
     "source": "agreed_editorial_list",
     "reviewed_at": "2026-09-08",
-    "used": false,
+    "used": true,
     "hits_featured": true,
     "hits_only": true
   },
