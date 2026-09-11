@@ -126,7 +126,7 @@
     "text": "Закрывай базу вовремя: открытая база — самый простой шанс для соперника унести Brainrot.",
     "source": "verified_core_mechanic",
     "reviewed_at": "2026-08-14",
-    "used": true,
+    "used": false,
     "category": "strategy"
   },
   {
@@ -136,7 +136,7 @@
     "text": "Не уходи далеко от базы сразу после снятия защиты — сначала проверь, кто находится рядом.",
     "source": "verified_core_mechanic",
     "reviewed_at": "2026-08-14",
-    "used": true,
+    "used": false,
     "category": "strategy"
   },
   {
@@ -146,7 +146,7 @@
     "text": "Чем больше доход приносит Brainrot, тем внимательнее стоит следить за его безопасностью.",
     "source": "verified_core_mechanic",
     "reviewed_at": "2026-08-14",
-    "used": true,
+    "used": false,
     "category": "economy"
   },
   {
@@ -156,7 +156,7 @@
     "text": "При краже соперник становится уязвимее, поэтому защищать базу лучше активно, а не просто наблюдать.",
     "source": "verified_core_mechanic",
     "reviewed_at": "2026-08-14",
-    "used": true,
+    "used": false,
     "category": "combat"
   },
   {
@@ -166,7 +166,7 @@
     "text": "Не делай Rebirth, пока не готов потерять текущие деньги и Brainrot: это обмен прогресса на постоянные улучшения.",
     "source": "verified_core_mechanic",
     "reviewed_at": "2026-08-14",
-    "used": true,
+    "used": false,
     "category": "mechanics"
   },
   {
@@ -176,7 +176,7 @@
     "text": "Rebirth полезен в долгой игре: он открывает дополнительные улучшения, слоты и усиливает дальнейший заработок.",
     "source": "verified_core_mechanic",
     "reviewed_at": "2026-08-14",
-    "used": true,
+    "used": false,
     "category": "mechanics"
   },
   {
@@ -186,7 +186,7 @@
     "text": "Перед Rebirth проверь требования заранее, чтобы не продавать и не терять нужных Brainrot по ошибке.",
     "source": "verified_core_mechanic",
     "reviewed_at": "2026-08-14",
-    "used": true,
+    "used": false,
     "category": "strategy"
   },
   {
@@ -196,7 +196,7 @@
     "text": "Хорошая защита базы важна не меньше высокого дохода: редкий Brainrot бесполезен, если его сразу украдут.",
     "source": "verified_core_mechanic",
     "reviewed_at": "2026-08-14",
-    "used": true,
+    "used": false,
     "category": "building"
   },
   {
@@ -206,7 +206,7 @@
     "text": "Если видишь открытую чужую базу, сначала оцени путь назад — украсть Brainrot мало, его ещё нужно донести.",
     "source": "verified_core_mechanic",
     "reviewed_at": "2026-08-14",
-    "used": true,
+    "used": false,
     "category": "strategy"
   },
   {
@@ -216,7 +216,7 @@
     "text": "Используй защитное снаряжение и slaps тогда, когда соперник действительно несёт ценный Brainrot, а не впустую.",
     "source": "verified_core_mechanic",
     "reviewed_at": "2026-08-14",
-    "used": true,
+    "used": false,
     "category": "items"
   },
   {
@@ -226,7 +226,7 @@
     "text": "После расширения базы размещай самые ценные Brainrot так, чтобы до них было сложнее добраться.",
     "source": "verified_core_mechanic",
     "reviewed_at": "2026-08-14",
-    "used": true,
+    "used": false,
     "category": "building"
   },
   {
@@ -236,7 +236,7 @@
     "text": "Не гоняйся только за редкостью: сравнивай, насколько конкретный Brainrot улучшает твой доход.",
     "source": "verified_core_mechanic",
     "reviewed_at": "2026-08-14",
-    "used": true,
+    "used": false,
     "category": "economy"
   },
   {
@@ -606,7 +606,7 @@
     "text": "В RIVALS побеждает не только меткость: движение и выбор момента для атаки часто решают дуэль.",
     "source": "verified_core_mechanic",
     "reviewed_at": "2026-08-14",
-    "used": false,
+    "used": true,
     "category": "combat"
   },
   {
@@ -1247,7 +1247,7 @@
     "text": "В начале игры выбирай Brainrot, который быстрее увеличит доход для следующих покупок.",
     "source": "verified_core_mechanic",
     "reviewed_at": "2026-08-24",
-    "used": true
+    "used": false
   },
   {
     "id": 126,
@@ -1257,7 +1257,7 @@
     "text": "Не начинай кражу без пути отхода и готового предмета для защиты от погони.",
     "source": "verified_core_mechanic",
     "reviewed_at": "2026-08-24",
-    "used": true
+    "used": false
   },
   {
     "id": 127,
@@ -1706,7 +1706,7 @@
     "text": "Запоминай расположение основных помещений — это экономит время во время срочных событий.",
     "source": "agreed_editorial_list",
     "reviewed_at": "2026-08-28",
-    "used": false
+    "used": true
   },
   {
     "id": 170,
@@ -1783,7 +1783,7 @@
     "text": "Собирай Wins на специальных площадках после прохождения этапов.",
     "source": "agreed_editorial_list",
     "reviewed_at": "2026-08-28",
-    "used": false
+    "used": true
   },
   {
     "id": 177,
@@ -1915,7 +1915,7 @@
     "text": "Избегай тупиков: если начнётся погоня, тебе понадобится путь отхода.",
     "source": "agreed_editorial_list",
     "reviewed_at": "2026-08-28",
-    "used": false
+    "used": true
   },
   {
     "id": 189,
@@ -2114,7 +2114,7 @@
     "text": "Не смотри только на редкость добычи: оружие, броня и способности должны подходить твоему персонажу и стилю игры.",
     "source": "agreed_editorial_list",
     "reviewed_at": "2026-09-08",
-    "used": false,
+    "used": true,
     "hits_featured": true,
     "hits_only": true
   },
@@ -2127,7 +2127,7 @@
     "text": "Если подземелье стало слишком сложным, попробуй собрать команду. Игра прямо рассчитана и на совместное прохождение.",
     "source": "agreed_editorial_list",
     "reviewed_at": "2026-09-08",
-    "used": false,
+    "used": true,
     "hits_featured": true,
     "hits_only": true
   },
@@ -2140,7 +2140,7 @@
     "text": "Чем дальше продвигаешься, тем сложнее испытания, поэтому не забывай усиливать персонажа перед следующим подземельем.",
     "source": "agreed_editorial_list",
     "reviewed_at": "2026-09-08",
-    "used": false,
+    "used": true,
     "hits_featured": true,
     "hits_only": true
   },

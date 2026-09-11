@@ -2159,5 +2159,81 @@
     "attempts": 1,
     "last_error": null,
     "image_path": "images/16-00/a323bd69-826a-4ec1-b994-8df7b4d1923e.jpeg"
+  },
+  {
+    "id": "2026-09-11-image-11",
+    "publish_at": "2026-09-11T11:00:00+05:00",
+    "game": "Roblox",
+    "rubric": "Картинка дня",
+    "source": "image_library",
+    "text": "#Roblox #BrawlStars #StealABrainrot #99Nights",
+    "status": "pending",
+    "published_at": null,
+    "attempts": 0,
+    "last_error": null,
+    "image_path": "images/16-00/watermarked_img_1363694557504643289.jpg"
+  },
+  {
+    "id": "2026-09-11-image-14",
+    "publish_at": "2026-09-11T14:00:00+05:00",
+    "game": "Roblox",
+    "rubric": "Картинка дня",
+    "source": "image_library",
+    "text": "#Roblox #BrawlStars #StealABrainrot #99Nights",
+    "status": "pending",
+    "published_at": null,
+    "attempts": 0,
+    "last_error": null,
+    "image_path": "images/16-00/11dae2f3-e8a1-4982-ab23-103a25316935.png"
+  },
+  {
+    "id": "2026-09-11-15",
+    "publish_at": "2026-09-11T15:00:00+05:00",
+    "game": "+1 Speed Keyboard Escape + Steal a Brainrot + Murder Mystery 2 + RIVALS + Animal Hospital (Anomaly)",
+    "rubric": "Полезно знать",
+    "source": "verified_db",
+    "text": "💡💡💡 ПОЛЕЗНО ЗНАТЬ 💡💡💡\n\n⌨️ +1 Speed Keyboard Escape\n🏆 Собирай Wins на специальных площадках после прохождения этапов.\n\n🧠 Steal a Brainrot\n🎯 Следи за защитой базы: перед её отключением лучше вернуться и проверить входы.\n\n🔪 Murder Mystery 2\n🚪 Избегай тупиков: если начнётся погоня, тебе понадобится путь отхода.\n\n🔫 RIVALS\n⚔️ В RIVALS побеждает не только меткость: движение и выбор момента для атаки часто решают дуэль.\n\n🏥 Animal Hospital (Anomaly)\n🏥 Запоминай расположение основных помещений — это экономит время во время срочных событий.\n\n🎮 Roblox Hub\n\n#Roblox #ПолезноЗнать #RobloxHub",
+    "status": "pending",
+    "published_at": null,
+    "attempts": 0,
+    "last_error": null
+  },
+  {
+    "id": "2026-09-11-image-17",
+    "publish_at": "2026-09-11T17:00:00+05:00",
+    "game": "Roblox",
+    "rubric": "Картинка дня",
+    "source": "image_library",
+    "text": "#Roblox #BrawlStars #StealABrainrot #99Nights",
+    "status": "pending",
+    "published_at": null,
+    "attempts": 0,
+    "last_error": null,
+    "image_path": "images/16-00/a22ca07d-2f3c-4f66-836a-f78705613587.jpeg"
+  },
+  {
+    "id": "2026-09-11-19",
+    "publish_at": "2026-09-11T19:00:00+05:00",
+    "game": "Dungeon Quest Reborn",
+    "rubric": "Новинки и хиты Roblox",
+    "source": "verified_db",
+    "text": "🔥🔥🔥 НОВИНКИ И ХИТЫ ROBLOX 🔥🔥🔥\n\n⚔️ Dungeon Quest Reborn\n\n🎮 Что за игра?\nВозвращение классической Dungeon Quest: проходи подземелья, побеждай боссов и собирай редкий лут. Играть можно как одному, так и вместе с друзьями.\n\n💎 Не смотри только на редкость добычи: оружие, броня и способности должны подходить твоему персонажу и стилю игры.\n\n🤝 Если подземелье стало слишком сложным, попробуй собрать команду. Игра прямо рассчитана и на совместное прохождение.\n\n⚔️ Чем дальше продвигаешься, тем сложнее испытания, поэтому не забывай усиливать персонажа перед следующим подземельем.\n\n🎮 Roblox Hub\n\n#Roblox #DungeonQuestReborn #НовинкиRoblox",
+    "status": "pending",
+    "published_at": null,
+    "attempts": 0,
+    "last_error": null
+  },
+  {
+    "id": "2026-09-11-image-21",
+    "publish_at": "2026-09-11T21:00:00+05:00",
+    "game": "Roblox",
+    "rubric": "Картинка дня",
+    "source": "image_library",
+    "text": "#Roblox #BrawlStars #StealABrainrot #99Nights",
+    "status": "pending",
+    "published_at": null,
+    "attempts": 0,
+    "last_error": null,
+    "image_path": "images/16-00/5646fec3-26ec-41db-844d-cd9725a00dd3.png"
   }
 ]
