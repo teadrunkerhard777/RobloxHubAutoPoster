@@ -126,7 +126,7 @@
     "text": "Закрывай базу вовремя: открытая база — самый простой шанс для соперника унести Brainrot.",
     "source": "verified_core_mechanic",
     "reviewed_at": "2026-08-14",
-    "used": false,
+    "used": true,
     "category": "strategy"
   },
   {
@@ -396,7 +396,7 @@
     "text": "Машины удобны для ролевых историй, но для коротких сцен иногда быстрее выбрать локацию рядом.",
     "source": "verified_core_mechanic",
     "reviewed_at": "2026-08-14",
-    "used": false,
+    "used": true,
     "category": "mechanics"
   },
   {
@@ -486,7 +486,7 @@
     "text": "Перед обменом внимательно проверяй финальное окно трейда и все предметы — не торопись подтверждать сделку.",
     "source": "verified_core_mechanic",
     "reviewed_at": "2026-08-14",
-    "used": false,
+    "used": true,
     "category": "economy"
   },
   {
@@ -1563,7 +1563,7 @@
     "text": "На старте выбирай яйцо, которое реально можешь безопасно унести, а не самое редкое из видимых.",
     "source": "agreed_editorial_list",
     "reviewed_at": "2026-08-28",
-    "used": false
+    "used": true
   },
   {
     "id": 157,
@@ -1772,7 +1772,7 @@
     "text": "Двигайся и тренируйся: Speed является главным ресурсом для прохождения препятствий.",
     "source": "agreed_editorial_list",
     "reviewed_at": "2026-08-28",
-    "used": false
+    "used": true
   },
   {
     "id": 176,
@@ -2153,7 +2153,7 @@
     "text": "Заканчивай тесты и старайся получать хорошие оценки: за более высокие результаты дают больше наград.",
     "source": "agreed_editorial_list",
     "reviewed_at": "2026-09-08",
-    "used": false,
+    "used": true,
     "hits_featured": true,
     "hits_only": true
   },
@@ -2166,7 +2166,7 @@
     "text": "Credits можно тратить на гаджеты и снаряжение, которые помогают во время следующих тестов.",
     "source": "agreed_editorial_list",
     "reviewed_at": "2026-09-08",
-    "used": false,
+    "used": true,
     "hits_featured": true,
     "hits_only": true
   },
@@ -2179,7 +2179,7 @@
     "text": "Следи за Anxiety и остерегайся Snitches: другие персонажи могут выдать тебя учителю ради Credits.",
     "source": "agreed_editorial_list",
     "reviewed_at": "2026-09-08",
-    "used": false,
+    "used": true,
     "hits_featured": true,
     "hits_only": true
   },

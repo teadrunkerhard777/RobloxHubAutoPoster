@@ -4,12 +4,20 @@
   "nerfs": [],
   "articles": [
     {
+      "title": "Brawl Stars Esports AMA",
+      "url": "https://supercell.com/en/games/brawlstars/blog/esports/brawl-stars-esports-ama/",
+      "category": "esports",
+      "date": "2026-09-11",
+      "archive_page": "https://supercell.com/en/games/brawlstars/blog/",
+      "archive_index": 0
+    },
+    {
       "title": "Matcherino just levelled UP",
       "url": "https://supercell.com/en/games/brawlstars/blog/esports/matcherino-just-levelled-up/",
       "category": "esports",
       "date": "2026-09-01",
       "archive_page": "https://supercell.com/en/games/brawlstars/blog/",
-      "archive_index": 0
+      "archive_index": 1
     },
     {
       "title": "Release Notes August 2026",
@@ -17,7 +25,7 @@
       "category": "release-notes",
       "date": "2026-09-01",
       "archive_page": "https://supercell.com/en/games/brawlstars/blog/",
-      "archive_index": 1
+      "archive_index": 2
     },
     {
       "title": "First Look at BSC 2027",
@@ -25,7 +33,7 @@
       "category": "esports",
       "date": "2026-08-24",
       "archive_page": "https://supercell.com/en/games/brawlstars/blog/",
-      "archive_index": 2
+      "archive_index": 3
     },
     {
       "title": "Brawl Stars Challengers Finals Format",
@@ -33,7 +41,7 @@
       "category": "esports",
       "date": "2026-08-10",
       "archive_page": "https://supercell.com/en/games/brawlstars/blog/",
-      "archive_index": 3
+      "archive_index": 4
     },
     {
       "title": "Release Notes June 2026",
@@ -41,15 +49,15 @@
       "category": "release-notes",
       "date": "2026-08-03",
       "archive_page": "https://supercell.com/en/games/brawlstars/blog/",
-      "archive_index": 4
+      "archive_index": 5
     },
     {
       "title": "2026 Brawl Stars World Finals Ticketing Guide",
       "url": "https://supercell.com/en/games/brawlstars/blog/esports/2026-brawl-stars-world-finals-ticketing-guide-2/",
       "category": "esports",
       "date": "2026-08-01",
-      "archive_page": "https://supercell.com/en/games/brawlstars/blog/",
-      "archive_index": 5
+      "archive_page": "https://supercell.com/en/games/brawlstars/blog/page/2/",
+      "archive_index": 6
     },
     {
       "title": "Brawl Stars World Finals Format",
@@ -57,7 +65,7 @@
       "category": "esports",
       "date": "2026-07-29",
       "archive_page": "https://supercell.com/en/games/brawlstars/blog/page/2/",
-      "archive_index": 6
+      "archive_index": 7
     },
     {
       "title": "Last Chance Qualifier Format",
@@ -65,7 +73,7 @@
       "category": "esports",
       "date": "2026-07-23",
       "archive_page": "https://supercell.com/en/games/brawlstars/blog/page/2/",
-      "archive_index": 7
+      "archive_index": 8
     },
     {
       "title": "THE ADIDAS STARR CUP IS ON!",
@@ -73,7 +81,7 @@
       "category": "community",
       "date": "2026-06-17",
       "archive_page": "https://supercell.com/en/games/brawlstars/blog/page/2/",
-      "archive_index": 8
+      "archive_index": 9
     },
     {
       "title": "Brawl Stars Challengers Finals: Tickets Available Now!",
@@ -81,21 +89,13 @@
       "category": "esports",
       "date": "2026-06-15",
       "archive_page": "https://supercell.com/en/games/brawlstars/blog/page/2/",
-      "archive_index": 9
+      "archive_index": 10
     },
     {
       "title": "THE FORMULA BRAWL EVENT IS HERE!",
       "url": "https://supercell.com/en/games/brawlstars/blog/news/the-formula-brawl-event-is-here/",
       "category": "other",
       "date": "2026-06-05",
-      "archive_page": "https://supercell.com/en/games/brawlstars/blog/page/2/",
-      "archive_index": 10
-    },
-    {
-      "title": "Brawl Cup Event Guide",
-      "url": "https://supercell.com/en/games/brawlstars/blog/esports/brawl-cup-event-guide-2/",
-      "category": "esports",
-      "date": "2026-05-15",
       "archive_page": "https://supercell.com/en/games/brawlstars/blog/page/2/",
       "archive_index": 11
     }
