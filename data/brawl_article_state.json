@@ -1792,8 +1792,9 @@
           "— Команда Brawl Stars Esports"
         ]
       },
-      "status": "scheduled",
-      "scheduled_post_id": "2026-09-12-brawl-12"
+      "status": "published",
+      "scheduled_post_id": "2026-09-12-brawl-12",
+      "published_at": "2026-09-12T12:00:44.487299+05:00"
     }
   }
 }

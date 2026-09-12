@@ -1,39 +1,19 @@
 {
   "items": [
     {
-      "game": "Brookhaven RP",
-      "emoji": "🏡",
-      "score": 10,
-      "headline": "🚗 В игру добавили новый транспорт.",
-      "facts": [
-        "В игре появились новые питомцы."
-      ],
-      "text": "🚗 В игру добавили новый транспорт.\n\nВ игре появились новые питомцы."
-    },
-    {
       "game": "Adopt Me!",
       "emoji": "🐾",
       "score": 10,
       "headline": "В Adopt Me! вышло обновление «New Star Rewards!».",
       "facts": [
         "В игре добавили 11 питомцев: Common, Ginger Cat, Toucan, Starfish и другое.",
-        "🎯 Появились новые задания с наградами.",
-        "В игре появились новые питомцы."
+        "🎯 Появились новые задания с наградами."
       ],
-      "text": "В Adopt Me! вышло обновление «New Star Rewards!».\n\nВ игре добавили 11 питомцев: Common, Ginger Cat, Toucan, Starfish и другое.\n\n🎯 Появились новые задания с наградами.\n\nВ игре появились новые питомцы.",
+      "text": "В Adopt Me! вышло обновление «New Star Rewards!».\n\nВ игре добавили 11 питомцев: Common, Ginger Cat, Toucan, Starfish и другое.\n\n🎯 Появились новые задания с наградами.",
       "external_article_url": "https://www.playadopt.me/news/new-star-rewards"
     }
   ],
   "pipeline": [
-    {
-      "game": "Brookhaven RP",
-      "candidate": true,
-      "verified": true,
-      "selected": true,
-      "formatted_ru": true,
-      "scheduled": true,
-      "reason": "вошёл в утренний выпуск"
-    },
     {
       "game": "Adopt Me!",
       "candidate": true,
@@ -80,13 +60,22 @@
       "reason": "Нет пригодной Tier B новости; Нет новой конкретной строки со времени прошлого снимка"
     },
     {
+      "game": "Brookhaven RP",
+      "candidate": true,
+      "verified": false,
+      "selected": false,
+      "formatted_ru": false,
+      "scheduled": false,
+      "reason": "Публикация уже использовалась в выпуске другого дня; Нет пригодной Tier B новости; Нет новой конкретной строки со времени прошлого снимка"
+    },
+    {
       "game": "Blox Fruits",
       "candidate": true,
       "verified": false,
       "selected": false,
       "formatted_ru": false,
       "scheduled": false,
-      "reason": "Публикация устарела: 36.2 дн. (аварийный лимит 30); В публикации не найдено достаточно конкретного содержания; Нет новой конкретной строки со времени прошлого снимка"
+      "reason": "Публикация устарела: 36.4 дн. (аварийный лимит 30); В публикации не найдено достаточно конкретного содержания; Нет новой конкретной строки со времени прошлого снимка"
     },
     {
       "game": "RIVALS",
@@ -131,7 +120,7 @@
       "selected": false,
       "formatted_ru": false,
       "scheduled": false,
-      "reason": "Источник недоступен: 404 Client Error: Not Found for url: https://www.youtube.com/feeds/videos.xml?channel_id=UCCVWvf_e5oRb6RfXyluR7UA; Нет пригодной Tier B новости; Нет новой конкретной строки со времени прошлого снимка"
+      "reason": "Публикация устарела: 71.7 дн. (аварийный лимит 30); Нет пригодной Tier B новости; Нет новой конкретной строки со времени прошлого снимка"
     },
     {
       "game": "Pet Simulator 99",
@@ -149,14 +138,14 @@
       "selected": false,
       "formatted_ru": false,
       "scheduled": false,
-      "reason": "Источник недоступен: 404 Client Error: Not Found for url: https://www.youtube.com/feeds/videos.xml?channel_id=UCPttFx0zI4Zv9M4i3Q2ylsw; Публикация устарела: 902.3 дн. (аварийный лимит 30); Нет пригодной Tier B новости; Нет новой конкретной строки со времени прошлого снимка"
+      "reason": "Публикация уже использовалась в выпуске другого дня; Публикация устарела: 902.6 дн. (аварийный лимит 30); Нет пригодной Tier B новости; Нет новой конкретной строки со времени прошлого снимка"
     }
   ],
   "summary": {
     "found": 14,
-    "verified": 2,
-    "selected": 2,
-    "formatted": 2,
-    "scheduled": 2
+    "verified": 1,
+    "selected": 1,
+    "formatted": 1,
+    "scheduled": 1
   }
 }
