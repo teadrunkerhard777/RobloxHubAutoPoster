@@ -786,7 +786,7 @@
     "text": "Сначала собирай полностью выросшие растения, а уже потом решай, куда вложить прибыль.",
     "source": "verified_core_mechanic",
     "reviewed_at": "2026-08-14",
-    "used": false,
+    "used": true,
     "category": "economy"
   },
   {
@@ -1056,7 +1056,7 @@
     "text": "Сохраняй часть ресурсов, если не уверен, что текущая покупка действительно улучшит команду.",
     "source": "verified_core_mechanic",
     "reviewed_at": "2026-08-14",
-    "used": false,
+    "used": true,
     "category": "economy"
   },
   {
@@ -1695,7 +1695,7 @@
     "text": "Используй восстановление Sanity заранее, когда ситуация ещё под контролем.",
     "source": "agreed_editorial_list",
     "reviewed_at": "2026-08-28",
-    "used": false
+    "used": true
   },
   {
     "id": 169,
@@ -1827,7 +1827,7 @@
     "text": "Запоминай сложные участки этапа — следующая попытка займёт меньше времени.",
     "source": "agreed_editorial_list",
     "reviewed_at": "2026-08-28",
-    "used": false
+    "used": true
   },
   {
     "id": 181,
@@ -1992,7 +1992,7 @@
     "text": "Во время погони меняй направление и используй комнаты и повороты карты.",
     "source": "agreed_editorial_list",
     "reviewed_at": "2026-08-28",
-    "used": false
+    "used": true
   },
   {
     "id": 196,
@@ -2192,7 +2192,7 @@
     "text": "Ищи Cursed Fruits на деревьях и растениях: по официальному описанию они появляются каждый час.",
     "source": "agreed_editorial_list",
     "reviewed_at": "2026-09-08",
-    "used": false,
+    "used": true,
     "hits_featured": true,
     "hits_only": true
   },
@@ -2205,7 +2205,7 @@
     "text": "Не зацикливайся только на фруктах. Усиливаться можно через боевые стили, оружие и снаряжение.",
     "source": "agreed_editorial_list",
     "reviewed_at": "2026-09-08",
-    "used": false,
+    "used": true,
     "hits_featured": true,
     "hits_only": true
   },
@@ -2218,7 +2218,7 @@
     "text": "Можно спокойно менять фрукт: уровень его навыков сохраняется отдельно и не пропадает после переключения.",
     "source": "agreed_editorial_list",
     "reviewed_at": "2026-09-08",
-    "used": false,
+    "used": true,
     "hits_featured": true,
     "hits_only": true
   },
