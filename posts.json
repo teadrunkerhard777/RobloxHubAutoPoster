@@ -2422,10 +2422,10 @@
     "rubric": "Картинка дня",
     "source": "image_library",
     "text": "#Roblox #BrawlStars #StealABrainrot #99Nights",
-    "status": "pending",
+    "status": "failed",
     "published_at": null,
-    "attempts": 0,
-    "last_error": null,
+    "attempts": 1,
+    "last_error": "('Connection aborted.', TimeoutError('The write operation timed out'))",
     "image_path": "images/16-00/2024afbf-f110-4bd1-a093-294874e91e57.png"
   }
 ]
