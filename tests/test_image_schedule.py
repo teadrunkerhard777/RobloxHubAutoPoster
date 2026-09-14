@@ -129,7 +129,7 @@ local_timezone = app_namespace["LOCAL_TIMEZONE"]
 
 
 class ImageScheduleTests(unittest.TestCase):
-    def test_schedules_four_unique_daily_image_slots(self):
+    def test_schedules_three_unique_daily_image_slots(self):
         posts = []
         images = [
             "images/16-00/first.jpg",
@@ -152,19 +152,18 @@ class ImageScheduleTests(unittest.TestCase):
             image_selector=fake_selector,
         )
 
-        self.assertEqual(added, 4)
+        self.assertEqual(added, 3)
         self.assertEqual(
             [post["id"] for post in posts],
             [
                 "2026-08-24-image-11",
-                "2026-08-24-image-14",
                 "2026-08-24-image-17",
                 "2026-08-24-image-21",
             ],
         )
         self.assertEqual(
             [datetime.fromisoformat(post["publish_at"]).hour for post in posts],
-            [11, 14, 17, 21],
+            [11, 17, 21],
         )
         self.assertTrue(
             all(
@@ -175,7 +174,7 @@ class ImageScheduleTests(unittest.TestCase):
         )
         self.assertEqual(
             len({post["image_path"] for post in posts}),
-            4,
+            3,
         )
         self.assertTrue(
             all(
@@ -185,7 +184,8 @@ class ImageScheduleTests(unittest.TestCase):
         )
 
     def test_only_new_image_hours_are_scheduled(self):
-        self.assertEqual(generate_namespace["IMAGE_POST_HOURS"], (11, 14, 17, 21))
+        self.assertEqual(generate_namespace["IMAGE_POST_HOURS"], (11, 17, 21))
+        self.assertNotIn(14, generate_namespace["IMAGE_POST_HOURS"])
         self.assertNotIn(12, generate_namespace["IMAGE_POST_HOURS"])
         self.assertNotIn(22, generate_namespace["IMAGE_POST_HOURS"])
         self.assertNotIn(16, generate_namespace["IMAGE_POST_HOURS"])
@@ -217,7 +217,7 @@ class ImageScheduleTests(unittest.TestCase):
         )
 
         self.assertEqual(added, 0)
-        self.assertEqual(len(posts), 4)
+        self.assertEqual(len(posts), 3)
 
     def test_selector_cannot_repeat_one_image_inside_day(self):
         posts = []
@@ -235,7 +235,7 @@ class ImageScheduleTests(unittest.TestCase):
         )
 
     def test_image_posts_publish_in_each_configured_hour(self):
-        for publish_hour in (11, 14, 17, 21):
+        for publish_hour in (11, 17, 21):
             with self.subTest(publish_hour=publish_hour):
                 post = {
                     "publish_at": datetime(
@@ -277,8 +277,9 @@ class ImageScheduleTests(unittest.TestCase):
 
         self.assertFalse(should_publish_post(post, outside_window))
 
-    def test_old_image_hours_are_not_publishable(self):
-        for old_hour in (12, 22):
+    def test_removed_image_hours_are_not_publishable(self):
+        # В том числе защищаем очередь от ранее созданного pending-поста 14:00.
+        for old_hour in (12, 14, 22):
             with self.subTest(old_hour=old_hour):
                 post = {
                     "publish_at": datetime(
@@ -423,7 +424,7 @@ class ImageScheduleTests(unittest.TestCase):
             text_hours + generate_namespace["IMAGE_POST_HOURS"],
         )
 
-        self.assertEqual(all_hours, [10, 11, 12, 14, 15, 17, 19, 21])
+        self.assertEqual(all_hours, [10, 11, 12, 15, 17, 19, 21])
 
     def test_brawl_post_is_scheduled_at_twelve(self):
         posts = []
@@ -1092,9 +1093,9 @@ class ImageScheduleTests(unittest.TestCase):
         )
 
         # UTC cron сохраняет локальную timezone UTC+5:
-        # 05, 06, 07, 09, 10, 12, 14 и 16 UTC соответствуют
-        # 10, 11, 12, 14, 15, 17, 19 и 21 часам проекта.
-        self.assertIn('cron: "0 5,6,7,9,10,12,14,16 * * *"', autopost_workflow)
+        # 05, 06, 07, 10, 12, 14 и 16 UTC соответствуют
+        # 10, 11, 12, 15, 17, 19 и 21 часам проекта.
+        self.assertIn('cron: "0 5,6,7,10,12,14,16 * * *"', autopost_workflow)
         self.assertIn('cron: "0 4 * * *"', prepare_workflow)
         self.assertIn("group: roblox-hub-autopost", autopost_workflow)
         self.assertIn('"brawl_monitor.py"', prepare_script)
