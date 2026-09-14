@@ -6,7 +6,7 @@
     "text": "В начале забега сначала подкинь топливо в костёр, а уже потом уходи далеко за ресурсами.",
     "source": "verified_core_mechanic",
     "reviewed_at": "2026-08-14",
-    "used": true,
+    "used": false,
     "category": "survival"
   },
   {
@@ -16,7 +16,7 @@
     "text": "Не трать всё дерево на костёр: часть древесины пригодится для крафта и развития лагеря.",
     "source": "verified_core_mechanic",
     "reviewed_at": "2026-08-14",
-    "used": true,
+    "used": false,
     "category": "items"
   },
   {
@@ -26,7 +26,7 @@
     "text": "Следи за уровнем костра: его улучшение расширяет безопасную зону и помогает продвигаться дальше.",
     "source": "verified_core_mechanic",
     "reviewed_at": "2026-08-14",
-    "used": true,
+    "used": false,
     "category": "mechanics"
   },
   {
@@ -36,7 +36,7 @@
     "text": "Перед наступлением ночи лучше заранее вернуться ближе к лагерю, если у тебя мало света и лечения.",
     "source": "verified_core_mechanic",
     "reviewed_at": "2026-08-14",
-    "used": true,
+    "used": false,
     "category": "survival"
   },
   {
@@ -46,7 +46,7 @@
     "text": "Обыскивай здания днём: там можно найти полезные предметы и топливо, не тратя время ночью.",
     "source": "verified_core_mechanic",
     "reviewed_at": "2026-08-14",
-    "used": true,
+    "used": false,
     "category": "exploration"
   },
   {
@@ -56,7 +56,7 @@
     "text": "Карта полезна не только новичкам: с ней проще планировать длинные вылазки и возвращаться к лагерю.",
     "source": "verified_core_mechanic",
     "reviewed_at": "2026-08-14",
-    "used": true,
+    "used": false,
     "category": "exploration"
   },
   {
@@ -76,7 +76,7 @@
     "text": "В команде разделяйте роли: один собирает топливо, другой исследует, третий занимается лагерем — так прогресс идёт быстрее.",
     "source": "verified_core_mechanic",
     "reviewed_at": "2026-08-14",
-    "used": true,
+    "used": false,
     "category": "strategy"
   },
   {
@@ -86,7 +86,7 @@
     "text": "Не вырубай все деревья рядом с лагерем бездумно: древесина нужна на протяжении всего забега.",
     "source": "verified_core_mechanic",
     "reviewed_at": "2026-08-14",
-    "used": true,
+    "used": false,
     "category": "economy"
   },
   {
@@ -96,7 +96,7 @@
     "text": "Если используешь приручаемых животных, развивай Taming Flute — более сильные союзники полезнее в поздних ночах.",
     "source": "verified_core_mechanic",
     "reviewed_at": "2026-08-14",
-    "used": true,
+    "used": false,
     "category": "mechanics"
   },
   {
@@ -106,7 +106,7 @@
     "text": "Не считай костёр абсолютной защитой: некоторые угрозы всё равно могут добраться до лагеря.",
     "source": "verified_core_mechanic",
     "reviewed_at": "2026-08-14",
-    "used": true,
+    "used": false,
     "category": "survival"
   },
   {
@@ -116,7 +116,7 @@
     "text": "Перед длинной вылазкой проверь три вещи: еда, источник света и свободное место для добычи.",
     "source": "verified_core_mechanic",
     "reviewed_at": "2026-08-14",
-    "used": true,
+    "used": false,
     "category": "strategy"
   },
   {
@@ -1146,7 +1146,7 @@
     "text": "После успешного блока сразу возвращай внимание к мячу: он может быстро вернуться обратно.",
     "source": "verified_core_mechanic",
     "reviewed_at": "2026-08-14",
-    "used": false,
+    "used": true,
     "category": "combat"
   },
   {
@@ -1207,7 +1207,7 @@
     "text": "Исследуй дальние участки днём, а к ночи возвращайся к защите лагеря.",
     "source": "verified_core_mechanic",
     "reviewed_at": "2026-08-24",
-    "used": true
+    "used": false
   },
   {
     "id": 122,
@@ -1217,7 +1217,7 @@
     "text": "Сначала укрепи костёр и лагерь, а потом планируй длинные вылазки за редкими ресурсами.",
     "source": "verified_core_mechanic",
     "reviewed_at": "2026-08-24",
-    "used": true
+    "used": false
   },
   {
     "id": 123,
@@ -1227,7 +1227,7 @@
     "text": "Перед спасением союзника отвлеки угрозу или попроси команду прикрыть тебя.",
     "source": "verified_core_mechanic",
     "reviewed_at": "2026-08-24",
-    "used": true
+    "used": false
   },
   {
     "id": 124,
@@ -1277,7 +1277,7 @@
     "text": "Наблюдай за атаками босса: после опасного приёма часто появляется момент для ответа.",
     "source": "verified_core_mechanic",
     "reviewed_at": "2026-08-24",
-    "used": false
+    "used": true
   },
   {
     "id": 129,
@@ -1673,7 +1673,7 @@
     "text": "Если видишь явную аномалию, не пропускай пациента внутрь.",
     "source": "agreed_editorial_list",
     "reviewed_at": "2026-08-28",
-    "used": false
+    "used": true
   },
   {
     "id": 167,
@@ -1915,7 +1915,7 @@
     "text": "Избегай тупиков: если начнётся погоня, тебе понадобится путь отхода.",
     "source": "agreed_editorial_list",
     "reviewed_at": "2026-08-28",
-    "used": true
+    "used": false
   },
   {
     "id": 189,
@@ -1926,7 +1926,7 @@
     "text": "Услышав нападение рядом, запомни направление и игроков, которые находились там.",
     "source": "agreed_editorial_list",
     "reviewed_at": "2026-08-28",
-    "used": true
+    "used": false
   },
   {
     "id": 190,
@@ -1937,7 +1937,7 @@
     "text": "Собирай монеты, но не рискуй жизнью ради одной монеты.",
     "source": "agreed_editorial_list",
     "reviewed_at": "2026-08-28",
-    "used": true
+    "used": false
   },
   {
     "id": 191,
@@ -1948,7 +1948,7 @@
     "text": "Если Sheriff погиб, Innocent может подобрать пистолет и стать Hero.",
     "source": "agreed_editorial_list",
     "reviewed_at": "2026-08-28",
-    "used": true
+    "used": false
   },
   {
     "id": 192,
@@ -1959,7 +1959,7 @@
     "text": "Перед тем как бежать за выпавшим пистолетом, проверь, не ждёт ли Murderer рядом.",
     "source": "agreed_editorial_list",
     "reviewed_at": "2026-08-28",
-    "used": true
+    "used": false
   },
   {
     "id": 193,
@@ -1970,7 +1970,7 @@
     "text": "Sheriff не стоит сразу показывать пистолет, иначе Murderer может начать охотиться именно за ним.",
     "source": "agreed_editorial_list",
     "reviewed_at": "2026-08-28",
-    "used": true
+    "used": false
   },
   {
     "id": 194,
@@ -1981,7 +1981,7 @@
     "text": "За Sheriff стреляй только когда уверен в цели: попадание в Innocent наказывается.",
     "source": "agreed_editorial_list",
     "reviewed_at": "2026-08-28",
-    "used": true
+    "used": false
   },
   {
     "id": 195,
@@ -2003,7 +2003,7 @@
     "text": "Не стой вплотную к большой группе: Murderer может быстро атаковать нескольких игроков рядом.",
     "source": "agreed_editorial_list",
     "reviewed_at": "2026-08-28",
-    "used": true
+    "used": false
   },
   {
     "id": 197,
@@ -2014,7 +2014,7 @@
     "text": "За Murderer выгоднее сначала вести себя как обычный игрок и не раскрывать роль мгновенно.",
     "source": "agreed_editorial_list",
     "reviewed_at": "2026-08-28",
-    "used": false
+    "used": true
   },
   {
     "id": 198,
@@ -2025,7 +2025,7 @@
     "text": "Не определяй Murderer по тому, кто давно не получал эту роль: роли назначаются случайно.",
     "source": "agreed_editorial_list",
     "reviewed_at": "2026-08-28",
-    "used": true
+    "used": false
   },
   {
     "id": 199,

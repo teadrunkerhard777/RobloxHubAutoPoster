@@ -4,7 +4,7 @@
     "universe_id": 10563114921,
     "roblox_name": "Steal An Egg",
     "description": "🥚 Welcome to Steal An Egg!\n\nHow to Play:\n🥚 Steal eggs from pets\n🐣 Hatch eggs to collect rare pets\n💰 Earn money from your pets\n⬆️ Upgrade your treadmill and base\n🏃 Train on the treadmill to gain Speed\n🥷 Steal eggs from other players\n✨ Discover rarer eggs, pets, sizes, and mutations!\n\n🎮 Supports Desktop, Console, Mobile, and Tablet players",
-    "updated": "2026-09-12T17:02:16.3814432Z",
+    "updated": "2026-09-14T00:42:56.3224722Z",
     "created": "2026-07-25T07:50:51.492Z",
     "creator": {
       "id": 825735094,
@@ -18,35 +18,9 @@
     "keywords": [
       "PETS"
     ],
-    "score": 9,
-    "confidence": "high",
-    "facts": [
-      {
-        "text": "New Luminous Egg The Monster Egg has been replaced by the brand-new Luminous Egg. It is similar to the Monster Egg, with a rare chance to re-roll and unlock a luminous variant animal. New Base Upgrade available; equip +1 more pet.",
-        "summary_ru": "В игре появились новые питомцы.",
-        "kind": "pets",
-        "value": 9,
-        "specific": true,
-        "reason": "Факт из официальной новостной статьи",
-        "is_new_line": true,
-        "source_url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE1uOTdWaTNYRXNZTTd3S2M0QTJYTzdab0lUdnVRWi1PbUlkVkxoX3dIQWg1QXdHVlBjLTdXaUVKWWplWkJmS2JsZUlvM0hGNU9xU1gxVDZWaHlGbWJnVmZTdjA5Ujg2T2ZrdjlMeFNnQWFyUHlvVnFSU19GalJmUQ?oc=5",
-        "source_tier": "B",
-        "publisher": "Sportskeeda"
-      },
-      {
-        "text": "Steal An Egg Update 4 patch",
-        "summary_ru": "🎉 В Steal An Egg вышло обновление Update 4 patch.",
-        "kind": "official_article",
-        "value": 6,
-        "specific": true,
-        "reason": "Факт из официальной новостной статьи",
-        "is_new_line": true,
-        "source_url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE1uOTdWaTNYRXNZTTd3S2M0QTJYTzdab0lUdnVRWi1PbUlkVkxoX3dIQWg1QXdHVlBjLTdXaUVKWWplWkJmS2JsZUlvM0hGNU9xU1gxVDZWaHlGbWJnVmZTdjA5Ujg2T2ZrdjlMeFNnQWFyUHlvVnFSU19GalJmUQ?oc=5",
-        "source_tier": "B",
-        "publisher": "Sportskeeda",
-        "title_is_concrete": false
-      }
-    ],
+    "score": 0,
+    "confidence": "low",
+    "facts": [],
     "description_facts": [
       {
         "text": "🥚 Welcome to Steal An Egg!",
@@ -104,7 +78,7 @@
       }
     ],
     "pool": "active",
-    "checked_at": "2026-09-13T03:01:05.010381+00:00",
+    "checked_at": "2026-09-14T03:01:04.125709+00:00",
     "sources": [
       {
         "type": "official_game_description",
@@ -115,11 +89,6 @@
         "verified": true,
         "group_id": 825735094,
         "group_name": "and Collect Rare Pets"
-      },
-      {
-        "type": "secondary_gaming_media",
-        "verified": true,
-        "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE1uOTdWaTNYRXNZTTd3S2M0QTJYTzdab0lUdnVRWi1PbUlkVkxoX3dIQWg1QXdHVlBjLTdXaUVKWWplWkJmS2JsZUlvM0hGNU9xU1gxVDZWaHlGbWJnVmZTdjA5Ujg2T2ZrdjlMeFNnQWFyUHlvVnFSU19GalJmUQ?oc=5"
       }
     ],
     "cross_source_confirmations": [],
@@ -128,27 +97,26 @@
         "source_type": "secondary_gaming_media",
         "source_url": "https://news.google.com/rss/search?q=%22Steal%20An%20Egg%22%20Roblox%20when%3A30d&hl=en-US&gl=US&ceid=US:en",
         "latest_published_at": "2026-09-12T18:16:00+00:00",
-        "status": "accepted",
-        "result_code": "FOUND_VERIFIED",
-        "reason": "Tier b публикация (0.4 дн.) с датой и игровым содержанием; окно primary_14_day.",
+        "status": "rejected",
+        "result_code": "ALREADY_USED",
+        "reason": "Публикация уже использовалась в выпуске другого дня.",
         "available": true,
         "article_found": true,
         "date_found": true,
         "content_found": true,
-        "extraction_success": true,
-        "verification_passed": true,
+        "extraction_success": false,
+        "verification_passed": false,
         "source_tier": "B",
         "official": false,
         "selected": false,
         "formatted": false,
         "scheduled": false,
-        "latest_url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE1uOTdWaTNYRXNZTTd3S2M0QTJYTzdab0lUdnVRWi1PbUlkVkxoX3dIQWg1QXdHVlBjLTdXaUVKWWplWkJmS2JsZUlvM0hGNU9xU1gxVDZWaHlGbWJnVmZTdjA5Ujg2T2ZrdjlMeFNnQWFyUHlvVnFSU19GalJmUQ?oc=5",
-        "freshness_window": "primary_14_day"
+        "latest_url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE1uOTdWaTNYRXNZTTd3S2M0QTJYTzdab0lUdnVRWi1PbUlkVkxoX3dIQWg1QXdHVlBjLTdXaUVKWWplWkJmS2JsZUlvM0hGNU9xU1gxVDZWaHlGbWJnVmZTdjA5Ujg2T2ZrdjlMeFNnQWFyUHlvVnFSU19GalJmUQ?oc=5"
       },
       {
         "source_type": "official_game_description",
         "source_url": "https://www.roblox.com/games/107778070777162/Steal-An-Egg",
-        "latest_published_at": "2026-09-12T17:02:16.3814432Z",
+        "latest_published_at": "2026-09-14T00:42:56.3224722Z",
         "status": "rejected",
         "result_code": "NO_NEW_CONTENT",
         "available": true,
@@ -219,367 +187,46 @@
         "source_type": "secondary_gaming_media",
         "source_url": "https://news.google.com/rss/search?q=%22Steal%20An%20Egg%22%20Roblox%20when%3A30d&hl=en-US&gl=US&ceid=US:en",
         "latest_published_at": "2026-09-12T18:16:00+00:00",
-        "status": "accepted",
-        "result_code": "FOUND_VERIFIED",
-        "reason": "Tier b публикация (0.4 дн.) с датой и игровым содержанием; окно primary_14_day.",
+        "status": "rejected",
+        "result_code": "ALREADY_USED",
+        "reason": "Публикация уже использовалась в выпуске другого дня.",
         "available": true,
         "article_found": true,
         "date_found": true,
         "content_found": true,
-        "extraction_success": true,
-        "verification_passed": true,
+        "extraction_success": false,
+        "verification_passed": false,
         "source_tier": "B",
         "official": false,
         "selected": false,
         "formatted": false,
         "scheduled": false,
-        "latest_url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE1uOTdWaTNYRXNZTTd3S2M0QTJYTzdab0lUdnVRWi1PbUlkVkxoX3dIQWg1QXdHVlBjLTdXaUVKWWplWkJmS2JsZUlvM0hGNU9xU1gxVDZWaHlGbWJnVmZTdjA5Ujg2T2ZrdjlMeFNnQWFyUHlvVnFSU19GalJmUQ?oc=5",
-        "freshness_window": "primary_14_day"
+        "latest_url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE1uOTdWaTNYRXNZTTd3S2M0QTJYTzdab0lUdnVRWi1PbUlkVkxoX3dIQWg1QXdHVlBjLTdXaUVKWWplWkJmS2JsZUlvM0hGNU9xU1gxVDZWaHlGbWJnVmZTdjA5Ujg2T2ZrdjlMeFNnQWFyUHlvVnFSU19GalJmUQ?oc=5"
       }
     ],
     "external_source_diagnostic": {
       "source_type": "secondary_gaming_media",
       "source_url": "https://news.google.com/rss/search?q=%22Steal%20An%20Egg%22%20Roblox%20when%3A30d&hl=en-US&gl=US&ceid=US:en",
       "latest_published_at": "2026-09-12T18:16:00+00:00",
-      "status": "accepted",
-      "result_code": "FOUND_VERIFIED",
-      "reason": "Tier b публикация (0.4 дн.) с датой и игровым содержанием; окно primary_14_day.",
+      "status": "rejected",
+      "result_code": "ALREADY_USED",
+      "reason": "Публикация уже использовалась в выпуске другого дня.",
       "available": true,
       "article_found": true,
       "date_found": true,
       "content_found": true,
-      "extraction_success": true,
-      "verification_passed": true,
-      "source_tier": "B",
-      "official": false,
-      "selected": false,
-      "formatted": false,
-      "scheduled": false,
-      "latest_url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE1uOTdWaTNYRXNZTTd3S2M0QTJYTzdab0lUdnVRWi1PbUlkVkxoX3dIQWg1QXdHVlBjLTdXaUVKWWplWkJmS2JsZUlvM0hGNU9xU1gxVDZWaHlGbWJnVmZTdjA5Ujg2T2ZrdjlMeFNnQWFyUHlvVnFSU19GalJmUQ?oc=5",
-      "freshness_window": "primary_14_day"
-    },
-    "external_news_article": {
-      "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE1uOTdWaTNYRXNZTTd3S2M0QTJYTzdab0lUdnVRWi1PbUlkVkxoX3dIQWg1QXdHVlBjLTdXaUVKWWplWkJmS2JsZUlvM0hGNU9xU1gxVDZWaHlGbWJnVmZTdjA5Ujg2T2ZrdjlMeFNnQWFyUHlvVnFSU19GalJmUQ?oc=5",
-      "title": "Steal An Egg Update 4 patch notes",
-      "published_at": "2026-09-12T18:16:00+00:00",
-      "age_days": 0.36464318949074076,
-      "source_tier": "B",
-      "publisher": "Sportskeeda",
-      "freshness_window": "primary_14_day"
-    },
-    "candidate_decision": {
-      "status": "accepted",
-      "reason": "Есть достойный свежий факт."
-    }
-  },
-  {
-    "game": "Brookhaven RP",
-    "universe_id": 1686885941,
-    "roblox_name": "Brookhaven 🏡RP",
-    "description": "A place to play with like minded people and roleplay. Own and live in amazing houses, drive cool vehicles and explore the city. Be whoever you want to be in Brookhaven RP.\n\nLatest Update:\n🚗 New Vehicles - Beater Car, Minivan, and Custom Street Racer!\n🐰 New Pets - A bunny and turtle!\n📅 Next week... Something big is happening in Brookhaven!\n\nThanks for playing! \n\nPrivate Server Benefits:\n· Prop Saving\n· Server-Wide Music\n· Server-Wide Announcements\n· Remove or Lock Props\n· Check Prop Owners\n· Set Players as Admins\n· Kick / Temp Ban Players\n· Set Day of the Week\n· Set Time by the Hour\n· Change Weather and Lighting\n· Speed up Time\n· Server Theme Controls\n· No Wait Time for Changing House \n· Spawn Up to Three Vehicles\n· Prop Limit Increased\n· Freecam for PC users (Shift+P)",
-    "updated": "2026-09-11T20:49:15.9203325Z",
-    "created": "2020-04-21T02:15:38.373Z",
-    "creator": {
-      "id": 3104358,
-      "name": "Brookhaven by Voldex",
-      "type": "Group",
-      "isRNVAccount": false,
-      "hasVerifiedBadge": false
-    },
-    "description_changed": false,
-    "added_lines": [],
-    "keywords": [
-      "NEW",
-      "PETS",
-      "UPDATE",
-      "VEHICLES"
-    ],
-    "score": 9,
-    "confidence": "high",
-    "facts": [
-      {
-        "text": "Brookhaven Update September 12, 2026: New Vehicles & New Pets",
-        "summary_ru": "В Brookhaven RP вышло обновление «Brookhaven Update September 12, 2026: New Vehicles & New Pets».",
-        "kind": "official_article",
-        "value": 6,
-        "specific": true,
-        "reason": "Факт из официальной новостной статьи",
-        "is_new_line": true,
-        "source_url": "https://www.brookhavenrp.com/posts/brookhaven-update-september-12-2026",
-        "source_tier": "A",
-        "publisher": null,
-        "title_is_concrete": true
-      }
-    ],
-    "description_facts": [
-      {
-        "text": "🚗 New Vehicles - Beater Car, Minivan, and Custom Street Racer!",
-        "kind": "vehicle",
-        "value": 8,
-        "specific": true,
-        "reason": "Строка называет конкретное игровое содержимое",
-        "summary_ru": "В игру добавили новый транспорт.",
-        "is_new_line": false
-      },
-      {
-        "text": "🐰 New Pets - A bunny and turtle!",
-        "kind": "pets",
-        "value": 8,
-        "specific": true,
-        "reason": "Строка называет конкретное игровое содержимое",
-        "summary_ru": "В игре появились новые питомцы.",
-        "is_new_line": false
-      },
-      {
-        "text": "· Prop Saving",
-        "kind": "items",
-        "value": 7,
-        "specific": true,
-        "reason": "Строка называет конкретное игровое содержимое",
-        "summary_ru": "Добавили новый реквизит для ролевых сцен.",
-        "is_new_line": false
-      },
-      {
-        "text": "· Remove or Lock Props",
-        "kind": "items",
-        "value": 7,
-        "specific": true,
-        "reason": "Строка называет конкретное игровое содержимое",
-        "summary_ru": "Добавили новый реквизит для ролевых сцен.",
-        "is_new_line": false
-      },
-      {
-        "text": "· Check Prop Owners",
-        "kind": "items",
-        "value": 7,
-        "specific": true,
-        "reason": "Строка называет конкретное игровое содержимое",
-        "summary_ru": "Добавили новый реквизит для ролевых сцен.",
-        "is_new_line": false
-      },
-      {
-        "text": "· Prop Limit Increased",
-        "kind": "items",
-        "value": 7,
-        "specific": true,
-        "reason": "Строка называет конкретное игровое содержимое",
-        "summary_ru": "Добавили новый реквизит для ролевых сцен.",
-        "is_new_line": false
-      },
-      {
-        "text": "Latest Update:",
-        "kind": "update",
-        "value": 2,
-        "specific": false,
-        "reason": "Упоминание обновления без конкретики",
-        "summary_ru": "В игре вышло новое обновление.",
-        "is_new_line": false
-      }
-    ],
-    "pool": "active",
-    "checked_at": "2026-09-13T03:01:05.016483+00:00",
-    "sources": [
-      {
-        "type": "official_game_description",
-        "verified": true
-      },
-      {
-        "type": "official_roblox_group",
-        "verified": true,
-        "group_id": 3104358,
-        "group_name": "Brookhaven by Voldex"
-      },
-      {
-        "type": "official_news_website",
-        "verified": true,
-        "url": "https://www.brookhavenrp.com/posts/brookhaven-update-september-12-2026"
-      }
-    ],
-    "cross_source_confirmations": [],
-    "source_diagnostics": [
-      {
-        "source_type": "official_news_website",
-        "source_url": "https://www.brookhavenrp.com/",
-        "latest_published_at": "2026-09-12",
-        "status": "accepted",
-        "result_code": "FOUND_VERIFIED",
-        "reason": "Официальная публикация (1.1 дн.) с датой и игровым содержанием; окно primary_14_day.",
-        "available": true,
-        "article_found": true,
-        "date_found": true,
-        "content_found": true,
-        "extraction_success": true,
-        "verification_passed": true,
-        "source_tier": "A",
-        "official": true,
-        "selected": false,
-        "formatted": false,
-        "scheduled": false,
-        "latest_url": "https://www.brookhavenrp.com/posts/brookhaven-update-september-12-2026",
-        "freshness_window": "primary_14_day"
-      },
-      {
-        "source_type": "secondary_gaming_media",
-        "source_url": "https://news.google.com/rss/search?q=%22Brookhaven%20RP%22%20Roblox%20when%3A30d&hl=en-US&gl=US&ceid=US:en",
-        "latest_published_at": null,
-        "status": "rejected",
-        "result_code": "NO_NEW_CONTENT",
-        "reason": "Нет пригодной Tier B новости.",
-        "available": true,
-        "article_found": false,
-        "date_found": false,
-        "content_found": false,
-        "extraction_success": false,
-        "verification_passed": false,
-        "source_tier": "B",
-        "official": false,
-        "selected": false,
-        "formatted": false,
-        "scheduled": false
-      },
-      {
-        "source_type": "official_game_description",
-        "source_url": "https://www.roblox.com/games/4924922222/Brookhaven-RP",
-        "latest_published_at": "2026-09-11T20:49:15.9203325Z",
-        "status": "rejected",
-        "result_code": "NO_NEW_CONTENT",
-        "available": true,
-        "article_found": false,
-        "date_found": true,
-        "content_found": true,
-        "extraction_success": false,
-        "verification_passed": false,
-        "reason": "Нет новой конкретной строки со времени прошлого снимка."
-      },
-      {
-        "source_type": "official_roblox_group",
-        "source_url": "https://www.roblox.com/communities/3104358/Brookhaven-by-Voldex",
-        "latest_published_at": null,
-        "status": "checked",
-        "result_code": "NO_NEW_CONTENT",
-        "available": true,
-        "article_found": false,
-        "date_found": false,
-        "content_found": true,
-        "extraction_success": false,
-        "verification_passed": false,
-        "reason": "Официальная группа подтверждена; датированной новости нет."
-      }
-    ],
-    "official_description_analysis": {
-      "keywords": [
-        "UPDATE",
-        "NEW",
-        "PET",
-        "PETS"
-      ],
-      "news_lines": [
-        "Latest Update:",
-        "🚗 New Vehicles - Beater Car, Minivan, and Custom Street Racer!",
-        "🐰 New Pets - A bunny and turtle!"
-      ]
-    },
-    "source_registry": {
-      "pool": "active",
-      "universe_id": 1686885941,
-      "root_place_id": 4924922222,
-      "roblox_game_url": "https://www.roblox.com/games/4924922222/Brookhaven-RP",
-      "roblox_group_id": 3104358,
-      "roblox_group_name": "Brookhaven by Voldex",
-      "roblox_group_url": "https://www.roblox.com/communities/3104358/Brookhaven-by-Voldex",
-      "news_strategy": "official_news_website",
-      "website": "https://www.brookhavenrp.com/",
-      "news_url": "https://www.brookhavenrp.com/",
-      "discord": null,
-      "youtube": null,
-      "x": null,
-      "roblox_creator_type": null,
-      "roblox_creator_id": null,
-      "roblox_creator_name": null,
-      "roblox_creator_url": null
-    },
-    "official_group": {
-      "id": 3104358,
-      "name": "Brookhaven by Voldex",
-      "expected_name": "Brookhaven by Voldex",
-      "name_matches_registry": true,
-      "description": "Brookhaven originally created by Wolfpaq, now developed by Voldex",
-      "has_verified_badge": false,
-      "news_lines": []
-    },
-    "external_source_diagnostics": [
-      {
-        "source_type": "official_news_website",
-        "source_url": "https://www.brookhavenrp.com/",
-        "latest_published_at": "2026-09-12",
-        "status": "accepted",
-        "result_code": "FOUND_VERIFIED",
-        "reason": "Официальная публикация (1.1 дн.) с датой и игровым содержанием; окно primary_14_day.",
-        "available": true,
-        "article_found": true,
-        "date_found": true,
-        "content_found": true,
-        "extraction_success": true,
-        "verification_passed": true,
-        "source_tier": "A",
-        "official": true,
-        "selected": false,
-        "formatted": false,
-        "scheduled": false,
-        "latest_url": "https://www.brookhavenrp.com/posts/brookhaven-update-september-12-2026",
-        "freshness_window": "primary_14_day"
-      },
-      {
-        "source_type": "secondary_gaming_media",
-        "source_url": "https://news.google.com/rss/search?q=%22Brookhaven%20RP%22%20Roblox%20when%3A30d&hl=en-US&gl=US&ceid=US:en",
-        "latest_published_at": null,
-        "status": "rejected",
-        "result_code": "NO_NEW_CONTENT",
-        "reason": "Нет пригодной Tier B новости.",
-        "available": true,
-        "article_found": false,
-        "date_found": false,
-        "content_found": false,
-        "extraction_success": false,
-        "verification_passed": false,
-        "source_tier": "B",
-        "official": false,
-        "selected": false,
-        "formatted": false,
-        "scheduled": false
-      }
-    ],
-    "external_source_diagnostic": {
-      "source_type": "secondary_gaming_media",
-      "source_url": "https://news.google.com/rss/search?q=%22Brookhaven%20RP%22%20Roblox%20when%3A30d&hl=en-US&gl=US&ceid=US:en",
-      "latest_published_at": null,
-      "status": "rejected",
-      "result_code": "NO_NEW_CONTENT",
-      "reason": "Нет пригодной Tier B новости.",
-      "available": true,
-      "article_found": false,
-      "date_found": false,
-      "content_found": false,
       "extraction_success": false,
       "verification_passed": false,
       "source_tier": "B",
       "official": false,
       "selected": false,
       "formatted": false,
-      "scheduled": false
-    },
-    "external_news_article": {
-      "url": "https://www.brookhavenrp.com/posts/brookhaven-update-september-12-2026",
-      "title": "Brookhaven Update September 12, 2026: New Vehicles & New Pets",
-      "published_at": "2026-09-12",
-      "age_days": 1.125754300601852,
-      "source_tier": "A",
-      "publisher": null,
-      "freshness_window": "primary_14_day"
+      "scheduled": false,
+      "latest_url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE1uOTdWaTNYRXNZTTd3S2M0QTJYTzdab0lUdnVRWi1PbUlkVkxoX3dIQWg1QXdHVlBjLTdXaUVKWWplWkJmS2JsZUlvM0hGNU9xU1gxVDZWaHlGbWJnVmZTdjA5Ujg2T2ZrdjlMeFNnQWFyUHlvVnFSU19GalJmUQ?oc=5"
     },
     "candidate_decision": {
-      "status": "accepted",
-      "reason": "Есть достойный свежий факт."
+      "status": "rejected",
+      "reason": "Нет свежего факта с редакционным баллом 5 или выше."
     }
   },
   {
@@ -614,7 +261,7 @@
       }
     ],
     "pool": "active",
-    "checked_at": "2026-09-13T03:01:05.010813+00:00",
+    "checked_at": "2026-09-14T03:01:04.126224+00:00",
     "sources": [
       {
         "type": "official_game_description",
@@ -776,7 +423,7 @@
     "facts": [],
     "description_facts": [],
     "pool": "active",
-    "checked_at": "2026-09-13T03:01:05.012661+00:00",
+    "checked_at": "2026-09-14T03:01:04.128599+00:00",
     "sources": [
       {
         "type": "official_game_description",
@@ -964,7 +611,7 @@
       }
     ],
     "pool": "active",
-    "checked_at": "2026-09-13T03:01:05.013941+00:00",
+    "checked_at": "2026-09-14T03:01:04.130191+00:00",
     "sources": [
       {
         "type": "official_game_description",
@@ -1098,6 +745,286 @@
     }
   },
   {
+    "game": "Brookhaven RP",
+    "universe_id": 1686885941,
+    "roblox_name": "Brookhaven 🏡RP",
+    "description": "A place to play with like minded people and roleplay. Own and live in amazing houses, drive cool vehicles and explore the city. Be whoever you want to be in Brookhaven RP.\n\nLatest Update:\n🚗 New Vehicles - Beater Car, Minivan, and Custom Street Racer!\n🐰 New Pets - A bunny and turtle!\n📅 Next week... Something big is happening in Brookhaven!\n\nThanks for playing! \n\nPrivate Server Benefits:\n· Prop Saving\n· Server-Wide Music\n· Server-Wide Announcements\n· Remove or Lock Props\n· Check Prop Owners\n· Set Players as Admins\n· Kick / Temp Ban Players\n· Set Day of the Week\n· Set Time by the Hour\n· Change Weather and Lighting\n· Speed up Time\n· Server Theme Controls\n· No Wait Time for Changing House \n· Spawn Up to Three Vehicles\n· Prop Limit Increased\n· Freecam for PC users (Shift+P)",
+    "updated": "2026-09-11T20:49:15.92Z",
+    "created": "2020-04-21T02:15:38.373Z",
+    "creator": {
+      "id": 3104358,
+      "name": "Brookhaven by Voldex",
+      "type": "Group",
+      "isRNVAccount": false,
+      "hasVerifiedBadge": false
+    },
+    "description_changed": false,
+    "added_lines": [],
+    "keywords": [
+      "NEW",
+      "PETS",
+      "UPDATE",
+      "VEHICLES"
+    ],
+    "score": 0,
+    "confidence": "low",
+    "facts": [],
+    "description_facts": [
+      {
+        "text": "🚗 New Vehicles - Beater Car, Minivan, and Custom Street Racer!",
+        "kind": "vehicle",
+        "value": 8,
+        "specific": true,
+        "reason": "Строка называет конкретное игровое содержимое",
+        "summary_ru": "В игру добавили новый транспорт.",
+        "is_new_line": false
+      },
+      {
+        "text": "🐰 New Pets - A bunny and turtle!",
+        "kind": "pets",
+        "value": 8,
+        "specific": true,
+        "reason": "Строка называет конкретное игровое содержимое",
+        "summary_ru": "В игре появились новые питомцы.",
+        "is_new_line": false
+      },
+      {
+        "text": "· Prop Saving",
+        "kind": "items",
+        "value": 7,
+        "specific": true,
+        "reason": "Строка называет конкретное игровое содержимое",
+        "summary_ru": "Добавили новый реквизит для ролевых сцен.",
+        "is_new_line": false
+      },
+      {
+        "text": "· Remove or Lock Props",
+        "kind": "items",
+        "value": 7,
+        "specific": true,
+        "reason": "Строка называет конкретное игровое содержимое",
+        "summary_ru": "Добавили новый реквизит для ролевых сцен.",
+        "is_new_line": false
+      },
+      {
+        "text": "· Check Prop Owners",
+        "kind": "items",
+        "value": 7,
+        "specific": true,
+        "reason": "Строка называет конкретное игровое содержимое",
+        "summary_ru": "Добавили новый реквизит для ролевых сцен.",
+        "is_new_line": false
+      },
+      {
+        "text": "· Prop Limit Increased",
+        "kind": "items",
+        "value": 7,
+        "specific": true,
+        "reason": "Строка называет конкретное игровое содержимое",
+        "summary_ru": "Добавили новый реквизит для ролевых сцен.",
+        "is_new_line": false
+      },
+      {
+        "text": "Latest Update:",
+        "kind": "update",
+        "value": 2,
+        "specific": false,
+        "reason": "Упоминание обновления без конкретики",
+        "summary_ru": "В игре вышло новое обновление.",
+        "is_new_line": false
+      }
+    ],
+    "pool": "active",
+    "checked_at": "2026-09-14T03:01:04.133436+00:00",
+    "sources": [
+      {
+        "type": "official_game_description",
+        "verified": true
+      },
+      {
+        "type": "official_roblox_group",
+        "verified": true,
+        "group_id": 3104358,
+        "group_name": "Brookhaven by Voldex"
+      }
+    ],
+    "cross_source_confirmations": [],
+    "source_diagnostics": [
+      {
+        "source_type": "official_news_website",
+        "source_url": "https://www.brookhavenrp.com/",
+        "latest_published_at": "2026-09-12",
+        "status": "rejected",
+        "result_code": "ALREADY_USED",
+        "reason": "Публикация уже использовалась в выпуске другого дня.",
+        "available": true,
+        "article_found": true,
+        "date_found": true,
+        "content_found": true,
+        "extraction_success": false,
+        "verification_passed": false,
+        "source_tier": "A",
+        "official": true,
+        "selected": false,
+        "formatted": false,
+        "scheduled": false,
+        "latest_url": "https://www.brookhavenrp.com/posts/brookhaven-update-september-12-2026"
+      },
+      {
+        "source_type": "secondary_gaming_media",
+        "source_url": "https://news.google.com/rss/search?q=%22Brookhaven%20RP%22%20Roblox%20when%3A30d&hl=en-US&gl=US&ceid=US:en",
+        "latest_published_at": null,
+        "status": "rejected",
+        "result_code": "NO_NEW_CONTENT",
+        "reason": "Нет пригодной Tier B новости.",
+        "available": true,
+        "article_found": false,
+        "date_found": false,
+        "content_found": false,
+        "extraction_success": false,
+        "verification_passed": false,
+        "source_tier": "B",
+        "official": false,
+        "selected": false,
+        "formatted": false,
+        "scheduled": false
+      },
+      {
+        "source_type": "official_game_description",
+        "source_url": "https://www.roblox.com/games/4924922222/Brookhaven-RP",
+        "latest_published_at": "2026-09-11T20:49:15.92Z",
+        "status": "rejected",
+        "result_code": "NO_NEW_CONTENT",
+        "available": true,
+        "article_found": false,
+        "date_found": true,
+        "content_found": true,
+        "extraction_success": false,
+        "verification_passed": false,
+        "reason": "Нет новой конкретной строки со времени прошлого снимка."
+      },
+      {
+        "source_type": "official_roblox_group",
+        "source_url": "https://www.roblox.com/communities/3104358/Brookhaven-by-Voldex",
+        "latest_published_at": null,
+        "status": "checked",
+        "result_code": "NO_NEW_CONTENT",
+        "available": true,
+        "article_found": false,
+        "date_found": false,
+        "content_found": true,
+        "extraction_success": false,
+        "verification_passed": false,
+        "reason": "Официальная группа подтверждена; датированной новости нет."
+      }
+    ],
+    "official_description_analysis": {
+      "keywords": [
+        "UPDATE",
+        "NEW",
+        "PET",
+        "PETS"
+      ],
+      "news_lines": [
+        "Latest Update:",
+        "🚗 New Vehicles - Beater Car, Minivan, and Custom Street Racer!",
+        "🐰 New Pets - A bunny and turtle!"
+      ]
+    },
+    "source_registry": {
+      "pool": "active",
+      "universe_id": 1686885941,
+      "root_place_id": 4924922222,
+      "roblox_game_url": "https://www.roblox.com/games/4924922222/Brookhaven-RP",
+      "roblox_group_id": 3104358,
+      "roblox_group_name": "Brookhaven by Voldex",
+      "roblox_group_url": "https://www.roblox.com/communities/3104358/Brookhaven-by-Voldex",
+      "news_strategy": "official_news_website",
+      "website": "https://www.brookhavenrp.com/",
+      "news_url": "https://www.brookhavenrp.com/",
+      "discord": null,
+      "youtube": null,
+      "x": null,
+      "roblox_creator_type": null,
+      "roblox_creator_id": null,
+      "roblox_creator_name": null,
+      "roblox_creator_url": null
+    },
+    "official_group": {
+      "id": 3104358,
+      "name": "Brookhaven by Voldex",
+      "expected_name": "Brookhaven by Voldex",
+      "name_matches_registry": true,
+      "description": "Brookhaven originally created by Wolfpaq, now developed by Voldex",
+      "has_verified_badge": false,
+      "news_lines": []
+    },
+    "external_source_diagnostics": [
+      {
+        "source_type": "official_news_website",
+        "source_url": "https://www.brookhavenrp.com/",
+        "latest_published_at": "2026-09-12",
+        "status": "rejected",
+        "result_code": "ALREADY_USED",
+        "reason": "Публикация уже использовалась в выпуске другого дня.",
+        "available": true,
+        "article_found": true,
+        "date_found": true,
+        "content_found": true,
+        "extraction_success": false,
+        "verification_passed": false,
+        "source_tier": "A",
+        "official": true,
+        "selected": false,
+        "formatted": false,
+        "scheduled": false,
+        "latest_url": "https://www.brookhavenrp.com/posts/brookhaven-update-september-12-2026"
+      },
+      {
+        "source_type": "secondary_gaming_media",
+        "source_url": "https://news.google.com/rss/search?q=%22Brookhaven%20RP%22%20Roblox%20when%3A30d&hl=en-US&gl=US&ceid=US:en",
+        "latest_published_at": null,
+        "status": "rejected",
+        "result_code": "NO_NEW_CONTENT",
+        "reason": "Нет пригодной Tier B новости.",
+        "available": true,
+        "article_found": false,
+        "date_found": false,
+        "content_found": false,
+        "extraction_success": false,
+        "verification_passed": false,
+        "source_tier": "B",
+        "official": false,
+        "selected": false,
+        "formatted": false,
+        "scheduled": false
+      }
+    ],
+    "external_source_diagnostic": {
+      "source_type": "secondary_gaming_media",
+      "source_url": "https://news.google.com/rss/search?q=%22Brookhaven%20RP%22%20Roblox%20when%3A30d&hl=en-US&gl=US&ceid=US:en",
+      "latest_published_at": null,
+      "status": "rejected",
+      "result_code": "NO_NEW_CONTENT",
+      "reason": "Нет пригодной Tier B новости.",
+      "available": true,
+      "article_found": false,
+      "date_found": false,
+      "content_found": false,
+      "extraction_success": false,
+      "verification_passed": false,
+      "source_tier": "B",
+      "official": false,
+      "selected": false,
+      "formatted": false,
+      "scheduled": false
+    },
+    "candidate_decision": {
+      "status": "rejected",
+      "reason": "Нет свежего факта с редакционным баллом 5 или выше."
+    }
+  },
+  {
     "game": "Blox Fruits",
     "universe_id": 994732206,
     "roblox_name": "[🧲] Blox Fruits",
@@ -1132,7 +1059,7 @@
       }
     ],
     "pool": "active",
-    "checked_at": "2026-09-13T03:01:05.018830+00:00",
+    "checked_at": "2026-09-14T03:01:04.136351+00:00",
     "sources": [
       {
         "type": "official_game_description",
@@ -1153,7 +1080,7 @@
         "latest_published_at": "2026-08-06T22:02:43Z",
         "status": "rejected",
         "result_code": "SOURCE_STALE",
-        "reason": "Публикация устарела: 37.2 дн. (аварийный лимит 30).",
+        "reason": "Публикация устарела: 38.2 дн. (аварийный лимит 30).",
         "available": true,
         "article_found": true,
         "date_found": true,
@@ -1261,7 +1188,7 @@
         "latest_published_at": "2026-08-06T22:02:43Z",
         "status": "rejected",
         "result_code": "SOURCE_STALE",
-        "reason": "Публикация устарела: 37.2 дн. (аварийный лимит 30).",
+        "reason": "Публикация устарела: 38.2 дн. (аварийный лимит 30).",
         "available": true,
         "article_found": true,
         "date_found": true,
@@ -1402,7 +1329,7 @@
       }
     ],
     "pool": "active",
-    "checked_at": "2026-09-13T03:01:05.020173+00:00",
+    "checked_at": "2026-09-14T03:01:04.138016+00:00",
     "sources": [
       {
         "type": "official_game_description",
@@ -1665,7 +1592,7 @@
       }
     ],
     "pool": "active",
-    "checked_at": "2026-09-13T03:01:05.022068+00:00",
+    "checked_at": "2026-09-14T03:01:04.140328+00:00",
     "sources": [
       {
         "type": "official_game_description",
@@ -1839,7 +1766,7 @@
     "facts": [],
     "description_facts": [],
     "pool": "active",
-    "checked_at": "2026-09-13T03:01:05.022417+00:00",
+    "checked_at": "2026-09-14T03:01:04.140776+00:00",
     "sources": [
       {
         "type": "official_game_description",
@@ -2014,7 +1941,7 @@
       }
     ],
     "pool": "active",
-    "checked_at": "2026-09-13T03:01:05.023662+00:00",
+    "checked_at": "2026-09-14T03:01:04.142363+00:00",
     "sources": [
       {
         "type": "official_game_description",
@@ -2159,7 +2086,7 @@
     "universe_id": 3317771874,
     "roblox_name": "🕹️ [ARCADE] Pet Simulator 99! 💰",
     "description": "Create an army of the coolest pets! They will help you get RICH!\n\n✨ Currently 3,000+ pets to collect! 🐾\n\n🧡 Thanks for playing!",
-    "updated": "2026-09-13T00:10:37.2591107Z",
+    "updated": "2026-09-13T11:21:06.5203768Z",
     "created": "2022-02-05T13:30:02.357Z",
     "creator": {
       "id": 3959677,
@@ -2173,45 +2100,21 @@
     "keywords": [
       "PETS"
     ],
-    "score": 10,
-    "confidence": "high",
+    "score": 6,
+    "confidence": "medium",
     "facts": [
       {
-        "text": "Bank up to",
-        "summary_ru": "В игре открылся обновлённый банк.",
-        "kind": "locations",
-        "value": 9,
-        "specific": true,
-        "reason": "Факт из официальной новостной статьи",
-        "is_new_line": true,
-        "source_url": "https://www.biggames.io/post/pet-simulator-99-update-93",
-        "source_tier": "A",
-        "publisher": null
-      },
-      {
-        "text": "versions of every new pet! How FAR can your pets go?",
-        "summary_ru": "В игре появились новые питомцы.",
-        "kind": "pets",
-        "value": 9,
-        "specific": true,
-        "reason": "Факт из официальной новостной статьи",
-        "is_new_line": true,
-        "source_url": "https://www.biggames.io/post/pet-simulator-99-update-93",
-        "source_tier": "A",
-        "publisher": null
-      },
-      {
-        "text": "Coin Craft!",
-        "summary_ru": "В Pet Simulator 99 вышло обновление «Coin Craft!».",
+        "text": "Pet Simulator 99 Coin Arcade (Update 92): Arcade World, Egg Merchants, and more",
+        "summary_ru": "🎉 В Pet Simulator 99 вышло обновление Coin Arcade (Update 92): Arcade World, Egg Merchants, and more.",
         "kind": "official_article",
         "value": 6,
         "specific": true,
         "reason": "Факт из официальной новостной статьи",
         "is_new_line": true,
-        "source_url": "https://www.biggames.io/post/pet-simulator-99-update-93",
-        "source_tier": "A",
-        "publisher": null,
-        "title_is_concrete": false
+        "source_url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxQYkFBVnluLXluMjJJcXFuTmZoRk5sbkRFc3gzN2JBd29JbVBvdzhMLTBCVkVPQjBTX0xEWEtvWXY1a3ZLcjhscGtSUXM0ZUs4S1ZaSURGci1DcWZ1ajJSZW1EV0RpWFByZ29ySjdjMUtGejFxWDJhRmRRZkcyamRkMlB3NExVX3lUZ0dLdkNVT2xRUjJjbEFKc2pnY01OeWE4WVVKcEV2UnA?oc=5",
+        "source_tier": "B",
+        "publisher": "Sportskeeda",
+        "title_is_concrete": true
       }
     ],
     "description_facts": [
@@ -2235,7 +2138,7 @@
       }
     ],
     "pool": "legacy",
-    "checked_at": "2026-09-13T03:01:05.026482+00:00",
+    "checked_at": "2026-09-14T03:01:04.145877+00:00",
     "sources": [
       {
         "type": "official_game_description",
@@ -2248,9 +2151,9 @@
         "group_name": "BIG Games Pets"
       },
       {
-        "type": "official_news_website",
+        "type": "secondary_gaming_media",
         "verified": true,
-        "url": "https://www.biggames.io/post/pet-simulator-99-update-93"
+        "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxQYkFBVnluLXluMjJJcXFuTmZoRk5sbkRFc3gzN2JBd29JbVBvdzhMLTBCVkVPQjBTX0xEWEtvWXY1a3ZLcjhscGtSUXM0ZUs4S1ZaSURGci1DcWZ1ajJSZW1EV0RpWFByZ29ySjdjMUtGejFxWDJhRmRRZkcyamRkMlB3NExVX3lUZ0dLdkNVT2xRUjJjbEFKc2pnY01OeWE4WVVKcEV2UnA?oc=5"
       }
     ],
     "cross_source_confirmations": [],
@@ -2259,22 +2162,21 @@
         "source_type": "official_news_website",
         "source_url": "https://www.biggames.io/post",
         "latest_published_at": "2026-09-12",
-        "status": "accepted",
-        "result_code": "FOUND_VERIFIED",
-        "reason": "Официальная публикация (1.1 дн.) с датой и игровым содержанием; окно primary_14_day.",
+        "status": "rejected",
+        "result_code": "ALREADY_USED",
+        "reason": "Публикация уже использовалась в выпуске другого дня.",
         "available": true,
         "article_found": true,
         "date_found": true,
         "content_found": true,
-        "extraction_success": true,
-        "verification_passed": true,
+        "extraction_success": false,
+        "verification_passed": false,
         "source_tier": "A",
         "official": true,
         "selected": false,
         "formatted": false,
         "scheduled": false,
-        "latest_url": "https://www.biggames.io/post/pet-simulator-99-update-93",
-        "freshness_window": "primary_14_day"
+        "latest_url": "https://www.biggames.io/post/pet-simulator-99-update-93"
       },
       {
         "source_type": "secondary_gaming_media",
@@ -2282,7 +2184,7 @@
         "latest_published_at": "2026-09-07T13:11:00+00:00",
         "status": "accepted",
         "result_code": "FOUND_VERIFIED",
-        "reason": "Tier b публикация (5.6 дн.) с датой и игровым содержанием; окно primary_14_day.",
+        "reason": "Tier b публикация (6.6 дн.) с датой и игровым содержанием; окно primary_14_day.",
         "available": true,
         "article_found": true,
         "date_found": true,
@@ -2300,7 +2202,7 @@
       {
         "source_type": "official_game_description",
         "source_url": "https://www.roblox.com/games/8737899170/Pet-Simulator-99",
-        "latest_published_at": "2026-09-13T00:10:37.2591107Z",
+        "latest_published_at": "2026-09-13T11:21:06.5203768Z",
         "status": "rejected",
         "result_code": "NO_NEW_CONTENT",
         "available": true,
@@ -2369,22 +2271,21 @@
         "source_type": "official_news_website",
         "source_url": "https://www.biggames.io/post",
         "latest_published_at": "2026-09-12",
-        "status": "accepted",
-        "result_code": "FOUND_VERIFIED",
-        "reason": "Официальная публикация (1.1 дн.) с датой и игровым содержанием; окно primary_14_day.",
+        "status": "rejected",
+        "result_code": "ALREADY_USED",
+        "reason": "Публикация уже использовалась в выпуске другого дня.",
         "available": true,
         "article_found": true,
         "date_found": true,
         "content_found": true,
-        "extraction_success": true,
-        "verification_passed": true,
+        "extraction_success": false,
+        "verification_passed": false,
         "source_tier": "A",
         "official": true,
         "selected": false,
         "formatted": false,
         "scheduled": false,
-        "latest_url": "https://www.biggames.io/post/pet-simulator-99-update-93",
-        "freshness_window": "primary_14_day"
+        "latest_url": "https://www.biggames.io/post/pet-simulator-99-update-93"
       },
       {
         "source_type": "secondary_gaming_media",
@@ -2392,7 +2293,7 @@
         "latest_published_at": "2026-09-07T13:11:00+00:00",
         "status": "accepted",
         "result_code": "FOUND_VERIFIED",
-        "reason": "Tier b публикация (5.6 дн.) с датой и игровым содержанием; окно primary_14_day.",
+        "reason": "Tier b публикация (6.6 дн.) с датой и игровым содержанием; окно primary_14_day.",
         "available": true,
         "article_found": true,
         "date_found": true,
@@ -2414,7 +2315,7 @@
       "latest_published_at": "2026-09-07T13:11:00+00:00",
       "status": "accepted",
       "result_code": "FOUND_VERIFIED",
-      "reason": "Tier b публикация (5.6 дн.) с датой и игровым содержанием; окно primary_14_day.",
+      "reason": "Tier b публикация (6.6 дн.) с датой и игровым содержанием; окно primary_14_day.",
       "available": true,
       "article_found": true,
       "date_found": true,
@@ -2430,12 +2331,12 @@
       "freshness_window": "primary_14_day"
     },
     "external_news_article": {
-      "url": "https://www.biggames.io/post/pet-simulator-99-update-93",
-      "title": "Coin Craft!",
-      "published_at": "2026-09-12",
-      "age_days": 1.125754300601852,
-      "source_tier": "A",
-      "publisher": null,
+      "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxQYkFBVnluLXluMjJJcXFuTmZoRk5sbkRFc3gzN2JBd29JbVBvdzhMLTBCVkVPQjBTX0xEWEtvWXY1a3ZLcjhscGtSUXM0ZUs4S1ZaSURGci1DcWZ1ajJSZW1EV0RpWFByZ29ySjdjMUtGejFxWDJhRmRRZkcyamRkMlB3NExVX3lUZ0dLdkNVT2xRUjJjbEFKc2pnY01OeWE4WVVKcEV2UnA?oc=5",
+      "title": "Pet Simulator 99 Coin Arcade (Update 92): Arcade World, Egg Merchants, and more",
+      "published_at": "2026-09-07T13:11:00+00:00",
+      "age_days": 6.576438829085648,
+      "source_tier": "B",
+      "publisher": "Sportskeeda",
       "freshness_window": "primary_14_day"
     },
     "candidate_decision": {
@@ -2448,7 +2349,7 @@
     "universe_id": 7436755782,
     "roblox_name": "[🧺] Grow a Garden 🌶️",
     "description": "🍅Welcome to Grow a Garden🍅\n\nAre you ready to grow your very own garden? Buy seeds from the shop when they restock, plant them, wait for them to grow, and collect the profits! Flex fruits and finds on friends, and have fun!\n\n[How To Plant]\n• Equip your seed you want to plant!\n• Click in your farm on the brown plots to plant!\n• Wait to see it start growing!\n• After its fully grown, it is time to harvest the goods!\n\nRemember, your garden literally grows while you are offline⭐",
-    "updated": "2026-09-12T23:07:18.7467549Z",
+    "updated": "2026-09-13T16:02:28.9102471Z",
     "created": "2025-03-25T22:32:09.437Z",
     "creator": {
       "id": 35789249,
@@ -2465,7 +2366,7 @@
     "facts": [],
     "description_facts": [],
     "pool": "legacy",
-    "checked_at": "2026-09-13T03:01:05.025054+00:00",
+    "checked_at": "2026-09-14T03:01:04.144082+00:00",
     "sources": [
       {
         "type": "official_game_description",
@@ -2483,7 +2384,7 @@
       {
         "source_type": "secondary_gaming_media",
         "source_url": "https://news.google.com/rss/search?q=%22Grow%20a%20Garden%22%20Roblox%20when%3A30d&hl=en-US&gl=US&ceid=US:en",
-        "latest_published_at": "2026-09-06T04:48:00+00:00",
+        "latest_published_at": "2026-09-13T05:45:00+00:00",
         "status": "rejected",
         "result_code": "EXTRACTION_FAILED",
         "reason": "В публикации не найдено достаточно конкретного содержания.",
@@ -2498,12 +2399,12 @@
         "selected": false,
         "formatted": false,
         "scheduled": false,
-        "latest_url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxQWWhmY0tkZE9uQXZZU0JEWEl2TlJHZk9HSG9KLTd1eUpDN2dDdVJBQVJLWkVLNGVaMlNodG92VS1YTGltQlRnLUZzeHJLdGE0di1IckRUTVI4dkxEV19YQVJqRXNLUWRaWjB4UzdlNXNLeTRjTndKaGdXaElhbVl6ck5Vd01rLTg?oc=5"
+        "latest_url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxOWU9yc1JOblhCQjhhU3lZcDV6Nlg2c3Y2RDhFdEswcWJqeEJMcEJtTUtSdERtWWo5Qm1EZVFySXJSZm9SVjVFNzNOU1NwWjA2aFkxOF9SUUpEaEx0S1FzMEM4dUNHRnNJbkUybVFCM2laTTRSR0duMjRiWVpia01CVXNxeFJ6NVh6TUtWbnh0dEE?oc=5"
       },
       {
         "source_type": "official_game_description",
         "source_url": "https://www.roblox.com/games/126884695634066/Grow-a-Garden",
-        "latest_published_at": "2026-09-12T23:07:18.7467549Z",
+        "latest_published_at": "2026-09-13T16:02:28.9102471Z",
         "status": "rejected",
         "result_code": "NO_NEW_CONTENT",
         "available": true,
@@ -2565,7 +2466,7 @@
       {
         "source_type": "secondary_gaming_media",
         "source_url": "https://news.google.com/rss/search?q=%22Grow%20a%20Garden%22%20Roblox%20when%3A30d&hl=en-US&gl=US&ceid=US:en",
-        "latest_published_at": "2026-09-06T04:48:00+00:00",
+        "latest_published_at": "2026-09-13T05:45:00+00:00",
         "status": "rejected",
         "result_code": "EXTRACTION_FAILED",
         "reason": "В публикации не найдено достаточно конкретного содержания.",
@@ -2580,13 +2481,13 @@
         "selected": false,
         "formatted": false,
         "scheduled": false,
-        "latest_url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxQWWhmY0tkZE9uQXZZU0JEWEl2TlJHZk9HSG9KLTd1eUpDN2dDdVJBQVJLWkVLNGVaMlNodG92VS1YTGltQlRnLUZzeHJLdGE0di1IckRUTVI4dkxEV19YQVJqRXNLUWRaWjB4UzdlNXNLeTRjTndKaGdXaElhbVl6ck5Vd01rLTg?oc=5"
+        "latest_url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxOWU9yc1JOblhCQjhhU3lZcDV6Nlg2c3Y2RDhFdEswcWJqeEJMcEJtTUtSdERtWWo5Qm1EZVFySXJSZm9SVjVFNzNOU1NwWjA2aFkxOF9SUUpEaEx0S1FzMEM4dUNHRnNJbkUybVFCM2laTTRSR0duMjRiWVpia01CVXNxeFJ6NVh6TUtWbnh0dEE?oc=5"
       }
     ],
     "external_source_diagnostic": {
       "source_type": "secondary_gaming_media",
       "source_url": "https://news.google.com/rss/search?q=%22Grow%20a%20Garden%22%20Roblox%20when%3A30d&hl=en-US&gl=US&ceid=US:en",
-      "latest_published_at": "2026-09-06T04:48:00+00:00",
+      "latest_published_at": "2026-09-13T05:45:00+00:00",
       "status": "rejected",
       "result_code": "EXTRACTION_FAILED",
       "reason": "В публикации не найдено достаточно конкретного содержания.",
@@ -2601,7 +2502,7 @@
       "selected": false,
       "formatted": false,
       "scheduled": false,
-      "latest_url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxQWWhmY0tkZE9uQXZZU0JEWEl2TlJHZk9HSG9KLTd1eUpDN2dDdVJBQVJLWkVLNGVaMlNodG92VS1YTGltQlRnLUZzeHJLdGE0di1IckRUTVI4dkxEV19YQVJqRXNLUWRaWjB4UzdlNXNLeTRjTndKaGdXaElhbVl6ck5Vd01rLTg?oc=5"
+      "latest_url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxOWU9yc1JOblhCQjhhU3lZcDV6Nlg2c3Y2RDhFdEswcWJqeEJMcEJtTUtSdERtWWo5Qm1EZVFySXJSZm9SVjVFNzNOU1NwWjA2aFkxOF9SUUpEaEx0S1FzMEM4dUNHRnNJbkUybVFCM2laTTRSR0duMjRiWVpia01CVXNxeFJ6NVh6TUtWbnh0dEE?oc=5"
     },
     "candidate_decision": {
       "status": "rejected",
@@ -2613,7 +2514,7 @@
     "universe_id": 5203828273,
     "roblox_name": "[🎂] Dress To Impress",
     "description": "Create stunning outfits 👗💖⭐, and strut the runway to show off your unique style. Collaborate, compete, and explore a world of glamour with friends!\n\n⭐ Are you ready to be the TOP MODEL?\n👗 NEW ITEMS! Check them out.\n🍿 Vote for your favorite outfits!\n💃 Use poses on the runway to show off your outfit!\n\nFind more about Dress To Impress by joining our community.\nhttps://www.roblox.com/communities/17264167/Dress-To-Impress-Group#!/about",
-    "updated": "2026-09-12T21:08:50.1410801Z",
+    "updated": "2026-09-13T19:47:10.1887567Z",
     "created": "2023-10-18T09:11:36.563Z",
     "creator": {
       "id": 17264167,
@@ -2670,7 +2571,7 @@
       }
     ],
     "pool": "legacy",
-    "checked_at": "2026-09-13T03:01:05.026157+00:00",
+    "checked_at": "2026-09-14T03:01:04.145476+00:00",
     "sources": [
       {
         "type": "official_game_description",
@@ -2688,21 +2589,22 @@
       {
         "source_type": "official_youtube_feed",
         "source_url": "https://www.youtube.com/feeds/videos.xml?channel_id=UCCVWvf_e5oRb6RfXyluR7UA",
-        "latest_published_at": null,
+        "latest_published_at": "2026-07-02T15:00:06+00:00",
         "status": "rejected",
-        "result_code": "SOURCE_UNAVAILABLE",
-        "reason": "Источник недоступен: 404 Client Error: Not Found for url: https://www.youtube.com/feeds/videos.xml?channel_id=UCCVWvf_e5oRb6RfXyluR7UA",
-        "available": false,
-        "article_found": false,
-        "date_found": false,
-        "content_found": false,
+        "result_code": "SOURCE_STALE",
+        "reason": "Публикация устарела: 73.5 дн. (аварийный лимит 30).",
+        "available": true,
+        "article_found": true,
+        "date_found": true,
+        "content_found": true,
         "extraction_success": false,
         "verification_passed": false,
         "source_tier": "A",
         "official": true,
         "selected": false,
         "formatted": false,
-        "scheduled": false
+        "scheduled": false,
+        "latest_url": "https://www.youtube.com/watch?v=5Zfy9QW4s5A"
       },
       {
         "source_type": "secondary_gaming_media",
@@ -2726,7 +2628,7 @@
       {
         "source_type": "official_game_description",
         "source_url": "https://www.roblox.com/games/15101393044/Dress-To-Impress",
-        "latest_published_at": "2026-09-12T21:08:50.1410801Z",
+        "latest_published_at": "2026-09-13T19:47:10.1887567Z",
         "status": "rejected",
         "result_code": "NO_NEW_CONTENT",
         "available": true,
@@ -2796,21 +2698,22 @@
       {
         "source_type": "official_youtube_feed",
         "source_url": "https://www.youtube.com/feeds/videos.xml?channel_id=UCCVWvf_e5oRb6RfXyluR7UA",
-        "latest_published_at": null,
+        "latest_published_at": "2026-07-02T15:00:06+00:00",
         "status": "rejected",
-        "result_code": "SOURCE_UNAVAILABLE",
-        "reason": "Источник недоступен: 404 Client Error: Not Found for url: https://www.youtube.com/feeds/videos.xml?channel_id=UCCVWvf_e5oRb6RfXyluR7UA",
-        "available": false,
-        "article_found": false,
-        "date_found": false,
-        "content_found": false,
+        "result_code": "SOURCE_STALE",
+        "reason": "Публикация устарела: 73.5 дн. (аварийный лимит 30).",
+        "available": true,
+        "article_found": true,
+        "date_found": true,
+        "content_found": true,
         "extraction_success": false,
         "verification_passed": false,
         "source_tier": "A",
         "official": true,
         "selected": false,
         "formatted": false,
-        "scheduled": false
+        "scheduled": false,
+        "latest_url": "https://www.youtube.com/watch?v=5Zfy9QW4s5A"
       },
       {
         "source_type": "secondary_gaming_media",
@@ -2861,7 +2764,7 @@
     "universe_id": 4777817887,
     "roblox_name": "Blade Ball",
     "description": "⚡  In this game of focus, timing, and strategy, your skill is tested as a deflectable homing ball hunts players with increasing speed. But there's more than what meets the eye.\n\n🔥  Gain new abilities and upgrade them to compliment your playstyle. Rise through the ranks by mastering your skill, and stand out with a variety of iconic weapon skins and finisher effects.\n\n🏆 Shoot for the leaderboard or play casually! The choice is yours.\n \nCONTROLS:\nBLOCK - F/R1/Tap Screen/Tap UI Button/Left Click\nABILITY - Q/ButtonX/Tap UI Button/Right Click\nSHIFTLOCK - Shift/Button-Y/Tap UI Button\nEMOTE - R/L1/Tap UI Button\n\ntags: minigame, battle game, pvp, multiplayer, abilities, dodgeball, sports, mobile, console, xbox, pc",
-    "updated": "2026-09-09T17:24:28.984Z",
+    "updated": "2026-09-13T21:46:08.9529732Z",
     "created": "2023-06-17T00:05:26.103Z",
     "creator": {
       "id": 12836673,
@@ -2890,7 +2793,7 @@
       }
     ],
     "pool": "legacy",
-    "checked_at": "2026-09-13T03:01:05.028269+00:00",
+    "checked_at": "2026-09-14T03:01:04.148031+00:00",
     "sources": [
       {
         "type": "official_game_description",
@@ -2908,21 +2811,22 @@
       {
         "source_type": "official_youtube_feed",
         "source_url": "https://www.youtube.com/feeds/videos.xml?channel_id=UCPttFx0zI4Zv9M4i3Q2ylsw",
-        "latest_published_at": null,
+        "latest_published_at": "2026-09-07T21:09:45+00:00",
         "status": "rejected",
-        "result_code": "SOURCE_UNAVAILABLE",
-        "reason": "Источник недоступен: 404 Client Error: Not Found for url: https://www.youtube.com/feeds/videos.xml?channel_id=UCPttFx0zI4Zv9M4i3Q2ylsw",
-        "available": false,
-        "article_found": false,
-        "date_found": false,
-        "content_found": false,
+        "result_code": "ALREADY_USED",
+        "reason": "Публикация уже использовалась в выпуске другого дня.",
+        "available": true,
+        "article_found": true,
+        "date_found": true,
+        "content_found": true,
         "extraction_success": false,
         "verification_passed": false,
         "source_tier": "A",
         "official": true,
         "selected": false,
         "formatted": false,
-        "scheduled": false
+        "scheduled": false,
+        "latest_url": "https://www.youtube.com/watch?v=aXOFdd4ZwA8"
       },
       {
         "source_type": "official_news_website",
@@ -2930,7 +2834,7 @@
         "latest_published_at": "2024-03-23T18:51:42Z",
         "status": "rejected",
         "result_code": "SOURCE_STALE",
-        "reason": "Публикация устарела: 903.3 дн. (аварийный лимит 30).",
+        "reason": "Публикация устарела: 904.3 дн. (аварийный лимит 30).",
         "available": true,
         "article_found": true,
         "date_found": true,
@@ -2966,7 +2870,7 @@
       {
         "source_type": "official_game_description",
         "source_url": "https://www.roblox.com/games/13772394625/Blade-Ball",
-        "latest_published_at": "2026-09-09T17:24:28.984Z",
+        "latest_published_at": "2026-09-13T21:46:08.9529732Z",
         "status": "rejected",
         "result_code": "NO_NEW_CONTENT",
         "available": true,
@@ -3032,21 +2936,22 @@
       {
         "source_type": "official_youtube_feed",
         "source_url": "https://www.youtube.com/feeds/videos.xml?channel_id=UCPttFx0zI4Zv9M4i3Q2ylsw",
-        "latest_published_at": null,
+        "latest_published_at": "2026-09-07T21:09:45+00:00",
         "status": "rejected",
-        "result_code": "SOURCE_UNAVAILABLE",
-        "reason": "Источник недоступен: 404 Client Error: Not Found for url: https://www.youtube.com/feeds/videos.xml?channel_id=UCPttFx0zI4Zv9M4i3Q2ylsw",
-        "available": false,
-        "article_found": false,
-        "date_found": false,
-        "content_found": false,
+        "result_code": "ALREADY_USED",
+        "reason": "Публикация уже использовалась в выпуске другого дня.",
+        "available": true,
+        "article_found": true,
+        "date_found": true,
+        "content_found": true,
         "extraction_success": false,
         "verification_passed": false,
         "source_tier": "A",
         "official": true,
         "selected": false,
         "formatted": false,
-        "scheduled": false
+        "scheduled": false,
+        "latest_url": "https://www.youtube.com/watch?v=aXOFdd4ZwA8"
       },
       {
         "source_type": "official_news_website",
@@ -3054,7 +2959,7 @@
         "latest_published_at": "2024-03-23T18:51:42Z",
         "status": "rejected",
         "result_code": "SOURCE_STALE",
-        "reason": "Публикация устарела: 903.3 дн. (аварийный лимит 30).",
+        "reason": "Публикация устарела: 904.3 дн. (аварийный лимит 30).",
         "available": true,
         "article_found": true,
         "date_found": true,
