@@ -536,7 +536,7 @@
     "text": "Сравнивай предложения нескольких игроков, если обмениваешь ценного питомца.",
     "source": "verified_core_mechanic",
     "reviewed_at": "2026-08-14",
-    "used": false,
+    "used": true,
     "category": "economy"
   },
   {
@@ -616,7 +616,7 @@
     "text": "В дуэлях до пяти побед не сдавайся после проигранного раунда — у тебя есть время изменить тактику.",
     "source": "verified_core_mechanic",
     "reviewed_at": "2026-08-14",
-    "used": false,
+    "used": true,
     "category": "strategy"
   },
   {
@@ -1307,7 +1307,7 @@
     "text": "Для большой ролевой сцены заранее назначьте ведущего, чтобы история двигалась понятнее.",
     "source": "verified_core_mechanic",
     "reviewed_at": "2026-08-24",
-    "used": false
+    "used": true
   },
   {
     "id": 132,
@@ -1607,7 +1607,7 @@
     "text": "Если постоянно теряешь яйца по дороге, сначала увеличь Speed, а потом пробуй более дальние цели.",
     "source": "agreed_editorial_list",
     "reviewed_at": "2026-08-28",
-    "used": false
+    "used": true
   },
   {
     "id": 161,
@@ -1662,7 +1662,7 @@
     "text": "При сомнениях используй CCTV вместо случайного решения.",
     "source": "agreed_editorial_list",
     "reviewed_at": "2026-08-28",
-    "used": false
+    "used": true
   },
   {
     "id": 166,
@@ -1684,7 +1684,7 @@
     "text": "Следи за Sanity, не жди, пока показатель станет критически низким.",
     "source": "agreed_editorial_list",
     "reviewed_at": "2026-08-28",
-    "used": false
+    "used": true
   },
   {
     "id": 168,
@@ -1717,7 +1717,7 @@
     "text": "Придерживайся одного порядка проверки: внешний вид → фото → CCTV.",
     "source": "agreed_editorial_list",
     "reviewed_at": "2026-08-28",
-    "used": false
+    "used": true
   },
   {
     "id": 171,
@@ -1904,7 +1904,7 @@
     "text": "За Innocent держись на расстоянии от игроков, пока не понял, кто Murderer.",
     "source": "agreed_editorial_list",
     "reviewed_at": "2026-08-28",
-    "used": false
+    "used": true
   },
   {
     "id": 188,
