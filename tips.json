@@ -16,7 +16,7 @@
     "text": "Не трать всё дерево на костёр: часть древесины пригодится для крафта и развития лагеря.",
     "source": "verified_core_mechanic",
     "reviewed_at": "2026-08-14",
-    "used": false,
+    "used": true,
     "category": "items"
   },
   {
@@ -336,7 +336,7 @@
     "text": "Перед заменой текущего фрукта подумай дважды: новый фрукт может быть редким, но хуже подходить твоей прокачке.",
     "source": "verified_core_mechanic",
     "reviewed_at": "2026-08-14",
-    "used": false,
+    "used": true,
     "category": "strategy"
   },
   {
@@ -986,7 +986,7 @@
     "text": "Не трать ресурсы только на внешний вид питомца, если твоя цель сейчас — быстрее продвигаться.",
     "source": "verified_core_mechanic",
     "reviewed_at": "2026-08-14",
-    "used": false,
+    "used": true,
     "category": "economy"
   },
   {
@@ -1739,7 +1739,7 @@
     "text": "В команде заранее разделите задачи, чтобы все не бежали одновременно к одной проблеме.",
     "source": "agreed_editorial_list",
     "reviewed_at": "2026-08-28",
-    "used": false
+    "used": true
   },
   {
     "id": 173,
@@ -1871,7 +1871,7 @@
     "text": "Перед Rebirth проверь, что готов потерять текущий прогресс ради постоянного множителя.",
     "source": "agreed_editorial_list",
     "reviewed_at": "2026-08-28",
-    "used": false
+    "used": true
   },
   {
     "id": 185,
@@ -2231,7 +2231,7 @@
     "text": "Сначала развивай основной цикл: дерево → древесина → изделие → продажа. Чем быстрее он работает, тем проще двигаться дальше.",
     "source": "agreed_editorial_list",
     "reviewed_at": "2026-09-08",
-    "used": false,
+    "used": true,
     "hits_featured": true,
     "hits_only": true
   },
@@ -2244,7 +2244,7 @@
     "text": "Нанимай работников, когда появится возможность: они помогают автоматизировать производство.",
     "source": "agreed_editorial_list",
     "reviewed_at": "2026-09-08",
-    "used": false,
+    "used": true,
     "hits_featured": true,
     "hits_only": true
   },
@@ -2257,7 +2257,7 @@
     "text": "Даже выход из Roblox не останавливает всё развитие: деревья на лесопилке продолжают расти офлайн.",
     "source": "agreed_editorial_list",
     "reviewed_at": "2026-09-08",
-    "used": false,
+    "used": true,
     "hits_featured": true,
     "hits_only": true
   }

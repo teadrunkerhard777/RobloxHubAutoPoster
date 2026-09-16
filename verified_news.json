@@ -1,10 +1,228 @@
 [
   {
+    "game": "RIVALS",
+    "universe_id": 6035872082,
+    "roblox_name": "[😾] RIVALS",
+    "description": "Welcome to RIVALS, the most intense first person shooter game on Roblox! Challenge other players in 1v1 to 5v5 FPS duels where the first to 5 wins!\n\n😾 UPDATE 22 - A brand new weapon has arrived! Check out the patch notes in-game to see everything new! 🎉 \n\n🔫 Challenge someone by stepping on a duel pad!\n🔑 Earn keys to unlock new weapons & skins!\n📜 Complete contracts to unlock exclusive rewards!\n🏆 Show off your win streak and climb the leaderboards! \n\n🎮 Available on Desktop, Phones, Tablets, XBOX, & PlayStation 5!\n💜 Like and join the group for exclusive rewards!\n\n⚠️ WARNING: Cheaters will be permanently banned with no second chances, our anticheat & moderators will catch you. Abusing glitches & using sketchy farming methods are also not allowed!\n\n🏆 RIA25 Best Shooter Experience!\n🏆 RIA26 Best Shooter Experience!",
+    "updated": "2026-09-15T20:42:07.2156934Z",
+    "created": "2024-05-26T16:47:48.617Z",
+    "creator": {
+      "id": 3461453,
+      "name": "Nosniy Games",
+      "type": "Group",
+      "isRNVAccount": false,
+      "hasVerifiedBadge": true
+    },
+    "description_changed": true,
+    "added_lines": [
+      "🏆 RIA26 Best Shooter Experience!"
+    ],
+    "keywords": [
+      "CONTRACTS",
+      "NEW",
+      "REWARDS",
+      "UPDATE"
+    ],
+    "score": 1,
+    "confidence": "low",
+    "facts": [],
+    "description_facts": [
+      {
+        "text": "😾 UPDATE 22 - A brand new weapon has arrived! Check out the patch notes in-game to see everything new! 🎉",
+        "kind": "items",
+        "value": 7,
+        "specific": true,
+        "reason": "Строка называет конкретное игровое содержимое",
+        "summary_ru": "В игре появились новые инструменты и оружие.",
+        "is_new_line": false
+      },
+      {
+        "text": "🔑 Earn keys to unlock new weapons & skins!",
+        "kind": "items",
+        "value": 7,
+        "specific": true,
+        "reason": "Строка называет конкретное игровое содержимое",
+        "summary_ru": "В игре появились новые инструменты и оружие.",
+        "is_new_line": false
+      },
+      {
+        "text": "📜 Complete contracts to unlock exclusive rewards!",
+        "kind": "quests",
+        "value": 7,
+        "specific": true,
+        "reason": "Строка называет конкретное игровое содержимое",
+        "summary_ru": "Появились новые задания с наградами.",
+        "is_new_line": false
+      },
+      {
+        "text": "💜 Like and join the group for exclusive rewards!",
+        "kind": "quests",
+        "value": 7,
+        "specific": true,
+        "reason": "Строка называет конкретное игровое содержимое",
+        "summary_ru": "Появились новые задания с наградами.",
+        "is_new_line": false
+      }
+    ],
+    "pool": "active",
+    "checked_at": "2026-09-16T03:01:34.251544+00:00",
+    "sources": [
+      {
+        "type": "official_game_description",
+        "verified": true
+      },
+      {
+        "type": "official_roblox_group",
+        "verified": true,
+        "group_id": 3461453,
+        "group_name": "Nosniy Games"
+      }
+    ],
+    "cross_source_confirmations": [],
+    "source_diagnostics": [
+      {
+        "source_type": "secondary_gaming_media",
+        "source_url": "https://news.google.com/rss/search?q=%22RIVALS%22%20Roblox%20when%3A30d&hl=en-US&gl=US&ceid=US:en",
+        "latest_published_at": null,
+        "status": "rejected",
+        "result_code": "NO_NEW_CONTENT",
+        "reason": "Нет пригодной Tier B новости.",
+        "available": true,
+        "article_found": false,
+        "date_found": false,
+        "content_found": false,
+        "extraction_success": false,
+        "verification_passed": false,
+        "source_tier": "B",
+        "official": false,
+        "selected": false,
+        "formatted": false,
+        "scheduled": false
+      },
+      {
+        "source_type": "official_game_description",
+        "source_url": "https://www.roblox.com/games/17625359962/RIVALS",
+        "latest_published_at": "2026-09-15T20:42:07.2156934Z",
+        "status": "rejected",
+        "result_code": "NO_NEW_CONTENT",
+        "available": true,
+        "article_found": true,
+        "date_found": true,
+        "content_found": true,
+        "extraction_success": false,
+        "verification_passed": false,
+        "reason": "Нет новой конкретной строки со времени прошлого снимка."
+      },
+      {
+        "source_type": "official_roblox_group",
+        "source_url": "https://www.roblox.com/communities/3461453/Nosniy-Games",
+        "latest_published_at": null,
+        "status": "checked",
+        "result_code": "NO_NEW_CONTENT",
+        "available": true,
+        "article_found": false,
+        "date_found": false,
+        "content_found": true,
+        "extraction_success": false,
+        "verification_passed": false,
+        "reason": "Официальная группа подтверждена; датированной новости нет."
+      }
+    ],
+    "official_description_analysis": {
+      "keywords": [
+        "UPDATE",
+        "NEW",
+        "REWARD",
+        "REWARDS",
+        "CONTRACT",
+        "CONTRACTS"
+      ],
+      "news_lines": [
+        "😾 UPDATE 22 - A brand new weapon has arrived! Check out the patch notes in-game to see everything new! 🎉",
+        "🔑 Earn keys to unlock new weapons & skins!",
+        "📜 Complete contracts to unlock exclusive rewards!",
+        "💜 Like and join the group for exclusive rewards!"
+      ]
+    },
+    "source_registry": {
+      "pool": "active",
+      "universe_id": 6035872082,
+      "root_place_id": 17625359962,
+      "roblox_game_url": "https://www.roblox.com/games/17625359962/RIVALS",
+      "roblox_group_id": 3461453,
+      "roblox_group_name": "Nosniy Games",
+      "roblox_group_url": "https://www.roblox.com/communities/3461453/Nosniy-Games",
+      "news_strategy": "roblox_game_description_and_group",
+      "website": null,
+      "news_url": null,
+      "discord": "https://discord.com/servers/nosniy-games-170261767480410112",
+      "youtube": null,
+      "x": "https://x.com/NosniyRBLX",
+      "roblox_creator_type": null,
+      "roblox_creator_id": null,
+      "roblox_creator_name": null,
+      "roblox_creator_url": null
+    },
+    "official_group": {
+      "id": 3461453,
+      "name": "Nosniy Games",
+      "expected_name": "Nosniy Games",
+      "name_matches_registry": true,
+      "description": "Welcome to Nosniy Games! We're a development studio dedicated to creating enjoyable content for everyone! Join our community to receive exclusive perks and stay informed on our latest game updates!\n\n🏆 2020 Mobile Game of the Year - Super Golf!\n🏆 RIA25 Best Shooter Experience - RIVALS\n🏆 RIA26 Best Shooter Experience - RIVALS\n🏆 RIA26 Best Studio - Nosniy Games",
+      "has_verified_badge": true,
+      "news_lines": []
+    },
+    "external_source_diagnostics": [
+      {
+        "source_type": "secondary_gaming_media",
+        "source_url": "https://news.google.com/rss/search?q=%22RIVALS%22%20Roblox%20when%3A30d&hl=en-US&gl=US&ceid=US:en",
+        "latest_published_at": null,
+        "status": "rejected",
+        "result_code": "NO_NEW_CONTENT",
+        "reason": "Нет пригодной Tier B новости.",
+        "available": true,
+        "article_found": false,
+        "date_found": false,
+        "content_found": false,
+        "extraction_success": false,
+        "verification_passed": false,
+        "source_tier": "B",
+        "official": false,
+        "selected": false,
+        "formatted": false,
+        "scheduled": false
+      }
+    ],
+    "external_source_diagnostic": {
+      "source_type": "secondary_gaming_media",
+      "source_url": "https://news.google.com/rss/search?q=%22RIVALS%22%20Roblox%20when%3A30d&hl=en-US&gl=US&ceid=US:en",
+      "latest_published_at": null,
+      "status": "rejected",
+      "result_code": "NO_NEW_CONTENT",
+      "reason": "Нет пригодной Tier B новости.",
+      "available": true,
+      "article_found": false,
+      "date_found": false,
+      "content_found": false,
+      "extraction_success": false,
+      "verification_passed": false,
+      "source_tier": "B",
+      "official": false,
+      "selected": false,
+      "formatted": false,
+      "scheduled": false
+    },
+    "candidate_decision": {
+      "status": "rejected",
+      "reason": "Нет свежего факта с редакционным баллом 5 или выше."
+    }
+  },
+  {
     "game": "Steal An Egg",
     "universe_id": 10563114921,
     "roblox_name": "Steal An Egg",
     "description": "🥚 Welcome to Steal An Egg!\n\nHow to Play:\n🥚 Steal eggs from pets\n🐣 Hatch eggs to collect rare pets\n💰 Earn money from your pets\n⬆️ Upgrade your treadmill and base\n🏃 Train on the treadmill to gain Speed\n🥷 Steal eggs from other players\n✨ Discover rarer eggs, pets, sizes, and mutations!\n\n🎮 Supports Desktop, Console, Mobile, and Tablet players",
-    "updated": "2026-09-15T05:02:31.1525238Z",
+    "updated": "2026-09-15T23:27:16.4295357Z",
     "created": "2026-07-25T07:50:51.492Z",
     "creator": {
       "id": 825735094,
@@ -78,7 +296,7 @@
       }
     ],
     "pool": "active",
-    "checked_at": "2026-09-15T09:17:50.028105+00:00",
+    "checked_at": "2026-09-16T03:01:34.236976+00:00",
     "sources": [
       {
         "type": "official_game_description",
@@ -116,7 +334,7 @@
       {
         "source_type": "official_game_description",
         "source_url": "https://www.roblox.com/games/107778070777162/Steal-An-Egg",
-        "latest_published_at": "2026-09-15T05:02:31.1525238Z",
+        "latest_published_at": "2026-09-15T23:27:16.4295357Z",
         "status": "rejected",
         "result_code": "NO_NEW_CONTENT",
         "available": true,
@@ -261,7 +479,7 @@
       }
     ],
     "pool": "active",
-    "checked_at": "2026-09-15T09:17:50.028616+00:00",
+    "checked_at": "2026-09-16T03:01:34.237519+00:00",
     "sources": [
       {
         "type": "official_game_description",
@@ -423,7 +641,7 @@
     "facts": [],
     "description_facts": [],
     "pool": "active",
-    "checked_at": "2026-09-15T09:17:50.030839+00:00",
+    "checked_at": "2026-09-16T03:01:34.239849+00:00",
     "sources": [
       {
         "type": "official_game_description",
@@ -611,7 +829,7 @@
       }
     ],
     "pool": "active",
-    "checked_at": "2026-09-15T09:17:50.032388+00:00",
+    "checked_at": "2026-09-16T03:01:34.241392+00:00",
     "sources": [
       {
         "type": "official_game_description",
@@ -749,7 +967,7 @@
     "universe_id": 1686885941,
     "roblox_name": "Brookhaven 🏡RP",
     "description": "A place to play with like minded people and roleplay. Own and live in amazing houses, drive cool vehicles and explore the city. Be whoever you want to be in Brookhaven RP.\n\nLatest Update:\n🚗 New Vehicles - Beater Car, Minivan, and Custom Street Racer!\n🐰 New Pets - A bunny and turtle!\n📅 Next week... Something big is happening in Brookhaven!\n\nThanks for playing! \n\nPrivate Server Benefits:\n· Prop Saving\n· Server-Wide Music\n· Server-Wide Announcements\n· Remove or Lock Props\n· Check Prop Owners\n· Set Players as Admins\n· Kick / Temp Ban Players\n· Set Day of the Week\n· Set Time by the Hour\n· Change Weather and Lighting\n· Speed up Time\n· Server Theme Controls\n· No Wait Time for Changing House \n· Spawn Up to Three Vehicles\n· Prop Limit Increased\n· Freecam for PC users (Shift+P)",
-    "updated": "2026-09-14T21:03:29.7231768Z",
+    "updated": "2026-09-15T23:24:25.6004091Z",
     "created": "2020-04-21T02:15:38.373Z",
     "creator": {
       "id": 3104358,
@@ -835,7 +1053,7 @@
       }
     ],
     "pool": "active",
-    "checked_at": "2026-09-15T09:17:50.035468+00:00",
+    "checked_at": "2026-09-16T03:01:34.244587+00:00",
     "sources": [
       {
         "type": "official_game_description",
@@ -892,7 +1110,7 @@
       {
         "source_type": "official_game_description",
         "source_url": "https://www.roblox.com/games/4924922222/Brookhaven-RP",
-        "latest_published_at": "2026-09-14T21:03:29.7231768Z",
+        "latest_published_at": "2026-09-15T23:24:25.6004091Z",
         "status": "rejected",
         "result_code": "NO_NEW_CONTENT",
         "available": true,
@@ -1059,7 +1277,7 @@
       }
     ],
     "pool": "active",
-    "checked_at": "2026-09-15T09:17:50.038300+00:00",
+    "checked_at": "2026-09-16T03:01:34.247496+00:00",
     "sources": [
       {
         "type": "official_game_description",
@@ -1080,7 +1298,7 @@
         "latest_published_at": "2026-08-06T22:02:43Z",
         "status": "rejected",
         "result_code": "SOURCE_STALE",
-        "reason": "Публикация устарела: 39.5 дн. (аварийный лимит 30).",
+        "reason": "Публикация устарела: 40.2 дн. (аварийный лимит 30).",
         "available": true,
         "article_found": true,
         "date_found": true,
@@ -1188,7 +1406,7 @@
         "latest_published_at": "2026-08-06T22:02:43Z",
         "status": "rejected",
         "result_code": "SOURCE_STALE",
-        "reason": "Публикация устарела: 39.5 дн. (аварийный лимит 30).",
+        "reason": "Публикация устарела: 40.2 дн. (аварийный лимит 30).",
         "available": true,
         "article_found": true,
         "date_found": true,
@@ -1253,7 +1471,7 @@
     "universe_id": 383310974,
     "roblox_name": "[⭐] Adopt Me!",
     "description": "Adopt and raise 🐶🦄👶, trade and collect legendary pets, build your dream home, and roleplay with friends!\n\n⭐ New daily Star Rewards! ⭐\n⭐ Buy your Rewards with daily Stars!\n🥚 Log-in 28 days for the Gemstone Egg!\n💎 Hatch Legendary Amethyst Penguin!\n\nBe FIRST 🏆 To experience new updates by pressing 🔔NOTIFY.\n\nMeet the founders!\nNewFissy - Tech Director\nBethink - Creative Director\n\nFind out more about Uplift Games, our policies and creative attributions:\nhttps://devforum.roblox.com/t/credits/71812",
-    "updated": "2026-09-15T08:00:02.3419844Z",
+    "updated": "2026-09-16T00:00:02.4838438Z",
     "created": "2017-07-14T19:26:21.347Z",
     "creator": {
       "id": 295182,
@@ -1329,7 +1547,7 @@
       }
     ],
     "pool": "active",
-    "checked_at": "2026-09-15T09:17:50.039874+00:00",
+    "checked_at": "2026-09-16T03:01:34.249147+00:00",
     "sources": [
       {
         "type": "official_game_description",
@@ -1388,7 +1606,7 @@
       {
         "source_type": "official_game_description",
         "source_url": "https://www.roblox.com/games/920587237/Adopt-Me",
-        "latest_published_at": "2026-09-15T08:00:02.3419844Z",
+        "latest_published_at": "2026-09-16T00:00:02.4838438Z",
         "status": "rejected",
         "result_code": "NO_NEW_CONTENT",
         "available": true,
@@ -1529,222 +1747,6 @@
     }
   },
   {
-    "game": "RIVALS",
-    "universe_id": 6035872082,
-    "roblox_name": "[😾] RIVALS",
-    "description": "Welcome to RIVALS, the most intense first person shooter game on Roblox! Challenge other players in 1v1 to 5v5 FPS duels where the first to 5 wins!\n\n😾 UPDATE 22 - A brand new weapon has arrived! Check out the patch notes in-game to see everything new! 🎉 \n\n🔫 Challenge someone by stepping on a duel pad!\n🔑 Earn keys to unlock new weapons & skins!\n📜 Complete contracts to unlock exclusive rewards!\n🏆 Show off your win streak and climb the leaderboards! \n\n🎮 Available on Desktop, Phones, Tablets, XBOX, & PlayStation 5!\n💜 Like and join the group for exclusive rewards!\n\n⚠️ WARNING: Cheaters will be permanently banned with no second chances, our anticheat & moderators will catch you. Abusing glitches & using sketchy farming methods are also not allowed!\n\n🏆 RIA25 Best Shooter Experience!",
-    "updated": "2026-09-09T02:14:24.632Z",
-    "created": "2024-05-26T16:47:48.617Z",
-    "creator": {
-      "id": 3461453,
-      "name": "Nosniy Games",
-      "type": "Group",
-      "isRNVAccount": false,
-      "hasVerifiedBadge": true
-    },
-    "description_changed": false,
-    "added_lines": [],
-    "keywords": [
-      "CONTRACTS",
-      "NEW",
-      "REWARDS",
-      "UPDATE"
-    ],
-    "score": 0,
-    "confidence": "low",
-    "facts": [],
-    "description_facts": [
-      {
-        "text": "😾 UPDATE 22 - A brand new weapon has arrived! Check out the patch notes in-game to see everything new! 🎉",
-        "kind": "items",
-        "value": 7,
-        "specific": true,
-        "reason": "Строка называет конкретное игровое содержимое",
-        "summary_ru": "В игре появились новые инструменты и оружие.",
-        "is_new_line": false
-      },
-      {
-        "text": "🔑 Earn keys to unlock new weapons & skins!",
-        "kind": "items",
-        "value": 7,
-        "specific": true,
-        "reason": "Строка называет конкретное игровое содержимое",
-        "summary_ru": "В игре появились новые инструменты и оружие.",
-        "is_new_line": false
-      },
-      {
-        "text": "📜 Complete contracts to unlock exclusive rewards!",
-        "kind": "quests",
-        "value": 7,
-        "specific": true,
-        "reason": "Строка называет конкретное игровое содержимое",
-        "summary_ru": "Появились новые задания с наградами.",
-        "is_new_line": false
-      },
-      {
-        "text": "💜 Like and join the group for exclusive rewards!",
-        "kind": "quests",
-        "value": 7,
-        "specific": true,
-        "reason": "Строка называет конкретное игровое содержимое",
-        "summary_ru": "Появились новые задания с наградами.",
-        "is_new_line": false
-      }
-    ],
-    "pool": "active",
-    "checked_at": "2026-09-15T09:17:50.042075+00:00",
-    "sources": [
-      {
-        "type": "official_game_description",
-        "verified": true
-      },
-      {
-        "type": "official_roblox_group",
-        "verified": true,
-        "group_id": 3461453,
-        "group_name": "Nosniy Games"
-      }
-    ],
-    "cross_source_confirmations": [],
-    "source_diagnostics": [
-      {
-        "source_type": "secondary_gaming_media",
-        "source_url": "https://news.google.com/rss/search?q=%22RIVALS%22%20Roblox%20when%3A30d&hl=en-US&gl=US&ceid=US:en",
-        "latest_published_at": null,
-        "status": "rejected",
-        "result_code": "NO_NEW_CONTENT",
-        "reason": "Нет пригодной Tier B новости.",
-        "available": true,
-        "article_found": false,
-        "date_found": false,
-        "content_found": false,
-        "extraction_success": false,
-        "verification_passed": false,
-        "source_tier": "B",
-        "official": false,
-        "selected": false,
-        "formatted": false,
-        "scheduled": false
-      },
-      {
-        "source_type": "official_game_description",
-        "source_url": "https://www.roblox.com/games/17625359962/RIVALS",
-        "latest_published_at": "2026-09-09T02:14:24.632Z",
-        "status": "rejected",
-        "result_code": "NO_NEW_CONTENT",
-        "available": true,
-        "article_found": false,
-        "date_found": true,
-        "content_found": true,
-        "extraction_success": false,
-        "verification_passed": false,
-        "reason": "Нет новой конкретной строки со времени прошлого снимка."
-      },
-      {
-        "source_type": "official_roblox_group",
-        "source_url": "https://www.roblox.com/communities/3461453/Nosniy-Games",
-        "latest_published_at": null,
-        "status": "checked",
-        "result_code": "NO_NEW_CONTENT",
-        "available": true,
-        "article_found": false,
-        "date_found": false,
-        "content_found": true,
-        "extraction_success": false,
-        "verification_passed": false,
-        "reason": "Официальная группа подтверждена; датированной новости нет."
-      }
-    ],
-    "official_description_analysis": {
-      "keywords": [
-        "UPDATE",
-        "NEW",
-        "REWARD",
-        "REWARDS",
-        "CONTRACT",
-        "CONTRACTS"
-      ],
-      "news_lines": [
-        "😾 UPDATE 22 - A brand new weapon has arrived! Check out the patch notes in-game to see everything new! 🎉",
-        "🔑 Earn keys to unlock new weapons & skins!",
-        "📜 Complete contracts to unlock exclusive rewards!",
-        "💜 Like and join the group for exclusive rewards!"
-      ]
-    },
-    "source_registry": {
-      "pool": "active",
-      "universe_id": 6035872082,
-      "root_place_id": 17625359962,
-      "roblox_game_url": "https://www.roblox.com/games/17625359962/RIVALS",
-      "roblox_group_id": 3461453,
-      "roblox_group_name": "Nosniy Games",
-      "roblox_group_url": "https://www.roblox.com/communities/3461453/Nosniy-Games",
-      "news_strategy": "roblox_game_description_and_group",
-      "website": null,
-      "news_url": null,
-      "discord": "https://discord.com/servers/nosniy-games-170261767480410112",
-      "youtube": null,
-      "x": "https://x.com/NosniyRBLX",
-      "roblox_creator_type": null,
-      "roblox_creator_id": null,
-      "roblox_creator_name": null,
-      "roblox_creator_url": null
-    },
-    "official_group": {
-      "id": 3461453,
-      "name": "Nosniy Games",
-      "expected_name": "Nosniy Games",
-      "name_matches_registry": true,
-      "description": "Welcome to Nosniy Games! We're a development studio dedicated to creating enjoyable content for everyone! Join our community to receive exclusive perks and stay informed on our latest game updates!\n\n🏆 2020 Mobile Game of the Year - Super Golf!\n🏆 RIA25 Best Shooter Experience - RIVALS",
-      "has_verified_badge": true,
-      "news_lines": []
-    },
-    "external_source_diagnostics": [
-      {
-        "source_type": "secondary_gaming_media",
-        "source_url": "https://news.google.com/rss/search?q=%22RIVALS%22%20Roblox%20when%3A30d&hl=en-US&gl=US&ceid=US:en",
-        "latest_published_at": null,
-        "status": "rejected",
-        "result_code": "NO_NEW_CONTENT",
-        "reason": "Нет пригодной Tier B новости.",
-        "available": true,
-        "article_found": false,
-        "date_found": false,
-        "content_found": false,
-        "extraction_success": false,
-        "verification_passed": false,
-        "source_tier": "B",
-        "official": false,
-        "selected": false,
-        "formatted": false,
-        "scheduled": false
-      }
-    ],
-    "external_source_diagnostic": {
-      "source_type": "secondary_gaming_media",
-      "source_url": "https://news.google.com/rss/search?q=%22RIVALS%22%20Roblox%20when%3A30d&hl=en-US&gl=US&ceid=US:en",
-      "latest_published_at": null,
-      "status": "rejected",
-      "result_code": "NO_NEW_CONTENT",
-      "reason": "Нет пригодной Tier B новости.",
-      "available": true,
-      "article_found": false,
-      "date_found": false,
-      "content_found": false,
-      "extraction_success": false,
-      "verification_passed": false,
-      "source_tier": "B",
-      "official": false,
-      "selected": false,
-      "formatted": false,
-      "scheduled": false
-    },
-    "candidate_decision": {
-      "status": "rejected",
-      "reason": "Нет свежего факта с редакционным баллом 5 или выше."
-    }
-  },
-  {
     "game": "99 Nights in the Forest",
     "universe_id": 7326934954,
     "roblox_name": "99 Nights in the Forest 🔦",
@@ -1766,7 +1768,7 @@
     "facts": [],
     "description_facts": [],
     "pool": "active",
-    "checked_at": "2026-09-15T09:17:50.042500+00:00",
+    "checked_at": "2026-09-16T03:01:34.251996+00:00",
     "sources": [
       {
         "type": "official_game_description",
@@ -1914,7 +1916,7 @@
     "universe_id": 7709344486,
     "roblox_name": "Steal a Brainrot",
     "description": "🗣️ Welcome to Steal a Brainrot!\n\n👍 Like the game and join the group\n\nHow to Play:\n👽 Buy a Brainrot\n🥷 Steal Brainrots from other players\n💸 Generate money\n🐦‍🔥 Rebirth\n✋ Buy slaps and troll gear to troll other players!\n\n💻 Supports Desktop, Mobile and Tablet players\n\n🙏 Credit to Chris for letting us use the Nyan Cat!\n🙏 Credit to @WinnersTakesAll for the backpack system!",
-    "updated": "2026-09-14T05:06:47.6252816Z",
+    "updated": "2026-09-16T02:53:31.034442Z",
     "created": "2025-05-16T00:49:12.563Z",
     "creator": {
       "id": 35815907,
@@ -1941,7 +1943,7 @@
       }
     ],
     "pool": "active",
-    "checked_at": "2026-09-15T09:17:50.043986+00:00",
+    "checked_at": "2026-09-16T03:01:34.253556+00:00",
     "sources": [
       {
         "type": "official_game_description",
@@ -1978,7 +1980,7 @@
       {
         "source_type": "official_game_description",
         "source_url": "https://www.roblox.com/games/109983668079237/Steal-a-Brainrot",
-        "latest_published_at": "2026-09-14T05:06:47.6252816Z",
+        "latest_published_at": "2026-09-16T02:53:31.034442Z",
         "status": "rejected",
         "result_code": "NO_NEW_CONTENT",
         "available": true,
@@ -2082,299 +2084,11 @@
     }
   },
   {
-    "game": "Blade Ball",
-    "universe_id": 4777817887,
-    "roblox_name": "Blade Ball",
-    "description": "⚡  In this game of focus, timing, and strategy, your skill is tested as a deflectable homing ball hunts players with increasing speed. But there's more than what meets the eye.\n\n🔥  Gain new abilities and upgrade them to compliment your playstyle. Rise through the ranks by mastering your skill, and stand out with a variety of iconic weapon skins and finisher effects.\n\n🏆 Shoot for the leaderboard or play casually! The choice is yours.\n \nCONTROLS:\nBLOCK - F/R1/Tap Screen/Tap UI Button/Left Click\nABILITY - Q/ButtonX/Tap UI Button/Right Click\nSHIFTLOCK - Shift/Button-Y/Tap UI Button\nEMOTE - R/L1/Tap UI Button\n\ntags: minigame, battle game, pvp, multiplayer, abilities, dodgeball, sports, mobile, console, xbox, pc",
-    "updated": "2026-09-13T21:46:08.9529732Z",
-    "created": "2023-06-17T00:05:26.103Z",
-    "creator": {
-      "id": 12836673,
-      "name": "Wiggity.",
-      "type": "Group",
-      "isRNVAccount": false,
-      "hasVerifiedBadge": true
-    },
-    "description_changed": false,
-    "added_lines": [],
-    "keywords": [
-      "NEW"
-    ],
-    "score": 6,
-    "confidence": "medium",
-    "facts": [
-      {
-        "text": "BEST Swords in Blade Ball! 🤩 - Blade Ball Update Showcase",
-        "summary_ru": "В Blade Ball вышло обновление «BEST Swords in Blade Ball! 🤩 - Blade Ball Update Showcase».",
-        "kind": "official_article",
-        "value": 6,
-        "specific": true,
-        "reason": "Свежий игровой анонс из официального источника",
-        "is_new_line": true,
-        "source_url": "https://www.youtube.com/watch?v=E0FZqkUKRTs",
-        "source_tier": "A",
-        "publisher": null,
-        "title_is_concrete": true
-      }
-    ],
-    "description_facts": [
-      {
-        "text": "🔥 Gain new abilities and upgrade them to compliment your playstyle. Rise through the ranks by mastering your skill, and stand out with a variety of iconic weapon skins and finisher effects.",
-        "kind": "items",
-        "value": 7,
-        "specific": true,
-        "reason": "Строка называет конкретное игровое содержимое",
-        "summary_ru": "В игре появились новые инструменты и оружие.",
-        "is_new_line": false
-      }
-    ],
-    "pool": "legacy",
-    "checked_at": "2026-09-15T09:17:50.049444+00:00",
-    "sources": [
-      {
-        "type": "official_game_description",
-        "verified": true
-      },
-      {
-        "type": "official_roblox_group",
-        "verified": true,
-        "group_id": 12836673,
-        "group_name": "Wiggity."
-      },
-      {
-        "type": "official_youtube_feed",
-        "verified": true,
-        "url": "https://www.youtube.com/watch?v=E0FZqkUKRTs"
-      }
-    ],
-    "cross_source_confirmations": [],
-    "source_diagnostics": [
-      {
-        "source_type": "official_youtube_feed",
-        "source_url": "https://www.youtube.com/feeds/videos.xml?channel_id=UCPttFx0zI4Zv9M4i3Q2ylsw",
-        "latest_published_at": "2026-09-15T03:58:20+00:00",
-        "status": "accepted",
-        "result_code": "FOUND_VERIFIED",
-        "reason": "Официальная публикация (0.2 дн.) с датой и игровым содержанием; окно primary_14_day.",
-        "available": true,
-        "article_found": true,
-        "date_found": true,
-        "content_found": true,
-        "extraction_success": true,
-        "verification_passed": true,
-        "source_tier": "A",
-        "official": true,
-        "selected": false,
-        "formatted": false,
-        "scheduled": false,
-        "latest_url": "https://www.youtube.com/watch?v=E0FZqkUKRTs",
-        "freshness_window": "primary_14_day"
-      },
-      {
-        "source_type": "official_news_website",
-        "source_url": "https://bladeball.com/blogs/news",
-        "latest_published_at": "2024-03-23T18:51:42Z",
-        "status": "rejected",
-        "result_code": "SOURCE_STALE",
-        "reason": "Публикация устарела: 905.6 дн. (аварийный лимит 30).",
-        "available": true,
-        "article_found": true,
-        "date_found": true,
-        "content_found": true,
-        "extraction_success": false,
-        "verification_passed": false,
-        "source_tier": "A",
-        "official": true,
-        "selected": false,
-        "formatted": false,
-        "scheduled": false,
-        "latest_url": "https://bladeball.com/blogs/news/comptetetive-leaderboards"
-      },
-      {
-        "source_type": "secondary_gaming_media",
-        "source_url": "https://news.google.com/rss/search?q=%22Blade%20Ball%22%20Roblox%20when%3A30d&hl=en-US&gl=US&ceid=US:en",
-        "latest_published_at": null,
-        "status": "rejected",
-        "result_code": "NO_NEW_CONTENT",
-        "reason": "Нет пригодной Tier B новости.",
-        "available": true,
-        "article_found": false,
-        "date_found": false,
-        "content_found": false,
-        "extraction_success": false,
-        "verification_passed": false,
-        "source_tier": "B",
-        "official": false,
-        "selected": false,
-        "formatted": false,
-        "scheduled": false
-      },
-      {
-        "source_type": "official_game_description",
-        "source_url": "https://www.roblox.com/games/13772394625/Blade-Ball",
-        "latest_published_at": "2026-09-13T21:46:08.9529732Z",
-        "status": "rejected",
-        "result_code": "NO_NEW_CONTENT",
-        "available": true,
-        "article_found": false,
-        "date_found": true,
-        "content_found": true,
-        "extraction_success": false,
-        "verification_passed": false,
-        "reason": "Нет новой конкретной строки со времени прошлого снимка."
-      },
-      {
-        "source_type": "official_roblox_group",
-        "source_url": "https://www.roblox.com/communities/12836673/Wiggity",
-        "latest_published_at": null,
-        "status": "checked",
-        "result_code": "NO_NEW_CONTENT",
-        "available": true,
-        "article_found": false,
-        "date_found": false,
-        "content_found": true,
-        "extraction_success": false,
-        "verification_passed": false,
-        "reason": "Официальная группа подтверждена; датированной новости нет."
-      }
-    ],
-    "official_description_analysis": {
-      "keywords": [
-        "NEW"
-      ],
-      "news_lines": [
-        "🔥  Gain new abilities and upgrade them to compliment your playstyle. Rise through the ranks by mastering your skill, and stand out with a variety of iconic weapon skins and finisher effects."
-      ]
-    },
-    "source_registry": {
-      "pool": "legacy",
-      "universe_id": 4777817887,
-      "root_place_id": 13772394625,
-      "roblox_game_url": "https://www.roblox.com/games/13772394625/Blade-Ball",
-      "roblox_group_id": 12836673,
-      "roblox_group_name": "Wiggity.",
-      "roblox_group_url": "https://www.roblox.com/communities/12836673/Wiggity",
-      "news_strategy": "official_news_website",
-      "website": "https://bladeball.com/",
-      "news_url": "https://bladeball.com/blogs/news",
-      "discord": "https://discord.com/servers/1141515589924429869",
-      "youtube": "https://www.youtube.com/@Blade-Ball",
-      "x": null,
-      "roblox_creator_type": null,
-      "roblox_creator_id": null,
-      "roblox_creator_name": null,
-      "roblox_creator_url": null
-    },
-    "official_group": {
-      "id": 12836673,
-      "name": "Wiggity.",
-      "expected_name": "Wiggity.",
-      "name_matches_registry": true,
-      "description": "Creators of Blade Ball",
-      "has_verified_badge": true,
-      "news_lines": []
-    },
-    "external_source_diagnostics": [
-      {
-        "source_type": "official_youtube_feed",
-        "source_url": "https://www.youtube.com/feeds/videos.xml?channel_id=UCPttFx0zI4Zv9M4i3Q2ylsw",
-        "latest_published_at": "2026-09-15T03:58:20+00:00",
-        "status": "accepted",
-        "result_code": "FOUND_VERIFIED",
-        "reason": "Официальная публикация (0.2 дн.) с датой и игровым содержанием; окно primary_14_day.",
-        "available": true,
-        "article_found": true,
-        "date_found": true,
-        "content_found": true,
-        "extraction_success": true,
-        "verification_passed": true,
-        "source_tier": "A",
-        "official": true,
-        "selected": false,
-        "formatted": false,
-        "scheduled": false,
-        "latest_url": "https://www.youtube.com/watch?v=E0FZqkUKRTs",
-        "freshness_window": "primary_14_day"
-      },
-      {
-        "source_type": "official_news_website",
-        "source_url": "https://bladeball.com/blogs/news",
-        "latest_published_at": "2024-03-23T18:51:42Z",
-        "status": "rejected",
-        "result_code": "SOURCE_STALE",
-        "reason": "Публикация устарела: 905.6 дн. (аварийный лимит 30).",
-        "available": true,
-        "article_found": true,
-        "date_found": true,
-        "content_found": true,
-        "extraction_success": false,
-        "verification_passed": false,
-        "source_tier": "A",
-        "official": true,
-        "selected": false,
-        "formatted": false,
-        "scheduled": false,
-        "latest_url": "https://bladeball.com/blogs/news/comptetetive-leaderboards"
-      },
-      {
-        "source_type": "secondary_gaming_media",
-        "source_url": "https://news.google.com/rss/search?q=%22Blade%20Ball%22%20Roblox%20when%3A30d&hl=en-US&gl=US&ceid=US:en",
-        "latest_published_at": null,
-        "status": "rejected",
-        "result_code": "NO_NEW_CONTENT",
-        "reason": "Нет пригодной Tier B новости.",
-        "available": true,
-        "article_found": false,
-        "date_found": false,
-        "content_found": false,
-        "extraction_success": false,
-        "verification_passed": false,
-        "source_tier": "B",
-        "official": false,
-        "selected": false,
-        "formatted": false,
-        "scheduled": false
-      }
-    ],
-    "external_source_diagnostic": {
-      "source_type": "secondary_gaming_media",
-      "source_url": "https://news.google.com/rss/search?q=%22Blade%20Ball%22%20Roblox%20when%3A30d&hl=en-US&gl=US&ceid=US:en",
-      "latest_published_at": null,
-      "status": "rejected",
-      "result_code": "NO_NEW_CONTENT",
-      "reason": "Нет пригодной Tier B новости.",
-      "available": true,
-      "article_found": false,
-      "date_found": false,
-      "content_found": false,
-      "extraction_success": false,
-      "verification_passed": false,
-      "source_tier": "B",
-      "official": false,
-      "selected": false,
-      "formatted": false,
-      "scheduled": false
-    },
-    "external_news_article": {
-      "url": "https://www.youtube.com/watch?v=E0FZqkUKRTs",
-      "title": "BEST Swords in Blade Ball! 🤩 - Blade Ball Update Showcase",
-      "published_at": "2026-09-15T03:58:20+00:00",
-      "age_days": 0.22187746982638892,
-      "source_tier": "A",
-      "publisher": null,
-      "freshness_window": "primary_14_day"
-    },
-    "candidate_decision": {
-      "status": "accepted",
-      "reason": "Есть достойный свежий факт."
-    }
-  },
-  {
     "game": "Grow a Garden",
     "universe_id": 7436755782,
     "roblox_name": "[🧺] Grow a Garden 🌶️",
     "description": "🍅Welcome to Grow a Garden🍅\n\nAre you ready to grow your very own garden? Buy seeds from the shop when they restock, plant them, wait for them to grow, and collect the profits! Flex fruits and finds on friends, and have fun!\n\n[How To Plant]\n• Equip your seed you want to plant!\n• Click in your farm on the brown plots to plant!\n• Wait to see it start growing!\n• After its fully grown, it is time to harvest the goods!\n\nRemember, your garden literally grows while you are offline⭐",
-    "updated": "2026-09-14T19:56:36.7379555Z",
+    "updated": "2026-09-15T21:30:02.209353Z",
     "created": "2025-03-25T22:32:09.437Z",
     "creator": {
       "id": 35789249,
@@ -2391,7 +2105,7 @@
     "facts": [],
     "description_facts": [],
     "pool": "legacy",
-    "checked_at": "2026-09-15T09:17:50.045640+00:00",
+    "checked_at": "2026-09-16T03:01:34.255286+00:00",
     "sources": [
       {
         "type": "official_game_description",
@@ -2429,7 +2143,7 @@
       {
         "source_type": "official_game_description",
         "source_url": "https://www.roblox.com/games/126884695634066/Grow-a-Garden",
-        "latest_published_at": "2026-09-14T19:56:36.7379555Z",
+        "latest_published_at": "2026-09-15T21:30:02.209353Z",
         "status": "rejected",
         "result_code": "NO_NEW_CONTENT",
         "available": true,
@@ -2539,7 +2253,7 @@
     "universe_id": 5203828273,
     "roblox_name": "[🎂] Dress To Impress",
     "description": "Create stunning outfits 👗💖⭐, and strut the runway to show off your unique style. Collaborate, compete, and explore a world of glamour with friends!\n\n⭐ Are you ready to be the TOP MODEL?\n👗 NEW ITEMS! Check them out.\n🍿 Vote for your favorite outfits!\n💃 Use poses on the runway to show off your outfit!\n\nFind more about Dress To Impress by joining our community.\nhttps://www.roblox.com/communities/17264167/Dress-To-Impress-Group#!/about",
-    "updated": "2026-09-15T05:00:47.6809435Z",
+    "updated": "2026-09-16T02:58:48.1537614Z",
     "created": "2023-10-18T09:11:36.563Z",
     "creator": {
       "id": 17264167,
@@ -2596,7 +2310,7 @@
       }
     ],
     "pool": "legacy",
-    "checked_at": "2026-09-15T09:17:50.046962+00:00",
+    "checked_at": "2026-09-16T03:01:34.256647+00:00",
     "sources": [
       {
         "type": "official_game_description",
@@ -2614,22 +2328,21 @@
       {
         "source_type": "official_youtube_feed",
         "source_url": "https://www.youtube.com/feeds/videos.xml?channel_id=UCCVWvf_e5oRb6RfXyluR7UA",
-        "latest_published_at": "2026-07-02T15:00:06+00:00",
+        "latest_published_at": null,
         "status": "rejected",
-        "result_code": "SOURCE_STALE",
-        "reason": "Публикация устарела: 74.8 дн. (аварийный лимит 30).",
-        "available": true,
-        "article_found": true,
-        "date_found": true,
-        "content_found": true,
+        "result_code": "SOURCE_UNAVAILABLE",
+        "reason": "Источник недоступен: 404 Client Error: Not Found for url: https://www.youtube.com/feeds/videos.xml?channel_id=UCCVWvf_e5oRb6RfXyluR7UA",
+        "available": false,
+        "article_found": false,
+        "date_found": false,
+        "content_found": false,
         "extraction_success": false,
         "verification_passed": false,
         "source_tier": "A",
         "official": true,
         "selected": false,
         "formatted": false,
-        "scheduled": false,
-        "latest_url": "https://www.youtube.com/watch?v=5Zfy9QW4s5A"
+        "scheduled": false
       },
       {
         "source_type": "secondary_gaming_media",
@@ -2653,7 +2366,7 @@
       {
         "source_type": "official_game_description",
         "source_url": "https://www.roblox.com/games/15101393044/Dress-To-Impress",
-        "latest_published_at": "2026-09-15T05:00:47.6809435Z",
+        "latest_published_at": "2026-09-16T02:58:48.1537614Z",
         "status": "rejected",
         "result_code": "NO_NEW_CONTENT",
         "available": true,
@@ -2723,22 +2436,21 @@
       {
         "source_type": "official_youtube_feed",
         "source_url": "https://www.youtube.com/feeds/videos.xml?channel_id=UCCVWvf_e5oRb6RfXyluR7UA",
-        "latest_published_at": "2026-07-02T15:00:06+00:00",
+        "latest_published_at": null,
         "status": "rejected",
-        "result_code": "SOURCE_STALE",
-        "reason": "Публикация устарела: 74.8 дн. (аварийный лимит 30).",
-        "available": true,
-        "article_found": true,
-        "date_found": true,
-        "content_found": true,
+        "result_code": "SOURCE_UNAVAILABLE",
+        "reason": "Источник недоступен: 404 Client Error: Not Found for url: https://www.youtube.com/feeds/videos.xml?channel_id=UCCVWvf_e5oRb6RfXyluR7UA",
+        "available": false,
+        "article_found": false,
+        "date_found": false,
+        "content_found": false,
         "extraction_success": false,
         "verification_passed": false,
         "source_tier": "A",
         "official": true,
         "selected": false,
         "formatted": false,
-        "scheduled": false,
-        "latest_url": "https://www.youtube.com/watch?v=5Zfy9QW4s5A"
+        "scheduled": false
       },
       {
         "source_type": "secondary_gaming_media",
@@ -2789,7 +2501,7 @@
     "universe_id": 3317771874,
     "roblox_name": "🕹️ [ARCADE] Pet Simulator 99! 💰",
     "description": "Create an army of the coolest pets! They will help you get RICH!\n\n✨ Currently 3,000+ pets to collect! 🐾\n\n🧡 Thanks for playing!",
-    "updated": "2026-09-14T05:13:10.1825261Z",
+    "updated": "2026-09-14T05:13:10.182Z",
     "created": "2022-02-05T13:30:02.357Z",
     "creator": {
       "id": 3959677,
@@ -2827,7 +2539,7 @@
       }
     ],
     "pool": "legacy",
-    "checked_at": "2026-09-15T09:17:50.047348+00:00",
+    "checked_at": "2026-09-16T03:01:34.257039+00:00",
     "sources": [
       {
         "type": "official_game_description",
@@ -2885,7 +2597,7 @@
       {
         "source_type": "official_game_description",
         "source_url": "https://www.roblox.com/games/8737899170/Pet-Simulator-99",
-        "latest_published_at": "2026-09-14T05:13:10.1825261Z",
+        "latest_published_at": "2026-09-14T05:13:10.182Z",
         "status": "rejected",
         "result_code": "NO_NEW_CONTENT",
         "available": true,
@@ -3010,6 +2722,262 @@
       "formatted": false,
       "scheduled": false,
       "latest_url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxQYkFBVnluLXluMjJJcXFuTmZoRk5sbkRFc3gzN2JBd29JbVBvdzhMLTBCVkVPQjBTX0xEWEtvWXY1a3ZLcjhscGtSUXM0ZUs4S1ZaSURGci1DcWZ1ajJSZW1EV0RpWFByZ29ySjdjMUtGejFxWDJhRmRRZkcyamRkMlB3NExVX3lUZ0dLdkNVT2xRUjJjbEFKc2pnY01OeWE4WVVKcEV2UnA?oc=5"
+    },
+    "candidate_decision": {
+      "status": "rejected",
+      "reason": "Нет свежего факта с редакционным баллом 5 или выше."
+    }
+  },
+  {
+    "game": "Blade Ball",
+    "universe_id": 4777817887,
+    "roblox_name": "Blade Ball",
+    "description": "⚡  In this game of focus, timing, and strategy, your skill is tested as a deflectable homing ball hunts players with increasing speed. But there's more than what meets the eye.\n\n🔥  Gain new abilities and upgrade them to compliment your playstyle. Rise through the ranks by mastering your skill, and stand out with a variety of iconic weapon skins and finisher effects.\n\n🏆 Shoot for the leaderboard or play casually! The choice is yours.\n \nCONTROLS:\nBLOCK - F/R1/Tap Screen/Tap UI Button/Left Click\nABILITY - Q/ButtonX/Tap UI Button/Right Click\nSHIFTLOCK - Shift/Button-Y/Tap UI Button\nEMOTE - R/L1/Tap UI Button\n\ntags: minigame, battle game, pvp, multiplayer, abilities, dodgeball, sports, mobile, console, xbox, pc",
+    "updated": "2026-09-16T00:37:21.6616043Z",
+    "created": "2023-06-17T00:05:26.103Z",
+    "creator": {
+      "id": 12836673,
+      "name": "Wiggity.",
+      "type": "Group",
+      "isRNVAccount": false,
+      "hasVerifiedBadge": true
+    },
+    "description_changed": false,
+    "added_lines": [],
+    "keywords": [
+      "NEW"
+    ],
+    "score": 0,
+    "confidence": "low",
+    "facts": [],
+    "description_facts": [
+      {
+        "text": "🔥 Gain new abilities and upgrade them to compliment your playstyle. Rise through the ranks by mastering your skill, and stand out with a variety of iconic weapon skins and finisher effects.",
+        "kind": "items",
+        "value": 7,
+        "specific": true,
+        "reason": "Строка называет конкретное игровое содержимое",
+        "summary_ru": "В игре появились новые инструменты и оружие.",
+        "is_new_line": false
+      }
+    ],
+    "pool": "legacy",
+    "checked_at": "2026-09-16T03:01:34.259190+00:00",
+    "sources": [
+      {
+        "type": "official_game_description",
+        "verified": true
+      },
+      {
+        "type": "official_roblox_group",
+        "verified": true,
+        "group_id": 12836673,
+        "group_name": "Wiggity."
+      }
+    ],
+    "cross_source_confirmations": [],
+    "source_diagnostics": [
+      {
+        "source_type": "official_youtube_feed",
+        "source_url": "https://www.youtube.com/feeds/videos.xml?channel_id=UCPttFx0zI4Zv9M4i3Q2ylsw",
+        "latest_published_at": null,
+        "status": "rejected",
+        "result_code": "SOURCE_UNAVAILABLE",
+        "reason": "Источник недоступен: 404 Client Error: Not Found for url: https://www.youtube.com/feeds/videos.xml?channel_id=UCPttFx0zI4Zv9M4i3Q2ylsw",
+        "available": false,
+        "article_found": false,
+        "date_found": false,
+        "content_found": false,
+        "extraction_success": false,
+        "verification_passed": false,
+        "source_tier": "A",
+        "official": true,
+        "selected": false,
+        "formatted": false,
+        "scheduled": false
+      },
+      {
+        "source_type": "official_news_website",
+        "source_url": "https://bladeball.com/blogs/news",
+        "latest_published_at": "2024-03-23T18:51:42Z",
+        "status": "rejected",
+        "result_code": "SOURCE_STALE",
+        "reason": "Публикация устарела: 906.3 дн. (аварийный лимит 30).",
+        "available": true,
+        "article_found": true,
+        "date_found": true,
+        "content_found": true,
+        "extraction_success": false,
+        "verification_passed": false,
+        "source_tier": "A",
+        "official": true,
+        "selected": false,
+        "formatted": false,
+        "scheduled": false,
+        "latest_url": "https://bladeball.com/blogs/news/comptetetive-leaderboards"
+      },
+      {
+        "source_type": "secondary_gaming_media",
+        "source_url": "https://news.google.com/rss/search?q=%22Blade%20Ball%22%20Roblox%20when%3A30d&hl=en-US&gl=US&ceid=US:en",
+        "latest_published_at": null,
+        "status": "rejected",
+        "result_code": "NO_NEW_CONTENT",
+        "reason": "Нет пригодной Tier B новости.",
+        "available": true,
+        "article_found": false,
+        "date_found": false,
+        "content_found": false,
+        "extraction_success": false,
+        "verification_passed": false,
+        "source_tier": "B",
+        "official": false,
+        "selected": false,
+        "formatted": false,
+        "scheduled": false
+      },
+      {
+        "source_type": "official_game_description",
+        "source_url": "https://www.roblox.com/games/13772394625/Blade-Ball",
+        "latest_published_at": "2026-09-16T00:37:21.6616043Z",
+        "status": "rejected",
+        "result_code": "NO_NEW_CONTENT",
+        "available": true,
+        "article_found": false,
+        "date_found": true,
+        "content_found": true,
+        "extraction_success": false,
+        "verification_passed": false,
+        "reason": "Нет новой конкретной строки со времени прошлого снимка."
+      },
+      {
+        "source_type": "official_roblox_group",
+        "source_url": "https://www.roblox.com/communities/12836673/Wiggity",
+        "latest_published_at": null,
+        "status": "checked",
+        "result_code": "NO_NEW_CONTENT",
+        "available": true,
+        "article_found": false,
+        "date_found": false,
+        "content_found": true,
+        "extraction_success": false,
+        "verification_passed": false,
+        "reason": "Официальная группа подтверждена; датированной новости нет."
+      }
+    ],
+    "official_description_analysis": {
+      "keywords": [
+        "NEW"
+      ],
+      "news_lines": [
+        "🔥  Gain new abilities and upgrade them to compliment your playstyle. Rise through the ranks by mastering your skill, and stand out with a variety of iconic weapon skins and finisher effects."
+      ]
+    },
+    "source_registry": {
+      "pool": "legacy",
+      "universe_id": 4777817887,
+      "root_place_id": 13772394625,
+      "roblox_game_url": "https://www.roblox.com/games/13772394625/Blade-Ball",
+      "roblox_group_id": 12836673,
+      "roblox_group_name": "Wiggity.",
+      "roblox_group_url": "https://www.roblox.com/communities/12836673/Wiggity",
+      "news_strategy": "official_news_website",
+      "website": "https://bladeball.com/",
+      "news_url": "https://bladeball.com/blogs/news",
+      "discord": "https://discord.com/servers/1141515589924429869",
+      "youtube": "https://www.youtube.com/@Blade-Ball",
+      "x": null,
+      "roblox_creator_type": null,
+      "roblox_creator_id": null,
+      "roblox_creator_name": null,
+      "roblox_creator_url": null
+    },
+    "official_group": {
+      "id": 12836673,
+      "name": "Wiggity.",
+      "expected_name": "Wiggity.",
+      "name_matches_registry": true,
+      "description": "Creators of Blade Ball",
+      "has_verified_badge": true,
+      "news_lines": []
+    },
+    "external_source_diagnostics": [
+      {
+        "source_type": "official_youtube_feed",
+        "source_url": "https://www.youtube.com/feeds/videos.xml?channel_id=UCPttFx0zI4Zv9M4i3Q2ylsw",
+        "latest_published_at": null,
+        "status": "rejected",
+        "result_code": "SOURCE_UNAVAILABLE",
+        "reason": "Источник недоступен: 404 Client Error: Not Found for url: https://www.youtube.com/feeds/videos.xml?channel_id=UCPttFx0zI4Zv9M4i3Q2ylsw",
+        "available": false,
+        "article_found": false,
+        "date_found": false,
+        "content_found": false,
+        "extraction_success": false,
+        "verification_passed": false,
+        "source_tier": "A",
+        "official": true,
+        "selected": false,
+        "formatted": false,
+        "scheduled": false
+      },
+      {
+        "source_type": "official_news_website",
+        "source_url": "https://bladeball.com/blogs/news",
+        "latest_published_at": "2024-03-23T18:51:42Z",
+        "status": "rejected",
+        "result_code": "SOURCE_STALE",
+        "reason": "Публикация устарела: 906.3 дн. (аварийный лимит 30).",
+        "available": true,
+        "article_found": true,
+        "date_found": true,
+        "content_found": true,
+        "extraction_success": false,
+        "verification_passed": false,
+        "source_tier": "A",
+        "official": true,
+        "selected": false,
+        "formatted": false,
+        "scheduled": false,
+        "latest_url": "https://bladeball.com/blogs/news/comptetetive-leaderboards"
+      },
+      {
+        "source_type": "secondary_gaming_media",
+        "source_url": "https://news.google.com/rss/search?q=%22Blade%20Ball%22%20Roblox%20when%3A30d&hl=en-US&gl=US&ceid=US:en",
+        "latest_published_at": null,
+        "status": "rejected",
+        "result_code": "NO_NEW_CONTENT",
+        "reason": "Нет пригодной Tier B новости.",
+        "available": true,
+        "article_found": false,
+        "date_found": false,
+        "content_found": false,
+        "extraction_success": false,
+        "verification_passed": false,
+        "source_tier": "B",
+        "official": false,
+        "selected": false,
+        "formatted": false,
+        "scheduled": false
+      }
+    ],
+    "external_source_diagnostic": {
+      "source_type": "secondary_gaming_media",
+      "source_url": "https://news.google.com/rss/search?q=%22Blade%20Ball%22%20Roblox%20when%3A30d&hl=en-US&gl=US&ceid=US:en",
+      "latest_published_at": null,
+      "status": "rejected",
+      "result_code": "NO_NEW_CONTENT",
+      "reason": "Нет пригодной Tier B новости.",
+      "available": true,
+      "article_found": false,
+      "date_found": false,
+      "content_found": false,
+      "extraction_success": false,
+      "verification_passed": false,
+      "source_tier": "B",
+      "official": false,
+      "selected": false,
+      "formatted": false,
+      "scheduled": false
     },
     "candidate_decision": {
       "status": "rejected",

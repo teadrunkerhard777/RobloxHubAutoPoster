@@ -1,16 +1,15 @@
 {
-  "items": [
-    {
-      "game": "Blade Ball",
-      "emoji": "⚔️",
-      "score": 6,
-      "headline": "В Blade Ball вышло обновление «BEST Swords in Blade Ball! 🤩 - Blade Ball Update Showcase».",
-      "facts": [],
-      "text": "В Blade Ball вышло обновление «BEST Swords in Blade Ball! 🤩 - Blade Ball Update Showcase».",
-      "external_article_url": "https://www.youtube.com/watch?v=E0FZqkUKRTs"
-    }
-  ],
+  "items": [],
   "pipeline": [
+    {
+      "game": "RIVALS",
+      "candidate": true,
+      "verified": false,
+      "selected": false,
+      "formatted_ru": false,
+      "scheduled": false,
+      "reason": "Нет пригодной Tier B новости; Нет новой конкретной строки со времени прошлого снимка"
+    },
     {
       "game": "Steal An Egg",
       "candidate": true,
@@ -63,7 +62,7 @@
       "selected": false,
       "formatted_ru": false,
       "scheduled": false,
-      "reason": "Публикация устарела: 39.5 дн. (аварийный лимит 30); В публикации не найдено достаточно конкретного содержания; Нет новой конкретной строки со времени прошлого снимка"
+      "reason": "Публикация устарела: 40.2 дн. (аварийный лимит 30); В публикации не найдено достаточно конкретного содержания; Нет новой конкретной строки со времени прошлого снимка"
     },
     {
       "game": "Adopt Me!",
@@ -73,15 +72,6 @@
       "formatted_ru": false,
       "scheduled": false,
       "reason": "Публикация уже использовалась в выпуске другого дня; Tier B повторяет уже использованную официальную новость; Нет новой конкретной строки со времени прошлого снимка"
-    },
-    {
-      "game": "RIVALS",
-      "candidate": true,
-      "verified": false,
-      "selected": false,
-      "formatted_ru": false,
-      "scheduled": false,
-      "reason": "Нет пригодной Tier B новости; Нет новой конкретной строки со времени прошлого снимка"
     },
     {
       "game": "99 Nights in the Forest",
@@ -102,15 +92,6 @@
       "reason": "Нет пригодной Tier B новости; Нет новой конкретной строки со времени прошлого снимка"
     },
     {
-      "game": "Blade Ball",
-      "candidate": true,
-      "verified": true,
-      "selected": true,
-      "formatted_ru": true,
-      "scheduled": true,
-      "reason": "вошёл в утренний выпуск"
-    },
-    {
       "game": "Grow a Garden",
       "candidate": true,
       "verified": false,
@@ -126,7 +107,7 @@
       "selected": false,
       "formatted_ru": false,
       "scheduled": false,
-      "reason": "Публикация устарела: 74.8 дн. (аварийный лимит 30); Нет пригодной Tier B новости; Нет новой конкретной строки со времени прошлого снимка"
+      "reason": "Источник недоступен: 404 Client Error: Not Found for url: https://www.youtube.com/feeds/videos.xml?channel_id=UCCVWvf_e5oRb6RfXyluR7UA; Нет пригодной Tier B новости; Нет новой конкретной строки со времени прошлого снимка"
     },
     {
       "game": "Pet Simulator 99",
@@ -136,13 +117,22 @@
       "formatted_ru": false,
       "scheduled": false,
       "reason": "Публикация уже использовалась в выпуске другого дня; Публикация уже использовалась в выпуске другого дня; Нет новой конкретной строки со времени прошлого снимка"
+    },
+    {
+      "game": "Blade Ball",
+      "candidate": true,
+      "verified": false,
+      "selected": false,
+      "formatted_ru": false,
+      "scheduled": false,
+      "reason": "Источник недоступен: 404 Client Error: Not Found for url: https://www.youtube.com/feeds/videos.xml?channel_id=UCPttFx0zI4Zv9M4i3Q2ylsw; Публикация устарела: 906.3 дн. (аварийный лимит 30); Нет пригодной Tier B новости; Нет новой конкретной строки со времени прошлого снимка"
     }
   ],
   "summary": {
     "found": 14,
-    "verified": 1,
-    "selected": 1,
-    "formatted": 1,
-    "scheduled": 1
+    "verified": 0,
+    "selected": 0,
+    "formatted": 0,
+    "scheduled": 0
   }
 }

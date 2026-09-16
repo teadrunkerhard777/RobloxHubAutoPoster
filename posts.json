@@ -2592,5 +2592,68 @@
     "attempts": 1,
     "last_error": null,
     "image_path": "images/16-00/4df73c00-9459-4aa3-ac78-e3e33525de9d.jpeg"
+  },
+  {
+    "id": "2026-09-16-image-11",
+    "publish_at": "2026-09-16T11:00:00+05:00",
+    "game": "Roblox",
+    "rubric": "Картинка дня",
+    "source": "image_library",
+    "text": "#Roblox #BrawlStars #StealABrainrot #99Nights",
+    "status": "pending",
+    "published_at": null,
+    "attempts": 0,
+    "last_error": null,
+    "image_path": "images/16-00/29e52de5-82cc-451f-961b-69159a47666f.png"
+  },
+  {
+    "id": "2026-09-16-15",
+    "publish_at": "2026-09-16T15:00:00+05:00",
+    "game": "Pet Simulator 99 + Animal Hospital (Anomaly) + Blox Fruits + 99 Nights in the Forest + +1 Speed Keyboard Escape",
+    "rubric": "Полезно знать",
+    "source": "verified_db",
+    "text": "💡💡💡 ПОЛЕЗНО ЗНАТЬ 💡💡💡\n\n🐶 Pet Simulator 99\n💰 Не трать ресурсы только на внешний вид питомца, если твоя цель сейчас — быстрее продвигаться.\n\n🏥 Animal Hospital (Anomaly)\n🧑‍🤝‍🧑 В команде заранее разделите задачи, чтобы все не бежали одновременно к одной проблеме.\n\n🍈 Blox Fruits\n🎯 Перед заменой текущего фрукта подумай дважды: новый фрукт может быть редким, но хуже подходить твоей прокачке.\n\n🌲 99 Nights in the Forest\n🎒 Не трать всё дерево на костёр: часть древесины пригодится для крафта и развития лагеря.\n\n⌨️ +1 Speed Keyboard Escape\n🔄 Перед Rebirth проверь, что готов потерять текущий прогресс ради постоянного множителя.\n\n🎮 Roblox Hub\n\n#Roblox #ПолезноЗнать #RobloxHub",
+    "status": "pending",
+    "published_at": null,
+    "attempts": 0,
+    "last_error": null
+  },
+  {
+    "id": "2026-09-16-image-17",
+    "publish_at": "2026-09-16T17:00:00+05:00",
+    "game": "Roblox",
+    "rubric": "Картинка дня",
+    "source": "image_library",
+    "text": "#Roblox #BrawlStars #StealABrainrot #99Nights",
+    "status": "pending",
+    "published_at": null,
+    "attempts": 0,
+    "last_error": null,
+    "image_path": "images/16-00/4981c883-a80a-4184-ab3e-8db63f8e8b97.jpeg"
+  },
+  {
+    "id": "2026-09-16-19",
+    "publish_at": "2026-09-16T19:00:00+05:00",
+    "game": "Carve Wood!",
+    "rubric": "Новинки и хиты Roblox",
+    "source": "verified_db",
+    "text": "🔥🔥🔥 НОВИНКИ И ХИТЫ ROBLOX 🔥🔥🔥\n\n🪓 Carve Wood!\n\n🎮 Что за игра?\nВыращивай редкие деревья, руби их, вырезай изделия из брёвен и продавай покупателям. Потом можно нанимать работников и развивать свою лесопилку.\n\n🌲 Сначала развивай основной цикл: дерево → древесина → изделие → продажа. Чем быстрее он работает, тем проще двигаться дальше.\n\n👷 Нанимай работников, когда появится возможность: они помогают автоматизировать производство.\n\n💤 Даже выход из Roblox не останавливает всё развитие: деревья на лесопилке продолжают расти офлайн.\n\n🎮 Roblox Hub\n\n#Roblox #CarveWood #НовинкиRoblox",
+    "status": "pending",
+    "published_at": null,
+    "attempts": 0,
+    "last_error": null
+  },
+  {
+    "id": "2026-09-16-image-21",
+    "publish_at": "2026-09-16T21:00:00+05:00",
+    "game": "Roblox",
+    "rubric": "Картинка дня",
+    "source": "image_library",
+    "text": "#Roblox #BrawlStars #StealABrainrot #99Nights",
+    "status": "pending",
+    "published_at": null,
+    "attempts": 0,
+    "last_error": null,
+    "image_path": "images/16-00/7cf08710-1d7a-42bb-be52-81a39f54abbe.jpeg"
   }
 ]
