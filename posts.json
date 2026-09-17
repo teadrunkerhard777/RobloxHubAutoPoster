@@ -2668,5 +2668,68 @@
     "attempts": 1,
     "last_error": null,
     "image_path": "images/16-00/7cf08710-1d7a-42bb-be52-81a39f54abbe.jpeg"
+  },
+  {
+    "id": "2026-09-17-image-11",
+    "publish_at": "2026-09-17T11:00:00+05:00",
+    "game": "Roblox",
+    "rubric": "Картинка дня",
+    "source": "image_library",
+    "text": "#Roblox #BrawlStars #StealABrainrot #99Nights",
+    "status": "pending",
+    "published_at": null,
+    "attempts": 0,
+    "last_error": null,
+    "image_path": "images/16-00/0e17cc94-bdc7-40d9-8d40-c266afe0d039.png"
+  },
+  {
+    "id": "2026-09-17-15",
+    "publish_at": "2026-09-17T15:00:00+05:00",
+    "game": "Blox Fruits + Steal a Brainrot + Pet Simulator 99 + +1 Speed Keyboard Escape + Adopt Me!",
+    "rubric": "Полезно знать",
+    "source": "verified_db",
+    "text": "💡💡💡 ПОЛЕЗНО ЗНАТЬ 💡💡💡\n\n🍈 Blox Fruits\n⚔️ На старте выгоднее сосредоточиться на прокачке одного основного стиля боя, а не распыляться на всё сразу.\n\n🧠 Steal a Brainrot\n⚔️ При краже соперник становится уязвимее, поэтому защищать базу лучше активно, а не просто наблюдать.\n\n🐶 Pet Simulator 99\n📋 Собирай питомцев с целью усиливать свою команду, а не только ради количества в коллекции.\n\n⌨️ +1 Speed Keyboard Escape\n🚀 Используй более простые этапы для стабильного набора ресурсов, если новый пока проходится слишком нестабильно.\n\n🐾 Adopt Me!\n💰 Перед обменом внимательно проверяй финальное окно трейда и все предметы — не торопись подтверждать сделку.\n\n🎮 Roblox Hub\n\n#Roblox #ПолезноЗнать #RobloxHub",
+    "status": "pending",
+    "published_at": null,
+    "attempts": 0,
+    "last_error": null
+  },
+  {
+    "id": "2026-09-17-image-17",
+    "publish_at": "2026-09-17T17:00:00+05:00",
+    "game": "Roblox",
+    "rubric": "Картинка дня",
+    "source": "image_library",
+    "text": "#Roblox #BrawlStars #StealABrainrot #99Nights",
+    "status": "pending",
+    "published_at": null,
+    "attempts": 0,
+    "last_error": null,
+    "image_path": "images/16-00/e9b67aa1-c1c1-4400-99b7-d62d5ca952dc (1).png"
+  },
+  {
+    "id": "2026-09-17-19",
+    "publish_at": "2026-09-17T19:00:00+05:00",
+    "game": "+1 Speed Keyboard Escape",
+    "rubric": "Новинки и хиты Roblox",
+    "source": "verified_db",
+    "text": "🔥🔥🔥 НОВИНКИ И ХИТЫ ROBLOX 🔥🔥🔥\n\n⌨️ +1 Speed Keyboard Escape\n\n🎮 Что за игра?\nНабирай Speed, проходи полосы препятствий и получай Wins. Улучшения и Rebirth ускоряют следующий цикл прохождения.\n\n🎮 Не покупай всё подряд: сначала вкладывайся в то, что ускоряет цикл Speed → этап → Wins → улучшение.\n\n🔄 Перед Rebirth проверь, что готов потерять текущий прогресс ради постоянного множителя.\n\n🏆 Собирай Wins на специальных площадках после прохождения этапов.\n\n🎮 Roblox Hub\n\n#Roblox #SpeedKeyboardEscape #НовинкиRoblox",
+    "status": "pending",
+    "published_at": null,
+    "attempts": 0,
+    "last_error": null
+  },
+  {
+    "id": "2026-09-17-image-21",
+    "publish_at": "2026-09-17T21:00:00+05:00",
+    "game": "Roblox",
+    "rubric": "Картинка дня",
+    "source": "image_library",
+    "text": "#Roblox #BrawlStars #StealABrainrot #99Nights",
+    "status": "pending",
+    "published_at": null,
+    "attempts": 0,
+    "last_error": null,
+    "image_path": "images/16-00/56279d29-6d12-48ef-82d8-ea996175b1f5.jpeg"
   }
 ]

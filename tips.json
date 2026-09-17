@@ -156,7 +156,7 @@
     "text": "При краже соперник становится уязвимее, поэтому защищать базу лучше активно, а не просто наблюдать.",
     "source": "verified_core_mechanic",
     "reviewed_at": "2026-08-14",
-    "used": false,
+    "used": true,
     "category": "combat"
   },
   {
@@ -246,7 +246,7 @@
     "text": "Не трать всё время на случайный поиск фруктов: Blox Fruits Dealer регулярно обновляет ассортимент.",
     "source": "verified_core_mechanic",
     "reviewed_at": "2026-08-14",
-    "used": true,
+    "used": false,
     "category": "economy"
   },
   {
@@ -256,7 +256,7 @@
     "text": "Если ждёшь фрукт на карте, помни, что найденный фрукт не лежит бесконечно — проверяй места появления вовремя.",
     "source": "verified_core_mechanic",
     "reviewed_at": "2026-08-14",
-    "used": true,
+    "used": false,
     "category": "exploration"
   },
   {
@@ -276,7 +276,7 @@
     "text": "Перед переходом в более опасные зоны убедись, что текущие враги уже не требуют слишком много времени на победу.",
     "source": "verified_core_mechanic",
     "reviewed_at": "2026-08-14",
-    "used": true,
+    "used": false,
     "category": "exploration"
   },
   {
@@ -286,7 +286,7 @@
     "text": "Квесты помогают направлять прокачку: бери задания на противников, которых ты и так собираешься побеждать.",
     "source": "verified_core_mechanic",
     "reviewed_at": "2026-08-14",
-    "used": true,
+    "used": false,
     "category": "strategy"
   },
   {
@@ -296,7 +296,7 @@
     "text": "Не выбирай фрукт только по редкости — удобство для прокачки и твой стиль игры тоже важны.",
     "source": "verified_core_mechanic",
     "reviewed_at": "2026-08-14",
-    "used": true,
+    "used": false,
     "category": "strategy"
   },
   {
@@ -306,7 +306,7 @@
     "text": "Если используешь фрукт для фарма, обращай внимание на атаки по площади: ими проще справляться с группами врагов.",
     "source": "verified_core_mechanic",
     "reviewed_at": "2026-08-14",
-    "used": true,
+    "used": false,
     "category": "combat"
   },
   {
@@ -316,7 +316,7 @@
     "text": "Боссов удобнее атаковать подготовленным: сначала восстанови здоровье и проверь откаты способностей.",
     "source": "verified_core_mechanic",
     "reviewed_at": "2026-08-14",
-    "used": true,
+    "used": false,
     "category": "combat"
   },
   {
@@ -326,7 +326,7 @@
     "text": "Во время путешествий между островами запоминай удобные маршруты — это экономит много времени на повторных квестах.",
     "source": "verified_core_mechanic",
     "reviewed_at": "2026-08-14",
-    "used": true,
+    "used": false,
     "category": "exploration"
   },
   {
@@ -336,7 +336,7 @@
     "text": "Перед заменой текущего фрукта подумай дважды: новый фрукт может быть редким, но хуже подходить твоей прокачке.",
     "source": "verified_core_mechanic",
     "reviewed_at": "2026-08-14",
-    "used": true,
+    "used": false,
     "category": "strategy"
   },
   {
@@ -346,7 +346,7 @@
     "text": "Следи за ассортиментом Dealer, если ищешь конкретный фрукт: ждать случайного появления на карте не всегда выгодно.",
     "source": "verified_core_mechanic",
     "reviewed_at": "2026-08-14",
-    "used": true,
+    "used": false,
     "category": "economy"
   },
   {
@@ -356,7 +356,7 @@
     "text": "Не пытайся прокачивать всё одновременно — цель вроде уровня, нового моря или конкретного предмета ускоряет прогресс.",
     "source": "verified_core_mechanic",
     "reviewed_at": "2026-08-14",
-    "used": true,
+    "used": false,
     "category": "strategy"
   },
   {
@@ -496,7 +496,7 @@
     "text": "Не оценивай питомца только по внешнему виду: редкость и спрос игроков тоже влияют на обмены.",
     "source": "verified_core_mechanic",
     "reviewed_at": "2026-08-14",
-    "used": true,
+    "used": false,
     "category": "economy"
   },
   {
@@ -506,7 +506,7 @@
     "text": "Если собираешь коллекцию, заранее выбери цель — так проще не тратить ресурсы на случайные обмены.",
     "source": "verified_core_mechanic",
     "reviewed_at": "2026-08-14",
-    "used": true,
+    "used": false,
     "category": "collection"
   },
   {
@@ -516,7 +516,7 @@
     "text": "Дом можно использовать не только для красоты: продуманная планировка делает ролевые сцены удобнее.",
     "source": "verified_core_mechanic",
     "reviewed_at": "2026-08-14",
-    "used": true,
+    "used": false,
     "category": "building"
   },
   {
@@ -526,7 +526,7 @@
     "text": "При обменах лучше отказаться от сделки, которую ты не понимаешь, чем соглашаться из-за спешки.",
     "source": "verified_core_mechanic",
     "reviewed_at": "2026-08-14",
-    "used": true,
+    "used": false,
     "category": "economy"
   },
   {
@@ -536,7 +536,7 @@
     "text": "Сравнивай предложения нескольких игроков, если обмениваешь ценного питомца.",
     "source": "verified_core_mechanic",
     "reviewed_at": "2026-08-14",
-    "used": true,
+    "used": false,
     "category": "economy"
   },
   {
@@ -546,7 +546,7 @@
     "text": "Не передавай питомцев незнакомцам по обещанию вернуть их позже — используй обычную систему обмена.",
     "source": "verified_core_mechanic",
     "reviewed_at": "2026-08-14",
-    "used": true,
+    "used": false,
     "category": "social"
   },
   {
@@ -556,7 +556,7 @@
     "text": "Для ролевой игры с друзьями заранее решите, кто заботится о питомцах, а кто отвечает за дом или поездки.",
     "source": "verified_core_mechanic",
     "reviewed_at": "2026-08-14",
-    "used": true,
+    "used": false,
     "category": "social"
   },
   {
@@ -566,7 +566,7 @@
     "text": "Если хочется быстрее собрать коллекцию, веди для себя список питомцев, которых уже имеешь и которых ищешь.",
     "source": "verified_core_mechanic",
     "reviewed_at": "2026-08-14",
-    "used": true,
+    "used": false,
     "category": "collection"
   },
   {
@@ -576,7 +576,7 @@
     "text": "Не соглашайся на обмен только потому, что другой игрок пишет «быстро» или «последний шанс».",
     "source": "verified_core_mechanic",
     "reviewed_at": "2026-08-14",
-    "used": true,
+    "used": false,
     "category": "social"
   },
   {
@@ -586,7 +586,7 @@
     "text": "Новые события могут временно менять доступные награды, поэтому перед тратой валюты проверь, что именно сейчас можно получить.",
     "source": "verified_core_mechanic",
     "reviewed_at": "2026-08-14",
-    "used": true,
+    "used": false,
     "category": "economy"
   },
   {
@@ -596,7 +596,7 @@
     "text": "Хорошая коллекция строится постепенно: безопасные обмены важнее одной рискованной попытки получить редкого питомца.",
     "source": "verified_core_mechanic",
     "reviewed_at": "2026-08-14",
-    "used": true,
+    "used": false,
     "category": "collection"
   },
   {
@@ -966,7 +966,7 @@
     "text": "Собирай питомцев с целью усиливать свою команду, а не только ради количества в коллекции.",
     "source": "verified_core_mechanic",
     "reviewed_at": "2026-08-14",
-    "used": false,
+    "used": true,
     "category": "collection"
   },
   {
@@ -1267,7 +1267,7 @@
     "text": "Распределяй характеристики под основной источник урона и не забывай про защиту.",
     "source": "verified_core_mechanic",
     "reviewed_at": "2026-08-24",
-    "used": true
+    "used": false
   },
   {
     "id": 128,
@@ -1277,7 +1277,7 @@
     "text": "Наблюдай за атаками босса: после опасного приёма часто появляется момент для ответа.",
     "source": "verified_core_mechanic",
     "reviewed_at": "2026-08-24",
-    "used": true
+    "used": false
   },
   {
     "id": 129,
@@ -1287,7 +1287,7 @@
     "text": "Перед новым островом проверь уровень заданий, чтобы не тратить время на слишком сильных врагов.",
     "source": "verified_core_mechanic",
     "reviewed_at": "2026-08-24",
-    "used": true
+    "used": false
   },
   {
     "id": 130,
@@ -1327,7 +1327,7 @@
     "text": "Разложи питомцев и предметы по вкладкам Storage, чтобы быстрее находить нужное.",
     "source": "verified_core_mechanic",
     "reviewed_at": "2026-08-24",
-    "used": true
+    "used": false
   },
   {
     "id": 134,
@@ -1337,7 +1337,7 @@
     "text": "Перед украшением дома реши, какие комнаты нужны для игры, и только потом расставляй мебель.",
     "source": "verified_core_mechanic",
     "reviewed_at": "2026-08-24",
-    "used": true
+    "used": false
   },
   {
     "id": 135,
@@ -1347,7 +1347,7 @@
     "text": "Для поездки с друзьями выбирай транспорт, в котором хватит места всей компании.",
     "source": "verified_core_mechanic",
     "reviewed_at": "2026-08-24",
-    "used": true
+    "used": false
   },
   {
     "id": 136,
@@ -1772,7 +1772,7 @@
     "text": "Двигайся и тренируйся: Speed является главным ресурсом для прохождения препятствий.",
     "source": "agreed_editorial_list",
     "reviewed_at": "2026-08-28",
-    "used": true
+    "used": false
   },
   {
     "id": 176,
@@ -1794,7 +1794,7 @@
     "text": "Если следующий участок слишком сложный, сначала накопи больше Speed.",
     "source": "agreed_editorial_list",
     "reviewed_at": "2026-08-28",
-    "used": true
+    "used": false
   },
   {
     "id": 178,
@@ -1805,7 +1805,7 @@
     "text": "Используй Rebirth ради постоянных бонусов, когда текущая прокачка начинает сильно замедляться.",
     "source": "agreed_editorial_list",
     "reviewed_at": "2026-08-28",
-    "used": true
+    "used": false
   },
   {
     "id": 179,
@@ -1816,7 +1816,7 @@
     "text": "Не пытайся пройти сложный прыжок на минимальной скорости: небольшой запас делает прохождение стабильнее.",
     "source": "agreed_editorial_list",
     "reviewed_at": "2026-08-28",
-    "used": true
+    "used": false
   },
   {
     "id": 180,
@@ -1827,7 +1827,7 @@
     "text": "Запоминай сложные участки этапа — следующая попытка займёт меньше времени.",
     "source": "agreed_editorial_list",
     "reviewed_at": "2026-08-28",
-    "used": true
+    "used": false
   },
   {
     "id": 181,
@@ -1838,7 +1838,7 @@
     "text": "Не забывай забирать Wins после успешного прохождения: они нужны для дальнейшего развития.",
     "source": "agreed_editorial_list",
     "reviewed_at": "2026-08-28",
-    "used": true
+    "used": false
   },
   {
     "id": 182,
@@ -1849,7 +1849,7 @@
     "text": "Сравнивай улучшения по тому, насколько они ускоряют получение Speed, а не только по внешнему виду.",
     "source": "agreed_editorial_list",
     "reviewed_at": "2026-08-28",
-    "used": true
+    "used": false
   },
   {
     "id": 183,
@@ -1860,7 +1860,7 @@
     "text": "Чем выше скорость, тем сильнее меняется движение персонажа: привыкни к управлению перед сложными прыжками.",
     "source": "agreed_editorial_list",
     "reviewed_at": "2026-08-28",
-    "used": true
+    "used": false
   },
   {
     "id": 184,

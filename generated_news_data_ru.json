@@ -1,26 +1,6 @@
 {
-  "items": [
-    {
-      "game": "Brookhaven RP",
-      "emoji": "🏡",
-      "score": 6,
-      "headline": "🎉 В Brookhaven RP вышло обновление When is the next Brookhaven RP update? (Interactive Props update).",
-      "facts": [],
-      "text": "🎉 В Brookhaven RP вышло обновление When is the next Brookhaven RP update? (Interactive Props update).",
-      "external_article_url": "https://news.google.com/rss/articles/CBMiekFVX3lxTE1XWEpsU1NxVlRhOGVpQUhzSjJSZ21qcUV0R3RYYTdobVFnNzJMSVVCZ0R2S3hwak41eUZ2VTZYMTF1bkZoM3c1cXE3ZFVwNWFqYjNjY2NxVzlJdE5jUDhPdm1JVkM2YzQyTDV3V05MUkYxOFRzNW45Slp3?oc=5",
-      "source_attribution": "Источник: Sportskeeda"
-    }
-  ],
+  "items": [],
   "pipeline": [
-    {
-      "game": "Brookhaven RP",
-      "candidate": true,
-      "verified": true,
-      "selected": true,
-      "formatted_ru": true,
-      "scheduled": true,
-      "reason": "вошёл в утренний выпуск"
-    },
     {
       "game": "Steal An Egg",
       "candidate": true,
@@ -58,13 +38,22 @@
       "reason": "Нет пригодной Tier B новости; Нет новой конкретной строки со времени прошлого снимка"
     },
     {
+      "game": "Brookhaven RP",
+      "candidate": true,
+      "verified": false,
+      "selected": false,
+      "formatted_ru": false,
+      "scheduled": false,
+      "reason": "Публикация уже использовалась в выпуске другого дня; Публикация уже использовалась в выпуске другого дня; Нет новой конкретной строки со времени прошлого снимка"
+    },
+    {
       "game": "Blox Fruits",
       "candidate": true,
       "verified": false,
       "selected": false,
       "formatted_ru": false,
       "scheduled": false,
-      "reason": "Публикация устарела: 40.5 дн. (аварийный лимит 30); В публикации не найдено достаточно конкретного содержания; Нет новой конкретной строки со времени прошлого снимка"
+      "reason": "Публикация устарела: 41.2 дн. (аварийный лимит 30); В публикации не найдено достаточно конкретного содержания; Нет новой конкретной строки со времени прошлого снимка"
     },
     {
       "game": "Adopt Me!",
@@ -118,7 +107,7 @@
       "selected": false,
       "formatted_ru": false,
       "scheduled": false,
-      "reason": "Публикация устарела: 75.8 дн. (аварийный лимит 30); Нет пригодной Tier B новости; Нет новой конкретной строки со времени прошлого снимка"
+      "reason": "Источник недоступен: 404 Client Error: Not Found for url: https://www.youtube.com/feeds/videos.xml?channel_id=UCCVWvf_e5oRb6RfXyluR7UA; Нет пригодной Tier B новости; Нет новой конкретной строки со времени прошлого снимка"
     },
     {
       "game": "Pet Simulator 99",
@@ -136,14 +125,14 @@
       "selected": false,
       "formatted_ru": false,
       "scheduled": false,
-      "reason": "Публикация уже использовалась в выпуске другого дня; Публикация устарела: 906.6 дн. (аварийный лимит 30); Нет пригодной Tier B новости; Нет новой конкретной строки со времени прошлого снимка"
+      "reason": "Источник недоступен: 404 Client Error: Not Found for url: https://www.youtube.com/feeds/videos.xml?channel_id=UCPttFx0zI4Zv9M4i3Q2ylsw; Публикация устарела: 907.3 дн. (аварийный лимит 30); Нет пригодной Tier B новости; Нет новой конкретной строки со времени прошлого снимка"
     }
   ],
   "summary": {
     "found": 14,
-    "verified": 1,
-    "selected": 1,
-    "formatted": 1,
-    "scheduled": 1
+    "verified": 0,
+    "selected": 0,
+    "formatted": 0,
+    "scheduled": 0
   }
 }
