@@ -4,7 +4,7 @@
     "universe_id": 10563114921,
     "roblox_name": "Steal An Egg",
     "description": "🥚 Welcome to Steal An Egg!\n\nHow to Play:\n🥚 Steal eggs from pets\n🐣 Hatch eggs to collect rare pets\n💰 Earn money from your pets\n⬆️ Upgrade your treadmill and base\n🏃 Train on the treadmill to gain Speed\n🥷 Steal eggs from other players\n✨ Discover rarer eggs, pets, sizes, and mutations!\n\n🎮 Supports Desktop, Console, Mobile, and Tablet players",
-    "updated": "2026-09-17T02:08:49.8345972Z",
+    "updated": "2026-09-17T04:13:01.4043692Z",
     "created": "2026-07-25T07:50:51.492Z",
     "creator": {
       "id": 825735094,
@@ -78,7 +78,7 @@
       }
     ],
     "pool": "active",
-    "checked_at": "2026-09-17T03:01:06.462662+00:00"
+    "checked_at": "2026-09-17T09:18:55.331583+00:00"
   },
   {
     "game": "Animal Hospital (Anomaly)",
@@ -112,7 +112,7 @@
       }
     ],
     "pool": "active",
-    "checked_at": "2026-09-17T03:01:06.463197+00:00"
+    "checked_at": "2026-09-17T09:18:55.332115+00:00"
   },
   {
     "game": "+1 Speed Keyboard Escape",
@@ -136,7 +136,7 @@
     "facts": [],
     "description_facts": [],
     "pool": "active",
-    "checked_at": "2026-09-17T03:01:06.465487+00:00"
+    "checked_at": "2026-09-17T09:18:55.334446+00:00"
   },
   {
     "game": "Murder Mystery 2",
@@ -182,7 +182,7 @@
       }
     ],
     "pool": "active",
-    "checked_at": "2026-09-17T03:01:06.467024+00:00"
+    "checked_at": "2026-09-17T09:18:55.336008+00:00"
   },
   {
     "game": "Brookhaven RP",
@@ -275,7 +275,7 @@
       }
     ],
     "pool": "active",
-    "checked_at": "2026-09-17T03:01:06.470228+00:00"
+    "checked_at": "2026-09-17T09:18:55.339211+00:00"
   },
   {
     "game": "Blox Fruits",
@@ -312,7 +312,7 @@
       }
     ],
     "pool": "active",
-    "checked_at": "2026-09-17T03:01:06.473101+00:00"
+    "checked_at": "2026-09-17T09:18:55.342097+00:00"
   },
   {
     "game": "Adopt Me!",
@@ -395,14 +395,14 @@
       }
     ],
     "pool": "active",
-    "checked_at": "2026-09-17T03:01:06.474768+00:00"
+    "checked_at": "2026-09-17T09:18:55.343749+00:00"
   },
   {
     "game": "RIVALS",
     "universe_id": 6035872082,
     "roblox_name": "[😾] RIVALS",
     "description": "Welcome to RIVALS, the most intense first person shooter game on Roblox! Challenge other players in 1v1 to 5v5 FPS duels where the first to 5 wins!\n\n😾 UPDATE 22 - A brand new weapon has arrived! Check out the patch notes in-game to see everything new! 🎉 \n\n🔫 Challenge someone by stepping on a duel pad!\n🔑 Earn keys to unlock new weapons & skins!\n📜 Complete contracts to unlock exclusive rewards!\n🏆 Show off your win streak and climb the leaderboards! \n\n🎮 Available on Desktop, Phones, Tablets, XBOX, & PlayStation 5!\n💜 Like and join the group for exclusive rewards!\n\n⚠️ WARNING: Cheaters will be permanently banned with no second chances, our anticheat & moderators will catch you. Abusing glitches & using sketchy farming methods are also not allowed!\n\n🏆 RIA25 Best Shooter Experience!\n🏆 RIA26 Best Shooter Experience!",
-    "updated": "2026-09-15T20:42:07.2156934Z",
+    "updated": "2026-09-15T20:42:07.215Z",
     "created": "2024-05-26T16:47:48.617Z",
     "creator": {
       "id": 3461453,
@@ -461,7 +461,7 @@
       }
     ],
     "pool": "active",
-    "checked_at": "2026-09-17T03:01:06.477212+00:00"
+    "checked_at": "2026-09-17T09:18:55.346158+00:00"
   },
   {
     "game": "99 Nights in the Forest",
@@ -485,7 +485,7 @@
     "facts": [],
     "description_facts": [],
     "pool": "active",
-    "checked_at": "2026-09-17T03:01:06.477659+00:00"
+    "checked_at": "2026-09-17T09:18:55.346596+00:00"
   },
   {
     "game": "Steal a Brainrot",
@@ -519,7 +519,7 @@
       }
     ],
     "pool": "active",
-    "checked_at": "2026-09-17T03:01:06.479275+00:00"
+    "checked_at": "2026-09-17T09:18:55.348263+00:00"
   },
   {
     "game": "Grow a Garden",
@@ -543,7 +543,7 @@
     "facts": [],
     "description_facts": [],
     "pool": "legacy",
-    "checked_at": "2026-09-17T03:01:06.481009+00:00"
+    "checked_at": "2026-09-17T09:18:55.349962+00:00"
   },
   {
     "game": "Dress To Impress",
@@ -607,7 +607,7 @@
       }
     ],
     "pool": "legacy",
-    "checked_at": "2026-09-17T03:01:06.482393+00:00"
+    "checked_at": "2026-09-17T09:18:55.351312+00:00"
   },
   {
     "game": "Pet Simulator 99",
@@ -652,7 +652,7 @@
       }
     ],
     "pool": "legacy",
-    "checked_at": "2026-09-17T03:01:06.482793+00:00"
+    "checked_at": "2026-09-17T09:18:55.351699+00:00"
   },
   {
     "game": "Blade Ball",
@@ -688,6 +688,6 @@
       }
     ],
     "pool": "legacy",
-    "checked_at": "2026-09-17T03:01:06.484962+00:00"
+    "checked_at": "2026-09-17T09:18:55.353891+00:00"
   }
 ]
