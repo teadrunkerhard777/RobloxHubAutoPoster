@@ -1,16 +1,65 @@
 {
   "items": [
     {
-      "game": "Blade Ball",
-      "emoji": "⚔️",
-      "score": 6,
-      "headline": "В Blade Ball вышло обновление «NEW Starfish Pack in Blade Ball! ⭐️».",
+      "game": "Brookhaven RP",
+      "emoji": "🏡",
+      "score": 10,
+      "headline": "🚗 В игру добавили новый транспорт.",
+      "facts": [
+        "🎉 В игре началось новое событие."
+      ],
+      "text": "🚗 В игру добавили новый транспорт.\n\n🎉 В игре началось новое событие."
+    },
+    {
+      "game": "Adopt Me!",
+      "emoji": "🐾",
+      "score": 10,
+      "headline": "В Adopt Me! вышло обновление «Cat Cafe».",
+      "facts": [
+        "В Releaser Eggs добавили 4 питомцев: Cattuccino, Catte, Matcha Cat и Pain au Chat.",
+        "В игре появилась новая локация.",
+        "В игре появились новые питомцы."
+      ],
+      "text": "В Adopt Me! вышло обновление «Cat Cafe».\n\nВ Releaser Eggs добавили 4 питомцев: Cattuccino, Catte, Matcha Cat и Pain au Chat.\n\nВ игре появилась новая локация.\n\nВ игре появились новые питомцы.",
+      "external_article_url": "https://www.playadopt.me/news/cat-cafe-notes"
+    },
+    {
+      "game": "RIVALS",
+      "emoji": "🔫",
+      "score": 10,
+      "headline": "🎯 Появились новые задания с наградами.",
       "facts": [],
-      "text": "В Blade Ball вышло обновление «NEW Starfish Pack in Blade Ball! ⭐️».",
-      "external_article_url": "https://www.youtube.com/watch?v=F4ZF3Y9i3XE"
+      "text": "🎯 Появились новые задания с наградами."
     }
   ],
   "pipeline": [
+    {
+      "game": "Brookhaven RP",
+      "candidate": true,
+      "verified": true,
+      "selected": true,
+      "formatted_ru": true,
+      "scheduled": true,
+      "reason": "вошёл в утренний выпуск"
+    },
+    {
+      "game": "Adopt Me!",
+      "candidate": true,
+      "verified": true,
+      "selected": true,
+      "formatted_ru": true,
+      "scheduled": true,
+      "reason": "вошёл в утренний выпуск"
+    },
+    {
+      "game": "RIVALS",
+      "candidate": true,
+      "verified": true,
+      "selected": true,
+      "formatted_ru": true,
+      "scheduled": true,
+      "reason": "вошёл в утренний выпуск"
+    },
     {
       "game": "Steal An Egg",
       "candidate": true,
@@ -48,40 +97,13 @@
       "reason": "Нет пригодной Tier B новости; Нет новой конкретной строки со времени прошлого снимка"
     },
     {
-      "game": "Brookhaven RP",
-      "candidate": true,
-      "verified": false,
-      "selected": false,
-      "formatted_ru": false,
-      "scheduled": false,
-      "reason": "Публикация уже использовалась в выпуске другого дня; Нет пригодной Tier B новости; Нет новой конкретной строки со времени прошлого снимка"
-    },
-    {
       "game": "Blox Fruits",
       "candidate": true,
       "verified": false,
       "selected": false,
       "formatted_ru": false,
       "scheduled": false,
-      "reason": "Публикация устарела: 42.5 дн. (аварийный лимит 30); В публикации не найдено достаточно конкретного содержания; Нет новой конкретной строки со времени прошлого снимка"
-    },
-    {
-      "game": "Adopt Me!",
-      "candidate": true,
-      "verified": false,
-      "selected": false,
-      "formatted_ru": false,
-      "scheduled": false,
-      "reason": "Публикация уже использовалась в выпуске другого дня; В публикации не найдено достаточно конкретного содержания; Нет новой конкретной строки со времени прошлого снимка"
-    },
-    {
-      "game": "RIVALS",
-      "candidate": true,
-      "verified": false,
-      "selected": false,
-      "formatted_ru": false,
-      "scheduled": false,
-      "reason": "Нет пригодной Tier B новости; Нет новой конкретной строки со времени прошлого снимка"
+      "reason": "Публикация устарела: 43.2 дн. (аварийный лимит 30); В публикации не найдено достаточно конкретного содержания; Нет новой конкретной строки со времени прошлого снимка"
     },
     {
       "game": "99 Nights in the Forest",
@@ -102,15 +124,6 @@
       "reason": "Нет пригодной Tier B новости; Нет новой конкретной строки со времени прошлого снимка"
     },
     {
-      "game": "Blade Ball",
-      "candidate": true,
-      "verified": true,
-      "selected": true,
-      "formatted_ru": true,
-      "scheduled": true,
-      "reason": "вошёл в утренний выпуск"
-    },
-    {
       "game": "Grow a Garden",
       "candidate": true,
       "verified": false,
@@ -126,7 +139,7 @@
       "selected": false,
       "formatted_ru": false,
       "scheduled": false,
-      "reason": "Публикация устарела: 77.7 дн. (аварийный лимит 30); Нет пригодной Tier B новости; Нет новой конкретной строки со времени прошлого снимка"
+      "reason": "Источник недоступен: 404 Client Error: Not Found for url: https://www.youtube.com/feeds/videos.xml?channel_id=UCCVWvf_e5oRb6RfXyluR7UA; Нет пригодной Tier B новости; Нет новой конкретной строки со времени прошлого снимка"
     },
     {
       "game": "Pet Simulator 99",
@@ -136,13 +149,22 @@
       "formatted_ru": false,
       "scheduled": false,
       "reason": "Публикация уже использовалась в выпуске другого дня; Публикация уже использовалась в выпуске другого дня; Нет новой конкретной строки со времени прошлого снимка"
+    },
+    {
+      "game": "Blade Ball",
+      "candidate": true,
+      "verified": false,
+      "selected": false,
+      "formatted_ru": false,
+      "scheduled": false,
+      "reason": "Источник недоступен: 404 Client Error: Not Found for url: https://www.youtube.com/feeds/videos.xml?channel_id=UCPttFx0zI4Zv9M4i3Q2ylsw; Публикация устарела: 909.3 дн. (аварийный лимит 30); Нет пригодной Tier B новости; Нет новой конкретной строки со времени прошлого снимка"
     }
   ],
   "summary": {
     "found": 14,
-    "verified": 1,
-    "selected": 1,
-    "formatted": 1,
-    "scheduled": 1
+    "verified": 3,
+    "selected": 3,
+    "formatted": 3,
+    "scheduled": 3
   }
 }

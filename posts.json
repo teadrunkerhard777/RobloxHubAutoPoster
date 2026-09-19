@@ -2807,5 +2807,81 @@
     "attempts": 1,
     "last_error": null,
     "image_path": "images/16-00/watermarked_img_17207948039081479451.jpg"
+  },
+  {
+    "id": "2026-09-19-10",
+    "publish_at": "2026-09-19T10:00:00+05:00",
+    "game": "разные игры",
+    "rubric": "Выпуск дня",
+    "source": "auto_verified",
+    "text": "🎮🎮🎮 ROBLOX HUB — СЕГОДНЯ 🎮🎮🎮\n\n🏡 Brookhaven RP\n\n🚗 В игру добавили новый транспорт.\n\n🎉 В игре началось новое событие.\n\n🎯 Что сделать: найди новый транспорт и проверь его в игре.\n\n🐾 Adopt Me!\n\nВ Adopt Me! вышло обновление «Cat Cafe».\n\nВ Releaser Eggs добавили 4 питомцев: Cattuccino, Catte, Matcha Cat и Pain au Chat.\n\nВ игре появилась новая локация.\n\nВ игре появились новые питомцы.\n\n🔫 RIVALS\n\n🎯 Появились новые задания с наградами.\n\n🎯 Что сделать: проверь условия получения новых наград.\n\n🎮 Roblox Hub",
+    "status": "pending",
+    "published_at": null,
+    "attempts": 0,
+    "last_error": null,
+    "image_path": "assets/news_headers/roblox_news_header.png"
+  },
+  {
+    "id": "2026-09-19-image-11",
+    "publish_at": "2026-09-19T11:00:00+05:00",
+    "game": "Roblox",
+    "rubric": "Картинка дня",
+    "source": "image_library",
+    "text": "#Roblox #BrawlStars #StealABrainrot #99Nights",
+    "status": "pending",
+    "published_at": null,
+    "attempts": 0,
+    "last_error": null,
+    "image_path": "images/16-00/5f72f51d-647f-481f-8d9e-3d949b0124d2.jpeg"
+  },
+  {
+    "id": "2026-09-19-15",
+    "publish_at": "2026-09-19T15:00:00+05:00",
+    "game": "Murder Mystery 2 + Adopt Me! + Pet Simulator 99 + RIVALS + Steal An Egg",
+    "rubric": "Полезно знать",
+    "source": "verified_db",
+    "text": "💡💡💡 ПОЛЕЗНО ЗНАТЬ 💡💡💡\n\n🔪 Murder Mystery 2\n🪙 Собирай монеты, но не рискуй жизнью ради одной монеты.\n\n🐾 Adopt Me!\n🏗️ Перед украшением дома реши, какие комнаты нужны для игры, и только потом расставляй мебель.\n\n🐶 Pet Simulator 99\n💰 Не оценивай прогресс только по числу питомцев: важнее, насколько быстро команда помогает добывать ресурсы.\n\n🔫 RIVALS\n🎒 Проверь новое оружие в тренировке, прежде чем брать его в важный матч.\n\n🥚 Steal An Egg\n💰 Используй доход питомцев для дальнейшей прокачки, а не оставляй деньги без дела.\n\n🎮 Roblox Hub\n\n#Roblox #ПолезноЗнать #RobloxHub",
+    "status": "pending",
+    "published_at": null,
+    "attempts": 0,
+    "last_error": null
+  },
+  {
+    "id": "2026-09-19-image-17",
+    "publish_at": "2026-09-19T17:00:00+05:00",
+    "game": "Roblox",
+    "rubric": "Картинка дня",
+    "source": "image_library",
+    "text": "#Roblox #BrawlStars #StealABrainrot #99Nights",
+    "status": "pending",
+    "published_at": null,
+    "attempts": 0,
+    "last_error": null,
+    "image_path": "images/16-00/52d543e1-1fd3-4230-bc9e-f0fee3c7b64c.png"
+  },
+  {
+    "id": "2026-09-19-19",
+    "publish_at": "2026-09-19T19:00:00+05:00",
+    "game": "Steal An Egg",
+    "rubric": "Новинки и хиты Roblox",
+    "source": "verified_db",
+    "text": "🔥🔥🔥 НОВИНКИ И ХИТЫ ROBLOX 🔥🔥🔥\n\n🥚 Steal An Egg\n\n🎮 Что за игра?\nКради яйца у питомцев, высиживай редких питомцев и зарабатывай на них деньги. Можно улучшать базу и беговую дорожку, тренировать Speed и охотиться за редкими размерами и мутациями.\n\n🐣 Не спеши оценивать яйцо только по внешнему виду: в игре есть разные питомцы, размеры и мутации.\n\n🏃 Прокачивай дорожку и Speed: скорость пригодится, когда нужно быстро добраться до чужих яиц и вернуться на свою базу.\n\n🥷 Следи не только за чужими базами. Пока ты занят кражей, другие игроки тоже могут добраться до твоих яиц.\n\n🎮 Roblox Hub\n\n#Roblox #StealAnEgg #НовинкиRoblox",
+    "status": "pending",
+    "published_at": null,
+    "attempts": 0,
+    "last_error": null
+  },
+  {
+    "id": "2026-09-19-image-21",
+    "publish_at": "2026-09-19T21:00:00+05:00",
+    "game": "Roblox",
+    "rubric": "Картинка дня",
+    "source": "image_library",
+    "text": "#Roblox #BrawlStars #StealABrainrot #99Nights",
+    "status": "pending",
+    "published_at": null,
+    "attempts": 0,
+    "last_error": null,
+    "image_path": "images/16-00/00fab747-4466-4b2d-97a3-268739faf49e.png"
   }
 ]

@@ -1046,7 +1046,7 @@
     "text": "Не оценивай прогресс только по числу питомцев: важнее, насколько быстро команда помогает добывать ресурсы.",
     "source": "verified_core_mechanic",
     "reviewed_at": "2026-08-14",
-    "used": false,
+    "used": true,
     "category": "economy"
   },
   {
@@ -1337,7 +1337,7 @@
     "text": "Перед украшением дома реши, какие комнаты нужны для игры, и только потом расставляй мебель.",
     "source": "verified_core_mechanic",
     "reviewed_at": "2026-08-24",
-    "used": false
+    "used": true
   },
   {
     "id": 135,
@@ -1367,7 +1367,7 @@
     "text": "Проверь новое оружие в тренировке, прежде чем брать его в важный матч.",
     "source": "verified_core_mechanic",
     "reviewed_at": "2026-08-24",
-    "used": false
+    "used": true
   },
   {
     "id": 138,
@@ -1530,7 +1530,7 @@
     "text": "Используй доход питомцев для дальнейшей прокачки, а не оставляй деньги без дела.",
     "source": "agreed_editorial_list",
     "reviewed_at": "2026-08-28",
-    "used": false
+    "used": true
   },
   {
     "id": 154,
@@ -1937,7 +1937,7 @@
     "text": "Собирай монеты, но не рискуй жизнью ради одной монеты.",
     "source": "agreed_editorial_list",
     "reviewed_at": "2026-08-28",
-    "used": false
+    "used": true
   },
   {
     "id": 191,
