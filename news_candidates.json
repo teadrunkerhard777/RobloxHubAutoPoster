@@ -1,318 +1,10 @@
 [
   {
-    "game": "Brookhaven RP",
-    "universe_id": 1686885941,
-    "roblox_name": "Brookhaven 🏡RP",
-    "description": "A place to play with like minded people and roleplay. Own and live in amazing houses, drive cool vehicles and explore the city. Be whoever you want to be in Brookhaven RP.\n\nLatest Update:\n🦕 Jurassic World Event!\n🧬 Jurassic World - Explore the new Jurassic World park in Brookhaven! \n🌿 Feed the Dinosaurs - Feed leaves to the Brachiosaurus & Triceratops!\n⚠️ Raptor Encounter - Visit Blue and the other Raptors!\n🎈 New Jurassic World Items - New Gyrosphere Vehicle, Tools, Props, Clothes & Emotes!\n🦖💥 Next Week...T.rex arrives, plus new Jurassic World House, InGen Truck & more!\n\nPrivate Server Benefits:\n· Prop Saving\n· Server-Wide Music\n· Server-Wide Announcements\n· Remove or Lock Props\n· Check Prop Owners\n· Set Players as Admins\n· Kick / Temp Ban Players\n· Set Day of the Week\n· Set Time by the Hour\n· Change Weather and Lighting\n· Speed up Time\n· Server Theme Controls\n· No Wait Time for Changing House \n· Spawn Up to Three Vehicles\n· Prop Limit Increased\n· Freecam for PC users (Shift+P)",
-    "updated": "2026-09-18T22:24:57.913624Z",
-    "created": "2020-04-21T02:15:38.373Z",
-    "creator": {
-      "id": 3104358,
-      "name": "Brookhaven by Voldex",
-      "type": "Group",
-      "isRNVAccount": false,
-      "hasVerifiedBadge": false
-    },
-    "description_changed": true,
-    "added_lines": [
-      "🦕 Jurassic World Event!",
-      "🧬 Jurassic World - Explore the new Jurassic World park in Brookhaven!",
-      "🌿 Feed the Dinosaurs - Feed leaves to the Brachiosaurus & Triceratops!",
-      "⚠️ Raptor Encounter - Visit Blue and the other Raptors!",
-      "🎈 New Jurassic World Items - New Gyrosphere Vehicle, Tools, Props, Clothes & Emotes!",
-      "🦖💥 Next Week...T.rex arrives, plus new Jurassic World House, InGen Truck & more!"
-    ],
-    "keywords": [
-      "EVENT",
-      "ITEMS",
-      "NEW",
-      "UPDATE",
-      "VEHICLE",
-      "VEHICLES"
-    ],
-    "score": 10,
-    "confidence": "high",
-    "facts": [
-      {
-        "text": "🎈 New Jurassic World Items - New Gyrosphere Vehicle, Tools, Props, Clothes & Emotes!",
-        "kind": "vehicle",
-        "value": 10,
-        "specific": true,
-        "reason": "Строка называет конкретное игровое содержимое",
-        "summary_ru": "В игру добавили новый транспорт.",
-        "is_new_line": true
-      },
-      {
-        "text": "🦖💥 Next Week...T.rex arrives, plus new Jurassic World House, InGen Truck & more!",
-        "kind": "vehicle",
-        "value": 10,
-        "specific": true,
-        "reason": "Строка называет конкретное игровое содержимое",
-        "summary_ru": "В игру добавили новый транспорт.",
-        "is_new_line": true
-      },
-      {
-        "text": "🦕 Jurassic World Event!",
-        "kind": "event",
-        "value": 9,
-        "specific": true,
-        "reason": "Строка называет конкретное игровое содержимое",
-        "summary_ru": "В игре началось новое событие.",
-        "is_new_line": true
-      }
-    ],
-    "description_facts": [
-      {
-        "text": "🎈 New Jurassic World Items - New Gyrosphere Vehicle, Tools, Props, Clothes & Emotes!",
-        "kind": "vehicle",
-        "value": 10,
-        "specific": true,
-        "reason": "Строка называет конкретное игровое содержимое",
-        "summary_ru": "В игру добавили новый транспорт.",
-        "is_new_line": true
-      },
-      {
-        "text": "🦖💥 Next Week...T.rex arrives, plus new Jurassic World House, InGen Truck & more!",
-        "kind": "vehicle",
-        "value": 10,
-        "specific": true,
-        "reason": "Строка называет конкретное игровое содержимое",
-        "summary_ru": "В игру добавили новый транспорт.",
-        "is_new_line": true
-      },
-      {
-        "text": "🦕 Jurassic World Event!",
-        "kind": "event",
-        "value": 9,
-        "specific": true,
-        "reason": "Строка называет конкретное игровое содержимое",
-        "summary_ru": "В игре началось новое событие.",
-        "is_new_line": true
-      },
-      {
-        "text": "· Prop Saving",
-        "kind": "items",
-        "value": 7,
-        "specific": true,
-        "reason": "Строка называет конкретное игровое содержимое",
-        "summary_ru": "Добавили новый реквизит для ролевых сцен.",
-        "is_new_line": false
-      },
-      {
-        "text": "· Remove or Lock Props",
-        "kind": "items",
-        "value": 7,
-        "specific": true,
-        "reason": "Строка называет конкретное игровое содержимое",
-        "summary_ru": "Добавили новый реквизит для ролевых сцен.",
-        "is_new_line": false
-      },
-      {
-        "text": "· Check Prop Owners",
-        "kind": "items",
-        "value": 7,
-        "specific": true,
-        "reason": "Строка называет конкретное игровое содержимое",
-        "summary_ru": "Добавили новый реквизит для ролевых сцен.",
-        "is_new_line": false
-      },
-      {
-        "text": "· Prop Limit Increased",
-        "kind": "items",
-        "value": 7,
-        "specific": true,
-        "reason": "Строка называет конкретное игровое содержимое",
-        "summary_ru": "Добавили новый реквизит для ролевых сцен.",
-        "is_new_line": false
-      },
-      {
-        "text": "Latest Update:",
-        "kind": "update",
-        "value": 2,
-        "specific": false,
-        "reason": "Упоминание обновления без конкретики",
-        "summary_ru": "В игре вышло новое обновление.",
-        "is_new_line": false
-      }
-    ],
-    "pool": "active",
-    "checked_at": "2026-09-19T03:01:03.811622+00:00"
-  },
-  {
-    "game": "Adopt Me!",
-    "universe_id": 383310974,
-    "roblox_name": "[🐈] Adopt Me!",
-    "description": "Adopt and raise 🐶🦄👶, trade and collect legendary pets, build your dream home, and roleplay with friends!\n\n🎉 Roblox Anniversary & Cat Cafe! 🎉\n💜 Hatch the pink and blue Throwback Egg!\n🍫 Pain au Chat in Releaser Eggs!\n🍪 Kitty drinks and treats at the Cat Cafe!\n\nBe FIRST 🏆 To experience new updates by pressing 🔔NOTIFY.\n\nMeet the founders!\nNewFissy - Tech Director\nBethink - Creative Director\n\nFind out more about Uplift Games, our policies and creative attributions:\nhttps://devforum.roblox.com/t/credits/71812",
-    "updated": "2026-09-18T16:27:33.743792Z",
-    "created": "2017-07-14T19:26:21.347Z",
-    "creator": {
-      "id": 295182,
-      "name": "Uplift Games",
-      "type": "Group",
-      "isRNVAccount": false,
-      "hasVerifiedBadge": true
-    },
-    "description_changed": true,
-    "added_lines": [
-      "🎉 Roblox Anniversary & Cat Cafe! 🎉",
-      "💜 Hatch the pink and blue Throwback Egg!",
-      "🍫 Pain au Chat in Releaser Eggs!",
-      "🍪 Kitty drinks and treats at the Cat Cafe!"
-    ],
-    "keywords": [
-      "NEW",
-      "PETS"
-    ],
-    "score": 10,
-    "confidence": "high",
-    "facts": [
-      {
-        "text": "💜 Hatch the pink and blue Throwback Egg!",
-        "kind": "pets",
-        "value": 10,
-        "specific": true,
-        "reason": "Строка называет конкретное игровое содержимое",
-        "summary_ru": "В игре появились новые питомцы.",
-        "is_new_line": true
-      },
-      {
-        "text": "🍫 Pain au Chat in Releaser Eggs!",
-        "kind": "pets",
-        "value": 10,
-        "specific": true,
-        "reason": "Строка называет конкретное игровое содержимое",
-        "summary_ru": "В игре появились новые питомцы.",
-        "is_new_line": true
-      }
-    ],
-    "description_facts": [
-      {
-        "text": "💜 Hatch the pink and blue Throwback Egg!",
-        "kind": "pets",
-        "value": 10,
-        "specific": true,
-        "reason": "Строка называет конкретное игровое содержимое",
-        "summary_ru": "В игре появились новые питомцы.",
-        "is_new_line": true
-      },
-      {
-        "text": "🍫 Pain au Chat in Releaser Eggs!",
-        "kind": "pets",
-        "value": 10,
-        "specific": true,
-        "reason": "Строка называет конкретное игровое содержимое",
-        "summary_ru": "В игре появились новые питомцы.",
-        "is_new_line": true
-      },
-      {
-        "text": "Adopt and raise 🐶🦄👶, trade and collect legendary pets, build your dream home, and roleplay with friends!",
-        "kind": "pets",
-        "value": 8,
-        "specific": true,
-        "reason": "Строка называет конкретное игровое содержимое",
-        "summary_ru": "В игре появились новые питомцы.",
-        "is_new_line": false
-      },
-      {
-        "text": "Be FIRST 🏆 To experience new updates by pressing 🔔NOTIFY.",
-        "kind": "update",
-        "value": 2,
-        "specific": false,
-        "reason": "Упоминание обновления без конкретики",
-        "summary_ru": "В игре вышло новое обновление.",
-        "is_new_line": false
-      }
-    ],
-    "pool": "active",
-    "checked_at": "2026-09-19T03:01:03.815346+00:00"
-  },
-  {
-    "game": "RIVALS",
-    "universe_id": 6035872082,
-    "roblox_name": "[🏆] RIVALS",
-    "description": "Welcome to RIVALS, the most intense first person shooter game on Roblox! Challenge other players in 1v1 to 5v5 FPS duels where the first to 5 wins!\n\n🏆 SURPRISE UPDATE - Thank you for helping us win BEST STUDIO & BEST SHOOTER! 🎉 All weapons are FREE for 7 days + limited-time reward codes! ❤️  \n\n🔫 Challenge someone by stepping on a duel pad!\n🔑 Earn keys to unlock new weapons & skins!\n📜 Complete contracts to unlock exclusive rewards!\n🏆 Show off your win streak and climb the leaderboards! \n\n🎮 Available on Desktop, Phones, Tablets, XBOX, & PlayStation 5!\n💜 Like and join the group for exclusive rewards!\n\n⚠️ WARNING: Cheaters will be permanently banned with no second chances, our anticheat & moderators will catch you. Abusing glitches & using sketchy farming methods are also not allowed!\n\n🏆 RIA25 Best Shooter Experience!\n🏆 RIA26 Best Shooter Experience!",
-    "updated": "2026-09-18T22:08:02.5789537Z",
-    "created": "2024-05-26T16:47:48.617Z",
-    "creator": {
-      "id": 3461453,
-      "name": "Nosniy Games",
-      "type": "Group",
-      "isRNVAccount": false,
-      "hasVerifiedBadge": true
-    },
-    "description_changed": true,
-    "added_lines": [
-      "🏆 SURPRISE UPDATE - Thank you for helping us win BEST STUDIO & BEST SHOOTER! 🎉 All weapons are FREE for 7 days + limited-time reward codes! ❤️"
-    ],
-    "keywords": [
-      "CODES",
-      "CONTRACTS",
-      "LIMITED",
-      "NEW",
-      "REWARD",
-      "REWARDS",
-      "UPDATE"
-    ],
-    "score": 10,
-    "confidence": "high",
-    "facts": [
-      {
-        "text": "🏆 SURPRISE UPDATE - Thank you for helping us win BEST STUDIO & BEST SHOOTER! 🎉 All weapons are FREE for 7 days + limited-time reward codes! ❤️",
-        "kind": "quests",
-        "value": 9,
-        "specific": true,
-        "reason": "Строка называет конкретное игровое содержимое",
-        "summary_ru": "Появились новые задания с наградами.",
-        "is_new_line": true
-      }
-    ],
-    "description_facts": [
-      {
-        "text": "🏆 SURPRISE UPDATE - Thank you for helping us win BEST STUDIO & BEST SHOOTER! 🎉 All weapons are FREE for 7 days + limited-time reward codes! ❤️",
-        "kind": "quests",
-        "value": 9,
-        "specific": true,
-        "reason": "Строка называет конкретное игровое содержимое",
-        "summary_ru": "Появились новые задания с наградами.",
-        "is_new_line": true
-      },
-      {
-        "text": "🔑 Earn keys to unlock new weapons & skins!",
-        "kind": "items",
-        "value": 7,
-        "specific": true,
-        "reason": "Строка называет конкретное игровое содержимое",
-        "summary_ru": "В игре появились новые инструменты и оружие.",
-        "is_new_line": false
-      },
-      {
-        "text": "📜 Complete contracts to unlock exclusive rewards!",
-        "kind": "quests",
-        "value": 7,
-        "specific": true,
-        "reason": "Строка называет конкретное игровое содержимое",
-        "summary_ru": "Появились новые задания с наградами.",
-        "is_new_line": false
-      },
-      {
-        "text": "💜 Like and join the group for exclusive rewards!",
-        "kind": "quests",
-        "value": 7,
-        "specific": true,
-        "reason": "Строка называет конкретное игровое содержимое",
-        "summary_ru": "Появились новые задания с наградами.",
-        "is_new_line": false
-      }
-    ],
-    "pool": "active",
-    "checked_at": "2026-09-19T03:01:03.817200+00:00"
-  },
-  {
     "game": "Steal An Egg",
     "universe_id": 10563114921,
     "roblox_name": "Steal An Egg",
     "description": "🥚 Welcome to Steal An Egg!\n\nHow to Play:\n🥚 Steal eggs from pets\n🐣 Hatch eggs to collect rare pets\n💰 Earn money from your pets\n⬆️ Upgrade your treadmill and base\n🏃 Train on the treadmill to gain Speed\n🥷 Steal eggs from other players\n✨ Discover rarer eggs, pets, sizes, and mutations!\n\n🎮 Supports Desktop, Console, Mobile, and Tablet players",
-    "updated": "2026-09-19T00:07:10.7862981Z",
+    "updated": "2026-09-19T04:51:34.9842175Z",
     "created": "2026-07-25T07:50:51.492Z",
     "creator": {
       "id": 825735094,
@@ -386,7 +78,7 @@
       }
     ],
     "pool": "active",
-    "checked_at": "2026-09-19T03:01:03.805229+00:00"
+    "checked_at": "2026-09-19T08:41:11.167886+00:00"
   },
   {
     "game": "Animal Hospital (Anomaly)",
@@ -420,7 +112,7 @@
       }
     ],
     "pool": "active",
-    "checked_at": "2026-09-19T03:01:03.805665+00:00"
+    "checked_at": "2026-09-19T08:41:11.168393+00:00"
   },
   {
     "game": "+1 Speed Keyboard Escape",
@@ -444,7 +136,7 @@
     "facts": [],
     "description_facts": [],
     "pool": "active",
-    "checked_at": "2026-09-19T03:01:03.807466+00:00"
+    "checked_at": "2026-09-19T08:41:11.170711+00:00"
   },
   {
     "game": "Murder Mystery 2",
@@ -490,7 +182,111 @@
       }
     ],
     "pool": "active",
-    "checked_at": "2026-09-19T03:01:03.808708+00:00"
+    "checked_at": "2026-09-19T08:41:11.172245+00:00"
+  },
+  {
+    "game": "Brookhaven RP",
+    "universe_id": 1686885941,
+    "roblox_name": "Brookhaven 🏡RP",
+    "description": "A place to play with like minded people and roleplay. Own and live in amazing houses, drive cool vehicles and explore the city. Be whoever you want to be in Brookhaven RP.\n\nLatest Update:\n🦕 Jurassic World Event!\n🧬 Jurassic World - Explore the new Jurassic World park in Brookhaven! \n🌿 Feed the Dinosaurs - Feed leaves to the Brachiosaurus & Triceratops!\n⚠️ Raptor Encounter - Visit Blue and the other Raptors!\n🎈 New Jurassic World Items - New Gyrosphere Vehicle, Tools, Props, Clothes & Emotes!\n🦖💥 Next Week...T.rex arrives, plus new Jurassic World House, InGen Truck & more!\n\nPrivate Server Benefits:\n· Prop Saving\n· Server-Wide Music\n· Server-Wide Announcements\n· Remove or Lock Props\n· Check Prop Owners\n· Set Players as Admins\n· Kick / Temp Ban Players\n· Set Day of the Week\n· Set Time by the Hour\n· Change Weather and Lighting\n· Speed up Time\n· Server Theme Controls\n· No Wait Time for Changing House \n· Spawn Up to Three Vehicles\n· Prop Limit Increased\n· Freecam for PC users (Shift+P)",
+    "updated": "2026-09-19T08:00:18.8532296Z",
+    "created": "2020-04-21T02:15:38.373Z",
+    "creator": {
+      "id": 3104358,
+      "name": "Brookhaven by Voldex",
+      "type": "Group",
+      "isRNVAccount": false,
+      "hasVerifiedBadge": false
+    },
+    "description_changed": false,
+    "added_lines": [],
+    "keywords": [
+      "EVENT",
+      "ITEMS",
+      "NEW",
+      "UPDATE",
+      "VEHICLE",
+      "VEHICLES"
+    ],
+    "score": 0,
+    "confidence": "low",
+    "facts": [],
+    "description_facts": [
+      {
+        "text": "🎈 New Jurassic World Items - New Gyrosphere Vehicle, Tools, Props, Clothes & Emotes!",
+        "kind": "vehicle",
+        "value": 8,
+        "specific": true,
+        "reason": "Строка называет конкретное игровое содержимое",
+        "summary_ru": "В игру добавили новый транспорт.",
+        "is_new_line": false
+      },
+      {
+        "text": "🦖💥 Next Week...T.rex arrives, plus new Jurassic World House, InGen Truck & more!",
+        "kind": "vehicle",
+        "value": 8,
+        "specific": true,
+        "reason": "Строка называет конкретное игровое содержимое",
+        "summary_ru": "В игру добавили новый транспорт.",
+        "is_new_line": false
+      },
+      {
+        "text": "🦕 Jurassic World Event!",
+        "kind": "event",
+        "value": 7,
+        "specific": true,
+        "reason": "Строка называет конкретное игровое содержимое",
+        "summary_ru": "В игре началось новое событие.",
+        "is_new_line": false
+      },
+      {
+        "text": "· Prop Saving",
+        "kind": "items",
+        "value": 7,
+        "specific": true,
+        "reason": "Строка называет конкретное игровое содержимое",
+        "summary_ru": "Добавили новый реквизит для ролевых сцен.",
+        "is_new_line": false
+      },
+      {
+        "text": "· Remove or Lock Props",
+        "kind": "items",
+        "value": 7,
+        "specific": true,
+        "reason": "Строка называет конкретное игровое содержимое",
+        "summary_ru": "Добавили новый реквизит для ролевых сцен.",
+        "is_new_line": false
+      },
+      {
+        "text": "· Check Prop Owners",
+        "kind": "items",
+        "value": 7,
+        "specific": true,
+        "reason": "Строка называет конкретное игровое содержимое",
+        "summary_ru": "Добавили новый реквизит для ролевых сцен.",
+        "is_new_line": false
+      },
+      {
+        "text": "· Prop Limit Increased",
+        "kind": "items",
+        "value": 7,
+        "specific": true,
+        "reason": "Строка называет конкретное игровое содержимое",
+        "summary_ru": "Добавили новый реквизит для ролевых сцен.",
+        "is_new_line": false
+      },
+      {
+        "text": "Latest Update:",
+        "kind": "update",
+        "value": 2,
+        "specific": false,
+        "reason": "Упоминание обновления без конкретики",
+        "summary_ru": "В игре вышло новое обновление.",
+        "is_new_line": false
+      }
+    ],
+    "pool": "active",
+    "checked_at": "2026-09-19T08:41:11.175904+00:00"
   },
   {
     "game": "Blox Fruits",
@@ -527,7 +323,140 @@
       }
     ],
     "pool": "active",
-    "checked_at": "2026-09-19T03:01:03.813904+00:00"
+    "checked_at": "2026-09-19T08:41:11.178766+00:00"
+  },
+  {
+    "game": "Adopt Me!",
+    "universe_id": 383310974,
+    "roblox_name": "[SOON!🎉] Adopt Me!",
+    "description": "Adopt and raise 🐶🦄👶, trade and collect legendary pets, build your dream home, and roleplay with friends!\n\n🎉 Roblox Anniversary & Cat Cafe! 🎉\n💜 Hatch the pink and blue Throwback Egg!\n🍫 Pain au Chat in Releaser Eggs!\n🍪 Kitty drinks and treats at the Cat Cafe!\n\nBe FIRST 🏆 To experience new updates by pressing 🔔NOTIFY.\n\nMeet the founders!\nNewFissy - Tech Director\nBethink - Creative Director\n\nFind out more about Uplift Games, our policies and creative attributions:\nhttps://devforum.roblox.com/t/credits/71812",
+    "updated": "2026-09-19T07:30:02.5303798Z",
+    "created": "2017-07-14T19:26:21.347Z",
+    "creator": {
+      "id": 295182,
+      "name": "Uplift Games",
+      "type": "Group",
+      "isRNVAccount": false,
+      "hasVerifiedBadge": true
+    },
+    "description_changed": false,
+    "added_lines": [],
+    "keywords": [
+      "NEW",
+      "PETS"
+    ],
+    "score": 0,
+    "confidence": "low",
+    "facts": [],
+    "description_facts": [
+      {
+        "text": "Adopt and raise 🐶🦄👶, trade and collect legendary pets, build your dream home, and roleplay with friends!",
+        "kind": "pets",
+        "value": 8,
+        "specific": true,
+        "reason": "Строка называет конкретное игровое содержимое",
+        "summary_ru": "В игре появились новые питомцы.",
+        "is_new_line": false
+      },
+      {
+        "text": "💜 Hatch the pink and blue Throwback Egg!",
+        "kind": "pets",
+        "value": 8,
+        "specific": true,
+        "reason": "Строка называет конкретное игровое содержимое",
+        "summary_ru": "В игре появились новые питомцы.",
+        "is_new_line": false
+      },
+      {
+        "text": "🍫 Pain au Chat in Releaser Eggs!",
+        "kind": "pets",
+        "value": 8,
+        "specific": true,
+        "reason": "Строка называет конкретное игровое содержимое",
+        "summary_ru": "В игре появились новые питомцы.",
+        "is_new_line": false
+      },
+      {
+        "text": "Be FIRST 🏆 To experience new updates by pressing 🔔NOTIFY.",
+        "kind": "update",
+        "value": 2,
+        "specific": false,
+        "reason": "Упоминание обновления без конкретики",
+        "summary_ru": "В игре вышло новое обновление.",
+        "is_new_line": false
+      }
+    ],
+    "pool": "active",
+    "checked_at": "2026-09-19T08:41:11.180565+00:00"
+  },
+  {
+    "game": "RIVALS",
+    "universe_id": 6035872082,
+    "roblox_name": "[🏆] RIVALS",
+    "description": "Welcome to RIVALS, the most intense first person shooter game on Roblox! Challenge other players in 1v1 to 5v5 FPS duels where the first to 5 wins!\n\n🏆 SURPRISE UPDATE - Thank you for helping us win BEST STUDIO & BEST SHOOTER! 🎉 All weapons are FREE for 7 days + limited-time reward codes! ❤️  \n\n🔫 Challenge someone by stepping on a duel pad!\n🔑 Earn keys to unlock new weapons & skins!\n📜 Complete contracts to unlock exclusive rewards!\n🏆 Show off your win streak and climb the leaderboards! \n\n🎮 Available on Desktop, Phones, Tablets, XBOX, & PlayStation 5!\n💜 Like and join the group for exclusive rewards!\n\n⚠️ WARNING: Cheaters will be permanently banned with no second chances, our anticheat & moderators will catch you. Abusing glitches & using sketchy farming methods are also not allowed!\n\n🏆 RIA25 Best Shooter Experience!\n🏆 RIA26 Best Shooter Experience!",
+    "updated": "2026-09-19T04:08:35.7736188Z",
+    "created": "2024-05-26T16:47:48.617Z",
+    "creator": {
+      "id": 3461453,
+      "name": "Nosniy Games",
+      "type": "Group",
+      "isRNVAccount": false,
+      "hasVerifiedBadge": true
+    },
+    "description_changed": false,
+    "added_lines": [],
+    "keywords": [
+      "CODES",
+      "CONTRACTS",
+      "LIMITED",
+      "NEW",
+      "REWARD",
+      "REWARDS",
+      "UPDATE"
+    ],
+    "score": 0,
+    "confidence": "low",
+    "facts": [],
+    "description_facts": [
+      {
+        "text": "🏆 SURPRISE UPDATE - Thank you for helping us win BEST STUDIO & BEST SHOOTER! 🎉 All weapons are FREE for 7 days + limited-time reward codes! ❤️",
+        "kind": "quests",
+        "value": 7,
+        "specific": true,
+        "reason": "Строка называет конкретное игровое содержимое",
+        "summary_ru": "Появились новые задания с наградами.",
+        "is_new_line": false
+      },
+      {
+        "text": "🔑 Earn keys to unlock new weapons & skins!",
+        "kind": "items",
+        "value": 7,
+        "specific": true,
+        "reason": "Строка называет конкретное игровое содержимое",
+        "summary_ru": "В игре появились новые инструменты и оружие.",
+        "is_new_line": false
+      },
+      {
+        "text": "📜 Complete contracts to unlock exclusive rewards!",
+        "kind": "quests",
+        "value": 7,
+        "specific": true,
+        "reason": "Строка называет конкретное игровое содержимое",
+        "summary_ru": "Появились новые задания с наградами.",
+        "is_new_line": false
+      },
+      {
+        "text": "💜 Like and join the group for exclusive rewards!",
+        "kind": "quests",
+        "value": 7,
+        "specific": true,
+        "reason": "Строка называет конкретное игровое содержимое",
+        "summary_ru": "Появились новые задания с наградами.",
+        "is_new_line": false
+      }
+    ],
+    "pool": "active",
+    "checked_at": "2026-09-19T08:41:11.182887+00:00"
   },
   {
     "game": "99 Nights in the Forest",
@@ -551,7 +480,7 @@
     "facts": [],
     "description_facts": [],
     "pool": "active",
-    "checked_at": "2026-09-19T03:01:03.817549+00:00"
+    "checked_at": "2026-09-19T08:41:11.183324+00:00"
   },
   {
     "game": "Steal a Brainrot",
@@ -585,14 +514,14 @@
       }
     ],
     "pool": "active",
-    "checked_at": "2026-09-19T03:01:03.818792+00:00"
+    "checked_at": "2026-09-19T08:41:11.184953+00:00"
   },
   {
     "game": "Grow a Garden",
     "universe_id": 7436755782,
-    "roblox_name": "[🧺] Grow a Garden 🌶️",
+    "roblox_name": "[🍂] Grow a Garden 🌶️",
     "description": "🍅Welcome to Grow a Garden🍅\n\nAre you ready to grow your very own garden? Buy seeds from the shop when they restock, plant them, wait for them to grow, and collect the profits! Flex fruits and finds on friends, and have fun!\n\n[How To Plant]\n• Equip your seed you want to plant!\n• Click in your farm on the brown plots to plant!\n• Wait to see it start growing!\n• After its fully grown, it is time to harvest the goods!\n\nRemember, your garden literally grows while you are offline⭐",
-    "updated": "2026-09-18T22:34:49.5443159Z",
+    "updated": "2026-09-19T08:21:10.6868414Z",
     "created": "2025-03-25T22:32:09.437Z",
     "creator": {
       "id": 35789249,
@@ -609,14 +538,14 @@
     "facts": [],
     "description_facts": [],
     "pool": "legacy",
-    "checked_at": "2026-09-19T03:01:03.820155+00:00"
+    "checked_at": "2026-09-19T08:41:11.186669+00:00"
   },
   {
     "game": "Dress To Impress",
     "universe_id": 5203828273,
     "roblox_name": "[🎂] Dress To Impress",
     "description": "Create stunning outfits 👗💖⭐, and strut the runway to show off your unique style. Collaborate, compete, and explore a world of glamour with friends!\n\n⭐ Are you ready to be the TOP MODEL?\n👗 NEW ITEMS! Check them out.\n🍿 Vote for your favorite outfits!\n💃 Use poses on the runway to show off your outfit!\n\nFind more about Dress To Impress by joining our community.\nhttps://www.roblox.com/communities/17264167/Dress-To-Impress-Group#!/about",
-    "updated": "2026-09-18T18:27:43.7897715Z",
+    "updated": "2026-09-19T05:14:51.8453382Z",
     "created": "2023-10-18T09:11:36.563Z",
     "creator": {
       "id": 17264167,
@@ -673,7 +602,7 @@
       }
     ],
     "pool": "legacy",
-    "checked_at": "2026-09-19T03:01:03.821266+00:00"
+    "checked_at": "2026-09-19T08:41:11.188017+00:00"
   },
   {
     "game": "Pet Simulator 99",
@@ -718,7 +647,7 @@
       }
     ],
     "pool": "legacy",
-    "checked_at": "2026-09-19T03:01:03.821597+00:00"
+    "checked_at": "2026-09-19T08:41:11.188402+00:00"
   },
   {
     "game": "Blade Ball",
@@ -754,6 +683,6 @@
       }
     ],
     "pool": "legacy",
-    "checked_at": "2026-09-19T03:01:03.823335+00:00"
+    "checked_at": "2026-09-19T08:41:11.190520+00:00"
   }
 ]

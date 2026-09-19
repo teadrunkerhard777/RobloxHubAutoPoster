@@ -1,58 +1,21 @@
 {
   "items": [
     {
-      "game": "Brookhaven RP",
-      "emoji": "🏡",
-      "score": 10,
-      "headline": "🚗 В игру добавили новый транспорт.",
-      "facts": [
-        "🎉 В игре началось новое событие."
-      ],
-      "text": "🚗 В игру добавили новый транспорт.\n\n🎉 В игре началось новое событие."
-    },
-    {
       "game": "Adopt Me!",
       "emoji": "🐾",
       "score": 10,
       "headline": "В Adopt Me! вышло обновление «Cat Cafe».",
       "facts": [
         "В Releaser Eggs добавили 4 питомцев: Cattuccino, Catte, Matcha Cat и Pain au Chat.",
-        "В игре появилась новая локация.",
-        "В игре появились новые питомцы."
+        "В игре появилась новая локация."
       ],
-      "text": "В Adopt Me! вышло обновление «Cat Cafe».\n\nВ Releaser Eggs добавили 4 питомцев: Cattuccino, Catte, Matcha Cat и Pain au Chat.\n\nВ игре появилась новая локация.\n\nВ игре появились новые питомцы.",
+      "text": "В Adopt Me! вышло обновление «Cat Cafe».\n\nВ Releaser Eggs добавили 4 питомцев: Cattuccino, Catte, Matcha Cat и Pain au Chat.\n\nВ игре появилась новая локация.",
       "external_article_url": "https://www.playadopt.me/news/cat-cafe-notes"
-    },
-    {
-      "game": "RIVALS",
-      "emoji": "🔫",
-      "score": 10,
-      "headline": "🎯 Появились новые задания с наградами.",
-      "facts": [],
-      "text": "🎯 Появились новые задания с наградами."
     }
   ],
   "pipeline": [
     {
-      "game": "Brookhaven RP",
-      "candidate": true,
-      "verified": true,
-      "selected": true,
-      "formatted_ru": true,
-      "scheduled": true,
-      "reason": "вошёл в утренний выпуск"
-    },
-    {
       "game": "Adopt Me!",
-      "candidate": true,
-      "verified": true,
-      "selected": true,
-      "formatted_ru": true,
-      "scheduled": true,
-      "reason": "вошёл в утренний выпуск"
-    },
-    {
-      "game": "RIVALS",
       "candidate": true,
       "verified": true,
       "selected": true,
@@ -97,13 +60,31 @@
       "reason": "Нет пригодной Tier B новости; Нет новой конкретной строки со времени прошлого снимка"
     },
     {
+      "game": "Brookhaven RP",
+      "candidate": true,
+      "verified": false,
+      "selected": false,
+      "formatted_ru": false,
+      "scheduled": false,
+      "reason": "Публикация уже использовалась в выпуске другого дня; Нет пригодной Tier B новости; Нет новой конкретной строки со времени прошлого снимка"
+    },
+    {
       "game": "Blox Fruits",
       "candidate": true,
       "verified": false,
       "selected": false,
       "formatted_ru": false,
       "scheduled": false,
-      "reason": "Публикация устарела: 43.2 дн. (аварийный лимит 30); В публикации не найдено достаточно конкретного содержания; Нет новой конкретной строки со времени прошлого снимка"
+      "reason": "Публикация устарела: 43.4 дн. (аварийный лимит 30); В публикации не найдено достаточно конкретного содержания; Нет новой конкретной строки со времени прошлого снимка"
+    },
+    {
+      "game": "RIVALS",
+      "candidate": true,
+      "verified": false,
+      "selected": false,
+      "formatted_ru": false,
+      "scheduled": false,
+      "reason": "Нет пригодной Tier B новости; Нет новой конкретной строки со времени прошлого снимка"
     },
     {
       "game": "99 Nights in the Forest",
@@ -139,7 +120,7 @@
       "selected": false,
       "formatted_ru": false,
       "scheduled": false,
-      "reason": "Источник недоступен: 404 Client Error: Not Found for url: https://www.youtube.com/feeds/videos.xml?channel_id=UCCVWvf_e5oRb6RfXyluR7UA; Нет пригодной Tier B новости; Нет новой конкретной строки со времени прошлого снимка"
+      "reason": "Публикация устарела: 78.7 дн. (аварийный лимит 30); Нет пригодной Tier B новости; Нет новой конкретной строки со времени прошлого снимка"
     },
     {
       "game": "Pet Simulator 99",
@@ -157,14 +138,14 @@
       "selected": false,
       "formatted_ru": false,
       "scheduled": false,
-      "reason": "Источник недоступен: 404 Client Error: Not Found for url: https://www.youtube.com/feeds/videos.xml?channel_id=UCPttFx0zI4Zv9M4i3Q2ylsw; Публикация устарела: 909.3 дн. (аварийный лимит 30); Нет пригодной Tier B новости; Нет новой конкретной строки со времени прошлого снимка"
+      "reason": "Публикация уже использовалась в выпуске другого дня; Публикация устарела: 909.6 дн. (аварийный лимит 30); Нет пригодной Tier B новости; Нет новой конкретной строки со времени прошлого снимка"
     }
   ],
   "summary": {
     "found": 14,
-    "verified": 3,
-    "selected": 3,
-    "formatted": 3,
-    "scheduled": 3
+    "verified": 1,
+    "selected": 1,
+    "formatted": 1,
+    "scheduled": 1
   }
 }
