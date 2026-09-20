@@ -1,28 +1,19 @@
 {
   "items": [
     {
-      "game": "Adopt Me!",
-      "emoji": "🐾",
+      "game": "Pet Simulator 99",
+      "emoji": "🐶",
       "score": 10,
-      "headline": "В Adopt Me! вышло обновление «Cat Cafe».",
+      "headline": "В Pet Simulator 99 вышло обновление «Space Mine!».",
       "facts": [
-        "В Releaser Eggs добавили 4 питомцев: Cattuccino, Catte, Matcha Cat и Pain au Chat.",
-        "В игре появилась новая локация."
+        "В игре появились новые питомцы.",
+        "Открыт Can you top the leaderboard с наградами за места."
       ],
-      "text": "В Adopt Me! вышло обновление «Cat Cafe».\n\nВ Releaser Eggs добавили 4 питомцев: Cattuccino, Catte, Matcha Cat и Pain au Chat.\n\nВ игре появилась новая локация.",
-      "external_article_url": "https://www.playadopt.me/news/cat-cafe-notes"
+      "text": "В Pet Simulator 99 вышло обновление «Space Mine!».\n\nВ игре появились новые питомцы.\n\nОткрыт Can you top the leaderboard с наградами за места.",
+      "external_article_url": "https://www.biggames.io/post/pet-simulator-99-update-94"
     }
   ],
   "pipeline": [
-    {
-      "game": "Adopt Me!",
-      "candidate": true,
-      "verified": true,
-      "selected": true,
-      "formatted_ru": true,
-      "scheduled": true,
-      "reason": "вошёл в утренний выпуск"
-    },
     {
       "game": "Steal An Egg",
       "candidate": true,
@@ -30,7 +21,7 @@
       "selected": false,
       "formatted_ru": false,
       "scheduled": false,
-      "reason": "Публикация уже использовалась в выпуске другого дня; Нет новой конкретной строки со времени прошлого снимка"
+      "reason": "В публикации не найдено достаточно конкретного содержания; Нет новой конкретной строки со времени прошлого снимка"
     },
     {
       "game": "Animal Hospital (Anomaly)",
@@ -75,7 +66,16 @@
       "selected": false,
       "formatted_ru": false,
       "scheduled": false,
-      "reason": "Публикация устарела: 43.4 дн. (аварийный лимит 30); В публикации не найдено достаточно конкретного содержания; Нет новой конкретной строки со времени прошлого снимка"
+      "reason": "Публикация устарела: 44.2 дн. (аварийный лимит 30); В публикации не найдено достаточно конкретного содержания; Нет новой конкретной строки со времени прошлого снимка"
+    },
+    {
+      "game": "Adopt Me!",
+      "candidate": true,
+      "verified": false,
+      "selected": false,
+      "formatted_ru": false,
+      "scheduled": false,
+      "reason": "Публикация уже использовалась в выпуске другого дня; Tier B повторяет уже использованную официальную новость; Нет новой конкретной строки со времени прошлого снимка"
     },
     {
       "game": "RIVALS",
@@ -105,6 +105,15 @@
       "reason": "Нет пригодной Tier B новости; Нет новой конкретной строки со времени прошлого снимка"
     },
     {
+      "game": "Pet Simulator 99",
+      "candidate": true,
+      "verified": true,
+      "selected": true,
+      "formatted_ru": true,
+      "scheduled": true,
+      "reason": "вошёл в утренний выпуск"
+    },
+    {
       "game": "Grow a Garden",
       "candidate": true,
       "verified": false,
@@ -120,16 +129,7 @@
       "selected": false,
       "formatted_ru": false,
       "scheduled": false,
-      "reason": "Публикация устарела: 78.7 дн. (аварийный лимит 30); Нет пригодной Tier B новости; Нет новой конкретной строки со времени прошлого снимка"
-    },
-    {
-      "game": "Pet Simulator 99",
-      "candidate": true,
-      "verified": false,
-      "selected": false,
-      "formatted_ru": false,
-      "scheduled": false,
-      "reason": "Публикация уже использовалась в выпуске другого дня; Публикация уже использовалась в выпуске другого дня; Нет новой конкретной строки со времени прошлого снимка"
+      "reason": "Источник недоступен: 404 Client Error: Not Found for url: https://www.youtube.com/feeds/videos.xml?channel_id=UCCVWvf_e5oRb6RfXyluR7UA; Нет пригодной Tier B новости; Нет новой конкретной строки со времени прошлого снимка"
     },
     {
       "game": "Blade Ball",
@@ -138,7 +138,7 @@
       "selected": false,
       "formatted_ru": false,
       "scheduled": false,
-      "reason": "Публикация уже использовалась в выпуске другого дня; Публикация устарела: 909.6 дн. (аварийный лимит 30); Нет пригодной Tier B новости; Нет новой конкретной строки со времени прошлого снимка"
+      "reason": "Источник недоступен: 404 Client Error: Not Found for url: https://www.youtube.com/feeds/videos.xml?channel_id=UCPttFx0zI4Zv9M4i3Q2ylsw; Публикация устарела: 910.3 дн. (аварийный лимит 30); Нет пригодной Tier B новости; Нет новой конкретной строки со времени прошлого снимка"
     }
   ],
   "summary": {

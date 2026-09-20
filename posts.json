@@ -2883,5 +2883,81 @@
     "attempts": 1,
     "last_error": null,
     "image_path": "images/16-00/00fab747-4466-4b2d-97a3-268739faf49e.png"
+  },
+  {
+    "id": "2026-09-20-10",
+    "publish_at": "2026-09-20T10:00:00+05:00",
+    "game": "разные игры",
+    "rubric": "Выпуск дня",
+    "source": "auto_verified",
+    "text": "🎮🎮🎮 ROBLOX HUB — СЕГОДНЯ 🎮🎮🎮\n\n🐶 Pet Simulator 99\n\nВ Pet Simulator 99 вышло обновление «Space Mine!».\n\nВ игре появились новые питомцы.\n\nОткрыт Can you top the leaderboard с наградами за места.\n\n🎯 Что сделать: проверь условия получения новых наград.\n\n🎮 Roblox Hub",
+    "status": "pending",
+    "published_at": null,
+    "attempts": 0,
+    "last_error": null,
+    "image_path": "assets/news_headers/roblox_news_header.png"
+  },
+  {
+    "id": "2026-09-20-image-11",
+    "publish_at": "2026-09-20T11:00:00+05:00",
+    "game": "Roblox",
+    "rubric": "Картинка дня",
+    "source": "image_library",
+    "text": "#Roblox #BrawlStars #StealABrainrot #99Nights",
+    "status": "pending",
+    "published_at": null,
+    "attempts": 0,
+    "last_error": null,
+    "image_path": "images/16-00/753a221e-69b7-4f86-89e6-3df0358bf580.png"
+  },
+  {
+    "id": "2026-09-20-15",
+    "publish_at": "2026-09-20T15:00:00+05:00",
+    "game": "Animal Hospital (Anomaly) + +1 Speed Keyboard Escape + Brookhaven + Pet Simulator 99 + Murder Mystery 2",
+    "rubric": "Полезно знать",
+    "source": "verified_db",
+    "text": "💡💡💡 ПОЛЕЗНО ЗНАТЬ 💡💡💡\n\n🏥 Animal Hospital (Anomaly)\n🩺 После принятия нормального пациента не забывай про лечение: проверка у окна — только первая часть работы.\n\n⌨️ +1 Speed Keyboard Escape\n🦘 Чем выше скорость, тем сильнее меняется движение персонажа: привыкни к управлению перед сложными прыжками.\n\n🏡 Brookhaven\n🔍 Исследуй здания внимательнее: интересные комнаты и детали легко пропустить.\n\n🐶 Pet Simulator 99\n📋 Если открываешь много яиц, периодически проверяй команду — среди новых питомцев могут быть более сильные.\n\n🔪 Murder Mystery 2\n🔫 За Sheriff стреляй только когда уверен в цели: попадание в Innocent наказывается.\n\n🎮 Roblox Hub\n\n#Roblox #ПолезноЗнать #RobloxHub",
+    "status": "pending",
+    "published_at": null,
+    "attempts": 0,
+    "last_error": null
+  },
+  {
+    "id": "2026-09-20-image-17",
+    "publish_at": "2026-09-20T17:00:00+05:00",
+    "game": "Roblox",
+    "rubric": "Картинка дня",
+    "source": "image_library",
+    "text": "#Roblox #BrawlStars #StealABrainrot #99Nights",
+    "status": "pending",
+    "published_at": null,
+    "attempts": 0,
+    "last_error": null,
+    "image_path": "images/16-00/17d866ea-6872-4afb-ab8a-8a8bd3dc4e1e.jpeg"
+  },
+  {
+    "id": "2026-09-20-19",
+    "publish_at": "2026-09-20T19:00:00+05:00",
+    "game": "Dungeon Quest Reborn",
+    "rubric": "Новинки и хиты Roblox",
+    "source": "verified_db",
+    "text": "🔥🔥🔥 НОВИНКИ И ХИТЫ ROBLOX 🔥🔥🔥\n\n⚔️ Dungeon Quest Reborn\n\n🎮 Что за игра?\nВозвращение классической Dungeon Quest: проходи подземелья, побеждай боссов и собирай редкий лут. Играть можно как одному, так и вместе с друзьями.\n\n💎 Не смотри только на редкость добычи: оружие, броня и способности должны подходить твоему персонажу и стилю игры.\n\n🤝 Если подземелье стало слишком сложным, попробуй собрать команду. Игра прямо рассчитана и на совместное прохождение.\n\n⚔️ Чем дальше продвигаешься, тем сложнее испытания, поэтому не забывай усиливать персонажа перед следующим подземельем.\n\n🎮 Roblox Hub\n\n#Roblox #DungeonQuestReborn #НовинкиRoblox",
+    "status": "pending",
+    "published_at": null,
+    "attempts": 0,
+    "last_error": null
+  },
+  {
+    "id": "2026-09-20-image-21",
+    "publish_at": "2026-09-20T21:00:00+05:00",
+    "game": "Roblox",
+    "rubric": "Картинка дня",
+    "source": "image_library",
+    "text": "#Roblox #BrawlStars #StealABrainrot #99Nights",
+    "status": "pending",
+    "published_at": null,
+    "attempts": 0,
+    "last_error": null,
+    "image_path": "images/16-00/3cf4f09c-284d-497f-91c0-e4270fc2bf23.jpeg"
   }
 ]
