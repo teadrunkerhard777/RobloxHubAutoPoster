@@ -4,7 +4,7 @@
     "universe_id": 10563114921,
     "roblox_name": "Steal An Egg",
     "description": "🥚 Welcome to Steal An Egg!\n\nHow to Play:\n🥚 Steal eggs from pets\n🐣 Hatch eggs to collect rare pets\n💰 Earn money from your pets\n⬆️ Upgrade your treadmill and base\n🏃 Train on the treadmill to gain Speed\n🥷 Steal eggs from other players\n✨ Discover rarer eggs, pets, sizes, and mutations!\n\n🎮 Supports Desktop, Console, Mobile, and Tablet players",
-    "updated": "2026-09-19T19:17:14.3586069Z",
+    "updated": "2026-09-20T04:04:02.6644505Z",
     "created": "2026-07-25T07:50:51.492Z",
     "creator": {
       "id": 825735094,
@@ -78,7 +78,7 @@
       }
     ],
     "pool": "active",
-    "checked_at": "2026-09-20T03:01:06.881364+00:00",
+    "checked_at": "2026-09-20T09:10:06.620356+00:00",
     "sources": [
       {
         "type": "official_game_description",
@@ -96,7 +96,7 @@
       {
         "source_type": "secondary_gaming_media",
         "source_url": "https://news.google.com/rss/search?q=%22Steal%20An%20Egg%22%20Roblox%20when%3A30d&hl=en-US&gl=US&ceid=US:en",
-        "latest_published_at": "2026-09-19T11:23:00+00:00",
+        "latest_published_at": "2026-09-20T06:55:00+00:00",
         "status": "rejected",
         "result_code": "EXTRACTION_FAILED",
         "reason": "В публикации не найдено достаточно конкретного содержания.",
@@ -111,12 +111,12 @@
         "selected": false,
         "formatted": false,
         "scheduled": false,
-        "latest_url": "https://news.google.com/rss/articles/CBMieEFVX3lxTE1PZWt0eU84eUo2ZklMMndjYVEwNllMdGhFM0U5bTlqNTREb0M1bHlEdHN3QzYwaHQzeFRNR2MtNWpCRjNQcVh5Undfc2wycmlKeUVBS2JEN0E1UlJMVVkzZjlWU21Oam1fOVl4WWxWM19sRUM3Vk5kbw?oc=5"
+        "latest_url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxOWFRBNFIyZmlpckFxS3pXR1VrbmJEdWhfbEpjM2NEU1c5UGJGRWZDRDRPRkExVERlLWhGem9Ya0NJQXdmbFRTYU5nd1VpbTNVckg5Wm5HS1pfSmV1YmdFb1JxcmlDa1ItRDI3OXFWTXNRcFlaNklnMVZPT3lVaU5HU1I3TUlwREE3Wm9zUg?oc=5"
       },
       {
         "source_type": "official_game_description",
         "source_url": "https://www.roblox.com/games/107778070777162/Steal-An-Egg",
-        "latest_published_at": "2026-09-19T19:17:14.3586069Z",
+        "latest_published_at": "2026-09-20T04:04:02.6644505Z",
         "status": "rejected",
         "result_code": "NO_NEW_CONTENT",
         "available": true,
@@ -186,7 +186,7 @@
       {
         "source_type": "secondary_gaming_media",
         "source_url": "https://news.google.com/rss/search?q=%22Steal%20An%20Egg%22%20Roblox%20when%3A30d&hl=en-US&gl=US&ceid=US:en",
-        "latest_published_at": "2026-09-19T11:23:00+00:00",
+        "latest_published_at": "2026-09-20T06:55:00+00:00",
         "status": "rejected",
         "result_code": "EXTRACTION_FAILED",
         "reason": "В публикации не найдено достаточно конкретного содержания.",
@@ -201,13 +201,13 @@
         "selected": false,
         "formatted": false,
         "scheduled": false,
-        "latest_url": "https://news.google.com/rss/articles/CBMieEFVX3lxTE1PZWt0eU84eUo2ZklMMndjYVEwNllMdGhFM0U5bTlqNTREb0M1bHlEdHN3QzYwaHQzeFRNR2MtNWpCRjNQcVh5Undfc2wycmlKeUVBS2JEN0E1UlJMVVkzZjlWU21Oam1fOVl4WWxWM19sRUM3Vk5kbw?oc=5"
+        "latest_url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxOWFRBNFIyZmlpckFxS3pXR1VrbmJEdWhfbEpjM2NEU1c5UGJGRWZDRDRPRkExVERlLWhGem9Ya0NJQXdmbFRTYU5nd1VpbTNVckg5Wm5HS1pfSmV1YmdFb1JxcmlDa1ItRDI3OXFWTXNRcFlaNklnMVZPT3lVaU5HU1I3TUlwREE3Wm9zUg?oc=5"
       }
     ],
     "external_source_diagnostic": {
       "source_type": "secondary_gaming_media",
       "source_url": "https://news.google.com/rss/search?q=%22Steal%20An%20Egg%22%20Roblox%20when%3A30d&hl=en-US&gl=US&ceid=US:en",
-      "latest_published_at": "2026-09-19T11:23:00+00:00",
+      "latest_published_at": "2026-09-20T06:55:00+00:00",
       "status": "rejected",
       "result_code": "EXTRACTION_FAILED",
       "reason": "В публикации не найдено достаточно конкретного содержания.",
@@ -222,7 +222,7 @@
       "selected": false,
       "formatted": false,
       "scheduled": false,
-      "latest_url": "https://news.google.com/rss/articles/CBMieEFVX3lxTE1PZWt0eU84eUo2ZklMMndjYVEwNllMdGhFM0U5bTlqNTREb0M1bHlEdHN3QzYwaHQzeFRNR2MtNWpCRjNQcVh5Undfc2wycmlKeUVBS2JEN0E1UlJMVVkzZjlWU21Oam1fOVl4WWxWM19sRUM3Vk5kbw?oc=5"
+      "latest_url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxOWFRBNFIyZmlpckFxS3pXR1VrbmJEdWhfbEpjM2NEU1c5UGJGRWZDRDRPRkExVERlLWhGem9Ya0NJQXdmbFRTYU5nd1VpbTNVckg5Wm5HS1pfSmV1YmdFb1JxcmlDa1ItRDI3OXFWTXNRcFlaNklnMVZPT3lVaU5HU1I3TUlwREE3Wm9zUg?oc=5"
     },
     "candidate_decision": {
       "status": "rejected",
@@ -261,7 +261,7 @@
       }
     ],
     "pool": "active",
-    "checked_at": "2026-09-20T03:01:06.881910+00:00",
+    "checked_at": "2026-09-20T09:10:06.620791+00:00",
     "sources": [
       {
         "type": "official_game_description",
@@ -423,7 +423,7 @@
     "facts": [],
     "description_facts": [],
     "pool": "active",
-    "checked_at": "2026-09-20T03:01:06.884195+00:00",
+    "checked_at": "2026-09-20T09:10:06.622691+00:00",
     "sources": [
       {
         "type": "official_game_description",
@@ -611,7 +611,7 @@
       }
     ],
     "pool": "active",
-    "checked_at": "2026-09-20T03:01:06.885766+00:00",
+    "checked_at": "2026-09-20T09:10:06.623997+00:00",
     "sources": [
       {
         "type": "official_game_description",
@@ -846,7 +846,7 @@
       }
     ],
     "pool": "active",
-    "checked_at": "2026-09-20T03:01:06.889439+00:00",
+    "checked_at": "2026-09-20T09:10:06.626999+00:00",
     "sources": [
       {
         "type": "official_game_description",
@@ -1073,7 +1073,7 @@
       }
     ],
     "pool": "active",
-    "checked_at": "2026-09-20T03:01:06.892387+00:00",
+    "checked_at": "2026-09-20T09:10:06.629345+00:00",
     "sources": [
       {
         "type": "official_game_description",
@@ -1094,7 +1094,7 @@
         "latest_published_at": "2026-08-06T22:02:43Z",
         "status": "rejected",
         "result_code": "SOURCE_STALE",
-        "reason": "Публикация устарела: 44.2 дн. (аварийный лимит 30).",
+        "reason": "Публикация устарела: 44.5 дн. (аварийный лимит 30).",
         "available": true,
         "article_found": true,
         "date_found": true,
@@ -1202,7 +1202,7 @@
         "latest_published_at": "2026-08-06T22:02:43Z",
         "status": "rejected",
         "result_code": "SOURCE_STALE",
-        "reason": "Публикация устарела: 44.2 дн. (аварийный лимит 30).",
+        "reason": "Публикация устарела: 44.5 дн. (аварийный лимит 30).",
         "available": true,
         "article_found": true,
         "date_found": true,
@@ -1324,7 +1324,7 @@
       }
     ],
     "pool": "active",
-    "checked_at": "2026-09-20T03:01:06.894209+00:00",
+    "checked_at": "2026-09-20T09:10:06.630839+00:00",
     "sources": [
       {
         "type": "official_game_description",
@@ -1524,7 +1524,7 @@
     "universe_id": 6035872082,
     "roblox_name": "[🏆] RIVALS",
     "description": "Welcome to RIVALS, the most intense first person shooter game on Roblox! Challenge other players in 1v1 to 5v5 FPS duels where the first to 5 wins!\n\n🏆 SURPRISE UPDATE - Thank you for helping us win BEST STUDIO & BEST SHOOTER! 🎉 All weapons are FREE for 7 days + limited-time reward codes! ❤️  \n\n🔫 Challenge someone by stepping on a duel pad!\n🔑 Earn keys to unlock new weapons & skins!\n📜 Complete contracts to unlock exclusive rewards!\n🏆 Show off your win streak and climb the leaderboards! \n\n🎮 Available on Desktop, Phones, Tablets, XBOX, & PlayStation 5!\n💜 Like and join the group for exclusive rewards!\n\n⚠️ WARNING: Cheaters will be permanently banned with no second chances, our anticheat & moderators will catch you. Abusing glitches & using sketchy farming methods are also not allowed!\n\n🏆 RIA25 Best Shooter Experience!\n🏆 RIA26 Best Shooter Experience!",
-    "updated": "2026-09-19T04:08:35.7736188Z",
+    "updated": "2026-09-20T05:06:10.3734369Z",
     "created": "2024-05-26T16:47:48.617Z",
     "creator": {
       "id": 3461453,
@@ -1586,7 +1586,7 @@
       }
     ],
     "pool": "active",
-    "checked_at": "2026-09-20T03:01:06.896537+00:00",
+    "checked_at": "2026-09-20T09:10:06.632713+00:00",
     "sources": [
       {
         "type": "official_game_description",
@@ -1623,7 +1623,7 @@
       {
         "source_type": "official_game_description",
         "source_url": "https://www.roblox.com/games/17625359962/RIVALS",
-        "latest_published_at": "2026-09-19T04:08:35.7736188Z",
+        "latest_published_at": "2026-09-20T05:06:10.3734369Z",
         "status": "rejected",
         "result_code": "NO_NEW_CONTENT",
         "available": true,
@@ -1763,7 +1763,7 @@
     "facts": [],
     "description_facts": [],
     "pool": "active",
-    "checked_at": "2026-09-20T03:01:06.896991+00:00",
+    "checked_at": "2026-09-20T09:10:06.633072+00:00",
     "sources": [
       {
         "type": "official_game_description",
@@ -1938,7 +1938,7 @@
       }
     ],
     "pool": "active",
-    "checked_at": "2026-09-20T03:01:06.898548+00:00",
+    "checked_at": "2026-09-20T09:10:06.634357+00:00",
     "sources": [
       {
         "type": "official_game_description",
@@ -2159,7 +2159,7 @@
       }
     ],
     "pool": "legacy",
-    "checked_at": "2026-09-20T03:01:06.902032+00:00",
+    "checked_at": "2026-09-20T09:10:06.637216+00:00",
     "sources": [
       {
         "type": "official_game_description",
@@ -2185,7 +2185,7 @@
         "latest_published_at": "2026-09-19",
         "status": "accepted",
         "result_code": "FOUND_VERIFIED",
-        "reason": "Официальная публикация (1.1 дн.) с датой и игровым содержанием; окно primary_14_day.",
+        "reason": "Официальная публикация (1.4 дн.) с датой и игровым содержанием; окно primary_14_day.",
         "available": true,
         "article_found": true,
         "date_found": true,
@@ -2294,7 +2294,7 @@
         "latest_published_at": "2026-09-19",
         "status": "accepted",
         "result_code": "FOUND_VERIFIED",
-        "reason": "Официальная публикация (1.1 дн.) с датой и игровым содержанием; окно primary_14_day.",
+        "reason": "Официальная публикация (1.4 дн.) с датой и игровым содержанием; окно primary_14_day.",
         "available": true,
         "article_found": true,
         "date_found": true,
@@ -2354,7 +2354,7 @@
       "url": "https://www.biggames.io/post/pet-simulator-99-update-94",
       "title": "Space Mine!",
       "published_at": "2026-09-19",
-      "age_days": 1.125776157997685,
+      "age_days": 1.3820229359027778,
       "source_tier": "A",
       "publisher": null,
       "freshness_window": "primary_14_day"
@@ -2369,7 +2369,7 @@
     "universe_id": 7436755782,
     "roblox_name": "[🍂] Grow a Garden 🌶️",
     "description": "🍅Welcome to Grow a Garden🍅\n\nAre you ready to grow your very own garden? Buy seeds from the shop when they restock, plant them, wait for them to grow, and collect the profits! Flex fruits and finds on friends, and have fun!\n\n[How To Plant]\n• Equip your seed you want to plant!\n• Click in your farm on the brown plots to plant!\n• Wait to see it start growing!\n• After its fully grown, it is time to harvest the goods!\n\nRemember, your garden literally grows while you are offline⭐",
-    "updated": "2026-09-20T01:32:47.5842856Z",
+    "updated": "2026-09-20T05:57:48.8327216Z",
     "created": "2025-03-25T22:32:09.437Z",
     "creator": {
       "id": 35789249,
@@ -2386,7 +2386,7 @@
     "facts": [],
     "description_facts": [],
     "pool": "legacy",
-    "checked_at": "2026-09-20T03:01:06.900266+00:00",
+    "checked_at": "2026-09-20T09:10:06.635752+00:00",
     "sources": [
       {
         "type": "official_game_description",
@@ -2424,7 +2424,7 @@
       {
         "source_type": "official_game_description",
         "source_url": "https://www.roblox.com/games/126884695634066/Grow-a-Garden",
-        "latest_published_at": "2026-09-20T01:32:47.5842856Z",
+        "latest_published_at": "2026-09-20T05:57:48.8327216Z",
         "status": "rejected",
         "result_code": "NO_NEW_CONTENT",
         "available": true,
@@ -2534,7 +2534,7 @@
     "universe_id": 5203828273,
     "roblox_name": "[🎂] Dress To Impress",
     "description": "Create stunning outfits 👗💖⭐, and strut the runway to show off your unique style. Collaborate, compete, and explore a world of glamour with friends!\n\n⭐ Are you ready to be the TOP MODEL?\n👗 NEW ITEMS! Check them out.\n🍿 Vote for your favorite outfits!\n💃 Use poses on the runway to show off your outfit!\n\nFind more about Dress To Impress by joining our community.\nhttps://www.roblox.com/communities/17264167/Dress-To-Impress-Group#!/about",
-    "updated": "2026-09-19T22:00:57.5278568Z",
+    "updated": "2026-09-20T09:06:35.2231458Z",
     "created": "2023-10-18T09:11:36.563Z",
     "creator": {
       "id": 17264167,
@@ -2591,7 +2591,7 @@
       }
     ],
     "pool": "legacy",
-    "checked_at": "2026-09-20T03:01:06.901640+00:00",
+    "checked_at": "2026-09-20T09:10:06.636892+00:00",
     "sources": [
       {
         "type": "official_game_description",
@@ -2609,21 +2609,22 @@
       {
         "source_type": "official_youtube_feed",
         "source_url": "https://www.youtube.com/feeds/videos.xml?channel_id=UCCVWvf_e5oRb6RfXyluR7UA",
-        "latest_published_at": null,
+        "latest_published_at": "2026-07-02T15:00:06+00:00",
         "status": "rejected",
-        "result_code": "SOURCE_UNAVAILABLE",
-        "reason": "Источник недоступен: 404 Client Error: Not Found for url: https://www.youtube.com/feeds/videos.xml?channel_id=UCCVWvf_e5oRb6RfXyluR7UA",
-        "available": false,
-        "article_found": false,
-        "date_found": false,
-        "content_found": false,
+        "result_code": "SOURCE_STALE",
+        "reason": "Публикация устарела: 79.8 дн. (аварийный лимит 30).",
+        "available": true,
+        "article_found": true,
+        "date_found": true,
+        "content_found": true,
         "extraction_success": false,
         "verification_passed": false,
         "source_tier": "A",
         "official": true,
         "selected": false,
         "formatted": false,
-        "scheduled": false
+        "scheduled": false,
+        "latest_url": "https://www.youtube.com/watch?v=5Zfy9QW4s5A"
       },
       {
         "source_type": "secondary_gaming_media",
@@ -2647,7 +2648,7 @@
       {
         "source_type": "official_game_description",
         "source_url": "https://www.roblox.com/games/15101393044/Dress-To-Impress",
-        "latest_published_at": "2026-09-19T22:00:57.5278568Z",
+        "latest_published_at": "2026-09-20T09:06:35.2231458Z",
         "status": "rejected",
         "result_code": "NO_NEW_CONTENT",
         "available": true,
@@ -2717,21 +2718,22 @@
       {
         "source_type": "official_youtube_feed",
         "source_url": "https://www.youtube.com/feeds/videos.xml?channel_id=UCCVWvf_e5oRb6RfXyluR7UA",
-        "latest_published_at": null,
+        "latest_published_at": "2026-07-02T15:00:06+00:00",
         "status": "rejected",
-        "result_code": "SOURCE_UNAVAILABLE",
-        "reason": "Источник недоступен: 404 Client Error: Not Found for url: https://www.youtube.com/feeds/videos.xml?channel_id=UCCVWvf_e5oRb6RfXyluR7UA",
-        "available": false,
-        "article_found": false,
-        "date_found": false,
-        "content_found": false,
+        "result_code": "SOURCE_STALE",
+        "reason": "Публикация устарела: 79.8 дн. (аварийный лимит 30).",
+        "available": true,
+        "article_found": true,
+        "date_found": true,
+        "content_found": true,
         "extraction_success": false,
         "verification_passed": false,
         "source_tier": "A",
         "official": true,
         "selected": false,
         "formatted": false,
-        "scheduled": false
+        "scheduled": false,
+        "latest_url": "https://www.youtube.com/watch?v=5Zfy9QW4s5A"
       },
       {
         "source_type": "secondary_gaming_media",
@@ -2782,7 +2784,7 @@
     "universe_id": 4777817887,
     "roblox_name": "Blade Ball",
     "description": "⚡  In this game of focus, timing, and strategy, your skill is tested as a deflectable homing ball hunts players with increasing speed. But there's more than what meets the eye.\n\n🔥  Gain new abilities and upgrade them to compliment your playstyle. Rise through the ranks by mastering your skill, and stand out with a variety of iconic weapon skins and finisher effects.\n\n🏆 Shoot for the leaderboard or play casually! The choice is yours.\n \nCONTROLS:\nBLOCK - F/R1/Tap Screen/Tap UI Button/Left Click\nABILITY - Q/ButtonX/Tap UI Button/Right Click\nSHIFTLOCK - Shift/Button-Y/Tap UI Button\nEMOTE - R/L1/Tap UI Button\n\ntags: minigame, battle game, pvp, multiplayer, abilities, dodgeball, sports, mobile, console, xbox, pc",
-    "updated": "2026-09-19T19:26:03.9223918Z",
+    "updated": "2026-09-20T06:30:02.4542164Z",
     "created": "2023-06-17T00:05:26.103Z",
     "creator": {
       "id": 12836673,
@@ -2811,7 +2813,7 @@
       }
     ],
     "pool": "legacy",
-    "checked_at": "2026-09-20T03:01:06.904174+00:00",
+    "checked_at": "2026-09-20T09:10:06.638954+00:00",
     "sources": [
       {
         "type": "official_game_description",
@@ -2829,21 +2831,22 @@
       {
         "source_type": "official_youtube_feed",
         "source_url": "https://www.youtube.com/feeds/videos.xml?channel_id=UCPttFx0zI4Zv9M4i3Q2ylsw",
-        "latest_published_at": null,
+        "latest_published_at": "2026-09-18T05:00:16+00:00",
         "status": "rejected",
-        "result_code": "SOURCE_UNAVAILABLE",
-        "reason": "Источник недоступен: 404 Client Error: Not Found for url: https://www.youtube.com/feeds/videos.xml?channel_id=UCPttFx0zI4Zv9M4i3Q2ylsw",
-        "available": false,
-        "article_found": false,
-        "date_found": false,
-        "content_found": false,
+        "result_code": "ALREADY_USED",
+        "reason": "Публикация уже использовалась в выпуске другого дня.",
+        "available": true,
+        "article_found": true,
+        "date_found": true,
+        "content_found": true,
         "extraction_success": false,
         "verification_passed": false,
         "source_tier": "A",
         "official": true,
         "selected": false,
         "formatted": false,
-        "scheduled": false
+        "scheduled": false,
+        "latest_url": "https://www.youtube.com/watch?v=F4ZF3Y9i3XE"
       },
       {
         "source_type": "official_news_website",
@@ -2851,7 +2854,7 @@
         "latest_published_at": "2024-03-23T18:51:42Z",
         "status": "rejected",
         "result_code": "SOURCE_STALE",
-        "reason": "Публикация устарела: 910.3 дн. (аварийный лимит 30).",
+        "reason": "Публикация устарела: 910.6 дн. (аварийный лимит 30).",
         "available": true,
         "article_found": true,
         "date_found": true,
@@ -2887,7 +2890,7 @@
       {
         "source_type": "official_game_description",
         "source_url": "https://www.roblox.com/games/13772394625/Blade-Ball",
-        "latest_published_at": "2026-09-19T19:26:03.9223918Z",
+        "latest_published_at": "2026-09-20T06:30:02.4542164Z",
         "status": "rejected",
         "result_code": "NO_NEW_CONTENT",
         "available": true,
@@ -2953,21 +2956,22 @@
       {
         "source_type": "official_youtube_feed",
         "source_url": "https://www.youtube.com/feeds/videos.xml?channel_id=UCPttFx0zI4Zv9M4i3Q2ylsw",
-        "latest_published_at": null,
+        "latest_published_at": "2026-09-18T05:00:16+00:00",
         "status": "rejected",
-        "result_code": "SOURCE_UNAVAILABLE",
-        "reason": "Источник недоступен: 404 Client Error: Not Found for url: https://www.youtube.com/feeds/videos.xml?channel_id=UCPttFx0zI4Zv9M4i3Q2ylsw",
-        "available": false,
-        "article_found": false,
-        "date_found": false,
-        "content_found": false,
+        "result_code": "ALREADY_USED",
+        "reason": "Публикация уже использовалась в выпуске другого дня.",
+        "available": true,
+        "article_found": true,
+        "date_found": true,
+        "content_found": true,
         "extraction_success": false,
         "verification_passed": false,
         "source_tier": "A",
         "official": true,
         "selected": false,
         "formatted": false,
-        "scheduled": false
+        "scheduled": false,
+        "latest_url": "https://www.youtube.com/watch?v=F4ZF3Y9i3XE"
       },
       {
         "source_type": "official_news_website",
@@ -2975,7 +2979,7 @@
         "latest_published_at": "2024-03-23T18:51:42Z",
         "status": "rejected",
         "result_code": "SOURCE_STALE",
-        "reason": "Публикация устарела: 910.3 дн. (аварийный лимит 30).",
+        "reason": "Публикация устарела: 910.6 дн. (аварийный лимит 30).",
         "available": true,
         "article_found": true,
         "date_found": true,
