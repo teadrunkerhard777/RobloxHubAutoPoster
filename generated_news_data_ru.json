@@ -1,18 +1,5 @@
 {
-  "items": [
-    {
-      "game": "Pet Simulator 99",
-      "emoji": "🐶",
-      "score": 10,
-      "headline": "В Pet Simulator 99 вышло обновление «Space Mine!».",
-      "facts": [
-        "В игре появились новые питомцы.",
-        "Открыт Can you top the leaderboard с наградами за места."
-      ],
-      "text": "В Pet Simulator 99 вышло обновление «Space Mine!».\n\nВ игре появились новые питомцы.\n\nОткрыт Can you top the leaderboard с наградами за места.",
-      "external_article_url": "https://www.biggames.io/post/pet-simulator-99-update-94"
-    }
-  ],
+  "items": [],
   "pipeline": [
     {
       "game": "Steal An Egg",
@@ -66,7 +53,7 @@
       "selected": false,
       "formatted_ru": false,
       "scheduled": false,
-      "reason": "Публикация устарела: 44.5 дн. (аварийный лимит 30); В публикации не найдено достаточно конкретного содержания; Нет новой конкретной строки со времени прошлого снимка"
+      "reason": "Публикация устарела: 45.2 дн. (аварийный лимит 30); В публикации не найдено достаточно конкретного содержания; Нет новой конкретной строки со времени прошлого снимка"
     },
     {
       "game": "Adopt Me!",
@@ -105,15 +92,6 @@
       "reason": "Нет пригодной Tier B новости; Нет новой конкретной строки со времени прошлого снимка"
     },
     {
-      "game": "Pet Simulator 99",
-      "candidate": true,
-      "verified": true,
-      "selected": true,
-      "formatted_ru": true,
-      "scheduled": true,
-      "reason": "вошёл в утренний выпуск"
-    },
-    {
       "game": "Grow a Garden",
       "candidate": true,
       "verified": false,
@@ -129,7 +107,16 @@
       "selected": false,
       "formatted_ru": false,
       "scheduled": false,
-      "reason": "Публикация устарела: 79.8 дн. (аварийный лимит 30); Нет пригодной Tier B новости; Нет новой конкретной строки со времени прошлого снимка"
+      "reason": "Публикация устарела: 80.5 дн. (аварийный лимит 30); Нет пригодной Tier B новости; Нет новой конкретной строки со времени прошлого снимка"
+    },
+    {
+      "game": "Pet Simulator 99",
+      "candidate": true,
+      "verified": false,
+      "selected": false,
+      "formatted_ru": false,
+      "scheduled": false,
+      "reason": "Публикация уже использовалась в выпуске другого дня; Публикация уже использовалась в выпуске другого дня; Нет новой конкретной строки со времени прошлого снимка"
     },
     {
       "game": "Blade Ball",
@@ -138,14 +125,14 @@
       "selected": false,
       "formatted_ru": false,
       "scheduled": false,
-      "reason": "Публикация уже использовалась в выпуске другого дня; Публикация устарела: 910.6 дн. (аварийный лимит 30); Нет пригодной Tier B новости; Нет новой конкретной строки со времени прошлого снимка"
+      "reason": "Источник недоступен: 500 Server Error: Internal Server Error for url: https://www.youtube.com/feeds/videos.xml?channel_id=UCPttFx0zI4Zv9M4i3Q2ylsw; Публикация устарела: 911.3 дн. (аварийный лимит 30); Нет пригодной Tier B новости; Нет новой конкретной строки со времени прошлого снимка"
     }
   ],
   "summary": {
     "found": 14,
-    "verified": 1,
-    "selected": 1,
-    "formatted": 1,
-    "scheduled": 1
+    "verified": 0,
+    "selected": 0,
+    "formatted": 0,
+    "scheduled": 0
   }
 }

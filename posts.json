@@ -2959,5 +2959,68 @@
     "attempts": 1,
     "last_error": null,
     "image_path": "images/16-00/3cf4f09c-284d-497f-91c0-e4270fc2bf23.jpeg"
+  },
+  {
+    "id": "2026-09-21-image-11",
+    "publish_at": "2026-09-21T11:00:00+05:00",
+    "game": "Roblox",
+    "rubric": "Картинка дня",
+    "source": "image_library",
+    "text": "#Roblox #BrawlStars #StealABrainrot #99Nights",
+    "status": "pending",
+    "published_at": null,
+    "attempts": 0,
+    "last_error": null,
+    "image_path": "images/16-00/dfa45917-53c5-4962-81eb-972580e51b45.jpeg"
+  },
+  {
+    "id": "2026-09-21-15",
+    "publish_at": "2026-09-21T15:00:00+05:00",
+    "game": "Animal Hospital (Anomaly) + Adopt Me! + Blox Fruits + Murder Mystery 2 + Steal a Brainrot",
+    "rubric": "Полезно знать",
+    "source": "verified_db",
+    "text": "💡💡💡 ПОЛЕЗНО ЗНАТЬ 💡💡💡\n\n🏥 Animal Hospital (Anomaly)\n🩺 После принятия нормального пациента не забывай про лечение: проверка у окна — только первая часть работы.\n\n🐾 Adopt Me!\n💰 Не оценивай питомца только по внешнему виду: редкость и спрос игроков тоже влияют на обмены.\n\n🍈 Blox Fruits\n🎯 Не выбирай фрукт только по редкости — удобство для прокачки и твой стиль игры тоже важны.\n\n🔪 Murder Mystery 2\n🔫 Если Sheriff погиб, Innocent может подобрать пистолет и стать Hero.\n\n🧠 Steal a Brainrot\n💰 Чем больше доход приносит Brainrot, тем внимательнее стоит следить за его безопасностью.\n\n🎮 Roblox Hub\n\n#Roblox #ПолезноЗнать #RobloxHub",
+    "status": "pending",
+    "published_at": null,
+    "attempts": 0,
+    "last_error": null
+  },
+  {
+    "id": "2026-09-21-image-17",
+    "publish_at": "2026-09-21T17:00:00+05:00",
+    "game": "Roblox",
+    "rubric": "Картинка дня",
+    "source": "image_library",
+    "text": "#Roblox #BrawlStars #StealABrainrot #99Nights",
+    "status": "pending",
+    "published_at": null,
+    "attempts": 0,
+    "last_error": null,
+    "image_path": "images/16-00/debd0838-c609-4c02-a4d1-220ed92bfe73.jpeg"
+  },
+  {
+    "id": "2026-09-21-19",
+    "publish_at": "2026-09-21T19:00:00+05:00",
+    "game": "Cheating During Testing [BETA]",
+    "rubric": "Новинки и хиты Roblox",
+    "source": "verified_db",
+    "text": "🔥🔥🔥 НОВИНКИ И ХИТЫ ROBLOX 🔥🔥🔥\n\n😂 Cheating During Testing [BETA]\n\n🎮 Что за игра?\nТы не подготовился к контрольной и пытаешься закончить тест до конца таймера так, чтобы учитель не заметил списывание. Это шуточная игровая механика, а не совет для настоящей школы 😄\n\n📄 Заканчивай тесты и старайся получать хорошие оценки: за более высокие результаты дают больше наград.\n\n🛒 Credits можно тратить на гаджеты и снаряжение, которые помогают во время следующих тестов.\n\n👀 Следи за Anxiety и остерегайся Snitches: другие персонажи могут выдать тебя учителю ради Credits.\n\n🎮 Roblox Hub\n\n#Roblox #CheatingDuringTesting #НовинкиRoblox",
+    "status": "pending",
+    "published_at": null,
+    "attempts": 0,
+    "last_error": null
+  },
+  {
+    "id": "2026-09-21-image-21",
+    "publish_at": "2026-09-21T21:00:00+05:00",
+    "game": "Roblox",
+    "rubric": "Картинка дня",
+    "source": "image_library",
+    "text": "#Roblox #BrawlStars #StealABrainrot #99Nights",
+    "status": "pending",
+    "published_at": null,
+    "attempts": 0,
+    "last_error": null,
+    "image_path": "images/16-00/4c692eb4-fe53-41c8-b3be-88c46dd4c401.jpeg"
   }
 ]

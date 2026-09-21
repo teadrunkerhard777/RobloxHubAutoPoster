@@ -146,7 +146,7 @@
     "text": "Чем больше доход приносит Brainrot, тем внимательнее стоит следить за его безопасностью.",
     "source": "verified_core_mechanic",
     "reviewed_at": "2026-08-14",
-    "used": false,
+    "used": true,
     "category": "economy"
   },
   {
@@ -296,7 +296,7 @@
     "text": "Не выбирай фрукт только по редкости — удобство для прокачки и твой стиль игры тоже важны.",
     "source": "verified_core_mechanic",
     "reviewed_at": "2026-08-14",
-    "used": false,
+    "used": true,
     "category": "strategy"
   },
   {
@@ -496,7 +496,7 @@
     "text": "Не оценивай питомца только по внешнему виду: редкость и спрос игроков тоже влияют на обмены.",
     "source": "verified_core_mechanic",
     "reviewed_at": "2026-08-14",
-    "used": false,
+    "used": true,
     "category": "economy"
   },
   {
@@ -1640,7 +1640,7 @@
     "text": "Сначала внимательно осмотри пациента у окна, только потом принимай решение.",
     "source": "agreed_editorial_list",
     "reviewed_at": "2026-08-28",
-    "used": true
+    "used": false
   },
   {
     "id": 164,
@@ -1651,7 +1651,7 @@
     "text": "Если внешний вид кажется нормальным, проверь фотографию: некоторые аномалии заметны именно там.",
     "source": "agreed_editorial_list",
     "reviewed_at": "2026-08-28",
-    "used": true
+    "used": false
   },
   {
     "id": 165,
@@ -1662,7 +1662,7 @@
     "text": "При сомнениях используй CCTV вместо случайного решения.",
     "source": "agreed_editorial_list",
     "reviewed_at": "2026-08-28",
-    "used": true
+    "used": false
   },
   {
     "id": 166,
@@ -1673,7 +1673,7 @@
     "text": "Если видишь явную аномалию, не пропускай пациента внутрь.",
     "source": "agreed_editorial_list",
     "reviewed_at": "2026-08-28",
-    "used": true
+    "used": false
   },
   {
     "id": 167,
@@ -1684,7 +1684,7 @@
     "text": "Следи за Sanity, не жди, пока показатель станет критически низким.",
     "source": "agreed_editorial_list",
     "reviewed_at": "2026-08-28",
-    "used": true
+    "used": false
   },
   {
     "id": 168,
@@ -1695,7 +1695,7 @@
     "text": "Используй восстановление Sanity заранее, когда ситуация ещё под контролем.",
     "source": "agreed_editorial_list",
     "reviewed_at": "2026-08-28",
-    "used": true
+    "used": false
   },
   {
     "id": 169,
@@ -1706,7 +1706,7 @@
     "text": "Запоминай расположение основных помещений — это экономит время во время срочных событий.",
     "source": "agreed_editorial_list",
     "reviewed_at": "2026-08-28",
-    "used": true
+    "used": false
   },
   {
     "id": 170,
@@ -1717,7 +1717,7 @@
     "text": "Придерживайся одного порядка проверки: внешний вид → фото → CCTV.",
     "source": "agreed_editorial_list",
     "reviewed_at": "2026-08-28",
-    "used": true
+    "used": false
   },
   {
     "id": 171,
@@ -1728,7 +1728,7 @@
     "text": "Не считай один странный признак достаточным доказательством, если пациента можно проверить вторым способом.",
     "source": "agreed_editorial_list",
     "reviewed_at": "2026-08-28",
-    "used": true
+    "used": false
   },
   {
     "id": 172,
@@ -1739,7 +1739,7 @@
     "text": "В команде заранее разделите задачи, чтобы все не бежали одновременно к одной проблеме.",
     "source": "agreed_editorial_list",
     "reviewed_at": "2026-08-28",
-    "used": true
+    "used": false
   },
   {
     "id": 173,
@@ -1761,7 +1761,7 @@
     "text": "Не спеши во время тревоги: одна неправильная проверка может создать больше проблем, чем несколько лишних секунд.",
     "source": "agreed_editorial_list",
     "reviewed_at": "2026-08-28",
-    "used": true
+    "used": false
   },
   {
     "id": 175,
@@ -1948,7 +1948,7 @@
     "text": "Если Sheriff погиб, Innocent может подобрать пистолет и стать Hero.",
     "source": "agreed_editorial_list",
     "reviewed_at": "2026-08-28",
-    "used": false
+    "used": true
   },
   {
     "id": 192,
