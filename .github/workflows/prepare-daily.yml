@@ -1,17 +1,23 @@
 name: Prepare Daily Roblox Hub Posts
 
 on:
+  # Автоматическая подготовка временно отключена вместе с выпусками.
+  # Ручной запуск оставлен для контролируемой обкатки нового контента.
   workflow_dispatch:
-  schedule:
-    # 04:00 UTC = 09:00 в текущей timezone проекта UTC+5.
-    # Очередь готовится до первого ежедневного слота 10:00.
-    - cron: "0 4 * * *"
+    inputs:
+      confirm_preparation:
+        description: "Разрешить ручную подготовку очереди постов"
+        required: true
+        type: boolean
+        default: false
 
 permissions:
   contents: write
 
 jobs:
   prepare:
+    # Старые внешние cron-вызовы без явного подтверждения не меняют очередь.
+    if: ${{ inputs.confirm_preparation == true }}
     runs-on: ubuntu-latest
 
     steps:
